@@ -1,0 +1,679 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="System.Web.UI.MasterPage" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta name="GENERATOR" content="Microsoft SharePoint" />
+    <meta name="Author" content="lehoanganhhd@gmail.com" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name='copyright' content='Bộ Thông tin và Truyền thông' />
+    <meta name='author' content='Bộ Thông tin và Truyền thông' />
+    <meta name='robots' content='index,follow' />
+    <link rel="stylesheet" href="/Content2/style/css/genaral.css" />
+    <link rel="stylesheet" href="/Content2/style/css/color-blue.css" />
+    <link rel="stylesheet" href="/Content2/style/css/common.css" />
+    <script src="/Content2/style/js/jquery.min.1.11.3.js"></script>
+    <script src="/Content2/style/js/common.js"></script>
+    <script src="/Content2/style/js/arrow79.js"></script>
+    <meta name="msapplication-TileImage" content="/Content2/_layouts/15/images/SharePointMetroAppTile.png" />
+    <meta name="msapplication-TileColor" content="#0072C6" />
+    <link rel="stylesheet" type="text/css" href="/Content2/_layouts/15/1033/styles/Themable/corev15.css?rev=OqAycmyMLoQIDkAlzHdMhQ%3D%3D" />
+    <link rel="stylesheet" type="text/css" href="/Content2/style/css/slide.css" />
+    <link href="/Content2/style/css/common-color-blue.css" rel="stylesheet" />
+    <link href="/Content2/style/css/corev15.css" rel="stylesheet" />
+    <script src="/Content2/_layouts/15/init.js"></script>
+
+    <link rel="shortcut icon" href="/Content2/_layouts/15/images/favicon.ico_-1267273014.jpg" type="image/vnd.microsoft.icon" id="favicon" />
+    <!--[if lte IE 8]>
+    <style type="text/css">//<![CDATA[
+    .ms-core-animation-transparent,
+    .ms-core-animation-transparent img
+    {
+       -ms-filter:"alpha(opacity=0)";
+    }
+    .ms-isBot .ms-core-animation-transparent,
+    .ms-isBot .ms-core-animation-transparent img
+    {
+       -ms-filter:"";
+    }
+    //]]></style>
+    <![endif]-->
+    <script>
+        //<![CDATA[
+        var g_pageLoadAnimationParams = { elementSlideIn: "sideNavBox", elementSlideInPhase2: "contentBox" };
+        //]]></script>
+    <title>Trang chủ, Home</title>
+
+    <link href="/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="hlForm" runat="server">
+
+        <script>
+            //<![CDATA[
+            var MSOWebPartPageFormName = 'aspnetForm';
+            var g_presenceEnabled = true;
+            var g_wsaEnabled = false;
+            var g_wsaQoSEnabled = false;
+            var g_wsaQoSDataPoints = [];
+            var g_wsaLCID = 1033;
+            var g_wsaListTemplateId = 850;
+            var g_wsaSiteTemplateId = 'BLANKINTERNET#0';
+            var _fV4UI = true; var _spPageContextInfo = { webServerRelativeUrl: "\u002f", webAbsoluteUrl: "https:\u002f\u002fmic.gov.vn", siteAbsoluteUrl: "https:\u002f\u002fmic.gov.vn", serverRequestPath: "\u002fPages\u002ftrangchu.aspx", layoutsUrl: "_layouts\u002f15", webTitle: "C\u1ED5ng TT\u0110T - B\u1ED9 Th\u00F4ng tin v\u00E0 Truy\u1EC1n th\u00F4ng", webTemplate: "53", tenantAppVersion: "0", isAppWeb: false, webLogoUrl: "_layouts\u002f15\u002fimages\u002fsiteicon.png", webLanguage: 1033, currentLanguage: 1033, currentUICultureName: "en-US", currentCultureName: "en-US", clientServerTimeDelta: new Date("2017-09-24T02:09:55.5538356Z") - new Date(), siteClientTag: "1536$$15.0.4701.1000", crossDomainPhotosEnabled: false, webUIVersion: 15, webPermMasks: { High: 16, Low: 196673 }, pageListId: "{fdd7bcf0-2570-4ba2-bca9-a3c5941edfd0}", pageItemId: 67, pagePersonalizationScope: 1, alertsEnabled: false, siteServerRelativeUrl: "\u002f", allowSilverlightPrompt: 'True' }; document.onreadystatechange = fnRemoveAllStatus; function fnRemoveAllStatus() { removeAllStatus(true) }; var dlc_fvsi = { "DefaultViews": [], "ViewUrls": [], "WebUrl": "\/" };
+            function _spNavigateHierarchy(nodeDiv, dataSourceId, dataPath, url, listInContext, type) {
+
+                CoreInvoke('ProcessDefaultNavigateHierarchy', nodeDiv, dataSourceId, dataPath, url, listInContext, type, document.forms.aspnetForm, "", "\u002fPages\u002ftrangchu.aspx");
+
+            }
+            var _spWebPartComponents = new Object();//]]>
+        </script>
+        <script src="/Content2/_layouts/15/blank.js"></script>
+        <script>
+            //<![CDATA[
+            (function () {
+
+                if (typeof (_spBodyOnLoadFunctions) === 'undefined' || _spBodyOnLoadFunctions === null) {
+                    return;
+                }
+                _spBodyOnLoadFunctions.push(function () {
+                    ExecuteOrDelayUntilScriptLoaded(
+                        function () {
+                            var pairs = SP.ScriptHelpers.getDocumentQueryPairs();
+                            var followDoc, itemId, listId, docName;
+                            for (var key in pairs) {
+                                if (key.toLowerCase() == 'followdocument')
+                                    followDoc = pairs[key];
+                                else if (key.toLowerCase() == 'itemid')
+                                    itemId = pairs[key];
+                                else if (key.toLowerCase() == 'listid')
+                                    listId = pairs[key];
+                                else if (key.toLowerCase() == 'docname')
+                                    docName = decodeURI(pairs[key]);
+                            }
+
+                            if (followDoc != null && followDoc == '1' && listId != null && itemId != null && docName != null) {
+                                SP.SOD.executeFunc('followingcommon.js', 'FollowDocumentFromEmail', function () {
+                                    FollowDocumentFromEmail(itemId, listId, docName);
+                                });
+                            }
+
+                        }, 'SP.init.js');
+
+                });
+            })(); (function () {
+
+                if (typeof (_spBodyOnLoadFunctions) === 'undefined' || _spBodyOnLoadFunctions === null) {
+                    return;
+                }
+                _spBodyOnLoadFunctions.push(function () {
+
+                    if (typeof (SPClientTemplates) === 'undefined' || SPClientTemplates === null || (typeof (APD_InAssetPicker) === 'function' && APD_InAssetPicker())) {
+                        return;
+                    }
+
+                    var renderFollowFooter = function (renderCtx, calloutActionMenu) {
+                        if (renderCtx.ListTemplateType == 700)
+                            myDocsActionsMenuPopulator(renderCtx, calloutActionMenu);
+                        else
+                            CalloutOnPostRenderTemplate(renderCtx, calloutActionMenu);
+
+                        var listItem = renderCtx.CurrentItem;
+                        if (typeof (listItem) === 'undefined' || listItem === null) {
+                            return;
+                        }
+                        if (listItem.FSObjType == 0) {
+                            calloutActionMenu.addAction(new CalloutAction({
+                                text: Strings.STS.L_CalloutFollowAction,
+                                tooltip: Strings.STS.L_CalloutFollowAction_Tooltip,
+                                onClickCallback: function (calloutActionClickEvent, calloutAction) {
+                                    var callout = GetCalloutFromRenderCtx(renderCtx);
+                                    if (!(typeof (callout) === 'undefined' || callout === null))
+                                        callout.close();
+                                    SP.SOD.executeFunc('followingcommon.js', 'FollowSelectedDocument', function () { FollowSelectedDocument(renderCtx); });
+                                }
+                            }));
+                        }
+                    };
+
+                    var registerOverride = function (id) {
+                        var followingOverridePostRenderCtx = {};
+                        followingOverridePostRenderCtx.BaseViewID = 'Callout';
+                        followingOverridePostRenderCtx.ListTemplateType = id;
+                        followingOverridePostRenderCtx.Templates = {};
+                        followingOverridePostRenderCtx.Templates.Footer = function (renderCtx) {
+                            var renderECB;
+                            if (typeof (isSharedWithMeView) === 'undefined' || isSharedWithMeView === null) {
+                                renderECB = true;
+                            } else {
+                                var viewCtx = getViewCtxFromCalloutCtx(renderCtx);
+                                renderECB = !isSharedWithMeView(viewCtx);
+                            }
+                            return CalloutRenderFooterTemplate(renderCtx, renderFollowFooter, renderECB);
+                        };
+                        SPClientTemplates.TemplateManager.RegisterTemplateOverrides(followingOverridePostRenderCtx);
+                    }
+                    registerOverride(101);
+                    registerOverride(700);
+                });
+            })(); if (typeof (DeferWebFormInitCallback) == 'function') DeferWebFormInitCallback();//]]>
+        </script>
+        <div id="ctl00_g_facd23c2_5f76_4a48_baed_3eace90138c7" __markuptype="vsattributemarkup" __webpartid="{facd23c2-5f76-4a48-baed-3eace90138c7}" webpart="true" isclosed="false">
+            <span>
+
+                <script>
+                    function makeid() {
+                        var text = "";
+                        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+                        for (var i = 0; i < 5; i++)
+                            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+                        return text;
+                    }
+
+                    jQuery(document).ready(function () {
+                        var curUrl = window.location.href;
+                        $.ajax({
+                            url: '/Pages/QuanTri/User_Account/LogActivityUsersAjax.aspx?preventCache=' + makeid(),
+                            type: 'post',
+                            dataType: 'html',
+                            data: {
+                                "urlLog": curUrl
+                            },
+                            success: (function (html) {
+
+                            })
+                        });
+                    });
+
+                </script>
+            </span>
+        </div>
+        <div id="imgPrefetch" style="display: none">
+            <img src="/Content2/_layouts/15/images/favicon.ico_-1267273014.jpg" />
+            <img src="/Content2/_layouts/15/images/spcommon.png_-1267273014.jpg" />
+        </div>
+        <noscript>
+            <div class='noindex'>You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page.</div>
+        </noscript>
+        <script>
+//<![CDATA[ var submitHook = function () { return false; }; theForm._spOldSubmit = theForm.submit; theForm.submit = function () { if (!submitHook()) { this._spOldSubmit(); } };
+        //]]></script>
+        <span id="DeltaDelegateControls"></span>
+        <div id="TurnOnAccessibility" style="display: none" class="s4-notdlg noindex">
+            <a id="linkTurnOnAcc" href="#" class="ms-TurnOnAcc" onclick="SetIsAccessibilityFeatureEnabled(true);UpdateAccessibilityUI();document.getElementById('linkTurnOffAcc').focus();return false;">Turn on more accessible mode
+            </a>
+        </div>
+        <div id="TurnOffAccessibility" style="display: none" class="s4-notdlg noindex">
+            <a id="linkTurnOffAcc" href="#" class="ms-TurnOffAcc" onclick="SetIsAccessibilityFeatureEnabled(false);UpdateAccessibilityUI();document.getElementById('linkTurnOnAcc').focus();return false;">Turn off more accessible mode
+            </a>
+        </div>
+        <div class="s4-notdlg s4-skipribbonshortcut noindex">
+            <a href="javascript:;" onclick="document.getElementById(&#39;startNavigation&#39;).focus();" class="ms-SkiptoNavigation" accesskey="Y">Skip Ribbon Commands
+            </a>
+        </div>
+        <div class="s4-notdlg noindex">
+            <a href="javascript:;" onclick="document.getElementById(&#39;mainContent&#39;).focus();" class="ms-SkiptoMainContent" accesskey="X">Skip to main content
+            </a>
+        </div>
+        <div id="TurnOffAnimation" style="display: none;" class="s4-notdlg noindex">
+            <a id="linkTurnOffAnimation" href="#" class="ms-accessible ms-acc-button" onclick="ToggleAnimationStatus();return false;">Turn off Animations
+            </a>
+        </div>
+        <div id="TurnOnAnimation" style="display: none;" class="s4-notdlg noindex">
+            <a id="linkTurnOnAnimation" href="#" class="ms-accessible ms-acc-button" onclick="ToggleAnimationStatus();return false;">Turn on Animations
+            </a>
+        </div>
+        <a id="HiddenAnchor" href="javascript:;" style="display: none;"></a>
+        <div id="ms-hcTest"></div>
+        <div id="s4-workspace" class="ms-core-overlay">
+            <div id="s4-bodyContainer">
+                <div id="s4-titlerow temp_none" class="ms-dialogHidden s4-titlerowhidetitle" style="display: none">
+                    <div id="titleAreaBox" class="ms-noList ms-table ms-core-tableNoSpace">
+                        <div id="titleAreaRow" class="ms-tableRow">
+                            <div id="siteIcon" class="ms-tableCell ms-verticalAlignTop">
+                            </div>
+                            <div class="ms-breadcrumb-box ms-tableCell ms-verticalAlignTop">
+                                <div class="ms-breadcrumb-top">
+                                    <div class="ms-breadcrumb-dropdownBox" style="display: none;">
+                                        <span id="DeltaBreadcrumbDropdown"></span>
+                                    </div>
+                                    <div id="DeltaTopNavigation" class="ms-displayInline">
+                                        <a name="startNavigation"></a>
+                                        <div id="zz1_TopNavigationMenu" class=" noindex ms-core-listMenu-horizontalBox">
+                                            <ul id="zz2_RootAspMenu" class="root ms-core-listMenu-root static">
+                                                <li class="static selected">
+                                                    <a class="static selected menu-item ms-core-listMenu-item ms-displayInline ms-core-listMenu-selected ms-navedit-linkNode" tabindex="0" title="Home" href="/Pages/trangchu.aspx" accesskey="1"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Cổng TTĐT - Bộ Thông tin và Truyền thông</span><span class="ms-hidden">Currently selected</span></span></a><ul class="static">
+                                                        <li class="static dynamic-children">
+                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/atantt/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">An toàn, An ninh thông tin</span></span></a><ul class="dynamic">
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/atantt/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi </span></span></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/hnqt/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Hội nhập kinh tế quốc tế</span></span></a></li>
+                                                        <li class="static dynamic-children">
+                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/phapdien/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Pháp điển ngành TT&amp;TT</span></span></a><ul class="dynamic">
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/phapdien/Pages/trangchu2.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Pháp điển ngành Thông tin và Truyền thông</span></span></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/pcthtl/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Phòng chống tác hại của thuốc lá</span></span></a></li>
+                                                        <li class="static dynamic-children">
+                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/upu/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Cuộc thi Viết thư quốc tế UPU</span></span></a><ul class="dynamic">
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/upu/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi </span></span></a></li>
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/upu/Pages/hoidap.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi </span></span></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="static dynamic-children">
+                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/daotaonghe/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Đào tạo nghề cho lao động Nông thôn</span></span></a><ul class="dynamic">
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/daotaonghe/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/daotaonghe/Pages/videoclips.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Video</span></span></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="static dynamic-children">
+                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/dttktq/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Điều tra, thống kê toàn quốc  phổ cập dịch vụ</span></span></a><ul class="dynamic">
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/dttktq/Pages/default.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Home</span></span></a></li>
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/dttktq/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="static dynamic-children">
+                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nuocmanhCNTTTT/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Đưa Việt Nam sớm trở thành nước mạnh về CNTT&amp;TT</span></span></a><ul class="dynamic">
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nuocmanhCNTTTT/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">t</span></span></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="static dynamic-children">
+                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/iso/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Hệ thống QLCL ISO ngành TT&amp;TT</span></span></a><ul class="dynamic">
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/iso/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="static dynamic-children">
+                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/shth/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Số hóa truyền hình mặt đất</span></span></a><ul class="dynamic">
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/shth/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/shth/Pages/hoidap.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="static dynamic-children">
+                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/solieubaocao/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Số liệu - báo cáo</span></span></a><ul class="dynamic">
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/solieubaocao/Pages/guithongtindoanhnghiep.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi thông tin doanh nghiệp</span></span></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/thanhtrakiemtra/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Thanh tra - Kiểm tra</span></span></a></li>
+                                                        <li class="static dynamic-children">
+                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/tdkt/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Thi đua - Khen thưởng</span></span></a><ul class="dynamic">
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/tdkt/Pages/layykien_xettanghuanchuong.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">t</span></span></a></li>
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/tdkt/Pages/layykienthidua.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">t</span></span></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="static dynamic-children">
+                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/ttcaicachTTHC/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Thông tin cải cách Thủ tục Hành chính</span></span></a><ul class="dynamic">
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/ttcaicachTTHC/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="static dynamic-children">
+                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nongthon/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Thông tin và Truyền thông với Nông thôn</span></span></a><ul class="dynamic">
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nongthon/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/detaikhoahoc/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Thông tin về chương trình nghiên cứu, đề tài khoa học</span></span></a></li>
+                                                        <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/mra/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Tiêu chuẩn, Chất lượng và Đánh giá phù hợp</span></span></a></li>
+                                                        <li class="static dynamic-children">
+                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/vtci/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Viễn thông công ích Việt Nam</span></span></a><ul class="dynamic">
+                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/vtci/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/ipv6/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Triển khai IPV6 tại Việt Nam</span></span></a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                                <h1 id="pageTitle" class="ms-core-pageTitle">
+                                    <span id="DeltaPlaceHolderPageTitleInTitleArea">
+
+                                        <span><a href="#ctl00_PlaceHolderPageTitleInTitleArea_ctl00_SkipLink">
+                                            <img alt="Skip Navigation Links" src="/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&amp;t=636161092665894255" width="0" height="0" border="0" /></a><span><a href="/Pages/trangchu.aspx">trangchu</a></span><a id="ctl00_PlaceHolderPageTitleInTitleArea_ctl00_SkipLink"></a></span>
+
+                                    </span>
+                                    <div id="DeltaPlaceHolderPageDescription" class="ms-displayInlineBlock ms-normalWrap">
+
+                                        <a href="javascript:;" id="ms-pageDescriptionDiv" style="display: none">
+                                            <span id="ms-pageDescriptionImage"></span>
+                                        </a>
+                                        <span class="ms-accessible" id="ms-pageDescription"></span>
+                                        <script>
+                                            // <![CDATA[
+
+
+                                            _spBodyOnLoadFunctionNames.push("setupPageDescriptionCallout");
+                                    // ]]>
+                                        </script>
+
+                                    </div>
+                                </h1>
+                            </div>
+                            <div class="ms-tableCell ms-verticalAlignTop">
+                                <div id="DeltaPlaceHolderSearchArea" class="ms-mpSearchBox ms-floatRight">
+
+
+
+                                    <div id="searchInputBox">
+                                        <div class="ms-webpart-chrome ms-webpart-chrome-fullWidth ">
+                                            <div webpartid="00000000-0000-0000-0000-000000000000" haspers="true" id="WebPartWPQ1" width="100%" class="ms-WPBody " onlyformepart="true" allowdelete="false" style="">
+                                                <div componentid="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr" id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr">
+                                                    <div id="SearchBox" name="Control">
+                                                        <div class="ms-srch-sb ms-srch-sb-border" id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sboxdiv">
+                                                            <input type="text" value="Search this site" maxlength="2048" accesskey="S" title="Search this site" id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sbox" autocomplete="off" autocorrect="off" onkeypress="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {if (Srch.U.isEnterKey(String.fromCharCode(event.keyCode))) {$find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr').search($get('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sbox').value);return Srch.U.cancelEvent(event);}})" onkeydown="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {var ctl = $find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr');ctl.activateDefaultQuerySuggestionBehavior();})" onfocus="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {var ctl = $find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr');ctl.hidePrompt();ctl.setBorder(true);})" onblur="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {var ctl = $find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr'); if (ctl){ ctl.showPrompt(); ctl.setBorder(false);}})" class="ms-textSmall ms-srch-sb-prompt ms-helperText" /><a title="Search" class="ms-srch-sb-searchLink" id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_SearchLink" onclick="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {$find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr').search($get('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sbox').value);})" href="javascript: {}"><img src="/Content2/_layouts/15/images/searchresultui.png_-1267273014.jpg" class="ms-srch-sb-searchImg" id="searchImg" alt="Search" /></a><div class="ms-qSuggest-container ms-shadow" id="AutoCompContainer">
+                                                                <div id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_AutoCompList"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <noscript>
+                                                    <div id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_noscript">It looks like your browser does not have JavaScript enabled. Please turn on JavaScript and try again.</div>
+                                                </noscript>
+                                                <div id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1">
+                                                </div>
+                                                <div class="ms-clear"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contentRow">
+                    <div id="sideNavBox" class="ms-dialogHidden ms-forceWrap ms-noList" style="display: none;">
+                        <div id="DeltaPlaceHolderLeftNavBar" class="ms-core-navigation" role="navigation">
+
+
+                            <a id="startNavigation" name="startNavigation" tabindex="-1"></a>
+
+
+
+
+
+                            <div class="ms-core-sideNavBox-removeLeftMargin">
+                                <div id="ctl00_PlaceHolderLeftNavBar_QuickLaunchNavigationManager">
+
+
+                                    <div id="zz3_V4QuickLaunchMenu" class=" noindex ms-core-listMenu-verticalBox">
+                                        <ul id="zz4_RootAspMenu" class="root ms-core-listMenu-root static">
+                                            <li class="static"><span class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Recent</span></span></span></li>
+                                            <li class="static">
+                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/atantt/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">An toàn, An ninh thông tin</span></span></a><ul class="static">
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/atantt/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi </span></span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/hnqt/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Hội nhập kinh tế quốc tế</span></span></a></li>
+                                            <li class="static">
+                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/phapdien/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Pháp điển ngành TT&amp;TT</span></span></a><ul class="static">
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/phapdien/Pages/trangchu2.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Pháp điển ngành Thông tin và Truyền thông</span></span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/pcthtl/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Phòng chống tác hại của thuốc lá</span></span></a></li>
+                                            <li class="static">
+                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/upu/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Cuộc thi Viết thư quốc tế UPU</span></span></a><ul class="static">
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/upu/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi </span></span></a></li>
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/upu/Pages/hoidap.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi </span></span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="static">
+                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/daotaonghe/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Đào tạo nghề cho lao động Nông thôn</span></span></a><ul class="static">
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/daotaonghe/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/daotaonghe/Pages/videoclips.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Video</span></span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="static">
+                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/dttktq/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Điều tra, thống kê toàn quốc  phổ cập dịch vụ</span></span></a><ul class="static">
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/dttktq/Pages/default.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Home</span></span></a></li>
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/dttktq/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="static">
+                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nuocmanhCNTTTT/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Đưa Việt Nam sớm trở thành nước mạnh về CNTT&amp;TT</span></span></a><ul class="static">
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nuocmanhCNTTTT/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">t</span></span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="static">
+                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/iso/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Hệ thống QLCL ISO ngành TT&amp;TT</span></span></a><ul class="static">
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/iso/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="static">
+                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/shth/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Số hóa truyền hình mặt đất</span></span></a><ul class="static">
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/shth/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/shth/Pages/hoidap.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="static">
+                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/solieubaocao/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Số liệu - báo cáo</span></span></a><ul class="static">
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/solieubaocao/Pages/guithongtindoanhnghiep.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi thông tin doanh nghiệp</span></span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/thanhtrakiemtra/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Thanh tra - Kiểm tra</span></span></a></li>
+                                            <li class="static">
+                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/tdkt/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Thi đua - Khen thưởng</span></span></a><ul class="static">
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/tdkt/Pages/layykien_xettanghuanchuong.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">t</span></span></a></li>
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/tdkt/Pages/layykienthidua.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">t</span></span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="static">
+                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/ttcaicachTTHC/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Thông tin cải cách Thủ tục Hành chính</span></span></a><ul class="static">
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/ttcaicachTTHC/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="static">
+                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nongthon/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Thông tin và Truyền thông với Nông thôn</span></span></a><ul class="static">
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nongthon/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/detaikhoahoc/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Thông tin về chương trình nghiên cứu, đề tài khoa học</span></span></a></li>
+                                            <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/mra/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Tiêu chuẩn, Chất lượng và Đánh giá phù hợp</span></span></a></li>
+                                            <li class="static">
+                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/vtci/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Viễn thông công ích Việt Nam</span></span></a><ul class="static">
+                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/vtci/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/ipv6/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Triển khai IPV6 tại Việt Nam</span></span></a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="ms-core-listMenu-verticalBox">
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div id="contentBox temp_none" aria-live="polite" aria-relevant="all">
+                        <div id="notificationArea" class="ms-notif-box">
+                        </div>
+                        <div id="DeltaPlaceHolderMain">
+
+                            <a id="mainContent" name="mainContent" tabindex="-1"></a>
+                            <div class="btn-common-close">
+                            </div>
+                            <div class="wrapper-container">
+                                <div class="container">
+                                    <section class="banner-container">
+                                        <HL:StaticControl runat="server" Code="CAdv" HLID="cLogo"></HL:StaticControl>
+                                        <HL:StaticControl runat="server" Code="CStatic" HLID="cSearch"></HL:StaticControl>
+                                    </section>
+                                    <div class="clr"></div>
+
+                                    <div id="theme-css" data-style="color-blue"></div>
+                                    <div id="common-theme-css" data-style="color-blue"></div>
+
+
+                                    <script src="/Content2/style/js/social-buttons-share.js"></script>
+                                    <section class="menu-container">
+                                        <a class="icon-menu"><span class="fa fa-bars"></span></a>
+                                        <div class="icon-home"><a href="/" style="color: black"><span class="fa fa-home"></span></a></div>
+                                        <div class="menu-top-icon">
+                                            <span class="fa fa-bars"></span>Danh mục
+                                        </div>
+                                        <div class="menu-list">
+                                            <HL:StaticControl runat="server" Code="CMenu" HLID="cMenu_TopLeft"></HL:StaticControl>
+                                            <HL:StaticControl runat="server" Code="CMenu" HLID="cMenu_TopRight"></HL:StaticControl>
+                                        </div>
+                                    </section>
+
+                                    <section class="top-container">
+                                        <HL:StaticControl runat="server" Code="CStatic" HLID="cDate"></HL:StaticControl>
+
+                                        <div class="sidebar-top">
+                                            <div class="ms-webpart-zone ms-fullWidth">
+                                                <HL:DynamicControl Code="Danh sách điều khiển bên trái" ID="DLeft" runat="server"></HL:DynamicControl>
+                                            </div>
+                                        </div>
+                                        <div class="top-content-right">
+                                            <div class="ms-webpart-zone ms-fullWidth">
+                                                <HL:DynamicControl Code="Danh sách điều khiển bên phải" ID="DynamicControl1" runat="server"></HL:DynamicControl>
+                                            </div>
+                                        </div>
+
+                                    </section>
+
+                                    <div style='display: none' id='hidZone'>
+                                        <menu class="ms-hide">
+                                            <ie:menuitem id="MSOMenu_Help" iconsrc="/Content2/_layouts/15/images/HelpIcon.gif" onmenuclick="MSOWebPartPage_SetNewWindowLocation(MenuWebPart.getAttribute('helpLink'), MenuWebPart.getAttribute('helpMode'))" text="Help" type="option" style="display: none"></ie:menuitem>
+                                        </menu>
+                                    </div>
+                                    <section class="chuyenmuc-content w100">
+                                        <div id="ctl00_g_f68dbbd5_4ccc_4d2f_aea2_d64b030ff09f" __markuptype="vsattributemarkup" __webpartid="{f68dbbd5-4ccc-4d2f-aea2-d64b030ff09f}" webpart="true" isclosed="false">
+                                            <footer class="footer">
+                                                <a class="logo">
+                                                    <img alt="logo" src="/Content2/style/img/logo-mic.png" />
+                                                </a>
+                                                <div class="copyright">
+                                                    <p>
+                                                        <br />
+                                                        CƠ QUAN CHỦ QUẢN: BỘ TH&Ocirc;NG TIN V&Agrave; TRUYỀN TH&Ocirc;NG (MIC) 					                                        
+                                                        <br />
+                                                        Giấy ph&eacute;p thiết lập Trang th&ocirc;ng tin điện tử số 18/GP-TTĐT do Cục Ph&aacute;t thanh, truyền h&igrave;nh v&agrave; th&ocirc;ng tin điện tử cấp ng&agrave;y 15/03/2016.                                                                                           
+                                                        <br />
+                                                        Chịu tr&aacute;ch nhiệm ch&iacute;nh: &Ocirc;ng V&otilde; Quốc Trường - Gi&aacute;m đốc Trung t&acirc;m Th&ocirc;ng tin - Bộ Th&ocirc;ng tin v&agrave; Truyền th&ocirc;ng.                                                                                                
+                                                        <br />
+                                                        Li&ecirc;n hệ: Ban Bi&ecirc;n tập Cổng TTĐT - 18 Nguyễn Du, H&agrave; Nội - ĐT:04.35563462, Fax: 04.35563458, Email:  banbientap@mic.gov.vn
+                                                        <br />
+                                                        Bản quyền thuộc Trung t&acirc;m Th&ocirc;ng tin. (Ghi r&otilde; nguồn &quot;http://mic.gov.vn&quot; khi ph&aacute;t h&agrave;nh lại th&ocirc;ng tin từ website n&agrave;y)
+                                                    </p>
+                                                </div>
+                                            </footer>
+                                        </div>
+
+                                    </section>
+
+                                </div>
+                            </div>
+                            <script src="/Content2/style/assets/js/bootstrap.min.js"></script>
+                            <script>
+                                            //<![CDATA[
+                                            $(".icon-menu").click(function () {
+                                                $('.menu-list').toggleClass('scollpane');
+                                            });
+                                            var data_style = $("#theme-css").attr('data-style');
+                                            $('#theme-color').attr("href", "//Content2/style/css/" + data_style + ".css");
+                                            $('#common-theme-color').attr("href", "//Content2/style/css/common-" + data_style + ".css");
+                        //]]></script>
+
+                        </div>
+                        <div id="DeltaFormDigest">
+                            <script>
+                                                //<![CDATA[
+                                                var formDigestElement = document.getElementsByName('__REQUESTDIGEST')[0];
+                                                if (!((formDigestElement == null) || (formDigestElement.tagName.toLowerCase() != 'input') || (formDigestElement.type.toLowerCase() != 'hidden') ||
+                                                    (formDigestElement.value == null) || (formDigestElement.value.length <= 0))) {
+                                                    formDigestElement.value = '0x6B4961E3375C81F14B900639713381256DC7112B4CB0DA29DC05347C7B96FF71A7D93F97E792AD32BC70FBD38C90E999E40AE48D50FFF359204FB4B6A17F03B1,24 Sep 2017 02:09:56 -0000';
+                                                    g_updateFormDigestPageLoaded = new Date();
+                                                }
+        //]]>
+                            </script>
+                        </div>
+                        <div class="ms-hide">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+                                                // <![CDATA[
+                                                var g_Workspace = "s4-workspace";
+        // ]]>
+        </script>
+        <script>
+                                //<![CDATA[
+                                var _spFormDigestRefreshInterval = 1440000; window.g_updateFormDigestPageLoaded = new Date(); window.g_updateFormDigestPageLoaded.setDate(window.g_updateFormDigestPageLoaded.getDate() - 5); function loadMDN2() { EnsureScript('MDN.js', typeof (loadFilterFn), null); }
+                                function loadMDN1() { ExecuteOrDelayUntilScriptLoaded(loadMDN2, 'sp.ribbon.js'); }
+                                _spBodyOnLoadFunctionNames.push('loadMDN1');
+                                function _spNavigateHierarchyEx(nodeDiv, dataSourceId, dataPath, url, listInContext, type, additionalQString) {
+                                    CoreInvoke('SetAdditionalNavigateHierarchyQString', additionalQString);
+                                    g_originalSPNavigateFunc(nodeDiv, dataSourceId, dataPath, url, listInContext, type);
+                                }
+
+                                g_originalSPNavigateFunc = _spNavigateHierarchy;
+                                _spNavigateHierarchy = _spNavigateHierarchyEx;
+                                var _fV4UI = true;
+                                function _RegisterWebPartPageCUI() {
+                                    var initInfo = { editable: false, isEditMode: false, allowWebPartAdder: false, listId: "{fdd7bcf0-2570-4ba2-bca9-a3c5941edfd0}", itemId: 67, recycleBinEnabled: true, enableMinorVersioning: true, enableModeration: false, forceCheckout: true, rootFolderUrl: "\u002fPages", itemPermissions: { High: 16, Low: 196673 } };
+                                    SP.Ribbon.WebPartComponent.registerWithPageManager(initInfo);
+                                    var wpcomp = SP.Ribbon.WebPartComponent.get_instance();
+                                    var hid;
+                                    hid = document.getElementById("_wpSelected");
+                                    if (hid != null) {
+                                        var wpid = hid.value;
+                                        if (wpid.length > 0) {
+                                            var zc = document.getElementById(wpid);
+                                            if (zc != null)
+                                                wpcomp.selectWebPart(zc, false);
+                                        }
+                                    }
+                                    hid = document.getElementById("_wzSelected");
+                                    if (hid != null) {
+                                        var wzid = hid.value;
+                                        if (wzid.length > 0) {
+                                            wpcomp.selectWebPartZone(null, wzid);
+                                        }
+                                    }
+                                };
+                                function __RegisterWebPartPageCUI() {
+                                    ExecuteOrDelayUntilScriptLoaded(_RegisterWebPartPageCUI, "sp.ribbon.js");
+                                }
+                                _spBodyOnLoadFunctionNames.push("__RegisterWebPartPageCUI"); var __wpmExportWarning = 'This Web Part Page has been personalized. As a result, one or more Web Part properties may contain confidential information. Make sure the properties contain information that is safe for others to read. After exporting this Web Part, view properties in the Web Part description file (.WebPart) by using a text editor such as Microsoft Notepad.'; var __wpmCloseProviderWarning = 'You are about to close this Web Part.  It is currently providing data to other Web Parts, and these connections will be deleted if this Web Part is closed.  To close this Web Part, click OK.  To keep this Web Part, click Cancel.'; var __wpmDeleteWarning = 'You are about to permanently delete this Web Part.  Are you sure you want to do this?  To delete this Web Part, click OK.  To keep this Web Part, click Cancel.';
+                                ExecuteOrDelayUntilScriptLoaded(
+                                    function () {
+                                        Srch.ScriptApplicationManager.get_current().states = { "webUILanguageName": "en-US", "webDefaultLanguageName": "en-US", "contextUrl": "https://mic.gov.vn", "contextTitle": "Cổng TTĐT - Bộ Thông tin và Truyền thông", "supportedLanguages": [{ "id": 1025, "label": "Arabic" }, { "id": 1093, "label": "Bengali" }, { "id": 1026, "label": "Bulgarian" }, { "id": 1027, "label": "Catalan" }, { "id": 2052, "label": "Chinese (Simplified)" }, { "id": 1028, "label": "Chinese (Traditional)" }, { "id": 1050, "label": "Croatian" }, { "id": 1029, "label": "Czech" }, { "id": 1030, "label": "Danish" }, { "id": 1043, "label": "Dutch" }, { "id": 1033, "label": "English" }, { "id": 1035, "label": "Finnish" }, { "id": 1036, "label": "French" }, { "id": 1031, "label": "German" }, { "id": 1032, "label": "Greek" }, { "id": 1095, "label": "Gujarati" }, { "id": 1037, "label": "Hebrew" }, { "id": 1081, "label": "Hindi" }, { "id": 1038, "label": "Hungarian" }, { "id": 1039, "label": "Icelandic" }, { "id": 1057, "label": "Indonesian" }, { "id": 1040, "label": "Italian" }, { "id": 1041, "label": "Japanese" }, { "id": 1099, "label": "Kannada" }, { "id": 1042, "label": "Korean" }, { "id": 1062, "label": "Latvian" }, { "id": 1063, "label": "Lithuanian" }, { "id": 1086, "label": "Malay" }, { "id": 1100, "label": "Malayalam" }, { "id": 1102, "label": "Marathi" }, { "id": 1044, "label": "Norwegian" }, { "id": 1045, "label": "Polish" }, { "id": 1046, "label": "Portuguese (Brazil)" }, { "id": 2070, "label": "Portuguese (Portugal)" }, { "id": 1094, "label": "Punjabi" }, { "id": 1048, "label": "Romanian" }, { "id": 1049, "label": "Russian" }, { "id": 3098, "label": "Serbian (Cyrillic)" }, { "id": 2074, "label": "Serbian (Latin)" }, { "id": 1051, "label": "Slovak" }, { "id": 1060, "label": "Slovenian" }, { "id": 3082, "label": "Spanish (Spain)" }, { "id": 2058, "label": "Spanish (Mexico)" }, { "id": 1053, "label": "Swedish" }, { "id": 1097, "label": "Tamil" }, { "id": 1098, "label": "Telugu" }, { "id": 1054, "label": "Thai" }, { "id": 1055, "label": "Turkish" }, { "id": 1058, "label": "Ukrainian" }, { "id": 1056, "label": "Urdu" }, { "id": 1066, "label": "Vietnamese" }], "navigationNodes": [{ "id": 0, "name": "This Site", "url": "~site//Content2/_layouts/15/osssearchresults.aspx?u={contexturl}", "promptString": "Search this site" }], "showAdminDetails": false, "defaultPagesListName": "Pages", "isSPFSKU": false, "userAdvancedLanguageSettingsUrl": "//Content2/_layouts/15/regionalsetng.aspx?type=user\u0026Source=https%3A%2F%2Fmic%2Egov%2Evn%2F\u0026ShowAdvLang=1", "defaultQueryProperties": { "culture": 1033, "uiLanguage": 1033, "summaryLength": 180, "desiredSnippetLength": 90, "enableStemming": true, "enablePhonetic": false, "enableNicknames": false, "trimDuplicates": true, "bypassResultTypes": false, "enableInterleaving": true, "enableQueryRules": true, "processBestBets": true, "enableOrderingHitHighlightedProperty": false, "hitHighlightedMultivaluePropertyLimit": -1, "processPersonalFavorites": true } };
+                                        Srch.U.trace(null, 'SerializeToClient', 'ScriptApplicationManager state initialized.');
+                                    }, 'Search.ClientControls.js'); var g_clientIdDeltaPlaceHolderMain = "DeltaPlaceHolderMain";
+                                var g_clientIdDeltaPlaceHolderPageTitleInTitleArea = "DeltaPlaceHolderPageTitleInTitleArea";
+                                var g_clientIdDeltaPlaceHolderUtilityContent = "DeltaPlaceHolderUtilityContent";
+                                g_QuickLaunchControlIds.push("zz1_TopNavigationMenu"); _spBodyOnLoadFunctionNames.push('QuickLaunchInitDroppable'); var g_zz1_TopNavigationMenu = null; function init_zz1_TopNavigationMenu() { if (g_zz1_TopNavigationMenu == null) g_zz1_TopNavigationMenu = $create(SP.UI.AspMenu, null, null, null, $get('zz1_TopNavigationMenu')); } if (g_spPreFetchKeys) { { g_spPreFetchKeys.push('SP.Core.js'); } } EnsureScriptFunc('SP.Core.js', 'SP.UI.AspMenu', init_zz1_TopNavigationMenu);
+
+                                ExecuteOrDelayUntilScriptLoaded(
+                                    function () {
+                                        if ($isNull($find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr'))) {
+                                            var sb = $create(Srch.SearchBox, { "delayLoadTemplateScripts": true, "initialPrompt": "Search this site", "messages": [], "navigationNodes": [{ "id": 0, "name": "This Site", "url": "~site//Content2/_layouts/15/osssearchresults.aspx?u={contexturl}", "promptString": "Search this site" }], "queryGroupNames": ["MasterPage"], "renderTemplateId": "~sitecollection/_catalogs/masterpage/Display Templates/Search/Control_SearchBox_Compact.js", "resultsPageAddress": "~site//Content2/_layouts/15/osssearchresults.aspx?u={contexturl}", "serverInitialRender": true, "showDataErrors": true, "showNavigation": true, "states": {}, "tryInplaceQuery": false }, null, null, $get("ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr"));
+                                            sb.activate('Search this site', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sbox', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sboxdiv', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_NavButton', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_AutoCompList', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_NavDropdownList', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_SearchLink', 'ms-srch-sbprogress', 'ms-srch-sb-prompt ms-helperText');
+                                        }
+                                    }, 'Search.ClientControls.js'); g_QuickLaunchControlIds.push("zz3_V4QuickLaunchMenu"); _spBodyOnLoadFunctionNames.push('QuickLaunchInitDroppable'); var g_zz3_V4QuickLaunchMenu = null; function init_zz3_V4QuickLaunchMenu() { if (g_zz3_V4QuickLaunchMenu == null) g_zz3_V4QuickLaunchMenu = $create(SP.UI.AspMenu, null, null, null, $get('zz3_V4QuickLaunchMenu')); } ExecuteOrDelayUntilScriptLoaded(init_zz3_V4QuickLaunchMenu, 'SP.Core.js');
+//]]>
+        </script>
+    </form>
+    <span id="DeltaPlaceHolderUtilityContent"></span>
+</body>
+</html>

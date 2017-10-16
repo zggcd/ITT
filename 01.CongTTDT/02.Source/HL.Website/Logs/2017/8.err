@@ -1,0 +1,829 @@
+Time : 19/08/2017 07:55:51
+IP : ::1
+URL : http://localhost:5590/Default.aspx
+Message : Cannot open database "demo2017.tinhtinh.com" requested by the login. The login failed.
+Login failed for user 'sa'.
+SQLText : SELECT TOP 1 * FROM [Sys_Site] WHERE ([Default]=1)
+SQLParameters : 
+Source : HLv1.0.MVC.Core
+TargetSite : System.Data.DataSet ExecuteDataSet(System.String, System.String, System.Object[])
+StackTrace :    at HL.Core.Data.SQLCmd.ExecuteDataSet(String ConnectionString, String SPName, Object[] Params) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\Data\SQLCmd.cs:line 24
+   at HL.Core.Data.SQLCmd.ExecuteDataTable(String ConnectionString, String SPName, Object[] Params) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\Data\SQLCmd.cs:line 31
+   at HL.Core.Models.ServiceBase`1.ExecuteDataTable(String SPName, Object[] Params) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\Models\ServiceBase.cs:line 103
+   at HL.Core.Models.DBQuery`1.ToList() in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\Models\DBQuery.cs:line 252
+   at HL.Core.Models.DBQuery`1.ToList_Cache() in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\Models\DBQuery.cs:line 305
+   at HL.Core.Models.DBQuery`1.ToSingle_Cache() in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\Models\DBQuery.cs:line 355
+   at HL.Lib.Models.SysSiteService.HL_Core_GetDefault() in E:\JOB\TTV\Framework\Hoang Anh\HL.Lib\Models\SysSiteModel.cs:line 84
+   at HL.Core.MVC.ViewPage.InitializeCulture() in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 80
+   at ASP.default_aspx.__BuildControlTree(default_aspx __ctrl) in e:\JOB\TTV\Framework\Hoang Anh\HL.Website\Default.aspx:line 1
+   at ASP.default_aspx.FrameworkInitialize() in c:\Users\AnhThem\AppData\Local\Temp\Temporary ASP.NET Files\vs\a7c64ac7\f556e79c\App_Web_default.aspx.cdcab7d2.m030z6fz.0.cs:line 0
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.default_aspx.ProcessRequest(HttpContext context) in c:\Users\AnhThem\AppData\Local\Temp\Temporary ASP.NET Files\vs\a7c64ac7\f556e79c\App_Web_default.aspx.cdcab7d2.m030z6fz.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 24/08/2017 12:28:38
+IP : ::1
+URL : http://localhost:5590/TTPortal/Default.aspx
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.XViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 24/08/2017 12:30:16
+IP : ::1
+URL : http://localhost:5590/TTPortal/Default.aspx
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.XViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 24/08/2017 12:31:02
+IP : ::1
+URL : http://localhost:5590/TTPortal/Default.aspx
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.XViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 24/08/2017 10:10:27
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 24/08/2017 10:11:41
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 24/08/2017 10:15:05
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : e:\JOB\ITT\Demo\HL.Website\Views\MGopY\Index.ascx(69): error CS0103: The name 'listItem' does not exist in the current context
+Source : System.Web
+TargetSite : System.CodeDom.Compiler.CompilerResults Compile()
+StackTrace :    at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.UI.TemplateControl.LoadControl(VirtualPath virtualPath)
+   at System.Web.UI.TemplateControl.LoadControl(String virtualPath)
+   at HL.Core.MVC.ViewPageBase.phamlen_4(String string_4)
+   at HL.Core.MVC.ViewPage.InitializeCulture()
+   at ASP.default_aspx.__BuildControlTree(default_aspx __ctrl) in e:\JOB\ITT\Demo\HL.Website\Default.aspx:line 1
+   at ASP.default_aspx.FrameworkInitialize() in c:\Users\AnhThem\AppData\Local\Temp\Temporary ASP.NET Files\vs\0ef62509\7e1ff292\App_Web_default.aspx.cdcab7d2.fjxcpyai.0.cs:line 0
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.default_aspx.ProcessRequest(HttpContext context) in c:\Users\AnhThem\AppData\Local\Temp\Temporary ASP.NET Files\vs\0ef62509\7e1ff292\App_Web_default.aspx.cdcab7d2.fjxcpyai.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 24/08/2017 10:15:31
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 24/08/2017 10:15:35
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 24/08/2017 10:18:15
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 24/08/2017 10:19:45
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 24/08/2017 10:21:11
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 25/08/2017 11:00:44
+IP : ::1
+URL : http://localhost:5590/Tools/File.asmx
+Message : Unable to handle request.
+Source : System.Web.Services
+TargetSite : System.Web.Services.Protocols.ServerProtocol Create(System.Type, System.Web.HttpContext, System.Web.HttpRequest, System.Web.HttpResponse, Boolean ByRef)
+StackTrace :    at System.Web.Services.Protocols.ServerProtocolFactory.Create(Type type, HttpContext context, HttpRequest request, HttpResponse response, Boolean& abortProcessing)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.CoreGetHandler(Type type, HttpContext context, HttpRequest request, HttpResponse response)
+
+
+Time : 25/08/2017 11:04:26
+IP : ::1
+URL : http://localhost:5590/Tools/File.asmx/GetFiles
+Message : Request format is unrecognized for URL unexpectedly ending in '/GetFiles'.
+Source : System.Web.Services
+TargetSite : System.Web.IHttpHandler CoreGetHandler(System.Type, System.Web.HttpContext, System.Web.HttpRequest, System.Web.HttpResponse)
+StackTrace :    at System.Web.Services.Protocols.WebServiceHandlerFactory.CoreGetHandler(Type type, HttpContext context, HttpRequest request, HttpResponse response)
+   at System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   at System.Web.Script.Services.ScriptHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String pathTranslated)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 25/08/2017 02:48:39
+IP : ::1
+URL : http://localhost:5590/TTPortal/Default.aspx
+Message : d:\_Project\MyProject\itt.tinhtinh.com\HL.Website\TTPortal\Views\ModGopY\Add.ascx(130): error CS1061: 'HL.Lib.Models.ModGopYEntity' does not contain a definition for 'File' and no extension method 'File' accepting a first argument of type 'HL.Lib.Models.ModGopYEntity' could be found (are you missing a using directive or an assembly reference?)
+Source : System.Web
+TargetSite : System.CodeDom.Compiler.CompilerResults Compile()
+StackTrace :    at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.UI.TemplateControl.LoadControl(VirtualPath virtualPath)
+   at System.Web.UI.TemplateControl.LoadControl(String virtualPath)
+   at HL.Core.MVC.ViewPageBase.phamlen_4(String string_4)
+   at HL.Core.MVC.CPViewPage.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.ttportal_default_aspx.ProcessRequest(HttpContext context) in c:\Users\AnhLH\AppData\Local\Temp\Temporary ASP.NET Files\vs\be78b421\60c23a37\App_Web_default.aspx.227e41d1.nljuyvsw.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 25/08/2017 03:41:11
+IP : ::1
+URL : http://localhost:5590/Default.aspx
+Message : Input string was not in a correct format.
+Source : mscorlib
+TargetSite : Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+StackTrace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at ASP.views_mduthao_detail_ascx.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in d:\_Project\MyProject\itt.tinhtinh.com\HL.Website\Views\MDuThao\Detail.ascx:line 22
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at ASP.views_shared_child_master.__RenderhlForm(HtmlTextWriter __w, Control parameterContainer) in d:\_Project\MyProject\itt.tinhtinh.com\HL.Website\Views\Shared\Child.Master:line 56
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Page.Render(HtmlTextWriter writer)
+   at HL.Core.MVC.ViewPageBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 11:14:48
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 11:18:45
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 11:21:58
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 11:32:11
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 11:34:12
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 11:37:01
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 11:38:53
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 11:40:18
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 11:42:43
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 11:43:52
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 11:44:39
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 11:46:09
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 11:51:30
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 11:52:28
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 04:03:53
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 04:06:24
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 05:41:30
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 06:02:23
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 06:51:09
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 06:55:01
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 06:56:31
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 06:57:10
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 06:58:53
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 27/08/2017 09:30:05
+IP : ::1
+URL : http://localhost:5590/Default.aspx?dt=3
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.ViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+

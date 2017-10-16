@@ -1,0 +1,254 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    font-family: Arial,Tahoma,sans-serif !important;
+    font-size:15px;
+}
+body{
+	font-family: Arial,Tahoma,sans-serif !important;
+    /*font-size: 15px !important;*/
+    overflow: auto !important;
+}
+u{
+	text-decoration:underline !important;
+}
+/*
+.main-content .main-left .box-category .list-category .content-category .first-news .img img {
+    max-height: 135px;
+    min-height: 120px;
+}*/
+.main-content .main-left .box-category .list-category .content-category .first-news .img img {
+    max-width: 100%;
+}
+.ol-slide-news .item .img img{
+	max-height:90px;
+	min-height:85px;
+}
+.top-container .top-content-right .news-content .news-hot .desc{
+	height:auto !important;
+}
+@media (min-width: 1024px){
+	.copyright{
+	margin-left:99px;
+}
+
+}
+@media (max-width: 991px) {
+
+.main_container .menu_container {
+    min-height: 0 !important;
+}
+}
+#temp_none{
+	display:none;
+}
+.main_container .wrapper_container .box_content_input1 .button .btn_action:hover {
+    background: #0f884a none repeat scroll 0 0 !important;
+}
+
+th > a {
+	color:#fff;
+}
+.header .header_right .icon .dropdown-menu li .text {
+    width: 185px !important;
+}
+.header .header_right {
+    width: 350px;
+}
+.selectBox, .textBox {
+    background: white none repeat scroll 0 0;
+    border: 1px solid #e5e5e5;
+    float: left;
+    height: 28px;
+    padding: 5px 15px 5px 5px;
+    width: 100%;
+}
+.main_container .wrapper_container .box_content_input .frm_input.no4 .input {
+    width: 50%;
+}
+.main_container .wrapper_container .box_content_input1 .frm_input.no4 .input {
+    width: 50%;
+}
+.main_container .wrapper_container .box_content_input1 .frm_input.no5 .input {
+    width: 25%;
+}
+.main_container .wrapper_container .box_content_input .frm_input.no5 .input {
+    width: 25%;
+}
+#contentRow {
+    padding-top: 0 !important;
+}
+.g-b-search, g-b-create, g-b-delete {
+    text-decoration: none;
+}
+.main_container .wrapper_container .box_content_input1 .button .btn_action.xoa{
+	background-color:#ababab;
+}
+.main_container .wrapper_container .box_content_input1 .button .btn_action{
+	border:none;
+	color:white !important;
+}
+.navigation_page{
+	color:#696c6c;
+}
+.main_container .wrapper_container .box_content_input1 .frm_input .check input
+{
+padding:0px !important;
+margin:0px !important;
+	
+}
+#pre-video
+{
+	position: absolute;
+	padding: 28% 45%;
+	zoom: 1;
+	bottom: 0px;
+	left: 0px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.9);
+	opacity: 0;
+}
+.spvideo
+{
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 50px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}
+.main-content .main-left .news-video .tab-content .img-top .overlay-time {
+    position: absolute;
+    padding: 5px 15px;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.9);
+    zoom: 1;
+    background-color: transparent\9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6000000, endColorstr=#e6000000)";
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6000000, endColorstr=#e6000000);
+    bottom: 5px;
+    left: 0px;
+    color: white;
+}
+.ms-webpartzone-cell {
+    margin: auto !important;
+}
+.fa{
+	font-family: FontAwesome !important;
+}
+.menu-container ul.menu-left li a{
+	color:white !important;
+}
+.menu-container ul.menu-right > li > a{
+	color:white !important;
+}
+.main-content .main-left .news-video .tab-content .img-top {
+    margin-bottom: 5px;
+    max-height: 240px;
+    overflow: hidden;
+    position: relative;
+}
+#play-video
+{
+	bottom: 45%;
+	left: 45%;
+	opacity: 0.2;
+	border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.g-b-search {
+color:white!important;
+}
+.user-link a {
+    text-decoration: none;
+    color: #004fa8 !important;
+}
+.user-link {
+width:100%;
+}
+.comment-in.bg-color
+{
+	padding:0;
+}
+.comment-in1.bg-color
+{
+	padding:0;
+}
+button.rss{
+	font-family:Arial, Helvetica, sans-serif !important;
+	min-width:20px !important;
+	border:none !important;
+}
+.top-container .sidebar-top .menu-top li{
+	z-index:10;
+}
+.list-share{
+	z-index:10;	
+}
+.list-share li:last-child{
+	display:none;
+}
+#share_article ul li{
+	float:left;
+	margin-right:5px;
+}
+#share_article_bottom ul li {
+    float: left;
+    margin-right: 5px;
+}
+.sidebar-top .ms-webpart-titleText{
+	max-width: 50px;
+    word-wrap: break-word;
+}
+.news-list2 .ms-webpart-titleText{
+	max-width: 50px;
+    word-wrap: break-word;
+}
+.btn_filter
+{
+	cursor:pointer;
+}
+#s4-workspace{
+	overflow:hidden !important;
+}
+.keyword{
+	background:yellow;
+}
+
+ .main_container .wrapper_container .table_list .dt_table_w tr td
+{
+	/* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+}
+#s4-bodyContainer{
+	padding-bottom:0px !important;
+}
+.noti-timeview {
+    background: #acd2f6 none repeat scroll 0 0;
+    float: left;
+    margin: 10px 0;
+    padding: 15px;
+    text-align: justify;
+}
+.noti-timeview .c-01 {
+    color: #bf0000;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.news_detail a{
+	color:#0369ce;
+}
+p{
+	padding-bottom:10px;
+}
+.box-news-xx .h2-title-xx{
+	line-height:25px;
+}

@@ -1,0 +1,87 @@
+﻿body {
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+.clear10 {
+    clear: both;
+    height: 10px;
+    display: block;
+}
+
+.clear30 {
+    clear: both;
+    height: 30px;
+    display: block;
+}
+
+.clear50 {
+    clear: both;
+    height: 50px;
+    display: block;
+}
+
+.required {
+    color: red;
+}
+
+.inValidInput {
+    border: 1px solid red !important;
+}
+
+.thumb-block {
+    margin: 0;
+}
+
+    .thumb-block .del-img {
+        display: inline-block;
+        text-align: center;
+        font-size: 18px;
+        color: red;
+        margin-right: 10px;
+    }
+
+    .thumb-block .del-img:hover {
+        cursor: pointer;
+    }
+
+/*#btnSelectFiles {
+    display: inline-block;
+    height: 26px;
+    width: 100px;
+    border: 1px solid gray;
+}*/
+
+#btnSelectFiles:hover {
+    cursor: pointer;
+}
+
+.block-gopy {
+    border: 1px solid #a7a7a7;
+    padding: 10px;
+}
+
+.dong-gop .title {
+    border: 1px solid #a7a7a7;
+    padding: 5px;
+    text-align: center;
+    display: block;
+    background-color: orange;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}

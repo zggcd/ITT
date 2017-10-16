@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="System.Web.UI.MasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head id="Head" runat="server">
+    <title></title>
+    <meta name="Author" content="lehoanganhhd@gmail.com" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <form id="hlForm" runat="server">
+        <div id="hl_container">
+            <div style="">
+                <div style="float: left; width: 50%; display: block;">
+                    <HL:StaticControl runat="server" Code="CAdv" HLID="cLogo"></HL:StaticControl>
+                </div>
+                <div style="float: left; width: 50%; display: block;">
+                    <HL:StaticControl runat="server" Code="CStatic" HLID="cSearch"></HL:StaticControl>
+                </div>
+            </div>
+            <div style="">
+                <div style="float: left; width: 50%; display: block;">
+                    <HL:StaticControl runat="server" Code="CMenu" HLID="cMenu_TopLeft"></HL:StaticControl>
+                </div>
+                <div style="float: left; width: 50%; display: block;">
+                    <HL:StaticControl runat="server" Code="CMenu" HLID="cMenu_TopRight"></HL:StaticControl>
+                </div>
+            </div>
+            <HL:StaticControl runat="server" Code="CStatic" HLID="cDate"></HL:StaticControl>
+            <HL:StaticControl Code="CMenu" HLID="hlMenuTop" runat="server"></HL:StaticControl>
+            <div style="">
+                <div style="float: left; width: 50%; display: block;">
+                    <HL:DynamicControl Code="Danh sách điều khiển bên trái" ID="DLeft" runat="server"></HL:DynamicControl>
+                </div>
+                <div style="float: left; width: 50%; display: block;">
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

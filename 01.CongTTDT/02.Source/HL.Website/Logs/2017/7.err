@@ -1,0 +1,142 @@
+Time : 05/07/2017 04:23:55
+IP : ::1
+URL : http://localhost:5590/Default.aspx
+Message : CurrentPage = null
+Source : HLv1.0.MVC.Core
+TargetSite : Void InitializeCulture()
+StackTrace :    at HL.Core.MVC.ViewPage.InitializeCulture() in D:\_Project\MyProject\demo2017.tinhtinh.com\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 115
+   at ASP.default_aspx.__BuildControlTree(default_aspx __ctrl) in d:\_Project\MyProject\demo2017.tinhtinh.com\HL.Website\Default.aspx:line 1
+   at ASP.default_aspx.FrameworkInitialize() in c:\Users\AnhLH\AppData\Local\Temp\Temporary ASP.NET Files\vs\b8e1c7fc\19db93b3\App_Web_default.aspx.cdcab7d2.za_wjfkj.0.cs:line 0
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.default_aspx.ProcessRequest(HttpContext context) in c:\Users\AnhLH\AppData\Local\Temp\Temporary ASP.NET Files\vs\b8e1c7fc\19db93b3\App_Web_default.aspx.cdcab7d2.za_wjfkj.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 06/07/2017 11:06:15
+IP : ::1
+URL : http://localhost:5590/vn/Việt Nam/search.aspx?keyword=
+Message : The file '/vn/Việt Nam/search.aspx' does not exist.
+Source : System.Web
+TargetSite : Void CheckVirtualFileExists(System.Web.VirtualPath)
+StackTrace :    at System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 06/07/2017 11:07:38
+IP : ::1
+URL : http://localhost:5590/vn/Việt Nam/search.aspx?keyword=
+Message : The file '/vn/Việt Nam/search.aspx' does not exist.
+Source : System.Web
+TargetSite : Void CheckVirtualFileExists(System.Web.VirtualPath)
+StackTrace :    at System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   at System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 06/07/2017 11:25:36
+IP : ::1
+URL : http://localhost:5590/Default.aspx
+Message : CurrentTemplate = null
+Source : HLv1.0.MVC.Core
+TargetSite : Void InitializeCulture()
+StackTrace :    at HL.Core.MVC.ViewPage.InitializeCulture() in D:\_Project\MyProject\demo2017.tinhtinh.com\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 132
+   at ASP.default_aspx.__BuildControlTree(default_aspx __ctrl) in d:\_Project\MyProject\demo2017.tinhtinh.com\HL.Website\Default.aspx:line 1
+   at ASP.default_aspx.FrameworkInitialize() in c:\Users\AnhLH\AppData\Local\Temp\Temporary ASP.NET Files\vs\b8e1c7fc\19db93b3\App_Web_default.aspx.cdcab7d2.2oyx0gpp.0.cs:line 0
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.default_aspx.ProcessRequest(HttpContext context) in c:\Users\AnhLH\AppData\Local\Temp\Temporary ASP.NET Files\vs\b8e1c7fc\19db93b3\App_Web_default.aspx.cdcab7d2.2oyx0gpp.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 06/07/2017 11:27:38
+IP : ::1
+URL : http://localhost:5590/Default.aspx
+Message : The control 'CMenu:hlMenuTop' not set Layout
+Source : HLv1.0.MVC.Core
+TargetSite : Void phamlen_13(System.Web.UI.Control, System.String, System.String, System.String, System.String, System.String)
+StackTrace :    at HL.Core.MVC.ViewPage.phamlen_13(Control control_0, String string_7, String string_8, String string_9, String string_10, String string_11) in D:\_Project\MyProject\demo2017.tinhtinh.com\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 258
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in D:\_Project\MyProject\demo2017.tinhtinh.com\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 169
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in D:\_Project\MyProject\demo2017.tinhtinh.com\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 178
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in D:\_Project\MyProject\demo2017.tinhtinh.com\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 178
+   at HL.Core.MVC.ViewPage.OnLoad(EventArgs e) in D:\_Project\MyProject\demo2017.tinhtinh.com\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 389
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 06/07/2017 03:16:55
+IP : ::1
+URL : http://localhost:5590/Default.aspx?keyword=
+Message : d:\_Project\MyProject\demo2017.tinhtinh.com\HL.Website\Views\MSearch\Index.ascx(15): error CS0103: The name 'c' does not exist in the current context
+Source : System.Web
+TargetSite : System.CodeDom.Compiler.CompilerResults Compile()
+StackTrace :    at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.UI.TemplateControl.LoadControl(VirtualPath virtualPath)
+   at System.Web.UI.TemplateControl.LoadControl(String virtualPath)
+   at HL.Core.MVC.ViewPageBase.phamlen_4(String string_4) in D:\_Project\MyProject\demo2017.tinhtinh.com\HLv1.0.MVC.Core\MVC\ViewPageBase.cs:line 196
+   at HL.Core.MVC.ViewPage.InitializeCulture() in D:\_Project\MyProject\demo2017.tinhtinh.com\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 129
+   at ASP.default_aspx.__BuildControlTree(default_aspx __ctrl) in d:\_Project\MyProject\demo2017.tinhtinh.com\HL.Website\Default.aspx:line 1
+   at ASP.default_aspx.FrameworkInitialize() in c:\Users\AnhLH\AppData\Local\Temp\Temporary ASP.NET Files\vs\b8e1c7fc\19db93b3\App_Web_default.aspx.cdcab7d2.wow1vupx.0.cs:line 0
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.default_aspx.ProcessRequest(HttpContext context) in c:\Users\AnhLH\AppData\Local\Temp\Temporary ASP.NET Files\vs\b8e1c7fc\19db93b3\App_Web_default.aspx.cdcab7d2.wow1vupx.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 07/07/2017 11:27:07
+IP : ::1
+URL : http://localhost:5590/default.aspx
+Message : Content controls have to be top-level controls in a content page or a nested master page that references a master page.
+Source : System.Web
+TargetSite : System.Web.UI.MasterPage CreateMaster(System.Web.UI.TemplateControl, System.Web.HttpContext, System.Web.VirtualPath, System.Collections.IDictionary)
+StackTrace :    at System.Web.UI.MasterPage.CreateMaster(TemplateControl owner, HttpContext context, VirtualPath masterPageFile, IDictionary contentTemplateCollection)
+   at System.Web.UI.Page.get_Master()
+   at System.Web.UI.Page.ApplyMasterPage()
+   at System.Web.UI.Page.PerformPreInit()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 10/07/2017 11:31:15
+IP : ::1
+URL : http://localhost:5590/Default.aspx
+Message : Object reference not set to an instance of an object.
+Source : HLv1.0.MVC.Core
+TargetSite : Void InitializeCulture()
+StackTrace :    at HL.Core.MVC.ViewPage.InitializeCulture() in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 71
+   at ASP.default_aspx.__BuildControlTree(default_aspx __ctrl) in e:\JOB\TTV\Framework\Hoang Anh\HL.Website\Default.aspx:line 1
+   at ASP.default_aspx.FrameworkInitialize() in c:\Users\lehoa\AppData\Local\Temp\Temporary ASP.NET Files\vs\a7c64ac7\f556e79c\App_Web_default.aspx.cdcab7d2.vkibimnn.0.cs:line 0
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.default_aspx.ProcessRequest(HttpContext context) in c:\Users\lehoa\AppData\Local\Temp\Temporary ASP.NET Files\vs\a7c64ac7\f556e79c\App_Web_default.aspx.cdcab7d2.vkibimnn.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+

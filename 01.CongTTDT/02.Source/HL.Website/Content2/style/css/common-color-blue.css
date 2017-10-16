@@ -1,0 +1,167 @@
+.main_container .wrapper_container .box_content_input1 .button .btn_action:hover {
+    background: #0f884a none repeat scroll 0 0 !important;
+}
+
+.main_container .wrapper_container .box_content_input1 .button .btn_action.xoa {
+    background-color: #ababab;
+}
+
+.navigation_page {
+    color: #696c6c;
+}
+
+a {
+    color: black;
+}
+
+    a.so_active, a.so_active:hover {
+        color: #015ab4;
+    }
+
+    a:focus, a:hover {
+        text-decoration: none !important;
+        color: #0369ce;
+    }
+
+.h2-title-xx a {
+    color: #0369ce !important;
+}
+
+
+#pre-video {
+    position: absolute;
+    padding: 28% 45%;
+    zoom: 1;
+    bottom: 0px;
+    left: 0px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+}
+
+.spvideo {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 50px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.main-content .main-left .news-video .tab-content .img-top .overlay-time {
+    position: absolute;
+    padding: 5px 15px;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.9);
+    zoom: 1;
+    background-color: transparent\9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6000000, endColorstr=#e6000000)";
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6000000, endColorstr=#e6000000);
+    bottom: 5px;
+    left: 0px;
+    color: white;
+}
+
+.title-list-news .title-t1 a {
+    color: #015ab4 !important;
+    font-size: 19px;
+}
+
+.g-sb-tt {
+    color: #085eb2;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    background: #f6f5f5;
+}
+
+.vanban_right .contents .top .btn_filter {
+    padding: 2px 20px;
+    margin-bottom: 5px;
+    background: #0369ce !important;
+    color: white;
+    float: left;
+    margin-right: 10px;
+}
+
+.vanban_right .contents .top .number span {
+    color: #085eb2 !important;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.navigation ul li.active a {
+    border: 1px solid #337ab7 !important;
+}
+
+.navi-page {
+    border-top: 3px solid #0369ce !important;
+}
+
+.tin-khac p {
+    color: #0369ce !important;
+}
+
+.g-b-search {
+    background-color: #0369ce !important;
+}
+
+.box_content_input .button .btn_action.search {
+    background: #0369ce !important;
+}
+
+.g-b-search:hover {
+    color: #100404 !important;
+}
+/*thong tao*/
+.navigation ul li.active a {
+    color: #337ab7 !important;
+}
+
+.icon {
+    color: #0369ce !important;
+}
+
+.icon_small {
+    color: #0369ce !important;
+}
+
+.search-word .search {
+    background: #0369ce !important;
+}
+
+.top-container .vanban_left ul li ul li a:hover {
+    background: #0469c1 !important;
+    color: #FFF !important;
+}
+
+.top-container .vanban_left ul li ul li a {
+    background: #ebe8e8 !important;
+    font-weight: normal;
+    color: black !important;
+    padding-left: 20px;
+}
+
+.top-container .vanban_left ul li a {
+    background: #0469c1 !important;
+    display: block;
+    padding: 8px 10px;
+    font-weight: bold;
+    color: #FFF !important;
+    width: 100%;
+    float: left;
+}
+
+video {
+    object-fit: inherit;
+}
+
+/*het thong tao*/
+.vanban_left .g-sb-tt {
+    color: #fff !important;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    background: #439bf1 !important;
+}

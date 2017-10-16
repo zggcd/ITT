@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C2ED2502-B00D-4CA4-B7F1-D31C1BD33FD4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HL.Lib</RootNamespace>
+    <AssemblyName>HLv1.0.MVC.Lib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HLv1.0.MVC.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\HLv1.0.MVC.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\DLL\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\CAdvController.cs" />
+    <Compile Include="Controllers\CCoQuanController.cs" />
+    <Compile Include="Controllers\CDuThaoController.cs" />
+    <Compile Include="Controllers\CGopYController.cs" />
+    <Compile Include="Controllers\CMenuController.cs" />
+    <Compile Include="Controllers\CFeedbackController.cs" />
+    <Compile Include="Controllers\CUserController.cs" />
+    <Compile Include="Controllers\CVanBanController.cs" />
+    <Compile Include="Controllers\MContentTempController.cs" />
+    <Compile Include="Controllers\MCoQuanController.cs" />
+    <Compile Include="Controllers\MDuThaoController.cs" />
+    <Compile Include="Controllers\MGopYController.cs" />
+    <Compile Include="Controllers\MSearchController.cs" />
+    <Compile Include="Controllers\MSiteMapTempController.cs" />
+    <Compile Include="Controllers\MSiteMapController.cs" />
+    <Compile Include="Controllers\CTextController.cs" />
+    <Compile Include="Controllers\MFeedbackController.cs" />
+    <Compile Include="Controllers\MContentController.cs" />
+    <Compile Include="Controllers\MTagController.cs" />
+    <Compile Include="Controllers\MUserController.cs" />
+    <Compile Include="Controllers\MVanBanController.cs" />
+    <Compile Include="CPControllers\AccessDeniedController.cs" />
+    <Compile Include="CPControllers\AjaxController.cs" />
+    <Compile Include="CPControllers\FormTextController.cs" />
+    <Compile Include="CPControllers\FormNewsController.cs" />
+    <Compile Include="CPControllers\ModCoQuanController.cs" />
+    <Compile Include="CPControllers\ModDuThaoController.cs" />
+    <Compile Include="CPControllers\ModFeedbackController.cs" />
+    <Compile Include="CPControllers\ModAdvController.cs" />
+    <Compile Include="CPControllers\ModFileController.cs" />
+    <Compile Include="CPControllers\ModGopYController.cs" />
+    <Compile Include="CPControllers\ModNewsController.cs" />
+    <Compile Include="CPControllers\ModTagController.cs" />
+    <Compile Include="CPControllers\ModUserController.cs" />
+    <Compile Include="CPControllers\ModVanBanController.cs" />
+    <Compile Include="CPControllers\SysModuleController.cs" />
+    <Compile Include="CPControllers\SysSiteController.cs" />
+    <Compile Include="CPControllers\SysTemplateController.cs" />
+    <Compile Include="CPControllers\SysPageController.cs" />
+    <Compile Include="CPControllers\SysUserLogController.cs" />
+    <Compile Include="CPControllers\SysResourceController.cs" />
+    <Compile Include="CPControllers\SysUserController.cs" />
+    <Compile Include="CPControllers\SysRoleController.cs" />
+    <Compile Include="CPControllers\SysMenuController.cs" />
+    <Compile Include="CPControllers\UserChangeInfoController.cs" />
+    <Compile Include="CPControllers\UserChangePassController.cs" />
+    <Compile Include="CPControllers\LoginController.cs" />
+    <Compile Include="CPControllers\HomeController.cs" />
+    <Compile Include="Design\EditPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Design\EditTemplate.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global\Application.cs" />
+    <Compile Include="Global\MyClass.cs" />
+    <Compile Include="Global\ObjectCookies.cs" />
+    <Compile Include="Global\CPLogin.cs" />
+    <Compile Include="Global\CPResource.cs" />
+    <Compile Include="Global\Data.cs" />
+    <Compile Include="Global\Directory.cs" />
+    <Compile Include="Global\Error.cs" />
+    <Compile Include="Global\File.cs" />
+    <Compile Include="Global\Image.cs" />
+    <Compile Include="Global\IniResourceService.cs" />
+    <Compile Include="Global\IniSqlResourceService.cs" />
+    <Compile Include="Global\JavaScript.cs" />
+    <Compile Include="Global\Mail.cs" />
+    <Compile Include="Global\Message.cs" />
+    <Compile Include="Global\Pager.cs" />
+    <Compile Include="Global\Security.cs" />
+    <Compile Include="Global\Sitemap.cs" />
+    <Compile Include="Global\Template.cs" />
+    <Compile Include="Global\FileUpload.cs" />
+    <Compile Include="Global\Utils.cs" />
+    <Compile Include="Global\WebResource.cs" />
+    <Compile Include="Models\CPAccessModel.cs" />
+    <Compile Include="Models\CPModuleModel.cs" />
+    <Compile Include="Models\CPRoleModel.cs" />
+    <Compile Include="Models\CPUserModel.cs" />
+    <Compile Include="Models\CPUserLogModel.cs" />
+    <Compile Include="Models\CPUserRoleModel.cs" />
+    <Compile Include="Global\Permissions.cs" />
+    <Compile Include="Models\ModAdvModel.cs" />
+    <Compile Include="Models\ModCoQuanModel.cs" />
+    <Compile Include="Models\ModDuThaoModel.cs" />
+    <Compile Include="Models\ModFeedbackModel.cs" />
+    <Compile Include="Models\ModGopYModel.cs" />
+    <Compile Include="Models\ModNewsModel.cs" />
+    <Compile Include="Models\ModNewsTagModel.cs" />
+    <Compile Include="Models\ModOnlineModel.cs" />
+    <Compile Include="Models\ModTagModel.cs" />
+    <Compile Include="Models\ModUserModel.cs" />
+    <Compile Include="Models\ModVanBanModel.cs" />
+    <Compile Include="Models\SysLangModel.cs" />
+    <Compile Include="Models\SysModuleModel.cs" />
+    <Compile Include="Models\SysPageModel.cs" />
+    <Compile Include="Models\SysSiteModel.cs" />
+    <Compile Include="Models\SysTemplateModel.cs" />
+    <Compile Include="Models\WebMenuModel.cs" />
+    <Compile Include="Models\WebResourceModel.cs" />
+    <Compile Include="Models\WebSettingModel.cs" />
+    <Compile Include="MVC\Controller.cs" />
+    <Compile Include="MVC\CPViewTemplate.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MVC\CPController.cs" />
+    <Compile Include="MVC\CPViewControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MVC\CPViewPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MVC\ViewControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MVC\ViewPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\CNewsController.cs" />
+    <Compile Include="Controllers\CStaticController.cs" />
+    <Compile Include="Controllers\MNewsController.cs" />
+    <Compile Include="Global\Cart.cs" />
+    <Compile Include="Global\Cookies.cs" />
+    <Compile Include="Global\ListItem\Item.cs" />
+    <Compile Include="Global\ListItem\List.cs" />
+    <Compile Include="Global\Session.cs" />
+    <Compile Include="Global\Setting.cs" />
+    <Compile Include="Web\Application.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

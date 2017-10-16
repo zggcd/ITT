@@ -1,0 +1,295 @@
+Time : 21/06/2017 11:20:30
+IP : ::1
+URL : http://localhost:5590/Default.aspx
+Message : CurrentTemplate = null
+Source : HLv1.0.MVC.Core
+TargetSite : Void InitializeCulture()
+StackTrace :    at HL.Core.MVC.ViewPage.InitializeCulture() in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 133
+   at ASP.default_aspx.__BuildControlTree(default_aspx __ctrl) in e:\JOB\TTV\Framework\Hoang Anh\HL.Website\Default.aspx:line 1
+   at ASP.default_aspx.FrameworkInitialize() in c:\Users\lehoa\AppData\Local\Temp\Temporary ASP.NET Files\vs\a7c64ac7\f556e79c\App_Web_default.aspx.cdcab7d2.wy9dt3sq.0.cs:line 0
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.default_aspx.ProcessRequest(HttpContext context) in c:\Users\lehoa\AppData\Local\Temp\Temporary ASP.NET Files\vs\a7c64ac7\f556e79c\App_Web_default.aspx.cdcab7d2.wy9dt3sq.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 23/06/2017 11:53:46
+IP : ::1
+URL : http://localhost:5590/TTVPortal/Tools/UpdateSitemap.aspx?Type=Create
+Sitemap Err : Object reference not set to an instance of an object.
+
+
+Time : 23/06/2017 11:53:55
+IP : ::1
+URL : http://localhost:5590/TTVPortal/Tools/UpdateSitemap.aspx?Type=Update
+Sitemap Err : Object reference not set to an instance of an object.
+
+
+Time : 24/06/2017 12:03:28
+IP : ::1
+URL : http://localhost:5590/TTVPortal/Tools/UpdateSitemap.aspx?Type=Create
+Sitemap Err : Object reference not set to an instance of an object.
+
+
+Time : 24/06/2017 12:03:44
+IP : ::1
+URL : http://localhost:5590/TTVPortal/Tools/UpdateSitemap.aspx?Type=Create
+Sitemap Err : Object reference not set to an instance of an object.
+
+
+Time : 24/06/2017 12:10:18
+IP : ::1
+URL : http://localhost:5590/TTVPortal/Tools/UpdateSitemap.aspx?Type=Create
+Sitemap Err : Object reference not set to an instance of an object.
+
+
+Time : 24/06/2017 12:12:04
+IP : ::1
+URL : http://localhost:5590/TTVPortal/Tools/UpdateSitemap.aspx?Type=Create
+Sitemap Err : Object reference not set to an instance of an object.
+
+
+Time : 24/06/2017 12:12:57
+IP : ::1
+URL : http://localhost:5590/TTVPortal/Tools/UpdateSitemap.aspx?Type=Create
+Sitemap Err : Object reference not set to an instance of an object.
+
+
+Time : 24/06/2017 12:14:04
+IP : ::1
+URL : http://localhost:5590/TTVPortal/Tools/UpdateSitemap.aspx?Type=Create
+Sitemap Err : Object reference not set to an instance of an object.
+
+
+Time : 25/06/2017 10:27:23
+IP : ::1
+URL : http://localhost:5590/TTPortal/Default.aspx?rnd=170937
+Message : Type HL.Lib.Controllers.MContentTempController not found
+Source : HLv1.0.MVC.Core
+TargetSite : Void .ctor(System.String, System.String)
+StackTrace :    at HL.Core.Global.Class..ctor(String assembly, String type_name) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\Global\Class.cs:line 52
+   at HL.Lib.CPControllers.AjaxController.ActionPageGetControl(PageGetControlModel model) in E:\JOB\TTV\Framework\Hoang Anh\HL.Lib\CPControllers\AjaxController.cs:line 57
+
+
+Time : 25/06/2017 10:34:26
+IP : ::1
+URL : http://localhost:5590/Default.aspx
+Message : The file '~/Views/MContentTemp/Index.ascx' not found
+Source : HLv1.0.MVC.Core
+TargetSite : Void phamlen_4(System.String)
+StackTrace :    at HL.Core.MVC.ViewPageBase.phamlen_4(String string_4) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPageBase.cs:line 194
+   at HL.Core.MVC.ViewPage.InitializeCulture() in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 130
+   at ASP.default_aspx.__BuildControlTree(default_aspx __ctrl) in e:\JOB\TTV\Framework\Hoang Anh\HL.Website\Default.aspx:line 1
+   at ASP.default_aspx.FrameworkInitialize() in c:\Users\lehoa\AppData\Local\Temp\Temporary ASP.NET Files\vs\a7c64ac7\f556e79c\App_Web_default.aspx.cdcab7d2.jkodxibd.0.cs:line 0
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.default_aspx.ProcessRequest(HttpContext context) in c:\Users\lehoa\AppData\Local\Temp\Temporary ASP.NET Files\vs\a7c64ac7\f556e79c\App_Web_default.aspx.cdcab7d2.jkodxibd.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 25/06/2017 10:59:44
+IP : ::1
+URL : http://localhost:5590/default.aspx
+Message : The control 'CMenuTemp:hlMenuTop' not set Layout
+Source : HLv1.0.MVC.Core
+TargetSite : Void phamlen_13(System.Web.UI.Control, System.String, System.String, System.String, System.String, System.String)
+StackTrace :    at HL.Core.MVC.ViewPage.phamlen_13(Control control_0, String string_7, String string_8, String string_9, String string_10, String string_11) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 259
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 170
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.OnLoad(EventArgs e) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 389
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 25/06/2017 11:01:32
+IP : ::1
+URL : http://localhost:5590/TTPortal/Design/EditTemplate.aspx?id=3
+Message : Module/Control : 'CMenuTemp'' not found.
+Source : HLv1.0.MVC.Core
+TargetSite : Void Page_Load(System.Object, System.EventArgs)
+StackTrace :    at HL.Core.Design.ViewControlDesign.Page_Load(Object sender, EventArgs e) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\Design\ViewControlDesign.cs:line 317
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 25/06/2017 11:02:40
+IP : ::1
+URL : http://localhost:5590/Default.aspx
+Message : The control 'CMenu:hlMenuTop' not set Layout
+Source : HLv1.0.MVC.Core
+TargetSite : Void phamlen_13(System.Web.UI.Control, System.String, System.String, System.String, System.String, System.String)
+StackTrace :    at HL.Core.MVC.ViewPage.phamlen_13(Control control_0, String string_7, String string_8, String string_9, String string_10, String string_11) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 259
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 170
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.OnLoad(EventArgs e) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 389
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 25/06/2017 11:22:38
+IP : ::1
+URL : http://localhost:5590/Default.aspx
+Message : CurrentTemplate = null
+Source : HLv1.0.MVC.Core
+TargetSite : Void InitializeCulture()
+StackTrace :    at HL.Core.MVC.ViewPage.InitializeCulture() in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 133
+   at ASP.default_aspx.__BuildControlTree(default_aspx __ctrl) in e:\JOB\TTV\Framework\Hoang Anh\HL.Website\Default.aspx:line 1
+   at ASP.default_aspx.FrameworkInitialize() in c:\Users\lehoa\AppData\Local\Temp\Temporary ASP.NET Files\vs\a7c64ac7\f556e79c\App_Web_default.aspx.cdcab7d2.eajwh3jm.0.cs:line 0
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.default_aspx.ProcessRequest(HttpContext context) in c:\Users\lehoa\AppData\Local\Temp\Temporary ASP.NET Files\vs\a7c64ac7\f556e79c\App_Web_default.aspx.cdcab7d2.eajwh3jm.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 25/06/2017 03:45:29
+IP : ::1
+URL : http://localhost:5590/default.aspx
+Message : The control 'CMenu:hlMenuTop' not set Layout
+Source : HLv1.0.MVC.Core
+TargetSite : Void phamlen_13(System.Web.UI.Control, System.String, System.String, System.String, System.String, System.String)
+StackTrace :    at HL.Core.MVC.ViewPage.phamlen_13(Control control_0, String string_7, String string_8, String string_9, String string_10, String string_11) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 259
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 170
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.OnLoad(EventArgs e) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 389
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 25/06/2017 03:53:18
+IP : ::1
+URL : http://localhost:5590/default.aspx
+Message : The control 'CMenu:hlMenuTop' not set Layout
+Source : HLv1.0.MVC.Core
+TargetSite : Void phamlen_13(System.Web.UI.Control, System.String, System.String, System.String, System.String, System.String)
+StackTrace :    at HL.Core.MVC.ViewPage.phamlen_13(Control control_0, String string_7, String string_8, String string_9, String string_10, String string_11) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 259
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 170
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.OnLoad(EventArgs e) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 389
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 25/06/2017 03:53:28
+IP : ::1
+URL : http://localhost:5590/default.aspx
+Message : The control 'CMenu:hlMenuTop' not set Layout
+Source : HLv1.0.MVC.Core
+TargetSite : Void phamlen_13(System.Web.UI.Control, System.String, System.String, System.String, System.String, System.String)
+StackTrace :    at HL.Core.MVC.ViewPage.phamlen_13(Control control_0, String string_7, String string_8, String string_9, String string_10, String string_11) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 259
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 170
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.OnLoad(EventArgs e) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 389
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 25/06/2017 03:54:27
+IP : ::1
+URL : http://localhost:5590/default.aspx
+Message : The control 'CMenu:hlMenuTop' not set Layout
+Source : HLv1.0.MVC.Core
+TargetSite : Void phamlen_13(System.Web.UI.Control, System.String, System.String, System.String, System.String, System.String)
+StackTrace :    at HL.Core.MVC.ViewPage.phamlen_13(Control control_0, String string_7, String string_8, String string_9, String string_10, String string_11) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 259
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 170
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.OnLoad(EventArgs e) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 389
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 25/06/2017 03:54:35
+IP : ::1
+URL : http://localhost:5590/default.aspx
+Message : The control 'CMenu:hlMenuTop' not set Layout
+Source : HLv1.0.MVC.Core
+TargetSite : Void phamlen_13(System.Web.UI.Control, System.String, System.String, System.String, System.String, System.String)
+StackTrace :    at HL.Core.MVC.ViewPage.phamlen_13(Control control_0, String string_7, String string_8, String string_9, String string_10, String string_11) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 259
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 170
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.OnLoad(EventArgs e) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 389
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 25/06/2017 03:58:41
+IP : ::1
+URL : http://localhost:5590/default.aspx
+Message : The control 'CMenu:hlMenuTop' not set Layout
+Source : HLv1.0.MVC.Core
+TargetSite : Void phamlen_13(System.Web.UI.Control, System.String, System.String, System.String, System.String, System.String)
+StackTrace :    at HL.Core.MVC.ViewPage.phamlen_13(Control control_0, String string_7, String string_8, String string_9, String string_10, String string_11) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 259
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 170
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.OnLoad(EventArgs e) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 389
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 25/06/2017 04:04:56
+IP : ::1
+URL : http://localhost:5590/default.aspx
+Message : The control 'CMenu:hlMenuTop' not set Layout
+Source : HLv1.0.MVC.Core
+TargetSite : Void phamlen_13(System.Web.UI.Control, System.String, System.String, System.String, System.String, System.String)
+StackTrace :    at HL.Core.MVC.ViewPage.phamlen_13(Control control_0, String string_7, String string_8, String string_9, String string_10, String string_11) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 259
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 170
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.OnLoad(EventArgs e) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 389
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 25/06/2017 04:09:19
+IP : ::1
+URL : http://localhost:5590/default.aspx
+Message : The control 'CMenu:hlMenuTop' not set Layout
+Source : HLv1.0.MVC.Core
+TargetSite : Void phamlen_13(System.Web.UI.Control, System.String, System.String, System.String, System.String, System.String)
+StackTrace :    at HL.Core.MVC.ViewPage.phamlen_13(Control control_0, String string_7, String string_8, String string_9, String string_10, String string_11) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 259
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 170
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.OnLoad(EventArgs e) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 389
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 25/06/2017 04:10:41
+IP : ::1
+URL : http://localhost:5590/default.aspx
+Message : The control 'CAdv:hlBackground' not set Layout
+Source : HLv1.0.MVC.Core
+TargetSite : Void phamlen_13(System.Web.UI.Control, System.String, System.String, System.String, System.String, System.String)
+StackTrace :    at HL.Core.MVC.ViewPage.phamlen_13(Control control_0, String string_7, String string_8, String string_9, String string_10, String string_11) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 259
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 170
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.phamlen_11(Control control_0) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 179
+   at HL.Core.MVC.ViewPage.OnLoad(EventArgs e) in E:\JOB\TTV\Framework\Hoang Anh\HLv1.0.MVC.Core\MVC\ViewPage.cs:line 389
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+

@@ -1,0 +1,302 @@
+.search-word .search {
+  background: #0059b3ui;
+ 
+}
+
+.g-bg-l-x1{
+	background-color:#0c85fd;
+}
+.g-bg-l-x2{
+	background-color:#fae77b;
+}
+
+.g-bg-l-x3{
+	background-color:#f7aa5f;
+}
+.g-bg-l-x4{
+	background-color:#7dbefe;
+
+}
+.top-container .vanban_left ul li a
+{
+    background: #0469c1;
+    color: #FFF;
+}
+.top-container .vanban_left ul li a:hover {
+  background: #0469c1;
+  color:#FFF;
+
+}
+.top-container .vanban_left ul li ul li
+{
+    background: #ebe8e8;
+}
+.top-container .vanban_left ul li ul li a
+{
+    background: none;
+    font-weight: normal;
+    color: #000;
+
+}
+.top-container .vanban_left ul li ul li a:hover
+{
+    background: b9b8b8;
+}
+.top-container .sidebar-top .menu-top {
+  background: #0469c1;
+}
+.top-container .sidebar-top .menu-top li {
+  border-bottom: 1px solid #015bb4;
+
+}
+.top-container .sidebar-top .menu-top li a {
+  font-weight: normal;
+  color:#FFF;
+}
+
+.top-container .sidebar-top .menu-top li ul {
+  background: #0469c1;
+}
+
+.top-container .sidebar-top .menu-top li.active,
+.top-container .sidebar-top .menu-top li:hover {
+  background: #015bb4;
+  border-left: 3px solid #439bf1;
+}
+.top-container .sidebar-top .menu-top li.active .icon,
+.top-container .sidebar-top .menu-top li:hover .icon {
+}
+
+.top-container .sidebar-top .menu-top li .icon .fa {
+  font-size: 18px;
+  color:#FFF;
+  text-align: center;
+}
+
+
+.menu-container {
+  background: #015ab4;
+}
+.menu-container ul.menu-left li a {
+  border-right: 1px solid #0369ce;
+  
+}
+.menu-container ul.menu-left li a:hover {
+  background: #439bf2;
+}
+.title-list-news1 {
+  border-radius: 3px;
+  background-color: #0369ce;
+  float: left;
+  margin-bottom: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.title-t1 {
+  color: #015ab4;
+}
+.navi-page{
+	float:left;	
+	width:100%;
+	padding-top: 20px;
+	margin-top:10px;
+	padding-bottom:11px;
+	border-top:3px solid #0369ce;	
+}
+.navigation ul li:hover a
+{
+    color: #165ca2;
+    border:1px solid #0369ce;
+}
+.navigation ul li.active a
+{
+    color: #0369ce;
+    border:1px solid #0369ce;;
+}
+
+.h2-title-xx{
+	font-size: 19px;
+	font-weight: normal;
+	line-height: 20px;
+	padding: 0px;
+	overflow: hidden;
+	margin: 0px;
+	color:#000;
+	padding-right:15px;
+}
+.h2-title-xx a{
+	color:#0369ce;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+.h2-title-xx a:hover{
+	color:#000000;
+}
+
+.g-b-search{
+	float:right;
+	padding:5px 10px 5px;
+	background-color:#0369ce;
+	font-size: 12px;
+	font-weight: bold;	
+	color:#FFF;	
+	margin-bottom: 0px;
+	margin-right: 5px;
+}
+
+.box_content_input .button .btn_action.search {
+  background: #0369ce;
+}
+.tin-khac p{
+	font-size:19px;
+	color:#0369ce;	
+	height:31px;
+	width:auto;
+	margin-left:1px;
+	margin-top:20px;
+	line-height:30px;
+	padding-left:14px;
+	text-transform:uppercase;
+	font-weight:bold;
+	margin-right: 0px;
+}
+
+.dvc p{
+	font-size:16px;
+	color:#0369ce;	
+	width:auto;
+	margin-left:1px;
+	padding-left:14px;
+	font-weight:bold;
+	margin-bottom: 10px;
+}
+.thong_ke .title {
+  position: relative;
+  width: 100%;
+  padding: 5px 10px;
+  text-align: center;
+  background: #248aef;
+  border: 1px solid #FFFFFF;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+}
+
+.shape {
+  display: block;
+  padding-left: 10px;
+  position: relative;
+  float: left;
+}
+.shape:before {
+  content: "";
+  border: 2px solid #0369ce;
+  display: block;
+  margin-right: 5px;
+  position: absolute;
+  top: 7px;
+  left: 0px;
+}
+
+.g-sb-tt{
+
+	color:#FFF;
+	font-weight: normal;
+	padding-left:20px ;
+	padding-bottom:7px;
+	padding-top: 7px;
+	background: #439bf1!important;
+
+}
+
+.vanban_right .contents .top .btn_filter
+{
+    padding: 2px 20px;
+    margin-bottom: 5px;
+    background: #0369ce;
+    color: white;
+    float: left;
+    margin-right: 10px;
+}
+.vanban_right .contents .top .btn_filter:hover
+{
+    background: #085eb2;
+}
+.vanban_right .contents .top .content_filter ul li button
+{
+    background: #0369ce;
+    padding: 2px 5px;
+    color: white;
+    margin-left: 10px;
+}
+.vanban_right .contents .top .content_filter ul li button:hover
+{
+    background: #085eb2;
+}
+.vanban_right .contents .top .number span
+{
+    color: #085eb2;
+    font-weight: bold;
+    font-style: italic;
+}
+.container_album .content .item .title_ab:hover{
+	color:#0369ce;
+	text-decoration:none;
+}
+
+.menu-top-icon .fa {
+  background: #2689ef;
+}
+
+.footer {
+  background: #015ab4;
+}
+.menu-container ul.menu-right li .mic-icon {
+  background: #067df6;
+}
+a:focus,
+a:hover {
+  color: #015ab4;
+}
+.phone-number .title-phone {
+  background: #015ab4;
+}
+.phone-number {
+  border: 1px solid #015ab4;
+}
+.phone-number .content .row-1 .number {
+  color: #015ab4;
+}
+.main-content .main-right .noti-timeview .c-01 {
+  color: #015ab4;
+}
+.list-chuyenmuc .title {
+  border-color: #015ab4;
+}
+.icon {
+  margin-right: 5px;
+  float:right;
+  display: block;
+  color: #0369ce;
+  font-size: 19px;
+  text-align: center;
+}
+.icon_small {
+  margin-right: 2px;
+  margin-top: 1px;
+  margin-left:5px;
+  float:right;
+  display: block;
+  color: #0369ce;
+  font-size: 15px;
+  text-align: center;
+}
+.time-pst a {
+    color: #bababa!important;
+}
+.time-pst a:hover {
+    color: #005aab!important;
+}
+
