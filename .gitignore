@@ -4,3 +4,7 @@ obj/
 *.MDF
 *.LDF
 web.config
+web.debug.config
+web.release.config
+*.err
+*.err

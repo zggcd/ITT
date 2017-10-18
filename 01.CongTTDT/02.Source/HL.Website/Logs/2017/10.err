@@ -12000,3 +12000,63 @@ StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHa
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
 
+Time : 18/10/2017 09:03:54
+IP : ::1
+URL : http://localhost:5590/default.aspx
+Message : Value cannot be null.
+Parameter name: connectionString
+SQLText : SELECT TOP 1 * FROM [Sys_Site] WHERE ([Default]=1)
+SQLParameters : 
+Source : HLv1.0.MVC.Core
+TargetSite : System.Data.DataSet ExecuteDataSet(System.String, System.String, System.Object[])
+StackTrace :    at HL.Core.Data.SQLCmd.ExecuteDataSet(String ConnectionString, String SPName, Object[] Params)
+   at HL.Core.Data.SQLCmd.ExecuteDataTable(String ConnectionString, String SPName, Object[] Params)
+   at HL.Core.Models.ServiceBase`1.ExecuteDataTable(String SPName, Object[] Params)
+   at HL.Core.Models.DBQuery`1.ToList()
+   at HL.Core.Models.DBQuery`1.ToList_Cache()
+   at HL.Core.Models.DBQuery`1.ToSingle_Cache()
+   at HL.Lib.Models.SysSiteService.HL_Core_GetDefault() in D:\_Project\MyProject\ITT\01.CongTTDT\02.Source\HL.Lib\Models\SysSiteModel.cs:line 84
+   at HL.Core.MVC.ViewPage.InitializeCulture()
+   at ASP.default_aspx.FrameworkInitialize()
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.default_aspx.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 18/10/2017 09:06:31
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 18/10/2017 09:16:07
+IP : ::1
+URL : http://localhost:5590/TTPortal/Content/ckfinder/core/connector/aspx/connector.aspx?command=Init
+Message : Could not load type 'CKFinder.Connector.Connector'.
+Source : System.Web
+TargetSite : Void ProcessException(System.Exception)
+StackTrace :    at System.Web.UI.TemplateParser.ProcessException(Exception ex)
+   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
+
+
+Time : 18/10/2017 09:16:10
+IP : ::1
+URL : http://localhost:5590/TTPortal/Content/ckfinder/core/connector/aspx/connector.aspx?command=Init
+Message : Could not load type 'CKFinder.Connector.Connector'.
+Source : System.Web
+TargetSite : Void ProcessException(System.Exception)
+StackTrace :    at System.Web.UI.TemplateParser.ProcessException(Exception ex)
+   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
+
+
