@@ -45,14 +45,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CKFinder, Version=2.6.0.2792, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>TTPortal\Content\ckfinder\bin\Release\CKFinder.dll</HintPath>
-    </Reference>
-    <Reference Include="CKFinder_ImageResize, Version=2.1.0.1132, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>TTPortal\Content\ckfinder\bin\Release\CKFinder_ImageResize.dll</HintPath>
-    </Reference>
     <Reference Include="HLv1.0.MVC.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\HLv1.0.MVC.Core.dll</HintPath>
