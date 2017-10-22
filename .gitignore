@@ -4,3 +4,4 @@ obj/
 *.MDF
 *.LDF
 web.config
+*.err
