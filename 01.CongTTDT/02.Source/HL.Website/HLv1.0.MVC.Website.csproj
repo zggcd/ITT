@@ -45,14 +45,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CKFinder, Version=2.6.0.2792, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>TTPortal\Content\ckfinder\bin\Release\CKFinder.dll</HintPath>
-    </Reference>
-    <Reference Include="CKFinder_ImageResize, Version=2.1.0.1132, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>TTPortal\Content\ckfinder\bin\Release\CKFinder_ImageResize.dll</HintPath>
-    </Reference>
     <Reference Include="HLv1.0.MVC.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\HLv1.0.MVC.Core.dll</HintPath>
@@ -91,13 +83,6 @@
     <Compile Include="Tools\News.asmx.cs">
       <DependentUpon>News.asmx</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -380,7 +365,6 @@
     <Content Include="Content\temp\js\message.js" />
     <Content Include="favicon.ico" />
     <Content Include="google0de12854ebe87056.html" />
-    <Content Include="HtmlPage1.html" />
     <Content Include="robots.txt" />
     <Content Include="sitemap.xml" />
     <Content Include="Tools\Ajax.aspx" />
@@ -1707,10 +1691,6 @@
     <Content Include="Views\MVanBan\Detail.ascx" />
     <Content Include="Views\MVanBan\Index.ascx" />
     <Content Include="Views\Shared\Default.Master" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
@@ -1822,6 +1802,13 @@
     <Content Include="TTPortal\Content\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="TTPortal\Content\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="TTPortal\Content\ckfinder\userfiles\.htaccess" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HL.Lib\HLv1.0.MVC.Lib.csproj">

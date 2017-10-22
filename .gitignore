@@ -1,7 +1,16 @@
-bin/
-obj/
 .vs
 *.MDF
 *.LDF
 web.config
+<<<<<<< HEAD
+=======
+web.debug.config
+web.release.config
+*.err
+**/HL.Lib/bin/*
+**/HL.Lib/obj/*
+**/HL.Website/bin/*
+**/HL.Website/obj/*
+>>>>>>> 234bd9612e61f00386eab4a550e654b152a39e36
+*.err
 *.err
