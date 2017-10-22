@@ -45,6 +45,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKFinder, Version=2.6.0.2792, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>TTPortal\Content\ckfinder\bin\Debug\CKFinder.dll</HintPath>
+    </Reference>
+    <Reference Include="CKFinder_ImageResize, Version=2.1.0.1132, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>TTPortal\Content\ckfinder\bin\Debug\CKFinder_ImageResize.dll</HintPath>
+    </Reference>
     <Reference Include="HLv1.0.MVC.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\HLv1.0.MVC.Core.dll</HintPath>
@@ -1604,6 +1612,8 @@
     <Content Include="TTPortal\Views\ModUser\Index.ascx" />
     <Content Include="TTPortal\Views\ModVanBan\Add.ascx" />
     <Content Include="TTPortal\Views\ModVanBan\Index.ascx" />
+    <Content Include="TTPortal\Views\ModVideo\Add.ascx" />
+    <Content Include="TTPortal\Views\ModVideo\Index.ascx" />
     <Content Include="Views\CAdv\Default.ascx" />
     <Content Include="Views\CAdv\Left.ascx" />
     <Content Include="Views\CAdv\Logo.ascx" />
@@ -1616,10 +1626,13 @@
     <Content Include="Views\CMenu\TopLeft.ascx" />
     <Content Include="Views\CMenu\Left2.ascx" />
     <Content Include="Views\CMenu\Left.ascx" />
+    <Content Include="Views\CNews\MultiMedia.ascx" />
+    <Content Include="Views\CNews\HaiChuyenMuc.ascx" />
     <Content Include="Views\CStatic\Date.ascx" />
     <Content Include="Views\CStatic\Search.ascx" />
     <Content Include="Views\CUser\Default.ascx" />
     <Content Include="Views\CVanBan\Default.ascx" />
+    <Content Include="Views\CVideo\Default.ascx" />
     <Content Include="Views\MContentTemp\Index.ascx" />
     <Content Include="Views\MContent\MangLuoi.ascx" />
     <Content Include="Views\MCoQuan\Detail.ascx" />
@@ -1681,8 +1694,8 @@
     <Content Include="Views\MFeedback\Index.ascx" />
     <Content Include="Views\MContent\Index.ascx" />
     <Content Include="Views\CStatic\Support.ascx" />
-    <Content Include="Views\CNews\Home.ascx" />
-    <Content Include="Views\CNews\Right.ascx" />
+    <Content Include="Views\CNews\Hot.ascx" />
+    <Content Include="Views\CNews\HomeCarousel.ascx" />
     <Content Include="Views\MNews\Detail.ascx" />
     <Content Include="Views\MNews\Index.ascx" />
     <Content Include="Views\MTag\Detail.ascx" />
@@ -1690,6 +1703,8 @@
     <Content Include="Views\MUser\Index.ascx" />
     <Content Include="Views\MVanBan\Detail.ascx" />
     <Content Include="Views\MVanBan\Index.ascx" />
+    <Content Include="Views\MVideo\Detail.ascx" />
+    <Content Include="Views\MVideo\Index.ascx" />
     <Content Include="Views\Shared\Default.Master" />
   </ItemGroup>
   <ItemGroup>
@@ -1802,7 +1817,9 @@
     <Content Include="TTPortal\Content\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="TTPortal\Content\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="TTPortal\Content\ckfinder\userfiles\.htaccess" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

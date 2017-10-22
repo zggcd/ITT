@@ -555,28 +555,9 @@
                                         </menu>
                                     </div>
                                     <section class="chuyenmuc-content w100">
-                                        <div id="ctl00_g_f68dbbd5_4ccc_4d2f_aea2_d64b030ff09f" __markuptype="vsattributemarkup" __webpartid="{f68dbbd5-4ccc-4d2f-aea2-d64b030ff09f}" webpart="true" isclosed="false">
-                                            <footer class="footer">
-                                                <a class="logo">
-                                                    <img alt="logo" src="/Content2/style/img/logo-mic.png" />
-                                                </a>
-                                                <div class="copyright">
-                                                    <p>
-                                                        <br />
-                                                        CƠ QUAN CHỦ QUẢN: BỘ TH&Ocirc;NG TIN V&Agrave; TRUYỀN TH&Ocirc;NG (MIC) 					                                        
-                                                        <br />
-                                                        Giấy ph&eacute;p thiết lập Trang th&ocirc;ng tin điện tử số 18/GP-TTĐT do Cục Ph&aacute;t thanh, truyền h&igrave;nh v&agrave; th&ocirc;ng tin điện tử cấp ng&agrave;y 15/03/2016.                                                                                           
-                                                        <br />
-                                                        Chịu tr&aacute;ch nhiệm ch&iacute;nh: &Ocirc;ng V&otilde; Quốc Trường - Gi&aacute;m đốc Trung t&acirc;m Th&ocirc;ng tin - Bộ Th&ocirc;ng tin v&agrave; Truyền th&ocirc;ng.                                                                                                
-                                                        <br />
-                                                        Li&ecirc;n hệ: Ban Bi&ecirc;n tập Cổng TTĐT - 18 Nguyễn Du, H&agrave; Nội - ĐT:04.35563462, Fax: 04.35563458, Email:  banbientap@mic.gov.vn
-                                                        <br />
-                                                        Bản quyền thuộc Trung t&acirc;m Th&ocirc;ng tin. (Ghi r&otilde; nguồn &quot;http://mic.gov.vn&quot; khi ph&aacute;t h&agrave;nh lại th&ocirc;ng tin từ website n&agrave;y)
-                                                    </p>
-                                                </div>
-                                            </footer>
-                                        </div>
-
+                                        <footer class="footer">
+                                            {RS:Web_Footer}
+                                        </footer>
                                     </section>
 
                                 </div>
@@ -595,13 +576,13 @@
                         </div>
                         <div id="DeltaFormDigest">
                             <script>
-                                                //<![CDATA[
-                                                var formDigestElement = document.getElementsByName('__REQUESTDIGEST')[0];
-                                                if (!((formDigestElement == null) || (formDigestElement.tagName.toLowerCase() != 'input') || (formDigestElement.type.toLowerCase() != 'hidden') ||
-                                                    (formDigestElement.value == null) || (formDigestElement.value.length <= 0))) {
-                                                    formDigestElement.value = '0x6B4961E3375C81F14B900639713381256DC7112B4CB0DA29DC05347C7B96FF71A7D93F97E792AD32BC70FBD38C90E999E40AE48D50FFF359204FB4B6A17F03B1,24 Sep 2017 02:09:56 -0000';
-                                                    g_updateFormDigestPageLoaded = new Date();
-                                                }
+                                            //<![CDATA[
+                                            var formDigestElement = document.getElementsByName('__REQUESTDIGEST')[0];
+                                            if (!((formDigestElement == null) || (formDigestElement.tagName.toLowerCase() != 'input') || (formDigestElement.type.toLowerCase() != 'hidden') ||
+                                                (formDigestElement.value == null) || (formDigestElement.value.length <= 0))) {
+                                                formDigestElement.value = '0x6B4961E3375C81F14B900639713381256DC7112B4CB0DA29DC05347C7B96FF71A7D93F97E792AD32BC70FBD38C90E999E40AE48D50FFF359204FB4B6A17F03B1,24 Sep 2017 02:09:56 -0000';
+                                                g_updateFormDigestPageLoaded = new Date();
+                                            }
         //]]>
                             </script>
                         </div>
@@ -617,60 +598,60 @@
         // ]]>
         </script>
         <script>
-                                //<![CDATA[
-                                var _spFormDigestRefreshInterval = 1440000; window.g_updateFormDigestPageLoaded = new Date(); window.g_updateFormDigestPageLoaded.setDate(window.g_updateFormDigestPageLoaded.getDate() - 5); function loadMDN2() { EnsureScript('MDN.js', typeof (loadFilterFn), null); }
-                                function loadMDN1() { ExecuteOrDelayUntilScriptLoaded(loadMDN2, 'sp.ribbon.js'); }
-                                _spBodyOnLoadFunctionNames.push('loadMDN1');
-                                function _spNavigateHierarchyEx(nodeDiv, dataSourceId, dataPath, url, listInContext, type, additionalQString) {
-                                    CoreInvoke('SetAdditionalNavigateHierarchyQString', additionalQString);
-                                    g_originalSPNavigateFunc(nodeDiv, dataSourceId, dataPath, url, listInContext, type);
-                                }
+                                                //<![CDATA[
+                                                var _spFormDigestRefreshInterval = 1440000; window.g_updateFormDigestPageLoaded = new Date(); window.g_updateFormDigestPageLoaded.setDate(window.g_updateFormDigestPageLoaded.getDate() - 5); function loadMDN2() { EnsureScript('MDN.js', typeof (loadFilterFn), null); }
+                                                function loadMDN1() { ExecuteOrDelayUntilScriptLoaded(loadMDN2, 'sp.ribbon.js'); }
+                                                _spBodyOnLoadFunctionNames.push('loadMDN1');
+                                                function _spNavigateHierarchyEx(nodeDiv, dataSourceId, dataPath, url, listInContext, type, additionalQString) {
+                                                    CoreInvoke('SetAdditionalNavigateHierarchyQString', additionalQString);
+                                                    g_originalSPNavigateFunc(nodeDiv, dataSourceId, dataPath, url, listInContext, type);
+                                                }
 
-                                g_originalSPNavigateFunc = _spNavigateHierarchy;
-                                _spNavigateHierarchy = _spNavigateHierarchyEx;
-                                var _fV4UI = true;
-                                function _RegisterWebPartPageCUI() {
-                                    var initInfo = { editable: false, isEditMode: false, allowWebPartAdder: false, listId: "{fdd7bcf0-2570-4ba2-bca9-a3c5941edfd0}", itemId: 67, recycleBinEnabled: true, enableMinorVersioning: true, enableModeration: false, forceCheckout: true, rootFolderUrl: "\u002fPages", itemPermissions: { High: 16, Low: 196673 } };
-                                    SP.Ribbon.WebPartComponent.registerWithPageManager(initInfo);
-                                    var wpcomp = SP.Ribbon.WebPartComponent.get_instance();
-                                    var hid;
-                                    hid = document.getElementById("_wpSelected");
-                                    if (hid != null) {
-                                        var wpid = hid.value;
-                                        if (wpid.length > 0) {
-                                            var zc = document.getElementById(wpid);
-                                            if (zc != null)
-                                                wpcomp.selectWebPart(zc, false);
-                                        }
-                                    }
-                                    hid = document.getElementById("_wzSelected");
-                                    if (hid != null) {
-                                        var wzid = hid.value;
-                                        if (wzid.length > 0) {
-                                            wpcomp.selectWebPartZone(null, wzid);
-                                        }
-                                    }
-                                };
-                                function __RegisterWebPartPageCUI() {
-                                    ExecuteOrDelayUntilScriptLoaded(_RegisterWebPartPageCUI, "sp.ribbon.js");
-                                }
-                                _spBodyOnLoadFunctionNames.push("__RegisterWebPartPageCUI"); var __wpmExportWarning = 'This Web Part Page has been personalized. As a result, one or more Web Part properties may contain confidential information. Make sure the properties contain information that is safe for others to read. After exporting this Web Part, view properties in the Web Part description file (.WebPart) by using a text editor such as Microsoft Notepad.'; var __wpmCloseProviderWarning = 'You are about to close this Web Part.  It is currently providing data to other Web Parts, and these connections will be deleted if this Web Part is closed.  To close this Web Part, click OK.  To keep this Web Part, click Cancel.'; var __wpmDeleteWarning = 'You are about to permanently delete this Web Part.  Are you sure you want to do this?  To delete this Web Part, click OK.  To keep this Web Part, click Cancel.';
-                                ExecuteOrDelayUntilScriptLoaded(
-                                    function () {
-                                        Srch.ScriptApplicationManager.get_current().states = { "webUILanguageName": "en-US", "webDefaultLanguageName": "en-US", "contextUrl": "https://mic.gov.vn", "contextTitle": "Cổng TTĐT - Bộ Thông tin và Truyền thông", "supportedLanguages": [{ "id": 1025, "label": "Arabic" }, { "id": 1093, "label": "Bengali" }, { "id": 1026, "label": "Bulgarian" }, { "id": 1027, "label": "Catalan" }, { "id": 2052, "label": "Chinese (Simplified)" }, { "id": 1028, "label": "Chinese (Traditional)" }, { "id": 1050, "label": "Croatian" }, { "id": 1029, "label": "Czech" }, { "id": 1030, "label": "Danish" }, { "id": 1043, "label": "Dutch" }, { "id": 1033, "label": "English" }, { "id": 1035, "label": "Finnish" }, { "id": 1036, "label": "French" }, { "id": 1031, "label": "German" }, { "id": 1032, "label": "Greek" }, { "id": 1095, "label": "Gujarati" }, { "id": 1037, "label": "Hebrew" }, { "id": 1081, "label": "Hindi" }, { "id": 1038, "label": "Hungarian" }, { "id": 1039, "label": "Icelandic" }, { "id": 1057, "label": "Indonesian" }, { "id": 1040, "label": "Italian" }, { "id": 1041, "label": "Japanese" }, { "id": 1099, "label": "Kannada" }, { "id": 1042, "label": "Korean" }, { "id": 1062, "label": "Latvian" }, { "id": 1063, "label": "Lithuanian" }, { "id": 1086, "label": "Malay" }, { "id": 1100, "label": "Malayalam" }, { "id": 1102, "label": "Marathi" }, { "id": 1044, "label": "Norwegian" }, { "id": 1045, "label": "Polish" }, { "id": 1046, "label": "Portuguese (Brazil)" }, { "id": 2070, "label": "Portuguese (Portugal)" }, { "id": 1094, "label": "Punjabi" }, { "id": 1048, "label": "Romanian" }, { "id": 1049, "label": "Russian" }, { "id": 3098, "label": "Serbian (Cyrillic)" }, { "id": 2074, "label": "Serbian (Latin)" }, { "id": 1051, "label": "Slovak" }, { "id": 1060, "label": "Slovenian" }, { "id": 3082, "label": "Spanish (Spain)" }, { "id": 2058, "label": "Spanish (Mexico)" }, { "id": 1053, "label": "Swedish" }, { "id": 1097, "label": "Tamil" }, { "id": 1098, "label": "Telugu" }, { "id": 1054, "label": "Thai" }, { "id": 1055, "label": "Turkish" }, { "id": 1058, "label": "Ukrainian" }, { "id": 1056, "label": "Urdu" }, { "id": 1066, "label": "Vietnamese" }], "navigationNodes": [{ "id": 0, "name": "This Site", "url": "~site//Content2/_layouts/15/osssearchresults.aspx?u={contexturl}", "promptString": "Search this site" }], "showAdminDetails": false, "defaultPagesListName": "Pages", "isSPFSKU": false, "userAdvancedLanguageSettingsUrl": "//Content2/_layouts/15/regionalsetng.aspx?type=user\u0026Source=https%3A%2F%2Fmic%2Egov%2Evn%2F\u0026ShowAdvLang=1", "defaultQueryProperties": { "culture": 1033, "uiLanguage": 1033, "summaryLength": 180, "desiredSnippetLength": 90, "enableStemming": true, "enablePhonetic": false, "enableNicknames": false, "trimDuplicates": true, "bypassResultTypes": false, "enableInterleaving": true, "enableQueryRules": true, "processBestBets": true, "enableOrderingHitHighlightedProperty": false, "hitHighlightedMultivaluePropertyLimit": -1, "processPersonalFavorites": true } };
-                                        Srch.U.trace(null, 'SerializeToClient', 'ScriptApplicationManager state initialized.');
-                                    }, 'Search.ClientControls.js'); var g_clientIdDeltaPlaceHolderMain = "DeltaPlaceHolderMain";
-                                var g_clientIdDeltaPlaceHolderPageTitleInTitleArea = "DeltaPlaceHolderPageTitleInTitleArea";
-                                var g_clientIdDeltaPlaceHolderUtilityContent = "DeltaPlaceHolderUtilityContent";
-                                g_QuickLaunchControlIds.push("zz1_TopNavigationMenu"); _spBodyOnLoadFunctionNames.push('QuickLaunchInitDroppable'); var g_zz1_TopNavigationMenu = null; function init_zz1_TopNavigationMenu() { if (g_zz1_TopNavigationMenu == null) g_zz1_TopNavigationMenu = $create(SP.UI.AspMenu, null, null, null, $get('zz1_TopNavigationMenu')); } if (g_spPreFetchKeys) { { g_spPreFetchKeys.push('SP.Core.js'); } } EnsureScriptFunc('SP.Core.js', 'SP.UI.AspMenu', init_zz1_TopNavigationMenu);
+                                                g_originalSPNavigateFunc = _spNavigateHierarchy;
+                                                _spNavigateHierarchy = _spNavigateHierarchyEx;
+                                                var _fV4UI = true;
+                                                function _RegisterWebPartPageCUI() {
+                                                    var initInfo = { editable: false, isEditMode: false, allowWebPartAdder: false, listId: "{fdd7bcf0-2570-4ba2-bca9-a3c5941edfd0}", itemId: 67, recycleBinEnabled: true, enableMinorVersioning: true, enableModeration: false, forceCheckout: true, rootFolderUrl: "\u002fPages", itemPermissions: { High: 16, Low: 196673 } };
+                                                    SP.Ribbon.WebPartComponent.registerWithPageManager(initInfo);
+                                                    var wpcomp = SP.Ribbon.WebPartComponent.get_instance();
+                                                    var hid;
+                                                    hid = document.getElementById("_wpSelected");
+                                                    if (hid != null) {
+                                                        var wpid = hid.value;
+                                                        if (wpid.length > 0) {
+                                                            var zc = document.getElementById(wpid);
+                                                            if (zc != null)
+                                                                wpcomp.selectWebPart(zc, false);
+                                                        }
+                                                    }
+                                                    hid = document.getElementById("_wzSelected");
+                                                    if (hid != null) {
+                                                        var wzid = hid.value;
+                                                        if (wzid.length > 0) {
+                                                            wpcomp.selectWebPartZone(null, wzid);
+                                                        }
+                                                    }
+                                                };
+                                                function __RegisterWebPartPageCUI() {
+                                                    ExecuteOrDelayUntilScriptLoaded(_RegisterWebPartPageCUI, "sp.ribbon.js");
+                                                }
+                                                _spBodyOnLoadFunctionNames.push("__RegisterWebPartPageCUI"); var __wpmExportWarning = 'This Web Part Page has been personalized. As a result, one or more Web Part properties may contain confidential information. Make sure the properties contain information that is safe for others to read. After exporting this Web Part, view properties in the Web Part description file (.WebPart) by using a text editor such as Microsoft Notepad.'; var __wpmCloseProviderWarning = 'You are about to close this Web Part.  It is currently providing data to other Web Parts, and these connections will be deleted if this Web Part is closed.  To close this Web Part, click OK.  To keep this Web Part, click Cancel.'; var __wpmDeleteWarning = 'You are about to permanently delete this Web Part.  Are you sure you want to do this?  To delete this Web Part, click OK.  To keep this Web Part, click Cancel.';
+                                                ExecuteOrDelayUntilScriptLoaded(
+                                                    function () {
+                                                        Srch.ScriptApplicationManager.get_current().states = { "webUILanguageName": "en-US", "webDefaultLanguageName": "en-US", "contextUrl": "https://mic.gov.vn", "contextTitle": "Cổng TTĐT - Bộ Thông tin và Truyền thông", "supportedLanguages": [{ "id": 1025, "label": "Arabic" }, { "id": 1093, "label": "Bengali" }, { "id": 1026, "label": "Bulgarian" }, { "id": 1027, "label": "Catalan" }, { "id": 2052, "label": "Chinese (Simplified)" }, { "id": 1028, "label": "Chinese (Traditional)" }, { "id": 1050, "label": "Croatian" }, { "id": 1029, "label": "Czech" }, { "id": 1030, "label": "Danish" }, { "id": 1043, "label": "Dutch" }, { "id": 1033, "label": "English" }, { "id": 1035, "label": "Finnish" }, { "id": 1036, "label": "French" }, { "id": 1031, "label": "German" }, { "id": 1032, "label": "Greek" }, { "id": 1095, "label": "Gujarati" }, { "id": 1037, "label": "Hebrew" }, { "id": 1081, "label": "Hindi" }, { "id": 1038, "label": "Hungarian" }, { "id": 1039, "label": "Icelandic" }, { "id": 1057, "label": "Indonesian" }, { "id": 1040, "label": "Italian" }, { "id": 1041, "label": "Japanese" }, { "id": 1099, "label": "Kannada" }, { "id": 1042, "label": "Korean" }, { "id": 1062, "label": "Latvian" }, { "id": 1063, "label": "Lithuanian" }, { "id": 1086, "label": "Malay" }, { "id": 1100, "label": "Malayalam" }, { "id": 1102, "label": "Marathi" }, { "id": 1044, "label": "Norwegian" }, { "id": 1045, "label": "Polish" }, { "id": 1046, "label": "Portuguese (Brazil)" }, { "id": 2070, "label": "Portuguese (Portugal)" }, { "id": 1094, "label": "Punjabi" }, { "id": 1048, "label": "Romanian" }, { "id": 1049, "label": "Russian" }, { "id": 3098, "label": "Serbian (Cyrillic)" }, { "id": 2074, "label": "Serbian (Latin)" }, { "id": 1051, "label": "Slovak" }, { "id": 1060, "label": "Slovenian" }, { "id": 3082, "label": "Spanish (Spain)" }, { "id": 2058, "label": "Spanish (Mexico)" }, { "id": 1053, "label": "Swedish" }, { "id": 1097, "label": "Tamil" }, { "id": 1098, "label": "Telugu" }, { "id": 1054, "label": "Thai" }, { "id": 1055, "label": "Turkish" }, { "id": 1058, "label": "Ukrainian" }, { "id": 1056, "label": "Urdu" }, { "id": 1066, "label": "Vietnamese" }], "navigationNodes": [{ "id": 0, "name": "This Site", "url": "~site//Content2/_layouts/15/osssearchresults.aspx?u={contexturl}", "promptString": "Search this site" }], "showAdminDetails": false, "defaultPagesListName": "Pages", "isSPFSKU": false, "userAdvancedLanguageSettingsUrl": "//Content2/_layouts/15/regionalsetng.aspx?type=user\u0026Source=https%3A%2F%2Fmic%2Egov%2Evn%2F\u0026ShowAdvLang=1", "defaultQueryProperties": { "culture": 1033, "uiLanguage": 1033, "summaryLength": 180, "desiredSnippetLength": 90, "enableStemming": true, "enablePhonetic": false, "enableNicknames": false, "trimDuplicates": true, "bypassResultTypes": false, "enableInterleaving": true, "enableQueryRules": true, "processBestBets": true, "enableOrderingHitHighlightedProperty": false, "hitHighlightedMultivaluePropertyLimit": -1, "processPersonalFavorites": true } };
+                                                        Srch.U.trace(null, 'SerializeToClient', 'ScriptApplicationManager state initialized.');
+                                                    }, 'Search.ClientControls.js'); var g_clientIdDeltaPlaceHolderMain = "DeltaPlaceHolderMain";
+                                                var g_clientIdDeltaPlaceHolderPageTitleInTitleArea = "DeltaPlaceHolderPageTitleInTitleArea";
+                                                var g_clientIdDeltaPlaceHolderUtilityContent = "DeltaPlaceHolderUtilityContent";
+                                                g_QuickLaunchControlIds.push("zz1_TopNavigationMenu"); _spBodyOnLoadFunctionNames.push('QuickLaunchInitDroppable'); var g_zz1_TopNavigationMenu = null; function init_zz1_TopNavigationMenu() { if (g_zz1_TopNavigationMenu == null) g_zz1_TopNavigationMenu = $create(SP.UI.AspMenu, null, null, null, $get('zz1_TopNavigationMenu')); } if (g_spPreFetchKeys) { { g_spPreFetchKeys.push('SP.Core.js'); } } EnsureScriptFunc('SP.Core.js', 'SP.UI.AspMenu', init_zz1_TopNavigationMenu);
 
-                                ExecuteOrDelayUntilScriptLoaded(
-                                    function () {
-                                        if ($isNull($find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr'))) {
-                                            var sb = $create(Srch.SearchBox, { "delayLoadTemplateScripts": true, "initialPrompt": "Search this site", "messages": [], "navigationNodes": [{ "id": 0, "name": "This Site", "url": "~site//Content2/_layouts/15/osssearchresults.aspx?u={contexturl}", "promptString": "Search this site" }], "queryGroupNames": ["MasterPage"], "renderTemplateId": "~sitecollection/_catalogs/masterpage/Display Templates/Search/Control_SearchBox_Compact.js", "resultsPageAddress": "~site//Content2/_layouts/15/osssearchresults.aspx?u={contexturl}", "serverInitialRender": true, "showDataErrors": true, "showNavigation": true, "states": {}, "tryInplaceQuery": false }, null, null, $get("ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr"));
-                                            sb.activate('Search this site', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sbox', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sboxdiv', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_NavButton', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_AutoCompList', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_NavDropdownList', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_SearchLink', 'ms-srch-sbprogress', 'ms-srch-sb-prompt ms-helperText');
-                                        }
-                                    }, 'Search.ClientControls.js'); g_QuickLaunchControlIds.push("zz3_V4QuickLaunchMenu"); _spBodyOnLoadFunctionNames.push('QuickLaunchInitDroppable'); var g_zz3_V4QuickLaunchMenu = null; function init_zz3_V4QuickLaunchMenu() { if (g_zz3_V4QuickLaunchMenu == null) g_zz3_V4QuickLaunchMenu = $create(SP.UI.AspMenu, null, null, null, $get('zz3_V4QuickLaunchMenu')); } ExecuteOrDelayUntilScriptLoaded(init_zz3_V4QuickLaunchMenu, 'SP.Core.js');
+                                                ExecuteOrDelayUntilScriptLoaded(
+                                                    function () {
+                                                        if ($isNull($find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr'))) {
+                                                            var sb = $create(Srch.SearchBox, { "delayLoadTemplateScripts": true, "initialPrompt": "Search this site", "messages": [], "navigationNodes": [{ "id": 0, "name": "This Site", "url": "~site//Content2/_layouts/15/osssearchresults.aspx?u={contexturl}", "promptString": "Search this site" }], "queryGroupNames": ["MasterPage"], "renderTemplateId": "~sitecollection/_catalogs/masterpage/Display Templates/Search/Control_SearchBox_Compact.js", "resultsPageAddress": "~site//Content2/_layouts/15/osssearchresults.aspx?u={contexturl}", "serverInitialRender": true, "showDataErrors": true, "showNavigation": true, "states": {}, "tryInplaceQuery": false }, null, null, $get("ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr"));
+                                                            sb.activate('Search this site', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sbox', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sboxdiv', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_NavButton', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_AutoCompList', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_NavDropdownList', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_SearchLink', 'ms-srch-sbprogress', 'ms-srch-sb-prompt ms-helperText');
+                                                        }
+                                                    }, 'Search.ClientControls.js'); g_QuickLaunchControlIds.push("zz3_V4QuickLaunchMenu"); _spBodyOnLoadFunctionNames.push('QuickLaunchInitDroppable'); var g_zz3_V4QuickLaunchMenu = null; function init_zz3_V4QuickLaunchMenu() { if (g_zz3_V4QuickLaunchMenu == null) g_zz3_V4QuickLaunchMenu = $create(SP.UI.AspMenu, null, null, null, $get('zz3_V4QuickLaunchMenu')); } ExecuteOrDelayUntilScriptLoaded(init_zz3_V4QuickLaunchMenu, 'SP.Core.js');
 //]]>
         </script>
     </form>

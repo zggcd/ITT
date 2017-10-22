@@ -12,6 +12,7 @@
             <li><a class="icon-16-massmail" href="/{CPPath}/ModGopY/Index.aspx">Góp ý</a></li>
             <li><a class="icon-16-component" href="/{CPPath}/ModFile/Index.aspx">{RS:MenuTop_FileManagement}</a></li>
             <li><a class="icon-16-article" href="/{CPPath}/ModUser/Index.aspx">Cán bộ Nhà nước</a></li>
+            <li><a class="icon-16-article" href="/{CPPath}/ModVideo/Index.aspx">Tin Video</a></li>
         </ul>
     </li>
     <li class="node"><a>{RS:MenuTop_Design}</a>

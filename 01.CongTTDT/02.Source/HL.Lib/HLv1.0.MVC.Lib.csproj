@@ -76,6 +76,7 @@
     <Compile Include="Controllers\CFeedbackController.cs" />
     <Compile Include="Controllers\CUserController.cs" />
     <Compile Include="Controllers\CVanBanController.cs" />
+    <Compile Include="Controllers\CVideoController.cs" />
     <Compile Include="Controllers\MContentTempController.cs" />
     <Compile Include="Controllers\MCoQuanController.cs" />
     <Compile Include="Controllers\MDuThaoController.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Controllers\MTagController.cs" />
     <Compile Include="Controllers\MUserController.cs" />
     <Compile Include="Controllers\MVanBanController.cs" />
+    <Compile Include="Controllers\MVideoController.cs" />
     <Compile Include="CPControllers\AccessDeniedController.cs" />
     <Compile Include="CPControllers\AjaxController.cs" />
     <Compile Include="CPControllers\FormTextController.cs" />
@@ -103,6 +105,7 @@
     <Compile Include="CPControllers\ModTagController.cs" />
     <Compile Include="CPControllers\ModUserController.cs" />
     <Compile Include="CPControllers\ModVanBanController.cs" />
+    <Compile Include="CPControllers\ModVideoController.cs" />
     <Compile Include="CPControllers\SysModuleController.cs" />
     <Compile Include="CPControllers\SysSiteController.cs" />
     <Compile Include="CPControllers\SysTemplateController.cs" />
@@ -162,6 +165,7 @@
     <Compile Include="Models\ModTagModel.cs" />
     <Compile Include="Models\ModUserModel.cs" />
     <Compile Include="Models\ModVanBanModel.cs" />
+    <Compile Include="Models\ModVideoModel.cs" />
     <Compile Include="Models\SysLangModel.cs" />
     <Compile Include="Models\SysModuleModel.cs" />
     <Compile Include="Models\SysPageModel.cs" />

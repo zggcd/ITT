@@ -2,7 +2,9 @@
 
 <% var listItem = ViewBag.Data as List<ModAdvEntity>; %>
 
-<%for (int i = 0; listItem != null && i < listItem.Count; i++ )
-{ %>
-  <%= Utils.GetCodeAdv(listItem[i])%>
-<%} %>
+<div class="banner mb10">
+    <%for (int i = 0; listItem != null && i < listItem.Count; i++)
+        { %>
+    <%= Utils.GetCodeAdv(listItem[i])%>
+    <%} %>
+</div>

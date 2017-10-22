@@ -12090,3 +12090,1574 @@ StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHa
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
 
+Time : 22/10/2017 08:32:15
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 08:32:16
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 08:32:36
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 08:32:36
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:10:15
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:10:16
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:10:53
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:10:53
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:11:05
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:11:05
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:12:08
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:12:08
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:21:50
+IP : ::1
+URL : http://localhost:5590/Default.aspx
+Message : CurrentTemplate = null
+Source : HLv1.0.MVC.Core
+TargetSite : Void InitializeCulture()
+StackTrace :    at HL.Core.MVC.ViewPage.InitializeCulture()
+   at ASP.default_aspx.__BuildControlTree(default_aspx __ctrl) in e:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Default.aspx:line 1
+   at ASP.default_aspx.FrameworkInitialize() in c:\Users\AnhThem\AppData\Local\Temp\Temporary ASP.NET Files\vs\8dbc73cc\5e60487e\App_Web_default.aspx.cdcab7d2._rz0dbsv.0.cs:line 0
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.default_aspx.ProcessRequest(HttpContext context) in c:\Users\AnhThem\AppData\Local\Temp\Temporary ASP.NET Files\vs\8dbc73cc\5e60487e\App_Web_default.aspx.cdcab7d2._rz0dbsv.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:35:21
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:35:22
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:35:25
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:35:25
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:35:29
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:35:30
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:35:32
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:35:33
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:35:35
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:35:36
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:51:03
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 09:51:04
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:09:07
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:09:08
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:23:48
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:23:49
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:24:49
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:24:50
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:27:54
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:27:54
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:42:33
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:42:33
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:47:11
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:47:12
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:47:17
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:47:17
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:47:27
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:47:28
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:47:33
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:47:33
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:47:39
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:47:40
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:47:47
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:47:47
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:47:56
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:47:56
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:51:02
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:51:03
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:51:57
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 10:51:58
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:13:31
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:13:31
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:14:58
+IP : ::1
+URL : http://localhost:5590/default.aspx
+Message : Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+Source : mscorlib
+TargetSite : Void ThrowArgumentOutOfRangeException(System.ExceptionArgument, System.ExceptionResource)
+StackTrace :    at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at ASP.views_cnews_homecarousel_ascx.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in e:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\CNews\HomeCarousel.ascx:line 28
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Page.Render(HtmlTextWriter writer)
+   at HL.Core.MVC.ViewPageBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 22/10/2017 11:15:56
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:15:57
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:19:32
+IP : ::1
+URL : http://localhost:5590/TTPortal/Content/ckfinder/core/connector/aspx/connector.aspx?command=Init
+Message : Could not load type 'CKFinder.Connector.Connector'.
+Source : System.Web
+TargetSite : Void ProcessException(System.Exception)
+StackTrace :    at System.Web.UI.TemplateParser.ProcessException(Exception ex)
+   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
+
+
+Time : 22/10/2017 11:19:42
+IP : ::1
+URL : http://localhost:5590/TTPortal/Content/ckfinder/core/connector/aspx/connector.aspx?command=Init
+Message : Could not load type 'CKFinder.Connector.Connector'.
+Source : System.Web
+TargetSite : Void ProcessException(System.Exception)
+StackTrace :    at System.Web.UI.TemplateParser.ProcessException(Exception ex)
+   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
+
+
+Time : 22/10/2017 11:19:56
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:19:58
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:20:47
+IP : ::1
+URL : http://localhost:5590/TTPortal/Content/ckfinder/core/connector/aspx/connector.aspx?command=Init
+Message : Could not load type 'CKFinder.Connector.Connector'.
+Source : System.Web
+TargetSite : Void ProcessException(System.Exception)
+StackTrace :    at System.Web.UI.TemplateParser.ProcessException(Exception ex)
+   at System.Web.UI.TemplateParser.ParseStringInternal(String text, Encoding fileEncoding)
+   at System.Web.UI.TemplateParser.ParseString(String text, VirtualPath virtualPath, Encoding fileEncoding)
+
+
+Time : 22/10/2017 11:22:24
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:22:25
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:23:19
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:23:19
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:26:07
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:26:08
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:26:50
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:26:51
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:27:18
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:27:19
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:27:41
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:27:42
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:32:40
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:32:41
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:33:27
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 11:33:27
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 03:01:05
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 03:01:07
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 03:03:25
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 03:03:26
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 03:23:27
+IP : ::1
+URL : http://localhost:5590/default.aspx
+Message : Object reference not set to an instance of an object.
+Source : App_Web_haichuyenmuc.ascx.91956902.jcwceujt
+TargetSite : Void __Render__control1(System.Web.UI.HtmlTextWriter, System.Web.UI.Control)
+StackTrace :    at ASP.views_cnews_haichuyenmuc_ascx.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in e:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\CNews\HaiChuyenMuc.ascx:line 102
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Page.Render(HtmlTextWriter writer)
+   at HL.Core.MVC.ViewPageBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 22/10/2017 03:25:34
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 03:26:25
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 03:26:26
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:24:58
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:24:59
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:25:32
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:25:32
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:25:59
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:26:00
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:29:03
+IP : ::1
+URL : http://localhost:5590/Default.aspx
+Message : CurrentTemplate = null
+Source : HLv1.0.MVC.Core
+TargetSite : Void InitializeCulture()
+StackTrace :    at HL.Core.MVC.ViewPage.InitializeCulture()
+   at ASP.default_aspx.__BuildControlTree(default_aspx __ctrl) in e:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Default.aspx:line 1
+   at ASP.default_aspx.FrameworkInitialize() in c:\Users\AnhThem\AppData\Local\Temp\Temporary ASP.NET Files\vs\8dbc73cc\5e60487e\App_Web_default.aspx.cdcab7d2.kfk57bxc.0.cs:line 0
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.default_aspx.ProcessRequest(HttpContext context) in c:\Users\AnhThem\AppData\Local\Temp\Temporary ASP.NET Files\vs\8dbc73cc\5e60487e\App_Web_default.aspx.cdcab7d2.kfk57bxc.0.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:30:16
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:30:16
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:31:00
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:31:01
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:44:18
+IP : ::1
+URL : http://localhost:5590/default.aspx
+Message : Object reference not set to an instance of an object.
+Source : App_Web_haichuyenmuc.ascx.91956902.uoe86iuh
+TargetSite : Void __Render__control1(System.Web.UI.HtmlTextWriter, System.Web.UI.Control)
+StackTrace :    at ASP.views_cnews_haichuyenmuc_ascx.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in e:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\CNews\HaiChuyenMuc.ascx:line 10
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Page.Render(HtmlTextWriter writer)
+   at HL.Core.MVC.ViewPageBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 22/10/2017 04:45:59
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:46:00
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:55:02
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:55:03
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:57:55
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 04:57:56
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 06:58:43
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 06:58:43
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 07:04:03
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 07:04:04
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 07:26:42
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 07:26:43
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 08:24:50
+IP : ::1
+URL : http://localhost:5590/TTPortal/Default.aspx
+Message : Exception has been thrown by the target of an invocation.
+Source : mscorlib
+TargetSite : System.Object InvokeMethod(System.Object, System.Object[], System.Signature, Boolean)
+StackTrace :    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.RuntimeType.InvokeMember(String name, BindingFlags bindingFlags, Binder binder, Object target, Object[] providedArgs, ParameterModifier[] modifiers, CultureInfo culture, String[] namedParams)
+   at System.Type.InvokeMember(String name, BindingFlags invokeAttr, Binder binder, Object target, Object[] args, CultureInfo culture)
+   at HL.Core.Global.Class.CallMethod(String phamlen_name, Object[] args)
+   at ns7.Class25.sphamlen_2(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0)
+   at ns7.Class25.sphamlen_1(ViewPageBase viewPageBase_0, Controller controller_0, Class class_0, String string_0, String string_1)
+   at HL.Core.MVC.ViewPageBase.phamlen_2(Boolean bool_1)
+   at HL.Core.MVC.XViewPage.OnPreRender(EventArgs e)
+   at System.Web.UI.Control.PreRenderRecursiveInternal()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 22/10/2017 08:42:08
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 08:42:09
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 08:44:06
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 08:44:06
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 08:48:10
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 22/10/2017 08:48:11
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 23/10/2017 12:01:43
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 23/10/2017 12:01:46
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 23/10/2017 12:02:00
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 23/10/2017 12:02:01
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 23/10/2017 12:05:59
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 23/10/2017 12:06:00
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 23/10/2017 12:07:33
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 23/10/2017 12:07:33
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 23/10/2017 12:07:45
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 23/10/2017 12:07:46
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 23/10/2017 12:15:14
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 23/10/2017 12:15:15
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 23/10/2017 12:22:49
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 23/10/2017 12:22:50
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
