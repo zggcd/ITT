@@ -23,6 +23,32 @@ namespace HL.Lib.Global
             return false;
         }
 
+        public static bool CheckLogin2(string email, string password)
+        {
+            CPUserEntity _User = CPUserService.Instance.GetForLogin(email, Global.Security.GetPass(password));
+
+            if (_User != null)
+            {
+                SetLogin(_User.ID);
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool CheckLogin3(string email, string password)
+        {
+            CPUserEntity _User = CPUserService.Instance.GetForLogin(email, Global.Security.GetPass(password));
+
+            if (_User != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         private static void SetLogin(int user_id)
         {
             Cookies.SetValue("CP.UserID", user_id.ToString(), Setting.Mod_CPTimeout, true);

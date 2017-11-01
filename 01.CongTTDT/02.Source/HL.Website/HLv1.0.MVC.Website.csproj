@@ -53,8 +53,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>TTPortal\Content\ckfinder\bin\Debug\CKFinder_ImageResize.dll</HintPath>
     </Reference>
-    <Reference Include="HLv1.0.MVC.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="HLv1.0.MVC.Core">
       <HintPath>..\DLL\HLv1.0.MVC.Core.dll</HintPath>
     </Reference>
     <Reference Include="Ionic.Zip">
@@ -377,6 +376,9 @@
     <Content Include="sitemap.xml" />
     <Content Include="Tools\Ajax.aspx" />
     <Content Include="Tools\Ajax2.aspx" />
+    <Content Include="Tools\Copy.asmx" />
+    <Content Include="Tools\File.asmx" />
+    <Content Include="Tools\News.asmx" />
     <Content Include="TTPortal\Content\add\css\cp_v1.css" />
     <Content Include="TTPortal\Content\add\img\add-16.gif" />
     <Content Include="TTPortal\Content\add\img\delete-16.gif" />
@@ -1622,6 +1624,16 @@
     <Content Include="Views\CFeedback\TempDefault.ascx" />
     <Content Include="Views\CFeedback\Default.ascx" />
     <Content Include="Views\CGopY\Default.ascx" />
+    <Content Include="Views\CInfo\ChangePass.ascx" />
+    <Content Include="Views\CInfo\CInfo\ChangePass.ascx" />
+    <Content Include="Views\CInfo\CInfo\Info.ascx" />
+    <Content Include="Views\CInfo\CInfo\Login.ascx" />
+    <Content Include="Views\CInfo\CInfo\Register.ascx" />
+    <Content Include="Views\CInfo\CInfo\ResetPass.ascx" />
+    <Content Include="Views\CInfo\Info.ascx" />
+    <Content Include="Views\CInfo\Login.ascx" />
+    <Content Include="Views\CInfo\Register.ascx" />
+    <Content Include="Views\CInfo\ResetPass.ascx" />
     <Content Include="Views\CMenu\TopRight.ascx" />
     <Content Include="Views\CMenu\TopLeft.ascx" />
     <Content Include="Views\CMenu\Left2.ascx" />
@@ -1640,6 +1652,15 @@
     <Content Include="Views\MDuThao\Detail.ascx" />
     <Content Include="Views\MDuThao\Index.ascx" />
     <Content Include="Views\MGopY\Index.ascx" />
+    <Content Include="Views\MInfo\ChangePass.ascx" />
+    <Content Include="Views\MInfo\Index.ascx" />
+    <Content Include="Views\MInfo\Info.ascx" />
+    <Content Include="Views\MInfo\mChangePass.ascx" />
+    <Content Include="Views\MInfo\mInfo.ascx" />
+    <Content Include="Views\MInfo\mLogin.ascx" />
+    <Content Include="Views\MInfo\mRegister.ascx" />
+    <Content Include="Views\MInfo\mResetPass.ascx" />
+    <Content Include="Views\MInfo\ResetPass.ascx" />
     <Content Include="Views\MSiteMapTemp\Index.ascx" />
     <Content Include="Views\MSiteMap\Index.ascx" />
     <Content Include="Views\MSearch\Index.ascx" />
@@ -1686,9 +1707,6 @@
     <Content Include="TTPortal\Views\UserChangePass\Index.ascx" />
     <Content Include="TTPortal\Views\Login\Index.ascx" />
     <Content Include="TTPortal\Views\Home\Index.ascx" />
-    <Content Include="Tools\Copy.asmx" />
-    <Content Include="Tools\File.asmx" />
-    <Content Include="Tools\News.asmx" />
     <Content Include="Views\CStatic\ThoiTiet.ascx" />
     <Content Include="Views\HttpError\500.html" />
     <Content Include="Views\MFeedback\Index.ascx" />

@@ -13661,3 +13661,250 @@ StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHa
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
 
+Time : 23/10/2017 12:39:17
+IP : ::1
+URL : http://localhost:5590/Default.aspx
+Message : Object reference not set to an instance of an object.
+Source : App_Web_detail.ascx.186f97ae.0xuoq-z4
+TargetSite : Void __Render__control1(System.Web.UI.HtmlTextWriter, System.Web.UI.Control)
+StackTrace :    at ASP.views_mvideo_detail_ascx.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in e:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\MVideo\Detail.ascx:line 138
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Page.Render(HtmlTextWriter writer)
+   at HL.Core.MVC.ViewPageBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 29/10/2017 11:45:15
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 29/10/2017 11:55:52
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 29/10/2017 11:55:53
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 31/10/2017 11:14:06
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 31/10/2017 11:14:08
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 31/10/2017 11:17:27
+IP : ::1
+URL : http://localhost:5590/Default.aspx
+Message : Object reference not set to an instance of an object.
+Source : App_Web_detail.ascx.186f97ae.w65tzawc
+TargetSite : Void __Render__control1(System.Web.UI.HtmlTextWriter, System.Web.UI.Control)
+StackTrace :    at ASP.views_mvideo_detail_ascx.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in e:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\MVideo\Detail.ascx:line 138
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Page.Render(HtmlTextWriter writer)
+   at HL.Core.MVC.ViewPageBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 31/10/2017 11:17:54
+IP : ::1
+URL : http://localhost:5590/Default.aspx
+Message : Object reference not set to an instance of an object.
+Source : App_Web_detail.ascx.186f97ae.w65tzawc
+TargetSite : Void __Render__control1(System.Web.UI.HtmlTextWriter, System.Web.UI.Control)
+StackTrace :    at ASP.views_mvideo_detail_ascx.__Render__control1(HtmlTextWriter __w, Control parameterContainer) in e:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\MVideo\Detail.ascx:line 138
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Page.Render(HtmlTextWriter writer)
+   at HL.Core.MVC.ViewPageBase.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+
+
+Time : 31/10/2017 11:18:43
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 31/10/2017 11:18:44
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 31/10/2017 11:19:57
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 31/10/2017 11:19:57
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 31/10/2017 11:20:31
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+
+Time : 31/10/2017 11:20:31
+IP : ::1
+URL : http://localhost:5590/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&t=636161092665894255
+Message : This is an invalid webresource request.
+Source : System.Web
+TargetSite : Void System.Web.IHttpHandler.ProcessRequest(System.Web.HttpContext)
+StackTrace :    at System.Web.Handlers.AssemblyResourceLoader.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+

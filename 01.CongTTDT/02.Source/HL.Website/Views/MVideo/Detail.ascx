@@ -102,7 +102,7 @@
 </div>
 <br />
 <video src='<%=item.File1.Replace("~/", "/") %>' poster='<%=item.File.Replace("~/", "/") %>' controls="controls" style='float: left; width: 80%; margin-left: 10%;'></video>
-<div style='padding-top: 10px; float: left; margin-left: 80%;'><a href="<%=item.File1.Replace("~/", "/") %>">Tải về</a></div>
+<div style='padding-top: 10px; float: left; margin-left: 80%;'><a href="<%=item.File1.Replace("~/", "/") %>" download>Tải về</a></div>
 <%--<p align="right" style="clear: both"><strong style="font-style: italic; padding-right: 25px;">TTTT</strong></p>--%>
 <p align="right" style="clear: both; padding-right: 25px;">Lượt truy cập: <%=string.Format("{0:##,###}", item.View) %></p>
 
@@ -135,7 +135,7 @@
 <!--//#box-news-x-->
 
 <div class="navi-page">
-    <%= GetPagination("/vn/Van-ban-quan-ly/Lay-y-kien-nhan-dan-ve-Du-thao-VBQPPL/Du-thao-Thong-tu-huong-dan-chi-tiet-quan-ly-xuat-ban-va-phat-hanh-xuat-ban-pham-dien-tu.aspx", model.Page, model.PageSize, model.TotalRecord)%>
+    <%--<%= GetPagination("/vn/Van-ban-quan-ly/Lay-y-kien-nhan-dan-ve-Du-thao-VBQPPL/Du-thao-Thong-tu-huong-dan-chi-tiet-quan-ly-xuat-ban-va-phat-hanh-xuat-ban-pham-dien-tu.aspx", model.Page, model.PageSize, model.TotalRecord)%>--%>
 </div>
 <script>
     $(document).ready(function () {
