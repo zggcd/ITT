@@ -26,11 +26,6 @@ namespace HL.Lib.Controllers
             }
             else if (endcode == "thong-tin-ca-nhan") layout = "Info";
             else if (endcode == "doi-mat-khau") layout = "ChangePass";
-            //xu ly mobile
-            if (ViewPage.IsMobile())
-            {
-                layout = "m" + layout;
-            }
             RenderView(layout);
         }
 
@@ -72,18 +67,6 @@ namespace HL.Lib.Controllers
             //if (entity.Address == string.Empty)
             //    ViewPage.Message.ListMessage.Add("Nhập địa chỉ.");
 
-            if (ViewPage.IsMobile())
-            {
-                string sVY =
-                    HL.Core.Global.CryptoString.Decrypt(ViewPage.Request.Cookies["Confirm_Ran"].Value)
-                        .Replace(
-                            ViewPage.Request.UserHostAddress + "." + string.Format("yyyy.MM.dd.hh", DateTime.Now) + ".",
-                            string.Empty);
-                string sValidCode = model.ValidCode.Trim();
-
-                if (sVY == string.Empty || (sVY.ToLower() != sValidCode.ToLower()))
-                    ViewPage.Message.ListMessage.Add("Chưa nhập mã an toàn hoặc mã an toàn không đúng");
-            }
             if (model.Agree != 1)
                 ViewPage.Message.ListMessage.Add("Bạn cần đồng ý điều khoản để trở thành thành viên.");
 

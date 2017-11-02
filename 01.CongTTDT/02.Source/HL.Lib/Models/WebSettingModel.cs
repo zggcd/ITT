@@ -64,5 +64,24 @@ namespace HL.Lib.Models
         {
             getValueOrCreateDefault(code, value);
         }
+        public void Update1(string code, string value)
+        {
+            Global.PS<WebSettingEntity>.Update("[Value]=" + value, "Web_Setting", "[Code]='" + code + "'");//.NonQuery("UpdateSetting", new object[] { "@Code", code, "@Value", value });
+                                                                                                           //base.Save(a);
+
+        }
+        public WebSettingEntity GetByID(int id)
+        {
+            return WebSettingService.Instance.CreateQuery()
+                .Where(o => o.ID == id)
+                .ToSingle();
+        }
+        public bool CP_HasExists(string code)
+        {
+            var entity = WebSettingService.Instance.CreateQuery()
+                .Where(o => o.Code == code)
+                .ToSingle();
+            return entity != null;
+        }
     }
 }
