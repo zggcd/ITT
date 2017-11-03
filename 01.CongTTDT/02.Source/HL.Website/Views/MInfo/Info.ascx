@@ -28,7 +28,7 @@
             <input type="text" id="" name="Name" value="<%=entity.Name %>" />
         </div>
     </div>
-    <div class="row">
+    <%--<div class="row">
         <div class="col-xs-5 dk-left">
             <p>
                 Tỉnh/Thành phố:</p>
@@ -38,7 +38,7 @@
                 <%=Utils.ShowDDLMenuByType3("City",1,entity.CityID) %>
             </select>
         </div>
-    </div>
+    </div>--%>
     <div class="row">
         <div class="col-xs-5 dk-left">
             <p>

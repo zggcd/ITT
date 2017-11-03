@@ -114,6 +114,7 @@
     <Content Include="Content2\style\css\color-blue.css" />
     <Content Include="Content2\style\css\common.css" />
     <Content Include="Content2\style\css\corev15.css" />
+    <Content Include="Content2\style\css\dvc.css" />
     <Content Include="Content2\style\css\genaral.css" />
     <Content Include="Content2\style\css\grabbing.png" />
     <Content Include="Content2\style\css\jquery-ui.css" />
@@ -1625,11 +1626,6 @@
     <Content Include="Views\CFeedback\Default.ascx" />
     <Content Include="Views\CGopY\Default.ascx" />
     <Content Include="Views\CInfo\ChangePass.ascx" />
-    <Content Include="Views\CInfo\CInfo\ChangePass.ascx" />
-    <Content Include="Views\CInfo\CInfo\Info.ascx" />
-    <Content Include="Views\CInfo\CInfo\Login.ascx" />
-    <Content Include="Views\CInfo\CInfo\Register.ascx" />
-    <Content Include="Views\CInfo\CInfo\ResetPass.ascx" />
     <Content Include="Views\CInfo\Info.ascx" />
     <Content Include="Views\CInfo\Login.ascx" />
     <Content Include="Views\CInfo\Register.ascx" />
@@ -1655,11 +1651,6 @@
     <Content Include="Views\MInfo\ChangePass.ascx" />
     <Content Include="Views\MInfo\Index.ascx" />
     <Content Include="Views\MInfo\Info.ascx" />
-    <Content Include="Views\MInfo\mChangePass.ascx" />
-    <Content Include="Views\MInfo\mInfo.ascx" />
-    <Content Include="Views\MInfo\mLogin.ascx" />
-    <Content Include="Views\MInfo\mRegister.ascx" />
-    <Content Include="Views\MInfo\mResetPass.ascx" />
     <Content Include="Views\MInfo\ResetPass.ascx" />
     <Content Include="Views\MSiteMapTemp\Index.ascx" />
     <Content Include="Views\MSiteMap\Index.ascx" />
@@ -1743,7 +1734,6 @@
     <Content Include="TTPortal\Views\Lang\vi-VN.ini" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content2\style\css\%27\assets\css\" />
     <Folder Include="Content\imgs\" />
     <Folder Include="Data\upload\files\" />
     <Folder Include="Data\upload\flash\" />
@@ -1811,10 +1801,6 @@
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Views\Shared\Child.Master" />
     <Content Include="Views\Design\Child.Master" />
-    <Content Include="Views\Shared\TemplateDefault.Master" />
-    <Content Include="Views\Design\TemplateDefault.Master" />
-    <Content Include="Views\Design\TemplateChild.Master" />
-    <Content Include="Views\Shared\TemplateChild.Master" />
     <Content Include="TTPortal\Content\ckeditor\CHANGES.md" />
     <Content Include="TTPortal\Content\ckeditor\LICENSE.md" />
     <Content Include="TTPortal\Content\ckeditor\plugins\scayt\CHANGELOG.md" />

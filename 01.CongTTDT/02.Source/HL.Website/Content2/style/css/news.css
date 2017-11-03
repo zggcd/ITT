@@ -139,7 +139,7 @@ ul.tree ul {
 
 .first-news .img {
     width: 186px;
-    /* height: 124px;*/
+    height: 124px;
     float: left;
     margin-right: 50px;
 }
@@ -387,7 +387,7 @@ ul.tree ul {
 }
 
 .date .icon-date {
-    background: url(../img/date.jpg) no-repeat center center;
+    background: url("../../style2/img/date.jpg") no-repeat center center;
     display: block;
     position: absolute;
     height: 100%;
@@ -469,7 +469,7 @@ ul.tree ul {
         font-size: 22px;
         font-style: normal;
         text-align: left;
-        margin: 5px 0px;
+        margin: 10px 0px;
         font-weight: bold;
         float: left;
         width: 100%;
@@ -493,18 +493,6 @@ ul.tree ul {
             margin-top: 5px;
         }
 
-.title_phu {
-    line-height: 25px;
-    color: #989797;
-    font-style: italic;
-    font-size: 16px;
-    font-weight: bold;
-    float: left;
-    width: 100%;
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-
 .date-detail {
     margin-bottom: 20px;
     width: 100%;
@@ -527,7 +515,7 @@ ul.tree ul {
 }
 
     .rss-word .rss .icon-rss {
-        background: url(../img/icon-rss.png) no-repeat center center;
+        background: url("../../style2/img/icon-rss.png") no-repeat center center;
         display: block;
         position: absolute;
         height: 100%;
@@ -659,7 +647,7 @@ ul.tree ul {
     width: 100%;
     height: 100%;
     opacity: 0.4;
-    background: url(../img/icon_video.png) no-repeat center center;
+    background: url("../../style2/img/icon_video.png") no-repeat center center;
 }
 
 .container_album .content .item .img_content a {
@@ -748,19 +736,15 @@ ul.tree ul {
                 border: none;
                 width: 25px;
                 height: 20px;
-                background: url(../img/dau.gif) no-repeat;
+                background: url("../../style2/img/dau.gif") no-repeat;
             }
 
             .navigation ul li.sau a {
                 border: none;
                 width: 25px;
                 height: 20px;
-                background: url(../img/cuoi.gif) no-repeat;
+                background: url("../../style2/img/cuoi.gif") no-repeat;
             }
-
-    .navigation .disabled {
-        display: none;
-    }
 
 .views-exposed-form .views-exposed-widget {
     width: 100%;
@@ -986,7 +970,7 @@ ul.tree ul {
             }
 
                 .box_content_input .button .btn_action.search .icon {
-                    background: url(../img/icon_full.png) no-repeat -19px 0px;
+                    background: url("../../style2/img/icon_full.png") no-repeat -19px 0px;
                 }
 
             .box_content_input .button .btn_action.them {
@@ -994,7 +978,7 @@ ul.tree ul {
             }
 
             .box_content_input .button .btn_action.xoa .icon {
-                background: url(../img/icon_full.png) no-repeat -39px 0px;
+                background: url("../../style2/img/icon_full.png") no-repeat -39px 0px;
                 margin-left: 20px;
             }
 

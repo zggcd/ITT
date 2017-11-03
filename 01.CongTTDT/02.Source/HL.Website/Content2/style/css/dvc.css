@@ -1,0 +1,288 @@
+﻿th > a {
+    color: #444;
+}
+
+.vanban_left ul li .title_li {
+    background: #e8e6e6 none repeat scroll 0 0;
+    color: black;
+    display: block;
+    font-weight: bold;
+    padding: 8px 10px;
+    width: 100%;
+}
+
+.vanban_right .main_vbtable {
+    width: 100%;
+}
+
+.box_content_input .button .btn_action {
+    font-size: 15px;
+    color: white;
+    margin-left: 0px;
+}
+
+.dropdown-info {
+    top: 30px;
+}
+
+.header_right {
+    float: right;
+    margin-right: 10px;
+    position: relative;
+}
+
+    .header_right .username {
+        cursor: pointer;
+        color: #444;
+        float: left;
+        font-size: 14px;
+        margin-right: 10px;
+        min-width: 100px;
+    }
+
+        .header_right .username .name {
+            float: left;
+        }
+
+    .header_right .icon.open .dropdown-info {
+        display: block;
+    }
+
+    .header_right .icon .dropdown-info {
+        background: white none repeat scroll 0 0;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        display: none;
+        left: 0;
+        width: 100%;
+        min-width: 100px;
+        position: absolute;
+        transition: all 1s ease 0s;
+        z-index: 10;
+    }
+
+        .header_right .icon .dropdown-info::before {
+            border-bottom: 8px solid black;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            content: "";
+            display: inline-block !important;
+            left: 9px;
+            position: absolute;
+            right: auto;
+            top: -8px;
+        }
+
+        .header_right .icon .dropdown-info li {
+            border-bottom: 1px solid gainsboro;
+            color: #888888;
+            float: left;
+            padding: 10px;
+            width: 100%;
+        }
+
+            .header_right .icon .dropdown-info li:hover {
+                background: #fbfbfb none repeat scroll 0 0;
+            }
+
+.navigation {
+    width: 100%;
+}
+
+.content-vanban .table {
+    border: 1px solid #bababa;
+}
+
+    .content-vanban .table th {
+        background: #edecec none repeat scroll 0 0;
+        border-right: 1px solid #bababa;
+        text-align: center;
+    }
+
+    .content-vanban .table td {
+        border-right: 1px solid #bababa;
+    }
+
+.box_content_input1 .title {
+    border-bottom: 1px solid #bababa;
+    float: left;
+    margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.form-title {
+    color: #0369ce;
+    display: block;
+    float: left;
+    font-size: 19px;
+    margin-bottom: -1px;
+    padding: 5px 0;
+    position: relative;
+    text-transform: uppercase;
+}
+
+    .form-title::after {
+        background: #1e1e1e none repeat scroll 0 0;
+        bottom: 0;
+        content: "";
+        height: 1px;
+        left: 0;
+        position: absolute;
+        width: 50px;
+    }
+/*style table nhu trong backend*/
+.box_content_input1 .frm_input {
+    float: left;
+    margin-top: 20px;
+    width: 100%;
+}
+
+    .box_content_input1 .frm_input .name {
+        color: #373737;
+        float: left;
+        font-weight: bold;
+        margin-top: 5px;
+        width: 20% !important;
+    }
+
+    .box_content_input1 .frm_input .check {
+        float: left;
+        margin-top: 5px;
+        width: 20px;
+    }
+
+    .box_content_input1 .frm_input .check1 {
+        float: left;
+        margin-left: -5px;
+        margin-top: 5px;
+        width: 20px;
+    }
+
+    .box_content_input1 .frm_input .input {
+        float: left;
+        position: relative;
+        width: 80%;
+    }
+
+.box_content_input1 .button {
+    float: left;
+    margin-top: 20px;
+    padding-left: 20%;
+    transition: background-color 1s ease 0s;
+    width: 100%;
+}
+
+.green-panel {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+    border: medium none !important;
+}
+
+.box_content_input {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border: 1px solid #dfdcdc;
+    float: left;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+.box_content_input1 .button .btn_action.them {
+    background: #26a69a none repeat scroll 0 0;
+}
+
+.table_list {
+    float: left;
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 100%;
+}
+
+    .table_list .dt_table_w {
+        border: 1px solid #dfdcdc;
+        width: 100%;
+    }
+
+        .table_list .dt_table_w tr th {
+            background: #3598dc none repeat scroll 0 0;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .table_list .dt_table_w tr td {
+            background: #ffffff none repeat scroll 0 0;
+            border-bottom: 1px solid #dfdcdc;
+            border-right: 1px solid #dfdcdc;
+            color: #5e5d5d;
+            padding: 10px;
+        }
+
+            .table_list .dt_table_w tr td .btn_action {
+                cursor: pointer;
+                display: block;
+                margin: 0 auto;
+                padding: 5px 0;
+                width: 50px;
+            }
+
+            .table_list .dt_table_w tr td .text_field {
+                background: white none repeat scroll 0 0;
+                border: 1px solid #e5e5e5;
+                float: left;
+                padding: 5px 15px 5px 5px;
+                width: 100%;
+            }
+
+main_container .wrapper_container .table_list .dt_table_w tr td .dropdown {
+    background: #e5e5e5 none repeat scroll 0 0;
+    padding: 4px 6px;
+    position: absolute;
+    right: 0;
+}
+
+    main_container .wrapper_container .table_list .dt_table_w tr td .dropdown .fa {
+        color: #333333;
+        font-size: 17px;
+    }
+
+.table_list .dt_table_w tr td .btn_action.btn_view {
+    background: #1caf9a none repeat scroll 0 0;
+    color: white;
+}
+
+    .table_list .dt_table_w tr td .btn_action.btn_view .icon {
+        background: rgba(0, 0, 0, 0) url("../../style2/img/icon_search.png") no-repeat scroll 0 0;
+        display: block;
+        float: left;
+        height: 13px;
+        margin: 2px 3px;
+        width: 13px;
+    }
+
+.table_list .dt_table_w tr td .btn_action.btn_sua {
+    background: #e5e5e5 none repeat scroll 0 0;
+    color: black;
+}
+
+    .table_list .dt_table_w tr td .btn_action.btn_sua .icon {
+        background: rgba(0, 0, 0, 0) url("../../style2/img/icon_edit.png") no-repeat scroll 0 0;
+        display: block;
+        float: left;
+        height: 13px;
+        margin: 2px 3px;
+        width: 13px;
+    }
+
+.table_list .dt_table_w tr.even td, .table_list .dt_table_w tr:hover td {
+    background: #f9f9f9 none repeat scroll 0 0;
+}
+
+.box_content_input1 .button .btn_action.xoa {
+    background-color: #ababab;
+}
+
+.box_content_input1 .button .btn_action {
+    border: medium none;
+    color: white !important;
+}

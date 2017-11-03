@@ -1,4 +1,4 @@
-﻿/* _lcid="1033" _version="15.0.4649"
+﻿/* _lcid="1033" _version="15.0.4420"
 _LocalBinding */
 body,
 .ms-core-defaultFont,
@@ -6,7 +6,7 @@ body,
 .ms-status-msg,
 .js-callout-body {
     /* [ReplaceFont(themeFont:"body")] */ font-family: "Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 body,
@@ -924,7 +924,7 @@ a:active.ms-acc-button {
     margin-right: 10px;
 }
 
-.ms-status-iconImg, .ms-status-dismissIconImg {
+.ms-status-iconImg {
     position: absolute;
 }
 
@@ -946,11 +946,6 @@ a:active.ms-acc-button {
 .ms-status-yellow > .ms-status-status > .ms-status-iconSpan > .ms-status-iconImg {
     top: -180px;
     left: -45px;
-}
-
-.ms-status-status > .ms-status-iconSpan > .ms-status-dismissIconImg {
-    top: -180px;
-    left: -23px;
 }
 
 #ms-gearPageBody {
@@ -991,12 +986,6 @@ a:active.ms-acc-button {
 
 .ms-diffdelete {
     text-decoration: line-through;
-}
-
-.ms-diffinsert,
-.ms-diffinsert.ms-descriptiontext {
-    text-decoration: underline;
-    /* [ReplaceColor(themeColor:"SearchURL")] */ color: #338200;
 }
 
 .ms-storefront-appiconimg {
@@ -1194,11 +1183,7 @@ a.ms-calloutLinkDisabled:hover,
     border-style: none;
 }
 
-.ms-core-form-error,
-.ms-error,
-.ms-formvalidation,
-.ms-diffdeletenostrike,
-.ms-diffdelete {
+.ms-core-form-error, .ms-error, .ms-formvalidation {
     /* [ReplaceColor(themeColor:"ErrorText")] */ color: #bf0000;
 }
 
@@ -1496,13 +1481,6 @@ a.ms-skip, a:hover.ms-skip, a:visited.ms-skip, a.ms-TurnOnAcc, a.ms-SkiptoMainCo
 
     #contentBox {
         margin: 0px !important;
-    }
-
-    html > .ms-core-needIEFilter,
-    .ms-core-needIEFilter .ms-core-overlay,
-    .ms-core-needIEFilter .ms-pub-contentLayout,
-    .ms-core-needIEFilter .ms-tileview-tile-detailsBox {
-        -ms-filter: "" !important;
     }
 }
 
@@ -4228,7 +4206,7 @@ p.ms-rteElement-P {
     background-color: #fff;
     color: #65686b;
 }
-/* _lcid="1033" _version="15.0.4649"
+/* _lcid="1033" _version="15.0.4420"
 _LocalBinding */
 .ms-acal-header td,
 .ms-acal-rootdiv td,
@@ -5036,7 +5014,7 @@ a.ms-acal-apanel-title:hover span {
     overflow: hidden;
     white-space: nowrap;
 }
-/* _lcid="1033" _version="15.0.4649"
+/* _lcid="1033" _version="15.0.4420"
 _LocalBinding */
 .ms-datepicker-html > .ms-core-needIEFilter {
     -ms-filter: "";
@@ -5403,7 +5381,7 @@ body #s4-leftpanel .ms-picker-body {
     display: inline-block;
     float: left;
 }
-/* _lcid="1033" _version="15.0.4649"
+/* _lcid="1033" _version="15.0.4420"
 _LocalBinding */
 .UserShadedRegion {
     /* [ReplaceColor(themeColor:"SubtleEmphasisBackground")] */ background-color: #f1f1f1;
@@ -10858,7 +10836,7 @@ h2.ms-dlg-heading {
 .ms-dialog body {
     /* [ReplaceColor(themeColor:"BackgroundOverlay",opacity:"1.0")] */ background-color: #fff;
 }
-/* _lcid="1033" _version="15.0.4649"
+/* _lcid="1033" _version="15.0.4420"
 _LocalBinding */
 .ms-core-menu-box,
 .ms-core-menu-boxBig {
@@ -11055,7 +11033,7 @@ a.ms-core-menu-indent {
     text-align: right;
     padding: 8px 10px;
 }
-/* _lcid="1033" _version="15.0.4649"
+/* _lcid="1033" _version="15.0.4420"
 _LocalBinding */
 .ms-cui-ribbon, .ms-cui-menu, .ms-cui-toolbar-toolbar {
     font-family: "Segoe UI",Tahoma,Verdana,sans-serif;
@@ -14146,7 +14124,8 @@ span.ms-featurestatustext, td.ms-featurestatustext {
 }
 
 .ms-core-needIEFilter #suiteBarLeft {
-    /* [ReplaceColor(themeColor:"SuiteBarBackground",opacity:"1.0")] */ background-color: #0072c6;
+    background-color: transparent;
+    /* [ReplaceColor(themeColor:"SuiteBarBackground")] */ -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ff0072c6,endColorstr=#ff0072c6)";
 }
 
 #suiteBarRight {
@@ -14180,7 +14159,6 @@ a.ms-core-suiteLink-disabled {
     display: inline-block;
     padding: 0px 8px;
     border-right: 1px solid transparent;
-    -webkit-font-smoothing: antialiased;
 }
 
     .ms-core-suiteLink-a:hover {
@@ -14857,7 +14835,7 @@ a.ms-missinglink {
     /* [ReplaceColor(themeColor:"ButtonHoverBackground",opacity:"1")] */ background-color: #e6f2fa;
     /* [ReplaceColor(themeColor:"ButtonHoverBackground")] */ background-color: #e6f2fa;
 }
-/* _lcid="1033" _version="15.0.4649"
+/* _lcid="1033" _version="15.0.4420"
 _LocalBinding */
 .ms-core-overlay {
     /* [ReplaceColor(themeColor:"BackgroundOverlay")] */ background-color: rgba( 255,255,255,0.85 );
@@ -14867,7 +14845,7 @@ _LocalBinding */
     background-color: transparent;
     /* [ReplaceColor(themeColor:"BackgroundOverlay")] */ -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#d8ffffff,endColorstr=#d8ffffff)";
 }
-/* _lcid="1033" _version="15.0.4649"
+/* _lcid="1033" _version="15.0.4420"
 _LocalBinding */
 #globalNavBox, .ms-clientcontrol-chromeheader {
     /* [ReplaceColor(themeColor:"TopBarBackground")] */ background-color: rgba( 239,239,239,0.78 );
