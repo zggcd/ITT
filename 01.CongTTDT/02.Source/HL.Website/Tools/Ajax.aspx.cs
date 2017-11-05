@@ -8,6 +8,8 @@ namespace HL.Website.Tools
     public partial class Ajax : System.Web.UI.Page
     {
         public string sHTML = string.Empty;
+        public string safeCode = string.Empty;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Response.ContentType = "text/xml";
@@ -140,7 +142,8 @@ namespace HL.Website.Tools
                         if (Lang == 1)
                         {
                             url = "vn/" + url;
-                        } else if (Lang == 2)
+                        }
+                        else if (Lang == 2)
                         {
                             url = "en/" + url;
                         }
@@ -164,6 +167,10 @@ namespace HL.Website.Tools
 
                 }
             }
+            else if (cmd == "refresh")
+            {
+                safeCode = HL.Lib.Global.Utils.GetRandString();
+            }
             else if (cmd == "ressetPass")
             {
                 int iduser = HL.Core.Global.Convert.ToInt(HL.Core.Web.HttpQueryString.GetValue("iduser"), 0);
@@ -178,10 +185,31 @@ namespace HL.Website.Tools
             }
             else if (cmd == "checkdn")
             {
-                string email = HL.Core.Global.Convert.ToString(HL.Core.Web.HttpQueryString.GetValue("email"));
+                string LoginName = HL.Core.Global.Convert.ToString(HL.Core.Web.HttpQueryString.GetValue("LoginName"));
                 string pass = HL.Core.Global.Convert.ToString(HL.Core.Web.HttpQueryString.GetValue("pass"));
 
-                if (CPLogin.CheckLogin3(email, pass)) sHTML = "1";
+                if (CPLogin.CheckLogin3(LoginName.Trim(), pass))
+                {
+                    //var user = CPUserService.Instance.GetLogin(LoginName.Trim(), pass);
+                    ////user.State = 2554;
+                    //user.NgayActive = user.NgayMoLock;
+                    //user.SoNgayLock = 0;
+                    //user.NgayLock = DateTime.MinValue;
+                    //user.NgayMoLock = DateTime.MinValue;
+                    //CPUserService.Instance.Save(user);
+                    //string redirect = HL.Core.Web.HttpQueryString.GetValue("ReturnPath").ToString();
+                    //ViewPage.Response.Redirect(string.IsNullOrEmpty(redirect) ? "/Dang-tin.aspx" : redirect);
+                    sHTML = "1";
+                }
+                else sHTML = "0";
+            }
+            else if (cmd == "dx")
+            {
+                if (HL.Lib.Global.CPLogin.IsLogin())
+                {
+                    CPLogin.Logout();
+                    sHTML = "1";
+                }
                 else sHTML = "0";
             }
             else if (cmd == "checkdk")
@@ -205,21 +233,21 @@ namespace HL.Website.Tools
                 //sVY = HL.Core.Global.CryptoString.Decrypt(sVY).Replace(HttpContext.Current.Request.UserHostAddress + "." + string.Format("yyyy.MM.dd.hh", DateTime.Now) + ".", string.Empty);
 
                 if (string.IsNullOrEmpty(tentl))
-                    sHTML = "Bạn chưa nhập tên thảo luận";
-                else if (CPUserService.Instance.exitsloginname(tentl)) sHTML = "Tên thảo luận đã có người sử dụng";
-                else if (string.IsNullOrEmpty(hoten)) sHTML = "Bạn chưa nhập họ tên";
-                else if (string.IsNullOrEmpty(email)) sHTML = "Bạn chưa nhập địa chỉ Email";
-                else if (CPUserService.Instance.exits(email)) sHTML = "Email đã có người sử dụng";
-                else if (namsinh == 0) sHTML = "Bạn chưa chọn năm sinh";
-                else if (string.IsNullOrEmpty(dienthoai)) sHTML = "Bạn chưa nhập số điện thoại";
-                else if (string.IsNullOrEmpty(lydo)) sHTML = "Bạn chưa nhập lý do";
+                    sHTML = "Bạn chưa nhập tên truy cập";
+                else if (CPUserService.Instance.exitsloginname(tentl)) sHTML = "Tên truy cập đã có người sử dụng";
+                //else if (string.IsNullOrEmpty(hoten)) sHTML = "Bạn chưa nhập họ tên";
                 else if (string.IsNullOrEmpty(mk)) sHTML = "Bạn chưa nhập mật khẩu";
                 else if (string.IsNullOrEmpty(golaimk)) sHTML = "Bạn chưa nhập lại mật khẩu";
                 else if (mk != golaimk) sHTML = "Mật khẩu nhắc lại không đúng";
+                else if (string.IsNullOrEmpty(email)) sHTML = "Bạn chưa nhập địa chỉ Email";
+                else if (CPUserService.Instance.exits(email)) sHTML = "Email đã có người sử dụng";
+                //else if (namsinh == 0) sHTML = "Bạn chưa chọn năm sinh";
+                else if (string.IsNullOrEmpty(dienthoai)) sHTML = "Bạn chưa nhập số điện thoại";
+                //else if (string.IsNullOrEmpty(lydo)) sHTML = "Bạn chưa nhập lý do";
                 else if (string.IsNullOrEmpty(mabaove.Trim())) sHTML = "Bạn chưa nhập mã bảo vệ";
                 else if (sVY.ToLower().Trim() != mabaove.ToLower().Trim())
                     sHTML = "Mã bảo vệ không chính xác";
-                else if (chapnhannoiquy == "0") sHTML = "Bạn chưa chấp nhận nội quy";
+                //else if (chapnhannoiquy == "0") sHTML = "Bạn chưa chấp nhận nội quy";
                 else sHTML = "";
             }
             else if (cmd == "checkaddtt")

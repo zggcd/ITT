@@ -37,12 +37,14 @@ namespace HL.Lib.Global
             return false;
         }
 
-        public static bool CheckLogin3(string email, string password)
+        public static bool CheckLogin3(string LoginName, string password)
         {
-            CPUserEntity _User = CPUserService.Instance.GetForLogin(email, Global.Security.GetPass(password));
+            CPUserEntity _User = CPUserService.Instance.GetForLogin(LoginName, Global.Security.GetPass(password));
 
             if (_User != null)
             {
+                SetLogin(_User.ID);
+
                 return true;
             }
 

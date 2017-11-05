@@ -13,6 +13,8 @@
             <li><a class="icon-16-component" href="/{CPPath}/ModFile/Index.aspx">{RS:MenuTop_FileManagement}</a></li>
             <li><a class="icon-16-article" href="/{CPPath}/ModUser/Index.aspx">Cán bộ Nhà nước</a></li>
             <li><a class="icon-16-article" href="/{CPPath}/ModVideo/Index.aspx">Tin Video</a></li>
+            <li><a class="icon-16-article" href="/{CPPath}/ModAlbum/Index.aspx">Tin Ảnh</a></li>
+            <li><a class="icon-16-massmail" href="/{CPPath}/ModConfigSendMail/Index.aspx">Cấu hình Email</a></li>
         </ul>
     </li>
     <li class="node"><a>{RS:MenuTop_Design}</a>

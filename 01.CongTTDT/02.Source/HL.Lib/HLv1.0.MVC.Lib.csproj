@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\CAdvController.cs" />
+    <Compile Include="Controllers\CAlbumController.cs" />
+    <Compile Include="Controllers\CAlbumDetailController.cs" />
     <Compile Include="Controllers\CConfigSendMailController.cs" />
     <Compile Include="Controllers\CCoQuanController.cs" />
     <Compile Include="Controllers\CDuThaoController.cs" />
@@ -79,6 +81,8 @@
     <Compile Include="Controllers\CUserResetPassController.cs" />
     <Compile Include="Controllers\CVanBanController.cs" />
     <Compile Include="Controllers\CVideoController.cs" />
+    <Compile Include="Controllers\MAlbumController.cs" />
+    <Compile Include="Controllers\MAlbumDetailController.cs" />
     <Compile Include="Controllers\MConfigSendMailController.cs" />
     <Compile Include="Controllers\MContentTempController.cs" />
     <Compile Include="Controllers\MCoQuanController.cs" />
@@ -97,8 +101,11 @@
     <Compile Include="Controllers\MVideoController.cs" />
     <Compile Include="CPControllers\AccessDeniedController.cs" />
     <Compile Include="CPControllers\AjaxController.cs" />
+    <Compile Include="CPControllers\FormAlbumDetailController.cs" />
     <Compile Include="CPControllers\FormTextController.cs" />
     <Compile Include="CPControllers\FormNewsController.cs" />
+    <Compile Include="CPControllers\ModAlbumController.cs" />
+    <Compile Include="CPControllers\ModAlbumDetailController.cs" />
     <Compile Include="CPControllers\ModConfigController.cs" />
     <Compile Include="CPControllers\ModConfigSendMailController.cs" />
     <Compile Include="CPControllers\ModCoQuanController.cs" />
@@ -163,6 +170,8 @@
     <Compile Include="Models\CPUserRoleModel.cs" />
     <Compile Include="Global\Permissions.cs" />
     <Compile Include="Models\ModAdvModel.cs" />
+    <Compile Include="Models\ModAlbumDetailModel.cs" />
+    <Compile Include="Models\ModAlbumModel.cs" />
     <Compile Include="Models\ModConfigSendMailModel.cs" />
     <Compile Include="Models\ModCoQuanModel.cs" />
     <Compile Include="Models\ModDuThaoModel.cs" />

@@ -11,6 +11,9 @@
 
     var listVideo = ViewBag.Video as List<ModVideoEntity>;
     int c1 = listVideo != null ? listVideo.Count : 0;
+
+    var listAlbum = ViewBag.Album as List<ModAlbumEntity>;
+    int c2 = listAlbum != null ? listAlbum.Count : 0;
 %>
 
 <style>
@@ -80,7 +83,7 @@
                         <%for (int i = 0; i < c1; i++)
                             {
                                 string url1 = ViewPage.GetURL(listVideo[i].MenuID, listVideo[i].Code);
-                                %>
+                        %>
                         <li>
                             <a href='<%=url1 %>'>
                                 <div class='img'>
@@ -101,43 +104,47 @@
                     <%} %>
                 </div>
                 <div id="images" class="tab-pane fade">
+                    <%if (c2 > 0)
+                        {
+                            var albumDetail = ModAlbumDetailService.Instance.CreateQuery()
+                                .Where(o => o.Activity == true && o.AlbumID == listAlbum[0].ID)
+                                .ToSingle_Cache();
+                    %>
                     <div class='hot-news'>
-                        <a href='/Pages/Album/346/Khai-mac-Trien-lam-Anh-va-Phim-phong-su---Tai-lieu-trong-Cong-dong-ASEAN-tai-Ninh-Binh.html'>
+                        <a href='<%=ViewPage.GetURL(listAlbum[0].MenuID, listAlbum[0].Code) %>'>
                             <div class='img'>
-                                <img src='/Content2/Upload/AlbumAnh/anhdaidien/346.jpg' alt='Các đại biểu cắt băng khai mạc Triển lãm' />
+                                <%if (albumDetail != null && !string.IsNullOrEmpty(albumDetail.File))
+                                    {%>
+                                <img src='<%=albumDetail.File.Replace("~/", "/") %>' alt='<%=listAlbum[0].Name %>' />
+                                <%} %>
                             </div>
-                            <p class='desc title-t2'>Khai mạc Triển lãm Ảnh và Phim phóng sự - Tài liệu trong Cộng đồng ASEAN tại Ninh Bình</p>
+                            <p class='desc title-t2'><%=listAlbum[0].Name %></p>
                         </a>
                     </div>
+                    <%if (c2 > 1)
+                        {%>
                     <ul class='list-news'>
+                        <%for (int i = 1; i < c2; i++)
+                            {
+                                albumDetail = ModAlbumDetailService.Instance.CreateQuery()
+                                .Where(o => o.Activity == true && o.AlbumID == listAlbum[i].ID)
+                                .ToSingle_Cache();
+                        %>
                         <li>
-                            <a href='/Pages/Album/345/Khai-mac-Trien-lam---Hoi-cho-sach-Quoc-te---Viet-Nam-lan-thu-VI-nam-2017.html'>
+                            <a href='<%=ViewPage.GetURL(listAlbum[i].MenuID, listAlbum[i].Code) %>'>
                                 <div class='img'>
-                                    <img src='/Content2/Upload/AlbumAnh/anhdaidien/345.jpg' alt='Các đại biểu cắt băng khai mạc Triển lãm' />
-
+                                    <%if (albumDetail != null && !string.IsNullOrEmpty(albumDetail.File))
+                                        {%>
+                                    <img src='<%=albumDetail.File.Replace("~/", "/") %>' alt='<%=listAlbum[i].Name %>' />
+                                    <%} %>
                                 </div>
-                                <p class='desc'>Khai mạc Triển lãm - Hội chợ sách Quốc tế - Việt Nam lần thứ VI năm 2017</p>
+                                <p class='desc'><%=listAlbum[i].Name %></p>
                             </a>
                         </li>
-                        <li>
-                            <a href='/Pages/Album/344/Bo-TT-TT-quyen-gop-ung-ho-dong-bao-bi-thiet-hai-do-lu-ong--lu-quet-tai-cac-tinh-mien-nui--trung-du-Bac-Bo.html'>
-                                <div class='img'>
-                                    <img src='/Content2/Upload/AlbumAnh/anhdaidien/344.jpg' alt='Bộ trưởng Bộ TT&TT Trương Minh Tuấn quyên góp ủng hộ đồng bào bị thiệt hại do lũ ống, lũ quét tại các tỉnh miền núi, trung du Bắc Bộ' />
-
-                                </div>
-                                <p class='desc'>Bộ TT&TT quyên góp ủng hộ đồng bào bị thiệt hại do lũ ống, lũ quét tại các tỉnh miền núi, trung du Bắc Bộ</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href='/Pages/Album/343/Bo-TT-TT-tham--tang-qua-dong-bao-bi-thiet-hai-do-mua-lu-tai-huyen-Muong-La--tinh-Son-La.html'>
-                                <div class='img'>
-                                    <img src='/Content2/Upload/AlbumAnh/anhdaidien/343.jpg' alt='Thứ trưởng Bộ TT&TT Phan Tâm kêu gọi toàn thể cán bộ, công chức, viên chức và người lao động trong toàn Ngành ủng hộ đồng bào lũ lụt.' />
-
-                                </div>
-                                <p class='desc'>Bộ TT&TT thăm, tặng quà đồng bào bị thiệt hại do mưa lũ tại huyện Mường La, tỉnh Sơn La</p>
-                            </a>
-                        </li>
+                        <%} %>
                     </ul>
+                    <%} %>
+                    <%} %>
                 </div>
             </div>
         </div>
@@ -216,27 +223,27 @@
 </div>
 
 <script>
-    if (typeof getheightli === "undefined") {
-        var heightli = {};
-        var getheightli = function (thamchieu, index) {
-            $("ul." + thamchieu + " li").each(function (i) {
-                var ii = i % 6;
-                if (heightli[thamchieu + "" + ii]) {
-                    heightli[thamchieu + "" + ii] = heightli[thamchieu + "" + ii] < parseFloat($(this).css("height")) ? parseFloat($(this).css("height")) : heightli[thamchieu + "" + ii];
-                } else {
-                    heightli[thamchieu + "" + ii] = parseFloat($(this).css("height"));
+                if (typeof getheightli === "undefined") {
+                    var heightli = {};
+                    var getheightli = function (thamchieu, index) {
+                        $("ul." + thamchieu + " li").each(function (i) {
+                            var ii = i % 6;
+                            if (heightli[thamchieu + "" + ii]) {
+                                heightli[thamchieu + "" + ii] = heightli[thamchieu + "" + ii] < parseFloat($(this).css("height")) ? parseFloat($(this).css("height")) : heightli[thamchieu + "" + ii];
+                            } else {
+                                heightli[thamchieu + "" + ii] = parseFloat($(this).css("height"));
+                            }
+                        });
+                        return heightli[thamchieu + "" + (index % 6)];
+                    }
                 }
-            });
-            return heightli[thamchieu + "" + (index % 6)];
-        }
-    }
-    $(document).ready(function () {
+                $(document).ready(function () {
 
-        $("ul.thamchieu").each(function () {
-            var a = $(this).attr("class").split(' ')[1];
-            $("." + a + " li").each(function (index) {
-                $(this).css("height", getheightli(a, index));
-            });
-        });
-    });
+                    $("ul.thamchieu").each(function () {
+                        var a = $(this).attr("class").split(' ')[1];
+                        $("." + a + " li").each(function (index) {
+                            $(this).css("height", getheightli(a, index));
+                        });
+                    });
+                });
 </script>

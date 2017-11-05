@@ -297,9 +297,9 @@ namespace HL.Lib.Models
                     .ToInt(0);
             return i > 0;
         }
-        public CPUserEntity GetForLogin(string email, string md5_pass)
+        public CPUserEntity GetForLogin(string LoginName, string md5_pass)
         {
-            string where = "[Activity]=1 AND [Email]='" + email + "' AND ([Password]='" + md5_pass + "' OR [TempPassword]='" + md5_pass + "')";
+            string where = "[Activity]=1 AND [LoginName]='" + LoginName + "' AND ([Password]='" + md5_pass + "' OR [TempPassword]='" + md5_pass + "')";
             CPUserEntity entity = CreateQuery().Where(where).ToSingle();
             if (entity != null && !string.IsNullOrEmpty(entity.TempPassword))
             {

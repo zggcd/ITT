@@ -115,6 +115,7 @@
     <Content Include="Content2\style\css\common.css" />
     <Content Include="Content2\style\css\corev15.css" />
     <Content Include="Content2\style\css\dvc.css" />
+    <Content Include="Content2\style\css\flexslider.css" />
     <Content Include="Content2\style\css\genaral.css" />
     <Content Include="Content2\style\css\grabbing.png" />
     <Content Include="Content2\style\css\jquery-ui.css" />
@@ -146,6 +147,7 @@
     <Content Include="Content2\style\img\icon-in.jpg" />
     <Content Include="Content2\style\img\icon-mobile.png" />
     <Content Include="Content2\style\img\icon-nav.png" />
+    <Content Include="Content2\style\img\icon-nav_next.png" />
     <Content Include="Content2\style\img\icon-pin.jpg" />
     <Content Include="Content2\style\img\icon-rss.png" />
     <Content Include="Content2\style\img\icon-t.jpg" />
@@ -159,12 +161,14 @@
     <Content Include="Content2\style\js\jquery-1.12.4.min.js" />
     <Content Include="Content2\style\js\jquery-1.7.2.min.js" />
     <Content Include="Content2\style\js\jquery.countdown.js" />
+    <Content Include="Content2\style\js\jquery.flexslider.js" />
     <Content Include="Content2\style\js\jquery.form.js" />
     <Content Include="Content2\style\js\jquery.js" />
     <Content Include="Content2\style\js\jquery.MetaData.js" />
     <Content Include="Content2\style\js\jquery.min.1.11.3.js" />
     <Content Include="Content2\style\js\jquery.rating.js" />
     <Content Include="Content2\style\js\jquery.rating.pack.js" />
+    <Content Include="Content2\style\js\modernizr.js" />
     <Content Include="Content2\style\js\owl.carousel.min.js" />
     <Content Include="Content2\style\js\relation.js" />
     <Content Include="Content2\style\js\social-buttons-share.js" />
@@ -355,6 +359,8 @@
     <Content Include="Content\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Content\imgs\dk-refresh.png" />
+    <Content Include="Content\imgs\loading.gif" />
     <Content Include="Content\js\AjaxRequest.js" />
     <Content Include="Content\js\datetime\jquery.datetimepicker.js" />
     <Content Include="Content\js\datetime\jquery.js" />
@@ -1602,7 +1608,13 @@
     <Content Include="TTPortal\Content\templates\bluestork\images\toolbar\icon-32-upload.png" />
     <Content Include="TTPortal\Content\templates\system\css\system.css" />
     <Content Include="TTPortal\Tools\UpdateSiteMap.aspx" />
+    <Content Include="TTPortal\Views\FormAlbumDetail\Add.ascx" />
+    <Content Include="TTPortal\Views\FormAlbumDetail\Index.ascx" />
     <Content Include="TTPortal\Views\FormText\Index.ascx" />
+    <Content Include="TTPortal\Views\ModAlbum\Add.ascx" />
+    <Content Include="TTPortal\Views\ModAlbum\Index.ascx" />
+    <Content Include="TTPortal\Views\ModConfigSendMail\Add.ascx" />
+    <Content Include="TTPortal\Views\ModConfigSendMail\Index.ascx" />
     <Content Include="TTPortal\Views\ModCoQuan\Add.ascx" />
     <Content Include="TTPortal\Views\ModCoQuan\Index.ascx" />
     <Content Include="TTPortal\Views\ModDuThao\Add.ascx" />
@@ -1620,16 +1632,14 @@
     <Content Include="Views\CAdv\Default.ascx" />
     <Content Include="Views\CAdv\Left.ascx" />
     <Content Include="Views\CAdv\Logo.ascx" />
+    <Content Include="Views\CAlbum\Default.ascx" />
     <Content Include="Views\CCoQuan\Default.ascx" />
     <Content Include="Views\CDuThao\Default.ascx" />
     <Content Include="Views\CFeedback\TempDefault.ascx" />
     <Content Include="Views\CFeedback\Default.ascx" />
     <Content Include="Views\CGopY\Default.ascx" />
-    <Content Include="Views\CInfo\ChangePass.ascx" />
-    <Content Include="Views\CInfo\Info.ascx" />
     <Content Include="Views\CInfo\Login.ascx" />
     <Content Include="Views\CInfo\Register.ascx" />
-    <Content Include="Views\CInfo\ResetPass.ascx" />
     <Content Include="Views\CMenu\TopRight.ascx" />
     <Content Include="Views\CMenu\TopLeft.ascx" />
     <Content Include="Views\CMenu\Left2.ascx" />
@@ -1641,6 +1651,8 @@
     <Content Include="Views\CUser\Default.ascx" />
     <Content Include="Views\CVanBan\Default.ascx" />
     <Content Include="Views\CVideo\Default.ascx" />
+    <Content Include="Views\MAlbum\Detail.ascx" />
+    <Content Include="Views\MAlbum\Index.ascx" />
     <Content Include="Views\MContentTemp\Index.ascx" />
     <Content Include="Views\MContent\MangLuoi.ascx" />
     <Content Include="Views\MCoQuan\Detail.ascx" />
@@ -1649,6 +1661,7 @@
     <Content Include="Views\MDuThao\Index.ascx" />
     <Content Include="Views\MGopY\Index.ascx" />
     <Content Include="Views\MInfo\ChangePass.ascx" />
+    <Content Include="Views\MInfo\Detail.ascx" />
     <Content Include="Views\MInfo\Index.ascx" />
     <Content Include="Views\MInfo\Info.ascx" />
     <Content Include="Views\MInfo\ResetPass.ascx" />
@@ -1734,10 +1747,10 @@
     <Content Include="TTPortal\Views\Lang\vi-VN.ini" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\imgs\" />
     <Folder Include="Data\upload\files\" />
     <Folder Include="Data\upload\flash\" />
     <Folder Include="Data\upload\images\Adv\" />
+    <Folder Include="Data\upload\images\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />

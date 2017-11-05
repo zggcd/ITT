@@ -2,20 +2,17 @@
 <%var item = ViewBag.Login as CPUserEntity ?? new CPUserEntity(); %>
 
 <style type="text/css">
-    a.dn-btn {
-        background: url("/Content/image/dk-btn.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-        color: #9e4300;
-        font-size: 1.3em;
+    .btnButtonLogin {
+        float: right;
+        padding: 5px 10px 5px;
+        background-color: #248aef !important;
+        font-size: 12px;
         font-weight: bold;
-        padding: 10px 45px;
-        text-decoration: none;
-        text-transform: uppercase;
-        border: none;
+        color: #FFF !important;
+        margin-bottom: 0px;
+        margin-right: 5px;
     }
 
-        a.dn-btn:hover, a.dn-btn:active, a.dn-btn:visited, a.dn-btn:focus {
-            text-decoration: none;
-        }
 
     .hidediv {
         position: absolute;
@@ -55,47 +52,51 @@
     }
 </style>
 
-<div class="row dk-banner">
-    <a href="/" title="">
-        <img src="/Content/image/dk-logo.png" alt=""></a>
-</div>
-<div class="row dn-title">
-</div>
-<form method="post" id="fbpizarro" name="fbpizarro" action="{ActionForm}">
-    <div class="row dn-main">
-        <div class="col-xs-12" style="text-align: center !important">
-            <p>
-                Email liên lạc hiện tại:
-            </p>
-            <input id="Email" name="Email" value="<%=item.Email %>" type="text" />
+<div class="thong_ke">
+    <div class="main">
+        <div class="title">
+            Đăng nhập
+        </div>
+        <div class="content" style="margin: 0px">
+            <%if (!HL.Lib.Global.CPLogin.IsLogin())
+                {%>
+            <form method="post" id="" name="" action="{ActionForm}">
+                <p class="text1">
+                    Tên truy nhập 
+                </p>
+                <p>
+                    <input id="LoginName" name="LoginName" value="<%=item.LoginName %>" class="com-input" type="text">
+                </p>
+                <p class="text1">Mật khẩu</p>
+                <p>
+                    <input value="<%=item.Password %>" id="Password" name="Password" class="com-input" type="password">
+                </p>
+                <span>
+                    <a href="/vn/Thanh-vien/Quen-mat-khau.aspx" style="color: #444">Quên mật khẩu</a>
+                </span>
+                <span class="button">
+                    <input id="dn" class="dn-btn" name="_hl_action[LoginPOST]" value="Đăng nhập" type="submit" style="display: none;">
+                    <input name="" value="Đăng nhập" id="" class="btn_action search icon btnButtonLogin" type="button" onclick="checkdn($('#LoginName').val(), $('#Password').val());">
+                </span>
+            </form>
+            <%}
+            else
+            {%>
+            Đăng nhập thành công!
+            <br />
+            <a href="javascript: dx();" rel="nofollow">Đăng xuất</a>
+            <br />
+            <a href="/vn/Thanh-vien/Doi-mat-khau.aspx" title="Đổi mật khẩu">Đổi mật khẩu</a>
+            <br />
+            <a href="/vn/Thanh-vien/Thong-tin-ca-nhan.aspx" title="Thay đổi thông tin cá nhân">Thay đổi thông tin cá nhân</a>
+            <%}%>
         </div>
     </div>
-    <div class="row dn-main">
-        <div class="col-xs-12">
-            <p>
-                Mật khẩu:
-            </p>
-            <input value="<%=item.Password %>" id="Password" name="Password" type="password" />
-        </div>
-    </div>
-    <div class="row dn-main">
-        <div class="col-xs-12" style="padding-top: 20px; line-height: 35px;">
-            <input value="1" name="save" type="checkbox" style="float: none; margin-right: 5px;"><span style="color: #005f87; font-style: italic; margin-top: 20px;">Duy trì trạng thái đăng nhập</span><br>
-            <input id="dn" class="dn-btn" name="_hl_action[LoginPOST]" value="Đăng nhập" type="submit" style="display: none;">
-            <a class="dn-btn" href="javascript:;" onclick="checkdn($('#Email').val(), $('#Password').val());">Đăng nhập</a><br>
-            <a href="/Thanh-vien/Dang-ky.aspx" title="đăng kí"><span class="dn-note">Đăng ký thành
-                viên</span></a> <a href="/Thanh-vien/Quen-mat-khau.aspx" title="Quên mật khẩu"><span
-                    class="dn-note">Quên mật khẩu</span></a>
-
-        </div>
-    </div>
-</form>
-<div class="clear25">
 </div>
 
 <div class="hidediv"></div>
 <div class="wait" style="display: none;" id="Waiting">
-    <img src="/Content/image/loading.gif" style="height: 20px;" />
+    <img src="/Content/imgs/loading.gif" style="height: 20px;" />
     <p style="color: red; font-style: italic; font-weight: normal; font-size: 11px;">Đang kiểm tra đăng nhập, vui lòng chờ giây lát...</p>
 </div>
 <script src="/Content/js/AjaxRequest.js"></script>

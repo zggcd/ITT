@@ -64,12 +64,18 @@ namespace HL.Lib.Controllers
             ViewBag.Url2 = ViewPage.GetPageURL(page2);
 
             ViewBag.Video = ModVideoService.Instance.CreateQuery()
-                            .Where(o => o.Activity == true)
-                            //.Where(State > 0, o => (o.State & State) == State)
-                            //.WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("Video", MenuID, ViewPage.CurrentLang.ID))
-                            .OrderByDesc(o => o.Order)
-                            .Take(4)
-                            .ToList_Cache();
+                .Where(o => o.Activity == true)
+                //.Where(State > 0, o => (o.State & State) == State)
+                //.WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("Video", MenuID, ViewPage.CurrentLang.ID))
+                .OrderByDesc(o => o.Order)
+                .Take(4)
+                .ToList_Cache();
+
+            ViewBag.Album = ModAlbumService.Instance.CreateQuery()
+                .Where(o => o.Activity == true)
+                .OrderByDesc(o => o.Order)
+                .Take(4)
+                .ToList_Cache();
         }
     }
 }

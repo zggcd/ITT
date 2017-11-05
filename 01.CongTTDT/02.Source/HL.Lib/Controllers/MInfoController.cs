@@ -16,65 +16,66 @@ namespace HL.Lib.Controllers
         public void ActionDetail(string endcode)
         {
             string layout = "";
-            if (endcode == "dang-nhap") layout = "Login";
-            else if (endcode == "dang-ky") layout = "Register";
-            else if (endcode == "quen-mat-khau") layout = "ResetPass";
-            else if (endcode == "dang-xuat")
+            if (endcode.ToLower() == "dang-nhap") layout = "Login";
+            else if (endcode.ToLower() == "dang-ky") layout = "Register";
+            else if (endcode.ToLower() == "quen-mat-khau") layout = "ResetPass";
+            else if (endcode.ToLower() == "dang-xuat")
             {
+                string currUrl = ViewPage.Request.RawUrl;
                 CPLogin.Logout();
-                ViewPage.Response.Redirect("/");
+                ViewPage.Response.Redirect(currUrl);
             }
-            else if (endcode == "thong-tin-ca-nhan") layout = "Info";
-            else if (endcode == "doi-mat-khau") layout = "ChangePass";
+            else if (endcode.ToLower() == "thong-tin-ca-nhan") layout = "Info";
+            else if (endcode.ToLower() == "doi-mat-khau") layout = "ChangePass";
             RenderView(layout);
         }
 
         public void ActionRegisterPOST(CPUserEntity entity, MUserModel model)
         {
             if (entity.LoginName.Trim() == string.Empty)
-                ViewPage.Message.ListMessage.Add("Nhập tên thảo luận.");
+                ViewPage.Message.ListMessage.Add("+ Nhập tên truy cập.");
 
-            if (entity.Name.Trim() == string.Empty)
-                ViewPage.Message.ListMessage.Add("Nhập tên.");
+            //if (entity.Name.Trim() == string.Empty)
+            //    ViewPage.Message.ListMessage.Add("Nhập tên.");
 
-            if (entity.CityID.Trim() == string.Empty)
-                ViewPage.Message.ListMessage.Add("Chọn Tỉnh/Thành phố.");
+            //if (entity.CityID.Trim() == string.Empty)
+            //    ViewPage.Message.ListMessage.Add("Chọn Tỉnh/Thành phố.");
 
             if (Utils.GetEmailAddress(entity.Email) == string.Empty)
-                ViewPage.Message.ListMessage.Add("Địa chỉ email thiếu hoặc không chính xác.");
+                ViewPage.Message.ListMessage.Add("+ Địa chỉ email thiếu hoặc không chính xác.");
             else
             {
                 if (CPUserService.Instance.exits(entity.Email)) ViewPage.Message.ListMessage.Add("Địa chỉ email đã được sử dụng.");
             }
 
-            if (entity.Year < 0)
-                ViewPage.Message.ListMessage.Add("Chọn năm sinh.");
+            //if (entity.Year < 0)
+            //    ViewPage.Message.ListMessage.Add("Chọn năm sinh.");
 
             if (entity.Phone == string.Empty)
-                ViewPage.Message.ListMessage.Add("Nhập số điện thoại.");
+                ViewPage.Message.ListMessage.Add("+ Nhập số điện thoại.");
 
-            if (entity.Note.Trim() == string.Empty)
-                ViewPage.Message.ListMessage.Add("Nhập lý do tham gia.");
+            //if (entity.Note.Trim() == string.Empty)
+            //    ViewPage.Message.ListMessage.Add("Nhập lý do tham gia.");
 
             if (entity.Password.Trim() == string.Empty)
-                ViewPage.Message.ListMessage.Add("Nhập mật khẩu.");
+                ViewPage.Message.ListMessage.Add("+ Nhập mật khẩu.");
 
             if (model.RePassword.Trim() == string.Empty)
-                ViewPage.Message.ListMessage.Add("Nhập lại mật khẩu.");
+                ViewPage.Message.ListMessage.Add("+ Nhập lại mật khẩu.");
             else if (model.RePassword.Trim() != entity.Password)
-                ViewPage.Message.ListMessage.Add("Mật khẩu nhắc lại không đúng.");
+                ViewPage.Message.ListMessage.Add("+ Mật khẩu nhắc lại không đúng.");
 
             //if (entity.Address == string.Empty)
             //    ViewPage.Message.ListMessage.Add("Nhập địa chỉ.");
 
-            if (model.Agree != 1)
-                ViewPage.Message.ListMessage.Add("Bạn cần đồng ý điều khoản để trở thành thành viên.");
+            //if (model.Agree != 1)
+            //    ViewPage.Message.ListMessage.Add("Bạn cần đồng ý điều khoản để trở thành thành viên.");
 
 
             if (ViewPage.Message.ListMessage.Count > 0)
             {
-                ViewBag.Data = entity;
-                string s = @"Các thông tin nhập còn thiếu hoặc chưa chính xác \r\n";
+                ViewBag.DataRes = entity;
+                string s = @"Các thông tin nhập còn thiếu hoặc chưa chính xác: \r\n";
                 for (int i = 0; i < ViewPage.Message.ListMessage.Count; i++)
                 {
                     s += @"\r\n" + ViewPage.Message.ListMessage[i];
@@ -87,7 +88,6 @@ namespace HL.Lib.Controllers
                 entity.Created = DateTime.Now;
                 entity.NgayActive = DateTime.Now;
                 entity.Activity = true;
-                entity.State = 2554;
                 entity.ClientIP = System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
 
                 CPUserService.Instance.Save(entity);
@@ -103,57 +103,58 @@ namespace HL.Lib.Controllers
 
         public void ActionLoginPOST(MLoginModel model)
         {
-            CPUserEntity entity = new CPUserEntity();
-            entity.Email = model.Email;
-            entity.Password = model.Password;
-            ViewBag.Data = entity;
-            //2553: dang ky moi; 2554: chap nhan; 2555: bi khoa; 2556: tu choi; 2557: bannick
-            var user = CPUserService.Instance.GetByEmail(model.Email.Trim());
+            //CPUserEntity entity = new CPUserEntity();
+            //entity.LoginName = model.LoginName;
+            //entity.Password = model.Password;
+            //ViewBag.Data = entity;
+            ////2553: dang ky moi; 2554: chap nhan; 2555: bi khoa; 2556: tu choi; 2557: bannick
+            ////var user = CPUserService.Instance.GetByEmail(model.Email.Trim());
+            //var user = CPUserService.Instance.GetLogin(model.LoginName.Trim(), entity.Password);
 
-            if (user.State == 2554)
-            {
-                if (CPLogin.CheckLogin2(model.Email, model.Password))
-                {
-                    string redirect = HL.Core.Web.HttpQueryString.GetValue("ReturnPath").ToString();
-                    ViewPage.Response.Redirect(string.IsNullOrEmpty(redirect) ? "/Dang-tin.aspx" : redirect);
-                }
-                else
-                {
-                    ViewBag.Login = model;
-                    ViewPage.Alert("Đăng nhập không thành công! Tên đăng nhập hoặc mật khẩu không đúng.");
-                }
-            }
-            else if (user.State == 2553)
-                ViewPage.Alert("Đăng ký thành viên của bạn chưa được chấp thuận. Bạn vui lòng chờ đợi Ban Quản trị chấp thuận.Thân chào.");
-            else if (user.State == 2555)
-            {
-                var todate = string.Format("{0:dd/MM/yyyy}", user.NgayMoLock);
-                if (user.NgayMoLock < DateTime.Now)
-                {
-                    if (CPLogin.CheckLogin2(model.Email, model.Password))
-                    {
-                        user.State = 2554;
-                        user.NgayActive = user.NgayMoLock;
-                        user.SoNgayLock = 0;
-                        user.NgayLock = DateTime.MinValue;
-                        user.NgayMoLock = DateTime.MinValue;
-                        CPUserService.Instance.Save(user);
-                        string redirect = HL.Core.Web.HttpQueryString.GetValue("ReturnPath").ToString();
-                        ViewPage.Response.Redirect(string.IsNullOrEmpty(redirect) ? "/Dang-tin.aspx" : redirect);
-                    }
-                    else
-                    {
-                        ViewBag.Login = model;
-                        ViewPage.Alert("Đăng nhập không thành công! Tên đăng nhập hoặc mật khẩu không đúng.");
-                    }
-                }
-                else ViewPage.Alert("Tin post của bạn phạm quy, bạn vui lòng ở ngoài đọc tin cho đến hết ngày " + todate + ". Cần biết thêm chi tiết bạn vui lòng liên lạc với Ban Quản trị qua email: goldonlinesys@gmail.com hoặc điện thoại 0909993960.");
-            }
-            else if (user.State == 2556)
-            {
-                ViewPage.Alert("Rất tiếc, thông tin đăng kí thành viên của bạn không phù hợp. Nên không được chấp thuận làm thành viên. Bạn vui lòng liên lạc với Ban Quản Trị để được hướng dẫn hoặc biết thêm chi tiết: Địa chỉ email goldonlinesys@gmail.com. Điện thoại: 0909993960.");
-            }
-            else if (user.State == 2557) { }
+            //if (user.State == 2554)
+            //{
+            //    if (CPLogin.CheckLogin2(model.Email, model.Password))
+            //    {
+            //        string redirect = HL.Core.Web.HttpQueryString.GetValue("ReturnPath").ToString();
+            //        ViewPage.Response.Redirect(string.IsNullOrEmpty(redirect) ? "/Dang-tin.aspx" : redirect);
+            //    }
+            //    else
+            //    {
+            //        ViewBag.Login = model;
+            //        ViewPage.Alert("Đăng nhập không thành công! Tên đăng nhập hoặc mật khẩu không đúng.");
+            //    }
+            //}
+            //else if (user.State == 2553)
+            //    ViewPage.Alert("Đăng ký thành viên của bạn chưa được chấp thuận. Bạn vui lòng chờ đợi Ban Quản trị chấp thuận.Thân chào.");
+            //else if (user.State == 2555)
+            //{
+            //    var todate = string.Format("{0:dd/MM/yyyy}", user.NgayMoLock);
+            //    if (user.NgayMoLock < DateTime.Now)
+            //    {
+            //        if (CPLogin.CheckLogin2(model.Email, model.Password))
+            //        {
+            //            user.State = 2554;
+            //            user.NgayActive = user.NgayMoLock;
+            //            user.SoNgayLock = 0;
+            //            user.NgayLock = DateTime.MinValue;
+            //            user.NgayMoLock = DateTime.MinValue;
+            //            CPUserService.Instance.Save(user);
+            //            string redirect = HL.Core.Web.HttpQueryString.GetValue("ReturnPath").ToString();
+            //            ViewPage.Response.Redirect(string.IsNullOrEmpty(redirect) ? "/Dang-tin.aspx" : redirect);
+            //        }
+            //        else
+            //        {
+            //            ViewBag.Login = model;
+            //            ViewPage.Alert("Đăng nhập không thành công! Tên đăng nhập hoặc mật khẩu không đúng.");
+            //        }
+            //    }
+            //    else ViewPage.Alert("Tin post của bạn phạm quy, bạn vui lòng ở ngoài đọc tin cho đến hết ngày " + todate + ". Cần biết thêm chi tiết bạn vui lòng liên lạc với Ban Quản trị qua email: goldonlinesys@gmail.com hoặc điện thoại 0909993960.");
+            //}
+            //else if (user.State == 2556)
+            //{
+            //    ViewPage.Alert("Rất tiếc, thông tin đăng kí thành viên của bạn không phù hợp. Nên không được chấp thuận làm thành viên. Bạn vui lòng liên lạc với Ban Quản Trị để được hướng dẫn hoặc biết thêm chi tiết: Địa chỉ email goldonlinesys@gmail.com. Điện thoại: 0909993960.");
+            //}
+            //else if (user.State == 2557) { }
         }
 
         public void ActionChangePassPOST(PasswordModel model)
@@ -192,21 +193,21 @@ namespace HL.Lib.Controllers
         {
             string alert = string.Empty;
 
-            if (entity.Name.Trim() == string.Empty)
-                ViewPage.Message.ListMessage.Add("Nhập tên.");
+            //if (entity.Name.Trim() == string.Empty)
+            //    ViewPage.Message.ListMessage.Add("+ Nhập tên.");
             string file = Utils.Upload("Avatar", entity.File, "/Data/upload/images/User/" + entity.Email.Replace("@", "_").Trim(), ref alert);
 
             entity.File = string.IsNullOrEmpty(file) ? entity.File : file;
 
 
             if (entity.LoginName.Trim() == string.Empty)
-                ViewPage.Message.ListMessage.Add("Nhập tên thảo luận.");
+                ViewPage.Message.ListMessage.Add("+ Nhập tên truy cập.");
 
-            if (entity.CityID.Trim() == string.Empty)
-                ViewPage.Message.ListMessage.Add("Nhập tên thành phố.");
+            //if (entity.CityID.Trim() == string.Empty)
+            //    ViewPage.Message.ListMessage.Add("Nhập tên thành phố.");
 
             if (Utils.GetEmailAddress(entity.Email) == string.Empty)
-                ViewPage.Message.ListMessage.Add("Địa chỉ email thiếu hoặc không chính xác.");
+                ViewPage.Message.ListMessage.Add("+ Địa chỉ email thiếu hoặc không chính xác.");
             else
             {
                 var loginName = entity.LoginName.Trim();
@@ -214,14 +215,14 @@ namespace HL.Lib.Controllers
                 if (user.Email.Trim() != entity.Email.Trim() && CPUserService.Instance.exits(entity.Email)) ViewPage.Message.ListMessage.Add("Địa chỉ email đã được sử dụng.");
             }
 
-            if (entity.Year < 0)
-                ViewPage.Message.ListMessage.Add("Chọn năm sinh.");
+            //if (entity.Year < 0)
+            //    ViewPage.Message.ListMessage.Add("Chọn năm sinh.");
 
-            if (entity.Note.Trim() == string.Empty)
-                ViewPage.Message.ListMessage.Add("Nhập lý do tham gia.");
+            //if (entity.Note.Trim() == string.Empty)
+            //    ViewPage.Message.ListMessage.Add("Nhập lý do tham gia.");
 
             if (entity.Phone == string.Empty)
-                ViewPage.Message.ListMessage.Add("Nhập số điện thoại.");
+                ViewPage.Message.ListMessage.Add("+ Nhập số điện thoại.");
 
             if (alert != string.Empty)
             {
@@ -229,7 +230,7 @@ namespace HL.Lib.Controllers
             }
             if (ViewPage.Message.ListMessage.Count > 0)
             {
-                string s = @"Thông tin nhập còn thiếu hoặc sai chính xác \r\n";
+                string s = @"Thông tin nhập còn thiếu hoặc sai chính xác: \r\n";
                 for (int i = 0; i < ViewPage.Message.ListMessage.Count; i++)
                 {
                     s += @"\r\n" + ViewPage.Message.ListMessage[i];
@@ -241,7 +242,7 @@ namespace HL.Lib.Controllers
                 entity.ID = CPLogin.UserID;
                 CPUserService.Instance.Save(entity, o => new { o.Name, o.Phone, o.Note, o.LoginName, o.Email, o.File, o.Sex, o.Year, o.CityID });
                 ViewPage.Alert("Cập nhật thông tin thành công!");
-                ViewPage.Navigate("/Dang-tin.aspx");
+                ViewPage.Navigate(ViewPage.Request.RawUrl);
             }
             ViewBag.Data = entity;
         }
@@ -249,7 +250,7 @@ namespace HL.Lib.Controllers
         public void ActionRePassPOST(PasswordModel model)
         {
             if (model.Email.Trim() == string.Empty)
-                ViewPage.Message.ListMessage.Add("Nhập - Email.");
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Email.");
             else if (Utils.GetEmailAddress(model.Email) == string.Empty)
                 ViewPage.Message.ListMessage.Add("Định dạng Email không đúng.");
             else
@@ -275,7 +276,7 @@ namespace HL.Lib.Controllers
                 CPUserService.Instance.Save(entity, o => o.TempPassword);
                 string statesendmail = Mail.SendMailUseSMTP_2(entity.Email.Trim(), Global.Setting.Sys_SiteID + " - Thông báo lấy lại mật khẩu", "Mật khẩu mới của bạn là : <b>" + pas + "</b><br />Email đăng nhập : " + entity.Email + "<br /><b><i>+ Lưu ý: Nếu không phải bạn yêu cầu đổi mật khẩu thì hãy bỏ qua thư này và đăng nhập bằng mật khẩu hiện tại.</i></b>", "");
 
-                var objMailTo = ModConfigSendMailService.Instance.CreateQuery().Where(o => o.Activity == true && o.MailType == 2685).ToSingle();
+                var objMailTo = ModConfigSendMailService.Instance.CreateQuery().Where(o => o.Activity == true && o.MailType == 137).ToSingle();
                 if (objMailTo != null)
                 {
                     string sHTML = string.Empty;
@@ -316,6 +317,7 @@ namespace HL.Lib.Controllers
     }
     public class MLoginModel
     {
+        public string LoginName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
     }
