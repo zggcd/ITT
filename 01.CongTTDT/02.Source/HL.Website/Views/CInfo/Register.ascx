@@ -85,7 +85,7 @@
                             <div class="frm_input no1">
                                 <span class="name">Tên truy cập:<span style="color: red">*</span></span>
                                 <div class="input">
-                                    <input name="LoginName" maxlength="255" id="LoginName" class="" type="text" value="<%=entity.LoginName %>">
+                                    <input name="LoginName" maxlength="255" id="LoginName1" class="" type="text" value="<%=entity.LoginName %>">
                                 </div>
                             </div>
                             <div class="frm_input no1">
@@ -309,7 +309,7 @@
         });
         //$('#ctl00_ctl45_g_66d67cd6_1199_4fd7_bfaa_654f443aa166_ctl00_txtTenDangKy').focus();
         //if (false) {
-        //    $("input[id*='LoginName']").keyup(function (e) {
+        //    $("input[id*='LoginName1']").keyup(function (e) {
         //        if ($(this).val().indexOf("mic_") != 0) {
         //            $(this).val("mic_");
         //        }
@@ -325,9 +325,9 @@
 
         //var flagExistedItem = false;
         //if (flagExistedItem) {
-        //    $('#LoginName').validationEngine('showPrompt', 'Đã tồn tại', null, null, true);
+        //    $('#LoginName1').validationEngine('showPrompt', 'Đã tồn tại', null, null, true);
         //} else {
-        //    $('#LoginName').validationEngine('hide');
+        //    $('#LoginName1').validationEngine('hide');
         //}
         $(".radio_loaitaikhoan input[type=radio]").click(function () {
             if (this.value == 'CaNhan') {
@@ -387,7 +387,7 @@
             return false;
         } else {
             setFormSubmitToFalse();
-            if (checkPassword('LoginName') == false) {
+            if (checkPassword('LoginName1') == false) {
                 alert('Tên truy cập của bạn không được gõ tiếng việt hoặc có khoảng trắng');
                 return false;
             }
@@ -409,7 +409,7 @@
     }
 
     function check() {
-        var tentl = $('#LoginName').val();
+        var tentl = $('#LoginName1').val();
         var hoten = $('#Name').val();
         //var tinhthanh = $('#CityID').val();
         var email = $('#Email').val();
@@ -422,6 +422,7 @@
         //var chapnhannoiquy = $('#Agree:checked').val() == 1 ? 1 : 0;
         var mabaove = document.getElementById("safeCode").innerHTML;
         var sVY = document.getElementById("ValidCode").value;
+        console.log(tentl);
         checkdk(tentl, hoten, email, dienthoai, mk, golaimk, mabaove, sVY);
     }
 </script>
