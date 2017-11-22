@@ -2,15 +2,18 @@
 
 <%
     var item = ViewBag.HotNews as ModNewsEntity;
-    string url = ViewPage.GetURL(item.MenuID, item.Code);
-    List<HL.Lib.Global.ListItem.Item> listStatus = HL.Lib.Global.ListItem.List.GetListByConfigkey("Mod.NewsState");
-    int c1 = listStatus != null ? listStatus.Count : 0;
-
-    TimeSpan ts = DateTime.Now - item.Published;
-    int numDate = (int)(ts.TotalDays);
 %>
 
 <div class="news-hot">
+    <%if (item != null)
+        {
+            string url = ViewPage.GetURL(item.MenuID, item.Code);
+            List<HL.Lib.Global.ListItem.Item> listStatus = HL.Lib.Global.ListItem.List.GetListByConfigkey("Mod.NewsState");
+            int c1 = listStatus != null ? listStatus.Count : 0;
+
+            TimeSpan ts = DateTime.Now - item.Published;
+            int numDate = (int)(ts.TotalDays);
+    %>
     <a href="<%=url %>">
         <%if (!string.IsNullOrEmpty(item.File))
             {%>
@@ -55,5 +58,5 @@
             <%=item.Summary %>
         </p>
     </div>
-
+    <%} %>
 </div>
