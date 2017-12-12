@@ -23,6 +23,20 @@ namespace HL.Lib.Global
             return false;
         }
 
+        public static bool CheckLogin1(string login_name, string password)
+        {
+            CPUserEntity _User = CPUserService.Instance.GetLogin2(login_name, password);
+
+            if (_User != null)
+            {
+                SetLogin(_User.ID);
+
+                return true;
+            }
+
+            return false;
+        }
+
         public static bool CheckLogin2(string email, string password)
         {
             CPUserEntity _User = CPUserService.Instance.GetForLogin(email, Global.Security.GetPass(password));

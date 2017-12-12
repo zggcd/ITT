@@ -72,8 +72,10 @@
     <Compile Include="Controllers\CAlbumDetailController.cs" />
     <Compile Include="Controllers\CConfigSendMailController.cs" />
     <Compile Include="Controllers\CCoQuanController.cs" />
+    <Compile Include="Controllers\CDauMoiUCSCController.cs" />
     <Compile Include="Controllers\CDuThaoController.cs" />
     <Compile Include="Controllers\CGopYController.cs" />
+    <Compile Include="Controllers\CHSThanhVienUCSCController.cs" />
     <Compile Include="Controllers\CInfoController.cs" />
     <Compile Include="Controllers\CMenuController.cs" />
     <Compile Include="Controllers\CFeedbackController.cs" />
@@ -86,8 +88,10 @@
     <Compile Include="Controllers\MConfigSendMailController.cs" />
     <Compile Include="Controllers\MContentTempController.cs" />
     <Compile Include="Controllers\MCoQuanController.cs" />
+    <Compile Include="Controllers\MDauMoiUCSCController.cs" />
     <Compile Include="Controllers\MDuThaoController.cs" />
     <Compile Include="Controllers\MGopYController.cs" />
+    <Compile Include="Controllers\MHSThanhVienUCSCController.cs" />
     <Compile Include="Controllers\MInfoController.cs" />
     <Compile Include="Controllers\MSearchController.cs" />
     <Compile Include="Controllers\MSiteMapTempController.cs" />
@@ -109,11 +113,13 @@
     <Compile Include="CPControllers\ModConfigController.cs" />
     <Compile Include="CPControllers\ModConfigSendMailController.cs" />
     <Compile Include="CPControllers\ModCoQuanController.cs" />
+    <Compile Include="CPControllers\ModDauMoiUCSCController.cs" />
     <Compile Include="CPControllers\ModDuThaoController.cs" />
     <Compile Include="CPControllers\ModFeedbackController.cs" />
     <Compile Include="CPControllers\ModAdvController.cs" />
     <Compile Include="CPControllers\ModFileController.cs" />
     <Compile Include="CPControllers\ModGopYController.cs" />
+    <Compile Include="CPControllers\ModHSThanhVienUCSCController.cs" />
     <Compile Include="CPControllers\ModNewsController.cs" />
     <Compile Include="CPControllers\ModTagController.cs" />
     <Compile Include="CPControllers\ModUserController.cs" />
@@ -174,9 +180,11 @@
     <Compile Include="Models\ModAlbumModel.cs" />
     <Compile Include="Models\ModConfigSendMailModel.cs" />
     <Compile Include="Models\ModCoQuanModel.cs" />
+    <Compile Include="Models\ModDauMoiUCSCModel.cs" />
     <Compile Include="Models\ModDuThaoModel.cs" />
     <Compile Include="Models\ModFeedbackModel.cs" />
     <Compile Include="Models\ModGopYModel.cs" />
+    <Compile Include="Models\ModHSThanhVienUCSCModel.cs" />
     <Compile Include="Models\ModNewsModel.cs" />
     <Compile Include="Models\ModNewsTagModel.cs" />
     <Compile Include="Models\ModOnlineModel.cs" />

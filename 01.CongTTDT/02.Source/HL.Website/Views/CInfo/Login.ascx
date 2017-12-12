@@ -89,6 +89,12 @@
             <a href="/vn/Thanh-vien/Doi-mat-khau.aspx" title="Đổi mật khẩu">Đổi mật khẩu</a>
             <br />
             <a href="/vn/Thanh-vien/Thong-tin-ca-nhan.aspx" title="Thay đổi thông tin cá nhân">Thay đổi thông tin cá nhân</a>
+            <br /><br />
+            <u><b>Điều phối, ứng cứu sự cố ATTT mạng:</b></u>
+            <ul>
+                <li><a href="/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx">1. Hồ sơ UCSC</a></li>
+                <li><a href="/vn/Thanh-vien/Dang-ky-tham-gia-ucsc.aspx">2. Đăng ký tham gia mạng lưới UCSC</a></li>
+            </ul>
             <%}%>
         </div>
     </div>

@@ -16,17 +16,19 @@ namespace HL.Lib.Controllers
         public void ActionDetail(string endcode)
         {
             string layout = "";
-            if (endcode.ToLower() == "dang-nhap") layout = "Login";
-            else if (endcode.ToLower() == "dang-ky") layout = "Register";
-            else if (endcode.ToLower() == "quen-mat-khau") layout = "ResetPass";
-            else if (endcode.ToLower() == "dang-xuat")
+            string ec = endcode.ToLower();
+            if (ec == "dang-nhap") layout = "Login";
+            else if (ec == "dang-ky") layout = "Register";
+            else if (ec == "quen-mat-khau") layout = "ResetPass";
+            else if (ec == "thong-tin-ca-nhan") layout = "Info";
+            else if (ec == "doi-mat-khau") layout = "ChangePass";
+            else if (ec == "them-ho-so-ung-cuu-su-co") layout = "HoSoUCSC";
+            else if (ec == "dang-xuat")
             {
                 string currUrl = ViewPage.Request.RawUrl;
                 CPLogin.Logout();
                 ViewPage.Response.Redirect(currUrl);
             }
-            else if (endcode.ToLower() == "thong-tin-ca-nhan") layout = "Info";
-            else if (endcode.ToLower() == "doi-mat-khau") layout = "ChangePass";
             RenderView(layout);
         }
 
@@ -101,15 +103,25 @@ namespace HL.Lib.Controllers
             ViewBag.DataRes = entity;
         }
 
-        public void ActionLoginPOST(MLoginModel model)
+        public void ActionLogin(MLoginModel model)
         {
-            //CPUserEntity entity = new CPUserEntity();
-            //entity.LoginName = model.LoginName;
-            //entity.Password = model.Password;
-            //ViewBag.Data = entity;
-            ////2553: dang ky moi; 2554: chap nhan; 2555: bi khoa; 2556: tu choi; 2557: bannick
-            ////var user = CPUserService.Instance.GetByEmail(model.Email.Trim());
+            CPUserEntity entity = new CPUserEntity();
+            entity.LoginName = model.LoginName;
+            entity.Password = model.Password;
+            ViewBag.Data = entity;
+            //2553: dang ky moi; 2554: chap nhan; 2555: bi khoa; 2556: tu choi; 2557: bannick
+            //var user = CPUserService.Instance.GetByEmail(model.Email.Trim());
             //var user = CPUserService.Instance.GetLogin(model.LoginName.Trim(), entity.Password);
+            if (CPLogin.CheckLogin1(model.LoginName, model.Password))
+            {
+                string redirect = HL.Core.Web.HttpQueryString.GetValue("ReturnPath").ToString();
+                ViewPage.Response.Redirect(string.IsNullOrEmpty(redirect) ? "/" : redirect);
+            }
+            else
+            {
+                ViewBag.Login = model;
+                ViewPage.Alert("Đăng nhập không thành công! Tên đăng nhập hoặc mật khẩu không đúng.");
+            }
 
             //if (user.State == 2554)
             //{
@@ -307,6 +319,13 @@ namespace HL.Lib.Controllers
             }
             ViewBag.ResetPass = model;
         }
+
+        #region Dieu phoi, ung cuu su co ATTT mang
+        public void ActionAddHoSoUCSC(ModHSThanhVienUCSCEntity entity, ModDauMoiUCSCEntity entityDm)
+        {
+
+        }
+        #endregion Dieu phoi, ung cuu su co ATTT mang
     }
     public class MUserModel
     {

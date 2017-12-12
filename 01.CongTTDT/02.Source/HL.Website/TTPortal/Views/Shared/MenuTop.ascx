@@ -14,6 +14,11 @@
             <li><a class="icon-16-article" href="/{CPPath}/ModUser/Index.aspx">Cán bộ Nhà nước</a></li>
             <li><a class="icon-16-article" href="/{CPPath}/ModVideo/Index.aspx">Tin Video</a></li>
             <li><a class="icon-16-article" href="/{CPPath}/ModAlbum/Index.aspx">Tin Ảnh</a></li>
+            <li class="node"><a class="icon-16-article">Điều phối, ứng cứu sự cố ATTT mạng</a>
+                <ul>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModHSThanhVienUCSC/Index.aspx">Bản khai hồ sơ thành viên UCSC</a></li>
+                </ul>
+            </li>
             <li><a class="icon-16-massmail" href="/{CPPath}/ModConfigSendMail/Index.aspx">Cấu hình Email</a></li>
         </ul>
     </li>

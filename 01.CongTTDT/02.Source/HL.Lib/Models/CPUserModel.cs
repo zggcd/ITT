@@ -258,6 +258,11 @@ namespace HL.Lib.Models
             return GetLoginMd5(login_name, HL.Lib.Global.Security.MD5(password));
         }
 
+        public CPUserEntity GetLogin2(string login_name, string password)
+        {
+            return GetLoginMd5(login_name, Global.Security.GetPass(password));
+        }
+
         public CPUserEntity GetLoginMd5(string login_name, string password)
         {
             return base.CreateQuery()
