@@ -5,7 +5,7 @@
     {
         if (!HL.Lib.Global.CPLogin.IsLogin())
         {
-            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx");
+            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString("/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx"));
             return;
         }
     }
@@ -13,8 +13,9 @@
 
 <%
     CPUserEntity entity = ViewBag.Data as CPUserEntity ?? CPLogin.CurrentUser;
-    ModHSThanhVienUCSCEntity entityHs = new ModHSThanhVienUCSCEntity();
-    ModDauMoiUCSCEntity entityDm = new ModDauMoiUCSCEntity();
+    ModHSThanhVienUCSCEntity entityHs = ViewBag.HoSo as ModHSThanhVienUCSCEntity ?? new ModHSThanhVienUCSCEntity();
+    ModDauMoiUCSCEntity entityDm = ViewBag.DauMoi as ModDauMoiUCSCEntity ?? new ModDauMoiUCSCEntity();
+    string endCode = ViewBag.EndCode;
 %>
 
 <style>
@@ -469,7 +470,15 @@ Tên cơ quan chủ quản:</span>
                             </div>
 
                             <div class="button">
+                                <input type="hidden" name="endCode" value="<%=endCode %>" />
+                                <%if (!string.IsNullOrEmpty(endCode))
+                                    {%>
+                                <input class="btn_action search icon QAcustom" name="_hl_action[UpdateHoSoUCSC]" value="Cập nhật" type="submit" />
+                                <%}
+                                    else
+                                    {%>
                                 <input class="btn_action search icon QAcustom" name="_hl_action[AddHoSoUCSC]" value="Lưu" type="submit" />
+                                <%}%>
 
                                 <input style="margin-left: 10px;" onclick="location.href = '/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx';" type="button" name="" value="Danh sách hồ sơ" />
                                 <%--<input type="hidden" name="File" value="<%=entity.File %>" />--%>

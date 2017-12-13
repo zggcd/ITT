@@ -92,8 +92,8 @@
             <br /><br />
             <u><b>Điều phối, ứng cứu sự cố ATTT mạng:</b></u>
             <ul>
-                <li><a href="/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx">1. Hồ sơ UCSC</a></li>
-                <li><a href="/vn/Thanh-vien/Dang-ky-tham-gia-ucsc.aspx">2. Đăng ký tham gia mạng lưới UCSC</a></li>
+                <li><a href="/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx">1. DS Hồ sơ UCSC</a></li>
+                <li><a href="/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx">2. DS Đăng ký tham gia mạng lưới UCSC</a></li>
             </ul>
             <%}%>
         </div>

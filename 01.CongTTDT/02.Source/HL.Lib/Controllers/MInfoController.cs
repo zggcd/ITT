@@ -23,6 +23,7 @@ namespace HL.Lib.Controllers
             else if (ec == "thong-tin-ca-nhan") layout = "Info";
             else if (ec == "doi-mat-khau") layout = "ChangePass";
             else if (ec == "them-ho-so-ung-cuu-su-co") layout = "HoSoUCSC";
+            else if (ec == "dang-ky-ung-cuu-su-co") layout = "DangKyUCSC";
             else if (ec == "dang-xuat")
             {
                 string currUrl = ViewPage.Request.RawUrl;
@@ -87,6 +88,7 @@ namespace HL.Lib.Controllers
             else
             {
                 entity.Password = Lib.Global.Security.GetPass(entity.Password.Trim());
+                //entity.Password = HL.Lib.Global.Security.MD5(entity.Password.Trim());
                 entity.Created = DateTime.Now;
                 entity.NgayActive = DateTime.Now;
                 entity.Activity = true;
@@ -323,9 +325,45 @@ namespace HL.Lib.Controllers
         #region Dieu phoi, ung cuu su co ATTT mang
         public void ActionAddHoSoUCSC(ModHSThanhVienUCSCEntity entity, ModDauMoiUCSCEntity entityDm)
         {
+            ViewBag.HoSo = entity;
+            ViewBag.DauMoi = entityDm;
 
+            DateTime date = DateTime.Now;
+            string code = "HSUCSC" + ModHSThanhVienUCSCService.Instance.GetMaxID();
+            entity.Name = code;
+            entity.Code = Data.GetCode(code);
+            entity.UserID = Lib.Global.CPLogin.UserID;
+            entity.Order = GetMaxOrder_HoSo();
+            entity.Published = date;
+            entity.Activity = false;
+            int id = ModHSThanhVienUCSCService.Instance.Save(entity);
+
+            WebMenuEntity menu = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "DauMoiUCSC" && o.Code == "Chinh").ToSingle();
+            entityDm.HSThanhVienUCSCID = id;
+            entityDm.MenuID = menu.ID;
+            entityDm.Order = GetMaxOrder_DauMoi();
+            entityDm.Published = date;
+            entityDm.Activity = true;
+            ModDauMoiUCSCService.Instance.Save(entityDm);
+
+            ViewPage.Alert("Tạo mới hồ sơ thành công! Chúng tôi sẽ xem xét và phê duyệt hồ sơ của bạn sớm nhất có thể.");
+            ViewPage.Navigate("/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx");
         }
         #endregion Dieu phoi, ung cuu su co ATTT mang
+
+        private int GetMaxOrder_HoSo()
+        {
+            return ModHSThanhVienUCSCService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
+
+        private int GetMaxOrder_DauMoi()
+        {
+            return ModDauMoiUCSCService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
     }
     public class MUserModel
     {

@@ -7,7 +7,7 @@ namespace HL.Lib.Models
 {
     public class ModHSThanhVienUCSCEntity : EntityBase
     {
-        
+
         #region Autogen by HL
 
         [DataInfo]
@@ -15,6 +15,9 @@ namespace HL.Lib.Models
 
         [DataInfo]
         public int UserID { get; set; }
+
+        [DataInfo]
+        public int UserID1 { get; set; }
 
         [DataInfo]
         public int MenuID { get; set; }
@@ -83,13 +86,16 @@ namespace HL.Lib.Models
         public DateTime Published { get; set; }
 
         [DataInfo]
+        public DateTime Published1 { get; set; }
+
+        [DataInfo]
         public int Order { get; set; }
 
         [DataInfo]
         public bool Activity { get; set; }
 
-        #endregion      
-  
+        #endregion
+
         private ModUserEntity _oUser = null;
         public ModUserEntity getUser()
         {
@@ -100,8 +106,8 @@ namespace HL.Lib.Models
                 _oUser = new ModUserEntity();
 
             return _oUser;
-        }      
-  
+        }
+
         private WebMenuEntity _oMenu = null;
         public WebMenuEntity getMenu()
         {
@@ -146,6 +152,13 @@ namespace HL.Lib.Models
             return base.CreateQuery()
                .Where(o => o.ID == id)
                .ToSingle();
+        }
+
+        public int GetMaxID()
+        {
+            return base.CreateQuery()
+                    .Max(o => o.ID)
+                    .ToValue().ToInt(0) + 1;
         }
 
     }

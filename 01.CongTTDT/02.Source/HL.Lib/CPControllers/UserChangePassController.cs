@@ -39,7 +39,8 @@ namespace HL.Lib.CPControllers
 
             if (model.CurrentPassword == string.Empty)
                 CPViewPage.Message.ListMessage.Add("Nhập mật khẩu cũ.");
-            else if (CPViewPage.CurrentUser.Password != HL.Lib.Global.Security.MD5(model.CurrentPassword))
+            //else if (CPViewPage.CurrentUser.Password != HL.Lib.Global.Security.MD5(model.CurrentPassword))
+            else if (Security.GetPass(model.CurrentPassword.Trim()) != CPViewPage.CurrentUser.Password)
                 CPViewPage.Message.ListMessage.Add("Mật khẩu cũ không đúng.");
 
             if (model.NewPassword == string.Empty)
@@ -49,7 +50,8 @@ namespace HL.Lib.CPControllers
 
             if (CPViewPage.Message.ListMessage.Count == 0)
             {
-                CPViewPage.CurrentUser.Password = HL.Lib.Global.Security.MD5(model.NewPassword);
+                //CPViewPage.CurrentUser.Password = HL.Lib.Global.Security.MD5(model.NewPassword);
+                CPViewPage.CurrentUser.Password = Global.Security.GetPass(model.NewPassword);
 
                 //save
                 CPUserService.Instance.Save(CPViewPage.CurrentUser, o => o.Password);

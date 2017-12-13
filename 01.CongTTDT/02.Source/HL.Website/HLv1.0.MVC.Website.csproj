@@ -1619,6 +1619,8 @@
     <Content Include="TTPortal\Views\ModCoQuan\Index.ascx" />
     <Content Include="TTPortal\Views\ModDauMoiUCSC\Add.ascx" />
     <Content Include="TTPortal\Views\ModDauMoiUCSC\Index.ascx" />
+    <Content Include="TTPortal\Views\ModDonDangKyUCSC\Add.ascx" />
+    <Content Include="TTPortal\Views\ModDonDangKyUCSC\Index.ascx" />
     <Content Include="TTPortal\Views\ModDuThao\Add.ascx" />
     <Content Include="TTPortal\Views\ModDuThao\Index.ascx" />
     <Content Include="TTPortal\Views\ModGopY\Add.ascx" />
@@ -1639,6 +1641,7 @@
     <Content Include="Views\CAlbum\Default.ascx" />
     <Content Include="Views\CCoQuan\Default.ascx" />
     <Content Include="Views\CDauMoiUCSC\Default.ascx" />
+    <Content Include="Views\CDonDangKyUCSC\Default.ascx" />
     <Content Include="Views\CDuThao\Default.ascx" />
     <Content Include="Views\CFeedback\TempDefault.ascx" />
     <Content Include="Views\CFeedback\Default.ascx" />
@@ -1665,11 +1668,14 @@
     <Content Include="Views\MCoQuan\Index.ascx" />
     <Content Include="Views\MDauMoiUCSC\Detail.ascx" />
     <Content Include="Views\MDauMoiUCSC\Index.ascx" />
+    <Content Include="Views\MDonDangKyUCSC\Detail.ascx" />
+    <Content Include="Views\MDonDangKyUCSC\Index.ascx" />
     <Content Include="Views\MDuThao\Detail.ascx" />
     <Content Include="Views\MDuThao\Index.ascx" />
     <Content Include="Views\MGopY\Index.ascx" />
     <Content Include="Views\MHSThanhVienUCSC\Detail.ascx" />
     <Content Include="Views\MHSThanhVienUCSC\Index.ascx" />
+    <Content Include="Views\MInfo\DangKyUCSC.ascx" />
     <Content Include="Views\MInfo\Login.ascx" />
     <Content Include="Views\MInfo\ChangePass.ascx" />
     <Content Include="Views\MInfo\Detail.ascx" />

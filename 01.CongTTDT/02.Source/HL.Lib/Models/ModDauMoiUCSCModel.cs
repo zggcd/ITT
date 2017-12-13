@@ -7,11 +7,14 @@ namespace HL.Lib.Models
 {
     public class ModDauMoiUCSCEntity : EntityBase
     {
-        
+
         #region Autogen by HL
 
         [DataInfo]
         public override int ID { get; set; }
+
+        [DataInfo]
+        public int HSThanhVienUCSCID { get; set; }
 
         [DataInfo]
         public int MenuID { get; set; }
@@ -52,8 +55,20 @@ namespace HL.Lib.Models
         [DataInfo]
         public bool Activity { get; set; }
 
-        #endregion      
-  
+        #endregion
+
+        private ModHSThanhVienUCSCEntity _oHs = null;
+        public ModHSThanhVienUCSCEntity getHoSo()
+        {
+            if (_oHs == null && HSThanhVienUCSCID > 0)
+                _oHs = ModHSThanhVienUCSCService.Instance.GetByID(HSThanhVienUCSCID);
+
+            if (_oHs == null)
+                _oHs = new ModHSThanhVienUCSCEntity();
+
+            return _oHs;
+        }
+
         private WebMenuEntity _oMenu = null;
         public WebMenuEntity getMenu()
         {

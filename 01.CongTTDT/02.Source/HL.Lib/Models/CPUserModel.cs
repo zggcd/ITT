@@ -75,8 +75,8 @@ namespace HL.Lib.Models
         [DataInfo]
         public string File { get; set; }
 
-        [DataInfo]
-        public string OldFile { get; set; }
+        //[DataInfo]
+        //public string OldFile { get; set; }
 
         [DataInfo]
         public DateTime NgayLock { get; set; }
