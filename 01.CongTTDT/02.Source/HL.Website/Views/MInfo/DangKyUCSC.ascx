@@ -414,64 +414,38 @@
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>a)
-                Tên b&#7897; ph&#7853;n/ng&#432;&#7901;i gi&#7843;i quy&#7871;t:
-                                    </span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'><span style='mso-tab-count: 1 dotted'>......................................................................................... </span>
-                                        <o:p></o:p>
-                                    </span>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>a) Tên bộ phận/người giải quyết:</span>
+                                    <input name="DauMoiLL_NgoaiGio_Ten" maxlength="255" id="DauMoiLL_NgoaiGio_Ten" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_NgoaiGio_Ten %>" />
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>b)
-                &#272;i&#7879;n tho&#7841;i c&#7889; &#273;&#7883;nh:
-                                    </span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>…………………………………..</span><span lang="VI"
-                                        style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                c)
-                &#272;i&#7879;n tho&#7841;i di &#273;&#7897;ng:
-                                    </span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'><span style='mso-tab-count: 1 dotted'>............................ </span>
-                                        <o:p></o:p>
-                                    </span>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>b) Điện thoại cố định:</span>
+                                    <input name="DauMoiLL_NgoaiGio_DienThoai" maxlength="255" id="DauMoiLL_NgoaiGio_DienThoai" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_NgoaiGio_DienThoai %>" />
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>c) Điện thoại di động:</span>
+                                    <input name="DauMoiLL_NgoaiGio_DienThoaiDD" maxlength="255" id="DauMoiLL_NgoaiGio_DienThoaiDD" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_NgoaiGio_DienThoaiDD %>" />
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>d)
-                S&#7889; Fax:
-                                    </span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
-                                        <span style='mso-tab-count: 1 dotted'>..........................................................................................................................</span><o:p></o:p>
-                                    </span>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>d) Số Fax:</span>
+                                    <input name="DauMoiLL_NgoaiGio_Fax" maxlength="255" id="DauMoiLL_NgoaiGio_Fax" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_NgoaiGio_Fax %>" />
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
                                     <b style='mso-bidi-font-weight: normal'>
-                                        <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>5. &#272;&#7847;u m&#7889;i
-                    lãnh &#273;&#7841;o ph&#7909; trách v&#7873; an toàn thông tin c&#7911;a t&#7893;
-                    ch&#7913;c
-                                        </span>
-                                    </b><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'><i style='mso-bidi-font-style: normal'><sup>(4)</sup></i></span><i style='mso-bidi-font-style: normal'>
-                                        <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
-                                            <o:p></o:p>
-                                        </span>
-                                    </i>
+                                        <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>5. Đầu mối lãnh đạo phụ trách về an toàn thông tin của tổ chức <i style='mso-bidi-font-style: normal'><sup>(4)</sup></i></span>
+                                    </b>
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>a)
-                Tên b&#7897; ph&#7853;n/ng&#432;&#7901;i gi&#7843;i quy&#7871;t:
-                                    </span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'><span style='mso-tab-count: 1 dotted'>......................................................................................... </span>
-                                        <o:p></o:p>
-                                    </span>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>a) Tên bộ phận/người giải quyết:</span>
+                                    <input name="DauMoiLanhDao_Ten" maxlength="255" id="DauMoiLanhDao_Ten" class="textstyle1" type="text" value="<%=entityDk.DauMoiLanhDao_Ten %>" />
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>b)
-                &#272;i&#7879;n tho&#7841;i c&#7889; &#273;&#7883;nh:
-                                    </span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>…………………………………..</span><span lang="VI"
-                                        style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                c)
-                &#272;i&#7879;n tho&#7841;i di &#273;&#7897;ng:
-                                    </span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'><span style='mso-tab-count: 1 dotted'>............................ </span>
-                                        <o:p></o:p>
-                                    </span>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>b) Điện thoại cố định:</span>
+                                    <input name="DauMoiLanhDao_DienThoai" maxlength="255" id="DauMoiLanhDao_DienThoai" class="textstyle1" type="text" value="<%=entityDk.DauMoiLanhDao_DienThoai %>" />
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>c) Điện thoại di động:</span>
+                                    <input name="DauMoiLanhDao_DienThoaiDD" maxlength="255" id="DauMoiLanhDao_DienThoaiDD" class="textstyle1" type="text" value="<%=entityDk.DauMoiLanhDao_DienThoaiDD %>" />
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -479,76 +453,48 @@
                                         <sup>
                                             <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>(4)</span>
                                         </sup>
-                                    </i><i style='mso-bidi-font-style: normal'>
-                                        <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#272;&#7847;u m&#7889;i
-                    Lãnh &#273;&#7841;o ph&#7909; trách v&#7873; an toàn thông tin c&#7911;a t&#7893;
-                    ch&#7913;c s&#7869; ch&#7881; &#273;&#432;&#7907;c s&#7917; d&#7909;ng khi
-                    không liên l&#7841;c &#273;&#432;&#7907;c v&#7899;i các &#273;&#7847;u m&#7889;i
-                    khác ho&#7863;c trong các tình hu&#7889;ng s&#7921; c&#7889; có t
-                                        </span>
-                                    </i><i style='mso-bidi-font-style: normal'>
-                                        <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>í</span>
-                                    </i><i style='mso-bidi-font-style: normal'>
-                                        <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>nh ch&#7845;t nghiêm
-                    tr&#7885;ng<o:p></o:p>
-                                        </span>
+                                    </i>
+                                    <i style='mso-bidi-font-style: normal'>
+                                        <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Đầu mối Lãnh đạo phụ trách về an toàn thông tin của tổ chức sẽ chỉ được sử dụng khi không liên lạc được với các đầu mối khác hoặc trong các tình huống sự cố có t í nh chất nghiêm trọng</span>
                                     </i>
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
                                     <b style='mso-bidi-font-weight: normal'>
-                                        <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>6. &#272;&#7883;a ch&#7881; nh&#7853;n th&#432;
-                    và công v&#259;n qua &#273;&#432;&#7901;ng b&#432;u &#273;i&#7879;n:<o:p></o:p>
-                                        </span>
+                                        <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>6. Địa chỉ nhận thư và công văn qua đường bưu điện:</span>
                                     </b>
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>a)
-                Tên b&#7897; ph&#7853;n/ng&#432;&#7901;i nh&#7853;n:
-                                    </span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'><span style='mso-tab-count: 1 dotted'>................................................................................................. </span>
-                                        <o:p></o:p>
-                                    </span>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>a) Tên bộ phận/người nhận:</span>
+                                    <input name="DCNhanThu_TenBoPhan" maxlength="255" id="DCNhanThu_TenBoPhan" class="textstyle1" type="text" value="<%=entityDk.DCNhanThu_TenBoPhan %>" />
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>b)
-                V&#7883; trí, ch&#7913;c v&#7909;:
-                                    </span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'><span style='mso-tab-count: 1 dotted'>................................................................................................................ </span>
-                                        <o:p></o:p>
-                                    </span>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>b) Vị trí, chức vụ:</span>
+                                    <input name="DCNhanThu_ViTri" maxlength="255" id="DCNhanThu_ViTri" class="textstyle1" type="text" value="<%=entityDk.DCNhanThu_ViTri %>" />
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>c)
-                Tên t&#7893; ch&#7913;c:
-                                    </span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
-                                        <span style='mso-tab-count: 1 dotted'>.....................................................................................................................</span><o:p></o:p>
-                                    </span>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>c) Tên tổ chức:</span>
+                                    <input name="DCNhanThu_TenToChuc" maxlength="255" id="DCNhanThu_TenToChuc" class="textstyle1" type="text" value="<%=entityDk.DCNhanThu_TenToChuc %>" />
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>d)
-                &#272;&#7883;a ch&#7881; liên h&#7879;:
-                                    </span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'><span style='mso-tab-count: 1 dotted'>................................................................................................................. </span>
-                                        <o:p></o:p>
-                                    </span>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>d) Địa chỉ liên hệ:</span>
+                                    <input name="DCNhanThu_DiaChi" maxlength="255" id="DCNhanThu_DiaChi" class="textstyle1" type="text" value="<%=entityDk.DCNhanThu_DiaChi %>" />
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#273;)
-                &#272;i&#7879;n tho&#7841;i:
-                                    </span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
-                                        <span style='mso-tab-count: 1 dotted'>......................................................................................................................</span><o:p></o:p>
-                                    </span>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>đ) Điện thoại:</span>
+                                    <input name="DCNhanThu_DienThoai" maxlength="255" id="DCNhanThu_DienThoai" class="textstyle1" type="text" value="<%=entityDk.DCNhanThu_DienThoai %>" />
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
                                     <b style='mso-bidi-font-weight: normal'>
-                                        <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>7. Ph&#432;&#417;ng ti&#7879;n liên l&#7841;c
-                    khác
-                                        </span>
-                                    </b><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'><i style='mso-bidi-font-style: normal'><sup>(5)</sup></i><o:p></o:p></span>
+                                        <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>7. Phương tiện liên lạc khác</span>
+                                    </b>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'><i style='mso-bidi-font-style: normal'><sup>(5)</sup></i></span>
                                 </p>
 
                                 <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0"
@@ -556,23 +502,20 @@
                                     <tr style='mso-yfti-irow: 0; mso-yfti-firstrow: yes'>
                                         <td width="605" colspan="2" valign="bottom" style='width: 454.05pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Cách
-                            th&#7913;c liên l&#7841;c khác qua h&#7879; th&#7889;ng nh&#7855;n tin t&#7913;c
-                            th&#7901;i<o:p></o:p>
-                                                </span>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Cách thức liên lạc khác qua hệ thống nhắn tin tức thời</span>
                                             </p>
                                         </td>
                                     </tr>
                                     <tr style='mso-yfti-irow: 1'>
                                         <td width="207" valign="top" style='width: 155.45pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>a) Yahoo ID:<o:p></o:p></span>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>a) Yahoo ID:</span>
                                             </p>
                                         </td>
                                         <td width="398" valign="top" style='width: 298.6pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" style='margin-top: 6.0pt'>
                                                 <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
+                                                    <input name="LLKhac_Yahoo" maxlength="255" id="LLKhac_Yahoo" class="textstyle1" type="text" value="<%=entityDk.LLKhac_Yahoo %>" />
                                                 </span>
                                             </p>
                                         </td>
@@ -580,13 +523,13 @@
                                     <tr style='mso-yfti-irow: 2'>
                                         <td width="207" valign="top" style='width: 155.45pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>s</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>b) Skype:<o:p></o:p></span>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>b) Skype:</span>
                                             </p>
                                         </td>
-                                        <td width="398" valign="top" style='width: 298.6pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
+                                        <td width="398" valign="top" style="width: 298.6pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in">
                                             <p class="MsoNormal" style='margin-top: 6.0pt'>
                                                 <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
+                                                    <input name="LLKhac_Skype" maxlength="255" id="LLKhac_Skype" class="textstyle1" type="text" value="<%=entityDk.LLKhac_Skype %>" />
                                                 </span>
                                             </p>
                                         </td>
@@ -594,15 +537,13 @@
                                     <tr style='mso-yfti-irow: 3'>
                                         <td width="207" valign="top" style='width: 155.45pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>c) Google
-                            Talk:<o:p></o:p>
-                                                </span>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>c) Google Talk:</span>
                                             </p>
                                         </td>
                                         <td width="398" valign="top" style='width: 298.6pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" style='margin-top: 6.0pt'>
                                                 <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
+                                                    <input name="LLKhac_GoogleTalk" maxlength="255" id="LLKhac_GoogleTalk" class="textstyle1" type="text" value="<%=entityDk.LLKhac_GoogleTalk %>" />
                                                 </span>
                                             </p>
                                         </td>
@@ -610,13 +551,13 @@
                                     <tr style='mso-yfti-irow: 4'>
                                         <td width="207" valign="top" style='width: 155.45pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>d)</span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>H</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>otmail:<o:p></o:p></span>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>d) Hotmail:</span>
                                             </p>
                                         </td>
                                         <td width="398" valign="top" style='width: 298.6pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" style='margin-top: 6.0pt'>
                                                 <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
+                                                    <input name="LLKhac_Hotmail" maxlength="255" id="LLKhac_Hotmail" class="textstyle1" type="text" value="<%=entityDk.LLKhac_Hotmail %>" />
                                                 </span>
                                             </p>
                                         </td>
@@ -624,15 +565,13 @@
                                     <tr style='mso-yfti-irow: 5'>
                                         <td width="207" valign="top" style='width: 155.45pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#273;)
-                            Khác:<o:p></o:p>
-                                                </span>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>đ) Khác:</span>
                                             </p>
                                         </td>
                                         <td width="398" valign="top" style='width: 298.6pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" style='margin-top: 6.0pt'>
                                                 <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
+                                                    <input name="LLKhac_Khac" maxlength="255" id="LLKhac_Khac" class="textstyle1" type="text" value="<%=entityDk.LLKhac_Khac %>" />
                                                 </span>
                                             </p>
                                         </td>
@@ -644,14 +583,10 @@
                                                     <sup>
                                                         <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>(5)</span>
                                                     </sup>
-                                                </i><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <i style='mso-bidi-font-style: normal'>
-                                                        <span lang="VI">Thông tin không b&#7855;t
-                                    bu&#7897;c
-                                                        </span>
-                                                    </i><span lang="VI">
-                                                        <o:p></o:p>
-                                                    </span>
+                                                </i><span style="font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: 'Arial','sans-serif';">
+                                                    <i style="mso-bidi-font-style: normal">
+                                                        <span lang="VI">Thông tin không bắt buộc </span>
+                                                    </i>
                                                 </span>
                                             </p>
                                         </td>
@@ -661,47 +596,11 @@
                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
                                     <b style='mso-bidi-font-weight: normal'>
                                         <i style='mso-bidi-font-style: normal'>
-                                            <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Chúng tôi cam
-                        k&#7871;t tuân th&#7911; các trách nhi&#7879;m, quy&#7873;n h&#7841;n c&#7911;a
-                        thành viên m&#7841;ng l&#432;&#7899;i, các quy &#273;&#7883;nh v&#7873; ho&#7841;t
-                        &#273;&#7897;ng &#273;i&#7873;u ph
-                                            </span>
+                                            <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Chúng tôi cam kết tuân thủ các trách nhiệm, quyền hạn của thành viên mạng lưới, các quy định về hoạt động điều phối ứng cứu sự cố theo quy định pháp luật và hướng dẫn của Cơ quan điều phối quốc gia ban hành.</span>
                                         </i>
                                     </b><b style='mso-bidi-font-weight: normal'>
                                         <i style='mso-bidi-font-style: normal'>
-                                            <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>&#7889;</span>
-                                        </i>
-                                    </b><b style='mso-bidi-font-weight: normal'>
-                                        <i style='mso-bidi-font-style: normal'>
-                                            <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>i &#7913;ng c&#7913;u
-                        s&#7921; c
-                                            </span>
-                                        </i>
-                                    </b><b style='mso-bidi-font-weight: normal'>
-                                        <i style='mso-bidi-font-style: normal'>
-                                            <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>&#7889;</span>
-                                        </i>
-                                    </b><b style='mso-bidi-font-weight: normal'>
-                                        <i style='mso-bidi-font-style: normal'>
-                                            <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>theo quy &#273;&#7883;nh pháp lu&#7853;t và h&#432;&#7899;ng d&#7851;n c&#7911;a
-                        C&#417; quan &#273;i&#7873;u ph
-                                            </span>
-                                        </i>
-                                    </b><b style='mso-bidi-font-weight: normal'>
-                                        <i style='mso-bidi-font-style: normal'>
-                                            <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>&#7889;</span>
-                                        </i>
-                                    </b><b style='mso-bidi-font-weight: normal'>
-                                        <i style='mso-bidi-font-style: normal'>
-                                            <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>i qu&#7889;c gia ban
-                        hành.
-                                            </span>
-                                        </i>
-                                    </b><b style='mso-bidi-font-weight: normal'>
-                                        <i style='mso-bidi-font-style: normal'>
-                                            <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
-                                                <o:p></o:p>
-                                            </span>
+                                            <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'></span>
                                         </i>
                                     </b>
                                 </p>
@@ -709,9 +608,7 @@
                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
                                     <b style='mso-bidi-font-weight: normal'>
                                         <i style='mso-bidi-font-style: normal'>
-                                            <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
-                                                <o:p>&nbsp;</o:p>
-                                            </span>
+                                            <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'></span>
                                         </i>
                                     </b>
                                 </p>
@@ -721,26 +618,21 @@
                                     <tr style='mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes'>
                                         <td width="295" valign="top" style='width: 221.4pt; padding: 0in 5.4pt 0in 5.4pt'>
                                             <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
+                                                <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'></span>
                                             </p>
                                         </td>
                                         <td width="295" valign="top" style='width: 221.4pt; padding: 0in 5.4pt 0in 5.4pt'>
                                             <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
                                                 <i style='mso-bidi-font-style: normal'>
-                                                    <span style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>….., ngày …. tháng …. n&#259;m 20……<br>
+                                                    <span style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>….., ngày …. tháng …. năm 20……<br>
                                                     </span>
                                                 </i><b style='mso-bidi-font-weight: normal'>
-                                                    <span style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>NG&#431;&#7900;I &#272;&#7840;I DI&#7878;N THEO PHÁP
-                                LU&#7852;T<br>
+                                                    <span style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>NGƯỜI ĐẠI DIỆN THEO PHÁP LUẬT<br>
                                                     </span>
                                                 </b><i style='mso-bidi-font-style: normal'>
-                                                    <span style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>(Ký tên và &#273;óng d&#7845;u)</span>
+                                                    <span style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>(Ký tên và đóng dấu)</span>
                                                 </i><b style='mso-bidi-font-weight: normal'>
-                                                    <span style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>
-                                                        <o:p></o:p>
-                                                    </span>
+                                                    <span style='font-size: 10.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'></span>
                                                 </b>
                                             </p>
                                         </td>
@@ -748,9 +640,7 @@
                                 </table>
 
                                 <p class="MsoNormal">
-                                    <span lang="VI">
-                                        <o:p>&nbsp;</o:p>
-                                    </span>
+                                    <span lang="VI"></span>
                                 </p>
 
                             </div>
@@ -759,14 +649,14 @@
                                 <input type="hidden" name="endCode" value="<%=endCode %>" />
                                 <%if (!string.IsNullOrEmpty(endCode))
                                     {%>
-                                <input class="btn_action search icon QAcustom" name="_hl_action[UpdateHoSoUCSC]" value="Cập nhật" type="submit" />
+                                <input class="btn_action search icon QAcustom" name="_hl_action[UpdateDangKyUCSC]" value="Cập nhật" type="submit" />
                                 <%}
                                     else
                                     {%>
-                                <input class="btn_action search icon QAcustom" name="_hl_action[AddHoSoUCSC]" value="Lưu" type="submit" />
+                                <input class="btn_action search icon QAcustom" name="_hl_action[AddDangKyUCSC]" value="Lưu" type="submit" />
                                 <%}%>
 
-                                <input style="margin-left: 10px;" onclick="location.href = '/vn/Thanh-vien/Dang-ky-ung-cuu-su-co.aspx';" type="button" name="" value="Danh sách hồ sơ" />
+                                <input style="margin-left: 10px;" onclick="location.href = '/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx';" type="button" name="" value="Danh sách đăng ký" />
                             </div>
 
                         </div>

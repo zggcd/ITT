@@ -1613,6 +1613,12 @@
     <Content Include="TTPortal\Views\FormText\Index.ascx" />
     <Content Include="TTPortal\Views\ModAlbum\Add.ascx" />
     <Content Include="TTPortal\Views\ModAlbum\Index.ascx" />
+    <Content Include="TTPortal\Views\ModBaoCaoBanDauSuCo\Add.ascx" />
+    <Content Include="TTPortal\Views\ModBaoCaoBanDauSuCo\Index.ascx" />
+    <Content Include="TTPortal\Views\ModBaoCaoKetThucSuCo\Add.ascx" />
+    <Content Include="TTPortal\Views\ModBaoCaoKetThucSuCo\Index.ascx" />
+    <Content Include="TTPortal\Views\ModBaoCaoTongHop\Add.ascx" />
+    <Content Include="TTPortal\Views\ModBaoCaoTongHop\Index.ascx" />
     <Content Include="TTPortal\Views\ModConfigSendMail\Add.ascx" />
     <Content Include="TTPortal\Views\ModConfigSendMail\Index.ascx" />
     <Content Include="TTPortal\Views\ModCoQuan\Add.ascx" />
@@ -1627,6 +1633,10 @@
     <Content Include="TTPortal\Views\ModGopY\Index.ascx" />
     <Content Include="TTPortal\Views\ModHSThanhVienUCSC\Add.ascx" />
     <Content Include="TTPortal\Views\ModHSThanhVienUCSC\Index.ascx" />
+    <Content Include="TTPortal\Views\ModInfoMagic\Add.ascx" />
+    <Content Include="TTPortal\Views\ModInfoMagic\Index.ascx" />
+    <Content Include="TTPortal\Views\ModSoLuongSuCo\Add.ascx" />
+    <Content Include="TTPortal\Views\ModSoLuongSuCo\Index.ascx" />
     <Content Include="TTPortal\Views\ModTag\Add.ascx" />
     <Content Include="TTPortal\Views\ModTag\Index.ascx" />
     <Content Include="TTPortal\Views\ModUser\Add.ascx" />
@@ -1639,6 +1649,9 @@
     <Content Include="Views\CAdv\Left.ascx" />
     <Content Include="Views\CAdv\Logo.ascx" />
     <Content Include="Views\CAlbum\Default.ascx" />
+    <Content Include="Views\CBaoCaoBanDauSuCo\Default.ascx" />
+    <Content Include="Views\CBaoCaoKetThucSuCo\Default.ascx" />
+    <Content Include="Views\CBaoCaoTongHop\Default.ascx" />
     <Content Include="Views\CCoQuan\Default.ascx" />
     <Content Include="Views\CDauMoiUCSC\Default.ascx" />
     <Content Include="Views\CDonDangKyUCSC\Default.ascx" />
@@ -1647,6 +1660,7 @@
     <Content Include="Views\CFeedback\Default.ascx" />
     <Content Include="Views\CGopY\Default.ascx" />
     <Content Include="Views\CHSThanhVienUCSC\Default.ascx" />
+    <Content Include="Views\CInfoMagic\Default.ascx" />
     <Content Include="Views\CInfo\Login.ascx" />
     <Content Include="Views\CInfo\Register.ascx" />
     <Content Include="Views\CMenu\TopRight.ascx" />
@@ -1655,6 +1669,7 @@
     <Content Include="Views\CMenu\Left.ascx" />
     <Content Include="Views\CNews\MultiMedia.ascx" />
     <Content Include="Views\CNews\HaiChuyenMuc.ascx" />
+    <Content Include="Views\CSoLuongSuCo\Default.ascx" />
     <Content Include="Views\CStatic\Date.ascx" />
     <Content Include="Views\CStatic\Search.ascx" />
     <Content Include="Views\CUser\Default.ascx" />
@@ -1662,6 +1677,12 @@
     <Content Include="Views\CVideo\Default.ascx" />
     <Content Include="Views\MAlbum\Detail.ascx" />
     <Content Include="Views\MAlbum\Index.ascx" />
+    <Content Include="Views\MBaoCaoBanDauSuCo\Detail.ascx" />
+    <Content Include="Views\MBaoCaoBanDauSuCo\Index.ascx" />
+    <Content Include="Views\MBaoCaoKetThucSuCo\Detail.ascx" />
+    <Content Include="Views\MBaoCaoKetThucSuCo\Index.ascx" />
+    <Content Include="Views\MBaoCaoTongHop\Detail.ascx" />
+    <Content Include="Views\MBaoCaoTongHop\Index.ascx" />
     <Content Include="Views\MContentTemp\Index.ascx" />
     <Content Include="Views\MContent\MangLuoi.ascx" />
     <Content Include="Views\MCoQuan\Detail.ascx" />
@@ -1675,6 +1696,8 @@
     <Content Include="Views\MGopY\Index.ascx" />
     <Content Include="Views\MHSThanhVienUCSC\Detail.ascx" />
     <Content Include="Views\MHSThanhVienUCSC\Index.ascx" />
+    <Content Include="Views\MInfoMagic\Detail.ascx" />
+    <Content Include="Views\MInfoMagic\Index.ascx" />
     <Content Include="Views\MInfo\DangKyUCSC.ascx" />
     <Content Include="Views\MInfo\Login.ascx" />
     <Content Include="Views\MInfo\ChangePass.ascx" />
@@ -1738,6 +1761,8 @@
     <Content Include="Views\CNews\HomeCarousel.ascx" />
     <Content Include="Views\MNews\Detail.ascx" />
     <Content Include="Views\MNews\Index.ascx" />
+    <Content Include="Views\MSoLuongSuCo\Detail.ascx" />
+    <Content Include="Views\MSoLuongSuCo\Index.ascx" />
     <Content Include="Views\MTag\Detail.ascx" />
     <Content Include="Views\MUser\Detail.ascx" />
     <Content Include="Views\MUser\Index.ascx" />

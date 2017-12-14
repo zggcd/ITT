@@ -29,6 +29,9 @@ namespace HL.Lib.Models
         public int ParentID { get; set; }
 
         [DataInfo]
+        public bool IsAddText { get; set; }
+
+        [DataInfo]
         public int Order { get; set; }
 
         [DataInfo]

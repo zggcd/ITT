@@ -323,6 +323,11 @@ namespace HL.Lib.Controllers
         }
 
         #region Dieu phoi, ung cuu su co ATTT mang
+        /// <summary>
+        /// Them ho so ung cuu su co
+        /// </summary>
+        /// <param name="entity">HS thanh vien</param>
+        /// <param name="entityDm">Dau moi UCSC</param>
         public void ActionAddHoSoUCSC(ModHSThanhVienUCSCEntity entity, ModDauMoiUCSCEntity entityDm)
         {
             ViewBag.HoSo = entity;
@@ -349,7 +354,24 @@ namespace HL.Lib.Controllers
             ViewPage.Alert("Tạo mới hồ sơ thành công! Chúng tôi sẽ xem xét và phê duyệt hồ sơ của bạn sớm nhất có thể.");
             ViewPage.Navigate("/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx");
         }
-        #endregion Dieu phoi, ung cuu su co ATTT mang
+
+        public void ActionAddDangKyUCSC(ModDonDangKyUCSCEntity entity)
+        {
+            ViewBag.DangKy = entity;
+
+            DateTime date = DateTime.Now;
+            string code = "DKUCSC" + ModDonDangKyUCSCService.Instance.GetMaxID();
+            entity.Name = code;
+            entity.Code = Data.GetCode(code);
+            entity.UserID = Lib.Global.CPLogin.UserID;
+            entity.Order = GetMaxOrder_DangKy();
+            entity.Published = date;
+            entity.Activity = false;
+            int id = ModDonDangKyUCSCService.Instance.Save(entity);
+
+            ViewPage.Alert("Tạo mới đăng ký thành công! Chúng tôi sẽ xem xét và phê duyệt đăng ký của bạn sớm nhất có thể.");
+            ViewPage.Navigate("/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx");
+        }
 
         private int GetMaxOrder_HoSo()
         {
@@ -364,6 +386,14 @@ namespace HL.Lib.Controllers
                     .Max(o => o.Order)
                     .ToValue().ToInt(0) + 1;
         }
+
+        private int GetMaxOrder_DangKy()
+        {
+            return ModDonDangKyUCSCService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
+        #endregion Dieu phoi, ung cuu su co ATTT mang
     }
     public class MUserModel
     {

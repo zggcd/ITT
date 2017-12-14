@@ -47,6 +47,7 @@ namespace HL.Lib.CPControllers
                 // khoi tao gia tri mac dinh khi insert
                 entity.ParentID = model.ParentID;
                 entity.Activity = true;
+                entity.IsAddText = false;
                 entity.LangID = model.LangID;
                 entity.Order = GetMaxOrder(model);
 
