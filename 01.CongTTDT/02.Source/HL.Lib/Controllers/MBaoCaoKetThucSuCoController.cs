@@ -20,10 +20,12 @@ namespace HL.Lib.Controllers
         public void ActionIndex(MBaoCaoKetThucSuCoModel model)
         {
             if (ViewPage.CurrentPage.MenuID > 0)
-               MenuID = ViewPage.CurrentPage.MenuID;
+                MenuID = ViewPage.CurrentPage.MenuID;
+            int userId = HL.Lib.Global.CPLogin.UserID;
 
             var dbQuery = ModBaoCaoKetThucSuCoService.Instance.CreateQuery()
-                            .Where(o => o.Activity == true)
+                            //.Where(o => o.Activity == true)
+                            .Where(userId > 0, o => o.UserID == userId)
                             .Where(State > 0, o => (o.State & State) == State)
                             .WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("BaoCaoKetThucSuCo", MenuID, ViewPage.CurrentLang.ID))
                             .OrderByDesc(o => o.Order)
@@ -38,27 +40,97 @@ namespace HL.Lib.Controllers
 
         public void ActionDetail(string endCode)
         {
-            var entity = ModBaoCaoKetThucSuCoService.Instance.CreateQuery()
-                            .Where(o => o.Activity == true && o.Code == endCode)
+            string layout = "";
+            string ec = endCode.ToLower();
+            if (ec == "them-bc-ket-thuc-su-co") layout = "BCKetThucUCSC";
+            else if (ec == "sua-bc-ket-thuc-su-co") layout = "BCKetThucUCSC";
+            else if (ec == "bc-ket-thuc-su-co") layout = "Index";
+
+            if (!string.IsNullOrEmpty(layout)) RenderView(layout);
+            else
+            {
+                int userId = HL.Lib.Global.CPLogin.UserID;
+                var entity = ModBaoCaoKetThucSuCoService.Instance.CreateQuery()
+                            //.Where(o => o.Activity == true)
+                            .Where(userId > 0, o => o.UserID == userId)
+                            .Where(o => o.Code == endCode)
                             //.WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("BaoCaoKetThucSuCo", MenuID, ViewPage.CurrentLang.ID))
                             .ToSingle();
 
+                if (entity != null)
+                {
+                    ViewBag.Other = ModBaoCaoKetThucSuCoService.Instance.CreateQuery()
+                                            .Where(o => o.Activity == true)
+                                            .Where(o => o.Order < entity.Order)
+                                            .WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("BaoCaoKetThucSuCo", MenuID, ViewPage.CurrentLang.ID))
+                                            .OrderByDesc(o => o.Order)
+                                            .Take(PageSize)
+                                            .ToList();
+
+                    ViewBag.Data = entity;
+                    SetObject["view.Meta"] = entity;
+
+                    ViewBag.BCKetThuc = entity;
+                    ViewBag.EndCode = endCode;
+                    RenderView("../MInfo/BCKetThucUCSC");
+                }
+                else
+                {
+                    ViewPage.Error404();
+                }
+            }
+        }
+
+        public void ActionXoaBaoCao(string baoCaoId)
+        {
+            int bcId = HL.Core.Global.Convert.ToInt(baoCaoId, 0);
+            int userId = HL.Lib.Global.CPLogin.UserID;
+            var entity = ModBaoCaoKetThucSuCoService.Instance.CreateQuery()
+                        .Where(userId > 0, o => o.UserID == userId)
+                        .Where(bcId > 0, o => o.ID == bcId)
+                        .ToSingle();
+
             if (entity != null)
             {
-                ViewBag.Other = ModBaoCaoKetThucSuCoService.Instance.CreateQuery()
-                                        .Where(o => o.Activity == true)
-                                        .Where(o => o.Order < entity.Order)
-                                        .WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("BaoCaoKetThucSuCo", MenuID, ViewPage.CurrentLang.ID))
-                                        .OrderByDesc(o => o.Order)
-                                        .Take(PageSize)
-                                        .ToList();
+                ModBaoCaoKetThucSuCoService.Instance.Delete(entity.ID);
 
-                ViewBag.Data = entity;
-                SetObject["view.Meta"] = entity;
+                ViewPage.Alert("Xóa báo cáo thành công.");
+                ViewPage.Navigate(ViewPage.CurrentURL);
             }
             else
             {
-                ViewPage.Error404();
+                ViewPage.Alert("Bạn không có quyền thao tác trên báo cáo này.");
+            }
+        }
+
+        public void ActionUpdateBaoCaoUCSC(ModBaoCaoKetThucSuCoEntity entityBc, string endCode)
+        {
+            int userId = HL.Lib.Global.CPLogin.UserID;
+            var entity = ModBaoCaoKetThucSuCoService.Instance.CreateQuery()
+                        .Where(userId > 0, o => o.UserID == userId)
+                        .Where(o => o.Code == endCode)
+                        .ToSingle();
+            if (entity != null)
+            {
+                DateTime date = DateTime.Now;
+
+                entityBc.ID = entity.ID;
+                entityBc.UserID = entity.UserID;
+                entityBc.UserID1 = entity.UserID1;
+                entityBc.MenuID = entity.MenuID;
+                entityBc.State = entity.State;
+                entityBc.Name = entity.Name;
+                entityBc.Code = entity.Code;
+                entityBc.Order = entity.Order;
+                entityBc.Published = entity.Published;
+                entityBc.Published1 = date;
+                entityBc.Activity = false;
+                ModBaoCaoKetThucSuCoService.Instance.Save(entityBc);
+
+                ViewBag.BaoCao = entityBc;
+
+                ViewPage.Alert("Cập nhật báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
+                ViewPage.Navigate("/vn/Thanh-vien/DS-bao-cao-tong-hop.aspx");
             }
         }
     }

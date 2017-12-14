@@ -7,7 +7,7 @@ namespace HL.Lib.Models
 {
     public class ModBaoCaoTongHopEntity : EntityBase
     {
-        
+
         #region Autogen by HL
 
         [DataInfo]
@@ -67,8 +67,8 @@ namespace HL.Lib.Models
         [DataInfo]
         public bool Activity { get; set; }
 
-        #endregion      
-  
+        #endregion
+
         private ModUserEntity _oUser = null;
         public ModUserEntity getUser()
         {
@@ -79,8 +79,8 @@ namespace HL.Lib.Models
                 _oUser = new ModUserEntity();
 
             return _oUser;
-        }      
-  
+        }
+
         private WebMenuEntity _oMenu = null;
         public WebMenuEntity getMenu()
         {
@@ -125,6 +125,13 @@ namespace HL.Lib.Models
             return base.CreateQuery()
                .Where(o => o.ID == id)
                .ToSingle();
+        }
+
+        public int GetMaxID()
+        {
+            return base.CreateQuery()
+                    .Max(o => o.ID)
+                    .ToValue().ToInt(0) + 1;
         }
 
     }

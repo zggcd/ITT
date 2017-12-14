@@ -24,6 +24,9 @@ namespace HL.Lib.Controllers
             else if (ec == "doi-mat-khau") layout = "ChangePass";
             else if (ec == "them-ho-so-ung-cuu-su-co") layout = "HoSoUCSC";
             else if (ec == "dang-ky-ung-cuu-su-co") layout = "DangKyUCSC";
+            else if (ec == "them-bc-ban-dau-su-co") layout = "BCBanDauUCSC";
+            else if (ec == "them-bc-ket-thuc-su-co") layout = "BCKetThucUCSC";
+            else if (ec == "them-bc-tong-hop-su-co") layout = "BCTongHopUCSC";
             else if (ec == "dang-xuat")
             {
                 string currUrl = ViewPage.Request.RawUrl;
@@ -373,6 +376,60 @@ namespace HL.Lib.Controllers
             ViewPage.Navigate("/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx");
         }
 
+        public void ActionAddBCBanDauUCSC(ModBaoCaoBanDauSuCoEntity entity)
+        {
+            ViewBag.BaoCao = entity;
+
+            DateTime date = DateTime.Now;
+            string code = "BCBDSC" + ModBaoCaoBanDauSuCoService.Instance.GetMaxID();
+            entity.Name = code;
+            entity.Code = Data.GetCode(code);
+            entity.UserID = Lib.Global.CPLogin.UserID;
+            entity.Order = GetMaxOrder_BCBanDau();
+            entity.Published = date;
+            entity.Activity = false;
+            int id = ModBaoCaoBanDauSuCoService.Instance.Save(entity);
+
+            ViewPage.Alert("Tạo mới báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
+            ViewPage.Navigate("/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx");
+        }
+
+        public void ActionAddBCKetThucUCSC(ModBaoCaoKetThucSuCoEntity entity)
+        {
+            ViewBag.BaoCao = entity;
+
+            DateTime date = DateTime.Now;
+            string code = "BCBDSC" + ModBaoCaoKetThucSuCoService.Instance.GetMaxID();
+            entity.Name = code;
+            entity.Code = Data.GetCode(code);
+            entity.UserID = Lib.Global.CPLogin.UserID;
+            entity.Order = GetMaxOrder_BCKetThuc();
+            entity.Published = date;
+            entity.Activity = false;
+            int id = ModBaoCaoKetThucSuCoService.Instance.Save(entity);
+
+            ViewPage.Alert("Tạo mới báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
+            ViewPage.Navigate("/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx");
+        }
+
+        public void ActionAddBCTongHopUCSC(ModBaoCaoTongHopEntity entity)
+        {
+            ViewBag.BaoCao = entity;
+
+            DateTime date = DateTime.Now;
+            string code = "BCBDSC" + ModBaoCaoTongHopService.Instance.GetMaxID();
+            entity.Name = code;
+            entity.Code = Data.GetCode(code);
+            entity.UserID = Lib.Global.CPLogin.UserID;
+            entity.Order = GetMaxOrder_BCTongHop();
+            entity.Published = date;
+            entity.Activity = false;
+            int id = ModBaoCaoTongHopService.Instance.Save(entity);
+
+            ViewPage.Alert("Tạo mới báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
+            ViewPage.Navigate("/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx");
+        }
+
         private int GetMaxOrder_HoSo()
         {
             return ModHSThanhVienUCSCService.Instance.CreateQuery()
@@ -390,6 +447,27 @@ namespace HL.Lib.Controllers
         private int GetMaxOrder_DangKy()
         {
             return ModDonDangKyUCSCService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
+
+        private int GetMaxOrder_BCBanDau()
+        {
+            return ModBaoCaoBanDauSuCoService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
+
+        private int GetMaxOrder_BCKetThuc()
+        {
+            return ModBaoCaoKetThucSuCoService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
+
+        private int GetMaxOrder_BCTongHop()
+        {
+            return ModBaoCaoTongHopService.Instance.CreateQuery()
                     .Max(o => o.Order)
                     .ToValue().ToInt(0) + 1;
         }
