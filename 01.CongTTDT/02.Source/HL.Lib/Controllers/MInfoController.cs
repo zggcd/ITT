@@ -24,7 +24,16 @@ namespace HL.Lib.Controllers
             else if (ec == "doi-mat-khau") layout = "ChangePass";
             else if (ec == "them-ho-so-ung-cuu-su-co") layout = "HoSoUCSC";
             else if (ec == "dang-ky-ung-cuu-su-co") layout = "DangKyUCSC";
-            else if (ec == "them-bc-ban-dau-su-co") layout = "BCBanDauUCSC";
+            else if (ec == "them-bc-ban-dau-su-co")
+            {
+                layout = "BCBanDauUCSC";
+                DateTime dt = DateTime.Now;
+                ViewBag.BaoCao = new ModBaoCaoBanDauSuCoEntity()
+                {
+                    ChiTiet_NgayGioPhatHien = dt,
+                    ThoiGianThucHien = dt
+                };
+            }
             else if (ec == "them-bc-ket-thuc-su-co") layout = "BCKetThucUCSC";
             else if (ec == "them-bc-tong-hop-su-co") layout = "BCTongHopUCSC";
             else if (ec == "dang-xuat")
@@ -378,17 +387,19 @@ namespace HL.Lib.Controllers
 
         public void ActionAddBCBanDauUCSC(ModBaoCaoBanDauSuCoEntity entity)
         {
-            ViewBag.BaoCao = entity;
-
             DateTime date = DateTime.Now;
             string code = "BCBDSC" + ModBaoCaoBanDauSuCoService.Instance.GetMaxID();
             entity.Name = code;
             entity.Code = Data.GetCode(code);
             entity.UserID = Lib.Global.CPLogin.UserID;
+            entity.ChiTiet_NgayGioPhatHien = date;
+            entity.ThoiGianThucHien = date;
             entity.Order = GetMaxOrder_BCBanDau();
             entity.Published = date;
             entity.Activity = false;
             int id = ModBaoCaoBanDauSuCoService.Instance.Save(entity);
+
+            ViewBag.BaoCao = entity;
 
             ViewPage.Alert("Tạo mới báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
             ViewPage.Navigate("/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx");
@@ -399,7 +410,7 @@ namespace HL.Lib.Controllers
             ViewBag.BaoCao = entity;
 
             DateTime date = DateTime.Now;
-            string code = "BCBDSC" + ModBaoCaoKetThucSuCoService.Instance.GetMaxID();
+            string code = "BCKTSC" + ModBaoCaoKetThucSuCoService.Instance.GetMaxID();
             entity.Name = code;
             entity.Code = Data.GetCode(code);
             entity.UserID = Lib.Global.CPLogin.UserID;
@@ -409,7 +420,7 @@ namespace HL.Lib.Controllers
             int id = ModBaoCaoKetThucSuCoService.Instance.Save(entity);
 
             ViewPage.Alert("Tạo mới báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
-            ViewPage.Navigate("/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx");
+            ViewPage.Navigate("/vn/Thanh-vien/DS-bc-ket-thuc-su-co.aspx");
         }
 
         public void ActionAddBCTongHopUCSC(ModBaoCaoTongHopEntity entity)
@@ -417,7 +428,7 @@ namespace HL.Lib.Controllers
             ViewBag.BaoCao = entity;
 
             DateTime date = DateTime.Now;
-            string code = "BCBDSC" + ModBaoCaoTongHopService.Instance.GetMaxID();
+            string code = "BCTHSC" + ModBaoCaoTongHopService.Instance.GetMaxID();
             entity.Name = code;
             entity.Code = Data.GetCode(code);
             entity.UserID = Lib.Global.CPLogin.UserID;
@@ -427,7 +438,7 @@ namespace HL.Lib.Controllers
             int id = ModBaoCaoTongHopService.Instance.Save(entity);
 
             ViewPage.Alert("Tạo mới báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
-            ViewPage.Navigate("/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx");
+            ViewPage.Navigate("/vn/Thanh-vien/DS-bc-tong-hop-su-co.aspx");
         }
 
         private int GetMaxOrder_HoSo()

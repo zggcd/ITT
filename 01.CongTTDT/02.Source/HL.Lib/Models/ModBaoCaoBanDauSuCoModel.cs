@@ -101,6 +101,9 @@ namespace HL.Lib.Models
         public string TTThem_MucDichSuDung { get; set; }
 
         [DataInfo]
+        public bool GiuBiMat { get; set; }
+
+        [DataInfo]
         public string Content { get; set; }
 
         [DataInfo]
