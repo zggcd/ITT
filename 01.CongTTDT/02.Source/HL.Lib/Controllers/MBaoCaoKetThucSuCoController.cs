@@ -103,7 +103,7 @@ namespace HL.Lib.Controllers
             }
         }
 
-        public void ActionUpdateBaoCaoUCSC(ModBaoCaoKetThucSuCoEntity entityBc, string endCode)
+        public void ActionUpdateBaoCaoUCSC(ModBaoCaoKetThucSuCoEntity entityBc, MAppend append, string endCode)
         {
             int userId = HL.Lib.Global.CPLogin.UserID;
             var entity = ModBaoCaoKetThucSuCoService.Instance.CreateQuery()
@@ -113,6 +113,10 @@ namespace HL.Lib.Controllers
             if (entity != null)
             {
                 DateTime date = DateTime.Now;
+                string ngayGioPhatHien = append.Ngay + " " + append.Gio + ":" + append.Phut;
+                string[] arr = append.ThoiGian.Split('/');
+                if (!string.IsNullOrEmpty(ngayGioPhatHien)) entityBc.NgayGioPhatHien = HL.Core.Global.Convert.ToDateTime(ngayGioPhatHien);
+                else entityBc.NgayGioPhatHien = DateTime.MinValue;
 
                 entityBc.ID = entity.ID;
                 entityBc.UserID = entity.UserID;

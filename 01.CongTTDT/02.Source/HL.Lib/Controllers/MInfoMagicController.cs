@@ -74,5 +74,17 @@ namespace HL.Lib.Controllers
 
         public int PageSize { get; set; }
         public int TotalRecord { get; set; }
+
+        //Cac gia tri cua chk duoc luu duoi dinh dang: Co nhap text (bool)/Index tuong ung voi txt/MenuID
+        public string[] chkCachThuc { get; set; }
+        public string[] txtCachThuc { get; set; }
+        public string[] chkThongBao { get; set; }
+        public string[] txtThongBao { get; set; }
+        public string[] chkDichVu { get; set; }
+        public string[] txtDichVu { get; set; }
+        public string[] chkBienPhap { get; set; }
+        public string[] txtBienPhap { get; set; }
+        public string[] chkThongTinGuiKem { get; set; }
+        public string[] txtThongTinGuiKem { get; set; }
     }
 }

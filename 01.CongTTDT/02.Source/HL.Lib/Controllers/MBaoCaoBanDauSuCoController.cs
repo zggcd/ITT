@@ -2,6 +2,7 @@
 
 using HL.Lib.MVC;
 using HL.Lib.Models;
+using HL.Lib.Global;
 
 namespace HL.Lib.Controllers
 {
@@ -70,7 +71,32 @@ namespace HL.Lib.Controllers
                     ViewBag.Data = entity;
                     SetObject["view.Meta"] = entity;
 
-                    ViewBag.BCKetThuc = entity;
+                    ViewBag.CachThuc = ModInfoMagicService.Instance.CreateQuery()
+                        .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == entity.ID)
+                        .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("CachThuc", MenuID, ViewPage.CurrentLang.ID))
+                        .ToList();
+
+                    ViewBag.ThongBao = ModInfoMagicService.Instance.CreateQuery()
+                        .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == entity.ID)
+                        .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("GuiThongBaoSuCo", MenuID, ViewPage.CurrentLang.ID))
+                        .ToList();
+
+                    ViewBag.DichVu = ModInfoMagicService.Instance.CreateQuery()
+                        .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == entity.ID)
+                        .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("DichVu", MenuID, ViewPage.CurrentLang.ID))
+                        .ToList();
+
+                    ViewBag.BienPhap = ModInfoMagicService.Instance.CreateQuery()
+                        .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == entity.ID)
+                        .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("BienPhapATTT", MenuID, ViewPage.CurrentLang.ID))
+                        .ToList();
+
+                    ViewBag.ThongTinGuiKem = ModInfoMagicService.Instance.CreateQuery()
+                        .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == entity.ID)
+                        .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("ThongTinGuiKem", MenuID, ViewPage.CurrentLang.ID))
+                        .ToList();
+
+                    ViewBag.BaoCao = entity;
                     ViewBag.EndCode = endCode;
                     RenderView("../MInfo/BCBanDauUCSC");
                 }
@@ -92,6 +118,9 @@ namespace HL.Lib.Controllers
 
             if (entity != null)
             {
+                var entityInfoMagic = ModInfoMagicService.Instance.CreateQuery().Where(o => o.BaoCaoBanDauSuCoID == entity.ID).ToList();
+                if (entityInfoMagic != null) ModInfoMagicService.Instance.Delete(entityInfoMagic);
+
                 ModBaoCaoBanDauSuCoService.Instance.Delete(entity.ID);
 
                 ViewPage.Alert("Xóa báo cáo thành công.");
@@ -103,7 +132,7 @@ namespace HL.Lib.Controllers
             }
         }
 
-        public void ActionUpdateBaoCaoUCSC(ModBaoCaoBanDauSuCoEntity entityBc, string endCode)
+        public void ActionUpdateBaoCaoUCSC(ModBaoCaoBanDauSuCoEntity entityBc, MInfoMagicModel modelInfo, MAppend append, string endCode)
         {
             int userId = HL.Lib.Global.CPLogin.UserID;
             var entity = ModBaoCaoBanDauSuCoService.Instance.CreateQuery()
@@ -113,6 +142,14 @@ namespace HL.Lib.Controllers
             if (entity != null)
             {
                 DateTime date = DateTime.Now;
+                string ngayGioPhatHien = append.Ngay + " " + append.Gio + ":" + append.Phut;
+                string[] arr = append.ThoiGian.Split('/');
+                string thoiGianThucHien = "";
+                if (arr.Length == 5) thoiGianThucHien = arr[0] + "/" + arr[1] + "/" + arr[2] + " " + arr[3] + ":" + arr[4];
+                if (!string.IsNullOrEmpty(ngayGioPhatHien)) entityBc.ChiTiet_NgayGioPhatHien = HL.Core.Global.Convert.ToDateTime(ngayGioPhatHien);
+                else entityBc.ChiTiet_NgayGioPhatHien = DateTime.MinValue;
+                if (!string.IsNullOrEmpty(thoiGianThucHien)) entityBc.ThoiGianThucHien = HL.Core.Global.Convert.ToDateTime(thoiGianThucHien);
+                else entityBc.ThoiGianThucHien = DateTime.MinValue;
 
                 entityBc.ID = entity.ID;
                 entityBc.UserID = entity.UserID;
@@ -127,11 +164,164 @@ namespace HL.Lib.Controllers
                 entityBc.Activity = false;
                 ModBaoCaoBanDauSuCoService.Instance.Save(entityBc);
 
+                //Xoa toan bo thong tin InfoMagic cua Bao cao ban dau su co
+                var lstInfoMagic = ModInfoMagicService.Instance.CreateQuery()
+                        .Where(o => o.BaoCaoBanDauSuCoID == entity.ID)
+                        .ToList();
+                if (lstInfoMagic != null) ModInfoMagicService.Instance.Delete(lstInfoMagic);
+
+                //Cach thuc phat hien
+                int num = modelInfo.chkCachThuc != null ? modelInfo.chkCachThuc.Length : 0;
+                for (int i = 0; i < num; i++)
+                {
+                    string[] tmp = modelInfo.chkCachThuc[i].Split('_');
+                    if (tmp.Length == 3)
+                    {
+                        ModInfoMagicEntity entityTmp = new ModInfoMagicEntity()
+                        {
+                            BaoCaoBanDauSuCoID = entity.ID,
+                            Order = GetMaxOrder_InfoMagic(),
+                            Published = date,
+                            Activity = true
+                        };
+                        entityTmp.MenuID = HL.Core.Global.Convert.ToInt(tmp[2]);
+                        if (tmp[0] == "1")
+                        {
+                            int idx = HL.Core.Global.Convert.ToInt(tmp[1]);
+                            if (modelInfo.txtCachThuc != null && modelInfo.txtCachThuc.Length >= idx)
+                            {
+                                entityTmp.Name = modelInfo.txtCachThuc[idx];
+                                entityTmp.Code = Data.GetCode(modelInfo.txtCachThuc[idx]);
+                            }
+                        }
+                        ModInfoMagicService.Instance.Save(entityTmp);
+                    }
+                }
+
+                //Da gui thong bao su co
+                num = modelInfo.chkThongBao != null ? modelInfo.chkThongBao.Length : 0;
+                for (int i = 0; i < num; i++)
+                {
+                    string[] tmp = modelInfo.chkThongBao[i].Split('_');
+                    if (tmp.Length == 3)
+                    {
+                        ModInfoMagicEntity entityTmp = new ModInfoMagicEntity()
+                        {
+                            BaoCaoBanDauSuCoID = entity.ID,
+                            Order = GetMaxOrder_InfoMagic(),
+                            Published = date,
+                            Activity = true
+                        };
+                        entityTmp.MenuID = HL.Core.Global.Convert.ToInt(tmp[2]);
+                        if (tmp[0] == "1")
+                        {
+                            int idx = HL.Core.Global.Convert.ToInt(tmp[1]);
+                            if (modelInfo.txtThongBao != null && modelInfo.txtThongBao.Length >= idx)
+                            {
+                                entityTmp.Name = modelInfo.txtThongBao[idx];
+                                entityTmp.Code = Data.GetCode(modelInfo.txtThongBao[idx]);
+                            }
+                        }
+                        ModInfoMagicService.Instance.Save(entityTmp);
+                    }
+                }
+
+                //Dich vu
+                num = modelInfo.chkDichVu != null ? modelInfo.chkDichVu.Length : 0;
+                for (int i = 0; i < num; i++)
+                {
+                    string[] tmp = modelInfo.chkDichVu[i].Split('_');
+                    if (tmp.Length == 3)
+                    {
+                        ModInfoMagicEntity entityTmp = new ModInfoMagicEntity()
+                        {
+                            BaoCaoBanDauSuCoID = entity.ID,
+                            Order = GetMaxOrder_InfoMagic(),
+                            Published = date,
+                            Activity = true
+                        };
+                        entityTmp.MenuID = HL.Core.Global.Convert.ToInt(tmp[2]);
+                        if (tmp[0] == "1")
+                        {
+                            int idx = HL.Core.Global.Convert.ToInt(tmp[1]);
+                            if (modelInfo.txtDichVu != null && modelInfo.txtDichVu.Length >= idx)
+                            {
+                                entityTmp.Name = modelInfo.txtDichVu[idx];
+                                entityTmp.Code = Data.GetCode(modelInfo.txtDichVu[idx]);
+                            }
+                        }
+                        ModInfoMagicService.Instance.Save(entityTmp);
+                    }
+                }
+
+                //Bien phap
+                num = modelInfo.chkBienPhap != null ? modelInfo.chkBienPhap.Length : 0;
+                for (int i = 0; i < num; i++)
+                {
+                    string[] tmp = modelInfo.chkBienPhap[i].Split('_');
+                    if (tmp.Length == 3)
+                    {
+                        ModInfoMagicEntity entityTmp = new ModInfoMagicEntity()
+                        {
+                            BaoCaoBanDauSuCoID = entity.ID,
+                            Order = GetMaxOrder_InfoMagic(),
+                            Published = date,
+                            Activity = true
+                        };
+                        entityTmp.MenuID = HL.Core.Global.Convert.ToInt(tmp[2]);
+                        if (tmp[0] == "1")
+                        {
+                            int idx = HL.Core.Global.Convert.ToInt(tmp[1]);
+                            if (modelInfo.txtBienPhap != null && modelInfo.txtBienPhap.Length >= idx)
+                            {
+                                entityTmp.Name = modelInfo.txtBienPhap[idx];
+                                entityTmp.Code = Data.GetCode(modelInfo.txtBienPhap[idx]);
+                            }
+                        }
+                        ModInfoMagicService.Instance.Save(entityTmp);
+                    }
+                }
+
+                //Thong tin gui kem
+                num = modelInfo.chkThongTinGuiKem != null ? modelInfo.chkThongTinGuiKem.Length : 0;
+                for (int i = 0; i < num; i++)
+                {
+                    string[] tmp = modelInfo.chkThongTinGuiKem[i].Split('_');
+                    if (tmp.Length == 3)
+                    {
+                        ModInfoMagicEntity entityTmp = new ModInfoMagicEntity()
+                        {
+                            BaoCaoBanDauSuCoID = entity.ID,
+                            Order = GetMaxOrder_InfoMagic(),
+                            Published = date,
+                            Activity = true
+                        };
+                        entityTmp.MenuID = HL.Core.Global.Convert.ToInt(tmp[2]);
+                        if (tmp[0] == "1")
+                        {
+                            int idx = HL.Core.Global.Convert.ToInt(tmp[1]);
+                            if (modelInfo.txtThongTinGuiKem != null && modelInfo.txtThongTinGuiKem.Length >= idx)
+                            {
+                                entityTmp.Name = modelInfo.txtThongTinGuiKem[idx];
+                                entityTmp.Code = Data.GetCode(modelInfo.txtThongTinGuiKem[idx]);
+                            }
+                        }
+                        ModInfoMagicService.Instance.Save(entityTmp);
+                    }
+                }
+
                 ViewBag.BaoCao = entityBc;
 
                 ViewPage.Alert("Cập nhật báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
-                ViewPage.Navigate("/vn/Thanh-vien/DS-bao-cao-tong-hop.aspx");
+                ViewPage.Navigate("/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx");
             }
+        }
+
+        private int GetMaxOrder_InfoMagic()
+        {
+            return ModInfoMagicService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
         }
     }
 

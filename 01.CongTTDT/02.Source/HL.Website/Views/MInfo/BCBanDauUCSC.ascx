@@ -270,7 +270,7 @@
                                             <p class="MsoNormal" style='margin-top: 6.0pt'>
                                                 <i style='mso-bidi-font-style: normal'>
                                                     <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>
-                                                        <input name="ChiTiet_CoQuan" maxlength="255" id="ChiTiet_CoQuan" class="textstyle1" type="text" value="<%=entityBc.ChiTiet_CoQuan %>" placeholder="Điền tên hệ thống bị sự cố và tên miền, địa chỉ ip liên quan" />
+                                                        <input name="ChiTiet_TenHeThong" maxlength="255" id="ChiTiet_TenHeThong" class="textstyle1" type="text" value="<%=entityBc.ChiTiet_TenHeThong %>" placeholder="Điền tên hệ thống bị sự cố và tên miền, địa chỉ ip liên quan" />
                                                     </span>
                                                 </i>
                                             </p>
@@ -384,7 +384,7 @@
                                         </td>
                                         <td style='width: 33.45pt; border-top: solid windowtext 1.0pt; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-bottom-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
-                                                <input name="ChiTiet_NgayGioPhatHien" maxlength="255" id="ChiTiet_NgayGioPhatHien" class="textstyle1" type="text" value="<%=string.Format("{0:dd/MM/yyyy}", entityBc.ChiTiet_NgayGioPhatHien) %>" style="width: 80px;" />
+                                                <input name="Ngay" maxlength="255" id="" class="textstyle1" type="text" value="<%=string.Format("{0:dd/MM/yyyy}", entityBc.ChiTiet_NgayGioPhatHien) %>" style="width: 80px;" />
                                             </p>
                                         </td>
                                         <td width="52" style='width: 38.7pt; border: solid windowtext 1.0pt; border-left: none; mso-border-top-alt: solid windowtext .5pt; mso-border-bottom-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
@@ -400,10 +400,10 @@
                                         <td width="147" style='width: 109.9pt; border: solid windowtext 1.0pt; border-left: none; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
                                                 <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
-                                                    <input name="ChiTiet_NgayGioPhatHien" maxlength="255" id="ChiTiet_NgayGioPhatHien" class="textstyle1" type="text" value="<%=string.Format("{0:HH}", entityBc.ChiTiet_NgayGioPhatHien) %>" style="width: 20%;" />
+                                                    <input name="Gio" maxlength="255" id="" class="textstyle1" type="text" value="<%=string.Format("{0:HH}", entityBc.ChiTiet_NgayGioPhatHien) %>" style="width: 20%;" />
                                                 </span>
                                                 <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>giờ
-                                                    <input name="ChiTiet_NgayGioPhatHien" maxlength="255" id="ChiTiet_NgayGioPhatHien" class="textstyle1" type="text" value="<%=string.Format("{0:mm}", entityBc.ChiTiet_NgayGioPhatHien) %>" style="width: 20%;" />
+                                                    <input name="Phut" maxlength="255" id="" class="textstyle1" type="text" value="<%=string.Format("{0:mm}", entityBc.ChiTiet_NgayGioPhatHien) %>" style="width: 20%;" />
                                                     phút
                                                 </span>
                                             </p>
@@ -443,7 +443,8 @@
                                     </i>
                                 </p>
 
-                                <%for (int i = 0; i < countCachThuc; i++)
+                                <%int d = 0;
+                                    for (int i = 0; i < countCachThuc; i++)
                                     {
                                         string chk = "", val = "";
                                         if (strCachThuc.IndexOf(lstCachThuc[i].ID.ToString()) > -1)
@@ -452,10 +453,16 @@
                                             var ct = currCachThuc.Where(o => o.MenuID == lstCachThuc[i].ID).SingleOrDefault();
                                             if (ct != null) val = ct.Name;
                                         }
+                                        string addText = "0_" + d.ToString();   //0: Chekbox ko them truong text; 1: Checkbox them truong text
+                                        if (lstCachThuc[i].IsAddText == true)
+                                        {
+                                            addText = "1_" + d.ToString();
+                                            d++;
+                                        }
                                 %>
                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
                                     <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                        <input name="chkCachThuc[<%=i %>]" type="checkbox" value="" onchange="setChkStatus(this, <%=i %> + '_' + <%=lstCachThuc[i].ID %>)" <%=chk %> />
+                                        <input name="chkCachThuc" type="checkbox" value="" onchange="setChkStatus(this, '<%=addText + "_" + lstCachThuc[i].ID %>')" <%=chk %> />
                                         <%=lstCachThuc[i].Name %>
                                         <%if (lstCachThuc[i].IsAddText == true)
                                             {%>
@@ -470,15 +477,31 @@
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>ĐÃ GỬI THÔNG BÁO SỰ CỐ CHO *</span>
                                     </b>
                                 </p>
-                                <%for (int i = 0; i < countThongBao; i++)
-                                    {%>
+
+                                <%d = 0;
+                                    for (int i = 0; i < countThongBao; i++)
+                                    {
+                                        string chk = "", val = "";
+                                        if (strThongBao.IndexOf(lstThongBao[i].ID.ToString()) > -1)
+                                        {
+                                            chk = "checked";
+                                            var ct = currThongBao.Where(o => o.MenuID == lstThongBao[i].ID).SingleOrDefault();
+                                            if (ct != null) val = ct.Name;
+                                        }
+                                        string addText = "0_" + d.ToString();   //0: Chekbox ko them truong text; 1: Checkbox them truong text
+                                        if (lstThongBao[i].IsAddText == true)
+                                        {
+                                            addText = "1_" + d.ToString();
+                                            d++;
+                                        }
+                                %>
                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
                                     <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                        <input name="" type="checkbox" value='' checked />
+                                        <input name="chkThongBao" type="checkbox" value="" onchange="setChkStatus(this, '<%=addText + "_" + lstThongBao[i].ID %>')" <%=chk %> />
                                         <%=lstThongBao[i].Name %>
                                         <%if (lstThongBao[i].IsAddText == true)
                                             {%>
-                                        <input name="" maxlength="255" id="" class="textstyle1" type="text" value="<%=entityBc.ToChuc_Email %>" />
+                                        <input name="txtThongBao" maxlength="255" id="" class="textstyle1" type="text" value="<%=val %>" />
                                         <%} %>
                                     </span>
                                 </p>
@@ -503,15 +526,30 @@
                                     </span>
                                 </p>
 
-                                <%for (int i = 0; i < countDichVu; i++)
-                                    {%>
+                                <%d = 0;
+                                    for (int i = 0; i < countDichVu; i++)
+                                    {
+                                        string chk = "", val = "";
+                                        if (strDichVu.IndexOf(lstDichVu[i].ID.ToString()) > -1)
+                                        {
+                                            chk = "checked";
+                                            var ct = currDichVu.Where(o => o.MenuID == lstDichVu[i].ID).SingleOrDefault();
+                                            if (ct != null) val = ct.Name;
+                                        }
+                                        string addText = "0_" + d.ToString();   //0: Chekbox ko them truong text; 1: Checkbox them truong text
+                                        if (lstDichVu[i].IsAddText == true)
+                                        {
+                                            addText = "1_" + d.ToString();
+                                            d++;
+                                        }
+                                %>
                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
                                     <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                        <input name="" type="checkbox" value='' checked />
+                                        <input name="chkDichVu" type="checkbox" value="" onchange="setChkStatus(this, '<%=addText + "_" + lstDichVu[i].ID %>')" <%=chk %> />
                                         <%=lstDichVu[i].Name %>
                                         <%if (lstDichVu[i].IsAddText == true)
                                             {%>
-                                        <input name="" maxlength="255" id="" class="textstyle1" type="text" value="<%=entityBc.ToChuc_Email %>" />
+                                        <input name="txtDichVu" maxlength="255" id="" class="textstyle1" type="text" value="<%=val %>" />
                                         <%} %>
                                     </span>
                                 </p>
@@ -523,15 +561,30 @@
                                     </span>
                                 </p>
 
-                                <%for (int i = 0; i < countBienPhap; i++)
-                                    {%>
+                                <%d = 0;
+                                    for (int i = 0; i < countBienPhap; i++)
+                                    {
+                                        string chk = "", val = "";
+                                        if (strBienPhap.IndexOf(lstBienPhap[i].ID.ToString()) > -1)
+                                        {
+                                            chk = "checked";
+                                            var ct = currBienPhap.Where(o => o.MenuID == lstBienPhap[i].ID).SingleOrDefault();
+                                            if (ct != null) val = ct.Name;
+                                        }
+                                        string addText = "0_" + d.ToString();   //0: Chekbox ko them truong text; 1: Checkbox them truong text
+                                        if (lstBienPhap[i].IsAddText == true)
+                                        {
+                                            addText = "1_" + d.ToString();
+                                            d++;
+                                        }
+                                %>
                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
                                     <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                        <input name="" type="checkbox" value='' checked />
+                                        <input name="chkBienPhap" type="checkbox" value="" onchange="setChkStatus(this, '<%=addText + "_" + lstBienPhap[i].ID %>')" <%=chk %> />
                                         <%=lstBienPhap[i].Name %>
                                         <%if (lstBienPhap[i].IsAddText == true)
                                             {%>
-                                        <input name="" maxlength="255" id="" class="textstyle1" type="text" value="<%=entityBc.ToChuc_Email %>" />
+                                        <input name="txtBienPhap" maxlength="255" id="" class="textstyle1" type="text" value="<%=val %>" />
                                         <%} %>
                                     </span>
                                 </p>
@@ -573,15 +626,30 @@
                                     <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642; Thông tin gửi kèm</span>
                                 </p>
 
-                                <%for (int i = 0; i < countThongTinGuiKem; i++)
-                                    {%>
+                                <%d = 0;
+                                    for (int i = 0; i < countThongTinGuiKem; i++)
+                                    {
+                                        string chk = "", val = "";
+                                        if (strThongTinGuiKem.IndexOf(lstThongTinGuiKem[i].ID.ToString()) > -1)
+                                        {
+                                            chk = "checked";
+                                            var ct = currThongTinGuiKem.Where(o => o.MenuID == lstThongTinGuiKem[i].ID).SingleOrDefault();
+                                            if (ct != null) val = ct.Name;
+                                        }
+                                        string addText = "0_" + d.ToString();   //0: Chekbox ko them truong text; 1: Checkbox them truong text
+                                        if (lstThongTinGuiKem[i].IsAddText == true)
+                                        {
+                                            addText = "1_" + d.ToString();
+                                            d++;
+                                        }
+                                %>
                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
                                     <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                        <input name="" type="checkbox" value='' checked />
+                                        <input name="chkThongTinGuiKem" type="checkbox" value="" onchange="setChkStatus(this, '<%=addText + "_" + lstThongTinGuiKem[i].ID %>')" <%=chk %> />
                                         <%=lstThongTinGuiKem[i].Name %>
                                         <%if (lstThongTinGuiKem[i].IsAddText == true)
                                             {%>
-                                        <input name="" maxlength="255" id="" class="textstyle1" type="text" value="<%=entityBc.ToChuc_Email %>" />
+                                        <input name="txtThongTinGuiKem" maxlength="255" id="" class="textstyle1" type="text" value="<%=val %>" />
                                         <%} %>
                                     </span>
                                 </p>
@@ -629,7 +697,7 @@
                                     <b style='mso-bidi-font-weight: normal'>
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>THỜI GIAN THỰC HIỆN BÁO CÁO SỰ CỐ</span>
                                     </b><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>*:</span>
-                                    <input name="ThoiGianThucHien" maxlength="255" id="ThoiGianThucHien" class="textstyle1" type="text" value="<%=string.Format("{0:dd/MM/yyyy/HH/mm}", entityBc.ThoiGianThucHien) %>" />
+                                    <input name="ThoiGian" maxlength="255" id="" class="textstyle1" type="text" value="<%=string.Format("{0:dd/MM/yyyy/HH/mm}", entityBc.ThoiGianThucHien) %>" />
                                     <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>(ngày/tháng/năm/giờ/phút)</span>
                                 </p>
 
@@ -689,22 +757,31 @@
                                 <input type="hidden" name="endCode" value="<%=endCode %>" />
                                 <%if (!string.IsNullOrEmpty(endCode))
                                     {%>
-                                <input class="btn_action search icon QAcustom" name="_hl_action[UpdateDangKyUCSC]" value="Cập nhật" type="submit" />
+                                <input class="btn_action search icon QAcustom" name="_hl_action[UpdateBaoCaoUCSC]" value="Cập nhật" type="submit" />
                                 <%}
                                     else
                                     {%>
-                                <input class="btn_action search icon QAcustom" name="_hl_action[AddDangKyUCSC]" value="Lưu" type="submit" />
+                                <input class="btn_action search icon QAcustom" name="_hl_action[AddBCBanDauUCSC]" value="Lưu" type="submit" />
                                 <%}%>
 
-                                <input style="margin-left: 10px;" onclick="location.href = '/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx';" type="button" name="" value="Danh sách đăng ký" />
+                                <input style="margin-left: 10px;" onclick="location.href = '/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx';" type="button" name="" value="Danh sách báo cáo" />
                             </div>
 
                         </div>
                     </div>
                     <script>
-                        function setChkStatus(e, prefix) {
-                            if (e.checked) e.value = prefix + '_' + 1;
-                            else e.value = prefix + '_' + 0;
+                        $(document).ready(function () {
+                            $('input[name=chkCachThuc]').change();
+                            $('input[name=chkThongBao]').change();
+                            $('input[name=chkDichVu]').change();
+                            $('input[name=chkBienPhap]').change();
+                            $('input[name=chkThongTinGuiKem]').change();
+                        });
+
+                        function setChkStatus(e, suffix) {
+                            //if (e.checked) e.value = '1_' + suffix;
+                            //else e.value = '0_' + suffix;
+                            e.value = suffix;
                         }
                     </script>
                 </form>

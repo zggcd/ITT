@@ -1698,6 +1698,8 @@
     <Content Include="Views\MHSThanhVienUCSC\Index.ascx" />
     <Content Include="Views\MInfoMagic\Detail.ascx" />
     <Content Include="Views\MInfoMagic\Index.ascx" />
+    <Content Include="Views\MInfo\BCTongHopUCSC.ascx" />
+    <Content Include="Views\MInfo\BCKetThucUCSC.ascx" />
     <Content Include="Views\MInfo\BCBanDauUCSC.ascx" />
     <Content Include="Views\MInfo\DangKyUCSC.ascx" />
     <Content Include="Views\MInfo\Login.ascx" />
