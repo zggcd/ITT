@@ -70,7 +70,7 @@ namespace HL.Lib.Controllers
                     ViewBag.Data = entity;
                     SetObject["view.Meta"] = entity;
 
-                    ViewBag.BCKetThuc = entity;
+                    ViewBag.BaoCao = entity;
                     ViewBag.EndCode = endCode;
                     RenderView("../MInfo/BCKetThucUCSC");
                 }
@@ -114,7 +114,6 @@ namespace HL.Lib.Controllers
             {
                 DateTime date = DateTime.Now;
                 string ngayGioPhatHien = append.Ngay + " " + append.Gio + ":" + append.Phut;
-                string[] arr = append.ThoiGian.Split('/');
                 if (!string.IsNullOrEmpty(ngayGioPhatHien)) entityBc.NgayGioPhatHien = HL.Core.Global.Convert.ToDateTime(ngayGioPhatHien);
                 else entityBc.NgayGioPhatHien = DateTime.MinValue;
 
@@ -134,7 +133,7 @@ namespace HL.Lib.Controllers
                 ViewBag.BaoCao = entityBc;
 
                 ViewPage.Alert("Cập nhật báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
-                ViewPage.Navigate("/vn/Thanh-vien/DS-bao-cao-tong-hop.aspx");
+                ViewPage.Navigate("/vn/Thanh-vien/DS-bc-ket-thuc-su-co.aspx");
             }
         }
     }

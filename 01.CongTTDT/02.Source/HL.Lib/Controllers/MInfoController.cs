@@ -564,14 +564,13 @@ namespace HL.Lib.Controllers
         {
             DateTime date = DateTime.Now;
             string ngayGioPhatHien = append.Ngay + " " + append.Gio + ":" + append.Phut;
-            string[] arr = append.ThoiGian.Split('/');
             string code = "BCKTSC" + ModBaoCaoKetThucSuCoService.Instance.GetMaxID();
             entity.Name = code;
             entity.Code = Data.GetCode(code);
             entity.UserID = Lib.Global.CPLogin.UserID;
             if (!string.IsNullOrEmpty(ngayGioPhatHien)) entity.NgayGioPhatHien = HL.Core.Global.Convert.ToDateTime(ngayGioPhatHien);
             else entity.NgayGioPhatHien = DateTime.MinValue;
-            entity.Order = GetMaxOrder_BCBanDau();
+            entity.Order = GetMaxOrder_BCKetThuc();
             entity.Published = date;
             entity.Activity = false;
             int id = ModBaoCaoKetThucSuCoService.Instance.Save(entity);
