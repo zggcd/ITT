@@ -153,7 +153,7 @@ namespace HL.Lib.Controllers
 
                 entityBc.ID = entity.ID;
                 entityBc.UserID = entity.UserID;
-                entityBc.UserID1 = entity.UserID1;
+                entityBc.UserID1 = userId;
                 entityBc.MenuID = entity.MenuID;
                 entityBc.State = entity.State;
                 entityBc.Name = entity.Name;

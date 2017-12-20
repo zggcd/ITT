@@ -74,5 +74,13 @@ namespace HL.Lib.Controllers
 
         public int PageSize { get; set; }
         public int TotalRecord { get; set; }
+
+        public int[] MN { get; set; }
+        public int[] SoLuong { get; set; }
+        public int[] TuXuLy { get; set; }
+        public int[] ToChucHoTro { get; set; }
+        public int[] ToChucNuocNgoaiHoTro { get; set; }
+        public int[] DeNghi { get; set; }
+        public int[] ThietHaiUocTinh { get; set; }
     }
 }

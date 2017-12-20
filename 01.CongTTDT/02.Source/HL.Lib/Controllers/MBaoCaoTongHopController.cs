@@ -67,10 +67,12 @@ namespace HL.Lib.Controllers
                                             .Take(PageSize)
                                             .ToList();
 
+                    ViewBag.SuCo = ModSoLuongSuCoService.Instance.CreateQuery().Where(o => o.Activity == true && o.BaoCaoTongHopID == entity.ID).ToList();
+
                     ViewBag.Data = entity;
                     SetObject["view.Meta"] = entity;
 
-                    ViewBag.BCTongHop = entity;
+                    ViewBag.BaoCao = entity;
                     ViewBag.EndCode = endCode;
                     RenderView("../MInfo/BCTongHopUCSC");
                 }
@@ -92,6 +94,9 @@ namespace HL.Lib.Controllers
 
             if (entity != null)
             {
+                var lstSuCo = ModSoLuongSuCoService.Instance.CreateQuery().Where(o => o.BaoCaoTongHopID == entity.ID).ToList();
+                if (lstSuCo != null) ModSoLuongSuCoService.Instance.Delete(lstSuCo);
+
                 ModBaoCaoTongHopService.Instance.Delete(entity.ID);
 
                 ViewPage.Alert("Xóa báo cáo thành công.");
@@ -103,7 +108,7 @@ namespace HL.Lib.Controllers
             }
         }
 
-        public void ActionUpdateBaoCaoUCSC(ModBaoCaoTongHopEntity entityBc, string endCode)
+        public void ActionUpdateBaoCaoUCSC(ModBaoCaoTongHopEntity entityBc, MSoLuongSuCoModel entitySuCo, string endCode)
         {
             int userId = HL.Lib.Global.CPLogin.UserID;
             var entity = ModBaoCaoTongHopService.Instance.CreateQuery()
@@ -116,7 +121,7 @@ namespace HL.Lib.Controllers
 
                 entityBc.ID = entity.ID;
                 entityBc.UserID = entity.UserID;
-                entityBc.UserID1 = entity.UserID1;
+                entityBc.UserID1 = userId;
                 entityBc.MenuID = entity.MenuID;
                 entityBc.State = entity.State;
                 entityBc.Name = entity.Name;
@@ -125,13 +130,69 @@ namespace HL.Lib.Controllers
                 entityBc.Published = entity.Published;
                 entityBc.Published1 = date;
                 entityBc.Activity = false;
-                ModBaoCaoTongHopService.Instance.Save(entityBc);
+
+                var lstSuCo = ModSoLuongSuCoService.Instance.CreateQuery().Where(o => o.BaoCaoTongHopID == entity.ID).ToList();
+                if (lstSuCo != null) ModSoLuongSuCoService.Instance.Delete(lstSuCo);
+                int c = entitySuCo.MN.Length;
+                for (int i = 0; i < c; i++)
+                {
+                    var suCo = new ModSoLuongSuCoEntity();
+                    bool flag = false;
+                    if (entitySuCo.SoLuong[i] > 0)
+                    {
+                        suCo.SoLuong = entitySuCo.SoLuong[i];
+                        flag = true;
+                    }
+                    if (entitySuCo.TuXuLy[i] > 0)
+                    {
+                        suCo.TuXuLy = entitySuCo.TuXuLy[i];
+                        flag = true;
+                    }
+                    if (entitySuCo.ToChucHoTro[i] > 0)
+                    {
+                        suCo.ToChucHoTro = entitySuCo.ToChucHoTro[i];
+                        flag = true;
+                    }
+                    if (entitySuCo.ToChucNuocNgoaiHoTro[i] > 0)
+                    {
+                        suCo.ToChucNuocNgoaiHoTro = entitySuCo.ToChucNuocNgoaiHoTro[i];
+                        flag = true;
+                    }
+                    if (entitySuCo.DeNghi[i] > 0)
+                    {
+                        suCo.DeNghi = entitySuCo.DeNghi[i];
+                        flag = true;
+                    }
+                    if (entitySuCo.ThietHaiUocTinh[i] > 0)
+                    {
+                        suCo.ThietHaiUocTinh = entitySuCo.ThietHaiUocTinh[i];
+                        flag = true;
+                    }
+                    if (flag == true)
+                    {
+                        int id = ModBaoCaoTongHopService.Instance.Save(entityBc);
+                        suCo.BaoCaoTongHopID = id;
+                        suCo.MenuID = entitySuCo.MN[i];
+                        suCo.Published = date;
+                        suCo.Order = GetMaxOrder_SoSuCo();
+                        suCo.Activity = true;
+
+                        ModSoLuongSuCoService.Instance.Save(suCo);
+                    }
+                }
 
                 ViewBag.BaoCao = entityBc;
 
                 ViewPage.Alert("Cập nhật báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
-                ViewPage.Navigate("/vn/Thanh-vien/DS-bao-cao-tong-hop.aspx");
+                ViewPage.Navigate("/vn/Thanh-vien/DS-bc-tong-hop-su-co.aspx");
             }
+        }
+
+        private int GetMaxOrder_SoSuCo()
+        {
+            return ModSoLuongSuCoService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
         }
     }
 

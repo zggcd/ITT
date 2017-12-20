@@ -14,39 +14,13 @@
 <%
     CPUserEntity entity = ViewBag.Data as CPUserEntity ?? CPLogin.CurrentUser;
     ModBaoCaoTongHopEntity entityBc = ViewBag.BaoCao as ModBaoCaoTongHopEntity ?? new ModBaoCaoTongHopEntity();
-    List<ModInfoMagicEntity> currCachThuc = ViewBag.CachThuc as List<ModInfoMagicEntity> ?? new List<ModInfoMagicEntity>();
-    List<ModInfoMagicEntity> currThongBao = ViewBag.ThongBao as List<ModInfoMagicEntity> ?? new List<ModInfoMagicEntity>();
-    List<ModInfoMagicEntity> currDichVu = ViewBag.DichVu as List<ModInfoMagicEntity> ?? new List<ModInfoMagicEntity>();
-    List<ModInfoMagicEntity> currBienPhap = ViewBag.BienPhap as List<ModInfoMagicEntity> ?? new List<ModInfoMagicEntity>();
-    List<ModInfoMagicEntity> currThongTinGuiKem = ViewBag.ThongTinGuiKem as List<ModInfoMagicEntity> ?? new List<ModInfoMagicEntity>();
+    List<ModSoLuongSuCoEntity> currSuCo = ViewBag.SuCo as List<ModSoLuongSuCoEntity> ?? new List<ModSoLuongSuCoEntity>();
 
-    string strCachThuc = string.Join(",", currCachThuc.Select(o => o.MenuID));
-    string strThongBao = string.Join(",", currThongBao.Select(o => o.MenuID));
-    string strDichVu = string.Join(",", currDichVu.Select(o => o.MenuID));
-    string strBienPhap = string.Join(",", currBienPhap.Select(o => o.MenuID));
-    string strThongTinGuiKem = string.Join(",", currThongTinGuiKem.Select(o => o.MenuID));
+    string strSuCo = string.Join(",", currSuCo.Select(o => o.MenuID));
     string endCode = ViewBag.EndCode;
 
-    List<WebMenuEntity> lstCapDo = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "CapDo" && o.ParentID > 0).ToList_Cache();
-    int countCapDo = lstCapDo != null ? lstCapDo.Count : 0;
-
-    List<WebMenuEntity> lstHienTrang = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "HienTrangSuCo" && o.ParentID > 0).ToList_Cache();
-    int countHienTrang = lstHienTrang != null ? lstHienTrang.Count : 0;
-
-    List<WebMenuEntity> lstCachThuc = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "CachThuc" && o.ParentID > 0).OrderByAsc(o => o.IsAddText).ToList_Cache();
-    int countCachThuc = lstCachThuc != null ? lstCachThuc.Count : 0;
-
-    List<WebMenuEntity> lstThongBao = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "GuiThongBaoSuCo" && o.ParentID > 0).ToList_Cache();
-    int countThongBao = lstThongBao != null ? lstThongBao.Count : 0;
-
-    List<WebMenuEntity> lstDichVu = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "DichVu" && o.ParentID > 0).ToList_Cache();
-    int countDichVu = lstDichVu != null ? lstDichVu.Count : 0;
-
-    List<WebMenuEntity> lstBienPhap = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "BienPhapATTT" && o.ParentID > 0).ToList_Cache();
-    int countBienPhap = lstBienPhap != null ? lstBienPhap.Count : 0;
-
-    List<WebMenuEntity> lstThongTinGuiKem = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "ThongTinGuiKem" && o.ParentID > 0).ToList_Cache();
-    int countThongTinGuiKem = lstThongTinGuiKem != null ? lstThongTinGuiKem.Count : 0;
+    List<WebMenuEntity> lstLoaiSuCo = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "LoaiSuCo" && o.ParentID > 0).ToList_Cache();
+    int countLoaiSuCo = lstLoaiSuCo != null ? lstLoaiSuCo.Count : 0;
 %>
 
 <style>
@@ -118,7 +92,7 @@
     <div class="box-category mb10">
         <div class="vanban-new">
             <h3 class="title-list-news">
-                <span class="title-t1">BÁO CÁO BAN ĐẦU SỰ CỐ MẠNG</span>
+                <span class="title-t1">BÁO CÁO TỔNG HỢP VỀ HOẠT ĐỘNG TIẾP NHẬN VÀ XỬ LÝ SỰ CỐ</span>
             </h3>
         </div>
     </div>
@@ -143,14 +117,12 @@
                                             <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
                                                 <a name="chuong_pl_6">
                                                     <b style='mso-bidi-font-weight: normal'>
-                                                        <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>Mãu số 05</span>
-                                                    </b>
+                                                        <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>Mãu số 05</span></b>
                                                 </a>
                                                 <b style='mso-bidi-font-weight: normal'>
                                                     <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>
                                                         <br>
-                                                    </span>
-                                                </b>
+                                                    </span></b>
                                                 <i style='mso-bidi-font-style: normal'>
                                                     <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>Ban hành kèm theo Thông tư số 20/2017/TT-BTTT ngày 12/9/2017 của Bộ Thông tin và Truyền thông </span>
                                                 </i><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'></span>
@@ -170,7 +142,8 @@
                                         <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
                                             <br>
                                         </span>
-                                    </b><b style='mso-bidi-font-weight: normal'>
+                                    </b>
+                                    <b style='mso-bidi-font-weight: normal'>
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Độc lập - Tự do - Hạnh phúc</span>
                                     </b>
                                 </p>
@@ -190,8 +163,11 @@
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9633; Từ tháng</span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>…..</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                /201 ... đến tháng tháng ..../201...<o:p></o:p>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9633; Từ tháng</span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
+                                        <input name="TuNgay" maxlength="255" id="" class="textstyle1" type="text" value="<%=string.Format("{0:MM/yyyy}", entityBc.TuNgay) %>" style="width: 15%; text-align: center;" />
+                                    </span>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>đến tháng 
+                                        <input name="DenNgay" maxlength="255" id="" class="textstyle1" type="text" value="<%=string.Format("{0:MM/yyyy}", entityBc.DenNgay) %>" style="width: 15%; text-align: center;" />
                                     </span>
                                 </p>
 
@@ -219,612 +195,124 @@
                                     <tr style='mso-yfti-irow: 0; mso-yfti-firstrow: yes'>
                                         <td width="208" style='width: 155.7pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Lo&#7841;i
-                            s&#7921; c&#7889;/t&#7845;n công m&#7841;ng<o:p></o:p>
-                                                </span>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Loại sự cố/tấn công mạng</span>
                                             </p>
                                         </td>
                                         <td width="42" style='width: 31.85pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>S&#7889;
-                            l&#432;&#7907;ng<o:p></o:p>
-                                                </span>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Số lượng</span>
                                             </p>
                                         </td>
                                         <td width="52" style='width: 38.8pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>S&#7889;
-                            s&#7921; c&#7889; t&#7921; x&#7917; lý<o:p></o:p>
-                                                </span>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Số sự cố tự xử lý</span>
                                             </p>
                                         </td>
                                         <td width="78" style='width: 58.55pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>S</span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>&#7889;</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                            s&#7921; c&#7889;
-                            có s&#7921; h&#7895; tr&#7907; x&#7917; lý t&#7915; các t&#7893; ch&#7913;c
-                            khác<o:p></o:p>
-                                                </span>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>S</span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>&#7889;</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Số sự cố có sự hỗ trợ xử lý từ các tổ chức khác</span>
                                             </p>
                                         </td>
                                         <td width="77" style='width: 58.1pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>S&#7889;
-                            s&#7921; c&#7889; có h&#7895; tr&#7907; x&#7917; lý t&#7915; t&#7893; ch&#7913;c
-                            n&#432;&#7899;c ngoài<o:p></o:p>
-                                                </span>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Số sự cố có hỗ trợ xử lý từ tổ chức nước ngoài</span>
                                             </p>
                                         </td>
                                         <td width="76" style='width: 57.2pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>S&#7889;
-                            s&#7921; c&#7889; &#273;&#7873; ngh&#7883; VNCERT h&#7895; tr
-                                                </span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>&#7907;</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>lý<o:p></o:p></span>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Số sự cố đề nghị VNCERT hỗ trợ xử lý</span>
                                             </p>
                                         </td>
                                         <td width="72" style='width: 53.85pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Thi&#7879;t
-                            h&#7841;i &#432;&#7899;c tính<o:p></o:p>
-                                                </span>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Thiệt hại ước tính</span>
                                             </p>
+                                        </td>
+                                    </tr>
+
+                                    <%for (int i = 0; i < countLoaiSuCo; i++)
+                                        {
+                                            var row = currSuCo.Where(o => o.MenuID == lstLoaiSuCo[i].ID).SingleOrDefault();
+                                            if (row == null) row = new ModSoLuongSuCoEntity();
+                                    %>
+                                    <tr>
+                                        <td>
+                                            <input type="hidden" name="MN" value="<%=lstLoaiSuCo[i].ID %>" />
                                         </td>
                                     </tr>
                                     <tr style='mso-yfti-irow: 1'>
-                                        <td width="208" valign="top" style='width: 155.7pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
+                                        <td width="208" valign="top" style='width: 155.7pt; border: solid windowtext 1.0pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>T&#7915; ch&#7889;i
-                            d&#7883;ch v&#7909;<o:p></o:p>
-                                                </span>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'><%=lstLoaiSuCo[i].Name %></span>
                                             </p>
                                         </td>
-                                        <td width="42" valign="top" style='width: 31.85pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
+                                        <td width="42" valign="top" style='width: 31.85pt; border: solid windowtext 1.0pt; background: white; padding: 0in 0in 0in 0in'>
+                                            <p class="MsoNormal" style='margin-top: 6.0pt; text-align: center;'>
+                                                <input name="SoLuong" maxlength="255" id="" class="textstyle1" type="text" value="<%=row.SoLuong > 0 ? string.Format("{0:##,###}", row.SoLuong) : "0" %>" style="width: 50%; text-align: center;" />
                                             </p>
                                         </td>
-                                        <td width="52" valign="top" style='width: 38.8pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
+                                        <td width="42" valign="top" style='width: 31.85pt; border: solid windowtext 1.0pt; background: white; padding: 0in 0in 0in 0in'>
+                                            <p class="MsoNormal" style='margin-top: 6.0pt; text-align: center;'>
+                                                <input name="TuXuLy" maxlength="255" id="" class="textstyle1" type="text" value="<%=row.TuXuLy > 0 ? string.Format("{0:##,###}", row.TuXuLy) : "0" %>" style="width: 50%; text-align: center;" />
                                             </p>
                                         </td>
-                                        <td width="78" valign="top" style='width: 58.55pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
+                                        <td width="42" valign="top" style='width: 31.85pt; border: solid windowtext 1.0pt; background: white; padding: 0in 0in 0in 0in'>
+                                            <p class="MsoNormal" style='margin-top: 6.0pt; text-align: center;'>
+                                                <input name="ToChucHoTro" maxlength="255" id="" class="textstyle1" type="text" value="<%=row.ToChucHoTro > 0 ? string.Format("{0:##,###}", row.ToChucHoTro) : "0" %>" style="width: 50%; text-align: center;" />
                                             </p>
                                         </td>
-                                        <td width="77" valign="top" style='width: 58.1pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
+                                        <td width="42" valign="top" style='width: 31.85pt; border: solid windowtext 1.0pt; background: white; padding: 0in 0in 0in 0in'>
+                                            <p class="MsoNormal" style='margin-top: 6.0pt; text-align: center;'>
+                                                <input name="ToChucNuocNgoaiHoTro" maxlength="255" id="" class="textstyle1" type="text" value="<%=row.ToChucNuocNgoaiHoTro > 0 ? string.Format("{0:##,###}", row.ToChucNuocNgoaiHoTro) : "0" %>" style="width: 50%; text-align: center;" />
                                             </p>
                                         </td>
-                                        <td width="76" valign="top" style='width: 57.2pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
+                                        <td width="42" valign="top" style='width: 31.85pt; border: solid windowtext 1.0pt; background: white; padding: 0in 0in 0in 0in'>
+                                            <p class="MsoNormal" style='margin-top: 6.0pt; text-align: center;'>
+                                                <input name="DeNghi" maxlength="255" id="" class="textstyle1" type="text" value="<%=row.DeNghi > 0 ? string.Format("{0:##,###}", row.DeNghi) : "0" %>" style="width: 50%; text-align: center;" />
                                             </p>
                                         </td>
-                                        <td width="72" valign="top" style='width: 53.85pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
+                                        <td width="42" valign="top" style='width: 31.85pt; border: solid windowtext 1.0pt; background: white; padding: 0in 0in 0in 0in'>
+                                            <p class="MsoNormal" style='margin-top: 6.0pt; text-align: center;'>
+                                                <input name="ThietHaiUocTinh" maxlength="255" id="" class="textstyle1" type="text" value="<%=row.ThietHaiUocTinh > 0 ? string.Format("{0:##,###}", row.ThietHaiUocTinh) : "0" %>" style="width: 50%; text-align: center;" />
                                             </p>
                                         </td>
                                     </tr>
-                                    <tr style='mso-yfti-irow: 2'>
-                                        <td width="208" valign="top" style='width: 155.7pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
+                                    <%} %>
+
+                                    <tr style='mso-yfti-irow: 1'>
+                                        <td width="208" valign="top" style='width: 155.7pt; border: solid windowtext 1.0pt; background: white; padding: 0in 0in 0in 0in'>
                                             <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>T</span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>&#7845;</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>n công gi</span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>&#7843;</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>m&#7841;o<o:p></o:p></span>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'><b>Tổng cộng</b></span>
                                             </p>
                                         </td>
-                                        <td width="42" valign="top" style='width: 31.85pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="52" valign="top" style='width: 38.8pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="78" valign="top" style='width: 58.55pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="77" valign="top" style='width: 58.1pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="76" valign="top" style='width: 57.2pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="72" valign="top" style='width: 53.85pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr style='mso-yfti-irow: 3'>
-                                        <td width="208" valign="top" style='width: 155.7pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>T&#7845;n
-                            công s&#7917; d&#7909;ng mã &#273;&#7897;c<o:p></o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="42" valign="top" style='width: 31.85pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="52" valign="top" style='width: 38.8pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="78" valign="top" style='width: 58.55pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="77" valign="top" style='width: 58.1pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="76" valign="top" style='width: 57.2pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="72" valign="top" style='width: 53.85pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr style='mso-yfti-irow: 4'>
-                                        <td width="208" valign="top" style='width: 155.7pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Truy c&#7853;p
-                            trái phép, chi&#7871;m quy&#7873;n &#273;i&#7873;u khi&#7875;n<o:p></o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="42" valign="top" style='width: 31.85pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="52" valign="top" style='width: 38.8pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="78" valign="top" style='width: 58.55pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="77" valign="top" style='width: 58.1pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="76" valign="top" style='width: 57.2pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="72" valign="top" style='width: 53.85pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr style='mso-yfti-irow: 5'>
-                                        <td width="208" valign="top" style='width: 155.7pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Thay &#273;</span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>&#7893;</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>i giao di&#7879;n<o:p></o:p></span>
-                                            </p>
-                                        </td>
-                                        <td width="42" valign="top" style='width: 31.85pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="52" valign="top" style='width: 38.8pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="78" valign="top" style='width: 58.55pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="77" valign="top" style='width: 58.1pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="76" valign="top" style='width: 57.2pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="72" valign="top" style='width: 53.85pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr style='mso-yfti-irow: 6'>
-                                        <td width="208" valign="top" style='width: 155.7pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Mã hóa ph&#7847;n
-                            m&#7873;m, d&#7919; li&#7879;u, thi&#7871;t b&#7883;<o:p></o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="42" valign="top" style='width: 31.85pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="52" valign="top" style='width: 38.8pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="78" valign="top" style='width: 58.55pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="77" valign="top" style='width: 58.1pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="76" valign="top" style='width: 57.2pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
+                                        <td width="42" valign="top" style='width: 31.85pt; border: solid windowtext 1.0pt; background: white; padding: 0in 0in 0in 0in'>
+                                            <p id="T1" class="MsoNormal" style='margin-top: 6.0pt; text-align: center; font-weight: bold;'>
+                                                <%=currSuCo.Sum(o => o.SoLuong) %>
                                             </p>
                                         </td>
-                                        <td width="72" valign="top" style='width: 53.85pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr style='mso-yfti-irow: 7'>
-                                        <td width="208" valign="top" style='width: 155.7pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Phá ho&#7841;i
-                            thông tin, d&#7919; li&#7879;u, ph&#7847;n m&#7873;m<o:p></o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="42" valign="top" style='width: 31.85pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="52" valign="top" style='width: 38.8pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="78" valign="top" style='width: 58.55pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="77" valign="top" style='width: 58.1pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="76" valign="top" style='width: 57.2pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="72" valign="top" style='width: 53.85pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr style='mso-yfti-irow: 8'>
-                                        <td width="208" valign="top" style='width: 155.7pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Nghe tr&#7897;m,
-                            gián &#273;i&#7879;p, l&#7845;y c&#7855;p thông tin, d&#7919; li&#7879;u<o:p></o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="42" valign="top" style='width: 31.85pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="52" valign="top" style='width: 38.8pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="78" valign="top" style='width: 58.55pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="77" valign="top" style='width: 58.1pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="76" valign="top" style='width: 57.2pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="72" valign="top" style='width: 53.85pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr style='mso-yfti-irow: 9'>
-                                        <td width="208" valign="top" style='width: 155.7pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>T&#7845;n
-                            công t&#7893;ng h&#7907;p s&#7917; d&#7909;ng k&#7871;t h&#7907;p nhi&#7873;u
-                            hình th&#7913;c<o:p></o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="42" valign="top" style='width: 31.85pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
+                                        <td width="42" valign="top" style='width: 31.85pt; border: solid windowtext 1.0pt; background: white; padding: 0in 0in 0in 0in'>
+                                            <p id="T2" class="MsoNormal" style='margin-top: 6.0pt; text-align: center; font-weight: bold;'>
+                                                <%=currSuCo.Sum(o => o.TuXuLy) %>
                                             </p>
                                         </td>
-                                        <td width="52" valign="top" style='width: 38.8pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="78" valign="top" style='width: 58.55pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="77" valign="top" style='width: 58.1pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="76" valign="top" style='width: 57.2pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="72" valign="top" style='width: 53.85pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr style='mso-yfti-irow: 10'>
-                                        <td width="208" valign="top" style='width: 155.7pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Các hình th&#7913;c
-                            t&#7845;n công khác<o:p></o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="42" valign="top" style='width: 31.85pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="52" valign="top" style='width: 38.8pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="78" valign="top" style='width: 58.55pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="77" valign="top" style='width: 58.1pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="76" valign="top" style='width: 57.2pt; border-top: solid windowtext 1.0pt; border-left: solid windowtext 1.0pt; border-bottom: none; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="72" valign="top" style='width: 53.85pt; border: solid windowtext 1.0pt; border-bottom: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr style='mso-yfti-irow: 11; mso-yfti-lastrow: yes'>
-                                        <td width="208" valign="top" style='width: 155.7pt; border: solid windowtext 1.0pt; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-bottom-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <b style='mso-bidi-font-weight: normal'>
-                                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>T&#7893;ng s&#7889;<o:p></o:p></span>
-                                                </b>
-                                            </p>
-                                        </td>
-                                        <td width="42" valign="top" style='width: 31.85pt; border: solid windowtext 1.0pt; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-bottom-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="52" valign="top" style='width: 38.8pt; border: solid windowtext 1.0pt; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-bottom-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
-                                            </p>
-                                        </td>
-                                        <td width="78" valign="top" style='width: 58.55pt; border: solid windowtext 1.0pt; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-bottom-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
+                                        <td width="42" valign="top" style='width: 31.85pt; border: solid windowtext 1.0pt; background: white; padding: 0in 0in 0in 0in'>
+                                            <p id="T3" class="MsoNormal" style='margin-top: 6.0pt; text-align: center; font-weight: bold;'>
+                                                <%=currSuCo.Sum(o => o.ToChucHoTro) %>
                                             </p>
                                         </td>
-                                        <td width="77" valign="top" style='width: 58.1pt; border: solid windowtext 1.0pt; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-bottom-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
+                                        <td width="42" valign="top" style='width: 31.85pt; border: solid windowtext 1.0pt; background: white; padding: 0in 0in 0in 0in'>
+                                            <p id="T4" class="MsoNormal" style='margin-top: 6.0pt; text-align: center; font-weight: bold;'>
+                                                <%=currSuCo.Sum(o => o.ToChucNuocNgoaiHoTro) %>
                                             </p>
                                         </td>
-                                        <td width="76" valign="top" style='width: 57.2pt; border: solid windowtext 1.0pt; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-bottom-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
+                                        <td width="42" valign="top" style='width: 31.85pt; border: solid windowtext 1.0pt; background: white; padding: 0in 0in 0in 0in'>
+                                            <p id="T5" class="MsoNormal" style='margin-top: 6.0pt; text-align: center; font-weight: bold;'>
+                                                <%=currSuCo.Sum(o => o.DeNghi) %>
                                             </p>
                                         </td>
-                                        <td width="72" valign="top" style='width: 53.85pt; border: solid windowtext 1.0pt; mso-border-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
-                                            <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
-                                                    <o:p>&nbsp;</o:p>
-                                                </span>
+                                        <td width="42" valign="top" style='width: 31.85pt; border: solid windowtext 1.0pt; background: white; padding: 0in 0in 0in 0in'>
+                                            <p id="T6" class="MsoNormal" style='margin-top: 6.0pt; text-align: center; font-weight: bold;'>
+                                                <%=currSuCo.Sum(o => o.ThietHaiUocTinh) %>
                                             </p>
                                         </td>
                                     </tr>
@@ -835,7 +323,7 @@
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                    <textarea name="ToChucHoTro" maxlength="255" id="ToChucHoTro" class="textstyle1" rows="1" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.ToChucHoTro %></textarea>
+                                    <textarea name="DSToChucHoTro" maxlength="255" id="DSToChucHoTro" class="textstyle1" rows="1" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.DSToChucHoTro %></textarea>
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -843,7 +331,7 @@
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                    <textarea name="ToChucNuocNgoaiHoTro" maxlength="255" id="ToChucNuocNgoaiHoTro" class="textstyle1" rows="1" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.ToChucNuocNgoaiHoTro %></textarea>
+                                    <textarea name="DSToChucNuocNgoaiHoTro" maxlength="255" id="DSToChucNuocNgoaiHoTro" class="textstyle1" rows="1" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.DSToChucNuocNgoaiHoTro %></textarea>
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
@@ -855,13 +343,10 @@
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                    <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
-                                        <o:p>&nbsp;</o:p>
-                                    </span>
+                                    <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'></span>
                                 </p>
 
-                                <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0"
-                                    style='border-collapse: collapse; mso-padding-alt: 0in 5.4pt 0in 5.4pt'>
+                                <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style='border-collapse: collapse; mso-padding-alt: 0in 5.4pt 0in 5.4pt'>
                                     <tr style='mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes'>
                                         <td width="295" valign="top" style='width: 221.4pt; padding: 0in 5.4pt 0in 5.4pt'>
                                             <p class="MsoNormal" style='margin-top: 6.0pt'></p>
@@ -903,21 +388,6 @@
 
                         </div>
                     </div>
-                    <script>
-                        $(document).ready(function () {
-                            $('input[name=chkCachThuc]').change();
-                            $('input[name=chkThongBao]').change();
-                            $('input[name=chkDichVu]').change();
-                            $('input[name=chkBienPhap]').change();
-                            $('input[name=chkThongTinGuiKem]').change();
-                        });
-
-                        function setChkStatus(e, suffix) {
-                            //if (e.checked) e.value = '1_' + suffix;
-                            //else e.value = '0_' + suffix;
-                            e.value = suffix;
-                        }
-                    </script>
                 </form>
             </div>
             <!--.Main_container-->
@@ -925,3 +395,48 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('input[name=SoLuong]').change(function () {
+        var n = 0;
+        $('input[name=SoLuong]').map(function () {
+            n += $(this).val() * 1;
+        })
+        $('#T1').html(n);
+    });
+    $('input[name=TuXuLy]').change(function () {
+        var n = 0;
+        $('input[name=TuXuLy]').map(function () {
+            n += $(this).val() * 1;
+        })
+        $('#T2').html(n);
+    });
+    $('input[name=ToChucHoTro]').change(function () {
+        var n = 0;
+        $('input[name=ToChucHoTro]').map(function () {
+            n += $(this).val() * 1;
+        })
+        $('#T3').html(n);
+    });
+    $('input[name=ToChucNuocNgoaiHoTro]').change(function () {
+        var n = 0;
+        $('input[name=ToChucNuocNgoaiHoTro]').map(function () {
+            n += $(this).val() * 1;
+        })
+        $('#T4').html(n);
+    });
+    $('input[name=DeNghi]').change(function () {
+        var n = 0;
+        $('input[name=DeNghi]').map(function () {
+            n += $(this).val() * 1;
+        })
+        $('#T5').html(n);
+    });
+    $('input[name=ThietHaiUocTinh]').change(function () {
+        var n = 0;
+        $('input[name=ThietHaiUocTinh]').map(function () {
+            n += $(this).val() * 1;
+        })
+        $('#T6').html(n);
+    });
+</script>

@@ -47,10 +47,10 @@ namespace HL.Lib.Models
         public string MaThanhVien { get; set; }
 
         [DataInfo]
-        public string ToChucHoTro { get; set; }
+        public string DSToChucHoTro { get; set; }
 
         [DataInfo]
-        public string ToChucNuocNgoaiHoTro { get; set; }
+        public string DSToChucNuocNgoaiHoTro { get; set; }
 
         [DataInfo]
         public string DeXuat { get; set; }

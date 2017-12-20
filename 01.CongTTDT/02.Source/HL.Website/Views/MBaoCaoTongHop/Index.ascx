@@ -84,7 +84,7 @@
 </div>
 
 <script>
-    function delHs(id) {
+    function delBc(id) {
         if (id) {
             if (window.confirm('Bạn có chắc muốn xóa báo cáo này?')) {
                 $('#baoCaoId').val(id);

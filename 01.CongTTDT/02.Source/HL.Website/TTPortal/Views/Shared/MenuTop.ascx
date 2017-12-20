@@ -17,6 +17,10 @@
             <li class="node"><a class="icon-16-article">Điều phối, ứng cứu sự cố ATTT mạng</a>
                 <ul>
                     <li><a class="icon-16-article" href="/{CPPath}/ModHSThanhVienUCSC/Index.aspx">Bản khai hồ sơ thành viên UCSC</a></li>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModDonDangKyUCSC/Index.aspx">Đăng ký tham gia mạng lưới UCSC</a></li>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoBanDauSuCo/Index.aspx">Báo cáo ban đầu sự cố mạng</a></li>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoKetThucSuCo/Index.aspx">Báo cáo kết thúc sự cố mạng</a></li>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTongHop/Index.aspx">Báo cáo tổng hợp</a></li>
                 </ul>
             </li>
             <li><a class="icon-16-massmail" href="/{CPPath}/ModConfigSendMail/Index.aspx">Cấu hình Email</a></li>

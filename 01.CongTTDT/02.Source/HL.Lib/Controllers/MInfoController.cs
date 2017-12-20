@@ -44,7 +44,16 @@ namespace HL.Lib.Controllers
                     NgayGioPhatHien = dt
                 };
             }
-            else if (ec == "them-bc-tong-hop-su-co") layout = "BCTongHopUCSC";
+            else if (ec == "them-bc-tong-hop-su-co")
+            {
+                layout = "BCTongHopUCSC";
+                DateTime dt = DateTime.Now;
+                ViewBag.BaoCao = new ModBaoCaoTongHopEntity()
+                {
+                    TuNgay = dt,
+                    DenNgay = dt
+                };
+            }
             else if (ec == "dang-xuat")
             {
                 string currUrl = ViewPage.Request.RawUrl;
@@ -581,7 +590,7 @@ namespace HL.Lib.Controllers
             ViewPage.Navigate("/vn/Thanh-vien/DS-bc-ket-thuc-su-co.aspx");
         }
 
-        public void ActionAddBCTongHopUCSC(ModBaoCaoTongHopEntity entity)
+        public void ActionAddBCTongHopUCSC(ModBaoCaoTongHopEntity entity, MSoLuongSuCoModel entitySuCo)
         {
             ViewBag.BaoCao = entity;
 
@@ -593,7 +602,54 @@ namespace HL.Lib.Controllers
             entity.Order = GetMaxOrder_BCTongHop();
             entity.Published = date;
             entity.Activity = false;
-            int id = ModBaoCaoTongHopService.Instance.Save(entity);
+
+            int c = entitySuCo.MN.Length;
+            for (int i = 0; i < c; i++)
+            {
+                var suCo = new ModSoLuongSuCoEntity();
+                bool flag = false;
+                if (entitySuCo.SoLuong[i] > 0)
+                {
+                    suCo.SoLuong = entitySuCo.SoLuong[i];
+                    flag = true;
+                }
+                if (entitySuCo.TuXuLy[i] > 0)
+                {
+                    suCo.TuXuLy = entitySuCo.TuXuLy[i];
+                    flag = true;
+                }
+                if (entitySuCo.ToChucHoTro[i] > 0)
+                {
+                    suCo.ToChucHoTro = entitySuCo.ToChucHoTro[i];
+                    flag = true;
+                }
+                if (entitySuCo.ToChucNuocNgoaiHoTro[i] > 0)
+                {
+                    suCo.ToChucNuocNgoaiHoTro = entitySuCo.ToChucNuocNgoaiHoTro[i];
+                    flag = true;
+                }
+                if (entitySuCo.DeNghi[i] > 0)
+                {
+                    suCo.DeNghi = entitySuCo.DeNghi[i];
+                    flag = true;
+                }
+                if (entitySuCo.ThietHaiUocTinh[i] > 0)
+                {
+                    suCo.ThietHaiUocTinh = entitySuCo.ThietHaiUocTinh[i];
+                    flag = true;
+                }
+                if (flag == true)
+                {
+                    int id = ModBaoCaoTongHopService.Instance.Save(entity);
+                    suCo.BaoCaoTongHopID = id;
+                    suCo.MenuID = entitySuCo.MN[i];
+                    suCo.Published = date;
+                    suCo.Order = GetMaxOrder_SoSuCo();
+                    suCo.Activity = true;
+
+                    ModSoLuongSuCoService.Instance.Save(suCo);
+                }
+            }
 
             ViewPage.Alert("Tạo mới báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
             ViewPage.Navigate("/vn/Thanh-vien/DS-bc-tong-hop-su-co.aspx");
@@ -644,6 +700,13 @@ namespace HL.Lib.Controllers
         private int GetMaxOrder_InfoMagic()
         {
             return ModInfoMagicService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
+
+        private int GetMaxOrder_SoSuCo()
+        {
+            return ModSoLuongSuCoService.Instance.CreateQuery()
                     .Max(o => o.Order)
                     .ToValue().ToInt(0) + 1;
         }
