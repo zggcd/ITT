@@ -35,24 +35,27 @@
                     <label>User :</label>
                 </td>
                 <td>
-                     <% List<ModUserEntity> listUser = ModUserService.Instance.CreateQuery().ToList(); %>
-                     <select name="UserID" id="UserID" class="text_input">
-                         <option value="0">-</option>
-                         <%for (int i = 0; listUser != null && i < listUser.Count;i++ ){ %>
-                         <option <%if(entity.UserID==listUser[i].ID) {%> selected <%} %> value="<%= listUser[i].ID%>"><%= listUser[i].Name%></option>
-                         <%} %>
+                    <% List<CPUserEntity> listUser = CPUserService.Instance.CreateQuery().ToList(); %>
+                    <select name="UserID" id="UserID" class="text_input">
+                        <option value="0">-</option>
+                        <%for (int i = 0; listUser != null && i < listUser.Count; i++)
+                            { %>
+                        <option <%if (entity.UserID == listUser[i].ID)
+                            {%>
+                            selected <%} %> value="<%= listUser[i].ID%>"><%= listUser[i].Name%></option>
+                        <%} %>
                     </select>
                 </td>
             </tr>
-           <tr>
+           <%--<tr>
                 <td class="key">
                     <label>User i d1 :</label>
                 </td>
                 <td>
                     <input class="text_input" type="text" name="UserID1" id="UserID1" value="<%=entity.UserID1 %>" maxlength="255" />
                 </td>
-            </tr>
-            <tr>
+            </tr>--%>
+            <%--<tr>
                 <td class="key">
                     <label>Chuyên mục :</label>
                 </td>
@@ -70,7 +73,7 @@
                 <td>
                     <%= Utils.ShowCheckBoxByConfigkey("Mod.BaoCaoKetThucSuCoState", "ArrState", entity.State)%>
                 </td>
-            </tr>
+            </tr>--%>
            <tr>
                 <td class="key">
                     <label>Tên :</label>
@@ -89,7 +92,7 @@
             </tr>
            <tr>
                 <td class="key">
-                    <label>To chuc_ ten :</label>
+                    <label>Tên tổ chức :</label>
                 </td>
                 <td>
                     <input class="text_input" type="text" name="ToChuc_Ten" id="ToChuc_Ten" value="<%=entity.ToChuc_Ten %>" maxlength="255" />
@@ -97,7 +100,7 @@
             </tr>
            <tr>
                 <td class="key">
-                    <label>To chuc_ dia chi :</label>
+                    <label>Địa chỉ :</label>
                 </td>
                 <td>
                     <input class="text_input" type="text" name="ToChuc_DiaChi" id="ToChuc_DiaChi" value="<%=entity.ToChuc_DiaChi %>" maxlength="255" />
@@ -105,7 +108,7 @@
             </tr>
            <tr>
                 <td class="key">
-                    <label>To chuc_ dien thoai :</label>
+                    <label>Điện thoại :</label>
                 </td>
                 <td>
                     <input class="text_input" type="text" name="ToChuc_DienThoai" id="ToChuc_DienThoai" value="<%=entity.ToChuc_DienThoai %>" maxlength="255" />
@@ -113,7 +116,7 @@
             </tr>
            <tr>
                 <td class="key">
-                    <label>To chuc_ email :</label>
+                    <label>Email :</label>
                 </td>
                 <td>
                     <input class="text_input" type="text" name="ToChuc_Email" id="ToChuc_Email" value="<%=entity.ToChuc_Email %>" maxlength="255" />
@@ -121,7 +124,7 @@
             </tr>
            <tr>
                 <td class="key">
-                    <label>So ky hieu :</label>
+                    <label>Số ký hiệu :</label>
                 </td>
                 <td>
                     <input class="text_input" type="text" name="SoKyHieu" id="SoKyHieu" value="<%=entity.SoKyHieu %>" maxlength="255" />
@@ -129,7 +132,7 @@
             </tr>
            <tr>
                 <td class="key">
-                    <label>Ngay bao cao :</label>
+                    <label>Ngày báo cáo :</label>
                 </td>
                 <td>
                     <input class="text_input" type="text" name="NgayBaoCao" id="NgayBaoCao" value="<%=entity.NgayBaoCao %>" maxlength="255" />
