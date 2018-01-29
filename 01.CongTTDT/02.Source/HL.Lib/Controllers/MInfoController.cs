@@ -535,7 +535,7 @@ namespace HL.Lib.Controllers
                 }
             }
 
-            //Bien phap
+            //Thong tin gui kem
             num = modelInfo.chkThongTinGuiKem != null ? modelInfo.chkThongTinGuiKem.Length : 0;
             for (int i = 0; i < num; i++)
             {

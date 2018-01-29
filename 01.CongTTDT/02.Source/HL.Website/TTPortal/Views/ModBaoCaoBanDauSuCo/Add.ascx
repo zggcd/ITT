@@ -279,15 +279,15 @@
                                 <label>Ngày phát hiện sự cố (*) (dd/mm/yy) :</label>
                             </td>
                             <td>
-                                <input class="text_input" type="text" name="ChiTiet_NgayGioPhatHien" id="ChiTiet_NgayGioPhatHien" value="<%=entity.ChiTiet_NgayGioPhatHien %>" maxlength="255" />
+                                <input class="text_input" type="text" name="ChiTiet_NgayGioPhatHien" id="ChiTiet_NgayGioPhatHien" value="<%=string.Format("{0:dd/MM/yyyy}", entity.ChiTiet_NgayGioPhatHien) %>" maxlength="255" />
                             </td>
                         </tr>
                         <tr>
                             <td class="key">
-                                <label>Thời gian phát hiện (*) :</label>
+                                <label>Thời gian phát hiện (*) (HH:mm) :</label>
                             </td>
                             <td>
-                                <input class="text_input" type="text" name="" id="" value="<%=entity.ChiTiet_NgayGioPhatHien %>" maxlength="255" />
+                                <input class="text_input" type="text" name="GioPhut" id="" value="<%=string.Format("{0:HH:MM}", entity.ChiTiet_NgayGioPhatHien) %>" maxlength="255" />
                             </td>
                         </tr>
                         <tr>
@@ -297,8 +297,97 @@
                             <td>
                                 <select name="HienTrangID" id="HienTrangID" class="text_input">
                                     <option value="0">-</option>
-                                    <%= Utils.ShowDDLMenuByType2("HienTrang", model.LangID, entity.HienTrangID)%>
+                                    <%= Utils.ShowDDLMenuByType2("HienTrangSuCo", model.LangID, entity.HienTrangID)%>
                                 </select>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+                <fieldset class="adminform">
+                    <legend>CÁCH THỨC PHÁT HIỆN</legend>
+                    <table class="admintable">
+                        <tr>
+                            <td class="key"></td>
+                            <td>
+                                <%
+                                    List<ModInfoMagicEntity> currCachThuc = ViewBag.CachThuc as List<ModInfoMagicEntity> ?? new List<ModInfoMagicEntity>();
+                                    string strCachThuc = string.Join(",", currCachThuc.Select(o => o.MenuID));
+                                    List<WebMenuEntity> lstCachThuc = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "CachThuc" && o.ParentID > 0).OrderByAsc(o => o.IsAddText).ToList_Cache();
+                                    int countCachThuc = lstCachThuc != null ? lstCachThuc.Count : 0;
+                                    int d = 0;
+                                    for (int i = 0; i < countCachThuc; i++)
+                                    {
+                                        string chk = "", val = "";
+                                        if (strCachThuc.IndexOf(lstCachThuc[i].ID.ToString()) > -1)
+                                        {
+                                            chk = "checked";
+                                            var ct = currCachThuc.Where(o => o.MenuID == lstCachThuc[i].ID).SingleOrDefault();
+                                            if (ct != null) val = ct.Name;
+                                        }
+                                        string addText = "0_" + d.ToString();   //0: Chekbox ko them truong text; 1: Checkbox them truong text
+                                        if (lstCachThuc[i].IsAddText == true)
+                                        {
+                                            addText = "1_" + d.ToString();
+                                            d++;
+                                        }
+                                %>
+                                <p class="MsoNormal" style='margin-top: 6.0pt'>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
+                                        <input name="chkCachThuc" type="checkbox" value="" onchange="setChkStatus(this, '<%=addText + "_" + lstCachThuc[i].ID %>')" <%=chk %> />
+                                        <%=lstCachThuc[i].Name %>
+                                        <%if (lstCachThuc[i].IsAddText == true)
+                                            {%>
+                                        <input name="txtCachThuc" maxlength="255" id="" class="text_input" type="text" value="<%=val %>" />
+                                        <%} %>
+                                    </span>
+                                </p>
+                                <%} %>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+
+                <fieldset class="adminform">
+                    <legend>ĐÃ GỬI THÔNG BÁO SỰ CỐ CHO</legend>
+                    <table class="admintable">
+                        <tr>
+                            <td class="key"></td>
+                            <td>
+                                <%
+                                    List<ModInfoMagicEntity> currThongBao = ViewBag.ThongBao as List<ModInfoMagicEntity> ?? new List<ModInfoMagicEntity>();
+                                    string strThongBao = string.Join(",", currThongBao.Select(o => o.MenuID));
+
+                                    List<WebMenuEntity> lstThongBao = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "GuiThongBaoSuCo" && o.ParentID > 0).ToList_Cache();
+                                    int countThongBao = lstThongBao != null ? lstThongBao.Count : 0;
+                                    d = 0;
+                                    for (int i = 0; i < countThongBao; i++)
+                                    {
+                                        string chk = "", val = "";
+                                        if (strThongBao.IndexOf(lstThongBao[i].ID.ToString()) > -1)
+                                        {
+                                            chk = "checked";
+                                            var ct = currThongBao.Where(o => o.MenuID == lstThongBao[i].ID).SingleOrDefault();
+                                            if (ct != null) val = ct.Name;
+                                        }
+                                        string addText = "0_" + d.ToString();   //0: Chekbox ko them truong text; 1: Checkbox them truong text
+                                        if (lstThongBao[i].IsAddText == true)
+                                        {
+                                            addText = "1_" + d.ToString();
+                                            d++;
+                                        }
+                                %>
+                                <p class="MsoNormal" style='margin-top: 6.0pt'>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
+                                        <input name="chkThongBao" type="checkbox" value="" onchange="setChkStatus(this, '<%=addText + "_" + lstThongBao[i].ID %>')" <%=chk %> />
+                                        <%=lstThongBao[i].Name %>
+                                        <%if (lstThongBao[i].IsAddText == true)
+                                            {%>
+                                        <input name="txtThongBao" maxlength="255" id="" class="text_input" type="text" value="<%=val %>" />
+                                        <%} %>
+                                    </span>
+                                </p>
+                                <%} %>
                             </td>
                         </tr>
                     </table>
@@ -321,6 +410,84 @@
                             </td>
                             <td>
                                 <input class="text_input" type="text" name="TTThem_Version" id="TTThem_Version" value="<%=entity.TTThem_Version %>" maxlength="255" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="key">Các dịch vụ có trên hệ thống (Đánh dấu những dịch vụ được sử dụng trên hệ thống)</td>
+                            <td>
+                                <%
+                                    List<ModInfoMagicEntity> currDichVu = ViewBag.DichVu as List<ModInfoMagicEntity> ?? new List<ModInfoMagicEntity>();
+                                    string strDichVu = string.Join(",", currDichVu.Select(o => o.MenuID));
+
+                                    List<WebMenuEntity> lstDichVu = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "DichVu" && o.ParentID > 0).ToList_Cache();
+                                    int countDichVu = lstDichVu != null ? lstDichVu.Count : 0;
+                                    d = 0;
+                                    for (int i = 0; i < countDichVu; i++)
+                                    {
+                                        string chk = "", val = "";
+                                        if (strDichVu.IndexOf(lstDichVu[i].ID.ToString()) > -1)
+                                        {
+                                            chk = "checked";
+                                            var ct = currDichVu.Where(o => o.MenuID == lstDichVu[i].ID).SingleOrDefault();
+                                            if (ct != null) val = ct.Name;
+                                        }
+                                        string addText = "0_" + d.ToString();   //0: Chekbox ko them truong text; 1: Checkbox them truong text
+                                        if (lstDichVu[i].IsAddText == true)
+                                        {
+                                            addText = "1_" + d.ToString();
+                                            d++;
+                                        }
+                                %>
+                                <p class="MsoNormal" style='margin-top: 6.0pt'>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
+                                        <input name="chkDichVu" type="checkbox" value="" onchange="setChkStatus(this, '<%=addText + "_" + lstDichVu[i].ID %>')" <%=chk %> />
+                                        <%=lstDichVu[i].Name %>
+                                        <%if (lstDichVu[i].IsAddText == true)
+                                            {%>
+                                        <input name="txtDichVu" maxlength="255" id="" class="textstyle1" type="text" value="<%=val %>" />
+                                        <%} %>
+                                    </span>
+                                </p>
+                                <%} %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="key">Các biện pháp an toàn thông tin đã triển khai (Đánh dấu những biện pháp đã triển khai)</td>
+                            <td>
+                                <%
+                                    List<ModInfoMagicEntity> currBienPhap = ViewBag.BienPhap as List<ModInfoMagicEntity> ?? new List<ModInfoMagicEntity>();
+                                    string strBienPhap = string.Join(",", currBienPhap.Select(o => o.MenuID));
+
+                                    List<WebMenuEntity> lstBienPhap = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "BienPhapATTT" && o.ParentID > 0).ToList_Cache();
+                                    int countBienPhap = lstBienPhap != null ? lstBienPhap.Count : 0;
+                                    d = 0;
+                                    for (int i = 0; i < countBienPhap; i++)
+                                    {
+                                        string chk = "", val = "";
+                                        if (strBienPhap.IndexOf(lstBienPhap[i].ID.ToString()) > -1)
+                                        {
+                                            chk = "checked";
+                                            var ct = currBienPhap.Where(o => o.MenuID == lstBienPhap[i].ID).SingleOrDefault();
+                                            if (ct != null) val = ct.Name;
+                                        }
+                                        string addText = "0_" + d.ToString();   //0: Chekbox ko them truong text; 1: Checkbox them truong text
+                                        if (lstBienPhap[i].IsAddText == true)
+                                        {
+                                            addText = "1_" + d.ToString();
+                                            d++;
+                                        }
+                                %>
+                                <p class="MsoNormal" style='margin-top: 6.0pt'>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
+                                        <input name="chkBienPhap" type="checkbox" value="" onchange="setChkStatus(this, '<%=addText + "_" + lstBienPhap[i].ID %>')" <%=chk %> />
+                                        <%=lstBienPhap[i].Name %>
+                                        <%if (lstBienPhap[i].IsAddText == true)
+                                            {%>
+                                        <input name="txtBienPhap" maxlength="255" id="" class="textstyle1" type="text" value="<%=val %>" />
+                                        <%} %>
+                                    </span>
+                                </p>
+                                <%} %>
                             </td>
                         </tr>
                         <tr>
@@ -349,6 +516,47 @@
                         </tr>
                         <tr>
                             <td class="key">
+                                <label>Thông tin gửi kèm :</label>
+                            </td>
+                            <td>
+                                <%
+                                    List<ModInfoMagicEntity> currThongTinGuiKem = ViewBag.ThongTinGuiKem as List<ModInfoMagicEntity> ?? new List<ModInfoMagicEntity>();
+                                    string strThongTinGuiKem = string.Join(",", currThongTinGuiKem.Select(o => o.MenuID));
+
+                                    List<WebMenuEntity> lstThongTinGuiKem = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "ThongTinGuiKem" && o.ParentID > 0).ToList_Cache();
+                                    int countThongTinGuiKem = lstThongTinGuiKem != null ? lstThongTinGuiKem.Count : 0;
+                                    d = 0;
+                                    for (int i = 0; i < countThongTinGuiKem; i++)
+                                    {
+                                        string chk = "", val = "";
+                                        if (strThongTinGuiKem.IndexOf(lstThongTinGuiKem[i].ID.ToString()) > -1)
+                                        {
+                                            chk = "checked";
+                                            var ct = currThongTinGuiKem.Where(o => o.MenuID == lstThongTinGuiKem[i].ID).SingleOrDefault();
+                                            if (ct != null) val = ct.Name;
+                                        }
+                                        string addText = "0_" + d.ToString();   //0: Chekbox ko them truong text; 1: Checkbox them truong text
+                                        if (lstThongTinGuiKem[i].IsAddText == true)
+                                        {
+                                            addText = "1_" + d.ToString();
+                                            d++;
+                                        }
+                                %>
+                                <p class="MsoNormal" style='margin-top: 6.0pt'>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>
+                                        <input name="chkThongTinGuiKem" type="checkbox" value="" onchange="setChkStatus(this, '<%=addText + "_" + lstThongTinGuiKem[i].ID %>')" <%=chk %> />
+                                        <%=lstThongTinGuiKem[i].Name %>
+                                        <%if (lstThongTinGuiKem[i].IsAddText == true)
+                                            {%>
+                                        <input name="txtThongTinGuiKem" maxlength="255" id="" class="textstyle1" type="text" value="<%=val %>" />
+                                        <%} %>
+                                    </span>
+                                </p>
+                                <%} %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="key">
                                 <label>KIẾN NGHỊ, ĐỀ XUẤT HỖ TRỢ :</label>
                             </td>
                             <td class="content">
@@ -357,10 +565,10 @@
                         </tr>
                         <tr>
                             <td class="key">
-                                <label>THỜI GIAN THỰC HIỆN BÁO CÁO SỰ CỐ * :</label>
+                                <label>THỜI GIAN THỰC HIỆN BÁO CÁO SỰ CỐ * (ngày/tháng/năm/giờ/phút) :</label>
                             </td>
                             <td>
-                                <input class="text_input" type="text" name="ThoiGianThucHien" id="ThoiGianThucHien" value="<%=entity.ThoiGianThucHien %>" maxlength="255" />
+                                <input class="text_input" type="text" name="ThoiGian" id="ThoiGian" value="<%=string.Format("{0:dd/MM/yyyy/HH/mm}", entity.ThoiGianThucHien) %>" maxlength="255" />
                             </td>
                         </tr>
                     </table>
@@ -399,5 +607,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $('input[name=chkCachThuc]').change();
+            $('input[name=chkThongBao]').change();
+            $('input[name=chkDichVu]').change();
+            $('input[name=chkBienPhap]').change();
+            $('input[name=chkThongTinGuiKem]').change();
+        });
+
+        function setChkStatus(e, suffix) {
+            //if (e.checked) e.value = '1_' + suffix;
+            //else e.value = '0_' + suffix;
+            e.value = suffix;
+        }
+    </script>
 
 </form>
