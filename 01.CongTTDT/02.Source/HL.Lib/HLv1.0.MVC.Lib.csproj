@@ -79,6 +79,7 @@
     <Compile Include="Controllers\CDonDangKyUCSCController.cs" />
     <Compile Include="Controllers\CDuThaoController.cs" />
     <Compile Include="Controllers\CGopYController.cs" />
+    <Compile Include="Controllers\CHeThongThongTinController.cs" />
     <Compile Include="Controllers\CHSThanhVienUCSCController.cs" />
     <Compile Include="Controllers\CInfoController.cs" />
     <Compile Include="Controllers\CInfoMagicController.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Controllers\MDonDangKyUCSCController.cs" />
     <Compile Include="Controllers\MDuThaoController.cs" />
     <Compile Include="Controllers\MGopYController.cs" />
+    <Compile Include="Controllers\MHeThongThongTinController.cs" />
     <Compile Include="Controllers\MHSThanhVienUCSCController.cs" />
     <Compile Include="Controllers\MInfoController.cs" />
     <Compile Include="Controllers\MInfoMagicController.cs" />
@@ -135,6 +137,7 @@
     <Compile Include="CPControllers\ModAdvController.cs" />
     <Compile Include="CPControllers\ModFileController.cs" />
     <Compile Include="CPControllers\ModGopYController.cs" />
+    <Compile Include="CPControllers\ModHeThongThongTinController.cs" />
     <Compile Include="CPControllers\ModHSThanhVienUCSCController.cs" />
     <Compile Include="CPControllers\ModInfoMagicController.cs" />
     <Compile Include="CPControllers\ModNewsController.cs" />
@@ -206,6 +209,7 @@
     <Compile Include="Models\ModDuThaoModel.cs" />
     <Compile Include="Models\ModFeedbackModel.cs" />
     <Compile Include="Models\ModGopYModel.cs" />
+    <Compile Include="Models\ModHeThongThongTinModel.cs" />
     <Compile Include="Models\ModHSThanhVienUCSCModel.cs" />
     <Compile Include="Models\ModInfoMagicModel.cs" />
     <Compile Include="Models\ModNewsModel.cs" />

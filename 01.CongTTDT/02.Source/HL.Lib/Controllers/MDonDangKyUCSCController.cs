@@ -2,6 +2,8 @@
 
 using HL.Lib.MVC;
 using HL.Lib.Models;
+using System.Collections.Generic;
+using HL.Lib.Global;
 
 namespace HL.Lib.Controllers
 {
@@ -70,7 +72,9 @@ namespace HL.Lib.Controllers
                     ViewBag.Data = entity;
                     SetObject["view.Meta"] = entity;
 
-                    ViewBag.DangKy = entity;
+                    ViewBag.HTTT = ModHeThongThongTinService.Instance.CreateQuery()
+                        .Where(o => o.Activity == true && o.DonDangKyUCSCID == entity.ID)
+                        .ToList();
                     ViewBag.EndCode = endCode;
                     RenderView("../MInfo/DangKyUCSC");
                 }
@@ -92,7 +96,12 @@ namespace HL.Lib.Controllers
 
             if (entity != null)
             {
+                var httt = ModHeThongThongTinService.Instance.CreateQuery()
+                    .Where(o => o.DonDangKyUCSCID == entity.ID)
+                    .ToList();
+
                 ModDonDangKyUCSCService.Instance.Delete(entity.ID);
+                if (httt != null) ModHeThongThongTinService.Instance.Delete(httt);
 
                 ViewPage.Alert("Xóa đăng ký thành công.");
                 ViewPage.Navigate(ViewPage.CurrentURL);
@@ -103,7 +112,7 @@ namespace HL.Lib.Controllers
             }
         }
 
-        public void ActionUpdateDangKyUCSC(ModDonDangKyUCSCEntity entityDk, string endCode)
+        public void ActionUpdateDangKyUCSC(ModDonDangKyUCSCEntity entityDk, MHSThanhVienUCSCModel model, string endCode)
         {
             int userId = HL.Lib.Global.CPLogin.UserID;
             var entity = ModDonDangKyUCSCService.Instance.CreateQuery()
@@ -121,18 +130,56 @@ namespace HL.Lib.Controllers
                 entityDk.State = entity.State;
                 entityDk.Name = entity.Name;
                 entityDk.Code = entity.Code;
-                entityDk.HeThongThongTinIDs = entity.HeThongThongTinIDs;
                 entityDk.Order = entity.Order;
                 entityDk.Published = entity.Published;
                 entityDk.Published1 = date;
                 entityDk.Activity = false;
                 ModDonDangKyUCSCService.Instance.Save(entityDk);
 
+                //He thong thong tin
+                var httt = ModHeThongThongTinService.Instance.CreateQuery().Where(o => o.Activity == true && o.DonDangKyUCSCID == entity.ID).ToList();
+                if (httt != null) ModHeThongThongTinService.Instance.Delete(httt);
+                var arr = model.M.Split(';');
+                List<ModHeThongThongTinEntity> entityHTTT = new List<ModHeThongThongTinEntity>();
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (string.IsNullOrEmpty(arr[i])) continue;
+                    var tmp = arr[i].Split('_');
+                    int m = HL.Core.Global.Convert.ToInt(tmp[0], 0);
+                    if (m <= 0 || tmp.Length != 2) continue;
+                    var lstName = tmp[1].Split(',');
+
+                    for (int j = 0; j < lstName.Length; j++)
+                    {
+                        if (string.IsNullOrEmpty(lstName[j])) continue;
+                        var entityTmp = new ModHeThongThongTinEntity
+                        {
+                            DonDangKyUCSCID = entity.ID,
+                            MenuID = m,
+                            Name = lstName[j],
+                            Code = Data.GetCode(lstName[j]),
+                            Published = DateTime.Now,
+                            Order = GetMaxOrder_HTTT(),
+                            Activity = true
+                        };
+                        entityHTTT.Add(entityTmp);
+                    }
+                    ModHeThongThongTinService.Instance.Save(entityHTTT);
+                }
+
                 ViewBag.DangKy = entityDk;
+                ViewBag.HTTT1 = entityHTTT;
 
                 ViewPage.Alert("Cập nhật đăng ký thành công! Chúng tôi sẽ xem xét và phê duyệt đăng ký của bạn sớm nhất có thể.");
                 ViewPage.Navigate("/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx");
             }
+        }
+
+        private int GetMaxOrder_HTTT()
+        {
+            return ModHeThongThongTinService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
         }
     }
 

@@ -3,6 +3,10 @@
 <%
     var model = ViewBag.Model as ModDonDangKyUCSCModel;
     var entity = ViewBag.Data as ModDonDangKyUCSCEntity;
+
+    List<ModHeThongThongTinEntity> currHTTT = ViewBag.HTTT as List<ModHeThongThongTinEntity> ?? new List<ModHeThongThongTinEntity>();
+    List<WebMenuEntity> lstCapDo = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "CapDo" && o.ParentID > 0).ToList_Cache();
+    int countCapDo = lstCapDo != null ? lstCapDo.Count : 0;
 %>
 
 <script type="text/javascript" src="/{CPPath}/Content/ckeditor/ckeditor.js"></script>
@@ -10,7 +14,7 @@
     CKFinder.setupCKEditor(null, '/{CPPath}/Content/ckfinder/');
 </script>
 
-<form id="hlForm" name="hlForm" method="post">
+<form id="hlForm" name="hlForm" method="post" onsubmit="fnSubmit()">
     <input type="hidden" id="_hl_action" name="_hl_action" />
 
     <div id="toolbar-box">
@@ -190,7 +194,63 @@
                                 <label>Tên các hệ thống thông tin thuộc phụ trách quản lý hoặc hỗ trợ ứng cứu (cấp độ phê duyệt hoặc dự kiến tương đương) :</label>
                             </td>
                             <td>
-                                <input class="text_input" type="text" name="HeThongThongTinIDs" id="HeThongThongTinIDs" value="<%=entity.HeThongThongTinIDs %>" maxlength="255" />
+                                <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style='border-collapse: collapse; mso-padding-alt: 0in 0in 0in 0in'>
+                                    <tr style='mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes'>
+                                        <%int lvl = 2;
+                                            if (currHTTT != null && currHTTT.Count > 0) lvl = currHTTT.GroupBy(o => o.MenuID).Select(o => o.Count()).Max();
+                                            for (int i = 0; i < countCapDo; i++)
+                                            {%>
+                                        <td width="121" valign="top" style='width: 90.65pt; padding: 0in 0in 0in 0in' data-m="<%=lstCapDo[i].ID %>" id="M<%=i %>">
+                                            <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'>&#9642;</span>
+                                                <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'><%=lstCapDo[i].Name %>:</span>
+                                            </p>
+                                            <%int lnHt = 0;
+                                                List<ModHeThongThongTinEntity> ht = null;
+                                                if (currHTTT != null && currHTTT.Count > 0)
+                                                {
+                                                    ht = currHTTT.Where(o => o.MenuID == lstCapDo[i].ID).ToList();
+                                                    lnHt = ht.Count;
+                                                }
+                                                for (int j = 0; j < lvl; j++)
+                                                {
+                                                    var val = "";
+                                                    if (lnHt > j && ht != null) val = ht[j].Name;
+                                            %>
+                                            <p class="MsoNormal Del<%=j+1 %>" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
+                                                <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>
+                                                    <input name="" maxlength="255" id="" class="textstyle1 input" type="text" value="<%=val %>" /></span>
+                                            </p>
+                                            <%} %>
+                                            <output class="Out"></output>
+                                        </td>
+                                        <%} %>
+                                        <td width="121" valign="top" style='width: 90.65pt; padding: 0in 0in 0in 0in'>
+                                            <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
+                                                <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"'></span>
+                                                <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>&nbsp;</span>
+                                            </p>
+                                            <%for (int j = 0; j < lvl; j++)
+                                                {%>
+                                            <p class="MsoNormal Del<%=j+1 %>" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
+                                                <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>
+                                                    <a href="javascript:fnDel(<%=j+1 %>)" data-idx="<%=j+1 %>">Xóa</a>
+                                                </span>
+                                            </p>
+                                            <%} %>
+                                            <output class="Out1"></output>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
+                                                <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>
+                                                    <a href="javascript:void(0)" id="btnThem">+ Thêm</a>
+                                                </span>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
                         </tr>
                         <tr>
@@ -468,6 +528,7 @@
                     <%} %>
                 </table>
             </div>
+            <input type="hidden" name="M" value="" id="M" />
             <div class="clr"></div>
         </div>
         <div class="b">
@@ -476,5 +537,37 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $('#btnThem').click(function () {
+            var ranNum = Math.floor(Math.random() * 999999).toString();
+            var html = '<p class="MsoNormal Del' + ranNum + '" style="margin-top: 6.0pt; tab-stops: dotted 420.0pt"><input name="" maxlength="255" id="" class="textstyle1 input" type="text" value="" /></span></p>';
+            var html1 = '<p class="MsoNormal Del' + ranNum + '" style="margin-top: 6.0pt; tab-stops: dotted 420.0pt"><a href="javascript:fnDel(' + ranNum + ')">Xóa</a></span></p>';
+            $('.Out').before(html);
+            $('.Out1').before(html1);
+        });
+
+        function fnDel(r) {
+            $('.Del' + r).remove();
+        }
+
+        function fnSubmit() {
+            var ln = <%=countCapDo%>;
+            var s = '';
+            for (var i = 0; i < ln; i++) {
+                var m = $('#M' + i).attr('data-m');
+                s += m + '_';
+                var n = $('#M' + i).find('input[type=text]');
+                var ln1 = n.length;
+                for (var j = 0; j < ln1; j++) {
+                    s += $(n[j]).val() + ',';
+                }
+                s += ';';
+            }
+            $('#M').val(s);
+        }
+
+        fnSubmit();
+    </script>
 
 </form>

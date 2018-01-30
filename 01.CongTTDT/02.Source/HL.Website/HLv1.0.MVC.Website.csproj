@@ -1631,6 +1631,8 @@
     <Content Include="TTPortal\Views\ModDuThao\Index.ascx" />
     <Content Include="TTPortal\Views\ModGopY\Add.ascx" />
     <Content Include="TTPortal\Views\ModGopY\Index.ascx" />
+    <Content Include="TTPortal\Views\ModHeThongThongTin\Add.ascx" />
+    <Content Include="TTPortal\Views\ModHeThongThongTin\Index.ascx" />
     <Content Include="TTPortal\Views\ModHSThanhVienUCSC\Add.ascx" />
     <Content Include="TTPortal\Views\ModHSThanhVienUCSC\Index.ascx" />
     <Content Include="TTPortal\Views\ModInfoMagic\Add.ascx" />
@@ -1659,6 +1661,7 @@
     <Content Include="Views\CFeedback\TempDefault.ascx" />
     <Content Include="Views\CFeedback\Default.ascx" />
     <Content Include="Views\CGopY\Default.ascx" />
+    <Content Include="Views\CHeThongThongTin\Default.ascx" />
     <Content Include="Views\CHSThanhVienUCSC\Default.ascx" />
     <Content Include="Views\CInfoMagic\Default.ascx" />
     <Content Include="Views\CInfo\Login.ascx" />
@@ -1694,6 +1697,8 @@
     <Content Include="Views\MDuThao\Detail.ascx" />
     <Content Include="Views\MDuThao\Index.ascx" />
     <Content Include="Views\MGopY\Index.ascx" />
+    <Content Include="Views\MHeThongThongTin\Detail.ascx" />
+    <Content Include="Views\MHeThongThongTin\Index.ascx" />
     <Content Include="Views\MHSThanhVienUCSC\Detail.ascx" />
     <Content Include="Views\MHSThanhVienUCSC\Index.ascx" />
     <Content Include="Views\MInfoMagic\Detail.ascx" />

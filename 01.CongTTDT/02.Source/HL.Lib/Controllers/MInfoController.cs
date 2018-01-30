@@ -3,6 +3,8 @@
 using HL.Lib.MVC;
 using HL.Lib.Models;
 using HL.Lib.Global;
+using System.Collections.Generic;
+
 namespace HL.Lib.Controllers
 {
     public class MInfoController : Controller
@@ -290,6 +292,7 @@ namespace HL.Lib.Controllers
             }
             ViewBag.Data = entity;
         }
+
         CPUserEntity entity = null;
         public void ActionRePassPOST(PasswordModel model)
         {
@@ -358,7 +361,7 @@ namespace HL.Lib.Controllers
         /// </summary>
         /// <param name="entity">HS thanh vien</param>
         /// <param name="entityDm">Dau moi UCSC</param>
-        public void ActionAddHoSoUCSC(ModHSThanhVienUCSCEntity entity, ModDauMoiUCSCEntity entityDm)
+        public void ActionAddHoSoUCSC(ModHSThanhVienUCSCEntity entity, ModDauMoiUCSCEntity entityDm, MAppend append)
         {
             ViewBag.HoSo = entity;
             ViewBag.DauMoi = entityDm;
@@ -379,13 +382,42 @@ namespace HL.Lib.Controllers
             entityDm.Order = GetMaxOrder_DauMoi();
             entityDm.Published = date;
             entityDm.Activity = true;
-            ModDauMoiUCSCService.Instance.Save(entityDm);
+            int id1 = ModDauMoiUCSCService.Instance.Save(entityDm);
+
+            //He thong thong tin
+            var arr = append.M.Split(';');
+            List<ModHeThongThongTinEntity> entityHTTT = new List<ModHeThongThongTinEntity>();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (string.IsNullOrEmpty(arr[i])) continue;
+                var tmp = arr[i].Split('_');
+                int m = HL.Core.Global.Convert.ToInt(tmp[0], 0);
+                if (m <= 0 || tmp.Length != 2) continue;
+                var lstName = tmp[1].Split(',');
+
+                for (int j = 0; j < lstName.Length; j++)
+                {
+                    if (string.IsNullOrEmpty(lstName[j])) continue;
+                    var entityTmp = new ModHeThongThongTinEntity
+                    {
+                        DauMoiUCSCID = id1,
+                        MenuID = m,
+                        Name = lstName[j],
+                        Code = Data.GetCode(lstName[j]),
+                        Published = DateTime.Now,
+                        Order = GetMaxOrder_HTTT(),
+                        Activity = true
+                    };
+                    entityHTTT.Add(entityTmp);
+                }
+                ModHeThongThongTinService.Instance.Save(entityHTTT);
+            }
 
             ViewPage.Alert("Tạo mới hồ sơ thành công! Chúng tôi sẽ xem xét và phê duyệt hồ sơ của bạn sớm nhất có thể.");
             ViewPage.Navigate("/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx");
         }
 
-        public void ActionAddDangKyUCSC(ModDonDangKyUCSCEntity entity)
+        public void ActionAddDangKyUCSC(ModDonDangKyUCSCEntity entity, MAppend append)
         {
             ViewBag.DangKy = entity;
 
@@ -398,6 +430,35 @@ namespace HL.Lib.Controllers
             entity.Published = date;
             entity.Activity = false;
             int id = ModDonDangKyUCSCService.Instance.Save(entity);
+
+            //He thong thong tin
+            var arr = append.M.Split(';');
+            List<ModHeThongThongTinEntity> entityHTTT = new List<ModHeThongThongTinEntity>();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (string.IsNullOrEmpty(arr[i])) continue;
+                var tmp = arr[i].Split('_');
+                int m = HL.Core.Global.Convert.ToInt(tmp[0], 0);
+                if (m <= 0 || tmp.Length != 2) continue;
+                var lstName = tmp[1].Split(',');
+
+                for (int j = 0; j < lstName.Length; j++)
+                {
+                    if (string.IsNullOrEmpty(lstName[j])) continue;
+                    var entityTmp = new ModHeThongThongTinEntity
+                    {
+                        DauMoiUCSCID = id,
+                        MenuID = m,
+                        Name = lstName[j],
+                        Code = Data.GetCode(lstName[j]),
+                        Published = DateTime.Now,
+                        Order = GetMaxOrder_HTTT(),
+                        Activity = true
+                    };
+                    entityHTTT.Add(entityTmp);
+                }
+                ModHeThongThongTinService.Instance.Save(entityHTTT);
+            }
 
             ViewPage.Alert("Tạo mới đăng ký thành công! Chúng tôi sẽ xem xét và phê duyệt đăng ký của bạn sớm nhất có thể.");
             ViewPage.Navigate("/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx");
@@ -710,6 +771,13 @@ namespace HL.Lib.Controllers
                     .Max(o => o.Order)
                     .ToValue().ToInt(0) + 1;
         }
+
+        private int GetMaxOrder_HTTT()
+        {
+            return ModHeThongThongTinService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
         #endregion Dieu phoi, ung cuu su co ATTT mang
     }
     public class MUserModel
@@ -742,5 +810,6 @@ namespace HL.Lib.Controllers
         public int Gio { get; set; }
         public int Phut { get; set; }
         public string ThoiGian { get; set; }    //Dinh dang: dd/MM/yyyy/HH/mm
+        public string M { get; set; }
     }
 }

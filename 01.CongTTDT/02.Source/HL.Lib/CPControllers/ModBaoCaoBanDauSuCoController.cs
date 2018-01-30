@@ -550,6 +550,8 @@ namespace HL.Lib.CPControllers
         public int Phut { get; set; }
         public string GioPhut { get; set; }    //Dinh dang: HH:MM
         public string ThoiGian { get; set; }    //Dinh dang: dd/MM/yyyy/HH/mm
+        public string M { get; set; }
+        public string Name1 { get; set; }
     }
 
     public class MInfoMagicModel

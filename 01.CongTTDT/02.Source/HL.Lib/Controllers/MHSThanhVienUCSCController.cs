@@ -3,6 +3,7 @@
 using HL.Lib.MVC;
 using HL.Lib.Models;
 using HL.Lib.Global;
+using System.Collections.Generic;
 
 namespace HL.Lib.Controllers
 {
@@ -77,9 +78,16 @@ namespace HL.Lib.Controllers
                     SetObject["view.Meta"] = entity;
 
                     ViewBag.HoSo = entity;
-                    ViewBag.DauMoi = ModDauMoiUCSCService.Instance.CreateQuery()
+                    var dm = ModDauMoiUCSCService.Instance.CreateQuery()
                                             .Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID)
                                             .ToSingle();
+                    ViewBag.DauMoi = dm;
+                    ViewBag.HTTT = ModHeThongThongTinService.Instance.CreateQuery()
+                        .Where(o => o.Activity == true && o.DauMoiUCSCID == dm.ID)
+                        .ToList();
+                    ViewBag.HTTT1 = ModHeThongThongTinService.Instance.CreateQuery()
+                        .Where(o => o.Activity == true && o.DonDangKyUCSCID == entity.ID)
+                        .ToList();
                     ViewBag.EndCode = endCode;
                     RenderView("../MInfo/HoSoUCSC");
                 }
@@ -105,7 +113,14 @@ namespace HL.Lib.Controllers
                             .Where(o => o.HSThanhVienUCSCID == entity.ID)
                             .ToSingle();
                 ModHSThanhVienUCSCService.Instance.Delete(entity.ID);
-                ModDauMoiUCSCService.Instance.Delete(dm);
+                if (dm != null)
+                {
+                    var httt = ModHeThongThongTinService.Instance.CreateQuery()
+                        .Where(o => o.DauMoiUCSCID == dm.ID)
+                        .ToList();
+                    if (httt != null) ModHeThongThongTinService.Instance.Delete(httt);
+                    ModDauMoiUCSCService.Instance.Delete(dm);
+                }
 
                 ViewPage.Alert("Xóa hồ sơ thành công.");
                 ViewPage.Navigate(ViewPage.CurrentURL);
@@ -116,7 +131,7 @@ namespace HL.Lib.Controllers
             }
         }
 
-        public void ActionUpdateHoSoUCSC(ModHSThanhVienUCSCEntity entityHs, ModDauMoiUCSCEntity entityDm, string endCode)
+        public void ActionUpdateHoSoUCSC(ModHSThanhVienUCSCEntity entityHs, ModDauMoiUCSCEntity entityDm, MHSThanhVienUCSCModel model, string endCode)
         {
             int userId = HL.Lib.Global.CPLogin.UserID;
             var entity = ModHSThanhVienUCSCService.Instance.CreateQuery()
@@ -127,6 +142,7 @@ namespace HL.Lib.Controllers
             {
                 DateTime date = DateTime.Now;
 
+                //Thong tin chung
                 entityHs.ID = entity.ID;
                 entityHs.UserID = entity.UserID;
                 entityHs.UserID1 = entity.UserID1;
@@ -134,14 +150,14 @@ namespace HL.Lib.Controllers
                 entityHs.State = entity.State;
                 entityHs.Name = entity.Name;
                 entityHs.Code = entity.Code;
-                entityHs.HeThongThongTinIDs = entity.HeThongThongTinIDs;
                 entityHs.Order = entity.Order;
                 entityHs.Published = entity.Published;
                 entityHs.Published1 = date;
                 entityHs.Activity = false;
                 ModHSThanhVienUCSCService.Instance.Save(entityHs);
 
-                var dm = ModDauMoiUCSCService.Instance.CreateQuery().Where(o => o.HSThanhVienUCSCID == entity.ID).ToSingle();
+                //Dau moi UCSC
+                var dm = ModDauMoiUCSCService.Instance.CreateQuery().Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID).ToSingle();
                 entityDm.ID = dm.ID;
                 entityDm.HSThanhVienUCSCID = dm.HSThanhVienUCSCID;
                 entityDm.MenuID = dm.MenuID;
@@ -153,8 +169,40 @@ namespace HL.Lib.Controllers
                 entityDm.Activity = dm.Activity;
                 ModDauMoiUCSCService.Instance.Save(entityDm);
 
+                //He thong thong tin
+                var httt = ModHeThongThongTinService.Instance.CreateQuery().Where(o => o.Activity == true && o.DauMoiUCSCID == dm.ID).ToList();
+                if (httt != null) ModHeThongThongTinService.Instance.Delete(httt);
+                var arr = model.M.Split(';');
+                List<ModHeThongThongTinEntity> entityHTTT = new List<ModHeThongThongTinEntity>();
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (string.IsNullOrEmpty(arr[i])) continue;
+                    var tmp = arr[i].Split('_');
+                    int m = HL.Core.Global.Convert.ToInt(tmp[0], 0);
+                    if (m <= 0 || tmp.Length != 2) continue;
+                    var lstName = tmp[1].Split(',');
+
+                    for (int j = 0; j < lstName.Length; j++)
+                    {
+                        if (string.IsNullOrEmpty(lstName[j])) continue;
+                        var entityTmp = new ModHeThongThongTinEntity
+                        {
+                            DauMoiUCSCID = dm.ID,
+                            MenuID = m,
+                            Name = lstName[j],
+                            Code = Data.GetCode(lstName[j]),
+                            Published = DateTime.Now,
+                            Order = GetMaxOrder_HTTT(),
+                            Activity = true
+                        };
+                        entityHTTT.Add(entityTmp);
+                    }
+                    ModHeThongThongTinService.Instance.Save(entityHTTT);
+                }
+
                 ViewBag.HoSo = entityHs;
                 ViewBag.DauMoi = entityDm;
+                ViewBag.HTTT = entityHTTT;
 
                 ViewPage.Alert("Cập nhật hồ sơ thành công! Chúng tôi sẽ xem xét và phê duyệt hồ sơ của bạn sớm nhất có thể.");
                 ViewPage.Navigate("/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx");
@@ -179,6 +227,13 @@ namespace HL.Lib.Controllers
             //ViewPage.Alert("Tạo mới hồ sơ thành công! Chúng tôi sẽ xem xét và phê duyệt hồ sơ của bạn sớm nhất có thể.");
             //ViewPage.Navigate("/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx");
         }
+
+        private int GetMaxOrder_HTTT()
+        {
+            return ModHeThongThongTinService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
     }
 
     public class MHSThanhVienUCSCModel
@@ -192,5 +247,7 @@ namespace HL.Lib.Controllers
 
         public int PageSize { get; set; }
         public int TotalRecord { get; set; }
+
+        public string M { get; set; }
     }
 }

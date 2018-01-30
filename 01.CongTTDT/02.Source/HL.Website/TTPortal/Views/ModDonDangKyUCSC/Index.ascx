@@ -104,15 +104,15 @@
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("ID", "ID")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
+                        <th width="15%" nowrap="nowrap">
                             <%= GetSortLink("User", "UserID")%>
                         </th>
                         <%--<th width="1%" nowrap="nowrap">
                             <%= GetSortLink("User i d1", "UserID1")%>
                         </th>--%>
-                        <th width="1%" nowrap="nowrap">
+                        <%--<th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Chuyên mục", "MenuID")%>
-                        </th>
+                        </th>--%>
                         <th class="title">
                             <%= GetSortLink("Tên", "Name")%>
                         </th>
@@ -253,14 +253,14 @@
                             <%= listEntity[i].ID%>
                         </td>
                         <td align="center">
-                            <%= GetName(listEntity[i].getUser()) %>
+                            <%= GetName(listEntity[i].getUser1()) %>
                         </td>
                         <%--<td align="center">
                             <%= string.Format("{0:#,##0}", listEntity[i].UserID1)%>
                         </td>--%>
-                        <td align="center">
+                        <%--<td align="center">
                             <%= GetName(listEntity[i].getMenu()) %>
-                        </td>
+                        </td>--%>
                         <td>
                             <a href="javascript:HLRedirect('Add', <%= listEntity[i].ID %>)"><%= listEntity[i].Name%></a>
                         </td>

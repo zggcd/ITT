@@ -74,9 +74,6 @@ namespace HL.Lib.Models
         public string TTTN_Email { get; set; }
 
         [DataInfo]
-        public string HeThongThongTinIDs { get; set; }
-
-        [DataInfo]
         public string Content { get; set; }
 
         [DataInfo]
@@ -106,6 +103,18 @@ namespace HL.Lib.Models
                 _oUser = new ModUserEntity();
 
             return _oUser;
+        }
+
+        private CPUserEntity _oUser1 = null;
+        public CPUserEntity getUser1()
+        {
+            if (_oUser1 == null && UserID > 0)
+                _oUser1 = CPUserService.Instance.GetByID(UserID);
+
+            if (_oUser1 == null)
+                _oUser1 = new CPUserEntity();
+
+            return _oUser1;
         }
 
         private WebMenuEntity _oMenu = null;
