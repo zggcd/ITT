@@ -174,7 +174,7 @@
                                 <label>Ngày báo cáo :</label>
                             </td>
                             <td>
-                                <input class="text_input" type="text" name="NgayBaoCao" id="NgayBaoCao" value="<%=entity.NgayBaoCao %>" maxlength="255" />
+                                <input class="text_input" type="text" name="NgayBaoCao" id="NgayBaoCao" value="<%=string.Format("{0:dd/MM/yyyy}", entity.NgayBaoCao) %>" maxlength="255" />
                             </td>
                         </tr>
                     </table>
@@ -231,15 +231,15 @@
                                 <label>Ngày phát hiện sự cố (*) (dd/mm/yy) :</label>
                             </td>
                             <td>
-                                <input class="text_input" type="text" name="NgayGioPhatHien" id="NgayGioPhatHien" value="<%=entity.NgayGioPhatHien %>" maxlength="255" />
+                                <input class="text_input" type="text" name="Ngay" id="Ngay" value="<%=string.Format("{0:dd/MM/yyyy}", entity.NgayGioPhatHien) %>" maxlength="255" />
                             </td>
                         </tr>
                         <tr>
                             <td class="key">
-                                <label>Thời gian phát hiện (*) :</label>
+                                <label>Thời gian phát hiện (*) (HH:mm) :</label>
                             </td>
                             <td>
-                                <input class="text_input" type="text" name="" id="" value="<%=entity.NgayGioPhatHien %>" maxlength="255" />
+                                <input class="text_input" type="text" name="GioPhut" id="GioPhut" value="<%=string.Format("{0:HH:mm}", entity.NgayGioPhatHien) %>" maxlength="255" />
                             </td>
                         </tr>
                         <tr>

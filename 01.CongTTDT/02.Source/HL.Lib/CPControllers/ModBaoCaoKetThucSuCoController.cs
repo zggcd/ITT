@@ -42,6 +42,7 @@ namespace HL.Lib.CPControllers
                 entity = ModBaoCaoKetThucSuCoService.Instance.GetByID(model.RecordID);
 
                 // khoi tao gia tri mac dinh khi update
+                entity.UserID1 = Lib.Global.CPLogin.UserID;
             }
             else
             {
@@ -49,6 +50,11 @@ namespace HL.Lib.CPControllers
 
                 // khoi tao gia tri mac dinh khi insert
                 entity.MenuID = model.MenuID;
+                entity.UserID = Lib.Global.CPLogin.UserID;
+                DateTime d = DateTime.Now;
+                entity.NgayBaoCao = d;
+                entity.NgayGioPhatHien = d;
+                entity.Published = d;
                 entity.Activity = CPViewPage.UserPermissions.Approve;
                 entity.Order = GetMaxOrder(model);
             }
@@ -57,21 +63,21 @@ namespace HL.Lib.CPControllers
             ViewBag.Model = model;
         }
 
-        public void ActionSave(ModBaoCaoKetThucSuCoModel model)
+        public void ActionSave(ModBaoCaoKetThucSuCoModel model, MAppend append)
         {
-            if (ValidSave(model))
+            if (ValidSave(model, append))
                SaveRedirect();
         }
 
-        public void ActionApply(ModBaoCaoKetThucSuCoModel model)
+        public void ActionApply(ModBaoCaoKetThucSuCoModel model, MAppend append)
         {
-            if (ValidSave(model))
+            if (ValidSave(model, append))
                ApplyRedirect(model.RecordID, entity.ID);
         }
 
-        public void ActionSaveNew(ModBaoCaoKetThucSuCoModel model)
+        public void ActionSaveNew(ModBaoCaoKetThucSuCoModel model, MAppend append)
         {
-            if (ValidSave(model))
+            if (ValidSave(model, append))
                SaveNewRedirect(model.RecordID, entity.ID);
         }
 
@@ -79,14 +85,13 @@ namespace HL.Lib.CPControllers
 
         private ModBaoCaoKetThucSuCoEntity entity = null;
 
-        private bool ValidSave(ModBaoCaoKetThucSuCoModel model)
+        private bool ValidSave(ModBaoCaoKetThucSuCoModel model, MAppend append)
         {
             TryUpdateModel(entity);
 
             //chong hack
             entity.ID = model.RecordID;
 
-            ViewBag.Data = entity;
             ViewBag.Model = model;
 
             CPViewPage.Message.MessageType = Message.MessageTypeEnum.Error;
@@ -100,8 +105,8 @@ namespace HL.Lib.CPControllers
                 CPViewPage.Message.ListMessage.Add("Nhập tên.");
 
             //kiem tra chuyen muc
-            if (entity.MenuID < 1)
-                CPViewPage.Message.ListMessage.Add("Chọn chuyên mục.");
+            //if (entity.MenuID < 1)
+            //    CPViewPage.Message.ListMessage.Add("Chọn chuyên mục.");
 
             if (CPViewPage.Message.ListMessage.Count == 0)
             {
@@ -111,6 +116,13 @@ namespace HL.Lib.CPControllers
 
                  //cap nhat state
                 entity.State = GetState(model.ArrState);
+
+                DateTime date = DateTime.Now;
+                string ngayGioPhatHien = append.Ngay + " " + append.GioPhut;
+                if (!string.IsNullOrEmpty(ngayGioPhatHien)) entity.NgayGioPhatHien = HL.Core.Global.Convert.ToDateTime(ngayGioPhatHien);
+                else entity.NgayGioPhatHien = DateTime.MinValue;
+
+                ViewBag.Data = entity;
 
                 //save
                 ModBaoCaoKetThucSuCoService.Instance.Save(entity);

@@ -279,7 +279,7 @@
                                 <label>Ngày phát hiện sự cố (*) (dd/mm/yy) :</label>
                             </td>
                             <td>
-                                <input class="text_input" type="text" name="ChiTiet_NgayGioPhatHien" id="ChiTiet_NgayGioPhatHien" value="<%=string.Format("{0:dd/MM/yyyy}", entity.ChiTiet_NgayGioPhatHien) %>" maxlength="255" />
+                                <input class="text_input" type="text" name="Ngay" id="Ngay" value="<%=string.Format("{0:dd/MM/yyyy}", entity.ChiTiet_NgayGioPhatHien) %>" maxlength="255" />
                             </td>
                         </tr>
                         <tr>
@@ -287,7 +287,7 @@
                                 <label>Thời gian phát hiện (*) (HH:mm) :</label>
                             </td>
                             <td>
-                                <input class="text_input" type="text" name="GioPhut" id="" value="<%=string.Format("{0:HH:MM}", entity.ChiTiet_NgayGioPhatHien) %>" maxlength="255" />
+                                <input class="text_input" type="text" name="GioPhut" id="GioPhut" value="<%=string.Format("{0:HH:mm}", entity.ChiTiet_NgayGioPhatHien) %>" maxlength="255" />
                             </td>
                         </tr>
                         <tr>

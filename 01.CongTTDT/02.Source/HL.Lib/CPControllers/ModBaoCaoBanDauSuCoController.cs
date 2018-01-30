@@ -42,6 +42,7 @@ namespace HL.Lib.CPControllers
                 entity = ModBaoCaoBanDauSuCoService.Instance.GetByID(model.RecordID);
 
                 // khoi tao gia tri mac dinh khi update
+                entity.UserID1 = Lib.Global.CPLogin.UserID;
 
                 ViewBag.CachThuc = ModInfoMagicService.Instance.CreateQuery()
                     .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == entity.ID)
@@ -74,15 +75,36 @@ namespace HL.Lib.CPControllers
 
                 // khoi tao gia tri mac dinh khi insert
                 entity.MenuID = model.MenuID;
+                entity.UserID = Lib.Global.CPLogin.UserID;
                 DateTime d = DateTime.Now;
                 entity.ChiTiet_NgayGioPhatHien = d;
                 entity.ThoiGianThucHien = d;
+                entity.Published = d;
                 entity.Activity = CPViewPage.UserPermissions.Approve;
                 entity.Order = GetMaxOrder(model);
             }
 
             ViewBag.Data = entity;
             ViewBag.Model = model;
+        }
+
+        public override void ActionDelete(int[] arrID)
+        {
+            if (CheckPermissions && !CPViewPage.UserPermissions.Delete)
+            {
+                //thong bao
+                CPViewPage.Message.MessageType = Message.MessageTypeEnum.Error;
+                CPViewPage.Message.ListMessage.Add("Quyền hạn chế.");
+                return;
+            }
+
+            DataService.Delete("[ID] IN (" + HL.Core.Global.Array.ToString(arrID) + ")");
+            var query = ModInfoMagicService.Instance.CreateQuery().WhereIn(o => o.BaoCaoBanDauSuCoID, HL.Core.Global.Array.ToString(arrID)).ToList();
+            ModInfoMagicService.Instance.Delete(query);
+
+            //thong bao
+            CPViewPage.SetMessage("Đã xóa thành công.");
+            CPViewPage.RefreshPage();
         }
 
         public void ActionSave(ModBaoCaoBanDauSuCoModel model, MInfoMagicModel modelInfo, MAppend append)
