@@ -44,17 +44,18 @@ namespace HL.Lib.CPControllers
                 // khoi tao gia tri mac dinh khi update
                 entity.UserID1 = Lib.Global.CPLogin.UserID;
 
-                var dm = ModDauMoiUCSCService.Instance.CreateQuery()
-                                        .Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID)
+                entityDM = ModDauMoiUCSCService.Instance.CreateQuery()
+                                        .Where(o => o.Activity == true && o.HSThanhVienUCSCID == model.RecordID)
                                         .ToSingle();
-                ViewBag.DauMoi = dm;
-                ViewBag.HTTT = ModHeThongThongTinService.Instance.CreateQuery()
-                    .Where(o => o.Activity == true && o.DauMoiUCSCID == dm.ID)
+                entityHTTT = ModHeThongThongTinService.Instance.CreateQuery()
+                    .Where(o => o.Activity == true && o.DauMoiUCSCID == entityDM.ID)
                     .ToList();
             }
             else
             {
                 entity = new ModHSThanhVienUCSCEntity();
+                entityDM = new ModDauMoiUCSCEntity();
+                entityHTTT = new List<ModHeThongThongTinEntity>();
 
                 // khoi tao gia tri mac dinh khi insert
                 entity.MenuID = model.MenuID;
@@ -64,6 +65,8 @@ namespace HL.Lib.CPControllers
                 entity.Order = GetMaxOrder(model);
             }
 
+            ViewBag.DauMoi = entityDM;
+            ViewBag.HTTT = entityHTTT;
             ViewBag.Data = entity;
             ViewBag.Model = model;
         }
@@ -113,6 +116,8 @@ namespace HL.Lib.CPControllers
         #region private func
 
         private ModHSThanhVienUCSCEntity entity = null;
+        private ModDauMoiUCSCEntity entityDM = null;
+        private List<ModHeThongThongTinEntity> entityHTTT = null;
 
         private bool ValidSave(ModHSThanhVienUCSCModel model, ModDauMoiUCSCEntity entityDm, MAppend append)
         {

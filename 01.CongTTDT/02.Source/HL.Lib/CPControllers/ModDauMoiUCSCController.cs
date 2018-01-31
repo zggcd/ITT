@@ -49,6 +49,7 @@ namespace HL.Lib.CPControllers
 
                 // khoi tao gia tri mac dinh khi insert
                 entity.MenuID = model.MenuID;
+                entity.Published = DateTime.Now;
                 entity.Activity = CPViewPage.UserPermissions.Approve;
                 entity.Order = GetMaxOrder(model);
             }
