@@ -1,0 +1,23 @@
+.boder-template
+{
+    border-color:Red;
+    border-style:solid;
+    border-width:1px;
+    margin:5px;
+}
+.cmd-control input 
+{
+    padding-left:5px;
+}
+.border-control
+{
+    border-color:Teal;
+    border-style:solid;
+    border-width:1px;
+    margin:5px;
+}
+
+.hl-icon
+{
+	vertical-align:middle;
+}

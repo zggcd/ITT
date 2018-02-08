@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="System.Web.UI.MasterPage" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head" runat="server">
+    <title>TINHTINH.COM | Trang chủ</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="Author" content="lehoanganhhd@gmail.com" />
+    <meta name="robots" content="index, follow" />
+    <meta id="description" name="description" content="" runat="server" />
+    <meta id="keywords" name="keywords" content="" runat="server" />
+    <link rel="shortcut icon" href="http://tinhtinh.com/favicon.ico" type="image/x-icon" />
+
+    <!-- Bootstrap CSS -->
+    <link href="/Content/bootstrap-4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="hlForm" runat="server">
+        <header>
+            <nav class="nav justify-content-end">
+                <a class="nav-link active" href="/vn/default.aspx">
+                    <%if ((this.Page as ViewPage).CurrentLang.ID == 1)
+                        { %>
+                    <strong>Vietnamese</strong>
+                    <%}
+                        else
+                        { %>Vietnamese<%} %>
+                </a>
+                <a class="nav-link" href="/en/default.aspx">
+                    <%if ((this.Page as ViewPage).CurrentLang.ID == 2)
+                        { %>
+                    <strong>English</strong>
+                    <%}
+                        else
+                        { %>English<%} %>
+                </a>
+                <a class="nav-link" href="/cn/default.aspx">
+                    <%if ((this.Page as ViewPage).CurrentLang.ID == 3)
+                        { %>
+                    <strong>Chinese</strong>
+                    <%}
+                        else
+                        { %>Chinese<%} %>
+                </a>
+                <a class="nav-link" href="/<%= (this.Page as ViewPage).CurrentSite.Code %>/Site-map.aspx">Sitemap</a>
+            </nav>
+        </header>
+
+        <HL:StaticControl Code="CMenu" HLID="hlMenuTop" runat="server"></HL:StaticControl>
+        <HL:DynamicControl runat="server" ID="MainContent"></HL:DynamicControl>
+
+        <footer class="bg-primary text-center text-white p-3">
+            {RS:Web_Footer}
+        </footer>
+
+        <script src="/Content/js/jquery.min-1.12.4.js"></script>
+        <script src="/Content/js/AjaxRequest.js"></script>
+        <script src="/Content/js/Function.js"></script>
+        <script src="/Content/js/javascript.js"></script>
+
+        <!-- jQuery first, then Tether, then Bootstrap JS. -->
+        <script src="/Content/bootstrap-4.0.0/js/jquery-3.1.1.slim.min.js"></script>
+        <script src="/Content/bootstrap-4.0.0/js/tether.min-1.4.0.js"></script>
+        <script src="/Content/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+    </form>
+</body>
+</html>

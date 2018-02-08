@@ -1,0 +1,3 @@
+﻿User-agent: *
+Disallow: /tt
+Sitemap: http://tinhtinh.com/sitemap.xml

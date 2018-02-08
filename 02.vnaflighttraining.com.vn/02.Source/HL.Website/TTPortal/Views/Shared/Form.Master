@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="HL.Lib.MVC.CPViewTemplate" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Form</title>
+    <meta name="author" content="lehoanganhhd@gmail.com" />
+    <meta name="generator" content="HLv1.0.MVC" />
+
+    <script type="text/javascript" src="/{CPPath}/Content/media/system/js/jquery.min-1.12.4.js"></script>
+    <script type="text/javascript" src="/{CPPath}/Content/add/js/cp_v1.js"></script>
+    <script type="text/javascript" src="/{CPPath}/Content/add/js/AjaxRequest.js"></script>
+    <link rel="stylesheet" href="/{CPPath}/Content/add/css/cp_v1.css" type="text/css" />
+
+    <script type="text/javascript" src="/{CPPath}/Content/media/system/js/mootools-core.js"></script>
+    <script type="text/javascript" src="/{CPPath}/Content/media/system/js/mootools-more.js"></script>
+    <script type="text/javascript" src="/{CPPath}/Content/media/system/js/switcher.js"></script>
+
+    <link rel="stylesheet" href="/{CPPath}/Content/templates/system/css/system.css" type="text/css" />
+    <link href="/{CPPath}/Content/templates/bluestork/css/template.css" rel="stylesheet" type="text/css" />
+    <!--[if IE 7]>
+    <link href="/{CPPath}/Content/templates/bluestork/css/ie7.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if lte IE 6]>
+    <link href="/{CPPath}/Content/templates/bluestork/css/ie6.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="/{CPPath}/Content/templates/bluestork/css/rounded.css" />
+
+    <script type="text/javascript">
+        var CPPath = '{CPPath}';
+        var Sys_SiteID = '<%=HL.Core.Web.Setting.Sys_SiteID %>';
+
+        document.switcher = null;
+        window.addEvent('domready', function () {
+            toggler = document.id('submenu');
+            element = document.id('tab-document');
+            if (element) {
+                document.switcher = new JSwitcher(toggler, element, { cookieName: toggler.getProperty('class') });
+            }
+        });
+
+        function Close(arg) {
+            if (window.opener)
+                window.opener.refreshPage(arg);
+            else
+                window.parent.refreshPage(arg);
+
+            window.close();
+        }
+
+        function Cancel() {
+            window.close();
+        }
+    </script>
+    <script type="text/javascript" src="/{CPPath}/Content/ckfinder/ckfinder.js"></script>
+</head>
+<body id="minwidth-body">
+    <form id="hlForm" runat="server">
+
+        <div class="border">
+            <div class="padding">
+                <asp:ContentPlaceHolder ID="cphMain" runat="server"></asp:ContentPlaceHolder>
+                <div class="clr"></div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <p class="copyright">
+                <a href="http://www.tinhtinh.com" target="_blank">TINHTINH.COM</a> © Coppyright 2017.
+            </p>
+        </div>
+
+    </form>
+</body>
+</html>

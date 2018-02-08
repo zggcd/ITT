@@ -1,0 +1,162 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="System.Web.UI.MasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head id="Head" runat="server">
+    <meta name="msvalidate.01" content="25D81A7707EF7807150F51EF2ABA9F7C" />
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Author" content="lehoanganhhd@gmail.com" />
+    <meta name="robots" content="index, follow" />
+    <meta id="description" name="description" content="" runat="server" />
+    <meta id="keywords" name="keywords" content="" runat="server" />
+    <link rel="shortcut icon" href="http://tinhtinh.com/favicon.ico" type="image/x-icon" />
+    <link href="/Content/temp/css/w3.css" rel="stylesheet" />
+    <link href="/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/temp/css/message.css" rel="stylesheet" />
+    <link href="/Content/temp/css/style.css" rel="stylesheet" />
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Raleway", sans-serif
+        }
+
+        body, html {
+            height: 100%;
+            line-height: 1.8;
+        }
+        /* Full height image header */
+        .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-color: #489FDF;
+            min-height: 100%;
+        }
+
+        .w3-bar .w3-button {
+            padding: 16px;
+            color: #fff;
+        }
+    </style>
+    <%--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>--%>
+    <script src="/Content/temp/js/jquery.min-1.12.4.js"></script>
+    <script src="/Content/temp/js/javascript.js"></script>
+    <script src="/Content/temp/js/message.js"></script>
+    <script src="/Content/temp/js/AjaxRequest.js"></script>
+    <script src="/Content/temp/js/Function.js"></script>
+</head>
+<body>
+    <form id="hlForm" runat="server">
+        <HL:StaticControl runat="server" Code="CMenu" HLID="hlMenuTop"></HL:StaticControl>
+
+        <!-- About Section -->
+        <div class="w3-container" style="padding: 128px 16px">
+            <HL:DynamicControl runat="server" ID="MainContent"></HL:DynamicControl>
+            <%--<h3 class="w3-center">GIỚI THIỆU VỀ CHÚNG TÔI</h3>
+            <p class="w3-center w3-large">Những ý chính về chúng tôi</p>
+            <div class="w3-row-padding w3-center" style="margin-top: 64px">
+                <div class="w3-quarter">
+                    <i class="fa fa-laptop w3-margin-bottom w3-jumbo w3-center"></i>
+                    <p class="w3-large">Lập trình viên</p>
+                    <p>Là những lập trình viên chuyên nghiệp. Đã từng lập trình nhiều phần mềm, website cho khách hàng.</p>
+                </div>
+                <div class="w3-quarter">
+                    <i class="fa fa-building w3-margin-bottom w3-jumbo" aria-hidden="true"></i>
+                    <p class="w3-large">Công ty</p>
+                    <p>Hiện đang làm cho những công ty chuyên viết phần mềm quản lý, website có tên tuổi trong và ngoài nước.</p>
+                </div>
+                <div class="w3-quarter">
+                    <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+                    <p class="w3-large">Khởi nghiệp</p>
+                    <p>Đều mang trong mình tư tưởng khởi nghiệp. Đi lên bằng chính khả năng của mình; bằng sự tin tưởng, chấp nhận của khách hàng.</p>
+                </div>
+                <div class="w3-quarter">
+                    <i class="fa fa-bell-o w3-margin-bottom w3-jumbo"></i>
+                    <p class="w3-large">Tinh tinh</p>
+                    <p>Tín hiệu báo sự thành công của chúng tôi cũng chính là tín hiệu về sự hài lòng của khách hàng.</p>
+                </div>
+            </div>--%>
+        </div>
+
+        <!-- Liên hệ Section -->
+        <HL:StaticControl runat="server" Code="CFeedback" HLID="hlLienHe"></HL:StaticControl>
+
+        <!-- Footer -->
+        <footer class="w3-center w3-black w3-padding-32">
+            <p>THEO DÕI CHÚNG TÔI QUA MẠNG XÃ HỘI</p>
+            <div class="w3-xlarge w3-section">
+                <a href="https://www.facebook.com/AiLamWebKhong/" target="_blank" title="Facebook" style="text-decoration: none;">
+                    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                </a>
+                <a href="https://www.youtube.com/c/HoangAnhLe" target="_blank" title="YouTube" style="text-decoration: none;">
+                    <i class="fa fa-youtube w3-hover-opacity"></i>
+                </a>
+                <a href="https://plus.google.com/u/0/101491633443928781221" target="_blank" title="Google Plus" style="text-decoration: none;">
+                    <i class="fa fa-google-plus w3-hover-opacity"></i>
+                </a>
+                <a href="https://www.instagram.com/lehoanganhhd/" target="_blank" title="Instagram" style="text-decoration: none;">
+                    <i class="fa fa-instagram w3-hover-opacity"></i>
+                </a>
+                <%--<i class="fa fa-snapchat w3-hover-opacity"></i>
+                <i class="fa fa-pinterest-p w3-hover-opacity"></i>--%>
+                <%--<i class="fa fa-twitter w3-hover-opacity"></i>
+                <i class="fa fa-linkedin w3-hover-opacity"></i>--%>
+            </div>
+            <p>Powered by <a href="/" title="tinhtinh.com" class="w3-hover-text-green">tinhtinh.com</a></p>
+        </footer>
+
+        <!-- The actual snackbar -->
+        <div id="snackbar">Tin nhắn thông báo..</div>
+        <p class="loading" id="loading" style="display: none;">
+            <i class="fa fa-spinner fa-spin"></i><span id="lblLoad">&nbsp;Đang tải...</span>
+        </p>
+
+        <!-- Add Google Maps -->
+        <script>
+            //function myMap() {
+            //    myCenter = new google.maps.LatLng(41.878114, -87.629798);
+            //    var mapOptions = {
+            //        center: myCenter,
+            //        zoom: 12, scrollwheel: false, draggable: false,
+            //        mapTypeId: google.maps.MapTypeId.ROADMAP
+            //    };
+            //    var map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
+
+            //    var marker = new google.maps.Marker({
+            //        position: myCenter,
+            //    });
+            //    marker.setMap(map);
+            //}
+
+            //// Modal Image Gallery
+            //function onClick(element) {
+            //    document.getElementById("img01").src = element.src;
+            //    document.getElementById("modal01").style.display = "block";
+            //    var captionText = document.getElementById("caption");
+            //    captionText.innerHTML = element.alt;
+            //}
+
+            // Toggle between showing and hiding the sidebar when clicking the menu icon
+            var mySidebar = document.getElementById("mySidebar");
+
+            function w3_open() {
+                if (mySidebar.style.display === 'block') {
+                    mySidebar.style.display = 'none';
+                } else {
+                    mySidebar.style.display = 'block';
+                }
+            }
+
+            // Close the sidebar with the close button
+            function w3_close() {
+                mySidebar.style.display = "none";
+            }
+        </script>
+        <%--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>--%>
+        <!--
+        To use this code on your website, get a free API key from Google.
+        Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+        -->
+    </form>
+</body>
+</html>
