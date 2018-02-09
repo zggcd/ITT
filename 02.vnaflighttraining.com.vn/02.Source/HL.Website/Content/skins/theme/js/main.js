@@ -1,0 +1,1 @@
+AUI().ready("liferay-hudcrumbs","liferay-navigation-interaction",function(b){var a=b.one("#navigation");if(a){a.plug(Liferay.NavigationInteraction)}var c=b.one(".site-breadcrumbs");if(c){c.plug(b.Hudcrumbs)}});$(document).ready(function(){$(".onTop").click(function(){$("html, body").animate({scrollTop:0},"slow");return false})});
