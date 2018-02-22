@@ -14,189 +14,103 @@
     <meta id="keywords" name="keywords" content="" runat="server" />
 
     <link href="/favicon.ico" rel="Shortcut Icon" />
-    <link href="/Content/skins/html/css/main.css" rel="stylesheet" type="text/css" />
-    <link href="/Content/skins/html/portlet/login/css/main.css" rel="stylesheet" type="text/css" />
-    <link href="/Content/skins/html/portlet/journal_content/css/main.css" rel="stylesheet" type="text/css" />
-    <link href="/Content/skins/portlet/css/main.css" rel="stylesheet" type="text/css" />
-    <link href="/Content/skins/html/portlet/asset_publisher/css/main.css" rel="stylesheet" type="text/css" />
-
-    <script>
-        /*<![CDATA[*/
-        var Liferay = {
-            Browser: {
-                acceptsGzip: function () { return true },
-                getMajorVersion: function () { return 0 },
-                getRevision: function () { return "" },
-                getVersion: function () { return "" },
-                isAir: function () { return false },
-                isChrome: function () { return false },
-                isFirefox: function () { return false },
-                isGecko: function () { return false },
-                isIe: function () { return false },
-                isIphone: function () { return false },
-                isLinux: function () { return false },
-                isMac: function () { return false },
-                isMobile: function () { return false },
-                isMozilla: function () { return false },
-                isOpera: function () { return false },
-                isRtf: function () { return false },
-                isSafari: function () { return false },
-                isSun: function () { return false },
-                isWap: function () { return false },
-                isWapXhtml: function () { return false },
-                isWebKit: function () { return false },
-                isWindows: function () { return false },
-                isWml: function () { return false }
-            },
-            Data: {
-                isCustomizationView: function () { return false },
-                notices: [null]
-            },
-            ThemeDisplay: {
-                getCompanyId: function () { return "10168" },
-                getCompanyGroupId: function () { return "10206" },
-                getUserId: function () { return "10172" },
-                getDoAsUserIdEncoded: function () { return "" },
-                getPlid: function () { return "10197" },
-                getLayoutId: function () { return "1" },
-                getLayoutURL: function () { return "/Content/skins/web/ftc/" },
-                isPrivateLayout: function () { return "false" },
-                getParentLayoutId: function () { return "0" },
-                getScopeGroupId: function () { return "10194" },
-                getScopeGroupIdOrLiveGroupId: function () { return "10194" },
-                getParentGroupId: function () { return "10194" },
-                isImpersonated: function () { return false },
-                isSignedIn: function () { return false },
-                getDefaultLanguageId: function () { return "vi_VN" },
-                getLanguageId: function () { return "vi_VN" },
-                isAddSessionIdToURL: function () { return false },
-                isFreeformLayout: function () { return false },
-                isStateExclusive: function () { return false },
-                isStateMaximized: function () { return false },
-                isStatePopUp: function () { return false },
-                getPathContext: function () { return "" },
-                getPathImage: function () { return "/image" },
-                getPathJavaScript: function () { return "/Content/skins/html/js" },
-                getPathMain: function () { return "/c" },
-                getPathThemeImages: function () { return "/Content/skins/theme/images" },
-                getPathThemeRoot: function () { return "/Content/skins/theme/" },
-                getURLHome: function () { return "/web/ftc" },
-                getSessionId: function () { return "D9759578D7B9F4471E9D4273384A705B" },
-                getPortletSetupShowBordersDefault: function () { return true }
-            },
-            PropsValues: { NTLM_AUTH_ENABLED: false }
-        };
-        var themeDisplay = Liferay.ThemeDisplay;
-        Liferay.AUI = {
-            getBaseURL: function () { return "/Content/skins/html/js/aui/" },
-            getCombine: function () { return true },
-            getComboPath: function () { return "/combo/?browserId=other&minifierType=&languageId=vi_VN&b=6100&t=1488273344000&p=/Content/skins/html/js&" },
-            getFilter: function () {
-                return {
-                    replaceStr: function (c, b, a) { return b + "m=" + (c.split("/Content/skins/html/js")[1] || "") },
-                    searchExp: "(\\?|&)/([^&]+)"
-                }
-            },
-            getJavaScriptRootPath: function () { return "/Content/skins/html/js" },
-            getLangPath: function () { return "aui_lang.jsp?browserId=other&themeId=nssv4FTCAirlines_WAR_nssv4FTCAirlinestheme&colorSchemeId=01&minifierType=js&languageId=vi_VN&b=6100&t=1488273344000" },
-            getRootPath: function () { return "/Content/skins/html/js/aui/" }
-        };
-        window.YUI_config = { base: Liferay.AUI.getBaseURL(), comboBase: Liferay.AUI.getComboPath(), fetchCSS: true, filter: Liferay.AUI.getFilter(), root: Liferay.AUI.getRootPath(), useBrowserConsole: false }; Liferay.currentURL = "\x2f"; Liferay.currentURLEncoded = "%2F";
-        /*]]>*/
-    </script>
-    <script src="/Content/skins/html/js/everything.jsp"></script>
-    <script>/*<![CDATA[*/Liferay.Portlet.list = ["58", "56_INSTANCE_d5NBV89JgfR8", "56_INSTANCE_tli9NF1KajeF", "6113_WAR_ui61portlet_INSTANCE_GEZnYd1vixhE", "56_INSTANCE_XfHI4BGOvMQT", "101_INSTANCE_vv2yaIMmBgqq", "56_INSTANCE_ynG1vXc6RWEc", "6110_WAR_ui61portlet", "56_INSTANCE_wjJ7Bf23S7kH", "101_INSTANCE_FSPgtZ9smttv"];/*]]>*/</script>
-    <link rel="stylesheet" type="text/css" href="/web/ftc/home?p_p_id=6110_WAR_ui61portlet&amp;p_p_lifecycle=2&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_cacheability=cacheLevelPage&amp;p_p_col_id=column-5&amp;p_p_col_count=2&amp;_6110_WAR_ui61portlet_javax.faces.resource=primefaces.css&amp;_6110_WAR_ui61portlet_ln=primefaces" />
-    <script src="/Content/skins/web/ftc/jquery-1.8.1.js"></script>
-    <script src="/Content/skins/web/ftc/primefaces.js"></script>
-
-    <link class="lfr-css-file" href="/Content/skins/theme/css/main.css" rel="stylesheet" type="text/css" />
 
     <!-- Bootstrap CSS -->
     <link href="/Content/bootstrap-4.0.0/css/bootstrap.min.css" rel="stylesheet" />
 
     <link href="/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/skins/theme/css/main.css" rel="stylesheet" />
     <link href="/Content/css/style.css" rel="stylesheet" />
 </head>
 <body class=" yui3-skin-sam controls-visible guest-site signed-out public-page site">
     <form id="hlForm" runat="server">
-        <div id="wrapper">
-            <header id="banner" role="banner">
-                <div id="heading">
-                    <h1 class="site-title"><a class="logo custom-logo" href="#" title="Chuyển tới FTC Vietnam Airlines">
-                        <img alt="FTC Vietnam Airlines" src="/Content/skins/imgs/company_logo.png" />
-                    </a></h1>
+        <div id="wrapper" class="container">
+            <header id="banner" role="banner" class="row">
+                <div class="col">
+                    <div id="heading">
+                        <h1 class="site-title">
+                            <a class="logo custom-logo" href="#" title="Chuyển tới FTC Vietnam Airlines">
+                                <img alt="FTC Vietnam Airlines" src="/Content/skins/imgs/company_logo.png" class="img-fluid" />
+                            </a>
+                        </h1>
+                    </div>
                 </div>
-                <nav class="sort-pages modify-pages" id="navigation">
-                    <ul>
-                        <li class="selected"><a href="/web/ftc/home"><span>Trang chủ</span></a> </li>
-                        <li><a href="/web/ftc/company"><span>Giới thiệu</span></a>
-                            <ul class="child-menu">
-                                <li><a href="/web/ftc/company/history">Lịch sử hình thành</a> </li>
-                                <li><a href="/web/ftc/company/quality-management-system">Hệ thống chất lượng</a> </li>
-                                <li><a href="/web/ftc/company/localtion-map">Sơ đồ vị trí</a> </li>
-                                <li><a href="/web/ftc/company/faq">Hỏi đáp</a> </li>
-                                <li><a href="/web/ftc/company/customers">Khách hàng</a> </li>
-                                <li><a href="/web/ftc/company/contact-us">Liên hệ</a> </li>
-                            </ul>
-                        </li>
-                        <li><a href="#"><span>Tin tức</span></a> </li>
-                        <li><a href="/web/ftc/training-services"><span>Dịch vụ huấn luyện</span></a>
-                            <ul class="child-menu">
-                                <li><a href="/web/ftc/training-services/flight-crew-training">Huấn luyện phi công</a> </li>
-                                <li><a href="/web/ftc/training-services/cabin-crew-training">Huấn luyện Tiếp viên hàng không</a> </li>
-                                <li><a href="/web/ftc/training-services/flight-dispatcher-training">Huấn luyện nhân viên khai thác/điều phái bay</a> </li>
-                                <li><a href="/web/ftc/training-services/soft-skills-training">Huấn luyện kỹ năng mềm</a> </li>
-                                <li><a href="/web/ftc/training-services/aviation-english-training">Huấn luyện tiếng Anh hàng không</a> </li>
-                                <li><a href="/web/ftc/training-services/aviation-job-orientation">Hướng nghiệp hàng không</a> </li>
-                            </ul>
-                        </li>
-                        <li><a href="/web/ftc/training-devices-and-facilities"><span>Thiết bị huấn luyện và các tiện ích</span></a>
-                            <ul class="child-menu">
-                                <li><a href="/web/ftc/training-devices-and-facilities/training-devices">Thiết bị huấn luyện chuyên ngành</a> </li>
-                                <li><a href="/web/ftc/training-devices-and-facilities/classroom-layout">Phòng học</a> </li>
-                            </ul>
-                        </li>
-                        <li><a href="/web/ftc/trainee-recruitment"><span>Tuyển sinh</span></a>
-                            <ul class="child-menu">
-                                <li><a href="/web/ftc/trainee-recruitment/pilot-cadet">Học viên phi công cơ bản</a> </li>
-                            </ul>
-                        </li>
-                        <li><a href="/web/ftc/infomation-for-trainees"><span>Dành cho học viên</span></a>
-                            <ul class="child-menu">
-                                <li><a href="/web/ftc/infomation-for-trainees/library">Thư viện tài liệu</a> </li>
-                                <li><a href="/web/ftc/infomation-for-trainees/training-schedule">Lịch huấn luyện</a> </li>
-                                <li><a href="/web/ftc/infomation-for-trainees/building-map">Sơ đồ phòng học</a> </li>
-                                <li><a href="/web/ftc/infomation-for-trainees/course-evaluation">Phiếu đánh giá khóa học</a> </li>
-                            </ul>
-                        </li>
-                        <li><a href="/web/ftc/site-map"><span>Sơ đồ website</span></a> </li>
-                    </ul>
-                    <div class="bgtrains"></div>
-                </nav>
-                <nav class="site-breadcrumbs" id="breadcrumbs">
-                    <ul class="breadcrumbs breadcrumbs-horizontal lfr-component">
-                        <li class="first"><span><a href="/web/ftc">FTC Vietnam Airlines</a></span></li>
-                        <li class="last"><span><a href="/web/ftc/home">Trang chủ</a></span></li>
-                    </ul>
-                    <a href="/c/portal/login?p_l_id=10197" id="sign-in" rel="nofollow">Đăng nhập</a>
-                    <div class="lang">
-                        <div id="p_p_id_LANGUAGE_EXT_" class="portlet-boundary portlet-boundary_LANGUAGE_EXT_ portlet-static portlet-static-end portlet-borderless portlet-language_ext ">
-                            <span id="p_LANGUAGE_EXT"></span>
-                            <div class="portlet-body">
-                                <div class="portlet-borderless-container" style="">
-                                    <div class="portlet-body">
-                                        <span><a class="taglib-icon" href="#" id="_LANGUAGE_EXT_bhea" lang="vi-VN">
-                                            <img class="icon" src="/Content/skins/theme/images/language/vi_VN.png" alt="Tiếng Việt (Việt Nam)" title="Tiếng Việt (Việt Nam)" />
-                                        </a></span><span><a class="taglib-icon" href="#" id="_LANGUAGE_EXT_mcat" lang="en-US">
-                                            <img class="icon" src="/Content/skins/theme/images/language/en_US.png" alt="English (United States)" title="English (United States)" />
-                                        </a></span>
+                <div class="w-100"></div>
+                <div class="col d-none d-lg-inline">
+                    <nav class="sort-pages modify-pages" id="navigation">
+                        <ul>
+                            <li class="selected"><a href="/web/ftc/home"><span>Trang chủ</span></a> </li>
+                            <li><a href="/web/ftc/company"><span>Giới thiệu</span></a>
+                                <ul class="child-menu">
+                                    <li><a href="/web/ftc/company/history">Lịch sử hình thành</a> </li>
+                                    <li><a href="/web/ftc/company/quality-management-system">Hệ thống chất lượng</a> </li>
+                                    <li><a href="/web/ftc/company/localtion-map">Sơ đồ vị trí</a> </li>
+                                    <li><a href="/web/ftc/company/faq">Hỏi đáp</a> </li>
+                                    <li><a href="/web/ftc/company/customers">Khách hàng</a> </li>
+                                    <li><a href="/web/ftc/company/contact-us">Liên hệ</a> </li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><span>Tin tức</span></a> </li>
+                            <li><a href="/web/ftc/training-services"><span>Dịch vụ huấn luyện</span></a>
+                                <ul class="child-menu">
+                                    <li><a href="/web/ftc/training-services/flight-crew-training">Huấn luyện phi công</a> </li>
+                                    <li><a href="/web/ftc/training-services/cabin-crew-training">Huấn luyện Tiếp viên hàng không</a> </li>
+                                    <li><a href="/web/ftc/training-services/flight-dispatcher-training">Huấn luyện nhân viên khai thác/điều phái bay</a> </li>
+                                    <li><a href="/web/ftc/training-services/soft-skills-training">Huấn luyện kỹ năng mềm</a> </li>
+                                    <li><a href="/web/ftc/training-services/aviation-english-training">Huấn luyện tiếng Anh hàng không</a> </li>
+                                    <li><a href="/web/ftc/training-services/aviation-job-orientation">Hướng nghiệp hàng không</a> </li>
+                                </ul>
+                            </li>
+                            <li><a href="/web/ftc/training-devices-and-facilities"><span>Thiết bị huấn luyện và các tiện ích</span></a>
+                                <ul class="child-menu">
+                                    <li><a href="/web/ftc/training-devices-and-facilities/training-devices">Thiết bị huấn luyện chuyên ngành</a> </li>
+                                    <li><a href="/web/ftc/training-devices-and-facilities/classroom-layout">Phòng học</a> </li>
+                                </ul>
+                            </li>
+                            <li><a href="/web/ftc/trainee-recruitment"><span>Tuyển sinh</span></a>
+                                <ul class="child-menu">
+                                    <li><a href="/web/ftc/trainee-recruitment/pilot-cadet">Học viên phi công cơ bản</a> </li>
+                                </ul>
+                            </li>
+                            <li><a href="/web/ftc/infomation-for-trainees"><span>Dành cho học viên</span></a>
+                                <ul class="child-menu">
+                                    <li><a href="/web/ftc/infomation-for-trainees/library">Thư viện tài liệu</a> </li>
+                                    <li><a href="/web/ftc/infomation-for-trainees/training-schedule">Lịch huấn luyện</a> </li>
+                                    <li><a href="/web/ftc/infomation-for-trainees/building-map">Sơ đồ phòng học</a> </li>
+                                    <li><a href="/web/ftc/infomation-for-trainees/course-evaluation">Phiếu đánh giá khóa học</a> </li>
+                                </ul>
+                            </li>
+                            <li><a href="/web/ftc/site-map"><span>Sơ đồ website</span></a> </li>
+                        </ul>
+                        <div class="bgtrains"></div>
+                    </nav>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <nav class="site-breadcrumbs" id="breadcrumbs">
+                        <ul class="breadcrumbs breadcrumbs-horizontal lfr-component">
+                            <li class="first"><span><a href="/web/ftc">FTC Vietnam Airlines</a></span></li>
+                            <li class="last"><span><a href="/web/ftc/home">Trang chủ</a></span></li>
+                        </ul>
+                        <a href="/c/portal/login?p_l_id=10197" id="sign-in" rel="nofollow">Đăng nhập</a>
+                        <div class="lang">
+                            <div id="p_p_id_LANGUAGE_EXT_" class="portlet-boundary portlet-boundary_LANGUAGE_EXT_ portlet-static portlet-static-end portlet-borderless portlet-language_ext ">
+                                <span id="p_LANGUAGE_EXT"></span>
+                                <div class="portlet-body">
+                                    <div class="portlet-borderless-container" style="">
+                                        <div class="portlet-body">
+                                            <span><a class="taglib-icon" href="#" id="_LANGUAGE_EXT_bhea" lang="vi-VN">
+                                                <img class="icon" src="/Content/skins/theme/images/language/vi_VN.png" alt="Tiếng Việt (Việt Nam)" title="Tiếng Việt (Việt Nam)" />
+                                            </a></span><span><a class="taglib-icon" href="#" id="_LANGUAGE_EXT_mcat" lang="en-US">
+                                                <img class="icon" src="/Content/skins/theme/images/language/en_US.png" alt="English (United States)" title="English (United States)" />
+                                            </a></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </nav>
+                    </nav>
+                </div>
             </header>
             <div id="content">
                 <div id="p_p_id_103_" class="portlet-boundary portlet-boundary_103_ portlet-static portlet-static-end ">
@@ -212,10 +126,6 @@
                                     <div class="portlet-borderless-container" style="">
                                         <div class="portlet-body">
                                             <div class="boxlistAll" id="boxlistAll_101_INSTANCE_FSPgtZ9smttv">
-                                                <script src="/Content/skins/html/portlet/asset_publisher/js/jquery.nivo.slider.js"></script>
-                                                <script src="/Content/skins/html/portlet/asset_publisher/js/jquery.nicescroll.js"></script>
-                                                <script>/*<![CDATA[*/$().ready(function () { setTimeout(function () { niceScroll() }, 100) }); function niceScroll() { $(".nicescroll").each(function () { $(this).niceScroll({ touchbehavior: false, cursorcolor: "#bbb", cursorwidth: 5, zindex: 300 }) }) } function niceScrollResize() { $(".nicescroll").each(function () { $(this).getNiceScroll().resize() }) };/*]]>*/</script>
-                                                <script>/*<![CDATA[*/$(window).load(function () { $("#slider").nivoSlider() });/*]]>*/</script>
                                                 <div id="slider" class="nivoSlider">
                                                     <img src="/Content/skins/imgs/slide-1.jpg_-471814051.jpg">
                                                     <img src="/Content/skins/imgs/slide-2.jpg_1866838109.jpg">
@@ -261,7 +171,7 @@
                                                                             <input class="aui-field-input aui-field-input-text" id="_58_password" name="_58_password" placeholder="Mật khẩu" type="password" value="" />
                                                                         </span></span></span><span id="_58_passwordCapsLockSpan" style="display: none;">Phím chuyển chữ hoa đang bật.</span> <span class="aui-field aui-field-choice"><span class="aui-field-content"><span class='aui-field-element aui-field-label-right'>
                                                                             <input id="_58_rememberMe" name="_58_rememberMe" type="hidden" value="false" />
-                                                                            <input class="aui-field-input aui-field-input-choice" id="_58_rememberMeCheckbox" name="_58_rememberMeCheckbox" onclick="Liferay.Util.updateCheckboxValue(this); " type="checkbox" value="true" />
+                                                                            <input class="aui-field-input aui-field-input-choice" id="_58_rememberMeCheckbox" name="_58_rememberMeCheckbox" onclick="" type="checkbox" value="true" />
                                                                         </span>
                                                                             <label class="aui-field-label" for="_58_rememberMeCheckbox">Duy trì đăng nhập </label>
                                                                         </span></span>
@@ -350,9 +260,6 @@
                                                         <div class="portlet-body">
                                                             <div class='mnCategories'><b><a class='txtUpcase' href="#">Tin tức</a></b></div>
                                                             <div class="boxlistAll" id="boxlistAll_101_INSTANCE_vv2yaIMmBgqq">
-                                                                <script src="/Content/skins/html/portlet/asset_publisher/js/jquery.nivo.slider.js"></script>
-                                                                <script src="/Content/skins/html/portlet/asset_publisher/js/jquery.nicescroll.js"></script>
-                                                                <script>/*<![CDATA[*/$().ready(function () { setTimeout(function () { niceScroll() }, 100) }); function niceScroll() { $(".nicescroll").each(function () { $(this).niceScroll({ touchbehavior: false, cursorcolor: "#bbb", cursorwidth: 5, zindex: 300 }) }) } function niceScrollResize() { $(".nicescroll").each(function () { $(this).getNiceScroll().resize() }) };/*]]>*/</script>
                                                                 <div class="boxlistLeft abstracts_s4">
                                                                     <ul>
                                                                         <li class="newsimg">
@@ -563,12 +470,6 @@
         <footer class="bg-primary text-center text-white p-3">
             {RS:Web_Footer}
         </footer>--%>
-
-        <script src="/Content/skins/portlet/js/main.js"></script>
-        <script>/*<![CDATA[*/Liferay.Util.addInputFocus();/*]]>*/</script>
-        <script>/*<![CDATA[*/Liferay.Portlet.onLoad({ canEditTitle: false, columnPos: 0, isStatic: "end", namespacedId: "p_p_id_103_", portletId: "103", refreshURL: "\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d10197\x26p_p_id\x3d103\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3d\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d0\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F" }); Liferay.Portlet.onLoad({ canEditTitle: false, columnPos: 0, isStatic: "end", namespacedId: "p_p_id_56_INSTANCE_XfHI4BGOvMQT_", portletId: "56_INSTANCE_XfHI4BGOvMQT", refreshURL: "\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d10197\x26p_p_id\x3d56_INSTANCE_XfHI4BGOvMQT\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-2\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d1\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F" }); Liferay.Portlet.onLoad({ canEditTitle: false, columnPos: 1, isStatic: "end", namespacedId: "p_p_id_56_INSTANCE_d5NBV89JgfR8_", portletId: "56_INSTANCE_d5NBV89JgfR8", refreshURL: "\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d10197\x26p_p_id\x3d56_INSTANCE_d5NBV89JgfR8\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d1\x26p_p_col_count\x3d2\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F" }); Liferay.Portlet.onLoad({ canEditTitle: false, columnPos: 0, isStatic: "end", namespacedId: "p_p_id_56_INSTANCE_tli9NF1KajeF_", portletId: "56_INSTANCE_tli9NF1KajeF", refreshURL: "\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d10197\x26p_p_id\x3d56_INSTANCE_tli9NF1KajeF\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-10\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d2\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F" }); Liferay.Portlet.onLoad({ canEditTitle: false, columnPos: 1, isStatic: "end", namespacedId: "p_p_id_56_INSTANCE_wjJ7Bf23S7kH_", portletId: "56_INSTANCE_wjJ7Bf23S7kH", refreshURL: "\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d10197\x26p_p_id\x3d56_INSTANCE_wjJ7Bf23S7kH\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-5\x26p_p_col_pos\x3d1\x26p_p_col_count\x3d2\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F" }); Liferay.Portlet.onLoad({ canEditTitle: false, columnPos: 0, isStatic: "end", namespacedId: "p_p_id_56_INSTANCE_ynG1vXc6RWEc_", portletId: "56_INSTANCE_ynG1vXc6RWEc", refreshURL: "\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d10197\x26p_p_id\x3d56_INSTANCE_ynG1vXc6RWEc\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-4\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d1\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F" }); Liferay.Portlet.onLoad({ canEditTitle: false, columnPos: 0, isStatic: "end", namespacedId: "p_p_id_58_", portletId: "58", refreshURL: "\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d10197\x26p_p_id\x3d58\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d2\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F" }); Liferay.Portlet.onLoad({ canEditTitle: false, columnPos: 0, isStatic: "end", namespacedId: "p_p_id_101_INSTANCE_FSPgtZ9smttv_", portletId: "101_INSTANCE_FSPgtZ9smttv", refreshURL: "\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d10197\x26p_p_id\x3d101_INSTANCE_FSPgtZ9smttv\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-6\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d1\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F" }); Liferay.Portlet.onLoad({ canEditTitle: false, columnPos: 0, isStatic: "end", namespacedId: "p_p_id_101_INSTANCE_vv2yaIMmBgqq_", portletId: "101_INSTANCE_vv2yaIMmBgqq", refreshURL: "\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d10197\x26p_p_id\x3d101_INSTANCE_vv2yaIMmBgqq\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-3\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d1\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F" }); Liferay.Portlet.onLoad({ canEditTitle: false, columnPos: 0, isStatic: "end", namespacedId: "p_p_id_6110_WAR_ui61portlet_", portletId: "6110_WAR_ui61portlet", refreshURL: "\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d10197\x26p_p_id\x3d6110_WAR_ui61portlet\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-5\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d2\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F" }); Liferay.Portlet.onLoad({ canEditTitle: false, columnPos: 1, isStatic: "end", namespacedId: "p_p_id_6113_WAR_ui61portlet_INSTANCE_GEZnYd1vixhE_", portletId: "6113_WAR_ui61portlet_INSTANCE_GEZnYd1vixhE", refreshURL: "\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d10197\x26p_p_id\x3d6113_WAR_ui61portlet_INSTANCE_GEZnYd1vixhE\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-10\x26p_p_col_pos\x3d1\x26p_p_col_count\x3d2\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F" }); Liferay.Portlet.onLoad({ canEditTitle: false, columnPos: 0, isStatic: "end", namespacedId: "p_p_id_LANGUAGE_EXT_", portletId: "LANGUAGE_EXT", refreshURL: "\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d10197\x26p_p_id\x3dLANGUAGE_EXT\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3d\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d0\x26p_p_isolated\x3d1\x26currentURL\x3d\x252F" }); AUI().use("aui-base", "liferay-form", "liferay-icon", "liferay-menu", "liferay-notice", "liferay-poller", function (a) { (function () { Liferay.Icon.register({ forcePost: true, id: "_58_owel" }) })(); (function () { Liferay.Icon.register({ forcePost: true, id: "_58_xnby" }) })(); (function () { Liferay.Form.register({ id: "_58_fm", fieldRules: [{ body: "", custom: false, errorMessage: "", fieldName: "_58_login", validatorName: "required" }, { body: "", custom: false, errorMessage: "", fieldName: "_58_password", validatorName: "required" }] }) })(); (function () { var b = a.one("#_58_password"); if (b) { b.on("keypress", function (c) { Liferay.Util.showCapsLock(c, "_58_passwordCapsLockSpan") }) } })(); (function () { Liferay.Icon.register({ forcePost: true, id: "_LANGUAGE_EXT_bhea" }) })(); (function () { Liferay.Icon.register({ forcePost: true, id: "_LANGUAGE_EXT_mcat" }) })(); (function () { Liferay.Util.addInputType(); Liferay.Portlet.ready(function (b, c) { Liferay.Util.addInputType(c) }) })(); (function () { new Liferay.Menu(); var b = Liferay.Data.notices; for (var c = 1; c < b.length; c++) { new Liferay.Notice(b[c]) } })() });/*]]>*/</script>
-
-        <script src="/Content/skins/theme/js/main.js"></script>
 
         <script src="/Content/js/jquery.min-1.12.4.js"></script>
         <script src="/Content/js/AjaxRequest.js"></script>

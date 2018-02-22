@@ -4341,7 +4341,8 @@ span.cke_skin_kama {
 }
 
 /* Axis Display */
-.d-inline {
+/*AnhLH comment*/
+/*.d-inline {
     display: inline-block !important;
 }
 
@@ -4351,7 +4352,7 @@ span.cke_skin_kama {
 
 .d-block {
     display: block !important;
-}
+}*/
 
 /* Axis Padding (both top/bottom or left/right) */
 .pn {
@@ -5357,9 +5358,6 @@ html:lang(en-US) .bgtrains {
 
 #wrapper #banner {
     margin: 0 auto;
-    width: 85%;
-    min-width: 1000px;
-    max-width: 1150px;
     margin-bottom: 20px;
     height: 178px;
 }
