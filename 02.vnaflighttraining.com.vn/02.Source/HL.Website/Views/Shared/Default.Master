@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="w-100"></div>
-                <div class="col d-none d-lg-inline">
+                <div class="col d-none d-lg-block">
                     <nav class="sort-pages modify-pages" id="navigation">
                         <ul>
                             <li class="selected"><a href="/web/ftc/home"><span>Trang chủ</span></a> </li>
@@ -112,12 +112,8 @@
                     </nav>
                 </div>
             </header>
-            <div id="content">
-                <div id="p_p_id_103_" class="portlet-boundary portlet-boundary_103_ portlet-static portlet-static-end ">
-                    <span id="p_103"></span>
-                    <div class="portlet-body"></div>
-                </div>
-                <div class="columns-FTC" id="main-content" role="main">
+            <div class="row">
+                <div class="col">
                     <div class="TopsFTC portlet-column" id="column-6">
                         <div class="portlet-dropzone portlet-column-content" id="layout-column_column-6">
                             <div id="p_p_id_101_INSTANCE_FSPgtZ9smttv_" class="portlet-boundary portlet-boundary_101_ portlet-static portlet-static-end portlet-borderless portlet-asset-publisher ">
@@ -142,237 +138,243 @@
                             </div>
                         </div>
                     </div>
-                    <div class="wapperFTC">
-                        <div class="leftFTC portlet-column" id="column-1">
-                            <div class="portlet-dropzone portlet-column-content" id="layout-column_column-1">
-                                <div id="p_p_id_58_" class="portlet-boundary portlet-boundary_58_ portlet-static portlet-static-end portlet-login ">
-                                    <span id="p_58"></span>
-                                    <div class="portlet-body">
-                                        <section class="portlet" id="portlet_58">
-                                            <header class="portlet-topper">
-                                                <h1 class="portlet-title"><span>
-                                                    <img class="icon" id="tbsm" src="/Content/skins/theme/images/spacer.png" alt="Đăng nhập" title="Đăng nhập" style="background-image: url('/Content/skins/html/icons/_sprite.png'); background-position: 50% -592px; background-repeat: no-repeat; height: 16px; width: 16px;" />
-                                                </span><span class="portlet-title-text">Đăng nhập</span> </h1>
-                                                <menu class="portlet-topper-toolbar" id="portlet-topper-toolbar_58" type="toolbar"></menu>
-                                            </header>
-                                            <div class="portlet-content">
-                                                <div class=" portlet-content-container" style="">
-                                                    <div class="portlet-body">
-                                                        <form action="/web/ftc/home?p_auth=1uMQ6be6&amp;p_p_id=58&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-1&amp;p_p_col_count=2&amp;saveLastPath=0&amp;_58_struts_action=%2Flogin%2Flogin&amp;_58_doActionAfterLogin=false" class="aui-form " id="_58_fm" method="post" name="_58_fm">
-                                                            <input class="aui-field-input aui-field-input-text" id="_58_redirect" name="_58_redirect" type="hidden" value="" />
-                                                            <div class="BoxLogin">
-                                                                <span class="aui-field aui-field-text"><span class="aui-field-content">
-                                                                    <label class="aui-field-label" for="_58_login">Người dùng </label>
-                                                                    <span class='aui-field-element '>
-                                                                        <input class="aui-field-input aui-field-input-text" id="_58_login" name="_58_login" placeholder="Đăng nhập" type="text" value="" />
-                                                                    </span></span></span><span class="aui-field aui-field-text"><span class="aui-field-content">
-                                                                        <label class="aui-field-label" for="_58_password">Mật khẩu </label>
-                                                                        <span class='aui-field-element '>
-                                                                            <input class="aui-field-input aui-field-input-text" id="_58_password" name="_58_password" placeholder="Mật khẩu" type="password" value="" />
-                                                                        </span></span></span><span id="_58_passwordCapsLockSpan" style="display: none;">Phím chuyển chữ hoa đang bật.</span> <span class="aui-field aui-field-choice"><span class="aui-field-content"><span class='aui-field-element aui-field-label-right'>
-                                                                            <input id="_58_rememberMe" name="_58_rememberMe" type="hidden" value="false" />
-                                                                            <input class="aui-field-input aui-field-input-choice" id="_58_rememberMeCheckbox" name="_58_rememberMeCheckbox" onclick="" type="checkbox" value="true" />
-                                                                        </span>
-                                                                            <label class="aui-field-label" for="_58_rememberMeCheckbox">Duy trì đăng nhập </label>
-                                                                        </span></span>
-                                                                <div class="aui-button-holder ">
-                                                                    <span class="aui-button aui-button-submit"><span class="aui-button-content">
-                                                                        <input class="aui-button-input aui-button-input-submit" type='submit' value="Đăng nhập" />
-                                                                    </span></span>
-                                                                </div>
-                                                                <div class="navigation">
-                                                                    <span><a class="taglib-icon" href="#" id="_58_xnby">
-                                                                        <img class="icon" src="/Content/skins/theme/images/spacer.png" alt="" style="background-image: url('/Content/skins/theme/images/common/_sprite.png'); background-position: 50% -641px; background-repeat: no-repeat; height: 16px; width: 16px;" />
-                                                                        <span class="taglib-text">Quên mật khẩu</span> </a></span>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </div>
-                                </div>
-                                <div id="p_p_id_56_INSTANCE_d5NBV89JgfR8_" class="portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-borderless portlet-journal-content ">
-                                    <span id="p_56_INSTANCE_d5NBV89JgfR8"></span>
-                                    <div class="portlet-body">
-                                        <div class="portlet-borderless-container" style="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-sm leftFTC portlet-column" id="column-1">
+                    <div class="portlet-dropzone portlet-column-content" id="layout-column_column-1">
+                        <div id="p_p_id_58_" class="portlet-boundary portlet-boundary_58_ portlet-static portlet-static-end portlet-login ">
+                            <span id="p_58"></span>
+                            <div class="portlet-body">
+                                <section class="portlet" id="portlet_58">
+                                    <header class="portlet-topper">
+                                        <h1 class="portlet-title"><span>
+                                            <img class="icon" id="tbsm" src="/Content/skins/theme/images/spacer.png" alt="Đăng nhập" title="Đăng nhập" style="background-image: url('/Content/skins/html/icons/_sprite.png'); background-position: 50% -592px; background-repeat: no-repeat; height: 16px; width: 16px;" />
+                                        </span><span class="portlet-title-text">Đăng nhập</span> </h1>
+                                        <menu class="portlet-topper-toolbar" id="portlet-topper-toolbar_58" type="toolbar"></menu>
+                                    </header>
+                                    <div class="portlet-content">
+                                        <div class=" portlet-content-container" style="">
                                             <div class="portlet-body">
-                                                <div class="journal-content-article" id="article_10168_10194_11809_1.2">
-                                                    <p>
-                                                        <img alt="" src="/Content/skins/imgs/banner-left.jpg_519470825.jpg" style="width: 100%;" />
-                                                    </p>
-                                                </div>
-                                                <div class="entry-links"></div>
+                                                <form action="/web/ftc/home?p_auth=1uMQ6be6&amp;p_p_id=58&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-1&amp;p_p_col_count=2&amp;saveLastPath=0&amp;_58_struts_action=%2Flogin%2Flogin&amp;_58_doActionAfterLogin=false" class="aui-form " id="_58_fm" method="post" name="_58_fm">
+                                                    <input class="aui-field-input aui-field-input-text" id="_58_redirect" name="_58_redirect" type="hidden" value="" />
+                                                    <div class="BoxLogin">
+                                                        <span class="aui-field aui-field-text"><span class="aui-field-content">
+                                                            <label class="aui-field-label" for="_58_login">Người dùng </label>
+                                                            <span class='aui-field-element '>
+                                                                <input class="aui-field-input aui-field-input-text" id="_58_login" name="_58_login" placeholder="Đăng nhập" type="text" value="" />
+                                                            </span></span></span><span class="aui-field aui-field-text"><span class="aui-field-content">
+                                                                <label class="aui-field-label" for="_58_password">Mật khẩu </label>
+                                                                <span class='aui-field-element '>
+                                                                    <input class="aui-field-input aui-field-input-text" id="_58_password" name="_58_password" placeholder="Mật khẩu" type="password" value="" />
+                                                                </span></span></span><span id="_58_passwordCapsLockSpan" style="display: none;">Phím chuyển chữ hoa đang bật.</span> <span class="aui-field aui-field-choice"><span class="aui-field-content"><span class='aui-field-element aui-field-label-right'>
+                                                                    <input id="_58_rememberMe" name="_58_rememberMe" type="hidden" value="false" />
+                                                                    <input class="aui-field-input aui-field-input-choice" id="_58_rememberMeCheckbox" name="_58_rememberMeCheckbox" onclick="" type="checkbox" value="true" />
+                                                                </span>
+                                                                    <label class="aui-field-label" for="_58_rememberMeCheckbox">Duy trì đăng nhập </label>
+                                                                </span></span>
+                                                        <div class="aui-button-holder ">
+                                                            <span class="aui-button aui-button-submit"><span class="aui-button-content">
+                                                                <input class="aui-button-input aui-button-input-submit" type='submit' value="Đăng nhập" />
+                                                            </span></span>
+                                                        </div>
+                                                        <div class="navigation">
+                                                            <span><a class="taglib-icon" href="#" id="_58_xnby">
+                                                                <img class="icon" src="/Content/skins/theme/images/spacer.png" alt="" style="background-image: url('/Content/skins/theme/images/common/_sprite.png'); background-position: 50% -641px; background-repeat: no-repeat; height: 16px; width: 16px;" />
+                                                                <span class="taglib-text">Quên mật khẩu</span> </a></span>
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div id="p_p_id_56_INSTANCE_d5NBV89JgfR8_" class="portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-borderless portlet-journal-content ">
+                            <span id="p_56_INSTANCE_d5NBV89JgfR8"></span>
+                            <div class="portlet-body">
+                                <div class="portlet-borderless-container" style="">
+                                    <div class="portlet-body">
+                                        <div class="journal-content-article" id="article_10168_10194_11809_1.2">
+                                            <p>
+                                                <img alt="" src="/Content/skins/imgs/banner-left.jpg_519470825.jpg" style="width: 100%;" />
+                                            </p>
+                                        </div>
+                                        <div class="entry-links"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="centerFTC">
-                            <div class="topFTC portlet-column" id="column-2">
-                                <div class="portlet-dropzone portlet-column-content" id="layout-column_column-2">
-                                    <div id="p_p_id_56_INSTANCE_XfHI4BGOvMQT_" class="portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-borderless portlet-journal-content ">
-                                        <span id="p_56_INSTANCE_XfHI4BGOvMQT"></span>
+                    </div>
+                </div>
+                <div class="w-100 d-block d-sm-none"></div>
+                <div class="col-7 col-sm-7 p-0 centerFTC">
+                    <div class="topFTC portlet-column" id="column-2">
+                        <div class="portlet-dropzone portlet-column-content" id="layout-column_column-2">
+                            <div id="p_p_id_56_INSTANCE_XfHI4BGOvMQT_" class="portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-borderless portlet-journal-content ">
+                                <span id="p_56_INSTANCE_XfHI4BGOvMQT"></span>
+                                <div class="portlet-body">
+                                    <div class="portlet-borderless-container" style="">
                                         <div class="portlet-body">
-                                            <div class="portlet-borderless-container" style="">
-                                                <div class="portlet-body">
-                                                    <div class="journal-content-article" id="article_10168_10194_20907_1.4">
-                                                        <div class="abtCenter">
-                                                            <div class="topsabt">
-                                                                <ul>
-                                                                    <li class="items-1">
-                                                                        <h2>Giới thiệu</h2>
-                                                                        Trung tâm Huấn luyện bay trực thuộc Tổng công ty Hàng không Việt Nam được thành lập vào năm 1998 với chức năng tổ chức công tác huấn luyện phi công, tiếp viên và nhân viên điều hành khai thác bay của Hãng HKVN. <a href="/web/ftc/company/history">Chi tiết </a></li>
-                                                                    <li class="items-2"><span class="txtLights"><font class="ft1">Bạn muốn</font><font class="ft2">trở thành phi công,</font>nơi khởi đầu tuyệt vời. </span></li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="bottomsabt">
-                                                                <ul>
-                                                                    <li class="items-1">Huấn luyện gắn với AN TOÀN, Chất lượng và hiệu quả.</li>
-                                                                    <li class="items-2"><a href="/web/ftc/trainee-recruitment">Tuyển sinh </a><a href="/web/ftc/training-services">Dịch vụ huấn luyện </a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
+                                            <div class="journal-content-article" id="article_10168_10194_20907_1.4">
+                                                <div class="abtCenter">
+                                                    <div class="topsabt">
+                                                        <ul>
+                                                            <li class="items-1">
+                                                                <h2>Giới thiệu</h2>
+                                                                Trung tâm Huấn luyện bay trực thuộc Tổng công ty Hàng không Việt Nam được thành lập vào năm 1998 với chức năng tổ chức công tác huấn luyện phi công, tiếp viên và nhân viên điều hành khai thác bay của Hãng HKVN. <a href="/web/ftc/company/history">Chi tiết </a></li>
+                                                            <li class="items-2"><span class="txtLights"><font class="ft1">Bạn muốn</font><font class="ft2">trở thành phi công,</font>nơi khởi đầu tuyệt vời. </span></li>
+                                                        </ul>
                                                     </div>
-                                                    <div class="entry-links"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="left-centerFTC portlet-column" id="column-3">
-                                <div class="portlet-dropzone portlet-column-content" id="layout-column_column-3">
-                                    <div id="p_p_id_101_INSTANCE_vv2yaIMmBgqq_" class="portlet-boundary portlet-boundary_101_ portlet-static portlet-static-end portlet-asset-publisher Pst-left">
-                                        <span id="p_101_INSTANCE_vv2yaIMmBgqq"></span>
-                                        <div class="portlet-body">
-                                            <section class="portlet" id="portlet_101_INSTANCE_vv2yaIMmBgqq">
-                                                <header class="portlet-topper">
-                                                    <h1 class="portlet-title"><span>
-                                                        <img class="icon" id="rvno" src="/Content/skins/theme/images/spacer.png" alt="Tin tức" title="Tin tức" style="background-image: url('/Content/skins/html/icons/_sprite.png'); background-position: 50% -112px; background-repeat: no-repeat; height: 16px; width: 16px;" />
-                                                    </span><span class="portlet-title-text">Tin tức</span> </h1>
-                                                    <menu class="portlet-topper-toolbar" id="portlet-topper-toolbar_101_INSTANCE_vv2yaIMmBgqq" type="toolbar"></menu>
-                                                </header>
-                                                <div class="portlet-content">
-                                                    <div class=" portlet-content-container" style="">
-                                                        <div class="portlet-body">
-                                                            <div class='mnCategories'><b><a class='txtUpcase' href="#">Tin tức</a></b></div>
-                                                            <div class="boxlistAll" id="boxlistAll_101_INSTANCE_vv2yaIMmBgqq">
-                                                                <div class="boxlistLeft abstracts_s4">
-                                                                    <ul>
-                                                                        <li class="newsimg">
-                                                                            <h2><a href="#">ƯỚC MƠ CHẠM ĐẾN BẦU TRỜI </a></h2>
-                                                                        </li>
-                                                                        <li class="newsimg"><a class="asset-small-image" href="#">
-                                                                            <img src="/Content/skins/imgs/article.jpg" /></a>
-                                                                            <h2><a href="#">LỄ KHAI TRƯƠNG SIM A320-200 SERIES 7000XR </a></h2>
-                                                                            Với việc chính thức đưa vào khai thác SIM A320/321, VNA sẽ tiết kiệm được đáng kể chi phí thuê thiết bị huấn luyện tại nước ngoài cũng như chủ động hơn trong công tác đào tạo phi công, đáp ứng nhu... </li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="subscribe"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="right-centerFTC portlet-column" id="column-4">
-                                <div class="portlet-dropzone portlet-column-content" id="layout-column_column-4">
-                                    <div id="p_p_id_56_INSTANCE_ynG1vXc6RWEc_" class="portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-journal-content ">
-                                        <span id="p_56_INSTANCE_ynG1vXc6RWEc"></span>
-                                        <div class="portlet-body">
-                                            <section class="portlet" id="portlet_56_INSTANCE_ynG1vXc6RWEc">
-                                                <header class="portlet-topper">
-                                                    <h1 class="portlet-title"><span>
-                                                        <img class="icon" id="rjus" src="/Content/skins/theme/images/spacer.png" alt="Dịch vụ huấn luyện" title="Dịch vụ huấn luyện" style="background-image: url('/Content/skins/html/icons/_sprite.png'); background-position: 50% -496px; background-repeat: no-repeat; height: 16px; width: 16px;" />
-                                                    </span><span class="portlet-title-text">Dịch vụ huấn luyện</span> </h1>
-                                                    <menu class="portlet-topper-toolbar" id="portlet-topper-toolbar_56_INSTANCE_ynG1vXc6RWEc" type="toolbar"></menu>
-                                                </header>
-                                                <div class="portlet-content">
-                                                    <div class=" portlet-content-container" style="">
-                                                        <div class="portlet-body">
-                                                            <div class="journal-content-article" id="article_10168_10194_21607_1.8">
-                                                                <ul class="lstDichVu">
-                                                                    <li><a href="/web/ftc/training-services/flight-crew-training">Huấn luyện phi công</a></li>
-                                                                    <li><a href="/web/ftc/training-services/cabin-crew-training">Huấn luyện tiếp viên hàng không</a></li>
-                                                                    <li><span style="font-size: 14px;"><a href="/web/ftc/training-services/flight-dispatcher-training">Huấn luyện NV khai thác/điều phái bay</a></span></li>
-                                                                    <li><a href="/web/ftc/training-services/soft-skills-training">Huấn luyện kĩ năng mềm</a></li>
-                                                                    <li><a href="/web/ftc/training-services/aviation-english-training">Huấn luyện tiếng anh hàng không</a></li>
-                                                                    <li><a href="/web/ftc/training-services/aviation-job-orientation">Hướng nghiệp hàng không</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="rightFTC portlet-column" id="column-5">
-                            <div class="portlet-dropzone portlet-column-content" id="layout-column_column-5">
-                                <div id="p_p_id_6110_WAR_ui61portlet_" class="portlet-boundary portlet-boundary_6110_WAR_ui61portlet_ portlet-static portlet-static-end 6110-portlet ">
-                                    <span id="p_6110_WAR_ui61portlet"></span>
-                                    <div class="portlet-body">
-                                        <section class="portlet" id="portlet_6110_WAR_ui61portlet">
-                                            <header class="portlet-topper">
-                                                <h1 class="portlet-title"><span>
-                                                    <img class="icon" id="ecli" src="/Content/skins/portlet/icon.png" alt="Thời tiết" title="Thời tiết" />
-                                                </span><span class="portlet-title-text">Thời tiết</span> </h1>
-                                                <menu class="portlet-topper-toolbar" id="portlet-topper-toolbar_6110_WAR_ui61portlet" type="toolbar"></menu>
-                                            </header>
-                                            <div class="portlet-content">
-                                                <div class=" portlet-content-container" style="">
-                                                    <div class="portlet-body">
-                                                        <div id="A8753" class="liferay-faces-bridge-body">
-                                                            <form id="A8753:frm" name="A8753:frm" method="post" action="/web/ftc/home?p_auth=1uMQ6be6&amp;p_p_id=6110_WAR_ui61portlet&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-5&amp;p_p_col_count=2&amp;_6110_WAR_ui61portlet__facesViewIdRender=%2Fxhtml%2Fportlet%2Fthoi_tiet%2Fview.xhtml" class="weather" enctype="application/x-www-form-urlencoded">
-                                                                <input type="hidden" name="A8753:frm" value="A8753:frm" />
-                                                                <input type="hidden" name="javax.faces.encodedURL" value="/web/ftc/home?p_p_id=6110_WAR_ui61portlet&amp;p_p_lifecycle=2&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_cacheability=cacheLevelPage&amp;p_p_col_id=column-5&amp;p_p_col_count=2&amp;_6110_WAR_ui61portlet__jsfBridgeAjax=true&amp;_6110_WAR_ui61portlet__facesViewIdResource=%2Fxhtml%2Fportlet%2Fthoi_tiet%2Fview.xhtml" />
-                                                                <div id="A8753:frm:pnWeather" class="ui-panel ui-widget ui-widget-content ui-corner-all">
-                                                                    <div id="A8753:frm:pnWeather_content" class="ui-panel-content ui-widget-content">
-                                                                        <div class="listLocal">
-                                                                            <ul>
-                                                                                <li><span class="txtLocal">Hồ Chí Minh </span><span class="txtoC">22</span><img src="/Content/skins/theme/images/weather/9.png" />
-                                                                                </li>
-                                                                                <li><span class="txtLocal">Hà Nội </span><span class="txtoC">12</span><img src="/Content/skins/theme/images/weather/9.png" />
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <script id="A8753:frm:pnWeather_s">/*<![CDATA[*/PrimeFaces.cw("Panel", "widget_A8753_frm_pnWeather", { id: "A8753:frm:pnWeather" });/*]]>*/</script>
-                                                                <input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="7110778752530100668:-8746525769335425419" autocomplete="off" />
-                                                            </form>
-                                                        </div>
+                                                    <div class="bottomsabt">
+                                                        <ul>
+                                                            <li class="items-1">Huấn luyện gắn với AN TOÀN, Chất lượng và hiệu quả.</li>
+                                                            <li class="items-2"><a href="/web/ftc/trainee-recruitment">Tuyển sinh </a><a href="/web/ftc/training-services">Dịch vụ huấn luyện </a></li>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </section>
-                                    </div>
-                                </div>
-                                <div id="p_p_id_56_INSTANCE_wjJ7Bf23S7kH_" class="portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-borderless portlet-journal-content ">
-                                    <span id="p_56_INSTANCE_wjJ7Bf23S7kH"></span>
-                                    <div class="portlet-body">
-                                        <div class="portlet-borderless-container" style="">
-                                            <div class="portlet-body">
-                                                <div class="journal-content-article" id="article_10168_10194_11350_1.7">
-                                                    <p>
-                                                        <img alt="" src="/Content/skins/imgs/banner-right.jpg_-1882377540.jpg" style="max-width: 100%" />
-                                                    </p>
-                                                </div>
-                                            </div>
+                                            <div class="entry-links"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="left-centerFTC portlet-column" id="column-3">
+                        <div class="portlet-dropzone portlet-column-content" id="layout-column_column-3">
+                            <div id="p_p_id_101_INSTANCE_vv2yaIMmBgqq_" class="portlet-boundary portlet-boundary_101_ portlet-static portlet-static-end portlet-asset-publisher Pst-left">
+                                <span id="p_101_INSTANCE_vv2yaIMmBgqq"></span>
+                                <div class="portlet-body">
+                                    <section class="portlet" id="portlet_101_INSTANCE_vv2yaIMmBgqq">
+                                        <header class="portlet-topper">
+                                            <h1 class="portlet-title"><span>
+                                                <img class="icon" id="rvno" src="/Content/skins/theme/images/spacer.png" alt="Tin tức" title="Tin tức" style="background-image: url('/Content/skins/html/icons/_sprite.png'); background-position: 50% -112px; background-repeat: no-repeat; height: 16px; width: 16px;" />
+                                            </span><span class="portlet-title-text">Tin tức</span> </h1>
+                                            <menu class="portlet-topper-toolbar" id="portlet-topper-toolbar_101_INSTANCE_vv2yaIMmBgqq" type="toolbar"></menu>
+                                        </header>
+                                        <div class="portlet-content">
+                                            <div class=" portlet-content-container" style="">
+                                                <div class="portlet-body">
+                                                    <div class='mnCategories'><b><a class='txtUpcase' href="#">Tin tức</a></b></div>
+                                                    <div class="boxlistAll" id="boxlistAll_101_INSTANCE_vv2yaIMmBgqq">
+                                                        <div class="boxlistLeft abstracts_s4">
+                                                            <ul>
+                                                                <li class="newsimg">
+                                                                    <h2><a href="#">ƯỚC MƠ CHẠM ĐẾN BẦU TRỜI </a></h2>
+                                                                </li>
+                                                                <li class="newsimg"><a class="asset-small-image" href="#">
+                                                                    <img src="/Content/skins/imgs/article.jpg" /></a>
+                                                                    <h2><a href="#">LỄ KHAI TRƯƠNG SIM A320-200 SERIES 7000XR </a></h2>
+                                                                    Với việc chính thức đưa vào khai thác SIM A320/321, VNA sẽ tiết kiệm được đáng kể chi phí thuê thiết bị huấn luyện tại nước ngoài cũng như chủ động hơn trong công tác đào tạo phi công, đáp ứng nhu... </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="subscribe"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-centerFTC portlet-column" id="column-4">
+                        <div class="portlet-dropzone portlet-column-content" id="layout-column_column-4">
+                            <div id="p_p_id_56_INSTANCE_ynG1vXc6RWEc_" class="portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-journal-content ">
+                                <span id="p_56_INSTANCE_ynG1vXc6RWEc"></span>
+                                <div class="portlet-body">
+                                    <section class="portlet" id="portlet_56_INSTANCE_ynG1vXc6RWEc">
+                                        <header class="portlet-topper">
+                                            <h1 class="portlet-title"><span>
+                                                <img class="icon" id="rjus" src="/Content/skins/theme/images/spacer.png" alt="Dịch vụ huấn luyện" title="Dịch vụ huấn luyện" style="background-image: url('/Content/skins/html/icons/_sprite.png'); background-position: 50% -496px; background-repeat: no-repeat; height: 16px; width: 16px;" />
+                                            </span><span class="portlet-title-text">Dịch vụ huấn luyện</span> </h1>
+                                            <menu class="portlet-topper-toolbar" id="portlet-topper-toolbar_56_INSTANCE_ynG1vXc6RWEc" type="toolbar"></menu>
+                                        </header>
+                                        <div class="portlet-content">
+                                            <div class=" portlet-content-container" style="">
+                                                <div class="portlet-body">
+                                                    <div class="journal-content-article" id="article_10168_10194_21607_1.8">
+                                                        <ul class="lstDichVu">
+                                                            <li><a href="/web/ftc/training-services/flight-crew-training">Huấn luyện phi công</a></li>
+                                                            <li><a href="/web/ftc/training-services/cabin-crew-training">Huấn luyện tiếp viên hàng không</a></li>
+                                                            <li><span style="font-size: 14px;"><a href="/web/ftc/training-services/flight-dispatcher-training">Huấn luyện NV khai thác/điều phái bay</a></span></li>
+                                                            <li><a href="/web/ftc/training-services/soft-skills-training">Huấn luyện kĩ năng mềm</a></li>
+                                                            <li><a href="/web/ftc/training-services/aviation-english-training">Huấn luyện tiếng anh hàng không</a></li>
+                                                            <li><a href="/web/ftc/training-services/aviation-job-orientation">Hướng nghiệp hàng không</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 d-sm-block d-md-none"></div>
+                <div class="col col-sm rightFTC portlet-column" id="column-5">
+                    <div class="portlet-dropzone portlet-column-content" id="layout-column_column-5">
+                        <div id="p_p_id_6110_WAR_ui61portlet_" class="portlet-boundary portlet-boundary_6110_WAR_ui61portlet_ portlet-static portlet-static-end 6110-portlet ">
+                            <span id="p_6110_WAR_ui61portlet"></span>
+                            <div class="portlet-body">
+                                <section class="portlet" id="portlet_6110_WAR_ui61portlet">
+                                    <header class="portlet-topper">
+                                        <h1 class="portlet-title"><span>
+                                            <img class="icon" id="ecli" src="/Content/skins/portlet/icon.png" alt="Thời tiết" title="Thời tiết" />
+                                        </span><span class="portlet-title-text">Thời tiết</span> </h1>
+                                        <menu class="portlet-topper-toolbar" id="portlet-topper-toolbar_6110_WAR_ui61portlet" type="toolbar"></menu>
+                                    </header>
+                                    <div class="portlet-content">
+                                        <div class=" portlet-content-container" style="">
+                                            <div class="portlet-body">
+                                                <div id="A8753" class="liferay-faces-bridge-body">
+                                                    <form id="A8753:frm" name="A8753:frm" method="post" action="/web/ftc/home?p_auth=1uMQ6be6&amp;p_p_id=6110_WAR_ui61portlet&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-5&amp;p_p_col_count=2&amp;_6110_WAR_ui61portlet__facesViewIdRender=%2Fxhtml%2Fportlet%2Fthoi_tiet%2Fview.xhtml" class="weather" enctype="application/x-www-form-urlencoded">
+                                                        <input type="hidden" name="A8753:frm" value="A8753:frm" />
+                                                        <input type="hidden" name="javax.faces.encodedURL" value="/web/ftc/home?p_p_id=6110_WAR_ui61portlet&amp;p_p_lifecycle=2&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_cacheability=cacheLevelPage&amp;p_p_col_id=column-5&amp;p_p_col_count=2&amp;_6110_WAR_ui61portlet__jsfBridgeAjax=true&amp;_6110_WAR_ui61portlet__facesViewIdResource=%2Fxhtml%2Fportlet%2Fthoi_tiet%2Fview.xhtml" />
+                                                        <div id="A8753:frm:pnWeather" class="ui-panel ui-widget ui-widget-content ui-corner-all">
+                                                            <div id="A8753:frm:pnWeather_content" class="ui-panel-content ui-widget-content">
+                                                                <div class="listLocal">
+                                                                    <ul>
+                                                                        <li><span class="txtLocal">Hồ Chí Minh </span><span class="txtoC">22</span><img src="/Content/skins/theme/images/weather/9.png" />
+                                                                        </li>
+                                                                        <li><span class="txtLocal">Hà Nội </span><span class="txtoC">12</span><img src="/Content/skins/theme/images/weather/9.png" />
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <script id="A8753:frm:pnWeather_s">/*<![CDATA[*/PrimeFaces.cw("Panel", "widget_A8753_frm_pnWeather", { id: "A8753:frm:pnWeather" });/*]]>*/</script>
+                                                        <input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="7110778752530100668:-8746525769335425419" autocomplete="off" />
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div id="p_p_id_56_INSTANCE_wjJ7Bf23S7kH_" class="portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-borderless portlet-journal-content ">
+                            <span id="p_56_INSTANCE_wjJ7Bf23S7kH"></span>
+                            <div class="portlet-body">
+                                <div class="portlet-borderless-container" style="">
+                                    <div class="portlet-body">
+                                        <div class="journal-content-article" id="article_10168_10194_11350_1.7">
+                                            <p>
+                                                <img alt="" src="/Content/skins/imgs/banner-right.jpg_-1882377540.jpg" style="max-width: 100%" />
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
                     <div class="footerFTC portlet-column" id="column-10">
                         <div class="portlet-dropzone portlet-column-content" id="layout-column_column-10">
                             <div id="p_p_id_56_INSTANCE_tli9NF1KajeF_" class="portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-borderless portlet-journal-content ">
@@ -392,44 +394,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="p_p_id_6113_WAR_ui61portlet_INSTANCE_GEZnYd1vixhE_" class="portlet-boundary portlet-boundary_6113_WAR_ui61portlet_ portlet-static portlet-static-end 6113-portlet hidden">
-                                <span id="p_6113_WAR_ui61portlet_INSTANCE_GEZnYd1vixhE"></span>
-                                <div class="portlet-body">
-                                    <section class="portlet" id="portlet_6113_WAR_ui61portlet_INSTANCE_GEZnYd1vixhE">
-                                        <header class="portlet-topper">
-                                            <h1 class="portlet-title"><span>
-                                                <img class="icon" id="euos" src="/Content/skins/portlet/icon.png" alt="Liên kết website" title="Liên kết website" />
-                                            </span><span class="portlet-title-text">Liên kết website</span> </h1>
-                                            <menu class="portlet-topper-toolbar" id="portlet-topper-toolbar_6113_WAR_ui61portlet_INSTANCE_GEZnYd1vixhE" type="toolbar"></menu>
-                                        </header>
-                                        <div class="portlet-content">
-                                            <div class=" portlet-content-container" style="">
-                                                <div class="portlet-body">
-                                                    <div id="A0299" class="liferay-faces-bridge-body">
-                                                        <form id="A0299:frm" name="A0299:frm" method="post" action="/web/ftc/home?p_auth=1uMQ6be6&amp;p_p_id=6113_WAR_ui61portlet_INSTANCE_GEZnYd1vixhE&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-10&amp;p_p_col_count=2&amp;p_p_col_pos=1&amp;_6113_WAR_ui61portlet_INSTANCE_GEZnYd1vixhE__facesViewIdRender=%2Fxhtml%2Fportlet%2Flien_ket_website%2Fhien_thi%2Fview.xhtml" class="frmWebLink" enctype="application/x-www-form-urlencoded">
-                                                            <input type="hidden" name="A0299:frm" value="A0299:frm" />
-                                                            <input type="hidden" name="javax.faces.encodedURL" value="/web/ftc/home?p_p_id=6113_WAR_ui61portlet_INSTANCE_GEZnYd1vixhE&amp;p_p_lifecycle=2&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_cacheability=cacheLevelPage&amp;p_p_col_id=column-10&amp;p_p_col_count=2&amp;p_p_col_pos=1&amp;_6113_WAR_ui61portlet_INSTANCE_GEZnYd1vixhE__jsfBridgeAjax=true&amp;_6113_WAR_ui61portlet_INSTANCE_GEZnYd1vixhE__facesViewIdResource=%2Fxhtml%2Fportlet%2Flien_ket_website%2Fhien_thi%2Fview.xhtml" />
-                                                            <div id="A0299:frm:pnLienKet" class="ui-panel ui-widget ui-widget-content ui-corner-all">
-                                                                <div id="A0299:frm:pnLienKet_content" class="ui-panel-content ui-widget-content">
-                                                                    <select name="A0299:frm:j_idt13" class="aui-w100" size="1" onchange="var val=this.options[this.selectedIndex].value; if(val!='') {window.open(val);options[0].selected=true;};">
-                                                                        <option value="0">Liên kết website</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <script id="A0299:frm:pnLienKet_s">/*<![CDATA[*/PrimeFaces.cw("Panel", "widget_A0299_frm_pnLienKet", { id: "A0299:frm:pnLienKet" });/*]]>*/</script>
-                                                            <input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-6472078982092899105:961368578929018113" autocomplete="off" />
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <form action="#" id="hrefFm" method="post" name="hrefFm"><span></span></form>
             </div>
         </div>
 

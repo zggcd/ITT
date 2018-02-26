@@ -1006,9 +1006,9 @@ hr, .separator {
 }
 
 .TopsFTC {
-    width: 85%;
+    /*width: 85%;
     min-width: 1000px;
-    max-width: 1150px;
+    max-width: 1150px;*/
     clear: both;
     margin: 0 auto 20px;
     height: 380px;
@@ -1022,22 +1022,22 @@ hr, .separator {
 }
 
 .leftFTC {
-    width: 20%;
-    float: left;
+    /*width: 20%;
+    float: left;*/
 }
 
 .rightFTC {
-    width: 20%;
-    float: right;
+    /*width: 20%;
+    float: right;*/
 }
 
 .centerFTC {
-    width: 60%;
+    /*width: 60%;
     float: left;
     padding: 0 15px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    box-sizing: border-box;*/
 }
 
     .centerFTC .topFTC {
@@ -5357,7 +5357,7 @@ html:lang(en-US) .bgtrains {
 }
 
 #wrapper #banner {
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     margin-bottom: 20px;
     height: 178px;
 }
