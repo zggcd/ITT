@@ -1011,7 +1011,7 @@ hr, .separator {
     max-width: 1150px;*/
     clear: both;
     margin: 0 auto 20px;
-    height: 380px;
+    /*height: 380px;*/
 }
 
 .wapperFTC {
@@ -1055,13 +1055,13 @@ hr, .separator {
 }
 
 .rightfullFTC {
-    width: 77%;
+    /*width: 77%;
     float: right;
     padding-left: 20px;
     margin-bottom: 20px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    box-sizing: border-box;*/
 }
 
 .footerFTC {
@@ -4678,7 +4678,7 @@ html .bgtrains {
     background: url() no-repeat center top;
     position: absolute;
     z-index: 2;
-    top: -110px;
+    top: 0;
     right: -170px;
     width: 654px;
     height: 150px;
@@ -4705,7 +4705,7 @@ html:lang(en-US) .bgtrains {
 #breadcrumbs {
     background: #eefaff;
     padding: 0 10px;
-    height: 30px;
+    /*height: 30px;*/
     display: inline-block;
     width: 100%;
     -webkit-box-sizing: border-box;
@@ -4838,7 +4838,7 @@ html:lang(en-US) .bgtrains {
     }
 
     .leftFTC #portlet_6110_WAR_ui61portlet .portlet-content, .rightFTC #portlet_6110_WAR_ui61portlet .portlet-content {
-        padding: 10px 5px;
+        padding: 10px 1px;
     }
 
     .leftFTC #portlet_6110_WAR_ui61portlet .portlet-topper, .rightFTC #portlet_6110_WAR_ui61portlet .portlet-topper {
@@ -4979,7 +4979,7 @@ html:lang(en-US) .bgtrains {
             }
 
     .abtCenter .topsabt {
-        height: 210px;
+        height: 209px;
         overflow: hidden;
     }
 
@@ -5095,15 +5095,18 @@ html:lang(en-US) .bgtrains {
 .lstDichVu {
     list-style: none;
     margin: 0;
+    column-count: 2;
 }
 
     .lstDichVu li {
-        float: left;
+        /*float: left;*/
         padding: 1px;
-        width: 50%;
+        width: 100%;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
+        display: flex;
+        flex: 1 auto;
     }
 
         .lstDichVu li a {
@@ -5120,6 +5123,7 @@ html:lang(en-US) .bgtrains {
             -moz-transition: all 0.2s;
             -o-transition: all 0.2s;
             transition: all 0.2s;
+            width: 100%;
         }
 
             .lstDichVu li a:hover, .lstDichVu li a:focus {
@@ -5358,8 +5362,8 @@ html:lang(en-US) .bgtrains {
 
 #wrapper #banner {
     /*margin: 0 auto;*/
-    margin-bottom: 20px;
-    height: 178px;
+    margin-bottom: 15px;
+    /*height: 178px;*/
 }
 
 #wrapper .site-title {

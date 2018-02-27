@@ -5,6 +5,11 @@ namespace HL.Lib.Controllers
 {
     public class CAdvController : Controller
     {
+        [HL.Core.MVC.PropertyInfo("Default[MenuID-true]," +
+            "Logo[MenuID-true]," +
+            "Slide[MenuID-true]")]
+        public string LayoutDefine;
+
         [HL.Core.MVC.PropertyInfo("Chuyên mục", "Type|Adv")]
         public int MenuID;
 

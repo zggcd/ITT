@@ -5,6 +5,10 @@ namespace HL.Lib.Controllers
 {
     public class CMenuController : Controller
     {
+        [HL.Core.MVC.PropertyInfo("ListChild[PageID-true]," +
+            "Top[PageID-true]")]
+        public string LayoutDefine;
+
         [HL.Core.MVC.PropertyInfo("Trang")]
         public int PageID;
 

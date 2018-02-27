@@ -1,64 +1,175 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="System.Web.UI.MasterPage" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html class="ltr" lang="vi-VN">
 <head id="Head" runat="server">
-    <title>TINHTINH.COM | Trang chủ</title>
+    <title>Trang chủ</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <meta name="Author" content="lehoanganhhd@gmail.com" />
     <meta name="robots" content="index, follow" />
     <meta id="description" name="description" content="" runat="server" />
     <meta id="keywords" name="keywords" content="" runat="server" />
-    <link rel="shortcut icon" href="http://tinhtinh.com/favicon.ico" type="image/x-icon" />
+
+    <link href="/favicon.ico" rel="Shortcut Icon" />
 
     <!-- Bootstrap CSS -->
     <link href="/Content/bootstrap-4.0.0/css/bootstrap.min.css" rel="stylesheet" />
 
-    <link href="/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/owlcarousel/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/Content/owlcarousel/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="/Content/skins/theme/css/main.css" rel="stylesheet" />
     <link href="/Content/css/style.css" rel="stylesheet" />
 </head>
-<body>
+<body class=" yui3-skin-sam controls-visible guest-site signed-out public-page site">
     <form id="hlForm" runat="server">
-        <header>
-            <nav class="nav justify-content-end">
-                <a class="nav-link active" href="/vn/default.aspx">
-                    <%if ((this.Page as ViewPage).CurrentLang.ID == 1)
-                        { %>
-                    <strong>Vietnamese</strong>
-                    <%}
-                        else
-                        { %>Vietnamese<%} %>
-                </a>
-                <a class="nav-link" href="/en/default.aspx">
-                    <%if ((this.Page as ViewPage).CurrentLang.ID == 2)
-                        { %>
-                    <strong>English</strong>
-                    <%}
-                        else
-                        { %>English<%} %>
-                </a>
-                <a class="nav-link" href="/cn/default.aspx">
-                    <%if ((this.Page as ViewPage).CurrentLang.ID == 3)
-                        { %>
-                    <strong>Chinese</strong>
-                    <%}
-                        else
-                        { %>Chinese<%} %>
-                </a>
-                <a class="nav-link" href="/<%= (this.Page as ViewPage).CurrentSite.Code %>/Site-map.aspx">Sitemap</a>
-            </nav>
-        </header>
+        <div id="wrapper" class="container">
+            <header id="banner" role="banner">
+                <div class="row align-items-center">
+                    <div class="col-2 d-lg-none">
+                        <div class="icon-nav" onclick="openNav(this)">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <HL:StaticControl Code="CAdv" HLID="cLogo" runat="server"></HL:StaticControl>
+                        <div class="d-none d-lg-block bgtrains"></div>
+                    </div>
+                    <div class="w-100"></div>
+                    <HL:StaticControl runat="server" Code="CMenu" HLID="cMenuTop"></HL:StaticControl>
+                    <div class="w-100"></div>
+                    <div class="col">
+                        <nav class="site-breadcrumbs" id="breadcrumbs">
+                            <ul class="breadcrumbs breadcrumbs-horizontal lfr-component">
+                                <li class="first"><span><a href="/">FTC Vietnam Airlines</a></span></li>
+                                <li class="last"><span><a href="/">Trang chủ</a></span></li>
+                            </ul>
+                            <a href="#" id="sign-in" rel="nofollow">Đăng nhập</a>
+                            <div class="lang">
+                                <div id="p_p_id_LANGUAGE_EXT_" class="portlet-boundary portlet-boundary_LANGUAGE_EXT_ portlet-static portlet-static-end portlet-borderless portlet-language_ext ">
+                                    <span id="p_LANGUAGE_EXT"></span>
+                                    <div class="portlet-body">
+                                        <div class="portlet-borderless-container" style="">
+                                            <div class="portlet-body">
+                                                <span><a class="taglib-icon" href="/" id="_LANGUAGE_EXT_bhea" lang="vi-VN">
+                                                    <img class="icon" src="/Content/skins/theme/images/language/vi_VN.png" alt="Tiếng Việt (Việt Nam)" title="Tiếng Việt (Việt Nam)" />
+                                                </a></span><span><a class="taglib-icon" href="/en/Home.aspx" id="_LANGUAGE_EXT_mcat" lang="en-US">
+                                                    <img class="icon" src="/Content/skins/theme/images/language/en_US.png" alt="English (United States)" title="English (United States)" />
+                                                </a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </header>
 
-        <HL:StaticControl Code="CMenu" HLID="hlMenuTop" runat="server"></HL:StaticControl>
-        <HL:DynamicControl runat="server" ID="MainContent"></HL:DynamicControl>
+            <div class="row">
+                <div class="col-3">
+                    <div class="leftFTC portlet-column" id="column-1">
+                        <div class="portlet-dropzone portlet-column-content" id="layout-column_column-1">
+                            <div id="p_p_id_NSS_MENU_LEFT_INSTANCE_ovLRlVQB32QD_" class="portlet-boundary portlet-boundary_NSS_MENU_LEFT_ portlet-static portlet-static-end portlet-borderless portlet-menu-left ">
+                                <span id="p_NSS_MENU_LEFT_INSTANCE_ovLRlVQB32QD"></span>
+                                <div class="portlet-body">
+                                    <div class="portlet-borderless-container" style="">
+                                        <div class="portlet-body">
+                                            <!-- <script src="/html/js/jquery/jquery-1.9.1.min.js" type="text/javascript"></script> <script src="/html/js/jquery/materialmenu.jquery.js" type="text/javascript"></script> -->
+                                            <div id="menuLeft" class="menu-left">
+                                                <ul>
+                                                    <li><a class="hasSelect" id="parent18616" href="/web/ftc/company/history">Lịch sử hình thành</a></li>
+                                                    <li><a class="" id="parent18621" href="/web/ftc/company/quality-management-system">Hệ thống chất lượng</a></li>
+                                                    <li><a class="" id="parent18626" href="/web/ftc/company/localtion-map">Sơ đồ vị trí</a></li>
+                                                    <li><a class="" id="parent10830" href="/web/ftc/company/faq">Hỏi đáp</a></li>
+                                                    <li><a class="" id="parent10840" href="/web/ftc/company/customers">Khách hàng</a></li>
+                                                    <li><a class="" id="parent10850" href="/web/ftc/company/contact-us">Liên hệ</a></li>
+                                                </ul>
+                                            </div>
+                                            <script type="text/javascript">/*<![CDATA[*/setTimeout(function () { $("#menuLeft").load("http://www.vnaflighttraining.com.vn/web/ftc/company/history?p_p_id=NSS_MENU_LEFT_INSTANCE_ovLRlVQB32QD&p_p_lifecycle=0&p_p_state=exclusive&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=2&_NSS_MENU_LEFT_INSTANCE_ovLRlVQB32QD_struts_action=%2Fmenu_left%2Fload") }, 100);/*]]>*/</script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="p_p_id_56_INSTANCE_IqTe0sVjYHEu_" class="portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-borderless portlet-journal-content ">
+                                <span id="p_56_INSTANCE_IqTe0sVjYHEu"></span>
+                                <div class="portlet-body">
+                                    <div class="portlet-borderless-container" style="">
+                                        <div class="portlet-body">
+                                            <div class="journal-content-article" id="article_10168_10194_11809_1.2">
+                                                <p>
+                                                    <img alt="" src="/documents/10194/11312/banner-left.jpg?t=1464750342529" style="width: 100%;">
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="rightfullFTC portlet-column" id="column-2">
+                        <div class="portlet-dropzone portlet-column-content" id="layout-column_column-2">
+                            <div id="p_p_id_56_INSTANCE_kWV6iMbyPDS0_" class="portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-journal-content ">
+                                <span id="p_56_INSTANCE_kWV6iMbyPDS0"></span>
+                                <div class="portlet-body">
+                                    <section class="portlet" id="portlet_56_INSTANCE_kWV6iMbyPDS0">
+                                        <header class="portlet-topper">
+                                            <h1 class="portlet-title"><span>
+                                                <img class="icon" id="rjus" src="/nss-v4-FTCAirlines-theme/images/spacer.png" alt="Giới thiệu về TTHL" title="Giới thiệu về TTHL" style="background-image: url('/html/icons/_sprite.png'); background-position: 50% -496px; background-repeat: no-repeat; height: 16px; width: 16px;">
+                                            </span><span class="portlet-title-text">Giới thiệu về TTHL</span> </h1>
+                                            <menu class="portlet-topper-toolbar" id="portlet-topper-toolbar_56_INSTANCE_kWV6iMbyPDS0" type="toolbar"></menu>
+                                        </header>
+                                        <div class="portlet-content">
+                                            <div class=" portlet-content-container" style="">
+                                                <div class="portlet-body">
+                                                    <div class="journal-content-article" id="article_10168_10194_15504_2.4">
+                                                        <p style="margin-bottom: 0in; margin-bottom: .0001pt; text-align: justify; line-height: 150%;">&nbsp;</p>
+                                                        <p style="margin-bottom: 0in; margin-bottom: .0001pt; text-align: justify; line-height: 150%;"><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">Trung tâm Huấn luyện bay </span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">trực thuộc Tổng công ty Hàng không Việt Nam được thành lập vào năm 1998 với chức năng tổ chức công tác huấn luyện </span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">phi công, </span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">tiếp viên và nhân viên điều hành khai thác bay của Hãng HKVN.</span></span></p>
+                                                        <p style="margin-bottom: 0in; margin-bottom: .0001pt; text-align: justify; line-height: 150%;">&nbsp;</p>
+                                                        <p style="margin-bottom: 0in; margin-bottom: .0001pt; text-align: justify; line-height: 150%;"><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">Hiện nay </span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">Trung tâm Huấn luyện bay đã được Cục HKVN phê chuẩn là Cơ sở đào tạo huấn luyện nghiệp vụ nhân viên hàng không (ATO level 2)</span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">, </span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">có chức năng thực hiện </span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">đa dạng các khóa </span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">huấn luyện</span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;"> dành cho phi công, tiếp viên, </span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">nhân viên điều hành khai thác bay</span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;"> và </span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">cán bộ quản lý</span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">.</span></span></p>
+                                                        <p style="margin-bottom: 0in; margin-bottom: .0001pt; text-align: justify; line-height: 150%;">&nbsp;</p>
+                                                        <p style="margin-bottom: 0in; margin-bottom: .0001pt; text-align: justify; line-height: 150%;"><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">Bên cạnh sứ mệnh hoàn thành các kế hoạch huấn luyện đào tạo của Tổng công ty Hàng không Việt Nam, Trung </span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">tâm Huấn luyện bay </span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">đã và đang mở rộng việc cung cấp các khóa huấn luyện chất lượng cao, phát triển dịch vụ cung ứng các trang thiết bị, cơ sở vật chất phục vụ công tác huấn luyện trong và ngoài lĩnh vực hàng không cho các đối tác trong và ngoài nước như Công ty Trực thăng Miền Bắc, Công ty Trực thăng Miền Nam, Jetstar Pacific</span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;"> Airlines</span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">, Cambodia Angkor Air,</span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;"> Sky Angkor Ailines, </span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">&nbsp;Laos Airlines, Bassaka Air, Cebu Pacific Air, Skywing, v.v.</span></span></p>
+                                                        <p style="margin-bottom: 0in; margin-bottom: .0001pt; text-align: justify; line-height: 150%;">&nbsp;</p>
+                                                        <p><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">Với định hướng trở thành một tổ chức huấn luyện chuyên ngành hàng không chuyên nghiệp và có uy tín trong khu vực, Trung tâm Huấn luyện bay đã và đang cải tiến không ngừng nhằm </span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">nâng cao chất lượng công tác huấn luyện đào tạo, đáp ứng </span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;">yêu</span></span><span style="font-family: times new roman,serif;"><span style="font-size: 12.0pt;"> cầu ngày càng đa dạng và khó khăn hơn tro</span></span></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <footer class="bg-primary text-center text-white p-3">
-            {RS:Web_Footer}
-        </footer>
+            <%--<HL:DynamicControl runat="server" ID="DynamicControl" Code="Control khác"></HL:DynamicControl>--%>
+        </div>
+        <div class="footerFTC portlet-column" id="column-10">
+            <div class="portlet-dropzone portlet-column-content" id="layout-column_column-10">
+                <div class="portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-borderless portlet-journal-content ">
+                    <div class="portlet-body">
+                        <div class="portlet-borderless-container" style="">
+                            <div class="portlet-body">
+                                <div class="journal-content-article">
+                                    <div class="txtfooter">
+                                        {RS:Web_Footer}
+                                    </div>
+                                </div>
+                                <div class="entry-links"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <script src="/Content/js/jquery.min-1.12.4.js"></script>
         <script src="/Content/js/AjaxRequest.js"></script>
@@ -69,6 +180,17 @@
         <script src="/Content/bootstrap-4.0.0/js/jquery-3.1.1.slim.min.js"></script>
         <script src="/Content/bootstrap-4.0.0/js/tether.min-1.4.0.js"></script>
         <script src="/Content/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+
+        <script src="/Content/owlcarousel/owl.carousel.min.js"></script>
+        <script>
+            $('.owl-carousel').owlCarousel({
+                items: 1,
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoHeight: true
+            })
+        </script>
     </form>
 </body>
 </html>

@@ -10,8 +10,22 @@
 <body>
     <form id="hlForm" runat="server">
         <div id="hl_container">
-            <HL:StaticControl Code="CMenu" HLID="hlMenuTop" runat="server"></HL:StaticControl>
-            <HL:DynamicControl runat="server" ID="MainContent"></HL:DynamicControl>
+            <div style="float: left; width: 100%; display: block;">
+                <HL:StaticControl Code="CAdv" HLID="cLogo" runat="server"></HL:StaticControl>
+            </div>
+
+            <div style="float: left; width: 100%; display: block;">
+                <HL:StaticControl Code="CMenu" HLID="cMenuTop" runat="server"></HL:StaticControl>
+            </div>
+
+            <div style="float: left; width: 100%; display: block;">
+                <div style="float: left; width: 40%; display: block;">
+                    <HL:StaticControl runat="server" Code="CAdv" HLID="cAdvLeft"></HL:StaticControl>
+                </div>
+                <div style="float: left; width: 60%; display: block;">
+                    <HL:DynamicControl runat="server" ID="DynamicControl" Code="Control khác"></HL:DynamicControl>
+                </div>
+            </div>
         </div>
     </form>
 </body>
