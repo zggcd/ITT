@@ -141,9 +141,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col col-sm leftFTC portlet-column" id="column-1">
+                <div class="col col-sm-4 col-md leftFTC portlet-column" id="column-1">
                     <div class="portlet-dropzone portlet-column-content" id="layout-column_column-1">
-                        <div id="p_p_id_58_" class="portlet-boundary portlet-boundary_58_ portlet-static portlet-static-end portlet-login ">
+                        <div class="portlet-boundary portlet-boundary_58_ portlet-static portlet-static-end portlet-login ">
                             <span id="p_58"></span>
                             <div class="portlet-body">
                                 <section class="portlet" id="portlet_58">
@@ -191,7 +191,7 @@
                                 </section>
                             </div>
                         </div>
-                        <div id="p_p_id_56_INSTANCE_d5NBV89JgfR8_" class="portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-borderless portlet-journal-content ">
+                        <div class="d-none d-sm-block portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-borderless portlet-journal-content ">
                             <span id="p_56_INSTANCE_d5NBV89JgfR8"></span>
                             <div class="portlet-body">
                                 <div class="portlet-borderless-container" style="">
@@ -208,8 +208,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-100 d-block d-sm-none"></div>
-                <div class="col-7 col-sm-7 p-0 centerFTC">
+                <div class="col-9 col-sm-8 col-md-7 p-0 centerFTC">
                     <div class="topFTC portlet-column" id="column-2">
                         <div class="portlet-dropzone portlet-column-content" id="layout-column_column-2">
                             <div id="p_p_id_56_INSTANCE_XfHI4BGOvMQT_" class="portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-borderless portlet-journal-content ">
@@ -314,8 +313,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-100 d-sm-block d-md-none"></div>
-                <div class="col col-sm rightFTC portlet-column" id="column-5">
+                <div class="col col-sm-12 col-md rightFTC portlet-column" id="column-5">
                     <div class="portlet-dropzone portlet-column-content" id="layout-column_column-5">
                         <div id="p_p_id_6110_WAR_ui61portlet_" class="portlet-boundary portlet-boundary_6110_WAR_ui61portlet_ portlet-static portlet-static-end 6110-portlet ">
                             <span id="p_6110_WAR_ui61portlet"></span>
