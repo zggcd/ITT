@@ -19,12 +19,7 @@
             </div>
 
             <div style="float: left; width: 100%; display: block;">
-                <div style="float: left; width: 40%; display: block;">
-                    <HL:DynamicControl runat="server" ID="LeftDynamicControl" Code="Control khác - Trái"></HL:DynamicControl>
-                </div>
-                <div style="float: left; width: 60%; display: block;">
-                    <HL:DynamicControl runat="server" ID="RightDynamicControl" Code="Control khác - Phải"></HL:DynamicControl>
-                </div>
+                <HL:DynamicControl runat="server" ID="Main" Code="Control khác"></HL:DynamicControl>
             </div>
         </div>
     </form>

@@ -66,9 +66,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\CAdvController.cs" />
+    <Compile Include="Controllers\CConfigSendMailController.cs" />
+    <Compile Include="Controllers\CInfoController.cs" />
     <Compile Include="Controllers\CMenuController.cs" />
     <Compile Include="Controllers\CFeedbackController.cs" />
     <Compile Include="Controllers\CContentController.cs" />
+    <Compile Include="Controllers\MConfigSendMailController.cs" />
+    <Compile Include="Controllers\MInfoController.cs" />
     <Compile Include="Controllers\MSearchController.cs" />
     <Compile Include="Controllers\MSiteMapController.cs" />
     <Compile Include="Controllers\CTextController.cs" />
@@ -79,6 +83,7 @@
     <Compile Include="CPControllers\AjaxController.cs" />
     <Compile Include="CPControllers\FormTextController.cs" />
     <Compile Include="CPControllers\FormNewsController.cs" />
+    <Compile Include="CPControllers\ModConfigSendMailController.cs" />
     <Compile Include="CPControllers\ModFeedbackController.cs" />
     <Compile Include="CPControllers\ModAdvController.cs" />
     <Compile Include="CPControllers\ModFileController.cs" />
@@ -119,6 +124,7 @@
     <Compile Include="Global\Mail.cs" />
     <Compile Include="Global\Message.cs" />
     <Compile Include="Global\Pager.cs" />
+    <Compile Include="Global\PS.cs" />
     <Compile Include="Global\Security.cs" />
     <Compile Include="Global\Sitemap.cs" />
     <Compile Include="Global\Template.cs" />
@@ -133,11 +139,13 @@
     <Compile Include="Models\CPUserRoleModel.cs" />
     <Compile Include="Global\Permissions.cs" />
     <Compile Include="Models\ModAdvModel.cs" />
+    <Compile Include="Models\ModConfigSendMailModel.cs" />
     <Compile Include="Models\ModFeedbackModel.cs" />
     <Compile Include="Models\ModNewsModel.cs" />
     <Compile Include="Models\ModNewsTagModel.cs" />
     <Compile Include="Models\ModOnlineModel.cs" />
     <Compile Include="Models\ModTagModel.cs" />
+    <Compile Include="Models\ModUserResetPassModel.cs" />
     <Compile Include="Models\SysLangModel.cs" />
     <Compile Include="Models\SysModuleModel.cs" />
     <Compile Include="Models\SysPageModel.cs" />

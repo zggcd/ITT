@@ -57,7 +57,32 @@
         }
 </style>
 
-<div class="container-fluid">
+<section class="portlet">
+    <header class="portlet-topper">
+        <h1 class="portlet-title"><span class="portlet-title-text"><%=ViewPage.CurrentPage.Name %></span> </h1>
+    </header>
+    <div class="portlet-content">
+        <div class=" portlet-content-container" style="">
+            <div class="portlet-body">
+                    <asp:TreeView CssClass="sitemap" ID="tvMap" runat="server" ImageSet="BulletedList4">
+                        <Nodes></Nodes>
+                        <NodeStyle Font-Names="Tahoma" Font-Size="12pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+                        <ParentNodeStyle />
+                        <HoverNodeStyle Font-Underline="True" ForeColor="#FF0000" />
+                        <SelectedNodeStyle Font-Underline="True" ForeColor="#FF0000" HorizontalPadding="0px" VerticalPadding="0px" />
+                    </asp:TreeView>
+            </div>
+        </div>
+    </div>
+</section>
+<input type="hidden" value="<%= Utils.GetMapPage(ViewPage.CurrentPage, "", "")%>" id="TpmBreadCrumbs" />
+<script>
+    $(document).ready(function () {
+        $('#AutoGenBreadcrumbs').after($('#TpmBreadCrumbs').val());
+    });
+</script>
+
+<%--<div class="container-fluid">
     <nav class="breadcrumb">
         <a class="breadcrumb-item" href="/">{RS:Web_HOME}</a>
         <%= Utils.GetMapPage(ViewPage.CurrentPage, "", "breadcrumb-item")%>
@@ -69,4 +94,4 @@
         <HoverNodeStyle Font-Underline="True" ForeColor="#FF0000" />
         <SelectedNodeStyle Font-Underline="True" ForeColor="#FF0000" HorizontalPadding="0px" VerticalPadding="0px" />
     </asp:TreeView>
-</div>
+</div>--%>

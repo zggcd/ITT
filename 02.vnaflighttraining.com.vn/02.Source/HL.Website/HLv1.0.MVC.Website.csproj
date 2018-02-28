@@ -96,6 +96,8 @@
     <Content Include="Content\bootstrap-4.0.0\js\jquery-3.1.1.slim.min.js" />
     <Content Include="Content\bootstrap-4.0.0\js\tether.min-1.4.0.js" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\imgs\dk-refresh.png" />
+    <Content Include="Content\imgs\loading.gif" />
     <Content Include="Content\js\AjaxRequest.js" />
     <Content Include="Content\js\Function.js" />
     <Content Include="Content\js\javascript.js" />
@@ -1524,6 +1526,8 @@
     <Content Include="TTPortal\Content\templates\system\css\system.css" />
     <Content Include="TTPortal\Tools\UpdateSiteMap.aspx" />
     <Content Include="TTPortal\Views\FormText\Index.ascx" />
+    <Content Include="TTPortal\Views\ModConfigSendMail\Add.ascx" />
+    <Content Include="TTPortal\Views\ModConfigSendMail\Index.ascx" />
     <Content Include="TTPortal\Views\ModTag\Add.ascx" />
     <Content Include="TTPortal\Views\ModTag\Index.ascx" />
     <Content Include="Views\CAdv\Default.ascx" />
@@ -1531,11 +1535,20 @@
     <Content Include="Views\CAdv\Logo.ascx" />
     <Content Include="Views\CFeedback\TempDefault.ascx" />
     <Content Include="Views\CFeedback\Default.ascx" />
+    <Content Include="Views\CInfo\Login.ascx" />
+    <Content Include="Views\CInfo\Register.ascx" />
     <Content Include="Views\CMenu\ListChild.ascx" />
+    <Content Include="Views\CMenu\Left.ascx" />
     <Content Include="Views\CMenu\Top.ascx" />
     <Content Include="Views\CContent\Default.ascx" />
     <Content Include="Views\MContentTemp\Index.ascx" />
     <Content Include="Views\MContent\MangLuoi.ascx" />
+    <Content Include="Views\MInfo\ChangePass.ascx" />
+    <Content Include="Views\MInfo\Detail.ascx" />
+    <Content Include="Views\MInfo\Index.ascx" />
+    <Content Include="Views\MInfo\Info.ascx" />
+    <Content Include="Views\MInfo\Login.ascx" />
+    <Content Include="Views\MInfo\ResetPass.ascx" />
     <Content Include="Views\MSiteMapTemp\Index.ascx" />
     <Content Include="Views\MSiteMap\Index.ascx" />
     <Content Include="Views\MSearch\Index.ascx" />
@@ -1617,7 +1630,6 @@
     <Content Include="TTPortal\Views\Lang\vi-VN.ini" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\imgs\" />
     <Folder Include="Content\skins\html\css\images\forms\" />
     <Folder Include="Content\skins\html\css\portal\%40theme_image_path%40\add_content\" />
     <Folder Include="Content\skins\html\css\portal\%40theme_image_path%40\application\" />
@@ -1682,6 +1694,8 @@
     <Content Include="TTPortal\Content\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="TTPortal\Content\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="TTPortal\Content\ckfinder\userfiles\.htaccess" />
+    <Content Include="Views\Shared\ChildFluid.Master" />
+    <Content Include="Views\Design\ChildFluid.Master" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HL.Lib\HLv1.0.MVC.Lib.csproj">

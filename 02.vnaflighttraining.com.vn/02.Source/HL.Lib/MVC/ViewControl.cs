@@ -1,4 +1,6 @@
-﻿namespace HL.Lib.MVC
+﻿using HL.Core.Models;
+
+namespace HL.Lib.MVC
 {
     public class ViewControl : HL.Core.MVC.ViewControl
     {
@@ -29,6 +31,11 @@
             _Pager.Update();
 
             return _Pager.HtmlPage;
+        }
+
+        public static string GetName(EntityBase entityBase)
+        {
+            return entityBase == null ? string.Empty : entityBase.Name;
         }
     }
 }

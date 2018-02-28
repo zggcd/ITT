@@ -23,6 +23,7 @@
 
             <div style="float: left; width: 100%; display: block;">
                 <div style="float: left; width: 30%; display: block;">
+                    <HL:StaticControl runat="server" Code="CInfo" HLID="cLogin"></HL:StaticControl>
                     <HL:StaticControl runat="server" Code="CAdv" HLID="cAdvLeft"></HL:StaticControl>
                 </div>
                 <div style="float: left; width: 40%; display: block;">

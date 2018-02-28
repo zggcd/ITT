@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Web;
 using System.Text.RegularExpressions;
 using HL.Lib.Models;
+using Microsoft.Win32;
+using System.Collections.Concurrent;
 
 namespace HL.Lib.Global
 {
@@ -171,6 +173,71 @@ namespace HL.Lib.Global
             return s;
         }
 
+        public static string ShowTextByType3(string type, int langID, string selectIDs, string idName)
+        {
+            string s = string.Empty;
+
+            List<WebMenuEntity> list = WebMenuService.Instance.CreateQuery()
+                                        .Where(o => o.ParentID == 0 && o.LangID == langID && o.Type == type)
+                                        .OrderByAsc(o => o.Order)
+                                        .ToList_Cache();
+
+            if (list != null)
+            {
+                int _parent_id = list[0].ID;
+
+                list = WebMenuService.Instance.CreateQuery()
+                        .Where(o => o.ParentID == _parent_id)
+                        .OrderByAsc(o => o.Order)
+                        .ToList_Cache();
+
+                string split = ";";
+
+                for (int i = 0; list != null && i < list.Count; i++)
+                {
+                    if (selectIDs != null && selectIDs.Contains(list[i].ID.ToString()))
+                    {
+                        if (i == list.Count - 1) split = "";
+                        s += list[i].Name + split;
+                    }
+                }
+            }
+
+            return s.Trim(';');
+        }
+
+        public static string ShowDDLMenuByType3(string type, int langID, string selectIDs, string idName)
+        {
+            string s = string.Empty;
+
+            List<WebMenuEntity> list = WebMenuService.Instance.CreateQuery()
+                                        .Where(o => o.ParentID == 0 && o.LangID == langID && o.Type == type)
+                                        .OrderByAsc(o => o.Order)
+                                        .ToList_Cache();
+
+            if (list != null)
+            {
+                int _parent_id = list[0].ID;
+
+                list = WebMenuService.Instance.CreateQuery()
+                        .Where(o => o.ParentID == _parent_id)
+                        .OrderByAsc(o => o.Order)
+                        .ToList_Cache();
+
+                for (int i = 0; list != null && i < list.Count; i++)
+                {
+                    string sChecked = "";
+                    if (selectIDs != null && selectIDs.Contains(list[i].ID.ToString()))
+                    {
+                        sChecked = "checked";
+                    }
+                    s += "<label><input type=\"checkbox\" name=\"Arr" + idName + "\" value=\"" + list[i].ID.ToString() + "\" " + sChecked + " onclick=\"fnSetCheck(event, '" + list[i].Name + "', '#" + idName + "')\" />" + list[i].Name + "</label>";
+                }
+            }
+
+            return s;
+        }
+
         public static string ShowDDLMenuByType2(string type, int langID, int selectID)
         {
             string s = string.Empty;
@@ -278,9 +345,41 @@ namespace HL.Lib.Global
             if (Page.ID == ViewPage.CurrentPage.ID)
             {
                 if (CssClass != string.Empty)
-                    sMap = string.Format("<span class='{2}'>{1}</span>", ViewPage.GetPageURL(Page), Page.Name, CssClass);
+                    sMap = string.Format("<li class='last'><span class='{2}'><a>{1}</a></span></li>", ViewPage.GetPageURL(Page), Page.Name, CssClass);
                 else
-                    sMap = string.Format("<span>{1}</span>", ViewPage.GetPageURL(Page), Page.Name);
+                    sMap = string.Format("<li class='last'><span><a>{1}</a></span></li>", ViewPage.GetPageURL(Page), Page.Name);
+            }
+            else
+            {
+                if (CssClass != string.Empty)
+                    sMap = string.Format("<li><span><a href='{0}' class='{2}'>{1}</a></span></li>", ViewPage.GetPageURL(Page), Page.Name, CssClass);
+                else
+                    sMap = string.Format("<li><span><a href='{0}'>{1}</a></span></li>", ViewPage.GetPageURL(Page), Page.Name);
+            }
+
+            SysPageEntity _Parent = SysPageService.Instance.GetByID_Cache(Page.ParentID);
+
+            if (_Parent == null || _Parent.Root)
+                return sMap;
+            else
+                return GetMapPage(_Parent, Space, CssClass) + Space + sMap;
+        }
+
+        public static string GetMapPage2(SysPageEntity Page, string Space, string CssClass)
+        {
+            if (Page == null || Page.Root)
+                return string.Empty;
+
+            HL.Lib.MVC.ViewPage ViewPage = HL.Core.Web.Application.CurrentViewPage as HL.Lib.MVC.ViewPage;
+
+            string sMap = string.Empty;
+
+            if (Page.ID == ViewPage.CurrentPage.ID)
+            {
+                if (CssClass != string.Empty)
+                    sMap = string.Format("<a href='{0}' class='{2}'><span class='{2}'>{1}</span></a>", ViewPage.GetPageURL(Page), Page.Name, CssClass);
+                else
+                    sMap = string.Format("<a href='{0}'><span>{1}</span></a>", ViewPage.GetPageURL(Page), Page.Name);
             }
             else
             {
@@ -480,6 +579,123 @@ namespace HL.Lib.Global
         public static string GetMedia(string Url)
         {
             return GetMedia(2, Url, null, 0, 0, null, true, null);
+        }
+
+        public const string CodauChars =
+            "?&,/àáảãạâầấẩẫậăằắẳẵặèéẻẽẹêềếểễệđìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵÀÁẢÃẠÂẦẤẨẪẬĂẰẮẲẴẶÈÉẺẼẸÊỀẾỂỄỆĐÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴ";
+
+        public const string KodauChars =
+            "____aaaaaaaaaaaaaaaaaeeeeeeeeeeediiiiiooooooooooooooooouuuuuuuuuuuyyyyyAAAAAAAAAAAAAAAAAEEEEEEEEEEEDIIIIIOOOOOOOOOOOOOOOOOOOUUUUUUUUUUUYYYYY";
+
+        public static string Codau2Khongdau(string input, string separateBy)
+        {
+            string temp = string.Empty;
+            string[] replace = { "“", "”", "'", "\"", "?", ":", "'", "=", "&", "(", ")", "[", "]", "%", "~", "!", "#", "$", "^", "*", "+", "<", ">", @"\", "|", "/", "." };
+            for (int i = 0; i < replace.Length; i++)
+            {
+                input = input.Replace(replace[i], "");
+            }
+            input = Regex.Replace(input, @"\s+", " ").Replace(" - ", separateBy).Replace("'", "").Replace("\"", "").TrimEnd();
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[i].ToString() == " " || input[i].ToString() == "-")
+                    temp += separateBy;
+                else
+                {
+                    int pos = CodauChars.IndexOf(input[i].ToString(), System.StringComparison.Ordinal);
+                    if (pos >= 0)
+                        temp += KodauChars[pos];
+                    else
+                        temp += input[i];
+                }
+            }
+
+            return temp;
+        }
+
+        public static string Upload(string name, string old, string sDir, ref string alert)
+        {
+            return Upload(name, old, sDir, ref alert, false);
+        }
+
+        public static string Upload(string name, string old, string sDir, ref string alert, bool overide)
+        {
+            string sFile = string.Empty;
+            HttpPostedFile DKKD = HttpContext.Current.Request.Files[name];
+            if (DKKD != null && DKKD.FileName.Length > 0)
+            {
+                string _fileName = DKKD.FileName;
+                if (DKKD.ContentLength > 2 * 1024 * 1024 && !_fileName.Contains(".pdf"))
+                {
+                    alert += @"\r\nKích cỡ " + name + " không được lớn hơn 2mb.";
+                    return string.Empty;
+                }
+                else
+                {
+                    try
+                    {
+                        string sDirFull = HL.Core.Global.Application.BaseDirectory + sDir;
+                        //if (!System.IO.Directory.Exists(sDirFull))
+                        //    System.IO.Directory.CreateDirectory(sDirFull);
+                        sFile = sDir +
+                                HL.Lib.Global.Data.GetCode(System.IO.Path.GetFileNameWithoutExtension(_fileName)) +
+                                System.IO.Path.GetExtension(_fileName);
+                        string sFileFull = HL.Core.Global.Application.BaseDirectory + sFile;
+                        System.IO.FileInfo fi = new System.IO.FileInfo(sFileFull);
+                        //Kiểm tra tồn tại, nếu tồn tại thì xóa
+                        bool exits = fi.Exists;
+                        if (exits)
+                        {
+                            if (overide)
+                            {
+                                string unique = string.Format("{0:ddMMyyyyhhmmss}", DateTime.Now);
+                                sFile = sDir + Data.GetCode(System.IO.Path.GetFileNameWithoutExtension(_fileName)) + "_" + unique + System.IO.Path.GetExtension(_fileName);
+                                sFileFull = HL.Core.Global.Application.BaseDirectory + sFile;
+                            }
+                            else
+                            {
+                                fi.Delete();
+                            }
+                        }
+                        if (!string.IsNullOrEmpty(old) && old != sFile)
+                            if (System.IO.File.Exists(HL.Core.Global.Application.BaseDirectory + old.Replace("~/", "/")))
+                                System.IO.File.Delete(HL.Core.Global.Application.BaseDirectory + old.Replace("~/", "/"));
+                        //them vao db
+                        DKKD.SaveAs(sFileFull);
+                    }
+                    catch (Exception ex)
+                    {
+                        Error.Write("Loi upload file : " + ex.Message);
+                    }
+                }
+            }
+            if (!string.IsNullOrEmpty(sFile))
+                return "~" + sFile;
+            else return "";
+        }
+
+        private static ConcurrentDictionary<string, string> MimeTypeToExtension = new ConcurrentDictionary<string, string>();
+        private static ConcurrentDictionary<string, string> ExtensionToMimeType = new ConcurrentDictionary<string, string>();
+
+        public static string ConvertMimeTypeToExtension(string mimeType)
+        {
+            if (string.IsNullOrWhiteSpace(mimeType))
+                throw new ArgumentNullException("mimeType");
+
+            string key = string.Format(@"MIME\Database\Content Type\{0}", mimeType);
+            string result;
+            if (MimeTypeToExtension.TryGetValue(key, out result))
+                return result;
+
+            RegistryKey regKey;
+            object value;
+
+            regKey = Registry.ClassesRoot.OpenSubKey(key, false);
+            value = regKey != null ? regKey.GetValue("Extension", null) : null;
+            result = value != null ? value.ToString() : string.Empty;
+
+            MimeTypeToExtension[key] = result;
+            return result;
         }
     }
 }

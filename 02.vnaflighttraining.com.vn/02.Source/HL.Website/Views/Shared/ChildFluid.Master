@@ -51,8 +51,8 @@
                                 {%>
                             <a href="/vn/Thanh-vien/Dang-nhap.aspx" id="sign-in" rel="nofollow">Đăng nhập</a>
                             <%}
-                                else
-                                {%>
+                            else
+                            {%>
                             <span id="sign-in">Xin chào <%=CPLogin.CurrentUser.Name %>!
                             <a href="/vn/Thanh-vien/Dang-xuat.aspx" rel="nofollow">Đăng xuất</a></span>
                             <%}%>
@@ -77,23 +77,8 @@
             </header>
 
             <div class="row">
-                <div class="col col-sm-3">
-                    <div class="leftFTC portlet-column" id="column-1">
-                        <div class="portlet-dropzone portlet-column-content" id="layout-column_column-1">
-                            <HL:DynamicControl runat="server" ID="LeftDynamicControl" Code="Control khác - Trái"></HL:DynamicControl>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-sm-9">
-                    <div class="rightfullFTC portlet-column" id="column-2">
-                        <div class="portlet-dropzone portlet-column-content" id="layout-column_column-2">
-                            <div class="portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-journal-content portlet-asset-publisher">
-                                <div class="portlet-body">
-                                    <HL:DynamicControl runat="server" ID="RightDynamicControl" Code="Control khác - Phải"></HL:DynamicControl>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col">
+                    <HL:DynamicControl runat="server" ID="Main" Code="Control khác"></HL:DynamicControl>
                 </div>
             </div>
 

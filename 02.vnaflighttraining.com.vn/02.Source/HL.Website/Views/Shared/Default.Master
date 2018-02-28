@@ -22,6 +22,8 @@
     <link href="/Content/owlcarousel/owl.theme.default.min.css" rel="stylesheet" />
     <link href="/Content/skins/theme/css/main.css" rel="stylesheet" />
     <link href="/Content/css/style.css" rel="stylesheet" />
+
+    <script src="/Content/js/jquery.min-1.12.4.js"></script>
 </head>
 <body class=" yui3-skin-sam controls-visible guest-site signed-out public-page site">
     <form id="hlForm" runat="server">
@@ -48,10 +50,17 @@
                                 <li class="first"><span><a href="/">FTC Vietnam Airlines</a></span></li>
                                 <li class="last"><span><a href="/">Trang chủ</a></span></li>
                             </ul>
-                            <a href="#" id="sign-in" rel="nofollow">Đăng nhập</a>
+                            <%if (!HL.Lib.Global.CPLogin.IsLogin())
+                                {%>
+                            <a href="/vn/Thanh-vien/Dang-nhap.aspx" id="sign-in" rel="nofollow">Đăng nhập</a>
+                            <%}
+                                else
+                                {%>
+                            <span id="sign-in">Xin chào <%=CPLogin.CurrentUser.Name %>!
+                            <a href="/vn/Thanh-vien/Dang-xuat.aspx" rel="nofollow">Đăng xuất</a></span>
+                            <%}%>
                             <div class="lang">
-                                <div id="p_p_id_LANGUAGE_EXT_" class="portlet-boundary portlet-boundary_LANGUAGE_EXT_ portlet-static portlet-static-end portlet-borderless portlet-language_ext ">
-                                    <span id="p_LANGUAGE_EXT"></span>
+                                <div class="portlet-boundary portlet-boundary_LANGUAGE_EXT_ portlet-static portlet-static-end portlet-borderless portlet-language_ext ">
                                     <div class="portlet-body">
                                         <div class="portlet-borderless-container" style="">
                                             <div class="portlet-body">
@@ -76,49 +85,7 @@
                         <div class="portlet-boundary portlet-boundary_58_ portlet-static portlet-static-end portlet-login ">
                             <span id="p_58"></span>
                             <div class="portlet-body">
-                                <section class="portlet" id="portlet_58">
-                                    <header class="portlet-topper">
-                                        <h1 class="portlet-title"><span>
-                                            <img class="icon" id="tbsm" src="/Content/skins/theme/images/spacer.png" alt="Đăng nhập" title="Đăng nhập" style="background-image: url('/Content/skins/html/icons/_sprite.png'); background-position: 50% -592px; background-repeat: no-repeat; height: 16px; width: 16px;" />
-                                        </span><span class="portlet-title-text">Đăng nhập</span> </h1>
-                                        <menu class="portlet-topper-toolbar" id="portlet-topper-toolbar_58" type="toolbar"></menu>
-                                    </header>
-                                    <div class="portlet-content">
-                                        <div class=" portlet-content-container" style="">
-                                            <div class="portlet-body">
-                                                <form action="/web/ftc/home?p_auth=1uMQ6be6&amp;p_p_id=58&amp;p_p_lifecycle=1&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-1&amp;p_p_col_count=2&amp;saveLastPath=0&amp;_58_struts_action=%2Flogin%2Flogin&amp;_58_doActionAfterLogin=false" class="aui-form " id="_58_fm" method="post" name="_58_fm">
-                                                    <input class="aui-field-input aui-field-input-text" id="_58_redirect" name="_58_redirect" type="hidden" value="" />
-                                                    <div class="BoxLogin">
-                                                        <span class="aui-field aui-field-text"><span class="aui-field-content">
-                                                            <label class="aui-field-label" for="_58_login">Người dùng </label>
-                                                            <span class='aui-field-element '>
-                                                                <input class="aui-field-input aui-field-input-text" id="_58_login" name="_58_login" placeholder="Đăng nhập" type="text" value="" />
-                                                            </span></span></span><span class="aui-field aui-field-text"><span class="aui-field-content">
-                                                                <label class="aui-field-label" for="_58_password">Mật khẩu </label>
-                                                                <span class='aui-field-element '>
-                                                                    <input class="aui-field-input aui-field-input-text" id="_58_password" name="_58_password" placeholder="Mật khẩu" type="password" value="" />
-                                                                </span></span></span><span id="_58_passwordCapsLockSpan" style="display: none;">Phím chuyển chữ hoa đang bật.</span> <span class="aui-field aui-field-choice"><span class="aui-field-content"><span class='aui-field-element aui-field-label-right'>
-                                                                    <input id="_58_rememberMe" name="_58_rememberMe" type="hidden" value="false" />
-                                                                    <input class="aui-field-input aui-field-input-choice" id="_58_rememberMeCheckbox" name="_58_rememberMeCheckbox" onclick="" type="checkbox" value="true" />
-                                                                </span>
-                                                                    <label class="aui-field-label" for="_58_rememberMeCheckbox">Duy trì đăng nhập </label>
-                                                                </span></span>
-                                                        <div class="aui-button-holder ">
-                                                            <span class="aui-button aui-button-submit"><span class="aui-button-content">
-                                                                <input class="aui-button-input aui-button-input-submit" type='submit' value="Đăng nhập" />
-                                                            </span></span>
-                                                        </div>
-                                                        <div class="navigation">
-                                                            <span><a class="taglib-icon" href="#" id="_58_xnby">
-                                                                <img class="icon" src="/Content/skins/theme/images/spacer.png" alt="" style="background-image: url('/Content/skins/theme/images/common/_sprite.png'); background-position: 50% -641px; background-repeat: no-repeat; height: 16px; width: 16px;" />
-                                                                <span class="taglib-text">Quên mật khẩu</span> </a></span>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
+                                <HL:StaticControl runat="server" Code="CInfo" HLID="cLogin"></HL:StaticControl>
                             </div>
                         </div>
                         <div class="d-none d-md-block portlet-boundary portlet-boundary_56_ portlet-static portlet-static-end portlet-borderless portlet-journal-content ">
@@ -252,7 +219,6 @@
             {RS:Web_Footer}
         </footer>--%>
 
-        <script src="/Content/js/jquery.min-1.12.4.js"></script>
         <script src="/Content/js/AjaxRequest.js"></script>
         <script src="/Content/js/Function.js"></script>
         <script src="/Content/js/javascript.js"></script>

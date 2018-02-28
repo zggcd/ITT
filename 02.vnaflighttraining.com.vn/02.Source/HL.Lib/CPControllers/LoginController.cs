@@ -11,7 +11,9 @@ namespace HL.Lib.CPControllers
 
         public void ActionLogin(LoginModel loginModel)
         {
-            if (CPLogin.CheckLogin(loginModel.UserName, loginModel.Password))
+            //if (CPLogin.CheckLogin(loginModel.UserName, loginModel.Password))
+            //{
+            if (CPLogin.CheckLogin1(loginModel.UserName, loginModel.Password))
             {
                 CPViewPage.SetLog("Đăng nhập hệ thống.");
 

@@ -87,7 +87,8 @@ namespace HL.Lib.CPControllers
             if (CPViewPage.Message.ListMessage.Count == 0)
             {
                 if (model.NewPassword != string.Empty)
-                    entity.Password = HL.Lib.Global.Security.MD5(model.NewPassword);
+                    //entity.Password = HL.Lib.Global.Security.MD5(model.NewPassword);
+                    entity.Password = Global.Security.GetPass(model.NewPassword);
 
                 try
                 {
