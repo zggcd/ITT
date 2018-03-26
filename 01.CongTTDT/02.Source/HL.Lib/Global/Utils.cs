@@ -5,6 +5,13 @@ using System.Text.RegularExpressions;
 using HL.Lib.Models;
 using Microsoft.Win32;
 using System.Collections.Concurrent;
+using System.Xml;
+using System.Data;
+using System.Globalization;
+using System.Net;
+using System.IO;
+using System.Text;
+using HtmlAgilityPack;
 
 namespace HL.Lib.Global
 {
@@ -274,6 +281,19 @@ namespace HL.Lib.Global
             for (int i = 0; list != null && i < list.Count; i++)
             {
                 s += "<option " + (list[i].Value == selectID.ToString() ? "selected" : string.Empty) + " value=\"" + list[i].Value + "\">&nbsp; " + list[i].Name + "</option>";
+            }
+
+            return s;
+        }
+
+        public static string ShowDDLActivity(int activity)
+        {
+            string s = string.Empty;
+
+            for (int i = 1; i <= 2; i++)
+            {
+                s += "<option " + (i == activity ? "selected" : string.Empty) + " value=\"" + i + "\">" +
+                     (i == 1 ? "Duyệt" : "Bỏ duyệt") + "</option>";
             }
 
             return s;
@@ -625,9 +645,9 @@ namespace HL.Lib.Global
             if (DKKD != null && DKKD.FileName.Length > 0)
             {
                 string _fileName = DKKD.FileName;
-                if (DKKD.ContentLength > 2 * 1024 * 1024 && !_fileName.Contains(".pdf"))
+                if (DKKD.ContentLength > 5 * 1024 * 1024)
                 {
-                    alert += @"\r\nKích cỡ " + name + " không được lớn hơn 2mb.";
+                    alert += @"\r\nKích cỡ " + name + " không được lớn hơn 5MB.";
                     return string.Empty;
                 }
                 else
@@ -696,6 +716,249 @@ namespace HL.Lib.Global
 
             MimeTypeToExtension[key] = result;
             return result;
+        }
+
+        // check existed news by code.
+        public static bool CheckNews(string code, string title)
+        {
+            var entity = ModRSSService.Instance.CreateQuery().Where(o => o.Code.Contains(code) || o.Name.Contains(title)).ToSingle();
+            if (entity == null)
+                return false;
+            else
+                return true;
+        }
+
+        // get html content
+        public static string GetHTML(string url)
+        {
+            if (string.IsNullOrEmpty(url))
+            {
+                return "";
+            }
+            string html = "";
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            var response = (HttpWebResponse)request.GetResponse();
+            Stream responseStream = response.GetResponseStream();
+            var reader = new StreamReader(responseStream, Encoding.UTF8);
+            html = reader.ReadToEnd();
+            response.Close();
+            reader.Close();
+            return html;
+        }
+
+        /// <summary>
+        /// Code cu: lay RSS (khong lay noi dung)
+        /// </summary>
+        /// <param name="url">Duong dan url</param>
+        /// <param name="startHtml">Doan html bat dau</param>
+        /// <param name="startIndex">Vi tri bat dau lay trong xau html</param>
+        /// <param name="endHtml">Doan html ket thuc</param>
+        /// <returns></returns>
+        public static string GetContentFromURL(string url, string startHtml, int startIndex, string endHtml)
+        {
+            string content = string.Empty;
+            int start = url.IndexOf("http://");
+            int end = url.IndexOf(".html");
+            url = url.Substring(start, (end - start) + 5);
+            content = GetHTML(url);
+            int t = 0;
+            int b = 0;
+            t = content.IndexOf(startHtml);
+            if (t > 0)
+                content = content.Substring(t + startIndex, content.Length - t - startIndex);
+
+            b = content.LastIndexOf(endHtml);
+            content = content.Substring(0, b);
+
+            return content;
+        }
+
+        /// <summary>
+        /// Code moi: lay RSS (lay ca noi dung)
+        /// </summary>
+        /// <param name="url">Duong dan url</param>
+        /// <param name="get_tagname">Ten the: Node cha chua noi dung lay</param>
+        /// <param name="get_classorid">Ten lop hoac id cua Node cha chua noi dung lay</param>
+        /// <param name="remov_tagname">Ten the (bao gom ca node con) can xoa trong Node cha lay o tren</param>
+        /// <param name="remove_classorid">Ten lop hoac id cua Node can xoa</param>
+        /// <returns></returns>
+        public static string GetContentFromURL(string url, string get_tagname, string get_classorid, string remov_tagname, string remove_classorid)
+        {
+            string content = string.Empty;
+
+            var webGet = new HtmlWeb();
+            var doc = webGet.Load(url);
+            //HtmlDocument doc = new HtmlDocument();
+            //doc.Load("file.htm");
+
+            var divs = !string.IsNullOrEmpty(get_tagname) && !string.IsNullOrEmpty(get_classorid)
+                ? doc.DocumentNode.SelectSingleNode("//" + get_tagname + "[@" + get_classorid + "]")
+                : null;
+            var divRemove = !string.IsNullOrEmpty(remov_tagname) && !string.IsNullOrEmpty(remove_classorid) && divs != null
+                ? divs.SelectSingleNode("//" + remov_tagname + "[@" + remove_classorid + "]")
+                : null;
+            if (divs == null) return content;
+            content = divRemove != null ? divs.InnerHtml.Replace(divRemove.OuterHtml, "").Trim() : divs.InnerHtml.Trim();
+
+            return content;
+        }
+
+        public static void GetContentFromRSS(string domain, string rss, int menuID, string gettag, string getclass, string deltag, string delclass)
+        {
+            try
+            {
+                var reader = new XmlTextReader(rss);
+                var ds = new DataSet();
+                try { ds.ReadXml(reader); }
+                catch { }
+
+                for (int i = 0; ds.Tables["item"] != null && i < ds.Tables["item"].Rows.Count; i++)
+                {
+                    try
+                    {
+                        string pubdate = ds.Tables["item"].Rows[i]["pubDate"].ToString();
+
+                        string[] formats =
+                        {
+                            "M/d/yyyy h:mm:ss tt", "M/d/yyyy h:mm tt",
+                            "MM/dd/yyyy hh:mm:ss", "M/d/yyyy h:mm:ss",
+                            "M/d/yyyy hh:mm tt", "M/d/yyyy hh tt",
+                            "M/d/yyyy h:mm", "M/d/yyyy h:mm",
+                            "MM/dd/yyyy hh:mm", "M/dd/yyyy hh:mm",
+                            "yyyy/M/d h:mm:ss tt", "yyyy/M/d h:mm tt",
+                            "yyyy/MM/dd hh:mm:ss", "yyyy/MM/dd h:mm:ss",
+                            "yyyy/M/d hh:mm tt", "yyyy/M/d hh tt",
+                            "yyyy/M/d h:mm", "yyyy/M/d h:mm",
+                            "yyyy/MM/dd hh:mm", "yyyy/MM/dd hh:mm",
+                            "M-d-yyyy h:mm:ss tt", "M-d-yyyy h:mm tt",
+                            "MM-dd-yyyy hh:mm:ss", "M-d-yyyy h:mm:ss",
+                            "M-d-yyyy hh:mm tt", "M-d-yyyy hh tt",
+                            "M-d-yyyy h:mm", "M-d-yyyy h:mm",
+                            "MM-dd-yyyy hh:mm", "M-dd-yyyy hh:mm",
+                            "yyyy-M-d h:mm:ss tt", "yyyy-M-d h:mm tt",
+                            "yyyy-MM-dd hh:mm:ss", "yyyy-MM-dd h:mm:ss", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd H:mm:ss",
+                            "yyyy-M-d hh:mm tt", "yyyy-M-d hh tt",
+                            "yyyy-M-d h:mm", "yyyy-M-d h:mm",
+                            "yyyy-MM-dd hh:mm", "yyyy-MM-dd hh:mm",
+
+                            "MM/dd/yyyy HH:mm:ss",
+                            "M/d/yyyy HH:mm tt", "M/d/yyyy HH tt",
+                            "MM/dd/yyyy HH:mm", "M/dd/yyyy HH:mm",
+                            "yyyy/MM/dd HH:mm:ss",
+                            "yyyy/M/d HH:mm tt", "yyyy/M/d HH tt",
+                            "yyyy/MM/dd HH:mm", "yyyy/MM/dd HH:mm",
+                            "MM-dd-yyyy HH:mm:ss",
+                            "M-d-yyyy HH:mm tt", "M-d-yyyy HH tt",
+                            "MM-dd-yyyy HH:mm", "M-dd-yyyy HH:mm","yyyy-M-d H:mm:ss tt", "yyyy-M-d H:mm tt",
+                            "M-d-yyyy H:mm", "M-d-yyyy H:mm",
+                            "M-d-yyyy H:mm:ss tt", "M-d-yyyy H:mm tt", "M-d-yyyy H:mm:ss",
+                            "yyyy/M/d H:mm", "yyyy/M/d H:mm",
+                            "yyyy/M/d H:mm:ss tt", "yyyy/M/d H:mm tt", "yyyy/MM/dd H:mm:ss",
+                            "M/d/yyyy H:mm", "M/d/yyyy H:mm", "M/d/yyyy H:mm:ss", "M/d/yyyy H:mm:ss tt", "M/d/yyyy H:mm tt",
+                            "yyyy-M-d HH:mm tt", "yyyy-M-d HH tt",
+                            "yyyy-M-d H:mm", "yyyy-M-d H:mm",
+                            "yyyy-MM-dd HH:mm", "yyyy-MM-dd HH:mm",
+
+                            "dddd, MMMM dd yyyy", "dddd, MMMM dd, yyyy h:mm tt",
+                            "dddd, MMMM dd, yyyy h:mm:ss tt", "MMMM dd",
+                            "MMMM, yyyy", "ddd, dd MMM yyyy HH:mm:ss GMT", "ddd, dd MMM yyyy HH:mm:ss zzz",
+                            "yyyy-MM-dd HH:mm:ssZ",
+                            "MM/dd/yyyy HH:mm:ss GMT",
+                            "ddd, dd MMM yyyy HH:mm:ss GMTZ", //"Mon, 20 Mar 2017 21:56:05 GMT+7"
+                            "ddd, dd MMM yyyy HH':'mm':'ss 'GMT+7'"
+                        };
+                        DateTime published = DateTime.Now;
+
+                        try
+                        {
+                            //published = DateTime.ParseExact(pubdate, formats,
+                            //    CultureInfo.CurrentCulture,
+                            //    DateTimeStyles.None);
+                            published = DateTime.ParseExact(pubdate, formats,
+                                CultureInfo.CurrentUICulture,
+                                DateTimeStyles.None);
+                        }
+                        catch (FormatException e)
+                        {
+                            continue;
+                        }
+                        //if (published.ToShortDateString() == DateTime.Now.ToShortDateString())
+                        //{
+                            string url = ds.Tables["item"].Rows[i]["link"].ToString().Replace(System.Environment.NewLine, " ");
+                            string description = ds.Tables["item"].Rows[i]["description"].ToString();
+
+
+                            string img = string.Empty, des = string.Empty;
+
+
+                            if (description.Contains("<img"))
+                            {
+                                int start = description.IndexOf("<img");
+                                int end = description.IndexOf("</a>");
+                                if (start <= end)
+                                    img = description.Substring(start, description.Length - start - 1);
+                            }
+
+                            string matchString = Regex.Match(img, "<img.+?src=[\"'](.+?)[\"'].+?>", RegexOptions.IgnoreCase).Groups[1].Value;
+                            if (string.IsNullOrEmpty(matchString) && description.Contains("<img"))
+                            {
+                                int start = description.IndexOf("<img");
+                                int end = description.IndexOf("/>");
+                                if (start <= end)
+                                    img = description.Substring(start, description.Length - start - 1);
+                                matchString = Regex.Match(img, "<img.+?src=[\"'](.+?)[\"'].+?>", RegexOptions.IgnoreCase).Groups[1].Value;
+                            }
+                            //if (description.Contains("<img"))
+                            //{
+                            //    description = description.Replace(matchString, "");
+                            //}
+                            if (description.Contains("<a"))
+                            {
+                                int start = description.IndexOf("<a");
+                                int end = description.IndexOf("</a>");
+                                if (start <= end)
+                                    des = description.Substring(start, end - start + 4);
+                                description = description.Replace(des, "").Trim();
+                            }
+                            if (description.Contains("<img"))
+                            {
+                                int start = description.IndexOf("<img");
+                                int end = description.IndexOf("/>");
+                                if (start <= end)
+                                    des = description.Substring(start, end - start + 2);
+                                description = description.Replace(des, "").Trim();
+                            }
+                            string title = ds.Tables["item"].Rows[i]["title"].ToString();
+                            if (CheckNews(Data.GetCode(title), title) == false)
+                            {
+                                var entity = new ModRSSEntity
+                                {
+                                    Name = title,
+                                    Code = Data.GetCode(title),
+                                    Url = url,
+                                    Published = published,
+                                    NgayLayTin = DateTime.Now,
+                                    Nguon = domain,
+                                    File = matchString,
+                                    Summary = description,
+                                    Content = GetContentFromURL(url, gettag, getclass, deltag, delclass),
+                                    MenuID = menuID,
+                                    Activity = false
+                                };
+                                ModRSSService.Instance.Save(entity);
+                            }
+                        //}
+                    }
+                    catch (Exception ex)
+                    {
+                        continue;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+
         }
     }
 }

@@ -104,6 +104,11 @@ namespace HL.Lib.Models
             return list;
         }
 
+        public SysPageEntity GetByMenuID_Cache(int MenuID)
+        {
+            return _get_all_cache().Find(o => o.MenuID == MenuID);
+        }
+
         public string GetMapCode_Cache(SysPageEntity page)
         {
             string Key_Cache = "Lib.App.SysPage.GetMapCode." + page.ID;

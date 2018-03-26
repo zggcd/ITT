@@ -26,16 +26,12 @@
     $(function () {
         //$("title").html('Tin hoạt động của Bộ');
         $(".breadcrum-x").html("<a href='<%=urlHome%>'>{RS:Web_HOME}</a> / <%=Utils.GetMapPage2(ViewPage.CurrentPage, " / ", "") %>");
-
-        $(".breadcrum-x").append("<span class=\"rss-word\">" +
-            "<span class=\"rss\">" +
-            "<a href=\"/<%=langCode%>/rss.aspx?menuId=<%=menuId%>\" target=\"_blank\"><span class=\"icon-rss\"></span>RSS</a></span></span>");
     });
 </script>
 
 <div width="100%" class="ms-WPBody " style="">
-    <div id="ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781">
-        <script src='https://www.google.com/recaptcha/api.js?hl=vi'></script>
+    <div>
+        <%--<script src='https://www.google.com/recaptcha/api.js?hl=vi'></script>--%>
         <script>
             function setTraLoiCha(a) {
                 window.open('/pages/tintuc/traloi.aspx?IDTinTuc=135772&lang=1&IDCha=' + a, 'name', 'height=500,width=750');
@@ -78,11 +74,6 @@
                 window.open('/pages/tintuc/sendtofriend.aspx?tintucID=135772&lang=1', 'name', 'height=500,width=950');
 
             }
-            function ThongBaoBinhLuan() {
-                $('.g-search').toggle('slow');
-                $('#alertthanhcong').text('Bình luận của bạn đã được gửi chờ admin duyệt');
-                //$('#ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_lbNotify').val("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-            }
             function showTraLoi(idtt) {
                 //$(".TraLoiCon_"+idtt).toggle('slow');
                 var bbb = $("#TraLoiCon_" + idtt).css("display");
@@ -92,73 +83,6 @@
                 else {
                     $("#TraLoiCon_" + idtt).css("display", "none");
                 }
-            }
-            function loadNews(pageIdNews) {
-                $('#dsldvNews').html("<tr><td colspan='6'><img height='50' width='50' src='/Content2/style/images/loading.gif' ></td></tr>");
-
-                $.ajax({
-                    url: '/Pages/tintuc/loadnews.aspx?pageId=' + pageIdNews + '&pageSize=5&totalPage=5&totalItem=5',
-                    type: 'post',
-                    dataType: 'html',
-                    data: {
-                        "DateRead": $("#ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_hdDate").val(),
-                        "IDTinTuc": '135772',
-                        "SubSite": '',
-                        "Lang": '1',
-                    },
-                    success: (function (html) {
-
-                        var nHtml = html.substring(html.indexOf("<div id=\"content\">"));
-
-                        $('#dsldvNews').html(nHtml.substring(0, nHtml.indexOf("<div id=\"end\">")));
-                        $('#pagenews').html(nHtml.substring(nHtml.indexOf("<div id=\"end\">"), nHtml.indexOf("<div id=\"endpage\">")));
-
-                    })
-                });
-            }
-            function loadNewsLienQuan(pageIdNews) {
-                $('#dsldvNewsLienQuan').html("<tr><td colspan='6'><img height='50' width='50' src='/Content2/style/images/loading.gif' ></td></tr>");
-
-                $.ajax({
-                    url: '/Pages/tintuc/loaddstinlienquan.aspx?pageId=' + pageIdNews + '&pageSize=5&totalPage=5&totalItem=5',
-                    type: 'post',
-                    dataType: 'html',
-                    data: {
-
-                        "DateRead": $("#ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_hdDate").val(),
-                        "IDTinTuc": '135772',
-                        "SubSite": '',
-                        "Lang": '1',
-                    },
-                    success: (function (html) {
-                        var nHtml = html.substring(html.indexOf("<div id=\"content\">"));
-
-                        $('#dsldvNewsLienQuan').html(nHtml.substring(0, nHtml.indexOf("<div id=\"end\">")));
-                        $('#pagenewslienquan').html(nHtml.substring(nHtml.indexOf("<div id=\"end\">"), nHtml.indexOf("<div id=\"endpage\">")));
-                    })
-                });
-            }
-            function loadNewsDongSuKien(pageIdNews) {
-                $('#dsldvNewsDongSuKien').html("<tr><td colspan='6'><img height='50' width='50' src='/Content2/style/images/loading.gif' ></td></tr>");
-
-                $.ajax({
-                    url: '/Pages/tintuc/loaddstinDongSuKien.aspx?pageId=' + pageIdNews + '&pageSize=5&totalPage=5&totalItem=5',
-                    type: 'post',
-                    dataType: 'html',
-                    data: {
-
-                        "DateRead": $("#ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_hdDate").val(),
-                        "IDTinTuc": '135772',
-                        "SubSite": '',
-                        "Lang": '1',
-                    },
-                    success: (function (html) {
-                        var nHtml = html.substring(html.indexOf("<div id=\"content\">"));
-
-                        $('#dsldvNewsDongSuKien').html(nHtml.substring(0, nHtml.indexOf("<div id=\"end\">")));
-                        $('#pagenewsDongSuKien').html(nHtml.substring(nHtml.indexOf("<div id=\"end\">"), nHtml.indexOf("<div id=\"endpage\">")));
-                    })
-                });
             }
 
             function loadratting() {
@@ -181,29 +105,6 @@
                 rattinghtml += "</span>";
                 $('#rattingdanhgia').html(rattinghtml);
             }
-            function loadDSLDV(pageId) {
-                //getIDChecked();
-
-                $('#dsldv').html("<tr><td colspan='6'><img height='50' width='50' src='/Content2/style/images/loading.gif' ></td></tr>");
-
-                //loadPage(pageId);
-
-                $.ajax({
-                    url: '/Pages/tintuc/loadcomment.aspx?pageId=' + pageId + '&pageSize=5&totalPage=5&totalItem=0',
-                    type: 'post',
-                    dataType: 'html',
-                    data: {
-                        "IDTinTuc": 135772,
-                        "Lang": '1',
-                    },
-                    success: (function (html) {
-                        var nHtml = html.substring(html.indexOf("<div id=\"content\">"));
-
-                        $('#dsldv').html(nHtml.substring(0, nHtml.indexOf("<div id=\"end\">")));
-                        $('#pagecomment').html(nHtml.substring(nHtml.indexOf("<div id=\"end\">"), nHtml.indexOf("<div id=\"endpage\">")));
-                    })
-                });
-            }
         </script>
 
         <link rel="stylesheet" type="text/css" href="/Content2/style/css/news.css" media="screen" />
@@ -221,38 +122,9 @@
         <script src="/Content2/style/validation/jquery.validationEngine-vi.js" type="text/javascript" charset="utf-8"></script>
         <script src="/Content2/style/validation/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
         <script>
-            function setFormSubmitToFalse() {
-                setTimeout(function () { _spFormOnSubmitCalled = false; }, 300);
-                return true;
-            }
-            jQuery(document).ready(function () {
-                // binds form submission and fields to the validation engine
-                jQuery('form').validationEngine({ promptPosition: "bottomRight" });
-                $(".news_detail img").each(function () {
-
-                    if ($(this).width() > $(window).width()) {
-                        $(this).width('100%');
-                        $(this).height('auto');
-                    }
-                    ;
-                });
-                tangLuotTruyCap();
-            });
             function cancel() {
                 $('form').unbind('submit');
             };
-            function tangLuotTruyCap() {
-                $.ajax({
-                    url: '/Pages/tintuc/tangLuotTruyCap.aspx?tintucID=135772',
-                    type: 'post',
-                    dataType: 'html',
-                    data: {
-                    },
-                    success: (function (html) {
-
-                    })
-                });
-            }
         </script>
 
         <div class="main_right">
@@ -289,7 +161,7 @@
                                     </a>
                                 </span>
 
-                                <a href="javascript:void(0)" onclick="OpenPopupPlayMedia()">
+                                <%--<a href="javascript:void(0)" onclick="OpenPopupPlayMedia()">
                                     <img alt="" src="/Content2/img/icon-doc.jpg" />
                                 </a>
                                 <a href="/Pages/ThongTin/114130/Mot-so-tu-viet-tat-tren-Website.html">
@@ -301,12 +173,11 @@
                                 </a>
                                 <a href="javascript:void(0)" onclick="opensendtofriend()">
                                     <img alt="" src="/Content2/img/icon-gui.jpg" />
-                                </a>
+                                </a>--%>
                             </span>
-                            <input type="hidden" name="ctl00$ctl45$g_c007c575_29a1_4736_adc6_c8c55b88d781$ctl00$hdTraLoiBinhLuan" id="ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_hdTraLoiBinhLuan" value="0" />
-                            <div style="float: right; clear: both">
+                            <%--<div style="float: right; clear: both">
                                 <span id="share_article"></span>
-                            </div>
+                            </div>--%>
                         </div>
                         <div class="news_detail">
                             <div id="divArticleDescription" style="font-weight: bold; font-size: 15px;">
@@ -328,9 +199,9 @@
                     <!--//#box-news-x-->
 
                     <div class="tien-ich noprint">
-                        <span id="share_article_bottom"></span>
+                        <%--<span id="share_article_bottom"></span>--%>
                         <span class="fr">
-                            <span class="detail-icon">ĐÁNH GIÁ BÀI VIẾT(  <span id="danhgiabv"><span id="ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_lbSoLuong">3</span></span>)</span>
+                            <%--<span class="detail-icon">ĐÁNH GIÁ BÀI VIẾT(  <span id="danhgiabv"><span id="ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_lbSoLuong">3</span></span>)</span>--%>
                             <span id="tuongphan">
                                 <a id="tangtuongphan" style="cursor: pointer; font: bold 12px arial;" href="javascript:;">
                                     <img style="width: 16px; height: 16px;" title="Tăng tương phản" src="/Content2/style/images/tangtuongphan.png" />
@@ -339,9 +210,9 @@
                                     <img style="width: 16px; height: 16px;" title="Giảm tương phản" src="/Content2/style/images/giamtuongphan.png" />
                                 </a>
                             </span>
-                            <span id="rattingdanhgia">
+                            <%--<span id="rattingdanhgia">
                                 <input name='star1' type='radio' class='star' value='1' /><input name='star1' type='radio' class='star' checked="checked" value='2' /><input name='star1' type='radio' class='star' value='3' /><input name='star1' type='radio' class='star' value='4' /><input name='star1' type='radio' class='star' value='5' />
-                            </span>
+                            </span>--%>
                         </span>
                     </div>
                     <div class="g-search" style="display: none" id="g-search">
@@ -374,11 +245,12 @@
                             </div>
 
                             <div class="button" style="padding-left: 120px">
-                                <input type="submit" name="ctl00$ctl45$g_c007c575_29a1_4736_adc6_c8c55b88d781$ctl00$btn_Gui" value="Gửi bình luận" onclick="setFormSubmitToFalse(); WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions('ctl00$ctl45$g_c007c575_29a1_4736_adc6_c8c55b88d781$ctl00$btn_Gui & quot;, '', true, '', '', false, false))" id="ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_btn_Gui" class="btn_action search" style="color: white; font-size: 100%; font-family: inherit; margin-left: 0;" /><span id="alertthanhcong" style="color: red"></span>
+                                <input type="submit" name="" value="Gửi bình luận" onclick="" id="" class="btn_action search" style="color: white; font-size: 100%; font-family: inherit; margin-left: 0;" />
                             </div>
                         </div>
                     </div>
                 </div>
+                <!--//#box-tinmoi-->
             </div>
         </div>
 
@@ -421,133 +293,42 @@
                     }
                 });
 
-                loadratting();
-                $('.star-rating').click(function () {
-                    var x = document.cookie;
-                    if (x.indexOf("ComputerRatting135772") > -1) { }
-                    else {
-                        var valradio = "";
-                        var cbc = $('input[name=star1]:radio');
-                        for (var i = 0; i < cbc.length; i++) {
-                            if (cbc[i].checked == true) {
-                                valradio = cbc[i].value;
-                            }
-                        }
-                        fillratting(valradio);
-                        $('#danhgiabv').html("");
+                //loadratting();
+                //$('.star-rating').click(function () {
+                //    var x = document.cookie;
+                //    if (x.indexOf("ComputerRatting135772") > -1) { }
+                //    else {
+                //        var valradio = "";
+                //        var cbc = $('input[name=star1]:radio');
+                //        for (var i = 0; i < cbc.length; i++) {
+                //            if (cbc[i].checked == true) {
+                //                valradio = cbc[i].value;
+                //            }
+                //        }
+                //        fillratting(valradio);
+                //        $('#danhgiabv').html("");
 
-                        $.ajax({
-                            url: '/Pages/TinTuc/ratting.aspx',
-                            type: 'post',
-                            dataType: 'html',
-                            data: {
-                                "IDTinTuc": 135772,
-                                "Rate": valradio,
-                            },
-                            success: (function (html) {
-                                var nHtml = html.substring(html.indexOf("<span id=\"content\">"));
+                //        $.ajax({
+                //            url: '/Pages/TinTuc/ratting.aspx',
+                //            type: 'post',
+                //            dataType: 'html',
+                //            data: {
+                //                "IDTinTuc": 135772,
+                //                "Rate": valradio,
+                //            },
+                //            success: (function (html) {
+                //                var nHtml = html.substring(html.indexOf("<span id=\"content\">"));
 
-                                $('#danhgiabv').html(nHtml.substring(0, nHtml.indexOf("<div id=\"end\">")));
-                            })
-                        });
-                    }
-                    document.cookie = "ComputerRatting135772";
-                });
+                //                $('#danhgiabv').html(nHtml.substring(0, nHtml.indexOf("<div id=\"end\">")));
+                //            })
+                //        });
+                //    }
+                //    document.cookie = "ComputerRatting135772";
+                //});
             });
         </script>
-        <link href="/Content2/style/datetimepicker/jquery-ui.css" type="text/css" media="all" rel="stylesheet" />
-        <script src="/Content2/style/datetimepicker/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/Content2/style/js/social-buttons-share.js"></script>
-        <script>
-            var jqDT = $.noConflict();
-            $(function () {
-                jqDT("#share_article").socialButtonsShare({
-                    socialNetworks: ["facebook", "googleplus", "linkedin", "twitter", "wordpress"],
-                    url: window.location.href,
-                    text: "",
-                    sharelabel: false
-                }, {
-                        facebook: {
-                            title: "Chia sẻ trang trên FB"
-                        },
-                        twitter: {
-                            title: "Chia sẻ trang trên Twitter"
-                        },
-                        googleplus: {
-                            title: "Chia sẻ trang trên Google+"
-                        },
-                        linkedin: {
-                            title: "Chia sẻ trang trên Linkedin"
-                        },
-                        wordpress: {
-                            title: "Chia sẻ trang trên WordPress"
-                        }
-                    });
-                jqDT("#share_article_bottom").socialButtonsShare({
-                    socialNetworks: ["facebook", "googleplus", "linkedin", "twitter", "wordpress"],
-                    url: window.location.href,
-                    text: "",
-                    sharelabel: false,
-
-                }, {
-                        facebook: {
-                            title: "Chia sẻ trang trên FB"
-                        },
-                        twitter: {
-                            title: "Chia sẻ trang trên Twitter"
-                        },
-                        googleplus: {
-                            title: "Chia sẻ trang trên Google+"
-                        },
-                        linkedin: {
-                            title: "Chia sẻ trang trên Linkedin"
-                        },
-                        wordpress: {
-                            title: "Chia sẻ trang trên WordPress"
-                        }
-                    });
-                jqDT.datepicker.regional['custom'] = {
-                    dateFormat: 'dd/mm/yy',
-                    monthNames: ['Tháng một', 'Tháng hai', 'Tháng ba', 'Tháng tư', 'Tháng năm', 'Tháng sáu', 'Tháng bảy',
-                        'Tháng tám', 'Tháng chín', 'Tháng mười', 'Tháng mười một', 'Tháng mười hai'],
-                    monthNamesShort: ['Th 1', 'Th 2', 'Th 3', 'Th 4', 'Th 5', 'Th 6', 'Th 7',
-                        'Th 8', 'Th 9', 'Th 10', 'Th 11', 'Th 12'],
-                    dayNames: ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy'],
-                    dayNamesShort: ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'],
-                    dayNamesMin: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7']
-
-                };
-
-                jqDT.datepicker.setDefaults(jqDT.datepicker.regional['custom']);
-
-                jqDT.datepicker.setDefaults({ dateFormat: 'dd/mm/yy' })
-                jqDT("#txtdate").datepicker({
-                    onSelect: function (dateText, inst) {
-                        var date = jqDT(this).val();
-
-                        $('input[id*="hdDate"]').val(date);
-                        //alert(date);
-
-                        jqDT("#txtdate").toggle("slow", function () { });
-                        var tcm = 'Tin-hoat-dong-cua-Bo.html';
-                        //var lch=window.location.hostname;
-                        date = date.replace('/', '-');
-                        date = date.replace('/', '-');
-
-                        var cmresult = '' + "/Pages/ChuyenMuc/XemTheoNgay/91/1/";
-                        window.location.href = "http://" + $(location).attr('hostname') + cmresult + date + "/" + tcm;
-
-                        //alert(window.location.hostname);
-                    }
-                });
-                jqDT("button.date").click(function (e) {
-                    e.preventDefault();
-                    jqDT("#txtdate").toggle("slow", function () { });
-                });
-            });
-        </script>
-        <input type="hidden" name="ctl00$ctl45$g_c007c575_29a1_4736_adc6_c8c55b88d781$ctl00$hdDate" id="ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_hdDate" />
-        <input type="submit" name="ctl00$ctl45$g_c007c575_29a1_4736_adc6_c8c55b88d781$ctl00$btnSubmit" value="xemtheongay" onclick="cancel(); WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions('ctl00$ctl45$g_c007c575_29a1_4736_adc6_c8c55b88d781$ctl00$btnSubmit ', '', true, '', '', false, false))" id="ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_btnSubmit" class="hidden" />
+        <input type="hidden" name="" id="" />
+        <input type="submit" name="" value="xemtheongay" onclick="cancel();" id="" class="hidden" />
 
     </div>
     <div class="ms-clear"></div>
@@ -559,25 +340,33 @@
         <%= Utils.GetMapPage(ViewPage.CurrentPage, "", "breadcrumb-item")%>
     </nav>
 
-    <%if (item != null)
-        { %>
-
-    <%=item.Content%>
-
+    <h4><a href="#"><%=item.Name%></a></h4>
+    <%if (!string.IsNullOrEmpty(item.File))
+        { %><a href="#"><img src="<%=Utils.GetResizeFile(item.File, 2, 194, 0)%>" alt="" /></a><%} %>
+    <p><%=item.Summary%></p>
+    <p>&nbsp;</p>
+    <p><%=item.Content%></p>
     <p>
         Tags : 
        <% if (!string.IsNullOrEmpty(item.Tags))
            {
-               string[] ArrTag = item.Tags.Split(',');%>
-        <%for (int i = 0; i < ArrTag.Length; i++)
-            {
-                ArrTag[i] = ArrTag[i].Trim();%>
-        <%if (i > 0)
-            { %> , <%} %>
+               string[] ArrTag = item.Tags.Split(',');
+               for (int i = 0; i < ArrTag.Length; i++)
+               {
+                   ArrTag[i] = ArrTag[i].Trim();
+                   if (i > 0)
+                   { %> , <%} %>
         <a href="<%= ViewPage.GetURL("Tag", Data.GetCode(ArrTag[i])) %>" title="<%= ArrTag[i] %>"><%= ArrTag[i]%></a>
-        <%} %>
-        <%} %>
+        <%}
+            } %>
     </p>
+</div>
 
+<ul>
+    <%for (int i = 0; listOther != null && i < listOther.Count; i++)
+        {
+            string Url = ViewPage.GetURL(listOther[i].MenuID, listOther[i].Code);
+    %>
+    <li><a href="<%=Url %>"><%=listOther[i].Name%> </a></li>
     <%} %>
-</div>--%>
+</ul>--%>

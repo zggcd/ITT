@@ -21,7 +21,7 @@
 %>
 
 <ul class="menu-right fr">
-    <li><a href="<%=urlHome %>"><span class="fa fa-home"></span></a></li>
+    <%--<li><a href="<%=urlHome %>"><span class="fa fa-home"></span></a></li>--%>
     <%for (int i = 0; i < c; i++)
         {
             var href = ViewPage.GetPageURL(listItem[i]);%>

@@ -37,8 +37,8 @@
 </script>
 
 <div width="100%" class="ms-WPBody " style="">
-    <div id="ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781">
-        <script src='https://www.google.com/recaptcha/api.js?hl=vi'></script>
+    <div>
+        <%--<script src='https://www.google.com/recaptcha/api.js?hl=vi'></script>--%>
         <script>
             function setTraLoiCha(a) {
                 window.open('/pages/tintuc/traloi.aspx?IDTinTuc=135772&lang=1&IDCha=' + a, 'name', 'height=500,width=750');
@@ -81,11 +81,6 @@
                 window.open('/pages/tintuc/sendtofriend.aspx?tintucID=135772&lang=1', 'name', 'height=500,width=950');
 
             }
-            function ThongBaoBinhLuan() {
-                $('.g-search').toggle('slow');
-                $('#alertthanhcong').text('Bình luận của bạn đã được gửi chờ admin duyệt');
-                //$('#ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_lbNotify').val("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-            }
             function showTraLoi(idtt) {
                 //$(".TraLoiCon_"+idtt).toggle('slow');
                 var bbb = $("#TraLoiCon_" + idtt).css("display");
@@ -95,73 +90,6 @@
                 else {
                     $("#TraLoiCon_" + idtt).css("display", "none");
                 }
-            }
-            function loadNews(pageIdNews) {
-                $('#dsldvNews').html("<tr><td colspan='6'><img height='50' width='50' src='/Content2/style/images/loading.gif' ></td></tr>");
-
-                $.ajax({
-                    url: '/Pages/tintuc/loadnews.aspx?pageId=' + pageIdNews + '&pageSize=5&totalPage=5&totalItem=5',
-                    type: 'post',
-                    dataType: 'html',
-                    data: {
-                        "DateRead": $("#ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_hdDate").val(),
-                        "IDTinTuc": '135772',
-                        "SubSite": '',
-                        "Lang": '1',
-                    },
-                    success: (function (html) {
-
-                        var nHtml = html.substring(html.indexOf("<div id=\"content\">"));
-
-                        $('#dsldvNews').html(nHtml.substring(0, nHtml.indexOf("<div id=\"end\">")));
-                        $('#pagenews').html(nHtml.substring(nHtml.indexOf("<div id=\"end\">"), nHtml.indexOf("<div id=\"endpage\">")));
-
-                    })
-                });
-            }
-            function loadNewsLienQuan(pageIdNews) {
-                $('#dsldvNewsLienQuan').html("<tr><td colspan='6'><img height='50' width='50' src='/Content2/style/images/loading.gif' ></td></tr>");
-
-                $.ajax({
-                    url: '/Pages/tintuc/loaddstinlienquan.aspx?pageId=' + pageIdNews + '&pageSize=5&totalPage=5&totalItem=5',
-                    type: 'post',
-                    dataType: 'html',
-                    data: {
-
-                        "DateRead": $("#ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_hdDate").val(),
-                        "IDTinTuc": '135772',
-                        "SubSite": '',
-                        "Lang": '1',
-                    },
-                    success: (function (html) {
-                        var nHtml = html.substring(html.indexOf("<div id=\"content\">"));
-
-                        $('#dsldvNewsLienQuan').html(nHtml.substring(0, nHtml.indexOf("<div id=\"end\">")));
-                        $('#pagenewslienquan').html(nHtml.substring(nHtml.indexOf("<div id=\"end\">"), nHtml.indexOf("<div id=\"endpage\">")));
-                    })
-                });
-            }
-            function loadNewsDongSuKien(pageIdNews) {
-                $('#dsldvNewsDongSuKien').html("<tr><td colspan='6'><img height='50' width='50' src='/Content2/style/images/loading.gif' ></td></tr>");
-
-                $.ajax({
-                    url: '/Pages/tintuc/loaddstinDongSuKien.aspx?pageId=' + pageIdNews + '&pageSize=5&totalPage=5&totalItem=5',
-                    type: 'post',
-                    dataType: 'html',
-                    data: {
-
-                        "DateRead": $("#ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_hdDate").val(),
-                        "IDTinTuc": '135772',
-                        "SubSite": '',
-                        "Lang": '1',
-                    },
-                    success: (function (html) {
-                        var nHtml = html.substring(html.indexOf("<div id=\"content\">"));
-
-                        $('#dsldvNewsDongSuKien').html(nHtml.substring(0, nHtml.indexOf("<div id=\"end\">")));
-                        $('#pagenewsDongSuKien').html(nHtml.substring(nHtml.indexOf("<div id=\"end\">"), nHtml.indexOf("<div id=\"endpage\">")));
-                    })
-                });
             }
 
             function loadratting() {
@@ -184,29 +112,6 @@
                 rattinghtml += "</span>";
                 $('#rattingdanhgia').html(rattinghtml);
             }
-            function loadDSLDV(pageId) {
-                //getIDChecked();
-
-                $('#dsldv').html("<tr><td colspan='6'><img height='50' width='50' src='/Content2/style/images/loading.gif' ></td></tr>");
-
-                //loadPage(pageId);
-
-                $.ajax({
-                    url: '/Pages/tintuc/loadcomment.aspx?pageId=' + pageId + '&pageSize=5&totalPage=5&totalItem=0',
-                    type: 'post',
-                    dataType: 'html',
-                    data: {
-                        "IDTinTuc": 135772,
-                        "Lang": '1',
-                    },
-                    success: (function (html) {
-                        var nHtml = html.substring(html.indexOf("<div id=\"content\">"));
-
-                        $('#dsldv').html(nHtml.substring(0, nHtml.indexOf("<div id=\"end\">")));
-                        $('#pagecomment').html(nHtml.substring(nHtml.indexOf("<div id=\"end\">"), nHtml.indexOf("<div id=\"endpage\">")));
-                    })
-                });
-            }
         </script>
 
         <link rel="stylesheet" type="text/css" href="/Content2/style/css/news.css" media="screen" />
@@ -224,38 +129,9 @@
         <script src="/Content2/style/validation/jquery.validationEngine-vi.js" type="text/javascript" charset="utf-8"></script>
         <script src="/Content2/style/validation/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
         <script>
-            function setFormSubmitToFalse() {
-                setTimeout(function () { _spFormOnSubmitCalled = false; }, 300);
-                return true;
-            }
-            jQuery(document).ready(function () {
-                // binds form submission and fields to the validation engine
-                jQuery('form').validationEngine({ promptPosition: "bottomRight" });
-                $(".news_detail img").each(function () {
-
-                    if ($(this).width() > $(window).width()) {
-                        $(this).width('100%');
-                        $(this).height('auto');
-                    }
-                    ;
-                });
-                tangLuotTruyCap();
-            });
             function cancel() {
                 $('form').unbind('submit');
             };
-            function tangLuotTruyCap() {
-                $.ajax({
-                    url: '/Pages/tintuc/tangLuotTruyCap.aspx?tintucID=135772',
-                    type: 'post',
-                    dataType: 'html',
-                    data: {
-                    },
-                    success: (function (html) {
-
-                    })
-                });
-            }
         </script>
 
         <div class="main_right">
@@ -292,7 +168,7 @@
                                     </a>
                                 </span>
 
-                                <a href="javascript:void(0)" onclick="OpenPopupPlayMedia()">
+                                <%--<a href="javascript:void(0)" onclick="OpenPopupPlayMedia()">
                                     <img alt="" src="/Content2/img/icon-doc.jpg" />
                                 </a>
                                 <a href="/Pages/ThongTin/114130/Mot-so-tu-viet-tat-tren-Website.html">
@@ -304,12 +180,11 @@
                                 </a>
                                 <a href="javascript:void(0)" onclick="opensendtofriend()">
                                     <img alt="" src="/Content2/img/icon-gui.jpg" />
-                                </a>
+                                </a>--%>
                             </span>
-                            <input type="hidden" name="ctl00$ctl45$g_c007c575_29a1_4736_adc6_c8c55b88d781$ctl00$hdTraLoiBinhLuan" id="ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_hdTraLoiBinhLuan" value="0" />
-                            <div style="float: right; clear: both">
+                            <%--<div style="float: right; clear: both">
                                 <span id="share_article"></span>
-                            </div>
+                            </div>--%>
                         </div>
                         <div class="news_detail">
                             <div id="divArticleDescription" style="font-weight: bold; font-size: 15px;">
@@ -331,9 +206,9 @@
                     <!--//#box-news-x-->
 
                     <div class="tien-ich noprint">
-                        <span id="share_article_bottom"></span>
+                        <%--<span id="share_article_bottom"></span>--%>
                         <span class="fr">
-                            <span class="detail-icon">ĐÁNH GIÁ BÀI VIẾT(  <span id="danhgiabv"><span id="ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_lbSoLuong">3</span></span>)</span>
+                            <%--<span class="detail-icon">ĐÁNH GIÁ BÀI VIẾT(  <span id="danhgiabv"><span id="ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_lbSoLuong">3</span></span>)</span>--%>
                             <span id="tuongphan">
                                 <a id="tangtuongphan" style="cursor: pointer; font: bold 12px arial;" href="javascript:;">
                                     <img style="width: 16px; height: 16px;" title="Tăng tương phản" src="/Content2/style/images/tangtuongphan.png" />
@@ -342,9 +217,9 @@
                                     <img style="width: 16px; height: 16px;" title="Giảm tương phản" src="/Content2/style/images/giamtuongphan.png" />
                                 </a>
                             </span>
-                            <span id="rattingdanhgia">
+                            <%--<span id="rattingdanhgia">
                                 <input name='star1' type='radio' class='star' value='1' /><input name='star1' type='radio' class='star' checked="checked" value='2' /><input name='star1' type='radio' class='star' value='3' /><input name='star1' type='radio' class='star' value='4' /><input name='star1' type='radio' class='star' value='5' />
-                            </span>
+                            </span>--%>
                         </span>
                     </div>
                     <div class="g-search" style="display: none" id="g-search">
@@ -377,11 +252,341 @@
                             </div>
 
                             <div class="button" style="padding-left: 120px">
-                                <input type="submit" name="ctl00$ctl45$g_c007c575_29a1_4736_adc6_c8c55b88d781$ctl00$btn_Gui" value="Gửi bình luận" onclick="setFormSubmitToFalse(); WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions('ctl00$ctl45$g_c007c575_29a1_4736_adc6_c8c55b88d781$ctl00$btn_Gui & quot;, '', true, '', '', false, false))" id="ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_btn_Gui" class="btn_action search" style="color: white; font-size: 100%; font-family: inherit; margin-left: 0;" /><span id="alertthanhcong" style="color: red"></span>
+                                <input type="submit" name="" value="Gửi bình luận" onclick="" id="" class="btn_action search" style="color: white; font-size: 100%; font-family: inherit; margin-left: 0;" />
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!--Gui binh luan-->
+                <style>
+                    .box-leavecomment {
+                        margin-top: 4px;
+                        background-color: #f6f6f6;
+                    }
+
+                    .box-comment, .box-comment * {
+                        moz-box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        box-sizing: border-box;
+                        font-family: helvetica,tahoma,'lucida grande',sans-serif;
+                    }
+
+                    .clearfix, .list > li {
+                        zoom: 1;
+                    }
+
+                    .box-comment .list-comments {
+                        padding: 10px 10px 0;
+                        border: solid 1px #eee;
+                        background-color: #fdfdfd;
+                    }
+
+                    .comment-bar {
+                        border: solid #eee;
+                        border-width: 1px 1px 0 3px;
+                        padding: 0 10px;
+                        border-left-color: green;
+                        position: relative;
+                    }
+
+                    .box-comment .form {
+                        width: 100%;
+                        padding: 0;
+                        border: 1px solid #e5e5e5;
+                        box-shadow: 0 2px 0 #f7f7f7;
+                    }
+
+                        .box-comment .form > .inner {
+                            display: block;
+                            float: none;
+                            width: 100%;
+                            padding: 10px;
+                            line-height: 15px;
+                        }
+
+                        .box-comment .form textarea {
+                            width: 100%;
+                            height: 60px;
+                            border: 1px solid #dadada;
+                            border-radius: 3px;
+                            padding: 5px 5px;
+                            display: inline-block;
+                            font-family: Arial,Helvetica,sans-serif;
+                            font-size: 13.3333330154419px;
+                        }
+
+                        .box-comment .form .action {
+                            margin-top: 5px;
+                            position: relative;
+                        }
+
+                        .box-comment .form .btnSend {
+                            float: right;
+                            display: inline-block;
+                            background: #6d84b4;
+                            border-color: #3b5998;
+                            font-size: 11.5px;
+                            font-family: Tahoma;
+                            width: 105px;
+                            height: 28px;
+                            text-align: center;
+                            padding-top: 5px;
+                            padding-bottom: 8px;
+                            border-width: 1px;
+                            border-style: solid;
+                            border-radius: 2px;
+                            color: #fff;
+                            font-weight: bold;
+                            display: block;
+                            cursor: pointer;
+                        }
+
+                        .box-comment .form .action .comment-count {
+                            position: absolute;
+                            left: 0;
+                            bottom: -10px;
+                            border-bottom: 3px solid #ff9d08;
+                            font-weight: bold;
+                            line-height: 16px;
+                            padding: 0 10px 8px 0;
+                            font-size: 14px;
+                        }
+
+                    .box-comment .dantri-label {
+                        position: absolute;
+                        background: transparent;
+                        background-size: 100%;
+                        color: transparent;
+                        width: 79px;
+                        height: 28px;
+                        bottom: -1px;
+                        left: 7px;
+                    }
+
+                    .comment-acc, .comment-acc a {
+                        color: #3b7cbd;
+                    }
+
+                    .comment-acc {
+                        float: right;
+                    }
+
+                        .comment-acc a {
+                            line-height: 36px;
+                            display: inline-block;
+                        }
+
+                    .comments > li:first-child {
+                        border-top: 0;
+                    }
+
+                    .clearfix:before, .clearfix:after, .list > li:before, .list > li:after {
+                        content: "\0020";
+                        display: block;
+                        height: 0;
+                        overflow: hidden;
+                    }
+
+                    .comments > li {
+                        position: relative;
+                        padding-left: 46px;
+                        margin-bottom: 12px;
+                        padding-top: 10px;
+                        border-top: solid 1px #eee;
+                    }
+
+                    .comments .cmt-avatar {
+                        position: absolute;
+                        top: 14px;
+                        left: 0;
+                        width: 38px;
+                        height: 38px;
+                        background: #ECECEC;
+                        vertical-align: middle;
+                        text-align: center;
+                        font-size: 24px;
+                        line-height: 20px;
+                        vertical-align: middle;
+                        color: #FFF;
+                        font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,sans-serif;
+                        text-transform: uppercase;
+                        border-radius: 50%;
+                    }
+
+                    .comments .cmt-content {
+                        font-size: 14px;
+                        line-height: 22px;
+                        color: #1b1f22;
+                    }
+
+                    .comments .cmt-author {
+                        display: block;
+                        font-weight: bold;
+                        color: #009EE5;
+                        padding-right: 5px;
+                        text-transform: capitalize;
+                        margin-bottom: 2px;
+                    }
+
+                    .comments .date {
+                        color: #A3B0B9;
+                        font-weight: normal;
+                        font-size: 11px;
+                        text-transform: lowercase;
+                    }
+
+                    .comments .action {
+                        margin-top: 5px;
+                        white-space: nowrap;
+                        line-height: 19px;
+                    }
+
+                        .comments .action .btn {
+                            display: inline-block;
+                            cursor: pointer;
+                            position: relative;
+                        }
+
+                    .comments .act-item {
+                        position: relative;
+                        color: #38aee3;
+                    }
+
+                    .comments .action .sprt {
+                        display: inline-block;
+                        padding: 0 5px;
+                    }
+
+                    .comments .action * {
+                        float: left;
+                    }
+
+                    .comments .action .act-item.likecount {
+                        padding-left: 18px;
+                    }
+
+                    .comments .action .ico-like {
+                        background-position: 0 -54px;
+                        width: 15px;
+                        height: 15px;
+                    }
+
+                    .comments .view-subcmt {
+                        position: relative;
+                        padding-left: 15px;
+                        margin-top: 4px;
+                        color: #1a7900;
+                        display: block;
+                    }
+
+                    .toggle .default-text {
+                        display: none;
+                    }
+
+                    .comments .ico-viewsubcmt, .comments .ico-slideup {
+                        position: absolute;
+                        top: 3px;
+                        left: 0;
+                    }
+
+                    .comments .ico-viewsubcmt {
+                        background-position: 0 -76px;
+                        width: 11px;
+                        height: 8px;
+                    }
+
+                    .ico-login-as-fb, .ico-login-as-google, .comments .action .ico-like, .comments .ico-viewsubcmt, .comments .ico-slideup {
+                        background-image: url(/images/sprite-comment.png);
+                        background-repeat: no-repeat;
+                        display: inline-block;
+                    }
+
+                    .toggle .toggle-text {
+                        display: block;
+                    }
+
+                    .comments .ico-slideup {
+                        background-position: 0 -69px;
+                        width: 9px;
+                        height: 6px;
+                    }
+
+                    .comments.sub {
+                        border-left: 2px solid #dcdee3;
+                        padding: 0 0 0 10px;
+                        margin-left: 3px;
+                    }
+
+                        .comments.sub > li {
+                            padding-left: 36px;
+                        }
+
+                        .comments.sub .cmt-avatar {
+                            width: 30px;
+                            height: 30px;
+                            font-size: 16px;
+                            line-height: 11px;
+                        }
+                </style>
+                <div class="clearfix box-comment">
+
+                    <div class="clearfix box-comment box-leavecomment" data-type="box-comment" data-parentid="0">
+                        <div class="comment-bar clearfix">
+                            <p class="dantri-label fl">Bình luận</sup></p>
+                            <div class="comment-acc user-action fr"><a data-type="button-login" onclick="login(this);">Đăng nhập</a> | <a data-type="button-register" onclick="register(this);">Đăng ký</a><a class="help" onclick="showHelp(this);"><img src="https://dantricdn.com/web_images/comment-helper-sz18.png" width="18" height="18"></a></div>
+                            <div class="comment-acc user-info fr"><b data-type="user-name"></b>&nbsp;|&nbsp;<a onclick="javascript:logout();">Thoát</a> </div>
+                        </div>
+                        <div class="form" data-type="comment-form" data-parentid="0">
+                            <div class="inner">
+                                <textarea data-type="comment-content" placeholder="Nội dung bình luận"></textarea>
+                                <div class="action clearfix"><a class="btnSend" data-type="button-send" onclick="doComment(this);">Gửi bình luận</a> <span id="spanCommentCount" class="comment-count">6 bình luận</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            var div = generateBoxComment(0);
+                            $('#divComment').replaceWith(div);
+                            checkSession();
+                            initEventsForListCommentStream();
+                        });
+                    </script>
+                    <div class="list-comments">
+                        <ul class="comments" data-type="list-commentstream" data-parentid="0" data-template="tplListCommentParent">
+                            <li id="comment-8abde4d0-2985-11e8-b379-0b4c6c57d133" data-type="comment-item" data-isprocessed="1" data-isparent="1" data-id="8abde4d0-2985-11e8-b379-0b4c6c57d133" data-parentid="null" data-liked="0">
+                                <img class="cmt-avatar" data-type="user-avatar" src="https://static.dantricdn.com/images/no-avatar.png">
+                                <div class="cmt-content"><a class="cmt-author">Nguyễn quang Trung<span class="date"> · 08:50 ngày 17/03</span></a>Với dân thường chúng tôi hạnh phúc giờ đây chỉ là ước  mong nhỏ nhoi thôi là có công ăn việc làm, cuộc sống đảm bảo, xã hội bình an, không ốm đau bệnh tật. Vậy thôi . Còn mong muốn thì nhiều lắm.                    </div>
+                                <div class="action clearfix" data-type="comment-nav" data-id="8abde4d0-2985-11e8-b379-0b4c6c57d133"><a class="btn act-item" data-type="button-like">Thích</a><span class="sprt">·</span>                        <a data-type="button-reply" class="btn act-item">Trả lời</a>            <span class="sprt">·</span>                        <a data-type="button-share" class="btn act-item" onclick="share(this,'8abde4d0-2985-11e8-b379-0b4c6c57d133');">Chia sẻ</a><span class="sprt" data-group="liked" style="display: none;">·</span>                        <span class="act-item likecount" data-group="liked" style="display: none;"><i class="ico-like"></i><span data-type="liked">1</span></span>                    </div>
+                                <a class="view-subcmt toggle" data-start="0" data-rows="1"><span class="default-text"><i class="ico-viewsubcmt"></i>1 trả lời</span><span class="toggle-text"><i class="ico-slideup"></i>Ẩn 1 trả lời</span></a>
+                                <div style="display: none !important;" type="text/json" id="replies-8abde4d0-2985-11e8-b379-0b4c6c57d133"></div>
+                                <ul class="comments sub" data-template="tplListCommentChild" data-type="list-comment">
+                                    <li id="comment-bdae9000-2995-11e8-b379-0b4c6c57d133" data-type="comment-item" data-isprocessed="1" data-id="bdae9000-2995-11e8-b379-0b4c6c57d133" data-parentid="null" data-liked="0">
+                                        <img class="cmt-avatar" data-type="user-avatar" src="https://static.dantricdn.com/images/no-avatar.png">
+                                        <div class="cmt-content"><a class="cmt-author">Nguyễn Hiền<span class="date"> · 10:46 ngày 17/03</span></a>Những điều " ước mong nhỏ nhoi " của bạn và gia đình bạn đã có chưa ? .                    </div>
+                                        <div class="action clearfix" data-type="comment-nav" data-id="bdae9000-2995-11e8-b379-0b4c6c57d133"><a class="btn act-item" data-type="button-like">Thích</a><span class="sprt">·</span>                        <a data-type="button-reply" class="btn act-item">Trả lời</a><span class="sprt">·</span>                        <a data-type="button-share" class="btn act-item" onclick="share(this,'bdae9000-2995-11e8-b379-0b4c6c57d133');">Chia sẻ</a><span class="sprt" data-group="liked" style="display: none;">·</span>                        <span class="act-item likecount" data-group="liked" style="display: none;"><i class="ico-like"></i><span data-type="liked">0</span></span>                    </div>
+                                    </li>
+                                    <li class="comment-placeholder" data-generated="1" data-type="comment-reply-placeholder" style="display: none;">
+                                        <img class="cmt-avatar" data-type="user-avatar" src="https://static.dantricdn.com/images/no-avatar.png" data-userid="null"><div class="clearfix box-comment box-leavecomment" data-type="box-comment" data-parentid="8abde4d0-2985-11e8-b379-0b4c6c57d133">
+                                            <div class="comment-bar clearfix">
+                                                <p class="dantri-label fl">DÂN TRÍ <sup class="sub">ID</sup></p>
+                                                <div class="comment-acc user-action fr"><a data-type="button-login" onclick="login(this);">Đăng nhập</a> | <a data-type="button-register" onclick="register(this);">Đăng ký</a><a class="help" onclick="showHelp(this);"><img src="https://dantricdn.com/web_images/comment-helper-sz18.png" width="18" height="18"></a></div>
+                                                <div class="comment-acc user-info fr"><b data-type="user-name"></b>&nbsp;|&nbsp;<a onclick="javascript:logout();">Thoát</a> </div>
+                                            </div>
+                                            <div class="form" data-type="comment-form" data-parentid="0">
+                                                <div class="inner">
+                                                    <textarea data-type="comment-content" placeholder="Nội dung bình luận"></textarea>
+                                                    <div class="action clearfix"><a class="btnSend" data-type="button-send" onclick="doComment(this);">Gửi bình luận</a> <span id="spanCommentCount" class="comment-count">56 bình luận</span> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--//#Gui binh luan-->
 
                 <div class="tin-khac">
                     <a href="javascript: void(0)">
@@ -465,38 +670,38 @@
                     }
                 });
 
-                loadratting();
-                $('.star-rating').click(function () {
-                    var x = document.cookie;
-                    if (x.indexOf("ComputerRatting135772") > -1) { }
-                    else {
-                        var valradio = "";
-                        var cbc = $('input[name=star1]:radio');
-                        for (var i = 0; i < cbc.length; i++) {
-                            if (cbc[i].checked == true) {
-                                valradio = cbc[i].value;
-                            }
-                        }
-                        fillratting(valradio);
-                        $('#danhgiabv').html("");
+                //loadratting();
+                //$('.star-rating').click(function () {
+                //    var x = document.cookie;
+                //    if (x.indexOf("ComputerRatting135772") > -1) { }
+                //    else {
+                //        var valradio = "";
+                //        var cbc = $('input[name=star1]:radio');
+                //        for (var i = 0; i < cbc.length; i++) {
+                //            if (cbc[i].checked == true) {
+                //                valradio = cbc[i].value;
+                //            }
+                //        }
+                //        fillratting(valradio);
+                //        $('#danhgiabv').html("");
 
-                        $.ajax({
-                            url: '/Pages/TinTuc/ratting.aspx',
-                            type: 'post',
-                            dataType: 'html',
-                            data: {
-                                "IDTinTuc": 135772,
-                                "Rate": valradio,
-                            },
-                            success: (function (html) {
-                                var nHtml = html.substring(html.indexOf("<span id=\"content\">"));
+                //        $.ajax({
+                //            url: '/Pages/TinTuc/ratting.aspx',
+                //            type: 'post',
+                //            dataType: 'html',
+                //            data: {
+                //                "IDTinTuc": 135772,
+                //                "Rate": valradio,
+                //            },
+                //            success: (function (html) {
+                //                var nHtml = html.substring(html.indexOf("<span id=\"content\">"));
 
-                                $('#danhgiabv').html(nHtml.substring(0, nHtml.indexOf("<div id=\"end\">")));
-                            })
-                        });
-                    }
-                    document.cookie = "ComputerRatting135772";
-                });
+                //                $('#danhgiabv').html(nHtml.substring(0, nHtml.indexOf("<div id=\"end\">")));
+                //            })
+                //        });
+                //    }
+                //    document.cookie = "ComputerRatting135772";
+                //});
             });
         </script>
         <link href="/Content2/style/datetimepicker/jquery-ui.css" type="text/css" media="all" rel="stylesheet" />
@@ -590,8 +795,8 @@
                 });
             });
         </script>
-        <input type="hidden" name="ctl00$ctl45$g_c007c575_29a1_4736_adc6_c8c55b88d781$ctl00$hdDate" id="ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_hdDate" />
-        <input type="submit" name="ctl00$ctl45$g_c007c575_29a1_4736_adc6_c8c55b88d781$ctl00$btnSubmit" value="xemtheongay" onclick="cancel(); WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions('ctl00$ctl45$g_c007c575_29a1_4736_adc6_c8c55b88d781$ctl00$btnSubmit ', '', true, '', '', false, false))" id="ctl00_ctl45_g_c007c575_29a1_4736_adc6_c8c55b88d781_ctl00_btnSubmit" class="hidden" />
+        <input type="hidden" name="" id="" />
+        <input type="submit" name="" value="xemtheongay" onclick="cancel();" id="" class="hidden" />
 
     </div>
     <div class="ms-clear"></div>

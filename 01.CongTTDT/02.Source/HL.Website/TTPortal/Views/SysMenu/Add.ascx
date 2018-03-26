@@ -86,6 +86,30 @@
                         </td>
                     </tr>
                     <%} %>
+                    <%if (entity.Type == "Org")
+                      { %>
+                    <tr>
+                        <td class="key">
+                            <label>RSS :</label>
+                        </td>
+                        <td>
+                            <input style="width: 50%;" class="text_input" type="text" name="RSS" value="<%=entity.RSS %>" maxlength="250" />
+                            <label style="margin-left: 15px; font-weight: bold;">Chuyên mục :</label>
+                            <select style="width: 20%;" name="SourceID" id="SourceID" class="text_input">
+                                <option value="0">Root</option>
+                                <%= Utils.ShowDDLMenuByType2("RSS", model.LangID, entity.SourceID)%>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="key">
+                            <label>Mã kỹ thuật :</label>
+                        </td>
+                        <td>
+                            <textarea class="text_input" name="Custom"><%=entity.Custom %></textarea>
+                        </td>
+                    </tr>
+                    <%} %>
                     <tr>
                         <td class="key">
                             <label>Thêm trường dạng text cho tùy chọn này :</label>

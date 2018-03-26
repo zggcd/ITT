@@ -287,6 +287,47 @@
                                     <i style='mso-bidi-font-style: normal'>
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>(Cung cấp thông tin về nhân lực, an toàn thông tin, công nghệ thông tin thuộc đơn vị mình theo bảng kèm theo Biểu mẫu 01 của Thông tư này)</span>
                                     </i>
+                                    <br />
+                                    <p style="line-height: 0; color: #00455A;">
+                                        Upload file <%--(dung lượng < 100Kb)--%>
+                                    </p>
+                                    <input type="file" id="Atack" name="Atack" onchange="AlertFilesize();" />
+                                    <script type="text/javascript">
+                                        function AlertFilesize() {
+                                            var sizeinbytes = document.getElementById('Atack').files[0].size;
+                                            var kb = sizeinbytes / 1024;
+                                            if (kb > 5 * 1024) {
+                                                document.getElementById('Atack').value = "";
+                                                alert('Kích thước file phải nhỏ hơn 5MB')
+                                            }
+
+                                            //if (window.ActiveXObject) {
+                                            //    var fso = new ActiveXObject("Scripting.FileSystemObject");
+                                            //    var filepath = document.getElementById('fileInput').value;
+                                            //    var thefile = fso.getFile(filepath);
+                                            //    var sizeinbytes = thefile.size;
+                                            //    var name = thefile.name;
+                                            //} else {
+                                            //    var sizeinbytes = document.getElementById('Atack').files[0].size;
+                                            //    var name = document.getElementById('Atack').files[0].name;
+                                            //}
+
+                                            //var fSExt = new Array('Bytes', 'KB', 'MB', 'GB');
+                                            //fSize = sizeinbytes;
+                                            //i = 0;
+                                            //while (fSize > 900) {
+                                            //    fSize /= 1024;
+                                            //    i++;
+                                            //}
+
+                                            //if (fSize > 100 && (name.contains('.jpg') || name.contains('.png') || name.contains('.bmp') || name.contains('.gif'))) {
+                                            //    document.getElementById('Atack').value = "";
+                                            //    alert('Kích thước file phải nhỏ hơn 100Kb')
+                                            //}
+
+                                            //alert((Math.round(fSize*100)/100)+' '+fSExt[i]);
+                                        }
+                                    </script>
                                 </p>
 
                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -332,7 +373,7 @@
                                     </i><i style='mso-bidi-font-style: normal'>
                                         <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'></span>
                                     </i><i style='mso-bidi-font-style: normal'>
-                                        <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>Địa chỉ thư điện tử được sử dụng làm đầu mối trao đổi thông tin với Mạng lưới ứng cứu sự cố khuy ế n nghị không nên sử dụng địa chỉ thư điện tử cá nhân, nên sử dụng tên đại diện cho tổ chức.</span>
+                                        <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>Địa chỉ thư điện tử được sử dụng làm đầu mối trao đổi thông tin với Mạng lưới ứng cứu sự cố khuyến nghị không nên sử dụng địa chỉ thư điện tử cá nhân, nên sử dụng tên đại diện cho tổ chức.</span>
                                     </i>
                                 </p>
 
@@ -429,7 +470,7 @@
                                         </sup>
                                     </i>
                                     <i style='mso-bidi-font-style: normal'>
-                                        <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Đầu mối Lãnh đạo phụ trách về an toàn thông tin của tổ chức sẽ chỉ được sử dụng khi không liên lạc được với các đầu mối khác hoặc trong các tình huống sự cố có t í nh chất nghiêm trọng</span>
+                                        <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Đầu mối Lãnh đạo phụ trách về an toàn thông tin của tổ chức sẽ chỉ được sử dụng khi không liên lạc được với các đầu mối khác hoặc trong các tình huống sự cố có tính chất nghiêm trọng</span>
                                     </i>
                                 </p>
 

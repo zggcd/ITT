@@ -56,6 +56,9 @@
     <Reference Include="HLv1.0.MVC.Core">
       <HintPath>..\DLL\HLv1.0.MVC.Core.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\DLL\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Ionic.Zip">
       <HintPath>..\DLL\Ionic.Zip.dll</HintPath>
     </Reference>
@@ -85,6 +88,7 @@
     <Compile Include="Controllers\CInfoMagicController.cs" />
     <Compile Include="Controllers\CMenuController.cs" />
     <Compile Include="Controllers\CFeedbackController.cs" />
+    <Compile Include="Controllers\CRSSController.cs" />
     <Compile Include="Controllers\CSoLuongSuCoController.cs" />
     <Compile Include="Controllers\CUserController.cs" />
     <Compile Include="Controllers\CUserResetPassController.cs" />
@@ -106,6 +110,7 @@
     <Compile Include="Controllers\MHSThanhVienUCSCController.cs" />
     <Compile Include="Controllers\MInfoController.cs" />
     <Compile Include="Controllers\MInfoMagicController.cs" />
+    <Compile Include="Controllers\MRSSController.cs" />
     <Compile Include="Controllers\MSearchController.cs" />
     <Compile Include="Controllers\MSiteMapTempController.cs" />
     <Compile Include="Controllers\MSiteMapController.cs" />
@@ -141,6 +146,7 @@
     <Compile Include="CPControllers\ModHSThanhVienUCSCController.cs" />
     <Compile Include="CPControllers\ModInfoMagicController.cs" />
     <Compile Include="CPControllers\ModNewsController.cs" />
+    <Compile Include="CPControllers\ModRSSController.cs" />
     <Compile Include="CPControllers\ModSoLuongSuCoController.cs" />
     <Compile Include="CPControllers\ModTagController.cs" />
     <Compile Include="CPControllers\ModUserController.cs" />
@@ -215,6 +221,7 @@
     <Compile Include="Models\ModNewsModel.cs" />
     <Compile Include="Models\ModNewsTagModel.cs" />
     <Compile Include="Models\ModOnlineModel.cs" />
+    <Compile Include="Models\ModRSSModel.cs" />
     <Compile Include="Models\ModSoLuongSuCoModel.cs" />
     <Compile Include="Models\ModTagModel.cs" />
     <Compile Include="Models\ModUserModel.cs" />

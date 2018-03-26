@@ -5,6 +5,7 @@
         <ul>
             <li><a class="icon-16-article" href="/{CPPath}/ModNews/Index.aspx">{RS:MenuTop_News}</a></li>
             <li><a class="icon-16-article" href="/{CPPath}/ModTag/Index.aspx">Tags</a></li>
+            <li><a class="icon-16-article" href="/{CPPath}/ModRSS/Index.aspx">RSS</a></li>
             <li><a class="icon-16-article" href="/{CPPath}/ModDuThao/Index.aspx">Dự thảo</a></li>
             <li><a class="icon-16-article" href="/{CPPath}/ModVanBan/Index.aspx">Văn bản</a></li>
             <li><a class="icon-16-media" href="/{CPPath}/ModAdv/Index.aspx">{RS:MenuTop_Adv}</a></li>
@@ -12,18 +13,22 @@
             <li><a class="icon-16-massmail" href="/{CPPath}/ModGopY/Index.aspx">Góp ý</a></li>
             <li><a class="icon-16-component" href="/{CPPath}/ModFile/Index.aspx">{RS:MenuTop_FileManagement}</a></li>
             <li><a class="icon-16-article" href="/{CPPath}/ModUser/Index.aspx">Cán bộ Nhà nước</a></li>
-            <li><a class="icon-16-article" href="/{CPPath}/ModVideo/Index.aspx">Tin Video</a></li>
-            <li><a class="icon-16-article" href="/{CPPath}/ModAlbum/Index.aspx">Tin Ảnh</a></li>
-            <li class="node"><a class="icon-16-article">Điều phối, ứng cứu sự cố ATTT mạng</a>
+            <li class="node"><a class="icon-16-themes">Hình ảnh/Video</a>
                 <ul>
-                    <li><a class="icon-16-article" href="/{CPPath}/ModHSThanhVienUCSC/Index.aspx">Bản khai hồ sơ thành viên UCSC</a></li>
-                    <li><a class="icon-16-article" href="/{CPPath}/ModDonDangKyUCSC/Index.aspx">Đăng ký tham gia mạng lưới UCSC</a></li>
-                    <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoBanDauSuCo/Index.aspx">Báo cáo ban đầu sự cố mạng</a></li>
-                    <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoKetThucSuCo/Index.aspx">Báo cáo kết thúc sự cố mạng</a></li>
-                    <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTongHop/Index.aspx">Báo cáo tổng hợp</a></li>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModAlbum/Index.aspx">Tin Ảnh</a></li>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModVideo/Index.aspx">Tin Video</a></li>
                 </ul>
             </li>
             <li><a class="icon-16-massmail" href="/{CPPath}/ModConfigSendMail/Index.aspx">Cấu hình Email</a></li>
+        </ul>
+    </li>
+    <li class="node"><a>Báo cáo sự cố</a>
+        <ul>
+            <li><a class="icon-16-article" href="/{CPPath}/ModHSThanhVienUCSC/Index.aspx">Bản khai hồ sơ thành viên UCSC</a></li>
+            <li><a class="icon-16-article" href="/{CPPath}/ModDonDangKyUCSC/Index.aspx">Đăng ký tham gia mạng lưới UCSC</a></li>
+            <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoBanDauSuCo/Index.aspx">Báo cáo ban đầu sự cố mạng</a></li>
+            <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoKetThucSuCo/Index.aspx">Báo cáo kết thúc sự cố mạng</a></li>
+            <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTongHop/Index.aspx">Báo cáo tổng hợp</a></li>
         </ul>
     </li>
     <li class="node"><a>{RS:MenuTop_Design}</a>

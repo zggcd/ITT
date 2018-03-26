@@ -37,6 +37,12 @@ namespace HL.Lib.Models
         [DataInfo]
         public bool Activity { get; set; }
 
+        [DataInfo]
+        public int SourceID { get; set; }
+
+        [DataInfo]
+        public string RSS { get; set; }
+
         #endregion
     }
 
@@ -74,6 +80,16 @@ namespace HL.Lib.Models
             return base.CreateQuery()
                .Where(o => o.ID == id)
                .ToSingle_Cache();
+        }
+
+        public List<WebMenuEntity> GetByParentID(int id)
+        {
+            return all_cache().FindAll(o => o.ParentID == id);
+        }
+
+        public List<WebMenuEntity> all_cache()
+        {
+            return WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true).ToList_Cache();
         }
 
         public string GetChildIDForCP(int menu_id, int lang_id)

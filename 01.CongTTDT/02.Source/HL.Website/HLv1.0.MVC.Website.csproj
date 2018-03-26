@@ -1637,6 +1637,8 @@
     <Content Include="TTPortal\Views\ModHSThanhVienUCSC\Index.ascx" />
     <Content Include="TTPortal\Views\ModInfoMagic\Add.ascx" />
     <Content Include="TTPortal\Views\ModInfoMagic\Index.ascx" />
+    <Content Include="TTPortal\Views\ModRSS\Add.ascx" />
+    <Content Include="TTPortal\Views\ModRSS\Index.ascx" />
     <Content Include="TTPortal\Views\ModSoLuongSuCo\Add.ascx" />
     <Content Include="TTPortal\Views\ModSoLuongSuCo\Index.ascx" />
     <Content Include="TTPortal\Views\ModTag\Add.ascx" />

@@ -90,14 +90,17 @@
                     <th width="1%">
                         <input type="checkbox" name="toggle" value="" onclick="checkAll(<%= model.PageSize %>);" />
                     </th>
-                    <th class="title">
-                        <%= GetSortLink("Tiêu đề", "Name")%>
-                    </th>
                     <th style="width:40px" nowrap="nowrap">
                         <%= GetSortLink("Ảnh", "File")%>
                     </th>
+                    <th class="title">
+                        <%= GetSortLink("Tiêu đề", "Name")%>
+                    </th>
                     <th nowrap="nowrap">
                         <%= GetSortLink("Chuyên mục", "MenuID")%>
+                    </th>
+                    <th nowrap="nowrap">
+                        <%= GetSortLink("Người biên tập", "UserID")%>
                     </th>
                     <th width="1%" nowrap="nowrap">
                         <%= GetSortLink("Xuất bản", "Published")%>
@@ -133,12 +136,15 @@
                     <td align="center">
                         <%= GetCheckbox(listEntity[i].ID, i)%>
                     </td>
+                    <td align="center">
+                       <%= Utils.GetMedia(listEntity[i].File, 40, 40)%>
+                    </td>
                     <td>
                         <a href="javascript:HLRedirect('Add', <%= listEntity[i].ID %>)"><%= listEntity[i].Name%></a>
                         <p class="smallsub">(<span>Mã</span>: <%= listEntity[i].Code%>)</p>
                     </td>
                     <td align="center">
-                       <%= Utils.GetMedia(listEntity[i].File, 40, 40)%>
+                       <%= GetName(listEntity[i].getMenu()) %>
                     </td>
                     <td align="center">
                        <%= GetName(listEntity[i].getMenu()) %>

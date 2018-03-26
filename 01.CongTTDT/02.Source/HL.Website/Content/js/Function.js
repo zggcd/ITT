@@ -140,3 +140,14 @@ function pkeypress(e) {
         return false;
     }
 }
+
+function getrss() {
+    var num = Math.floor(Math.random() * 999999);
+    sLink = '/Tools/Ajax.aspx?cmd=getrss&rnd=' + num;
+
+    AjaxRequest.get({
+        'url': sLink,
+        'onSuccess': function (req) { },
+        'onError': function (req) { }
+    });
+}

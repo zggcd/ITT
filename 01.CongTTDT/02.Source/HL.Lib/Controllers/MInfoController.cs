@@ -419,6 +419,7 @@ namespace HL.Lib.Controllers
 
         public void ActionAddDangKyUCSC(ModDonDangKyUCSCEntity entity, MAppend append)
         {
+            string alert = string.Empty;
             ViewBag.DangKy = entity;
 
             DateTime date = DateTime.Now;
@@ -427,6 +428,11 @@ namespace HL.Lib.Controllers
             entity.Code = Data.GetCode(code);
             entity.UserID = Lib.Global.CPLogin.UserID;
             entity.Order = GetMaxOrder_DangKy();
+
+            string folder = "/Data/upload/files/DKUCSC/" + CPLogin.CurrentUser.ID.ToString() + "_" + CPLogin.CurrentUser.LoginName + "/";
+            Lib.Global.Directory.Create(HL.Core.Global.Application.BaseDirectory + folder);
+            entity.File = Utils.Upload("Atack", entity.File, folder, ref alert, true);
+
             entity.Published = date;
             entity.Activity = false;
             int id = ModDonDangKyUCSCService.Instance.Save(entity);
@@ -458,6 +464,11 @@ namespace HL.Lib.Controllers
                     entityHTTT.Add(entityTmp);
                 }
                 ModHeThongThongTinService.Instance.Save(entityHTTT);
+            }
+
+            if (alert != string.Empty)
+            {
+                ViewPage.Message.ListMessage.Add(alert);
             }
 
             ViewPage.Alert("Tạo mới đăng ký thành công! Chúng tôi sẽ xem xét và phê duyệt đăng ký của bạn sớm nhất có thể.");

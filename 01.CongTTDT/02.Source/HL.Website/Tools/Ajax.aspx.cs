@@ -268,6 +268,53 @@ namespace HL.Website.Tools
                 else if (string.IsNullOrEmpty(dienthoai)) sHTML = "Bạn chưa nhập số điện thoại";
                 else sHTML = "";
             }
+            else if (cmd == "getrss")
+            {
+                //if (!CPLogin.IsLogin()) return;
+                //int hour = DateTime.Now.Hour;
+                //if (hour % 3 == 0)
+                //{
+                var list =
+                    WebMenuService.Instance.CreateQuery()
+                        .Where(o => o.Type == "Org" && o.Activity == true)
+                        .ToList_Cache();
+                for (int i = 0; list != null && i < list.Count; i++)
+                {
+                    var gettagwithclass = list[i].Items.GetValue("GetTagWithClass").ToString();
+                    var gettagwithid = list[i].Items.GetValue("GetTagWithID").ToString();
+                    var deltagwithclass = list[i].Items.GetValue("DelTagWithClass").ToString();
+                    var deltagwithid = list[i].Items.GetValue("DelTagWithID").ToString();
+                    string[] arr;
+                    string gettag = "", getclassorid = "", deltag = "", delclassorid = "";
+                    if (!string.IsNullOrEmpty(gettagwithclass))
+                    {
+                        arr = gettagwithclass.Split('|');
+                        gettag = arr[0];
+                        getclassorid = "class='" + arr[1] + "'";
+                    }
+                    else if (!string.IsNullOrEmpty(gettagwithid))
+                    {
+                        arr = gettagwithid.Split('|');
+                        gettag = arr[0];
+                        getclassorid = "id='" + arr[1] + "'";
+                    }
+                    if (!string.IsNullOrEmpty(deltagwithclass))
+                    {
+                        arr = deltagwithclass.Split('|');
+                        deltag = arr[0];
+                        delclassorid = "class='" + arr[1] + "'";
+                    }
+                    else if (!string.IsNullOrEmpty(deltagwithid))
+                    {
+                        arr = deltagwithid.Split('|');
+                        deltag = arr[0];
+                        delclassorid = "id='" + arr[1] + "'";
+                    }
+                    Utils.GetContentFromRSS(list[i].Code, list[i].RSS, list[i].SourceID, gettag, getclassorid, deltag,
+                        delclassorid);
+                    //}
+                }
+            }
 
         }
     }

@@ -387,7 +387,7 @@ ul.tree ul {
 }
 
 .date .icon-date {
-    background: url("../../style2/img/date.jpg") no-repeat center center;
+    background: url("../img/date.jpg") no-repeat center center;
     display: block;
     position: absolute;
     height: 100%;
@@ -515,7 +515,7 @@ ul.tree ul {
 }
 
     .rss-word .rss .icon-rss {
-        background: url("../../style2/img/icon-rss.png") no-repeat center center;
+        background: url("../img/icon-rss.png") no-repeat center center;
         display: block;
         position: absolute;
         height: 100%;
