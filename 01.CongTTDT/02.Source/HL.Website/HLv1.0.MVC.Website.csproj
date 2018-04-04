@@ -1623,6 +1623,8 @@
     <Content Include="TTPortal\Views\ModConfigSendMail\Index.ascx" />
     <Content Include="TTPortal\Views\ModCoQuan\Add.ascx" />
     <Content Include="TTPortal\Views\ModCoQuan\Index.ascx" />
+    <Content Include="TTPortal\Views\ModDataBackup\Add.ascx" />
+    <Content Include="TTPortal\Views\ModDataBackup\Index.ascx" />
     <Content Include="TTPortal\Views\ModDauMoiUCSC\Add.ascx" />
     <Content Include="TTPortal\Views\ModDauMoiUCSC\Index.ascx" />
     <Content Include="TTPortal\Views\ModDonDangKyUCSC\Add.ascx" />

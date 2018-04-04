@@ -67,6 +67,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +136,7 @@
     <Compile Include="CPControllers\ModConfigController.cs" />
     <Compile Include="CPControllers\ModConfigSendMailController.cs" />
     <Compile Include="CPControllers\ModCoQuanController.cs" />
+    <Compile Include="CPControllers\ModDataBackupController.cs" />
     <Compile Include="CPControllers\ModDauMoiUCSCController.cs" />
     <Compile Include="CPControllers\ModDonDangKyUCSCController.cs" />
     <Compile Include="CPControllers\ModDuThaoController.cs" />
@@ -210,6 +212,7 @@
     <Compile Include="Models\ModBaoCaoTongHopModel.cs" />
     <Compile Include="Models\ModConfigSendMailModel.cs" />
     <Compile Include="Models\ModCoQuanModel.cs" />
+    <Compile Include="Models\ModDataBackupModel.cs" />
     <Compile Include="Models\ModDauMoiUCSCModel.cs" />
     <Compile Include="Models\ModDonDangKyUCSCModel.cs" />
     <Compile Include="Models\ModDuThaoModel.cs" />
