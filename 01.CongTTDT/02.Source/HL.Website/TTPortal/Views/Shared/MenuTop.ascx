@@ -31,6 +31,15 @@
             <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTongHop/Index.aspx">Báo cáo tổng hợp</a></li>
         </ul>
     </li>
+    <li class="node"><a>Quản lý sự cố</a>
+        <ul>
+            <li><a class="icon-16-article" href="/{CPPath}/ModIncident/Index.aspx">Deface</a></li>
+            <li><a class="icon-16-article" href="/{CPPath}/ModIncident/Index.aspx">Phishing</a></li>
+            <li><a class="icon-16-article" href="/{CPPath}/ModIncident/Index.aspx">Malware</a></li>
+            <li><a class="icon-16-article" href="/{CPPath}/ModIncident/Index.aspx">C&C botnet</a></li>
+            <li><a class="icon-16-article" href="/{CPPath}/ModIncident/Index.aspx">Attack</a></li>
+        </ul>
+    </li>
     <li class="node"><a>{RS:MenuTop_Design}</a>
         <ul>
             <li><a class="icon-16-menu" href="/{CPPath}/SysPage/Index.aspx">{RS:MenuTop_Page}</a></li>

@@ -1583,6 +1583,7 @@
     <Content Include="TTPortal\Content\templates\bluestork\images\toolbar\icon-32-delete.png" />
     <Content Include="TTPortal\Content\templates\bluestork\images\toolbar\icon-32-edit.png" />
     <Content Include="TTPortal\Content\templates\bluestork\images\toolbar\icon-32-error.png" />
+    <Content Include="TTPortal\Content\templates\bluestork\images\toolbar\icon-32-excel.png" />
     <Content Include="TTPortal\Content\templates\bluestork\images\toolbar\icon-32-export.png" />
     <Content Include="TTPortal\Content\templates\bluestork\images\toolbar\icon-32-forward.png" />
     <Content Include="TTPortal\Content\templates\bluestork\images\toolbar\icon-32-help.png" />
@@ -1637,6 +1638,10 @@
     <Content Include="TTPortal\Views\ModHeThongThongTin\Index.ascx" />
     <Content Include="TTPortal\Views\ModHSThanhVienUCSC\Add.ascx" />
     <Content Include="TTPortal\Views\ModHSThanhVienUCSC\Index.ascx" />
+    <Content Include="TTPortal\Views\ModIncident\Add.ascx" />
+    <Content Include="TTPortal\Views\ModIncident\Export.ascx" />
+    <Content Include="TTPortal\Views\ModIncident\Import.ascx" />
+    <Content Include="TTPortal\Views\ModIncident\Index.ascx" />
     <Content Include="TTPortal\Views\ModInfoMagic\Add.ascx" />
     <Content Include="TTPortal\Views\ModInfoMagic\Index.ascx" />
     <Content Include="TTPortal\Views\ModRSS\Add.ascx" />
@@ -1667,6 +1672,7 @@
     <Content Include="Views\CGopY\Default.ascx" />
     <Content Include="Views\CHeThongThongTin\Default.ascx" />
     <Content Include="Views\CHSThanhVienUCSC\Default.ascx" />
+    <Content Include="Views\CIncident\Default.ascx" />
     <Content Include="Views\CInfoMagic\Default.ascx" />
     <Content Include="Views\CInfo\Login.ascx" />
     <Content Include="Views\CInfo\Register.ascx" />
@@ -1705,6 +1711,8 @@
     <Content Include="Views\MHeThongThongTin\Index.ascx" />
     <Content Include="Views\MHSThanhVienUCSC\Detail.ascx" />
     <Content Include="Views\MHSThanhVienUCSC\Index.ascx" />
+    <Content Include="Views\MIncident\Detail.ascx" />
+    <Content Include="Views\MIncident\Index.ascx" />
     <Content Include="Views\MInfoMagic\Detail.ascx" />
     <Content Include="Views\MInfoMagic\Index.ascx" />
     <Content Include="Views\MInfo\BCTongHopUCSC.ascx" />
@@ -1806,6 +1814,7 @@
     <Folder Include="Data\upload\flash\" />
     <Folder Include="Data\upload\images\Adv\" />
     <Folder Include="Data\upload\images\User\" />
+    <Folder Include="TTPortal\Templates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />

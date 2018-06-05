@@ -53,6 +53,9 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\DLL\Aspose.Cells.dll</HintPath>
+    </Reference>
     <Reference Include="HLv1.0.MVC.Core">
       <HintPath>..\DLL\HLv1.0.MVC.Core.dll</HintPath>
     </Reference>
@@ -85,6 +88,7 @@
     <Compile Include="Controllers\CGopYController.cs" />
     <Compile Include="Controllers\CHeThongThongTinController.cs" />
     <Compile Include="Controllers\CHSThanhVienUCSCController.cs" />
+    <Compile Include="Controllers\CIncidentController.cs" />
     <Compile Include="Controllers\CInfoController.cs" />
     <Compile Include="Controllers\CInfoMagicController.cs" />
     <Compile Include="Controllers\CMenuController.cs" />
@@ -109,6 +113,7 @@
     <Compile Include="Controllers\MGopYController.cs" />
     <Compile Include="Controllers\MHeThongThongTinController.cs" />
     <Compile Include="Controllers\MHSThanhVienUCSCController.cs" />
+    <Compile Include="Controllers\MIncidentController.cs" />
     <Compile Include="Controllers\MInfoController.cs" />
     <Compile Include="Controllers\MInfoMagicController.cs" />
     <Compile Include="Controllers\MRSSController.cs" />
@@ -146,6 +151,7 @@
     <Compile Include="CPControllers\ModGopYController.cs" />
     <Compile Include="CPControllers\ModHeThongThongTinController.cs" />
     <Compile Include="CPControllers\ModHSThanhVienUCSCController.cs" />
+    <Compile Include="CPControllers\ModIncidentController.cs" />
     <Compile Include="CPControllers\ModInfoMagicController.cs" />
     <Compile Include="CPControllers\ModNewsController.cs" />
     <Compile Include="CPControllers\ModRSSController.cs" />
@@ -175,6 +181,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Global\Application.cs" />
+    <Compile Include="Global\Excel.cs" />
     <Compile Include="Global\MyClass.cs" />
     <Compile Include="Global\ObjectCookies.cs" />
     <Compile Include="Global\CPLogin.cs" />
@@ -220,6 +227,7 @@
     <Compile Include="Models\ModGopYModel.cs" />
     <Compile Include="Models\ModHeThongThongTinModel.cs" />
     <Compile Include="Models\ModHSThanhVienUCSCModel.cs" />
+    <Compile Include="Models\ModIncidentModel.cs" />
     <Compile Include="Models\ModInfoMagicModel.cs" />
     <Compile Include="Models\ModNewsModel.cs" />
     <Compile Include="Models\ModNewsTagModel.cs" />

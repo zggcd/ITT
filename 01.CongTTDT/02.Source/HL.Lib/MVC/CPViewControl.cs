@@ -52,7 +52,7 @@ namespace HL.Lib.MVC
         {
             string[] ArrCommand = commands.Split(',');
 
-            string s = "<ul>";
+            string s = "<ul style='float: right;'>";
             for (int i = 0; i < ArrCommand.Length; i++)
             {
                 if (ArrCommand[i] == "space")
