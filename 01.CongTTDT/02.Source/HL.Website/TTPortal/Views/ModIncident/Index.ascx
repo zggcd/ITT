@@ -19,10 +19,10 @@
         <div class="m">
             <div class="toolbar-list" id="toolbar">
                 <ul style="float: left; padding-right: 15px;">
-                    <li id="toolbar-apply" class="button">
+                    <%--<li id="toolbar-apply" class="button">
                         <a class="toolbar" href="<%=CPViewPage.Request.RawUrl.Replace("Index.aspx","Export.aspx") %>">
                             <span title="In Excel" class="icon-32-excel"></span>Xuất Excel</a>
-                    </li>
+                    </li>--%>
 
                     <li id="toolbar-apply" class="button"><a class="toolbar" href="<%=CPViewPage.Request.RawUrl.Replace("Index.aspx","Import.aspx") %>"><span
                         title="In Excel" class="icon-32-excel"></span>Nhập Excel</a></li>
@@ -30,7 +30,7 @@
                 <%=GetDefaultListCommand()%>
             </div>
             <div class="pagetitle icon-48-generic">
-                <h2>Incident</h2>
+                <h2>Quản lý sự cố</h2>
             </div>
             <div class="clr"></div>
         </div>
@@ -105,47 +105,55 @@
             <table class="adminlist" cellspacing="1">
                 <thead>
                     <tr>
-                        <th width="1%">#
-                        </th>
+                        <th width="1%">#</th>
                         <th width="1%">
                             <input type="checkbox" name="toggle" value="" onclick="checkAll(<%= model.PageSize %>);" />
                         </th>
                         <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("ID", "ID")%>
+                            <%= GetSortLink("PID", "ID")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Domain/URL", "Url")%>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("Loại sự cố", "MenuID")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
+                        <th width="10%" nowrap="nowrap">
+                            <%= GetSortLink("Domain/URL", "Path")%>
+                        </th>
+                        <th width="5%" nowrap="nowrap">
                             <%= GetSortLink("IP", "IP")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
+                        <th width="5%" nowrap="nowrap">
                             <%= GetSortLink("ISP", "ISP")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
+                        <th width="5%" nowrap="nowrap">
                             <%= GetSortLink("Thời gian", "AttackOn")%>
                         </th>
-
-                        <%--<th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Chuyên mục", "MenuID")%>
+                        <th width="1%" nowrap="nowrap">
+                            <%= GetSortLink("Tồn tại", "Resolve")%>
                         </th>
-                        <th class="title">
+                        <th width="1%" nowrap="nowrap">
+                            <span>Gửi mail</span>
+                        </th>
+                        <th width="1%" nowrap="nowrap">
+                            <%= GetSortLink("Lần gửi", "EmailNo")%>
+                        </th>
+                        <th width="1%" nowrap="nowrap">
+                            <%= GetSortLink("Duyệt", "Activity")%>
+                        </th>
+
+                        <%--<th class="title">
                             <%= GetSortLink("Tên", "Name")%>
                         </th>
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Mã", "Code")%>
                         </th>
                         <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Path", "Path")%>
+                            <%= GetSortLink("Path", "Url")%>
                         </th>
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Fake destination", "FakeDestination")%>
                         </th>
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Source", "Source")%>
-                        </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Email no", "EmailNo")%>
                         </th>
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Attacker", "Attacker")%>
@@ -220,9 +228,6 @@
                             <%= GetSortLink("Thứ tự", "Order")%>
                             <a href="javascript:hl_exec_cmd('saveorder')" class="saveorder" title="Lưu sắp xếp"></a>
                         </th>--%>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Duyệt", "Activity")%>
-                        </th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -248,7 +253,10 @@
                             <%= listEntity[i].ID%>
                         </td>
                         <td align="center">
-                            <%= listEntity[i].Url%>
+                            <%= GetName(listEntity[i].getMenu()) %>
+                        </td>
+                        <td align="center">
+                            <%= listEntity[i].Path%>
                         </td>
                         <td align="center">
                             <%= listEntity[i].IP%>
@@ -259,27 +267,35 @@
                         <td align="center">
                             <%= string.Format("{0:dd/MM/yyyy HH:mm}", listEntity[i].AttackOn) %>
                         </td>
-
-                        <%--<td align="center">
-                            <%= GetName(listEntity[i].getMenu()) %>
+                        <td align="center">
+                            <%= GetPublish(listEntity[i].ID, listEntity[i].Resolve)%>
                         </td>
-                        <td>
+                        <td align="center">
+                            <a href="javascript:HLRedirect('SendMail', <%= listEntity[i].ID %>)" title="Gửi email cảnh báo tới đơn vị bị sự cố">
+                                <img src="/{CPPath}/Content/add/img/email.png" />
+                            </a>
+                        </td>
+                        <td align="right">
+                            <%= string.Format("{0:#,##0}", listEntity[i].EmailNo)%>
+                        </td>
+                        <td align="center">
+                            <%= GetPublish(listEntity[i].ID, listEntity[i].Activity)%>
+                        </td>
+
+                        <%--<td>
                             <a href="javascript:HLRedirect('Add', <%= listEntity[i].ID %>)"><%= listEntity[i].Name%></a>
                         </td>
                         <td align="center">
                             <%= listEntity[i].Code%>
                         </td>
                         <td align="center">
-                            <%= listEntity[i].Path%>
+                            <%= listEntity[i].Url%>
                         </td>
                         <td align="center">
                             <%= listEntity[i].FakeDestination%>
                         </td>
                         <td align="center">
                             <%= listEntity[i].Source%>
-                        </td>
-                        <td align="center">
-                            <%= string.Format("{0:#,##0}", listEntity[i].EmailNo)%>
                         </td>
                         <td align="center">
                             <%= listEntity[i].Attacker%>
@@ -353,9 +369,6 @@
                         <td class="order">
                             <%= GetOrder(listEntity[i].ID, listEntity[i].Order)%>
                         </td>--%>
-                        <td align="center">
-                            <%= GetPublish(listEntity[i].ID, listEntity[i].Activity)%>
-                        </td>
                     </tr>
                     <%} %>
                 </tbody>

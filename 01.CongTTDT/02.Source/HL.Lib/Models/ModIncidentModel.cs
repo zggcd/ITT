@@ -7,11 +7,14 @@ namespace HL.Lib.Models
 {
     public class ModIncidentEntity : EntityBase
     {
-        
+
         #region Autogen by HL
 
         [DataInfo]
         public override int ID { get; set; }
+
+        [DataInfo]
+        public int? ParentID { get; set; }
 
         [DataInfo]
         public int MenuID { get; set; }
@@ -122,10 +125,13 @@ namespace HL.Lib.Models
         public int Order { get; set; }
 
         [DataInfo]
+        public bool Resolve { get; set; }
+
+        [DataInfo]
         public bool Activity { get; set; }
 
-        #endregion      
-  
+        #endregion
+
         private WebMenuEntity _oMenu = null;
         public WebMenuEntity getMenu()
         {

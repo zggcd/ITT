@@ -12,6 +12,7 @@ using System.Net;
 using System.IO;
 using System.Text;
 using HtmlAgilityPack;
+using Newtonsoft.Json;
 
 namespace HL.Lib.Global
 {
@@ -884,69 +885,69 @@ namespace HL.Lib.Global
                         }
                         //if (published.ToShortDateString() == DateTime.Now.ToShortDateString())
                         //{
-                            string url = ds.Tables["item"].Rows[i]["link"].ToString().Replace(System.Environment.NewLine, " ");
-                            string description = ds.Tables["item"].Rows[i]["description"].ToString();
+                        string url = ds.Tables["item"].Rows[i]["link"].ToString().Replace(System.Environment.NewLine, " ");
+                        string description = ds.Tables["item"].Rows[i]["description"].ToString();
 
 
-                            string img = string.Empty, des = string.Empty;
+                        string img = string.Empty, des = string.Empty;
 
 
-                            if (description.Contains("<img"))
-                            {
-                                int start = description.IndexOf("<img");
-                                int end = description.IndexOf("</a>");
-                                if (start <= end)
-                                    img = description.Substring(start, description.Length - start - 1);
-                            }
+                        if (description.Contains("<img"))
+                        {
+                            int start = description.IndexOf("<img");
+                            int end = description.IndexOf("</a>");
+                            if (start <= end)
+                                img = description.Substring(start, description.Length - start - 1);
+                        }
 
-                            string matchString = Regex.Match(img, "<img.+?src=[\"'](.+?)[\"'].+?>", RegexOptions.IgnoreCase).Groups[1].Value;
-                            if (string.IsNullOrEmpty(matchString) && description.Contains("<img"))
+                        string matchString = Regex.Match(img, "<img.+?src=[\"'](.+?)[\"'].+?>", RegexOptions.IgnoreCase).Groups[1].Value;
+                        if (string.IsNullOrEmpty(matchString) && description.Contains("<img"))
+                        {
+                            int start = description.IndexOf("<img");
+                            int end = description.IndexOf("/>");
+                            if (start <= end)
+                                img = description.Substring(start, description.Length - start - 1);
+                            matchString = Regex.Match(img, "<img.+?src=[\"'](.+?)[\"'].+?>", RegexOptions.IgnoreCase).Groups[1].Value;
+                        }
+                        //if (description.Contains("<img"))
+                        //{
+                        //    description = description.Replace(matchString, "");
+                        //}
+                        if (description.Contains("<a"))
+                        {
+                            int start = description.IndexOf("<a");
+                            int end = description.IndexOf("</a>");
+                            if (start <= end)
+                                des = description.Substring(start, end - start + 4);
+                            description = description.Replace(des, "").Trim();
+                        }
+                        if (description.Contains("<img"))
+                        {
+                            int start = description.IndexOf("<img");
+                            int end = description.IndexOf("/>");
+                            if (start <= end)
+                                des = description.Substring(start, end - start + 2);
+                            description = description.Replace(des, "").Trim();
+                        }
+                        string title = ds.Tables["item"].Rows[i]["title"].ToString();
+                        if (CheckNews(Data.GetCode(title), title) == false)
+                        {
+                            var entity = new ModRSSEntity
                             {
-                                int start = description.IndexOf("<img");
-                                int end = description.IndexOf("/>");
-                                if (start <= end)
-                                    img = description.Substring(start, description.Length - start - 1);
-                                matchString = Regex.Match(img, "<img.+?src=[\"'](.+?)[\"'].+?>", RegexOptions.IgnoreCase).Groups[1].Value;
-                            }
-                            //if (description.Contains("<img"))
-                            //{
-                            //    description = description.Replace(matchString, "");
-                            //}
-                            if (description.Contains("<a"))
-                            {
-                                int start = description.IndexOf("<a");
-                                int end = description.IndexOf("</a>");
-                                if (start <= end)
-                                    des = description.Substring(start, end - start + 4);
-                                description = description.Replace(des, "").Trim();
-                            }
-                            if (description.Contains("<img"))
-                            {
-                                int start = description.IndexOf("<img");
-                                int end = description.IndexOf("/>");
-                                if (start <= end)
-                                    des = description.Substring(start, end - start + 2);
-                                description = description.Replace(des, "").Trim();
-                            }
-                            string title = ds.Tables["item"].Rows[i]["title"].ToString();
-                            if (CheckNews(Data.GetCode(title), title) == false)
-                            {
-                                var entity = new ModRSSEntity
-                                {
-                                    Name = title,
-                                    Code = Data.GetCode(title),
-                                    Url = url,
-                                    Published = published,
-                                    NgayLayTin = DateTime.Now,
-                                    Nguon = domain,
-                                    File = matchString,
-                                    Summary = description,
-                                    Content = GetContentFromURL(url, gettag, getclass, deltag, delclass),
-                                    MenuID = menuID,
-                                    Activity = false
-                                };
-                                ModRSSService.Instance.Save(entity);
-                            }
+                                Name = title,
+                                Code = Data.GetCode(title),
+                                Url = url,
+                                Published = published,
+                                NgayLayTin = DateTime.Now,
+                                Nguon = domain,
+                                File = matchString,
+                                Summary = description,
+                                Content = GetContentFromURL(url, gettag, getclass, deltag, delclass),
+                                MenuID = menuID,
+                                Activity = false
+                            };
+                            ModRSSService.Instance.Save(entity);
+                        }
                         //}
                     }
                     catch (Exception ex)
@@ -960,5 +961,34 @@ namespace HL.Lib.Global
             }
 
         }
+
+        /// <summary>
+        /// Lay du lieu tu API
+        /// </summary>
+        /// <typeparam name="T">Kieu du lieu dong</typeparam>
+        /// <param name="api">Link API</param>
+        /// <param name="msg">Thong bao loi</param>
+        /// <returns></returns>
+        public static T DownloadJsonToData<T>(string api, ref string msg) where T : new()
+        {
+            using (var w = new WebClient())
+            {
+                var json = string.Empty;
+
+                try
+                {
+                    json = w.DownloadString(api);
+
+                    return !string.IsNullOrEmpty(json) ? JsonConvert.DeserializeObject<T>(json) : new T();
+                }
+                catch (Exception)
+                {
+                    msg = "Lỗi chuyển dữ liệu từ API sang dữ liệu hệ thống.";
+                }
+
+                return new T();
+            }
+        }
+
     }
 }

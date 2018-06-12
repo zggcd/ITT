@@ -75,18 +75,55 @@ namespace HL.Lib.CPControllers
                 SaveNewRedirect(model.RecordID, entity.ID);
         }
 
-        public void ActionImport()
+        public void ActionImport(ModIncidentModel model)
         {
+            if (model.MenuID > 0)
+            {
+            }
+            else
+            {
+            }
 
+            ViewBag.Data = new ModFileExcelEntity();
+            ViewBag.Model = model;
         }
 
-        public void ActionImportData()
+        public void ActionImportData(ModIncidentModel model)
         {
-            string file = HL.Core.Web.HttpQueryString.GetValue("file").ToString();
-            string file2 = CPViewPage.Server.MapPath(file);
-            int count = Excel.ImportExcel(file2);
-            CPViewPage.Message.ListMessage.Add("Đã import được " + count + " doanh nghiệp vào danh sách.");
-            CPViewPage.CPRedirect("ModEnterprise/Index.aspx");
+            CPViewPage.Message.MessageType = Message.MessageTypeEnum.Error;
+
+            if (model.MenuID < 1)
+                CPViewPage.Message.ListMessage.Add("Chọn Loại sự cố.");
+
+            string filePath = CPViewPage.Server.MapPath(model.File);
+
+            if (!filePath.EndsWith(".xls") && !filePath.EndsWith(".xlsx"))
+            {
+                CPViewPage.Message.ListMessage.Add("File không đúng định dạng (yêu cầu: .xls, .xlsx).");
+            }
+            else if (!System.IO.File.Exists(filePath))
+            {
+                CPViewPage.Message.ListMessage.Add("File không tồn tại.");
+            }
+
+            if (CPViewPage.Message.ListMessage.Count == 0)
+            {
+                model.FilePath = filePath;
+                string msg = "", success = "";
+                int count = Excel.ImportExcel_Incident(model, ref msg, ref success);
+
+                if (!string.IsNullOrEmpty(msg))
+                {
+                    CPViewPage.Message.ListMessage.Add(msg);
+                }
+                else
+                {
+                    CPViewPage.SetMessage("Đã import được " + count + " sự cố." + success);
+                }
+
+                //CPViewPage.CPRedirect("ModIncident/Index.aspx");
+                //CPViewPage.Request.RawUrl.Replace("Import.aspx", "Index.aspx");
+            }
 
         }
 
@@ -116,9 +153,9 @@ namespace HL.Lib.CPControllers
             }
 
             //ghi exel
-            string temp_file = CPViewPage.Server.MapPath("~/Data/upload/files/Excel/DanhBaDoanhNghiep_" +
+            string temp_file = CPViewPage.Server.MapPath("~/Data/upload/files/Excel/DanhSachSuCo_" +
             string.Format("{0:dd_MM_yyyy}", DateTime.Now) + ".xls");
-            string filePath = CPViewPage.Server.MapPath("~/CP/Templates/DanhBaDoanhNghiep.xls");
+            string filePath = CPViewPage.Server.MapPath("~/CP/Templates/DanhSachSuCo.xls");
             Excel.Export(list, 1, filePath, temp_file);
             //CPViewPage.Response.Write("Here!6");
 
@@ -130,6 +167,64 @@ namespace HL.Lib.CPControllers
             CPViewPage.Response.End();
 
             //CPViewPage.Response.Write("Here!");
+        }
+
+        public void ActionSendMail(EmailEntity emailEntity)
+        {
+            ViewBag.Data = emailEntity;
+        }
+
+        public void ActionSendMailExcute(EmailEntity emailEntity)
+        {
+            ViewBag.Data = emailEntity;
+
+            CPViewPage.Message.MessageType = Message.MessageTypeEnum.Error;
+
+            if (string.IsNullOrEmpty(emailEntity.To))
+                CPViewPage.Message.ListMessage.Add("Bạn chưa nhập Email tiếp nhận.");
+            else
+            {
+                var toArr = emailEntity.To.Split(',');
+                foreach(var i in toArr)
+                {
+                    if (Utils.GetEmailAddress(i) == string.Empty)
+                        CPViewPage.Message.ListMessage.Add("Định dạng Email tiếp nhận không đúng.");
+                }
+            }
+
+            if (!string.IsNullOrEmpty(emailEntity.Cc))
+            {
+                var ccArr = emailEntity.Cc.Split(',');
+                foreach(var i in ccArr)
+                {
+                    if (Utils.GetEmailAddress(i) == string.Empty)
+                        CPViewPage.Message.ListMessage.Add("Định dạng Email Cc không đúng.");
+                }
+            }
+
+            if (string.IsNullOrEmpty(emailEntity.Subject))
+                CPViewPage.Message.ListMessage.Add("Bạn chưa nhập Tiêu đề.");
+
+            if (string.IsNullOrEmpty(emailEntity.Body))
+                CPViewPage.Message.ListMessage.Add("Bạn chưa nhập Nội dung.");
+
+            if (CPViewPage.Message.ListMessage.Count == 0)
+            {
+                // Goi ham send mail
+                string sendResult = Mail.SendMailUseSMTP(emailEntity.To, emailEntity.Cc, emailEntity.Subject, emailEntity.Body, emailEntity.Attach);
+
+                if (!string.IsNullOrEmpty(sendResult))
+                    CPViewPage.Message.ListMessage.Add("Gửi mail lỗi. Hãy kiểm tra lại việc cấu hình email của bạn.");
+                else
+                {
+                    CPViewPage.SetMessage("Gửi mail thành công.");
+
+                    // Thuc hien tang so lan gui mail them 1
+                    var incident = ModIncidentService.Instance.CreateQuery().Where(o => o.ID == emailEntity.RecordID).ToSingle();
+                    incident.EmailNo++;
+                    ModIncidentService.Instance.Save(incident);
+                }
+            }
         }
 
         #region private func
@@ -202,12 +297,27 @@ namespace HL.Lib.CPControllers
         public string SearchText { get; set; }
 
         public int[] ArrState { get; set; }
+        public string File { get; set; }
+        public string FilePath { get; set; }
     }
 
     public class ModFileExcelEntity
     {
+        public int MenuID { get; set; }
         public ModFileExcelEntity() { }
         public string File { get; set; }
     }
+
+    public class EmailEntity
+    {
+        public string To { get; set; }
+        public string Cc { get; set; }
+        public string Subject { get; set; }
+        public string Body { get; set; }
+        public string Attach { get; set; }
+
+        public int RecordID { get; set; }
+    }
+
 }
 

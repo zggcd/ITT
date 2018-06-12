@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="HL.Lib.MVC.CPViewControl" %>
 <%
     var entity = ViewBag.Data as ModFileExcelEntity ?? new ModFileExcelEntity();
+    var model = ViewBag.Model as ModIncidentModel;
 %>
 <script type="text/javascript" src="/{CPPath}/Content/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
@@ -8,8 +9,19 @@
 </script>
 <script type="text/javascript">
     function importexcel() {
-        var file = document.getElementById("File").value;
-        window.location.href = '<%=CPViewPage.Request.RawUrl.Replace("Import.aspx","ImportData.aspx") %>' + '?file=' + file;
+<%--        var file = document.getElementById("File").value;
+        if (!file) {
+            alert("Bạn chưa chọn file để import.");
+            return;
+        }
+        window.location.href = '<%=CPViewPage.Request.RawUrl.Replace("Import.aspx","ImportData.aspx") %>' + '?file=' + file;--%>
+
+        document.getElementById('_hl_action').value = 'importdata';
+
+        if (typeof document.hlForm.onsubmit == "function") {
+            document.hlForm.onsubmit();
+        }
+        document.hlForm.submit();
     }
     function closet() {
         window.location.href = '<%=CPViewPage.Request.RawUrl.Replace("Import.aspx","Index.aspx") %>';
@@ -54,6 +66,7 @@
         }
 </style>
 <form id="hlForm" name="hlForm" method="post">
+    <input type="hidden" id="_hl_action" name="_hl_action" />
 
     <div id="toolbar-box">
         <div class="t">
@@ -95,11 +108,21 @@
                 <table class="admintable">
                     <tr>
                         <td class="key">
-                            <label>
-                                File Excel :</label>
+                            <label>Loại sự cố :</label>
                         </td>
                         <td>
-                            <input class="text_input" type="text" name="File" id="File" value="<%=entity.File%>" style="width: 80%;" maxlength="255" />
+                            <select name="MenuID" id="MenuID" class="text_input">
+                                <option value="0">Root</option>
+                                <%= Utils.ShowDDLMenuByType("Incident", model.LangID, model.MenuID)%>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="key">
+                            <label>File Excel :</label>
+                        </td>
+                        <td>
+                            <input class="text_input" type="text" name="File" id="File" value="<%=model.File%>" style="width: 80%;" maxlength="255" />
                             <input class="text_input" style="width: 17%;" type="button" onclick="ShowFileForm('File'); return false;"
                                 value="Chọn File" />
                         </td>
