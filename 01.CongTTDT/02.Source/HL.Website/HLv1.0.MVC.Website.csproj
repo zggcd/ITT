@@ -1469,6 +1469,8 @@
     <Content Include="TTPortal\Content\templates\bluestork\images\header\icon-48-user-profile.png" />
     <Content Include="TTPortal\Content\templates\bluestork\images\header\icon-48-user.png" />
     <Content Include="TTPortal\Content\templates\bluestork\images\header\icon-48-writemess.png" />
+    <Content Include="TTPortal\Content\templates\bluestork\images\toolbar\icon-32-fileexport.png" />
+    <Content Include="TTPortal\Content\templates\bluestork\images\toolbar\icon-32-fileimport.png" />
     <Content Include="TTPortal\Content\templates\bluestork\images\toolbar\icon-32-sendmail.png" />
     <Content Include="TTPortal\Content\templates\bluestork\images\j_arrow.png" />
     <Content Include="TTPortal\Content\templates\bluestork\images\j_arrow_down.png" />
@@ -1633,6 +1635,10 @@
     <Content Include="TTPortal\Views\ModDataBackup\Index.ascx" />
     <Content Include="TTPortal\Views\ModDauMoiUCSC\Add.ascx" />
     <Content Include="TTPortal\Views\ModDauMoiUCSC\Index.ascx" />
+    <Content Include="TTPortal\Views\ModDichVuCanhBaoIP\Add.ascx" />
+    <Content Include="TTPortal\Views\ModDichVuCanhBaoIP\Index.ascx" />
+    <Content Include="TTPortal\Views\ModDichVuCanhBao\Add.ascx" />
+    <Content Include="TTPortal\Views\ModDichVuCanhBao\Index.ascx" />
     <Content Include="TTPortal\Views\ModDonDangKyUCSC\Add.ascx" />
     <Content Include="TTPortal\Views\ModDonDangKyUCSC\Index.ascx" />
     <Content Include="TTPortal\Views\ModDuThao\Add.ascx" />
@@ -1671,6 +1677,8 @@
     <Content Include="Views\CBaoCaoTongHop\Default.ascx" />
     <Content Include="Views\CCoQuan\Default.ascx" />
     <Content Include="Views\CDauMoiUCSC\Default.ascx" />
+    <Content Include="Views\CDichVuCanhBaoIP\Default.ascx" />
+    <Content Include="Views\CDichVuCanhBao\Default.ascx" />
     <Content Include="Views\CDonDangKyUCSC\Default.ascx" />
     <Content Include="Views\CDuThao\Default.ascx" />
     <Content Include="Views\CFeedback\TempDefault.ascx" />
@@ -1708,6 +1716,10 @@
     <Content Include="Views\MCoQuan\Index.ascx" />
     <Content Include="Views\MDauMoiUCSC\Detail.ascx" />
     <Content Include="Views\MDauMoiUCSC\Index.ascx" />
+    <Content Include="Views\MDichVuCanhBaoIP\Detail.ascx" />
+    <Content Include="Views\MDichVuCanhBaoIP\Index.ascx" />
+    <Content Include="Views\MDichVuCanhBao\Detail.ascx" />
+    <Content Include="Views\MDichVuCanhBao\Index.ascx" />
     <Content Include="Views\MDonDangKyUCSC\Detail.ascx" />
     <Content Include="Views\MDonDangKyUCSC\Index.ascx" />
     <Content Include="Views\MDuThao\Detail.ascx" />
@@ -1724,6 +1736,7 @@
     <Content Include="Views\MInfo\BCTongHopUCSC.ascx" />
     <Content Include="Views\MInfo\BCKetThucUCSC.ascx" />
     <Content Include="Views\MInfo\BCBanDauUCSC.ascx" />
+    <Content Include="Views\MInfo\DVCanhBao.ascx" />
     <Content Include="Views\MInfo\DangKyUCSC.ascx" />
     <Content Include="Views\MInfo\Login.ascx" />
     <Content Include="Views\MInfo\ChangePass.ascx" />

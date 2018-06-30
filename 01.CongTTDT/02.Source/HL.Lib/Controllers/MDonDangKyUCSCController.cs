@@ -62,7 +62,7 @@ namespace HL.Lib.Controllers
                 if (entity != null)
                 {
                     ViewBag.Other = ModDonDangKyUCSCService.Instance.CreateQuery()
-                                            .Where(o => o.Activity == true)
+                                            //.Where(o => o.Activity == true)
                                             .Where(o => o.Order < entity.Order)
                                             .WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("DonDangKyUCSC", MenuID, ViewPage.CurrentLang.ID))
                                             .OrderByDesc(o => o.Order)

@@ -13,7 +13,7 @@
 
 <%
     CPUserEntity entity = ViewBag.Data as CPUserEntity ?? CPLogin.CurrentUser;
-    ModDonDangKyUCSCEntity entityDk = ViewBag.HoSo as ModDonDangKyUCSCEntity ?? new ModDonDangKyUCSCEntity();
+    ModDonDangKyUCSCEntity entityDk = ViewBag.Data as ModDonDangKyUCSCEntity ?? new ModDonDangKyUCSCEntity();
 
     List<ModHeThongThongTinEntity> currHTTT = ViewBag.HTTT as List<ModHeThongThongTinEntity> ?? new List<ModHeThongThongTinEntity>();
 

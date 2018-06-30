@@ -60,28 +60,28 @@
         <div class="content" style="margin: 0px">
             <%if (!HL.Lib.Global.CPLogin.IsLogin())
                 {%>
-            <form method="post" id="" name="" action="{ActionForm}">
-                <p class="text1">
-                    Tên truy nhập 
-                </p>
-                <p>
-                    <input id="LoginName" name="LoginName" value="<%=item.LoginName %>" class="com-input" type="text">
-                </p>
-                <p class="text1">Mật khẩu</p>
-                <p>
-                    <input value="<%=item.Password %>" id="Password" name="Password" class="com-input" type="password">
-                </p>
-                <span>
-                    <a href="/vn/Thanh-vien/Quen-mat-khau.aspx" style="color: #444">Quên mật khẩu</a>
-                </span>
-                <span class="button">
-                    <input id="dn" class="dn-btn" name="_hl_action[LoginPOST]" value="Đăng nhập" type="submit" style="display: none;">
-                    <input name="" value="Đăng nhập" id="" class="btn_action search icon btnButtonLogin" type="button" onclick="checkdn($('#LoginName').val(), $('#Password').val());">
-                </span>
-            </form>
+            <%--<form method="post" id="" name="" action="{ActionForm}">--%>
+            <p class="text1">
+                Tên truy nhập 
+            </p>
+            <p>
+                <input id="LoginName" name="LoginName" value="<%=item.LoginName %>" class="com-input" type="text">
+            </p>
+            <p class="text1">Mật khẩu</p>
+            <p>
+                <input value="<%=item.Password %>" id="Password" name="Password" class="com-input" type="password">
+            </p>
+            <span>
+                <a href="/vn/Thanh-vien/Quen-mat-khau.aspx" style="color: #444">Quên mật khẩu</a>
+            </span>
+            <span class="button">
+                <input id="dn" class="dn-btn" name="_hl_action[LoginPOST]" value="Đăng nhập" type="submit" style="display: none;">
+                <input name="" value="Đăng nhập" id="" class="btn_action search icon btnButtonLogin" type="button" onclick="checkdn($('#LoginName').val(), $('#Password').val());">
+            </span>
+            <%--</form>--%>
             <%}
-            else
-            {%>
+                else
+                {%>
             Đăng nhập thành công!
             <br />
             <a href="javascript: dx();" rel="nofollow">Đăng xuất</a>
@@ -89,7 +89,8 @@
             <a href="/vn/Thanh-vien/Doi-mat-khau.aspx" title="Đổi mật khẩu">Đổi mật khẩu</a>
             <br />
             <a href="/vn/Thanh-vien/Thong-tin-ca-nhan.aspx" title="Thay đổi thông tin cá nhân">Thay đổi thông tin cá nhân</a>
-            <br /><br />
+            <br />
+            <br />
             <u><b>Điều phối, ứng cứu sự cố ATTT mạng:</b></u>
             <ul>
                 <li><a href="/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx">1. DS Hồ sơ UCSC</a></li>
@@ -97,6 +98,7 @@
                 <li><a href="/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx">3. DS Báo cáo ban đầu sự cố mạng</a></li>
                 <li><a href="/vn/Thanh-vien/DS-bc-ket-thuc-su-co.aspx">4. DS Báo cáo kết thúc ứng phó sự cố</a></li>
                 <li><a href="/vn/Thanh-vien/DS-bc-tong-hop-su-co.aspx">5. DS Báo cáo tổng hợp</a></li>
+                <li><a href="/vn/Thanh-vien/Dich-vu-canh-bao-su-co.aspx">6. Dịch vụ cảnh báo</a></li>
             </ul>
             <%}%>
         </div>

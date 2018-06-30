@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using HL.Lib.MVC;
 using HL.Lib.Models;
 using HL.Lib.Global;
+using System.Web;
+using System.IO;
+using System.Web.UI;
 
 namespace HL.Lib.CPControllers
 {
@@ -21,10 +24,14 @@ namespace HL.Lib.CPControllers
             // sap xep tu dong
             string orderBy = AutoSort(model.Sort);
 
+            DateTime? from = HL.Core.Global.Convert.ToDateTime(model.From, DateTime.MinValue);
+            DateTime? to = HL.Core.Global.Convert.ToDateTime(model.To, DateTime.MaxValue);
+
             // tao danh sach
             var dbQuery = ModIncidentService.Instance.CreateQuery()
                                 .Where(!string.IsNullOrEmpty(model.SearchText), o => o.Name.Contains(model.SearchText))
                                 .Where(model.State > 0, o => (o.State & model.State) == model.State)
+                                .Where(o => o.AttackOn >= from && o.AttackOn <= to)
                                 .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForCP("Incident", model.MenuID, model.LangID))
                                 .Take(model.PageSize)
                                 .OrderBy(orderBy)
@@ -155,7 +162,7 @@ namespace HL.Lib.CPControllers
             //ghi exel
             string temp_file = CPViewPage.Server.MapPath("~/Data/upload/files/Excel/DanhSachSuCo_" +
             string.Format("{0:dd_MM_yyyy}", DateTime.Now) + ".xls");
-            string filePath = CPViewPage.Server.MapPath("~/CP/Templates/DanhSachSuCo.xls");
+            string filePath = CPViewPage.Server.MapPath("~/TTPortal/Templates/DanhSachSuCo.xlsx");
             Excel.Export(list, 1, filePath, temp_file);
             //CPViewPage.Response.Write("Here!6");
 
@@ -168,6 +175,55 @@ namespace HL.Lib.CPControllers
 
             //CPViewPage.Response.Write("Here!");
         }
+
+        //public void ExportToPDF(ModIncidentModel model)
+        //{
+        //    RenderView("Index");
+
+        //    //lấy danh sách thuật ngữ
+        //    var listEntity = ModIncidentService.Instance.CreateQuery()
+        //                //.Where(o => o.Activity == true)
+        //                .ToList();
+
+        //    //khai báo tập hợp bản ghi excel
+        //    List<List<object>> list = new List<List<object>>();
+        //    //khai báo 1 dòng excel
+        //    List<object> _list = null;
+        //    string cityname = "";
+        //    for (int i = 0; listEntity != null && listEntity.Count > 0 && i < listEntity.Count; i++)
+        //    {
+        //        _list = new List<object>();
+        //        //add 1 dòng excel
+        //        // _list.Add(i + 1);
+        //        _list.Add(listEntity[i].Name);
+        //        _list.Add(cityname);
+        //        _list.Add(listEntity[i].Published);
+        //        list.Add(_list);
+        //    }
+
+        //    //ghi exel
+        //    string temp_file = CPViewPage.Server.MapPath("~/Data/upload/files/Excel/DanhSachSuCo_" +
+        //    string.Format("{0:dd_MM_yyyy}", DateTime.Now) + ".xls");
+        //    string filePath = CPViewPage.Server.MapPath("~/TTPortal/Templates/DanhSachSuCo.xlsx");
+
+
+
+        //    CPViewPage.Response.ContentType = "application/pdf";
+        //    CPViewPage.Response.AddHeader("content-disposition", "attachment;filename=DataTable.pdf");
+        //    CPViewPage.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+        //    StringWriter sw = new StringWriter();
+        //    HtmlTextWriter hw = new HtmlTextWriter(sw);
+        //    GridView1.RenderControl(hw);
+        //    StringReader sr = new StringReader(sw.ToString());
+        //    Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+        //    HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
+        //    PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
+        //    pdfDoc.Open();
+        //    htmlparser.Parse(sr);
+        //    pdfDoc.Close();
+        //    CPViewPage.Response.Write(pdfDoc);
+        //    CPViewPage.Response.End();
+        //}
 
         public void ActionSendMail(EmailEntity emailEntity)
         {
@@ -299,6 +355,13 @@ namespace HL.Lib.CPControllers
         public int[] ArrState { get; set; }
         public string File { get; set; }
         public string FilePath { get; set; }
+
+        public int ISPState { get; set; }
+        public int DomainState { get; set; }
+        public int VirusState { get; set; }
+        public string From { get; set; }
+        public string To { get; set; }
+        public int MemberID { get; set; }
     }
 
     public class ModFileExcelEntity

@@ -2029,6 +2029,8 @@ a.jgrid:hover {	text-decoration: none;}
 .icon-32-config					{	background-image: url(../images/toolbar/icon-32-refresh.png);	}
 .icon-32-excel						{	background-image: url(../images/toolbar/icon-32-excel.png);	}
 .icon-32-sendmail						{	background-image: url(../images/toolbar/icon-32-sendmail.png);	}
+.icon-32-fileexport						{	background-image: url(../images/toolbar/icon-32-fileexport.png);	}
+.icon-32-fileimport						{	background-image: url(../images/toolbar/icon-32-fileimport.png);	}
 
 /* -- HEADER ICON STYLES ----------------------------- */
 .icon-48-categories					{	background-image: url(../images/header/icon-48-category.png);	}

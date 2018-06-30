@@ -56,6 +56,9 @@
     <Reference Include="Aspose.Cells">
       <HintPath>..\DLL\Aspose.Cells.dll</HintPath>
     </Reference>
+    <Reference Include="Aspose.Pdf">
+      <HintPath>..\DLL\Aspose.Pdf.dll</HintPath>
+    </Reference>
     <Reference Include="HLv1.0.MVC.Core">
       <HintPath>..\DLL\HLv1.0.MVC.Core.dll</HintPath>
     </Reference>
@@ -88,6 +91,8 @@
     <Compile Include="Controllers\CConfigSendMailController.cs" />
     <Compile Include="Controllers\CCoQuanController.cs" />
     <Compile Include="Controllers\CDauMoiUCSCController.cs" />
+    <Compile Include="Controllers\CDichVuCanhBaoController.cs" />
+    <Compile Include="Controllers\CDichVuCanhBaoIPController.cs" />
     <Compile Include="Controllers\CDonDangKyUCSCController.cs" />
     <Compile Include="Controllers\CDuThaoController.cs" />
     <Compile Include="Controllers\CGopYController.cs" />
@@ -113,6 +118,8 @@
     <Compile Include="Controllers\MContentTempController.cs" />
     <Compile Include="Controllers\MCoQuanController.cs" />
     <Compile Include="Controllers\MDauMoiUCSCController.cs" />
+    <Compile Include="Controllers\MDichVuCanhBaoController.cs" />
+    <Compile Include="Controllers\MDichVuCanhBaoIPController.cs" />
     <Compile Include="Controllers\MDonDangKyUCSCController.cs" />
     <Compile Include="Controllers\MDuThaoController.cs" />
     <Compile Include="Controllers\MGopYController.cs" />
@@ -148,6 +155,8 @@
     <Compile Include="CPControllers\ModCoQuanController.cs" />
     <Compile Include="CPControllers\ModDataBackupController.cs" />
     <Compile Include="CPControllers\ModDauMoiUCSCController.cs" />
+    <Compile Include="CPControllers\ModDichVuCanhBaoController.cs" />
+    <Compile Include="CPControllers\ModDichVuCanhBaoIPController.cs" />
     <Compile Include="CPControllers\ModDonDangKyUCSCController.cs" />
     <Compile Include="CPControllers\ModDuThaoController.cs" />
     <Compile Include="CPControllers\ModFeedbackController.cs" />
@@ -186,6 +195,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Global\Application.cs" />
+    <Compile Include="Global\Pdf.cs" />
     <Compile Include="Global\Excel.cs" />
     <Compile Include="Global\MyClass.cs" />
     <Compile Include="Global\ObjectCookies.cs" />
@@ -226,6 +236,8 @@
     <Compile Include="Models\ModCoQuanModel.cs" />
     <Compile Include="Models\ModDataBackupModel.cs" />
     <Compile Include="Models\ModDauMoiUCSCModel.cs" />
+    <Compile Include="Models\ModDichVuCanhBaoIPModel.cs" />
+    <Compile Include="Models\ModDichVuCanhBaoModel.cs" />
     <Compile Include="Models\ModDonDangKyUCSCModel.cs" />
     <Compile Include="Models\ModDuThaoModel.cs" />
     <Compile Include="Models\ModFeedbackModel.cs" />

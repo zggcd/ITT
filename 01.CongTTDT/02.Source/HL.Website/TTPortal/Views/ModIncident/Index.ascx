@@ -5,6 +5,9 @@
     var listEntity = ViewBag.Data as List<ModIncidentEntity>;
 %>
 
+<link rel="stylesheet" type="text/css" href="/Content/css/jquery.datetimepicker.css" />
+<script src="/Content/js/datetime/jquery.js"></script>
+
 <form id="hlForm" name="hlForm" method="post">
 
     <input type="hidden" id="_hl_action" name="_hl_action" />
@@ -19,13 +22,12 @@
         <div class="m">
             <div class="toolbar-list" id="toolbar">
                 <ul style="float: left; padding-right: 15px;">
-                    <%--<li id="toolbar-apply" class="button">
+                    <li id="toolbar-apply" class="button">
+                        <a class="toolbar" href="<%=CPViewPage.Request.RawUrl.Replace("Index.aspx","Import.aspx") %>"><span
+                            title="Nhập Excel" class="icon-32-fileimport"></span>Nhập File</a>
                         <a class="toolbar" href="<%=CPViewPage.Request.RawUrl.Replace("Index.aspx","Export.aspx") %>">
-                            <span title="In Excel" class="icon-32-excel"></span>Xuất Excel</a>
-                    </li>--%>
-
-                    <li id="toolbar-apply" class="button"><a class="toolbar" href="<%=CPViewPage.Request.RawUrl.Replace("Index.aspx","Import.aspx") %>"><span
-                        title="In Excel" class="icon-32-excel"></span>Nhập Excel</a></li>
+                            <span title="Xuất Excel" class="icon-32-fileexport"></span>Xuất File</a>
+                    </li>
                 </ul>
                 <%=GetDefaultListCommand()%>
             </div>
@@ -42,17 +44,28 @@
     </div>
     <div class="clr"></div>
 
-    <script type="text/javascript">
+    <style>
+        .gr {
+            padding-left: 10px;
+        }
+    </style>
 
+    <script type="text/javascript">
         var HLController = 'ModIncident';
 
         var HLArrVar = [
             'filter_state', 'State',
             'filter_menu', 'MenuID',
             'filter_lang', 'LangID',
-            'limit', 'PageSize'
-        ];
+            'limit', 'PageSize',
 
+            'filter_isp', 'ISPState',
+            'filter_domain', 'DomainState',
+            'filter_virus', 'VirusState',
+            'filter_member', 'MemberID',
+            'filter_from', 'From',
+            'filter_to', 'To'
+        ];
 
         var HLArrVar_QS = [
             'filter_search', 'SearchText'
@@ -83,21 +96,59 @@
 
             <table>
                 <tr>
-                    <td width="100%">Lọc:
+                    <td width="100%">
+                        <%--<span>Lọc:</span>
                         <input type="text" id="filter_search" value="<%= model.SearchText %>" class="text_area" onchange="HLRedirect();return false;" />
-                        <button onclick="HLRedirect();return false;">Tìm kiếm</button>
+                        <button onclick="HLRedirect();return false;">Tìm kiếm</button>--%>
+                        <p>
+                            <span>Từ ngày:</span>
+                            <input type="text" id="filter_from" name="From" value="<%=string.Format("{0:dd-MM-yyyy}",  model.From) %>" class="text_area" />
+                            <span>Đến ngày:</span>
+                            <input type="text" id="filter_to" name="To" value="<%=string.Format("{0:dd-MM-yyyy}",  model.To) %>" class="text_area" />
+
+                            <span class="gr">Thành viên:</span>
+                            <select id="filter_member" onchange="HLRedirect()" class="inputbox" size="1">
+                                <option value="0">(Tất cả)</option>
+                            </select>
+                        </p>
+
+                        <p>
+                            <span>ISP bị tấn công:</span>
+                            <select id="filter_isp" onchange="HLRedirect()" class="inputbox" size="1">
+                                <option value="0">(Tất cả)</option>
+                                <%= Utils.ShowDDLByConfigkey("Mod.CommonState", model.ISPState)%>
+                            </select>
+
+                            <span class="gr">Domain bị tấn công:</span>
+                            <select id="filter_domain" onchange="HLRedirect()" class="inputbox" size="1">
+                                <option value="0">(Tất cả)</option>
+                                <%= Utils.ShowDDLByConfigkey("Mod.CommonState", model.DomainState)%>
+                            </select>
+
+                            <span class="gr">Virus xuất hiện:</span>
+                            <select id="filter_virus" onchange="HLRedirect()" class="inputbox" size="1">
+                                <option value="0">(Tất cả)</option>
+                                <%= Utils.ShowDDLByConfigkey("Mod.CommonState", model.VirusState)%>
+                            </select>
+                        </p>
                     </td>
-                    <td nowrap="nowrap">Chuyên mục : 
-                    <select id="filter_menu" onchange="HLRedirect()" class="inputbox" size="1">
-                        <option value="0">(Tất cả)</option>
-                        <%= Utils.ShowDDLMenuByType("Incident", model.LangID, model.MenuID)%>
-                    </select>
-                        Vị trí :
-                   <select id="filter_state" onchange="HLRedirect()" class="inputbox" size="1">
-                       <option value="0">(Tất cả)</option>
-                       <%= Utils.ShowDDLByConfigkey("Mod.IncidentState", model.State)%>
-                   </select>
-                        Ngôn ngữ :<%= ShowDDLLang(model.LangID)%>
+                    <td nowrap="nowrap">
+                        <span>Loại sự cố:</span>
+                        <select id="filter_menu" onchange="HLRedirect()" class="inputbox" size="1">
+                            <option value="0">(Tất cả)</option>
+                            <%= Utils.ShowDDLMenuByType2("Incident", model.LangID, model.MenuID)%>
+                        </select>
+                        <%--Vị trí :
+                       <select id="filter_state" onchange="HLRedirect()" class="inputbox" size="1">
+                           <option value="0">(Tất cả)</option>
+                           <%= Utils.ShowDDLByConfigkey("Mod.IncidentState", model.State)%>
+                       </select>--%>
+                        <span>Ngôn ngữ:</span><%= ShowDDLLang(model.LangID)%>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100%">
+                        <button onclick="HLRedirect();return false;">Tìm kiếm</button>
                     </td>
                 </tr>
             </table>
@@ -384,3 +435,18 @@
     </div>
 
 </form>
+
+<script src="/Content/js/datetime/jquery.datetimepicker.js"></script>
+<script type="text/javascript">
+    $('#filter_from, #filter_to').datetimepicker({
+        onGenerate: function (ct) {
+            $(this).find('.xdsoft_date')
+                .toggleClass('xdsoft_disabled');
+        },
+        minDate: '-2-01-1970',
+        maxDate: '+2-01-1970',
+        timepicker: false,
+        format: 'd-m-Y',
+        formatDate: 'Y-m-d',
+    });
+</script>

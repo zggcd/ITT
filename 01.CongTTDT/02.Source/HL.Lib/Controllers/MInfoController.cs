@@ -56,6 +56,36 @@ namespace HL.Lib.Controllers
                     DenNgay = dt
                 };
             }
+            else if (ec == "dich-vu-canh-bao-su-co")
+            {
+                ViewBag.DichVu = new ModDichVuCanhBaoEntity()
+                {
+                    Name = "",
+                    Time = DateTime.Now.TimeOfDay
+                };
+
+                ViewBag.IPs = new ModDichVuCanhBaoIPEntity()
+                {
+                    Name = ""
+                };
+
+                int userId = Lib.Global.CPLogin.UserID;
+                var donDk = ModDonDangKyUCSCService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
+                if (donDk != null)
+                {
+                    var dv = ModDichVuCanhBaoService.Instance.CreateQuery().Where(o => o.DonDangKyUCSCID == donDk.ID).ToSingle();
+                    if (dv != null)
+                    {
+                        ViewBag.DichVu = dv;
+                        ViewBag.Append = new MAppend() { ThoiGian = dv.Time.ToString(@"hh\:mm") };
+                        ViewBag.EndCode = dv.Name;
+                        var ips = ModDichVuCanhBaoIPService.Instance.CreateQuery().Where(o => o.DichVuCanhBaoID == dv.ID).ToList();
+                        if (ips != null && ips.Count > 0) ViewBag.IPs = ips;
+                    }
+                }
+
+                layout = "DVCanhBao";
+            }
             else if (ec == "dang-xuat")
             {
                 string currUrl = ViewPage.Request.RawUrl;
@@ -453,7 +483,7 @@ namespace HL.Lib.Controllers
                     if (string.IsNullOrEmpty(lstName[j])) continue;
                     var entityTmp = new ModHeThongThongTinEntity
                     {
-                        DauMoiUCSCID = id,
+                        DonDangKyUCSCID = id,
                         MenuID = m,
                         Name = lstName[j],
                         Code = Data.GetCode(lstName[j]),
@@ -727,6 +757,114 @@ namespace HL.Lib.Controllers
             ViewPage.Navigate("/vn/Thanh-vien/DS-bc-tong-hop-su-co.aspx");
         }
 
+        public void ActionAddDVCanhBao(ModDichVuCanhBaoEntity entity, MAppend append, string endCode)
+        {
+            string alert = string.Empty;
+            ViewBag.DichVu = entity;
+            ViewBag.Append = append;
+            DateTime date = DateTime.Now;
+            int userId = Lib.Global.CPLogin.UserID;
+
+            try
+            {
+                // Lay ban ghi dang ky UCSC cua user
+                var donDk = ModDonDangKyUCSCService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
+                if (donDk == null) ViewPage.Message.ListMessage.Add("Bạn chưa thực hiện đăng ký UCSC.");
+
+                string code = "DVCB" + ModDichVuCanhBaoService.Instance.GetMaxID();
+
+                //entity.DonDangKyUCSCID = 0;
+                entity.Name = code;
+                entity.Code = Data.GetCode(code);
+                entity.UserID = userId;
+                entity.Order = GetMaxOrder_DVCanhBao();
+
+                try
+                {
+                    if (!string.IsNullOrEmpty(append.ThoiGian)) entity.Time = TimeSpan.Parse(append.ThoiGian);
+                }
+                catch (Exception e)
+                {
+                    ViewPage.Message.ListMessage.Add("Định dạng thời gian không đúng (HH:mm)");
+                }
+
+                // Lay ban ghi neu da ton tai
+                ModDichVuCanhBaoEntity curr = null;
+                List<ModDichVuCanhBaoIPEntity> ipCurr = null;
+                if (!string.IsNullOrEmpty(endCode))
+                {
+                    curr = ModDichVuCanhBaoService.Instance.CreateQuery().Where(o => o.Name == endCode).ToSingle();
+                    if (curr != null)
+                    {
+                        curr.MenuID = entity.MenuID;
+                        curr.Time = entity.Time;
+                        ipCurr = ModDichVuCanhBaoIPService.Instance.CreateQuery().Where(o => o.DichVuCanhBaoID == curr.ID).ToList();
+                    }
+                }
+
+                entity.Published = date;
+                entity.Activity = true;
+                int id = 0;
+
+                // Danh sach IP
+                var arr = append.M.Split(';');
+                List<ModDichVuCanhBaoIPEntity> listIP = new List<ModDichVuCanhBaoIPEntity>();
+
+                for (int j = 0; j < arr.Length; j++)
+                {
+                    if (string.IsNullOrEmpty(arr[j])) continue;
+                    var entityIP = new ModDichVuCanhBaoIPEntity
+                    {
+                        DichVuCanhBaoID = id,
+                        MenuID = entity.MenuID,
+                        Name = arr[j],
+                        UserID = userId,
+                        Published = DateTime.Now,
+                        Published1 = null,
+                        Order = GetMaxOrder_DVCanhBaoIP(),
+                        Activity = true
+                    };
+                    listIP.Add(entityIP);
+                }
+                ViewBag.IPs = listIP;
+                if (ViewPage.Message.ListMessage.Count == 0)
+                {
+                    if (curr != null)
+                    {
+                        ModDichVuCanhBaoService.Instance.Save(curr);
+                        id = curr.ID;
+                    }
+                    else
+                    {
+                        entity.DonDangKyUCSCID = donDk.ID;
+                        ViewBag.EndCode = entity.Name;
+                        id = ModDichVuCanhBaoService.Instance.Save(entity);
+                    }
+
+                    // Xoa IP cu
+                    var ipDel = ModDichVuCanhBaoIPService.Instance.CreateQuery().Where(o => o.DichVuCanhBaoID == id).ToList();
+                    if (ipDel != null) ModDichVuCanhBaoIPService.Instance.Delete(ipDel);
+
+                    listIP.ForEach(o => o.DichVuCanhBaoID = id);
+                    ModDichVuCanhBaoIPService.Instance.Save(listIP);
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewPage.Message.ListMessage.Add("Lỗi đăng ký nhận cảnh báo! Hãy kiểm tra tính hợp lệ.");
+            }
+
+            if (ViewPage.Message.ListMessage.Count > 0)
+            {
+                ViewPage.Alert(string.Join("\n", ViewPage.Message.ListMessage));
+            }
+            else
+            {
+                ViewPage.Alert("Đăng ký nhận cảnh báo thành công.");
+                //ViewPage.RefreshPage();
+            }
+        }
+
         private int GetMaxOrder_HoSo()
         {
             return ModHSThanhVienUCSCService.Instance.CreateQuery()
@@ -786,6 +924,20 @@ namespace HL.Lib.Controllers
         private int GetMaxOrder_HTTT()
         {
             return ModHeThongThongTinService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
+
+        private int GetMaxOrder_DVCanhBao()
+        {
+            return ModDichVuCanhBaoService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
+
+        private int GetMaxOrder_DVCanhBaoIP()
+        {
+            return ModDichVuCanhBaoIPService.Instance.CreateQuery()
                     .Max(o => o.Order)
                     .ToValue().ToInt(0) + 1;
         }

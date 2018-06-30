@@ -3,6 +3,17 @@
     var item = ViewBag.Data as CPUserEntity ?? new CPUserEntity();
 %>
 
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (HL.Lib.Global.CPLogin.IsLogin())
+        {
+            Response.Redirect("/vn/Thanh-vien/Thong-tin-ca-nhan.aspx");
+            return;
+        }
+    }
+</script>
+
 <style>
     .name {
         width: 30% !important;
