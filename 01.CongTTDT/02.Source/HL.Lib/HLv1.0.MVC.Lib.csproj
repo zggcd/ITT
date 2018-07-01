@@ -103,6 +103,7 @@
     <Compile Include="Controllers\CInfoMagicController.cs" />
     <Compile Include="Controllers\CMenuController.cs" />
     <Compile Include="Controllers\CFeedbackController.cs" />
+    <Compile Include="Controllers\CNhanLucUCSCController.cs" />
     <Compile Include="Controllers\CRSSController.cs" />
     <Compile Include="Controllers\CSoLuongSuCoController.cs" />
     <Compile Include="Controllers\CUserController.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="Controllers\MIncidentController.cs" />
     <Compile Include="Controllers\MInfoController.cs" />
     <Compile Include="Controllers\MInfoMagicController.cs" />
+    <Compile Include="Controllers\MNhanLucUCSCController.cs" />
     <Compile Include="Controllers\MRSSController.cs" />
     <Compile Include="Controllers\MSearchController.cs" />
     <Compile Include="Controllers\MSiteMapTempController.cs" />
@@ -168,6 +170,7 @@
     <Compile Include="CPControllers\ModIncidentController.cs" />
     <Compile Include="CPControllers\ModInfoMagicController.cs" />
     <Compile Include="CPControllers\ModNewsController.cs" />
+    <Compile Include="CPControllers\ModNhanLucUCSCController.cs" />
     <Compile Include="CPControllers\ModRSSController.cs" />
     <Compile Include="CPControllers\ModSoLuongSuCoController.cs" />
     <Compile Include="CPControllers\ModTagController.cs" />
@@ -248,6 +251,7 @@
     <Compile Include="Models\ModInfoMagicModel.cs" />
     <Compile Include="Models\ModNewsModel.cs" />
     <Compile Include="Models\ModNewsTagModel.cs" />
+    <Compile Include="Models\ModNhanLucUCSCModel.cs" />
     <Compile Include="Models\ModOnlineModel.cs" />
     <Compile Include="Models\ModRSSModel.cs" />
     <Compile Include="Models\ModSoLuongSuCoModel.cs" />

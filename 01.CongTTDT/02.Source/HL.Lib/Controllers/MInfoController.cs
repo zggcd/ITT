@@ -496,6 +496,38 @@ namespace HL.Lib.Controllers
                 ModHeThongThongTinService.Instance.Save(entityHTTT);
             }
 
+            // Nhan luc
+            var nhanLucs = append.NhanLuc.Split('|');
+            var cNhanLucs = nhanLucs.Length;
+            List<ModNhanLucUCSCEntity> entityNhanLuc = new List<ModNhanLucUCSCEntity>();
+            for(int i = 0; i < cNhanLucs; i++)
+            {
+                if (string.IsNullOrEmpty(nhanLucs[i])) continue;
+                var nhanLuc = nhanLucs[i].Split('_');
+                int cNhanLuc = nhanLuc.Length;
+                if (cNhanLuc != 10) continue;
+                var item = new ModNhanLucUCSCEntity()
+                {
+                    DonDangKyUCSCID = id,
+                    Name = nhanLuc[0],
+                    School = nhanLuc[1],
+                    MenuIDs_LinhVucDT = nhanLuc[2],
+                    MenuIDs_TrinhDoDT = nhanLuc[3],
+                    MenuIDs_ChungChi = nhanLuc[4],
+                    MenuIDs_QuanLyATTT = nhanLuc[5],
+                    MenuIDs_KyThuatPhongThu = nhanLuc[6],
+                    MenuIDs_KyThuatBaoVe = nhanLuc[7],
+                    MenuIDs_KyThuatKiemTra = nhanLuc[8],
+                    NamTotNghiep = HL.Core.Global.Convert.ToInt(nhanLuc[9], 0),
+                    Activity = true,
+                    Published = DateTime.Now,
+                    Order = GetMaxOrder_NhanLuc()
+                };
+                entityNhanLuc.Add(item);
+            }
+            ViewBag.NhanLuc = entityNhanLuc;
+            ModNhanLucUCSCService.Instance.Save(entityNhanLuc);
+
             if (alert != string.Empty)
             {
                 ViewPage.Message.ListMessage.Add(alert);
@@ -941,6 +973,13 @@ namespace HL.Lib.Controllers
                     .Max(o => o.Order)
                     .ToValue().ToInt(0) + 1;
         }
+
+        private int GetMaxOrder_NhanLuc()
+        {
+            return ModNhanLucUCSCService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
         #endregion Dieu phoi, ung cuu su co ATTT mang
     }
     public class MUserModel
@@ -974,5 +1013,6 @@ namespace HL.Lib.Controllers
         public int Phut { get; set; }
         public string ThoiGian { get; set; }    //Dinh dang: dd/MM/yyyy/HH/mm
         public string M { get; set; }
+        public string NhanLuc { get; set; }
     }
 }

@@ -75,6 +75,9 @@ namespace HL.Lib.Controllers
                     ViewBag.HTTT = ModHeThongThongTinService.Instance.CreateQuery()
                         .Where(o => o.Activity == true && o.DonDangKyUCSCID == entity.ID)
                         .ToList();
+                    ViewBag.NhanLuc = ModNhanLucUCSCService.Instance.CreateQuery()
+                        .Where(o => o.Activity == true && o.DonDangKyUCSCID == entity.ID)
+                        .ToList();
                     ViewBag.EndCode = endCode;
                     RenderView("../MInfo/DangKyUCSC");
                 }
@@ -167,6 +170,38 @@ namespace HL.Lib.Controllers
                     ModHeThongThongTinService.Instance.Save(entityHTTT);
                 }
 
+                // Nhan luc
+                var nhanLucs = model.NhanLuc.Split('|');
+                var cNhanLucs = nhanLucs.Length;
+                List<ModNhanLucUCSCEntity> entityNhanLuc = new List<ModNhanLucUCSCEntity>();
+                for (int i = 0; i < cNhanLucs; i++)
+                {
+                    if (string.IsNullOrEmpty(nhanLucs[i])) continue;
+                    var nhanLuc = nhanLucs[i].Split('_');
+                    int cNhanLuc = nhanLuc.Length;
+                    if (cNhanLuc != 10) continue;
+                    var item = new ModNhanLucUCSCEntity()
+                    {
+                        DonDangKyUCSCID = entity.ID,
+                        Name = nhanLuc[0],
+                        School = nhanLuc[1],
+                        MenuIDs_LinhVucDT = nhanLuc[2],
+                        MenuIDs_TrinhDoDT = nhanLuc[3],
+                        MenuIDs_ChungChi = nhanLuc[4],
+                        MenuIDs_QuanLyATTT = nhanLuc[5],
+                        MenuIDs_KyThuatPhongThu = nhanLuc[6],
+                        MenuIDs_KyThuatBaoVe = nhanLuc[7],
+                        MenuIDs_KyThuatKiemTra = nhanLuc[8],
+                        NamTotNghiep = HL.Core.Global.Convert.ToInt(nhanLuc[9], 0),
+                        Activity = true,
+                        Published = DateTime.Now,
+                        Order = GetMaxOrder_NhanLuc()
+                    };
+                    entityNhanLuc.Add(item);
+                }
+                ViewBag.NhanLuc = entityNhanLuc;
+                ModNhanLucUCSCService.Instance.Save(entityNhanLuc);
+
                 ViewBag.DangKy = entityDk;
                 ViewBag.HTTT1 = entityHTTT;
 
@@ -178,6 +213,13 @@ namespace HL.Lib.Controllers
         private int GetMaxOrder_HTTT()
         {
             return ModHeThongThongTinService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
+
+        private int GetMaxOrder_NhanLuc()
+        {
+            return ModNhanLucUCSCService.Instance.CreateQuery()
                     .Max(o => o.Order)
                     .ToValue().ToInt(0) + 1;
         }

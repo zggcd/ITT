@@ -3,6 +3,7 @@
 <%
     var model = ViewBag.Model as ModIncidentModel;
     var listEntity = ViewBag.Data as List<ModIncidentEntity>;
+    var c0 = listEntity != null ? listEntity.Count : 0;
 %>
 
 <link rel="stylesheet" type="text/css" href="/Content/css/jquery.datetimepicker.css" />
@@ -176,6 +177,9 @@
                             <%= GetSortLink("ISP", "ISP")%>
                         </th>
                         <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("Tên Virus", "MalwareName")%>
+                        </th>
+                        <th width="5%" nowrap="nowrap">
                             <%= GetSortLink("Thời gian", "AttackOn")%>
                         </th>
                         <th width="1%" nowrap="nowrap">
@@ -208,9 +212,6 @@
                         </th>
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Attacker", "Attacker")%>
-                        </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Malware name", "MalwareName")%>
                         </th>
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Attacker i p", "AttackerIP")%>
@@ -291,9 +292,14 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    <%for (int i = 0; listEntity != null && i < listEntity.Count; i++)
-                        { %>
-                    <tr class="row<%= i%2 %>">
+                    <%int c = 0;
+                        for (int i = 0; listEntity != null && i < listEntity.Count; i++)
+                        {
+                            c = 0;
+                            var listChild = ModIncidentService.Instance.CreateQuery().Where(o => o.ParentID == listEntity[i].ID).ToList();
+                            if (listChild != null) c = listChild.Count;
+                    %>
+                    <tr class="row<%= i%2 %> openchild" id="p_<%=i %>">
                         <td align="center">
                             <%= i + 1%>
                         </td>
@@ -307,6 +313,10 @@
                             <%= GetName(listEntity[i].getMenu()) %>
                         </td>
                         <td align="center">
+                            <%if (c > 0)
+                                {%>
+                            <span style="float: left; font-weight: bold; color: blue;">&or;</span>
+                            <%} %>
                             <%= listEntity[i].Path%>
                         </td>
                         <td align="center">
@@ -314,6 +324,9 @@
                         </td>
                         <td align="center">
                             <%= listEntity[i].ISP%>
+                        </td>
+                        <td align="center">
+                            <%= listEntity[i].MalwareName%>
                         </td>
                         <td align="center">
                             <%= string.Format("{0:dd/MM/yyyy HH:mm}", listEntity[i].AttackOn) %>
@@ -350,9 +363,6 @@
                         </td>
                         <td align="center">
                             <%= listEntity[i].Attacker%>
-                        </td>
-                        <td align="center">
-                            <%= listEntity[i].MalwareName%>
                         </td>
                         <td align="center">
                             <%= listEntity[i].AttackerIP%>
@@ -421,6 +431,62 @@
                             <%= GetOrder(listEntity[i].ID, listEntity[i].Order)%>
                         </td>--%>
                     </tr>
+                    <%if (c > 0)
+                        {%>
+                    <tr class="row<%= i%2 %>" id="c_<%=i %>" style="display: none;" data-child="<%=listEntity[i].ID %>">
+                        <td colspan="12">
+                            <table class="adminlist" cellspacing="1" style="border: 1px solid blue;">
+                                <%for (int j = 0; listChild != null && j < listChild.Count; j++)
+                                    {
+                                %>
+                                <tr class="row<%= i%2 %>">
+                                    <td align="center">
+                                        <%= j + 1%>
+                                    </td>
+                                    <td align="center">
+                                        <%= GetCheckbox(listChild[j].ID, j)%>
+                                    </td>
+                                    <td align="center">
+                                        <%= listChild[j].ID%>
+                                    </td>
+                                    <td align="center">
+                                        <%= GetName(listChild[j].getMenu()) %>
+                                    </td>
+                                    <td align="center">
+                                        <%= listChild[j].Path%>
+                                    </td>
+                                    <td align="center">
+                                        <%= listChild[j].IP%>
+                                    </td>
+                                    <td align="center">
+                                        <%= listChild[j].ISP%>
+                                    </td>
+                                    <td align="center">
+                                        <%= listChild[j].MalwareName%>
+                                    </td>
+                                    <td align="center">
+                                        <%= string.Format("{0:dd/MM/yyyy HH:mm}", listChild[j].AttackOn) %>
+                                    </td>
+                                    <td align="center">
+                                        <%= GetPublish(listChild[j].ID, listChild[j].Resolve)%>
+                                    </td>
+                                    <td align="center">
+                                        <a href="javascript:HLRedirect('SendMail', <%= listChild[j].ID %>)" title="Gửi email cảnh báo tới đơn vị bị sự cố">
+                                            <img src="/{CPPath}/Content/add/img/email.png" />
+                                        </a>
+                                    </td>
+                                    <td align="right">
+                                        <%= string.Format("{0:#,##0}", listChild[j].EmailNo)%>
+                                    </td>
+                                    <td align="center">
+                                        <%= GetPublish(listChild[j].ID, listChild[j].Activity)%>
+                                    </td>
+                                </tr>
+                                <%} %>
+                            </table>
+                        </td>
+                    </tr>
+                    <%} %>
                     <%} %>
                 </tbody>
             </table>
@@ -438,6 +504,18 @@
 
 <script src="/Content/js/datetime/jquery.datetimepicker.js"></script>
 <script type="text/javascript">
+    $(document).ready(function () {
+        $('.openchild').click(function () {
+            var child = $(this).next()[0];
+            var isShow = child.style.display;
+            if (isShow && isShow == 'none') {
+                child.style.display = 'table-row';
+            } else if (isShow == 'table-row') {
+                child.style.display = 'none';
+            }
+        });
+    });
+
     $('#filter_from, #filter_to').datetimepicker({
         onGenerate: function (ct) {
             $(this).find('.xdsoft_date')

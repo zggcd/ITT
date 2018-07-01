@@ -1656,6 +1656,8 @@
     <Content Include="TTPortal\Views\ModIncident\Index.ascx" />
     <Content Include="TTPortal\Views\ModInfoMagic\Add.ascx" />
     <Content Include="TTPortal\Views\ModInfoMagic\Index.ascx" />
+    <Content Include="TTPortal\Views\ModNhanLucUCSC\Add.ascx" />
+    <Content Include="TTPortal\Views\ModNhanLucUCSC\Index.ascx" />
     <Content Include="TTPortal\Views\ModRSS\Add.ascx" />
     <Content Include="TTPortal\Views\ModRSS\Index.ascx" />
     <Content Include="TTPortal\Views\ModSoLuongSuCo\Add.ascx" />
@@ -1696,6 +1698,7 @@
     <Content Include="Views\CMenu\Left.ascx" />
     <Content Include="Views\CNews\MultiMedia.ascx" />
     <Content Include="Views\CNews\HaiChuyenMuc.ascx" />
+    <Content Include="Views\CNhanLucUCSC\Default.ascx" />
     <Content Include="Views\CSoLuongSuCo\Default.ascx" />
     <Content Include="Views\CStatic\Date.ascx" />
     <Content Include="Views\CStatic\Search.ascx" />
@@ -1745,6 +1748,8 @@
     <Content Include="Views\MInfo\HoSoUCSC.ascx" />
     <Content Include="Views\MInfo\Info.ascx" />
     <Content Include="Views\MInfo\ResetPass.ascx" />
+    <Content Include="Views\MNhanLucUCSC\Detail.ascx" />
+    <Content Include="Views\MNhanLucUCSC\Index.ascx" />
     <Content Include="Views\MSiteMapTemp\Index.ascx" />
     <Content Include="Views\MSiteMap\Index.ascx" />
     <Content Include="Views\MSearch\Index.ascx" />

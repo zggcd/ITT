@@ -249,5 +249,6 @@ namespace HL.Lib.Controllers
         public int TotalRecord { get; set; }
 
         public string M { get; set; }
+        public string NhanLuc { get; set; }
     }
 }

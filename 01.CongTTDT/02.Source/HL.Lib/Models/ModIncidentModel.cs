@@ -130,6 +130,9 @@ namespace HL.Lib.Models
         [DataInfo]
         public bool Activity { get; set; }
 
+        [DataInfo]
+        public int ChildNum { get; set; }
+
         #endregion
 
         private WebMenuEntity _oMenu = null;
