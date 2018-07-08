@@ -38,7 +38,7 @@ namespace HL.Lib.Models
         public string Source { get; set; }
 
         [DataInfo]
-        public DateTime AttackOn { get; set; }
+        public DateTime? AttackOn { get; set; }
 
         [DataInfo]
         public string IP { get; set; }

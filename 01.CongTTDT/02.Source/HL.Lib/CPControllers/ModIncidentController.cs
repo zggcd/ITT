@@ -20,28 +20,6 @@ namespace HL.Lib.CPControllers
         {
             // sap xep tu dong
             string orderBy = AutoSort(model.Sort);
-            string orderAdd = string.Empty;
-            if (model.ISPState == 1)
-            {
-                orderAdd += "ChildNum DESC";
-            }
-            else if (model.ISPState == 2)
-            {
-                orderAdd += "ChildNum ASC";
-            }
-            string saperate = "";
-            if (!string.IsNullOrEmpty(orderAdd))
-            {
-                saperate = ",";
-            }
-            if (model.DomainState == 1)
-            {
-                orderAdd += saperate + "ChildNum DESC";
-            }
-            else if (model.DomainState == 2)
-            {
-                orderAdd += saperate + "ChildNum ASC";
-            }
 
             DateTime? f = HL.Core.Global.Convert.ToDateTime(model.From, DateTime.MinValue);
             DateTime? t = HL.Core.Global.Convert.ToDateTime(model.To, DateTime.MaxValue);
@@ -350,6 +328,21 @@ namespace HL.Lib.CPControllers
             }
         }
 
+        public void ActionResolveGX(int id)
+        {
+            //update for id
+            ModIncidentService.Instance.Update(o => o.ID == id,
+                "@Resolve", 1);
+
+            //update for != id
+            //ModIncidentService.Instance.Update(o => o.ID != id,
+            //    "@Resolve", 0);
+
+            //thong bao
+            CPViewPage.SetMessage("Đã thực hiện thành công.");
+            CPViewPage.RefreshPage();
+        }
+
         #region private func
 
         private ModIncidentEntity entity = null;
@@ -416,6 +409,7 @@ namespace HL.Lib.CPControllers
         }
 
         public int MenuID { get; set; }
+        public string Menu { get; set; }
         public int State { get; set; }
         public string SearchText { get; set; }
 
@@ -423,6 +417,8 @@ namespace HL.Lib.CPControllers
         public string File { get; set; }
         public string FilePath { get; set; }
 
+        public int PhishingState { get; set; }
+        public int MalwareState { get; set; }
         public int ISPState { get; set; }
         public int DomainState { get; set; }
         public int VirusState { get; set; }

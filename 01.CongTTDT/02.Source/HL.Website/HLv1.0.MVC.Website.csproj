@@ -365,12 +365,14 @@
     <Content Include="Content\imgs\dk-refresh.png" />
     <Content Include="Content\imgs\loading.gif" />
     <Content Include="Content\js\AjaxRequest.js" />
+    <Content Include="Content\js\chart\Chart.min.js" />
     <Content Include="Content\js\datetime\jquery.datetimepicker.js" />
     <Content Include="Content\js\datetime\jquery.js" />
     <Content Include="Content\js\Function.js" />
     <Content Include="Content\js\javascript.js" />
     <Content Include="Content\js\jquery.min-1.12.4.js" />
     <Content Include="Content\js\message.js" />
+    <Content Include="Content\js\chart\utils.js" />
     <Content Include="Content\temp\css\message.css" />
     <Content Include="Content\temp\css\style.css" />
     <Content Include="Content\temp\css\w3.css" />
@@ -1625,6 +1627,10 @@
     <Content Include="TTPortal\Views\ModBaoCaoBanDauSuCo\Index.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoKetThucSuCo\Add.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoKetThucSuCo\Index.ascx" />
+    <Content Include="TTPortal\Views\ModBaoCaoTK\Malware.ascx" />
+    <Content Include="TTPortal\Views\ModBaoCaoTK\Phishing.ascx" />
+    <Content Include="TTPortal\Views\ModBaoCaoTK\Botnet.ascx" />
+    <Content Include="TTPortal\Views\ModBaoCaoTK\Deface.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoTongHop\Add.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoTongHop\Index.ascx" />
     <Content Include="TTPortal\Views\ModConfigSendMail\Add.ascx" />
@@ -1649,6 +1655,8 @@
     <Content Include="TTPortal\Views\ModHeThongThongTin\Index.ascx" />
     <Content Include="TTPortal\Views\ModHSThanhVienUCSC\Add.ascx" />
     <Content Include="TTPortal\Views\ModHSThanhVienUCSC\Index.ascx" />
+    <Content Include="TTPortal\Views\ModBaoCaoTK\Index.ascx" />
+    <Content Include="TTPortal\Views\ModBaoCaoTK\Export.ascx" />
     <Content Include="TTPortal\Views\ModIncident\SendMail.ascx" />
     <Content Include="TTPortal\Views\ModIncident\Add.ascx" />
     <Content Include="TTPortal\Views\ModIncident\Export.ascx" />

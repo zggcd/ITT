@@ -32,13 +32,23 @@
         </ul>
     </li>
     <li class="node"><a href="/{CPPath}/ModIncident/Index.aspx">Quản lý sự cố</a>
-        <%--<ul>
+    <%--<li class="node"><a href="/{CPPath}/ModBaoCaoTK/Index.aspx">Báo cáo TK sự cố</a>
+        <ul>
             <li><a class="icon-16-article" href="/{CPPath}/ModIncident/Index.aspx">Deface</a></li>
             <li><a class="icon-16-article" href="/{CPPath}/ModIncident/Index.aspx">Phishing</a></li>
             <li><a class="icon-16-article" href="/{CPPath}/ModIncident/Index.aspx">Malware</a></li>
             <li><a class="icon-16-article" href="/{CPPath}/ModIncident/Index.aspx">C&C botnet</a></li>
             <li><a class="icon-16-article" href="/{CPPath}/ModIncident/Index.aspx">Attack</a></li>
-        </ul>--%>
+        </ul>
+    </li>--%>
+    <li class="node"><a>Báo cáo TK sự cố</a>
+        <ul>
+            <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Deface.aspx">Deface</a></li>
+            <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Phishing.aspx">Phishing</a></li>
+            <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Malware.aspx">Malware</a></li>
+            <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Botnet.aspx">C&C botnet</a></li>
+            <%--<li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Attack.aspx">Attack</a></li>--%>
+        </ul>
     </li>
     <li class="node"><a>{RS:MenuTop_Design}</a>
         <ul>

@@ -26,8 +26,8 @@
                     <li id="toolbar-apply" class="button">
                         <a class="toolbar" href="<%=CPViewPage.Request.RawUrl.Replace("Index.aspx","Import.aspx") %>"><span
                             title="Nhập Excel" class="icon-32-fileimport"></span>Nhập File</a>
-                        <a class="toolbar" href="<%=CPViewPage.Request.RawUrl.Replace("Index.aspx","Export.aspx") %>">
-                            <span title="Xuất Excel" class="icon-32-fileexport"></span>Xuất File</a>
+                        <%--<a class="toolbar" href="<%=CPViewPage.Request.RawUrl.Replace("Index.aspx","Export.aspx") %>">
+                            <span title="Xuất Excel" class="icon-32-fileexport"></span>Xuất File</a>--%>
                     </li>
                 </ul>
                 <%=GetDefaultListCommand()%>
@@ -98,40 +98,9 @@
             <table>
                 <tr>
                     <td width="100%">
-                        <%--<span>Lọc:</span>
+                        <span>Lọc:</span>
                         <input type="text" id="filter_search" value="<%= model.SearchText %>" class="text_area" onchange="HLRedirect();return false;" />
-                        <button onclick="HLRedirect();return false;">Tìm kiếm</button>--%>
-                        <p>
-                            <span>Từ ngày:</span>
-                            <input type="text" id="filter_from" name="From" value="<%=string.Format("{0:dd-MM-yyyy}",  model.From) %>" class="text_area" />
-                            <span>Đến ngày:</span>
-                            <input type="text" id="filter_to" name="To" value="<%=string.Format("{0:dd-MM-yyyy}",  model.To) %>" class="text_area" />
-
-                            <span class="gr">Thành viên:</span>
-                            <select id="filter_member" onchange="HLRedirect()" class="inputbox" size="1">
-                                <option value="0">(Tất cả)</option>
-                            </select>
-                        </p>
-
-                        <p>
-                            <span>ISP bị tấn công:</span>
-                            <select id="filter_isp" onchange="HLRedirect()" class="inputbox" size="1">
-                                <option value="0">(Tất cả)</option>
-                                <%= Utils.ShowDDLByConfigkey("Mod.CommonState", model.ISPState)%>
-                            </select>
-
-                            <span class="gr">Domain bị tấn công:</span>
-                            <select id="filter_domain" onchange="HLRedirect()" class="inputbox" size="1">
-                                <option value="0">(Tất cả)</option>
-                                <%= Utils.ShowDDLByConfigkey("Mod.CommonState", model.DomainState)%>
-                            </select>
-
-                            <span class="gr">Virus xuất hiện:</span>
-                            <select id="filter_virus" onchange="HLRedirect()" class="inputbox" size="1">
-                                <option value="0">(Tất cả)</option>
-                                <%= Utils.ShowDDLByConfigkey("Mod.CommonState", model.VirusState)%>
-                            </select>
-                        </p>
+                        <button onclick="HLRedirect();return false;">Tìm kiếm</button>
                     </td>
                     <td nowrap="nowrap">
                         <span>Loại sự cố:</span>
@@ -139,7 +108,7 @@
                             <option value="0">(Tất cả)</option>
                             <%= Utils.ShowDDLMenuByType2("Incident", model.LangID, model.MenuID)%>
                         </select>
-                        <%--Vị trí :
+                        <%-- Vị trí :
                        <select id="filter_state" onchange="HLRedirect()" class="inputbox" size="1">
                            <option value="0">(Tất cả)</option>
                            <%= Utils.ShowDDLByConfigkey("Mod.IncidentState", model.State)%>
@@ -183,16 +152,13 @@
                             <%= GetSortLink("Thời gian", "AttackOn")%>
                         </th>
                         <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Tồn tại", "Resolve")%>
+                            <%= GetSortLink("Đã giải quyết", "Resolve")%>
                         </th>
                         <th width="1%" nowrap="nowrap">
                             <span>Gửi mail</span>
                         </th>
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Lần gửi", "EmailNo")%>
-                        </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Duyệt", "Activity")%>
                         </th>
 
                         <%--<th class="title">
@@ -279,6 +245,9 @@
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Thứ tự", "Order")%>
                             <a href="javascript:hl_exec_cmd('saveorder')" class="saveorder" title="Lưu sắp xếp"></a>
+                        </th>
+                        <th width="1%" nowrap="nowrap">
+                            <%= GetSortLink("Duyệt", "Activity")%>
                         </th>--%>
                     </tr>
                 </thead>
@@ -332,7 +301,14 @@
                             <%= string.Format("{0:dd/MM/yyyy HH:mm}", listEntity[i].AttackOn) %>
                         </td>
                         <td align="center">
-                            <%= GetPublish(listEntity[i].ID, listEntity[i].Resolve)%>
+                            <%--<%= GetPublish(listEntity[i].ID, listEntity[i].Resolve)%>--%>
+                            <%if (!listEntity[i].Resolve)
+                                { %><a class="jgrid" href="javascript:void(0);" onclick="hl_exec_cmd('[resolvegx][<%= listEntity[i].ID %>]')"><%} %>
+                                    <span class="jgrid">
+                                        <span class="state <%= listEntity[i].Resolve ? "publish" : "unpublish" %>"></span>
+                                    </span>
+                                    <%if (!listEntity[i].Resolve)
+                                        { %></a><%} %>
                         </td>
                         <td align="center">
                             <a href="javascript:HLRedirect('SendMail', <%= listEntity[i].ID %>)" title="Gửi email cảnh báo tới đơn vị bị sự cố">
@@ -341,9 +317,6 @@
                         </td>
                         <td align="right">
                             <%= string.Format("{0:#,##0}", listEntity[i].EmailNo)%>
-                        </td>
-                        <td align="center">
-                            <%= GetPublish(listEntity[i].ID, listEntity[i].Activity)%>
                         </td>
 
                         <%--<td>
@@ -429,6 +402,9 @@
                         </td>
                         <td class="order">
                             <%= GetOrder(listEntity[i].ID, listEntity[i].Order)%>
+                        </td>
+                        <td align="center">
+                            <%= GetPublish(listEntity[i].ID, listEntity[i].Activity)%>
                         </td>--%>
                     </tr>
                     <%if (c > 0)
@@ -436,6 +412,44 @@
                     <tr class="row<%= i%2 %>" id="c_<%=i %>" style="display: none;" data-child="<%=listEntity[i].ID %>">
                         <td colspan="12">
                             <table class="adminlist" cellspacing="1" style="border: 1px solid blue;">
+                                <thead>
+                                    <tr>
+                                        <th width="1%">#</th>
+                                        <th width="1%">
+                                            <input type="checkbox" name="toggle" value="" onclick="checkAll(<%= model.PageSize %>);" />
+                                        </th>
+                                        <th width="1%" nowrap="nowrap">
+                                            <%= GetSortLink("PID", "ID")%>
+                                        </th>
+                                        <th width="5%" nowrap="nowrap">
+                                            <%= GetSortLink("Loại sự cố", "MenuID")%>
+                                        </th>
+                                        <th width="10%" nowrap="nowrap">
+                                            <%= GetSortLink("Domain/URL", "Path")%>
+                                        </th>
+                                        <th width="5%" nowrap="nowrap">
+                                            <%= GetSortLink("IP", "IP")%>
+                                        </th>
+                                        <th width="5%" nowrap="nowrap">
+                                            <%= GetSortLink("ISP", "ISP")%>
+                                        </th>
+                                        <th width="5%" nowrap="nowrap">
+                                            <%= GetSortLink("Tên Virus", "MalwareName")%>
+                                        </th>
+                                        <th width="5%" nowrap="nowrap">
+                                            <%= GetSortLink("Thời gian", "AttackOn")%>
+                                        </th>
+                                        <th width="1%" nowrap="nowrap">
+                                            <%= GetSortLink("Đã giải quyết", "Resolve")%>
+                                        </th>
+                                        <th width="1%" nowrap="nowrap">
+                                            <span>Gửi mail</span>
+                                        </th>
+                                        <th width="1%" nowrap="nowrap">
+                                            <%= GetSortLink("Lần gửi", "EmailNo")%>
+                                        </th>
+                                    </tr>
+                                </thead>
                                 <%for (int j = 0; listChild != null && j < listChild.Count; j++)
                                     {
                                 %>
@@ -468,7 +482,14 @@
                                         <%= string.Format("{0:dd/MM/yyyy HH:mm}", listChild[j].AttackOn) %>
                                     </td>
                                     <td align="center">
-                                        <%= GetPublish(listChild[j].ID, listChild[j].Resolve)%>
+                                        <%--<%= GetPublish(listChild[j].ID, listChild[j].Resolve)%>--%>
+                                        <%if (!listChild[j].Resolve)
+                                            { %><a class="jgrid" href="javascript:void(0);" onclick="hl_exec_cmd('[resolvegx][<%= listChild[j].ID %>]')"><%} %>
+                                                <span class="jgrid">
+                                                    <span class="state <%= listChild[j].Resolve ? "publish" : "unpublish" %>"></span>
+                                                </span>
+                                                <%if (!listChild[j].Resolve)
+                                                    { %></a><%} %>
                                     </td>
                                     <td align="center">
                                         <a href="javascript:HLRedirect('SendMail', <%= listChild[j].ID %>)" title="Gửi email cảnh báo tới đơn vị bị sự cố">
@@ -477,9 +498,6 @@
                                     </td>
                                     <td align="right">
                                         <%= string.Format("{0:#,##0}", listChild[j].EmailNo)%>
-                                    </td>
-                                    <td align="center">
-                                        <%= GetPublish(listChild[j].ID, listChild[j].Activity)%>
                                     </td>
                                 </tr>
                                 <%} %>

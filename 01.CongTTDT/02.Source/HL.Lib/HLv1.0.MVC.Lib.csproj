@@ -167,6 +167,7 @@
     <Compile Include="CPControllers\ModGopYController.cs" />
     <Compile Include="CPControllers\ModHeThongThongTinController.cs" />
     <Compile Include="CPControllers\ModHSThanhVienUCSCController.cs" />
+    <Compile Include="CPControllers\ModBaoCaoTKController.cs" />
     <Compile Include="CPControllers\ModIncidentController.cs" />
     <Compile Include="CPControllers\ModInfoMagicController.cs" />
     <Compile Include="CPControllers\ModNewsController.cs" />
