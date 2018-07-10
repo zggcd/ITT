@@ -103,8 +103,13 @@ namespace HL.Lib.Controllers
                     .Where(o => o.DonDangKyUCSCID == entity.ID)
                     .ToList();
 
+                var nhanLuc = ModNhanLucUCSCService.Instance.CreateQuery()
+                    .Where(o => o.DonDangKyUCSCID == entity.ID)
+                    .ToList();
+
                 ModDonDangKyUCSCService.Instance.Delete(entity.ID);
                 if (httt != null) ModHeThongThongTinService.Instance.Delete(httt);
+                if (nhanLuc != null) ModNhanLucUCSCService.Instance.Delete(nhanLuc);
 
                 ViewPage.Alert("Xóa đăng ký thành công.");
                 ViewPage.Navigate(ViewPage.CurrentURL);
@@ -180,6 +185,18 @@ namespace HL.Lib.Controllers
                     var nhanLuc = nhanLucs[i].Split('_');
                     int cNhanLuc = nhanLuc.Length;
                     if (cNhanLuc != 10) continue;
+
+                    // Xoa nhan luc hien tai
+                    var lst = ModNhanLucUCSCService.Instance.CreateQuery()
+                        .Where(o => o.DonDangKyUCSCID == entity.ID)
+                        .ToList();
+                    if (lst != null && lst.Count > 0)
+                    {
+                        lst.ForEach(o => o.Activity = false);
+                        ModNhanLucUCSCService.Instance.Save(lst);
+                    }
+
+                    // Them nhan luc moi
                     var item = new ModNhanLucUCSCEntity()
                     {
                         DonDangKyUCSCID = entity.ID,

@@ -341,7 +341,7 @@ namespace HL.Lib.CPControllers
                     .Select(o => o.ISP)
                     .Distinct();
             }
-            if (dbQuery.ToList() == null)
+            if (dbQuery == null || dbQuery.ToList() == null)
             {
                 ViewBag.Data = new List<ModIncidentEntity>();
                 ViewBag.All = new List<ModIncidentEntity>();

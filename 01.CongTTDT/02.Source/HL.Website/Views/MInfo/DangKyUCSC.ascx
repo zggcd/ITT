@@ -1106,22 +1106,25 @@
             return values;
         }
 
+        var d = 1;
         $('#btnAppend').click(function () {
+            d++;
+            var rnd = Math.floor(Math.random() * 999999);
             var html = "<tr class='nhanLuc'>";
-            html += "<td style='width: 3%;'><%=d%></td>";
+            html += "<td style='width: 3%;'>" + d + "</td>";
             html += "<td style='width: 20%;'>";
             html += "<input name='Name' maxlength='255' id='' class='textstyle1 input' type='text' value='' /></td>";
             html += "<td style='width: 20%;'>";
             html += "<input name='School' maxlength='255' id='' class='textstyle1 input' type='text' value='' /></td>";
-            html += "<td style='width: 10%;'><a href='javascript: void(0)' class='btnDaoTao'>+ Chi tiết</a></td>";
-            html += "<td style='width: 13%;'><a href='javascript: void(0)' class='btnChungChi'>+ Chi tiết</a></td>";
+            html += "<td style='width: 10%;'><a href='javascript: void(0)' class='btnDaoTao dt" + rnd + "'>+ Chi tiết</a></td>";
+            html += "<td style='width: 13%;'><a href='javascript: void(0)' class='btnChungChi cc" + rnd + "'>+ Chi tiết</a></td>";
             html += "<td style='width: 1%;'>";
             html += "<input name='NamTotNghiep' maxlength='255' id='' class='textstyle1 input' type='text' value='' style='width: 60px;' /></td>";
-            html += "<td style='width: 1%;'><a href='javascript: void(0)' class='btnRemove'>Xóa</a></td>";
+            html += "<td style='width: 1%;'><a href='javascript: void(0)' class='btnRemove" + rnd + "'>Xóa</a></td>";
             html += "</tr>";
             $('#append').before(html);
 
-            $('.btnDaoTao').click(function () {
+            $('.dt' + rnd).click(function () {
                 currentElement = this;
                 modal.style.display = "block";
                 $('#DaoTaoModal input[type=checkbox]').prop('checked', false);
@@ -1153,7 +1156,7 @@
                     }
                 }
             });
-            $('.btnChungChi').click(function () {
+            $('.cc' + rnd).click(function () {
                 currentElement = this;
                 modal2.style.display = "block";
                 $('#KinhNghiemDaoTaoModal input[type=checkbox]').prop('checked', false);
@@ -1194,12 +1197,13 @@
                     }
                 }
             });
-            $('.btnRemove').click(function () { $(this).parent().parent().remove(); });
+            $('.btnRemove' + rnd).click(function () { $(this).parent().parent().remove(); d--; });
         });
-    });
 
-    $('.btnRemove').click(function () {
-        $(this).parent().parent().remove();
+        $('.btnRemove').click(function () {
+            $(this).parent().parent().remove();
+            d--;
+        });
     });
 </script>
 <!-- End Modal -->

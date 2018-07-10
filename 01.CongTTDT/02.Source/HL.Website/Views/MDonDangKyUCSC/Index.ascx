@@ -29,16 +29,17 @@
     <div class="vanban_right">
         <div class="contents">
             <div class="top">
-
+                <%if (c2 == 0)
+                    { %>
                 <div class="button">
                     <input style="margin-left: 10px;" class="btn_action search icon QAcustom" onclick="location.href = '/vn/Thanh-vien/Dang-ky-ung-cuu-su-co.aspx';" type="button" name="" value="Thêm mới" />
                 </div>
-
+                <%} %>
             </div>
             <!--.Main_container-->
         </div>
 
-        <div class="title-t2">CÁC ĐĂNG KÝ CỦA BẠN</div>
+        <div class="title-t2">ĐĂNG KÝ CỦA BẠN</div>
         <div class="main_vbtable" style="width: 100%">
             <form method="post" name="frmDsHs">
                 <table style="width: 100%;">
