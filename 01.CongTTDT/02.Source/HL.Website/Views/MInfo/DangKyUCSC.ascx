@@ -8,6 +8,13 @@
             Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString("/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx"));
             return;
         }
+        int userId = HL.Lib.Global.CPLogin.UserID;
+        var dk = ModDonDangKyUCSCService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
+        if (dk != null)
+        {
+            Response.Redirect("/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx");
+            return;
+        }
     }
 </script>
 
@@ -1106,7 +1113,8 @@
             return values;
         }
 
-        var d = 1;
+        //var d = 1;
+        var d = <%=d%>;
         $('#btnAppend').click(function () {
             d++;
             var rnd = Math.floor(Math.random() * 999999);
