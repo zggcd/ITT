@@ -20,6 +20,8 @@
                 </ul>
             </li>
             <li><a class="icon-16-massmail" href="/{CPPath}/ModConfigSendMail/Index.aspx">Cấu hình Email</a></li>
+            <li><a class="icon-16-massmail" href="/{CPPath}/ModEmailTemplate/Index.aspx">Cấu hình Email template</a></li>
+            <li><a class="icon-16-media" href="/{CPPath}/ModISP/Index.aspx">ISP</a></li>
         </ul>
     </li>
     <li class="node"><a>Báo cáo sự cố</a>

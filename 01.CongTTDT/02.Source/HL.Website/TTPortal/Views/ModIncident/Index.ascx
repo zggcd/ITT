@@ -492,9 +492,9 @@
                                                     { %></a><%} %>
                                     </td>
                                     <td align="center">
-                                        <a href="javascript:HLRedirect('SendMail', <%= listChild[j].ID %>)" title="Gửi email cảnh báo tới đơn vị bị sự cố">
+                                        <%--<a href="javascript:HLRedirect('SendMail', <%= listChild[j].ID %>)" title="Gửi email cảnh báo tới đơn vị bị sự cố">
                                             <img src="/{CPPath}/Content/add/img/email.png" />
-                                        </a>
+                                        </a>--%>
                                     </td>
                                     <td align="right">
                                         <%= string.Format("{0:#,##0}", listChild[j].EmailNo)%>

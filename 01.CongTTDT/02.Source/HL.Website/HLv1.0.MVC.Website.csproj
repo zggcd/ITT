@@ -1649,6 +1649,8 @@
     <Content Include="TTPortal\Views\ModDonDangKyUCSC\Index.ascx" />
     <Content Include="TTPortal\Views\ModDuThao\Add.ascx" />
     <Content Include="TTPortal\Views\ModDuThao\Index.ascx" />
+    <Content Include="TTPortal\Views\ModEmailTemplate\Add.ascx" />
+    <Content Include="TTPortal\Views\ModEmailTemplate\Index.ascx" />
     <Content Include="TTPortal\Views\ModGopY\Add.ascx" />
     <Content Include="TTPortal\Views\ModGopY\Index.ascx" />
     <Content Include="TTPortal\Views\ModHeThongThongTin\Add.ascx" />
@@ -1664,6 +1666,8 @@
     <Content Include="TTPortal\Views\ModIncident\Index.ascx" />
     <Content Include="TTPortal\Views\ModInfoMagic\Add.ascx" />
     <Content Include="TTPortal\Views\ModInfoMagic\Index.ascx" />
+    <Content Include="TTPortal\Views\ModISP\Add.ascx" />
+    <Content Include="TTPortal\Views\ModISP\Index.ascx" />
     <Content Include="TTPortal\Views\ModNhanLucUCSC\Add.ascx" />
     <Content Include="TTPortal\Views\ModNhanLucUCSC\Index.ascx" />
     <Content Include="TTPortal\Views\ModRSS\Add.ascx" />
@@ -1691,6 +1695,7 @@
     <Content Include="Views\CDichVuCanhBao\Default.ascx" />
     <Content Include="Views\CDonDangKyUCSC\Default.ascx" />
     <Content Include="Views\CDuThao\Default.ascx" />
+    <Content Include="Views\CEmailTemplate\Default.ascx" />
     <Content Include="Views\CFeedback\TempDefault.ascx" />
     <Content Include="Views\CFeedback\Default.ascx" />
     <Content Include="Views\CGopY\Default.ascx" />
@@ -1700,6 +1705,7 @@
     <Content Include="Views\CInfoMagic\Default.ascx" />
     <Content Include="Views\CInfo\Login.ascx" />
     <Content Include="Views\CInfo\Register.ascx" />
+    <Content Include="Views\CISP\Default.ascx" />
     <Content Include="Views\CMenu\TopRight.ascx" />
     <Content Include="Views\CMenu\TopLeft.ascx" />
     <Content Include="Views\CMenu\Left2.ascx" />
@@ -1735,6 +1741,8 @@
     <Content Include="Views\MDonDangKyUCSC\Index.ascx" />
     <Content Include="Views\MDuThao\Detail.ascx" />
     <Content Include="Views\MDuThao\Index.ascx" />
+    <Content Include="Views\MEmailTemplate\Detail.ascx" />
+    <Content Include="Views\MEmailTemplate\Index.ascx" />
     <Content Include="Views\MGopY\Index.ascx" />
     <Content Include="Views\MHeThongThongTin\Detail.ascx" />
     <Content Include="Views\MHeThongThongTin\Index.ascx" />
@@ -1756,6 +1764,8 @@
     <Content Include="Views\MInfo\HoSoUCSC.ascx" />
     <Content Include="Views\MInfo\Info.ascx" />
     <Content Include="Views\MInfo\ResetPass.ascx" />
+    <Content Include="Views\MISP\Detail.ascx" />
+    <Content Include="Views\MISP\Index.ascx" />
     <Content Include="Views\MNhanLucUCSC\Detail.ascx" />
     <Content Include="Views\MNhanLucUCSC\Index.ascx" />
     <Content Include="Views\MSiteMapTemp\Index.ascx" />

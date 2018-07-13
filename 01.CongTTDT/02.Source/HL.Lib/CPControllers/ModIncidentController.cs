@@ -272,6 +272,63 @@ namespace HL.Lib.CPControllers
 
         public void ActionSendMail(EmailEntity emailEntity)
         {
+            // Lay danh sach su co
+            ModIncidentEntity suCoParent = ModIncidentService.Instance.CreateQuery().Where(o => o.ID == emailEntity.RecordID).ToSingle();
+            List<ModIncidentEntity> suCos = null;
+            WebMenuEntity menuIncident = null;
+            string sSuCo = string.Empty, isp = string.Empty, ip = string.Empty;
+            string s2 = string.Empty, s3 = string.Empty, s4 = string.Empty, sName = string.Empty;
+            //{2}: (giả mạo (phishing), nhiễm mã độc  (malware), (thay đổi giao diện) Deface )
+            //{3}: , và các cố {2}
+            // {4}: {2} + {3}
+            if (suCoParent != null)
+            {
+                suCos = ModIncidentService.Instance.CreateQuery().Where(o => o.Resolve == false && o.ParentID == suCoParent.ID).ToList();
+                sSuCo += "<b><span>" + suCoParent.Path + "</span></b>";
+                isp = suCoParent.ISP;
+                ip = suCoParent.IP;
+            }
+            if (suCos != null && suCos.Count > 0)
+            {
+                int countSuCo = suCos.Count;
+                for (int i = 0; i < countSuCo; i ++)
+                {
+                    menuIncident = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "Incident" && o.ID == suCos[i].MenuID).ToSingle();
+                    if (menuIncident != null)
+                    {
+                        sName = menuIncident.Code == "Phishing" ? "giả mạo (Phishing)" : menuIncident.Code == "Malware" ? "nhiễm mã độc(Malware)" : "thay đổi giao diện (Deface)";
+                        if (i == 0)
+                        {
+                            s2 = sName;
+                        }
+                        else
+                        {
+                            s3 += sName;
+                            if (i < countSuCo - 1)
+                            {
+                                s3 += ", ";
+                            }
+                        }
+                    }
+                    sSuCo += "<br />&nbsp;&nbsp;&nbsp;&nbsp;" + suCos[i].Path + "<br />";
+                }
+            }
+            sSuCo += ip;
+
+            // Lay template
+            ModEmailTemplateEntity emailTemp = ModEmailTemplateService.Instance.CreateQuery().Where(o => o.Activity == true && o.Code == "Type1").ToSingle();
+
+            // Lay email gui di theo ISP
+            ModISPEntity ispEntity = ModISPService.Instance.CreateQuery().Where(o => o.Activity == true && o.Name == isp).ToSingle();
+
+            if (emailTemp != null)
+            {
+                if (ispEntity != null) emailEntity.To = ispEntity.Email;
+                emailEntity.Cc = "tnchung@vncert.vn";
+                emailEntity.Subject = string.Format(emailTemp.Subject, isp);
+                emailEntity.Body = string.Format(emailTemp.Content, isp, sSuCo, s2, (!string.IsNullOrEmpty(s3) ? ", và các sự cố " + s3 : ""), s2 + (!string.IsNullOrEmpty(s3) ? ", " + s3 : ""));
+            }
+
             ViewBag.Data = emailEntity;
         }
 
