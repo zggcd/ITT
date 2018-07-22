@@ -121,6 +121,19 @@
     </li>
     <%} %>
 
+    <%if (CPLogin.CurrentUser.IsAdministrator == true)
+        {%>
+    <li class="node"><a>{RS:MenuTop_Design}</a>
+        <ul>
+            <li><a class="icon-16-menu" href="/{CPPath}/SysPage/Index.aspx">{RS:MenuTop_Page}</a></li>
+            <li><a class="icon-16-themes" href="/{CPPath}/SysTemplate/Index.aspx">{RS:MenuTop_Template}</a></li>
+            <li><a class="icon-16-module" href="/{CPPath}/SysSite/Index.aspx">Site</a></li>
+            <li><a class="icon-16-plugin" href="/{CPPath}/SysModule/Index.aspx">{RS:MenuTop_Function}</a></li>
+        </ul>
+    </li>
+    <%} %>
+
+    <%--
     <%if (modules.Contains("SysPage") || modules.Contains("SysTemplate") || modules.Contains("SysSite") || modules.Contains("SysModule"))
         {%>
     <li class="node"><a>{RS:MenuTop_Design}</a>
@@ -144,8 +157,7 @@
         </ul>
     </li>
     <%} %>
-
-    <%--<%if (modules.Contains("SysMenu") || modules.Contains("SysRole") || modules.Contains("SysUser")
+        <%if (modules.Contains("SysMenu") || modules.Contains("SysRole") || modules.Contains("SysUser")
                      || modules.Contains("ModDataBackup") || modules.Contains("SysResource") || modules.Contains("SysUserLog"))
         {%>
     <li class="node"><a>Hệ thống</a>

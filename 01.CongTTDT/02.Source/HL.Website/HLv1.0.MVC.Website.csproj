@@ -97,6 +97,31 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BingSiteAuth.xml" />
+    <Content Include="Content1\css\animate.css" />
+    <Content Include="Content1\css\bootstrap\bootstrap.min.css" />
+    <Content Include="Content1\css\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Content1\css\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Content1\css\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content1\css\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Content1\css\fontSetting.css" />
+    <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-600.svg" />
+    <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-700.svg" />
+    <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-regular.svg" />
+    <Content Include="Content1\css\style.css" />
+    <Content Include="Content1\images\bg-shadow.png" />
+    <Content Include="Content1\images\bg.png" />
+    <Content Include="Content1\images\demo.jpg" />
+    <Content Include="Content1\images\icon\email_icon.png" />
+    <Content Include="Content1\images\icon\phone_icon.png" />
+    <Content Include="Content1\images\slider\04.png" />
+    <Content Include="Content1\images\slider\05.png" />
+    <Content Include="Content1\images\slider\06.png" />
+    <Content Include="Content1\images\slider\07.png" />
+    <Content Include="Content1\images\vncert-top.jpg" />
+    <Content Include="Content1\js\bootstrap.min.js" />
+    <Content Include="Content1\js\jquery-1.12.3.min.js" />
+    <Content Include="Content1\js\jquery.min.js" />
+    <Content Include="Content1\js\jquery.touchSwipe.min.js" />
     <Content Include="Content2\img\delete.gif" />
     <Content Include="Content2\img\icon-doc.jpg" />
     <Content Include="Content2\img\icon-gui.jpg" />
@@ -382,7 +407,7 @@
     <Content Include="Content\temp\js\javascript.js" />
     <Content Include="Content\temp\js\jquery.min-1.12.4.js" />
     <Content Include="Content\temp\js\message.js" />
-    <Content Include="favicon.ico" />
+    <Content Include="favicon.jpg" />
     <Content Include="google0de12854ebe87056.html" />
     <Content Include="robots.txt" />
     <Content Include="sitemap.xml" />
@@ -1684,6 +1709,7 @@
     <Content Include="TTPortal\Views\ModVideo\Index.ascx" />
     <Content Include="Views\CAdv\Default.ascx" />
     <Content Include="Views\CAdv\Left.ascx" />
+    <Content Include="Views\CAdv\SlideHome.ascx" />
     <Content Include="Views\CAdv\Logo.ascx" />
     <Content Include="Views\CAlbum\Default.ascx" />
     <Content Include="Views\CBaoCaoBanDauSuCo\Default.ascx" />
@@ -1706,10 +1732,12 @@
     <Content Include="Views\CInfo\Login.ascx" />
     <Content Include="Views\CInfo\Register.ascx" />
     <Content Include="Views\CISP\Default.ascx" />
+    <Content Include="Views\CMenu\Top.ascx" />
     <Content Include="Views\CMenu\TopRight.ascx" />
     <Content Include="Views\CMenu\TopLeft.ascx" />
     <Content Include="Views\CMenu\Left2.ascx" />
     <Content Include="Views\CMenu\Left.ascx" />
+    <Content Include="Views\CNews\MotChuyenMuc.ascx" />
     <Content Include="Views\CNews\MultiMedia.ascx" />
     <Content Include="Views\CNews\HaiChuyenMuc.ascx" />
     <Content Include="Views\CNhanLucUCSC\Default.ascx" />
@@ -1917,10 +1945,53 @@
     <Content Include="Content2\style\assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content2\style\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content2\style\assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content1\css\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content1\css\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content1\css\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content1\css\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content1\css\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Content1\css\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Content1\css\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Content1\css\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Content1\css\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Content1\css\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Content1\css\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Content1\css\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Content1\css\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Content1\css\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Content1\css\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Content1\css\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Content1\css\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Content1\css\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Content1\css\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Content1\css\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Content1\css\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Content1\css\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Content1\css\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Content1\css\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Content1\css\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Content1\css\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Content1\css\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Content1\css\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Content1\css\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Content1\css\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Content1\css\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Content1\css\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Content1\css\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-600.eot" />
+    <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-600.ttf" />
+    <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-600.woff" />
+    <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-600.woff2" />
+    <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-700.eot" />
+    <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-700.ttf" />
+    <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-700.woff" />
+    <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-700.woff2" />
+    <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-regular.eot" />
+    <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-regular.ttf" />
+    <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-regular.woff" />
+    <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-regular.woff2" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
-    <Content Include="Views\Shared\Child.Master" />
-    <Content Include="Views\Design\Child.Master" />
     <Content Include="TTPortal\Content\ckeditor\CHANGES.md" />
     <Content Include="TTPortal\Content\ckeditor\LICENSE.md" />
     <Content Include="TTPortal\Content\ckeditor\plugins\scayt\CHANGELOG.md" />
@@ -1944,6 +2015,8 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\Shared\Child.Master" />
+    <Content Include="Views\Design\Child.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

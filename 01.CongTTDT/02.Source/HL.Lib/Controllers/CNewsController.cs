@@ -8,6 +8,7 @@ namespace HL.Lib.Controllers
         [HL.Core.MVC.PropertyInfo("HaiChuyenMuc[MenuID-true|Title-true|MenuID2-true|Title2-true|PageSize-true|State-true]," +
             "HomeCarousel[MenuID-true|Title-false|MenuID2-false|Title2-false|PageSize-true|State-true]," +
             "Hot[MenuID-true|Title-false|MenuID2-false|Title2-false|PageSize-false|State-true]," +
+            "MotChuyenMuc[MenuID-true|Title-true|MenuID2-false|Title2-false|PageSize-true|State-true]," +
             "MultiMedia[MenuID-true|Title-true|MenuID2-false|Title2-false|PageSize-true|State-true]")]
         public string LayoutDefine;
 
@@ -59,9 +60,9 @@ namespace HL.Lib.Controllers
             ViewBag.Title2 = Title2;
 
             SysPageEntity page1 = SysPageService.Instance.CreateQuery().Where(o => o.MenuID == MenuID).ToSingle();
-            ViewBag.Url1 = ViewPage.GetPageURL(page1);
+            if (page1 != null) ViewBag.Url1 = ViewPage.GetPageURL(page1);
             SysPageEntity page2 = SysPageService.Instance.CreateQuery().Where(o => o.MenuID == MenuID2).ToSingle();
-            ViewBag.Url2 = ViewPage.GetPageURL(page2);
+            if (page2 != null) ViewBag.Url2 = ViewPage.GetPageURL(page2);
 
             ViewBag.Video = ModVideoService.Instance.CreateQuery()
                 .Where(o => o.Activity == true)

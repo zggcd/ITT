@@ -11,6 +11,20 @@
     <form id="hlForm" runat="server">
         <div id="hl_container">
             <div style="">
+                <HL:StaticControl runat="server" Code="CAdv" HLID="cLogo"></HL:StaticControl>
+                <HL:StaticControl runat="server" Code="CMenu" HLID="cMenuTop"></HL:StaticControl>
+            </div>
+            <div style="">
+                <div style="float: left; width: 50%; display: block;">
+                    <HL:StaticControl runat="server" Code="CAdv" HLID="cSlideHome"></HL:StaticControl>
+                </div>
+                <div style="float: left; width: 50%; display: block;">
+                </div>
+            </div>
+            <div style="float: left; width: 100%; display: block;">
+                <HL:DynamicControl runat="server" Code="MainContent" ID="MainContent"></HL:DynamicControl>
+            </div>
+            <%--<div style="">
                 <div style="float: left; width: 50%; display: block;">
                     <HL:StaticControl runat="server" Code="CAdv" HLID="cLogo"></HL:StaticControl>
                 </div>
@@ -43,7 +57,7 @@
                 <div style="float: left; width: 40%; display: block;">
                     <HL:DynamicControl Code="Danh sách điều khiển bên phải - II" ID="DRightII" runat="server"></HL:DynamicControl>
                 </div>
-            </div>
+            </div>--%>
         </div>
     </form>
 </body>

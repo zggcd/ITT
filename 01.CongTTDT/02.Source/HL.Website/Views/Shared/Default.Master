@@ -12,1163 +12,160 @@
     <meta name='copyright' content='Bộ Thông tin và Truyền thông' />
     <meta name='author' content='Bộ Thông tin và Truyền thông' />
     <meta name='robots' content='index,follow' />
-    <link rel="stylesheet" href="/Content2/style/css/genaral.css" />
-    <link rel="stylesheet" href="/Content2/style/css/color-blue.css" />
-    <link rel="stylesheet" href="/Content2/style/css/common.css" />
-    <script src="/Content2/style/js/jquery.min.1.11.3.js"></script>
-    <script src="/Content2/style/js/common.js"></script>
-    <script src="/Content2/style/js/arrow79.js"></script>
-    <meta name="msapplication-TileImage" content="//Content2/_layouts/15/images/SharePointMetroAppTile.png" />
-    <meta name="msapplication-TileColor" content="#0072C6" />
-    <link rel="stylesheet" type="text/css" href="/Content2/_layouts/15/1033/styles/Themable/corev15.css?rev=OqAycmyMLoQIDkAlzHdMhQ%3D%3D" />
-    <link rel="stylesheet" type="text/css" href="/Content2/style/css/slide.css" />
-    <link href="/Content2/style/css/common-color-blue.css" rel="stylesheet" />
-    <link href="/Content2/style/css/corev15.css" rel="stylesheet" />
-    <script src="/Content2/_layouts/15/init.js"></script>
-
-    <link rel="shortcut icon" href="/Content2/_layouts/15/images/favicon.ico_-1267273014.jpg" type="image/vnd.microsoft.icon" id="favicon" />
-    <!--[if lte IE 8]>
-    <style type="text/css">//<![CDATA[
-    .ms-core-animation-transparent,
-    .ms-core-animation-transparent img
-    {
-       -ms-filter:"alpha(opacity=0)";
-    }
-    .ms-isBot .ms-core-animation-transparent,
-    .ms-isBot .ms-core-animation-transparent img
-    {
-       -ms-filter:"";
-    }
-    //]]></style>
-    <![endif]-->
-    <script>
-        //<![CDATA[
-        var g_pageLoadAnimationParams = { elementSlideIn: "sideNavBox", elementSlideInPhase2: "contentBox" };
-        //]]></script>
+    <link rel="shortcut icon" href="/favicon.jpg" type="image/vnd.microsoft.icon" id="favicon" />
     <title>Trang chủ, Home</title>
 
-    <link href="/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/Content/css/style.css" rel="stylesheet" />
+    <link href="/Content1/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Content1/css/fontSetting.css">
+    <link rel="stylesheet" href="/Content1/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Content1/css/animate.css">
+    <link rel="stylesheet" href="/Content1/css/style.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
 </head>
 <body>
     <form id="hlForm" runat="server">
+        <%--        
+        <HL:StaticControl runat="server" Code="CStatic" HLID="cSearch"></HL:StaticControl>
+        <HL:StaticControl runat="server" Code="CMenu" HLID="cMenu_TopLeft"></HL:StaticControl>
+        <HL:StaticControl runat="server" Code="CMenu" HLID="cMenu_TopRight"></HL:StaticControl>
+        <HL:StaticControl runat="server" Code="CStatic" HLID="cDate"></HL:StaticControl>
+        <HL:DynamicControl Code="Danh sách điều khiển bên trái - I" ID="DLeftI" runat="server"></HL:DynamicControl>
+        <HL:DynamicControl Code="Danh sách điều khiển bên phải - I" ID="DRightI" runat="server"></HL:DynamicControl>
+        <HL:DynamicControl Code="Danh sách điều khiển bên trái - II" ID="DLeftII" runat="server"></HL:DynamicControl>--%>
 
-        <script>
-            //<![CDATA[
-            var MSOWebPartPageFormName = 'aspnetForm';
-            var g_presenceEnabled = true;
-            var g_wsaEnabled = false;
-            var g_wsaQoSEnabled = false;
-            var g_wsaQoSDataPoints = [];
-            var g_wsaLCID = 1033;
-            var g_wsaListTemplateId = 850;
-            var g_wsaSiteTemplateId = 'BLANKINTERNET#0';
-            var _fV4UI = true; var _spPageContextInfo = { webServerRelativeUrl: "\u002f", webAbsoluteUrl: "https:\u002f\u002fmic.gov.vn", siteAbsoluteUrl: "https:\u002f\u002fmic.gov.vn", serverRequestPath: "\u002fPages\u002ftrangchu.aspx", layoutsUrl: "_layouts\u002f15", webTitle: "C\u1ED5ng TT\u0110T - B\u1ED9 Th\u00F4ng tin v\u00E0 Truy\u1EC1n th\u00F4ng", webTemplate: "53", tenantAppVersion: "0", isAppWeb: false, webLogoUrl: "_layouts\u002f15\u002fimages\u002fsiteicon.png", webLanguage: 1033, currentLanguage: 1033, currentUICultureName: "en-US", currentCultureName: "en-US", clientServerTimeDelta: new Date("2017-09-24T02:09:55.5538356Z") - new Date(), siteClientTag: "1536$$15.0.4701.1000", crossDomainPhotosEnabled: false, webUIVersion: 15, webPermMasks: { High: 16, Low: 196673 }, pageListId: "{fdd7bcf0-2570-4ba2-bca9-a3c5941edfd0}", pageItemId: 67, pagePersonalizationScope: 1, alertsEnabled: false, siteServerRelativeUrl: "\u002f", allowSilverlightPrompt: 'True' }; document.onreadystatechange = fnRemoveAllStatus; function fnRemoveAllStatus() { removeAllStatus(true) }; var dlc_fvsi = { "DefaultViews": [], "ViewUrls": [], "WebUrl": "\/" };
-            function _spNavigateHierarchy(nodeDiv, dataSourceId, dataPath, url, listInContext, type) {
-
-                CoreInvoke('ProcessDefaultNavigateHierarchy', nodeDiv, dataSourceId, dataPath, url, listInContext, type, document.forms.aspnetForm, "", "\u002fPages\u002ftrangchu.aspx");
-
-            }
-            var _spWebPartComponents = new Object();//]]>
-        </script>
-        <script src="/Content2/_layouts/15/blank.js"></script>
-        <script>
-            //<![CDATA[
-            (function () {
-
-                if (typeof (_spBodyOnLoadFunctions) === 'undefined' || _spBodyOnLoadFunctions === null) {
-                    return;
-                }
-                _spBodyOnLoadFunctions.push(function () {
-                    ExecuteOrDelayUntilScriptLoaded(
-                        function () {
-                            var pairs = SP.ScriptHelpers.getDocumentQueryPairs();
-                            var followDoc, itemId, listId, docName;
-                            for (var key in pairs) {
-                                if (key.toLowerCase() == 'followdocument')
-                                    followDoc = pairs[key];
-                                else if (key.toLowerCase() == 'itemid')
-                                    itemId = pairs[key];
-                                else if (key.toLowerCase() == 'listid')
-                                    listId = pairs[key];
-                                else if (key.toLowerCase() == 'docname')
-                                    docName = decodeURI(pairs[key]);
-                            }
-
-                            if (followDoc != null && followDoc == '1' && listId != null && itemId != null && docName != null) {
-                                SP.SOD.executeFunc('followingcommon.js', 'FollowDocumentFromEmail', function () {
-                                    FollowDocumentFromEmail(itemId, listId, docName);
-                                });
-                            }
-
-                        }, 'SP.init.js');
-
-                });
-            })(); (function () {
-
-                if (typeof (_spBodyOnLoadFunctions) === 'undefined' || _spBodyOnLoadFunctions === null) {
-                    return;
-                }
-                _spBodyOnLoadFunctions.push(function () {
-
-                    if (typeof (SPClientTemplates) === 'undefined' || SPClientTemplates === null || (typeof (APD_InAssetPicker) === 'function' && APD_InAssetPicker())) {
-                        return;
-                    }
-
-                    var renderFollowFooter = function (renderCtx, calloutActionMenu) {
-                        if (renderCtx.ListTemplateType == 700)
-                            myDocsActionsMenuPopulator(renderCtx, calloutActionMenu);
-                        else
-                            CalloutOnPostRenderTemplate(renderCtx, calloutActionMenu);
-
-                        var listItem = renderCtx.CurrentItem;
-                        if (typeof (listItem) === 'undefined' || listItem === null) {
-                            return;
-                        }
-                        if (listItem.FSObjType == 0) {
-                            calloutActionMenu.addAction(new CalloutAction({
-                                text: Strings.STS.L_CalloutFollowAction,
-                                tooltip: Strings.STS.L_CalloutFollowAction_Tooltip,
-                                onClickCallback: function (calloutActionClickEvent, calloutAction) {
-                                    var callout = GetCalloutFromRenderCtx(renderCtx);
-                                    if (!(typeof (callout) === 'undefined' || callout === null))
-                                        callout.close();
-                                    SP.SOD.executeFunc('followingcommon.js', 'FollowSelectedDocument', function () { FollowSelectedDocument(renderCtx); });
-                                }
-                            }));
-                        }
-                    };
-
-                    var registerOverride = function (id) {
-                        var followingOverridePostRenderCtx = {};
-                        followingOverridePostRenderCtx.BaseViewID = 'Callout';
-                        followingOverridePostRenderCtx.ListTemplateType = id;
-                        followingOverridePostRenderCtx.Templates = {};
-                        followingOverridePostRenderCtx.Templates.Footer = function (renderCtx) {
-                            var renderECB;
-                            if (typeof (isSharedWithMeView) === 'undefined' || isSharedWithMeView === null) {
-                                renderECB = true;
-                            } else {
-                                var viewCtx = getViewCtxFromCalloutCtx(renderCtx);
-                                renderECB = !isSharedWithMeView(viewCtx);
-                            }
-                            return CalloutRenderFooterTemplate(renderCtx, renderFollowFooter, renderECB);
-                        };
-                        SPClientTemplates.TemplateManager.RegisterTemplateOverrides(followingOverridePostRenderCtx);
-                    }
-                    registerOverride(101);
-                    registerOverride(700);
-                });
-            })(); if (typeof (DeferWebFormInitCallback) == 'function') DeferWebFormInitCallback();//]]>
-        </script>
-        <div id="ctl00_g_facd23c2_5f76_4a48_baed_3eace90138c7" __markuptype="vsattributemarkup" __webpartid="{facd23c2-5f76-4a48-baed-3eace90138c7}" webpart="true" isclosed="false">
-            <span>
-
-                <script>
-                    function makeid() {
-                        var text = "";
-                        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-                        for (var i = 0; i < 5; i++)
-                            text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-                        return text;
-                    }
-
-                    jQuery(document).ready(function () {
-                        var curUrl = window.location.href;
-                        $.ajax({
-                            url: '/Pages/QuanTri/User_Account/LogActivityUsersAjax.aspx?preventCache=' + makeid(),
-                            type: 'post',
-                            dataType: 'html',
-                            data: {
-                                "urlLog": curUrl
-                            },
-                            success: (function (html) {
-
-                            })
-                        });
-                    });
-
-                </script>
-            </span>
+        <div class="container">
+            <div class="row-fluid">
+                <div class="col-xs-12 p-0 languages">
+                    <select name="" id="" class="pull-right">
+                        <option value="VN">Tiếng Việt</option>
+                        <option value="EN">English</option>
+                    </select>
+                    <div class="pull-right texts">Chọn ngôn ngữ</div>
+                </div>
+            </div>
         </div>
-        <div id="imgPrefetch" style="display: none">
-            <img src="/Content2/_layouts/15/images/favicon.ico_-1267273014.jpg" />
-            <img src="/Content2/_layouts/15/images/spcommon.png_-1267273014.jpg" />
+        <div class="container">
+            <div class="row-fluid">
+                <HL:StaticControl runat="server" Code="CAdv" HLID="cLogo"></HL:StaticControl>
+            </div>
         </div>
-        <noscript>
-            <div class='noindex'>You may be trying to access this site from a secured browser on the server. Please enable scripts and reload this page.</div>
-        </noscript>
-        <script>
-//<![CDATA[ var submitHook = function () { return false; }; theForm._spOldSubmit = theForm.submit; theForm.submit = function () { if (!submitHook()) { this._spOldSubmit(); } };
-        //]]></script>
-        <span id="DeltaDelegateControls"></span>
-        <div id="TurnOnAccessibility" style="display: none" class="s4-notdlg noindex">
-            <a id="linkTurnOnAcc" href="#" class="ms-TurnOnAcc" onclick="SetIsAccessibilityFeatureEnabled(true);UpdateAccessibilityUI();document.getElementById('linkTurnOffAcc').focus();return false;">Turn on more accessible mode
-            </a>
-        </div>
-        <div id="TurnOffAccessibility" style="display: none" class="s4-notdlg noindex">
-            <a id="linkTurnOffAcc" href="#" class="ms-TurnOffAcc" onclick="SetIsAccessibilityFeatureEnabled(false);UpdateAccessibilityUI();document.getElementById('linkTurnOnAcc').focus();return false;">Turn off more accessible mode
-            </a>
-        </div>
-        <div class="s4-notdlg s4-skipribbonshortcut noindex">
-            <a href="javascript:;" onclick="document.getElementById(&#39;startNavigation&#39;).focus();" class="ms-SkiptoNavigation" accesskey="Y">Skip Ribbon Commands
-            </a>
-        </div>
-        <div class="s4-notdlg noindex">
-            <a href="javascript:;" onclick="document.getElementById(&#39;mainContent&#39;).focus();" class="ms-SkiptoMainContent" accesskey="X">Skip to main content
-            </a>
-        </div>
-        <div id="TurnOffAnimation" style="display: none;" class="s4-notdlg noindex">
-            <a id="linkTurnOffAnimation" href="#" class="ms-accessible ms-acc-button" onclick="ToggleAnimationStatus();return false;">Turn off Animations
-            </a>
-        </div>
-        <div id="TurnOnAnimation" style="display: none;" class="s4-notdlg noindex">
-            <a id="linkTurnOnAnimation" href="#" class="ms-accessible ms-acc-button" onclick="ToggleAnimationStatus();return false;">Turn on Animations
-            </a>
-        </div>
-        <a id="HiddenAnchor" href="javascript:;" style="display: none;"></a>
-        <div id="ms-hcTest"></div>
-        <div id="s4-workspace" class="ms-core-overlay">
-            <div id="s4-bodyContainer">
-                <div id="s4-titlerow temp_none" class="ms-dialogHidden s4-titlerowhidetitle" style="display: none">
-                    <div id="titleAreaBox" class="ms-noList ms-table ms-core-tableNoSpace">
-                        <div id="titleAreaRow" class="ms-tableRow">
-                            <div id="siteIcon" class="ms-tableCell ms-verticalAlignTop">
-                            </div>
-                            <div class="ms-breadcrumb-box ms-tableCell ms-verticalAlignTop">
-                                <div class="ms-breadcrumb-top">
-                                    <div class="ms-breadcrumb-dropdownBox" style="display: none;">
-                                        <span id="DeltaBreadcrumbDropdown"></span>
-                                    </div>
-                                    <div id="DeltaTopNavigation" class="ms-displayInline">
-                                        <a name="startNavigation"></a>
-                                        <div id="zz1_TopNavigationMenu" class=" noindex ms-core-listMenu-horizontalBox">
-                                            <ul id="zz2_RootAspMenu" class="root ms-core-listMenu-root static">
-                                                <li class="static selected">
-                                                    <a class="static selected menu-item ms-core-listMenu-item ms-displayInline ms-core-listMenu-selected ms-navedit-linkNode" tabindex="0" title="Home" href="/Pages/trangchu.aspx" accesskey="1"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Cổng TTĐT - Bộ Thông tin và Truyền thông</span><span class="ms-hidden">Currently selected</span></span></a><ul class="static">
-                                                        <li class="static dynamic-children">
-                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/atantt/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">An toàn, An ninh thông tin</span></span></a><ul class="dynamic">
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/atantt/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi </span></span></a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/hnqt/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Hội nhập kinh tế quốc tế</span></span></a></li>
-                                                        <li class="static dynamic-children">
-                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/phapdien/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Pháp điển ngành TT&amp;TT</span></span></a><ul class="dynamic">
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/phapdien/Pages/trangchu2.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Pháp điển ngành Thông tin và Truyền thông</span></span></a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/pcthtl/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Phòng chống tác hại của thuốc lá</span></span></a></li>
-                                                        <li class="static dynamic-children">
-                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/upu/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Cuộc thi Viết thư quốc tế UPU</span></span></a><ul class="dynamic">
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/upu/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi </span></span></a></li>
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/upu/Pages/hoidap.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi </span></span></a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="static dynamic-children">
-                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/daotaonghe/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Đào tạo nghề cho lao động Nông thôn</span></span></a><ul class="dynamic">
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/daotaonghe/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/daotaonghe/Pages/videoclips.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Video</span></span></a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="static dynamic-children">
-                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/dttktq/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Điều tra, thống kê toàn quốc  phổ cập dịch vụ</span></span></a><ul class="dynamic">
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/dttktq/Pages/default.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Home</span></span></a></li>
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/dttktq/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="static dynamic-children">
-                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nuocmanhCNTTTT/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Đưa Việt Nam sớm trở thành nước mạnh về CNTT&amp;TT</span></span></a><ul class="dynamic">
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nuocmanhCNTTTT/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">t</span></span></a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="static dynamic-children">
-                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/iso/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Hệ thống QLCL ISO ngành TT&amp;TT</span></span></a><ul class="dynamic">
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/iso/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="static dynamic-children">
-                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/shth/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Số hóa truyền hình mặt đất</span></span></a><ul class="dynamic">
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/shth/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/shth/Pages/hoidap.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="static dynamic-children">
-                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/solieubaocao/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Số liệu - báo cáo</span></span></a><ul class="dynamic">
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/solieubaocao/Pages/guithongtindoanhnghiep.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi thông tin doanh nghiệp</span></span></a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/thanhtrakiemtra/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Thanh tra - Kiểm tra</span></span></a></li>
-                                                        <li class="static dynamic-children">
-                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/tdkt/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Thi đua - Khen thưởng</span></span></a><ul class="dynamic">
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/tdkt/Pages/layykien_xettanghuanchuong.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">t</span></span></a></li>
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/tdkt/Pages/layykienthidua.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">t</span></span></a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="static dynamic-children">
-                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/ttcaicachTTHC/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Thông tin cải cách Thủ tục Hành chính</span></span></a><ul class="dynamic">
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/ttcaicachTTHC/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="static dynamic-children">
-                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nongthon/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Thông tin và Truyền thông với Nông thôn</span></span></a><ul class="dynamic">
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nongthon/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/detaikhoahoc/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Thông tin về chương trình nghiên cứu, đề tài khoa học</span></span></a></li>
-                                                        <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/mra/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Tiêu chuẩn, Chất lượng và Đánh giá phù hợp</span></span></a></li>
-                                                        <li class="static dynamic-children">
-                                                            <a class="static dynamic-children menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/vtci/Pages/trangchu.aspx"><span aria-haspopup="true" class="additional-background ms-navedit-flyoutArrow dynamic-children"><span class="menu-item-text">Trang Viễn thông công ích Việt Nam</span></span></a><ul class="dynamic">
-                                                                <li class="dynamic"><a class="dynamic menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/vtci/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/ipv6/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Triển khai IPV6 tại Việt Nam</span></span></a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-                                <h1 id="pageTitle" class="ms-core-pageTitle">
-                                    <span id="DeltaPlaceHolderPageTitleInTitleArea">
-
-                                        <span><a href="#ctl00_PlaceHolderPageTitleInTitleArea_ctl00_SkipLink">
-                                            <img alt="Skip Navigation Links" src="/WebResource.axd?d=KXtDxn8o6ZQXnTS84tsqwhikvuVQa_Vdya1JFNgmzqeO_a-jvQuJ488R2U6Xcu8zhvRPV4bVEtJZoXtpmGMKvUk491SXokgT2M_BkTZp1EM1&amp;t=636161092665894255" width="0" height="0" border="0" /></a><span><a href="/Pages/trangchu.aspx">trangchu</a></span><a id="ctl00_PlaceHolderPageTitleInTitleArea_ctl00_SkipLink"></a></span>
-
-                                    </span>
-                                    <div id="DeltaPlaceHolderPageDescription" class="ms-displayInlineBlock ms-normalWrap">
-
-                                        <a href="javascript:;" id="ms-pageDescriptionDiv" style="display: none">
-                                            <span id="ms-pageDescriptionImage"></span>
-                                        </a>
-                                        <span class="ms-accessible" id="ms-pageDescription"></span>
-                                        <script>
-                                            // <![CDATA[
-
-
-                                            _spBodyOnLoadFunctionNames.push("setupPageDescriptionCallout");
-                                    // ]]>
-                                        </script>
-
-                                    </div>
-                                </h1>
-                            </div>
-                            <div class="ms-tableCell ms-verticalAlignTop">
-                                <div id="DeltaPlaceHolderSearchArea" class="ms-mpSearchBox ms-floatRight">
-
-
-
-                                    <div id="searchInputBox">
-                                        <div class="ms-webpart-chrome ms-webpart-chrome-fullWidth ">
-                                            <div webpartid="00000000-0000-0000-0000-000000000000" haspers="true" id="WebPartWPQ1" width="100%" class="ms-WPBody " onlyformepart="true" allowdelete="false" style="">
-                                                <div componentid="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr" id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr">
-                                                    <div id="SearchBox" name="Control">
-                                                        <div class="ms-srch-sb ms-srch-sb-border" id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sboxdiv">
-                                                            <input type="text" value="Search this site" maxlength="2048" accesskey="S" title="Search this site" id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sbox" autocomplete="off" autocorrect="off" onkeypress="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {if (Srch.U.isEnterKey(String.fromCharCode(event.keyCode))) {$find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr').search($get('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sbox').value);return Srch.U.cancelEvent(event);}})" onkeydown="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {var ctl = $find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr');ctl.activateDefaultQuerySuggestionBehavior();})" onfocus="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {var ctl = $find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr');ctl.hidePrompt();ctl.setBorder(true);})" onblur="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {var ctl = $find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr'); if (ctl){ ctl.showPrompt(); ctl.setBorder(false);}})" class="ms-textSmall ms-srch-sb-prompt ms-helperText" /><a title="Search" class="ms-srch-sb-searchLink" id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_SearchLink" onclick="EnsureScriptFunc('Search.ClientControls.js', 'Srch.U', function() {$find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr').search($get('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sbox').value);})" href="javascript: {}"><img src="/Content2/_layouts/15/images/searchresultui.png_-1267273014.jpg" class="ms-srch-sb-searchImg" id="searchImg" alt="Search" /></a><div class="ms-qSuggest-container ms-shadow" id="AutoCompContainer">
-                                                                <div id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_AutoCompList"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <noscript>
-                                                    <div id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_noscript">It looks like your browser does not have JavaScript enabled. Please turn on JavaScript and try again.</div>
-                                                </noscript>
-                                                <div id="ctl00_PlaceHolderSearchArea_SmallSearchInputBox1">
-                                                </div>
-                                                <div class="ms-clear"></div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-                        </div>
+        <HL:StaticControl runat="server" Code="CMenu" HLID="cMenuTop"></HL:StaticControl>
+        <div class="container">
+            <HL:StaticControl runat="server" Code="CAdv" HLID="cSlideHome"></HL:StaticControl>
+            <div class="certcontact">
+                <div class="certcontactheader">LIÊN HỆ</div>
+                <div class="certphone">
+                    <div class="certiconphone">
+                        <img src="/Content1/images/icon/phone_icon.png" alt="HotLine VNCERT">
+                    </div>
+                    <div class="certnumberphone">
+                        (084).436404421
+                    <br>
+                        Hotline: 0869.100.319
+                    <br>
+                        <span style="display: block; padding-left: 40px">Hotline: 0888.609399</span>
                     </div>
                 </div>
-                <div id="contentRow">
-                    <div id="sideNavBox" class="ms-dialogHidden ms-forceWrap ms-noList" style="display: none;">
-                        <div id="DeltaPlaceHolderLeftNavBar" class="ms-core-navigation" role="navigation">
-
-
-                            <a id="startNavigation" name="startNavigation" tabindex="-1"></a>
-
-
-
-
-
-                            <div class="ms-core-sideNavBox-removeLeftMargin">
-                                <div id="ctl00_PlaceHolderLeftNavBar_QuickLaunchNavigationManager">
-
-
-                                    <div id="zz3_V4QuickLaunchMenu" class=" noindex ms-core-listMenu-verticalBox">
-                                        <ul id="zz4_RootAspMenu" class="root ms-core-listMenu-root static">
-                                            <li class="static"><span class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Recent</span></span></span></li>
-                                            <li class="static">
-                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/atantt/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">An toàn, An ninh thông tin</span></span></a><ul class="static">
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/atantt/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi </span></span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/hnqt/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Hội nhập kinh tế quốc tế</span></span></a></li>
-                                            <li class="static">
-                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/phapdien/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Pháp điển ngành TT&amp;TT</span></span></a><ul class="static">
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/phapdien/Pages/trangchu2.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Pháp điển ngành Thông tin và Truyền thông</span></span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/pcthtl/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Phòng chống tác hại của thuốc lá</span></span></a></li>
-                                            <li class="static">
-                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/upu/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Cuộc thi Viết thư quốc tế UPU</span></span></a><ul class="static">
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/upu/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi </span></span></a></li>
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/upu/Pages/hoidap.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi </span></span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="static">
-                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/daotaonghe/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Đào tạo nghề cho lao động Nông thôn</span></span></a><ul class="static">
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/daotaonghe/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/daotaonghe/Pages/videoclips.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Video</span></span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="static">
-                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/dttktq/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Điều tra, thống kê toàn quốc  phổ cập dịch vụ</span></span></a><ul class="static">
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/dttktq/Pages/default.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Home</span></span></a></li>
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/dttktq/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="static">
-                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nuocmanhCNTTTT/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Đưa Việt Nam sớm trở thành nước mạnh về CNTT&amp;TT</span></span></a><ul class="static">
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nuocmanhCNTTTT/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">t</span></span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="static">
-                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/iso/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Hệ thống QLCL ISO ngành TT&amp;TT</span></span></a><ul class="static">
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/iso/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="static">
-                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/shth/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Số hóa truyền hình mặt đất</span></span></a><ul class="static">
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/shth/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/shth/Pages/hoidap.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="static">
-                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/solieubaocao/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Số liệu - báo cáo</span></span></a><ul class="static">
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/solieubaocao/Pages/guithongtindoanhnghiep.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi thông tin doanh nghiệp</span></span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/thanhtrakiemtra/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Thanh tra - Kiểm tra</span></span></a></li>
-                                            <li class="static">
-                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/tdkt/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Thi đua - Khen thưởng</span></span></a><ul class="static">
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/tdkt/Pages/layykien_xettanghuanchuong.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">t</span></span></a></li>
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/tdkt/Pages/layykienthidua.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">t</span></span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="static">
-                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/ttcaicachTTHC/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Thông tin cải cách Thủ tục Hành chính</span></span></a><ul class="static">
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/ttcaicachTTHC/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="static">
-                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nongthon/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Thông tin và Truyền thông với Nông thôn</span></span></a><ul class="static">
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/nongthon/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/detaikhoahoc/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Thông tin về chương trình nghiên cứu, đề tài khoa học</span></span></a></li>
-                                            <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/mra/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Tiêu chuẩn, Chất lượng và Đánh giá phù hợp</span></span></a></li>
-                                            <li class="static">
-                                                <a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/vtci/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Trang Viễn thông công ích Việt Nam</span></span></a><ul class="static">
-                                                    <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/vtci/Pages/guicauhoi.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Gửi câu hỏi</span></span></a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="static"><a class="static menu-item ms-core-listMenu-item ms-displayInline ms-navedit-linkNode" tabindex="0" href="/ipv6/Pages/trangchu.aspx"><span class="additional-background ms-navedit-flyoutArrow"><span class="menu-item-text">Triển khai IPV6 tại Việt Nam</span></span></a></li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="ms-core-listMenu-verticalBox">
-                                </div>
-
-                            </div>
-
-
-                        </div>
+                <div class="certemail">
+                    <div class="certiconemail">
+                        <img src="/Content1/images/icon/email_icon.png" alt="Email VNCERT">
                     </div>
-                    <div id="contentBox temp_none" aria-live="polite" aria-relevant="all">
-                        <div id="notificationArea" class="ms-notif-box"></div>
-                        <div id="DeltaPlaceHolderMain">
-                            <a id="mainContent" name="mainContent" tabindex="-1"></a>
-                            <div class="btn-common-close"></div>
-                            <div class="wrapper-container">
-                                <div class="container">
-                                    <section class="banner-container">
-                                        <HL:StaticControl runat="server" Code="CAdv" HLID="cLogo"></HL:StaticControl>
-                                        <HL:StaticControl runat="server" Code="CStatic" HLID="cSearch"></HL:StaticControl>
-                                    </section>
-                                    <div class="clr"></div>
-
-                                    <div id="theme-css" data-style="color-blue"></div>
-                                    <div id="common-theme-css" data-style="color-blue"></div>
-
-
-                                    <script src="/Content2/style/js/social-buttons-share.js"></script>
-                                    <section class="menu-container">
-                                        <a class="icon-menu"><span class="fa fa-bars"></span></a>
-                                        <div class="icon-home"><a href="/" style="color: black"><span class="fa fa-home"></span></a></div>
-                                        <div class="menu-top-icon">
-                                            <span class="fa fa-bars"></span>Danh mục
-                                        </div>
-                                        <div class="menu-list">
-                                            <HL:StaticControl runat="server" Code="CMenu" HLID="cMenu_TopLeft"></HL:StaticControl>
-                                            <HL:StaticControl runat="server" Code="CMenu" HLID="cMenu_TopRight"></HL:StaticControl>
-                                        </div>
-                                    </section>
-
-                                    <section class="top-container">
-                                        <HL:StaticControl runat="server" Code="CStatic" HLID="cDate"></HL:StaticControl>
-
-                                        <div class="sidebar-top">
-                                            <div class="ms-webpart-zone ms-fullWidth">
-                                                <HL:DynamicControl Code="Danh sách điều khiển bên trái - I" ID="DLeftI" runat="server"></HL:DynamicControl>
-                                            </div>
-                                        </div>
-                                        <div class="top-content-right ver2">
-                                            <div class="news-content">
-                                                <HL:DynamicControl Code="Danh sách điều khiển bên phải - I" ID="DRightI" runat="server"></HL:DynamicControl>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section class="main-content w100 fl">
-                                        <div class="main-left">
-                                            <HL:DynamicControl Code="Danh sách điều khiển bên trái - II" ID="DLeftII" runat="server"></HL:DynamicControl>
-
-                                            <div class="ms-webpart-zone ms-fullWidth">
-                                                <div id="MSOZoneCell_WebPartctl00_ctl45_g_039a6a4a_704a_4fe2_8f29_05ece09659f4" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
-                                                    <div class="ms-webpart-chrome ms-webpart-chrome-vertical ms-webpart-chrome-fullWidth ">
-                                                        <div webpartid="83ce44f5-41ec-482c-b9e6-73c4d8d8a5bf" haspers="false" id="WebPartctl00_ctl45_g_039a6a4a_704a_4fe2_8f29_05ece09659f4" width="100%" class="ms-WPBody " allowdelete="false" allowexport="false" style="">
-                                                            <div id="ctl00_ctl45_g_039a6a4a_704a_4fe2_8f29_05ece09659f4">
-
-                                                                <div class="banner mb10">
-                                                                    <img alt='Kỷ niệm 70 năm thành lập Công đoàn Ngành' title='Kỷ niệm 70 năm thành lập Công đoàn Ngành' src='/Content2/Upload/Banner/banerngang-70namCDN(1).jpg' />
-
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="ms-clear"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="box-category mb10">
-                                                <div class="ms-webpart-zone ms-fullWidth">
-                                                    <div id="MSOZoneCell_WebPartctl00_ctl45_g_f31701f0_3b3a_47e0_ad1b_99ad9f854ef2" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
-                                                        <div class="ms-webpart-chrome ms-webpart-chrome-vertical ms-webpart-chrome-fullWidth ">
-                                                            <div webpartid="ac4bcab4-f6ec-4773-8292-1240335e9dc1" haspers="false" id="WebPartctl00_ctl45_g_f31701f0_3b3a_47e0_ad1b_99ad9f854ef2" width="100%" class="ms-WPBody " allowdelete="false" allowexport="false" style="">
-                                                                <div id="ctl00_ctl45_g_f31701f0_3b3a_47e0_ad1b_99ad9f854ef2">
-                                                                    <script>
-                                                                            function SearchVanBanButtonClick() {
-                                                                                document.getElementById('ctl00_ctl45_g_f31701f0_3b3a_47e0_ad1b_99ad9f854ef2_ctl00_Btn_TimKiem').click();
-                                                                            }
-                                                                    </script>
-                                                                    <div class="vanban-new">
-                                                                        <h3 class="title-list-news">
-                                                                            <span class="title-t1">
-                                                                                <span id="ctl00_ctl45_g_f31701f0_3b3a_47e0_ad1b_99ad9f854ef2_ctl00_lbTitle">VĂN BẢN</span>
-                                                                            </span>
-                                                                            <span style="display: none">
-
-                                                                                <input type="submit" name="ctl00$ctl45$g_f31701f0_3b3a_47e0_ad1b_99ad9f854ef2$ctl00$Btn_TimKiem" value="Tìm kiếm" onclick="javascript: WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl45$g_f31701f0_3b3a_47e0_ad1b_99ad9f854ef2$ctl00$Btn_TimKiem & quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_ctl45_g_f31701f0_3b3a_47e0_ad1b_99ad9f854ef2_ctl00_Btn_TimKiem" class="btn_action search" />
-
-                                                                            </span>
-                                                                            <div class="search-word">
-                                                                                <button class="search" onclick="return SearchVanBanButtonClick();">
-                                                                                    Tìm kiếm văn bản
-                                                                                    <span class="icon-search"></span>
-                                                                                </button>
-                                                                            </div>
-                                                                        </h3>
-                                                                        <div class="content-vanban">
-                                                                            <table class="table">
-                                                                                <thead>
-                                                                                </thead>
-                                                                                <th style="width: 20%">Số hiệu</th>
-
-                                                                                <th style="width: 70%">Trích yếu nội dung</th>
-                                                                                <th style="width: 10%">Ngày ban hành</th>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td>3399/BTTTT-VP</td>
-                                                                                        <td><a href='/Pages/VanBan/14009/3399_BTTTT-VP.html'>V/v thực hiện Chỉ thị số 35/CT-TTg của Thủ tướng Chính phủ</a></td>
-                                                                                        <td>19/09/2017</td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td>3307/CĐ-BTTTT</td>
-                                                                                        <td><a href='/Pages/VanBan/14004/3307_Cd-BTTTT.html'>V/v chủ động ứng phó với cơn Bão số 10 (Bão Doksuri)</a></td>
-                                                                                        <td>13/09/2017</td>
-                                                                                    </tr>
-                                                                                    <tr>
-                                                                                        <td>20/2017/TT-BTTTT</td>
-                                                                                        <td><a href='/Pages/VanBan/14006/20_2017_TT-BTTTT.html'>Quy định về điều phối, ứng cứu sự cố an toàn thông tin mạng trên toàn quốc</a></td>
-                                                                                        <td>12/09/2017</td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="ms-clear"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="main-right">
-
-                                            <div class="ms-webpart-zone ms-fullWidth">
-                                                <div id="MSOZoneCell_WebPartctl00_ctl45_g_9c6ae50e_5e09_4190_bafd_468fff26cbc5" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
-                                                    <div class="ms-webpart-chrome ms-webpart-chrome-vertical ms-webpart-chrome-fullWidth ">
-                                                        <div webpartid="7a73432e-ce16-4868-90e1-7e5337b831bc" haspers="false" id="WebPartctl00_ctl45_g_9c6ae50e_5e09_4190_bafd_468fff26cbc5" width="100%" class="ms-WPBody " allowdelete="false" allowexport="false" style="">
-                                                            <div id="ctl00_ctl45_g_9c6ae50e_5e09_4190_bafd_468fff26cbc5">
-
-                                                                <style>
-                                                                    .content-category.w100.fl ul li {
-                                                                        word-break: normal !important;
-                                                                    }
-                                                                </style>
-
-                                                                <div class="notify-content">
-                                                                    <h3 class="title-list-news">
-                                                                        <span class="title-t1">
-                                                                            <a href="/Pages/ChuyenMuc/146/Thong-bao.html">Thông báo</a>
-                                                                        </span>
-                                                                    </h3>
-                                                                    <div class="content">
-                                                                        <ul>
-                                                                            <li>
-                                                                                <a href="/Pages/TinTuc/135625/Cuc-Vien-thong-tuyen-dung-cong-chuc-nam-2017.html" class="shape">Cục Viễn thông tuyển dụng công chức năm 2017</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="/Pages/TinTuc/135595/Cuc-Vien-thong-thong-bao-tuyen-dung-vien-chuc-nam-2017.html" class="shape">Cục Viễn thông thông báo tuyển dụng viên chức năm 2017</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="/Pages/TinTuc/135496/Thong-bao-moi-dang-ky-tham-gia-lua-chon-chu-dau-tu-cua-12-Du-an-ho-tro-thiet-lap-ha-tang-vien-thong-bang-rong-giai-doan-2016-2018-thuoc-Chuong-trinh-cung-cap-dich-vu-vien-thong-cong-ich-den-nam-2020.html" class="shape">Thông báo mời đăng ký tham gia lựa chọn chủ đầu tư của 12 Dự án hỗ trợ thiết lập hạ tầng viễn thông băng rộng giai đoạn 2016-2018 thuộc Chương trình cung cấp dịch vụ viễn thông công ích đến năm 2020</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                                <script>
-                                                                    if (typeof getheightli === "undefined") {
-                                                                        var heightli = {};
-                                                                        var getheightli = function (thamchieu, index) {
-                                                                            $("ul." + thamchieu + " li").each(function (i) {
-                                                                                var ii = i % 3;
-                                                                                if (heightli[thamchieu + "" + ii]) {
-                                                                                    heightli[thamchieu + "" + ii] = heightli[thamchieu + "" + ii] < parseFloat($(this).css("height")) ? parseFloat($(this).css("height")) : heightli[thamchieu + "" + ii];
-                                                                                } else {
-                                                                                    heightli[thamchieu + "" + ii] = parseFloat($(this).css("height"));
-                                                                                }
-                                                                            });
-                                                                            return heightli[thamchieu + "" + (index % 3)];
-                                                                        }
-                                                                    }
-                                                                    $(document).ready(function () {
-                                                                        $("ul.thamchieu").each(function () {
-                                                                            var a = $(this).attr("class").split(' ')[1];
-                                                                            $("." + a + " li").each(function (index) {
-                                                                                $(this).css("height", getheightli(a, index));
-                                                                            });
-                                                                        });
-                                                                    });
-                                                                </script>
-
-                                                            </div>
-                                                            <div class="ms-clear"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ms-PartSpacingVertical"></div>
-                                                </div>
-                                                <div id="MSOZoneCell_WebPartctl00_ctl45_g_0a6efafa_e6eb_416f_9c42_76995676fce5" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
-                                                    <div class="ms-webpart-chrome ms-webpart-chrome-vertical ms-webpart-chrome-fullWidth ">
-                                                        <div webpartid="0a6efafa-e6eb-416f-9c42-76995676fce5" haspers="false" id="WebPartctl00_ctl45_g_0a6efafa_e6eb_416f_9c42_76995676fce5" width="100%" class="ms-WPBody " allowdelete="false" allowexport="false" style="">
-                                                            <div id="ctl00_ctl45_g_0a6efafa_e6eb_416f_9c42_76995676fce5">
-                                                                <div class="banner mb10">
-                                                                    <a href='/Pages/drawcaptcha.aspx?truycapbanner=311'>
-                                                                        <img alt='Kế hoạch Bộ trưởng tiếp công dân' title='Kế hoạch Bộ trưởng tiếp công dân' src='/Content2/Upload/Banner/logo-tiepdan.jpg' />
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="ms-clear"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ms-PartSpacingVertical"></div>
-                                                </div>
-                                                <div id="MSOZoneCell_WebPartctl00_ctl45_g_4f309195_06a7_4a77_8b0f_766615ff1720" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
-                                                    <div class="ms-webpart-chrome ms-webpart-chrome-vertical ms-webpart-chrome-fullWidth ">
-                                                        <div webpartid="4f309195-06a7-4a77-8b0f-766615ff1720" haspers="false" id="WebPartctl00_ctl45_g_4f309195_06a7_4a77_8b0f_766615ff1720" width="100%" class="ms-WPBody " allowdelete="false" allowexport="false" style="">
-                                                            <div id="ctl00_ctl45_g_4f309195_06a7_4a77_8b0f_766615ff1720">
-                                                                <link href="/Content2/style/css/jquery-ui.css" type="text/css" media="all" rel="stylesheet" />
-                                                                <script>
-                                                                    $(document).ready(function () {
-                                                                        $('input:radio[name=zaal_ID]').change(function () {
-                                                                            var radioValue = $("input[type=radio]:checked").val();
-                                                                            if (radioValue) {
-                                                                                $('input[id*="hiddenTraLoiId"]').val(radioValue);
-                                                                            }
-                                                                        });
-                                                                    });
-
-                                                                    function wOpenRelation() {
-                                                                        wOpen('/Pages/ketquabinhchon.aspx?idCauHoi=181');
-                                                                    }
-
-                                                                    function checkCookie(id_cauhoi) {
-                                                                        var windowObjectReference;
-                                                                        var radioValue = $("input[name=input_binhchon]:checked").val();
-
-                                                                        //   $('input[id*="hiddenTraLoiId"]').val(radioValue);
-                                                                        if ($("input[name=input_binhchon]:checked").length < 1) {
-                                                                            alert("Bạn chưa chọn bình chọn nào! ");
-                                                                            return false;
-                                                                        }
-                                                                        if (document.cookie.indexOf("ComputerRatting" + id_cauhoi) > -1) {
-                                                                            alert("Bạn đã bình chọn rồi ");
-                                                                            return false;
-                                                                        }
-
-                                                                        $.ajax({
-                                                                            url: '/Pages/capnhatketquabinhchon.aspx?idCauHoi=' + id_cauhoi + '&idTraloi=' + radioValue,
-                                                                            type: 'post',
-                                                                            dataType: 'html',
-                                                                            data: {
-                                                                            },
-                                                                            success: (function (html) {
-
-                                                                            })
-                                                                        });
-                                                                        var now = new Date();
-                                                                        var exp = new Date(now.getTime() + 24 * 60 * 60 * 1000);
-                                                                        var status = '';
-                                                                        document.cookie = 'ComputerRatting' + id_cauhoi + '; expires=' + exp.toUTCString();
-                                                                        windowObjectReference = window.open("/Pages/ketquabinhchon.aspx?idCauHoi=" + id_cauhoi + "&idTraloi=" + radioValue + "", "DescriptiveWindowName", "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes");
-                                                                        return false;
-                                                                    }
-                                                                </script>
-                                                                <input type="hidden" name="ctl00$ctl45$g_4f309195_06a7_4a77_8b0f_766615ff1720$ctl00$hiddenTraLoiId" id="ctl00_ctl45_g_4f309195_06a7_4a77_8b0f_766615ff1720_ctl00_hiddenTraLoiId" />
-
-                                                                <div class="thong_ke">
-                                                                    <div class="main">
-                                                                        <div class="title">Thăm dò ý kiến </div>
-                                                                        <div class="content">
-                                                                            <p>Bạn thích sử dụng dịch vụ của nhà cung cấp dịch vụ viễn thông nào? </p>
-                                                                            <p class="mt10">
-                                                                                <input type="radio" id="2226" value="2226" name="input_binhchon" style="margin-top: 0px; margin-bottom: 4px;" />
-                                                                                <span>Mobifone</span>
-                                                                            </p>
-                                                                            <p class="mt10">
-                                                                                <input type="radio" id="2227" value="2227" name="input_binhchon" style="margin-top: 0px; margin-bottom: 4px;" />
-                                                                                <span>Vinaphone</span>
-                                                                            </p>
-                                                                            <p class="mt10">
-                                                                                <input type="radio" id="2228" value="2228" name="input_binhchon" style="margin-top: 0px; margin-bottom: 4px;" />
-                                                                                <span>Viettel</span>
-                                                                            </p>
-                                                                            <p class="mt10">
-                                                                                <input type="radio" id="2230" value="2230" name="input_binhchon" style="margin-top: 0px; margin-bottom: 4px;" />
-                                                                                <span>FPT</span>
-                                                                            </p>
-                                                                            <p class="mt10">
-                                                                                <input type="radio" id="2231" value="2231" name="input_binhchon" style="margin-top: 0px; margin-bottom: 4px;" />
-                                                                                <span>Khác</span>
-                                                                            </p>
-                                                                            <p class="mt20">
-                                                                                <span>
-                                                                                    <a href="/Pages/ketquabinhchon.aspx?idCauHoi=181" title="Xem kết quả" onclick="window.open(this.href,'popup','width='+screen.width+',height='+screen.height+''); return false">Xem kết quả</a>
-                                                                                </span>
-                                                                                <span class="button">
-                                                                                    <button onclick="return checkCookie('181')" class="g-b-search">Biểu quyết</button>
-                                                                                </span>
-                                                                            </p>
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="ms-clear"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ms-PartSpacingVertical"></div>
-                                                </div>
-                                                <div id="MSOZoneCell_WebPartctl00_ctl45_g_e8d6376f_dd92_4279_ba64_d3f2ddd92883" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
-                                                    <div class="ms-webpart-chrome ms-webpart-chrome-vertical ms-webpart-chrome-fullWidth ">
-                                                        <div webpartid="8cecd70e-9e45-4a50-8f04-69a1bc4e29ab" haspers="false" id="WebPartctl00_ctl45_g_e8d6376f_dd92_4279_ba64_d3f2ddd92883" width="100%" class="ms-WPBody " allowdelete="false" allowexport="false" style="">
-                                                            <div id="ctl00_ctl45_g_e8d6376f_dd92_4279_ba64_d3f2ddd92883">
-                                                                <div class="banner mb10">
-                                                                    <a href='/Pages/drawcaptcha.aspx?truycapbanner=317'>
-                                                                        <img alt='Danh mục hệ thống thông tin' title='Danh mục hệ thống thông tin' src='/Content2/Upload/Banner/DM103HTTT-TT25-PKH(1).png' />
-                                                                    </a>
-                                                                    <a href='/Pages/drawcaptcha.aspx?truycapbanner=75'>
-                                                                        <img alt='TiengViet_TrangChu_BannerPhai_Giới thiệu sản phẩm dịch vụ' title='TiengViet_TrangChu_BannerPhai_Giới thiệu sản phẩm dịch vụ' src='/Content2/Upload/File/Banner/banner-1.jpg' />
-                                                                    </a>
-                                                                    <a href='/Pages/drawcaptcha.aspx?truycapbanner=287'>
-                                                                        <img alt='IT today' title='IT today' src='/Content2/Upload/Banner/ITtoday.jpg' />
-                                                                    </a>
-                                                                    <a href='/Pages/drawcaptcha.aspx?truycapbanner=78'>
-                                                                        <img alt='Banner VNPT' title='Banner VNPT' src='/Content2/Upload/File/Banner/banner-2.jpg' />
-                                                                    </a>
-                                                                    <a href='/Pages/drawcaptcha.aspx?truycapbanner=168'>
-                                                                        <img alt='Viettel' title='Viettel' src='/Content2/Upload/File/Banner/168/viettel.jpg' />
-                                                                    </a>
-                                                                    <a href='/Pages/drawcaptcha.aspx?truycapbanner=81'>
-                                                                        <img alt='Banner VNPT Vinaphone' title='Banner VNPT Vinaphone' src='/Content2/Upload/File/Banner/banner-5.jpg' />
-                                                                    </a>
-                                                                    <a href='/Pages/drawcaptcha.aspx?truycapbanner=270'>
-                                                                        <img alt='Tổng điều tra nông thôn, nông nghiệp và thủy sản 2016' title='Tổng điều tra nông thôn, nông nghiệp và thủy sản 2016' src='/Content2/Upload/Banner/TongdieutraNongthon2016.jpg' />
-                                                                    </a>
-                                                                    <a href='/Pages/drawcaptcha.aspx?truycapbanner=285'>
-                                                                        <img alt='Logo Mobifone 20161028' title='Logo Mobifone 20161028' src='/Content2/Upload/Banner/mobifone20161028.jpg' />
-                                                                    </a>
-                                                                    <a href='/Pages/drawcaptcha.aspx?truycapbanner=82'>
-                                                                        <img alt='Banner VNPost' title='Banner VNPost' src='/Content2/Upload/File/Banner/banner-6.jpg' />
-                                                                    </a>
-                                                                    <a href='/Pages/drawcaptcha.aspx?truycapbanner=329'>
-                                                                        <img alt='Tổng đài SHTH 19001559' title='Tổng đài SHTH 19001559' src='/Content2/Upload/Banner/TongdaiSHTH.jpg' />
-                                                                    </a>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="ms-clear"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ms-PartSpacingVertical"></div>
-                                                </div>
-                                                <div id="MSOZoneCell_WebPartWPQ2" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
-                                                    <div class="ms-webpart-chrome ms-webpart-chrome-vertical ms-webpart-chrome-fullWidth ">
-                                                        <div webpartid="37262ff4-b1cb-4f0a-bde9-d293c2ce4724" haspers="false" id="WebPartWPQ2" width="100%" class="ms-WPBody " allowdelete="false" style="">
-                                                            <div class="ms-rtestate-field">
-                                                                <script src="/Content2/style/js/jquery.min.1.11.3.js"></script>
-                                                                <script src="/Content2/style/js/jquery.countdown.js"></script>
-                                                                <script>
-                                                                    var $j_c = $.noConflict();
-                                                                    $j_c(document).ready(function () {
-
-                                                                        $j_c('#clock').countdown('2017/08/15', function (event) {
-
-                                                                            $j_c(this).html(event.strftime('%D ngày %H:%M:%S'));
-                                                                        });
-
-                                                                    });
-                                                                </script>
-                                                                <div class="noti-timeview">Từ 0h00 ngày 15/8/2017 đã ngừng phủ sóng toàn bộ kênh truyền hình tương tự mặt đất tại 15 tỉnh: Quảng Ninh, Thái Nguyên, Nam Định, Thá​​i Bình, Ninh Bình, Bắc Giang, Phú Thọ, Bà Rịa - Vũng Tàu, Bình Thuận, Đồng Nai, Long An, Bến Tre, Đồng Tháp, An Giang, Tiền Giang.​​​​​ ​​</div>
-                                                            </div>
-                                                            <div class="ms-clear"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section class="chuyenmuc-content w100">
-                                        <div class="ms-webpart-zone ms-fullWidth">
-                                            <div id="MSOZoneCell_WebPartctl00_ctl45_g_aafd2af4_ed39_4c07_aab3_9b2d5dbd5014" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
-                                                <div class="ms-webpart-chrome ms-webpart-chrome-vertical ms-webpart-chrome-fullWidth ">
-                                                    <div webpartid="aafd2af4-ed39-4c07-aab3-9b2d5dbd5014" haspers="false" id="WebPartctl00_ctl45_g_aafd2af4_ed39_4c07_aab3_9b2d5dbd5014" width="100%" class="ms-WPBody " allowdelete="false" allowexport="false" style="">
-                                                        <div id="ctl00_ctl45_g_aafd2af4_ed39_4c07_aab3_9b2d5dbd5014">
-                                                            <section class="chuyenmuc-content w100">
-                                                                <h3 class="title-list-news">
-                                                                    <span class="title-t1">Chuyên mục
-                                                                    </span>
-                                                                </h3>
-                                                                <div class="content">
-                                                                    <ul>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=93'>
-                                                                                <img alt='Thi đua khen thưởng' title='Thi đua khen thưởng' src='/Content2/Upload/File/Banner/chuyenmuc-1.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=94'>
-                                                                                <img alt='Tiêu chuẩn chất lượng và đánh giá phù hợp' title='Tiêu chuẩn chất lượng và đánh giá phù hợp' src='/Content2/Upload/File/Banner/chuyenmuc-2.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=279'>
-                                                                                <img alt='Chuyenmuc-ATTTT' title='Chuyenmuc-ATTTT' src='/Content2/Upload/Banner/logoChuyentrang-ATTTT.png' />
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=96'>
-                                                                                <img alt='Đưa Việt Nam sớm thành nước mạnh về CNTT - TT' title='Đưa Việt Nam sớm thành nước mạnh về CNTT - TT' src='/Content2/Upload/File/Banner/chuyenmuc-4.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=98'>
-                                                                                <img alt='CTMTQG  về việc làm và dạy nghề' title='CTMTQG  về việc làm và dạy nghề' src='/Content2/Upload/File/Banner/chuyenmuc-6.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=99'>
-                                                                                <img alt='Viễn thông công ích Việt Nam' title='Viễn thông công ích Việt Nam' src='/Content2/Upload/File/Banner/chuyenmuc-7.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=100'>
-                                                                                <img alt='Cải cách thủ tục hành chính' title='Cải cách thủ tục hành chính' src='/Content2/Upload/File/Banner/chuyenmuc-8.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=102'>
-                                                                                <img alt='Viết thư quốc tế UPU' title='Viết thư quốc tế UPU' src='/Content2/Upload/File/Banner/chuyenmuc-10.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=103'>
-                                                                                <img alt='Số hóa truyền hình mặt đất' title='Số hóa truyền hình mặt đất' src='/Content2/Upload/File/Banner/chuyenmuc-11.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=310'>
-                                                                                <img alt='Triển khai ipv6 tại Việt Nam' title='Triển khai ipv6 tại Việt Nam' src='/Content2/Upload/Banner/chuyenmuc-ipv6-2017.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=238'>
-                                                                                <img alt='Phòng chống tác hại thuốc lá' title='Phòng chống tác hại thuốc lá' src='/Content2/Upload/File/Banner/238/pcthtl.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=241'>
-                                                                                <img alt='trang chủ-chuyên mục-pháp điển' title='trang chủ-chuyên mục-pháp điển' src='/Content2/Upload/File/Banner/241/phapdien.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </section>
-
-                                                        </div>
-                                                        <div class="ms-clear"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </section>
-                                    <section class="tracuu chuyenmuc-content w100">
-                                        <div class="ms-webpart-zone ms-fullWidth">
-                                            <div id="MSOZoneCell_WebPartctl00_ctl45_g_9e229179_a5c7_4188_8238_fa790065d939" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
-                                                <div class="ms-webpart-chrome ms-webpart-chrome-vertical ms-webpart-chrome-fullWidth ">
-                                                    <div webpartid="9e229179-a5c7-4188-8238-fa790065d939" haspers="false" id="WebPartctl00_ctl45_g_9e229179_a5c7_4188_8238_fa790065d939" width="100%" class="ms-WPBody " allowdelete="false" allowexport="false" style="">
-                                                        <div id="ctl00_ctl45_g_9e229179_a5c7_4188_8238_fa790065d939">
-
-                                                            <section class="chuyenmuc-content w100">
-                                                                <h3 class="title-list-news">
-                                                                    <span class="title-t1">Thông tin tra cứu
-                                                                    </span>
-                                                                </h3>
-                                                                <div class="content">
-                                                                    <ul>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=105'>
-                                                                                <img alt='Trang chủ - Tra cứu - Chương trình, đề tài NCKH' title='Trang chủ - Tra cứu - Chương trình, đề tài NCKH' src='/Content2/Upload/File/Banner/tracuu-1.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=106'>
-                                                                                <img alt='Trang chủ - Tra cứu - Doanh nghiệp BCVT&CNTT' title='Trang chủ - Tra cứu - Doanh nghiệp BCVT&CNTT' src='/Content2/Upload/File/Banner/tracuu-2.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=107'>
-                                                                                <img alt='Hiệp hội ngành TT & TT' title='Hiệp hội ngành TT & TT' src='/Content2/Upload/File/Banner/107/tracuu-3.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=109'>
-                                                                                <img alt='Trang chủ - Tra cứu - Hội đồng Giám đốc CNTT' title='Trang chủ - Tra cứu - Hội đồng Giám đốc CNTT' src='/Content2/Upload/File/Banner/tracuu-5.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href='/Pages/drawcaptcha.aspx?truycapbanner=110'>
-                                                                                <img alt='Trang chủ - Tra cứu - Sản phẩm, dịch vụ CNTT trong nước' title='Trang chủ - Tra cứu - Sản phẩm, dịch vụ CNTT trong nước' src='/Content2/Upload/File/Banner/tracuu-6.jpg' />
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </section>
-                                                        </div>
-                                                        <div class="ms-clear"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </section>
-
-                                    <div style='display: none' id='hidZone'>
-                                        <menu class="ms-hide">
-                                            <ie:menuitem id="MSOMenu_Help" iconsrc="/Content2/_layouts/15/images/HelpIcon.gif" onmenuclick="MSOWebPartPage_SetNewWindowLocation(MenuWebPart.getAttribute('helpLink'), MenuWebPart.getAttribute('helpMode'))" text="Help" type="option" style="display: none"></ie:menuitem>
-                                        </menu>
-                                    </div>
-                                    <section class="chuyenmuc-content w100">
-                                        <footer class="footer">
-                                            {RS:Web_Footer}
-                                        </footer>
-                                    </section>
-
-                                </div>
-                            </div>
-                            <script src="/Content2/style/assets/js/bootstrap.min.js"></script>
-                            <script>
-                                                                    //<![CDATA[
-                                                                    $(".icon-menu").click(function () {
-                                                                        $('.menu-list').toggleClass('scollpane');
-                                                                    });
-                                                                    var data_style = $("#theme-css").attr('data-style');
-                                                                    $('#theme-color').attr("href", "//Content2/style/css/" + data_style + ".css");
-                                                                    $('#common-theme-color').attr("href", "//Content2/style/css/common-" + data_style + ".css");
-                                //]]>
-                            </script>
-
-                        </div>
-                        <div id="DeltaFormDigest">
-                            <script>
-                                                                    //<![CDATA[
-                                                                    var formDigestElement = document.getElementsByName('__REQUESTDIGEST')[0];
-                                                                    if (!((formDigestElement == null) || (formDigestElement.tagName.toLowerCase() != 'input') || (formDigestElement.type.toLowerCase() != 'hidden') ||
-                                                                        (formDigestElement.value == null) || (formDigestElement.value.length <= 0))) {
-                                                                        formDigestElement.value = '0x6B4961E3375C81F14B900639713381256DC7112B4CB0DA29DC05347C7B96FF71A7D93F97E792AD32BC70FBD38C90E999E40AE48D50FFF359204FB4B6A17F03B1,24 Sep 2017 02:09:56 -0000';
-                                                                        g_updateFormDigestPageLoaded = new Date();
-                                                                    }
-                                //]]>
-                            </script>
-                        </div>
-                        <div class="ms-hide">
-                        </div>
+                    <div class="certemailaddress"><a href="mailto:ir@vncert.vn">Gửi email báo sự cố</a></div>
+                    <div class="certReport mt-5">
+                        <a href="#" class="btn-reportHome">Báo cáo sự cố</a>
                     </div>
                 </div>
             </div>
         </div>
-        <script>
-                                                                    // <![CDATA[
-                                                                    var g_Workspace = "s4-workspace";
-            // ]]>
-        </script>
-        <script>
-                                                                    //<![CDATA[
-                                                                    var _spFormDigestRefreshInterval = 1440000; window.g_updateFormDigestPageLoaded = new Date(); window.g_updateFormDigestPageLoaded.setDate(window.g_updateFormDigestPageLoaded.getDate() - 5); function loadMDN2() { EnsureScript('MDN.js', typeof (loadFilterFn), null); }
-                                                                    function loadMDN1() { ExecuteOrDelayUntilScriptLoaded(loadMDN2, 'sp.ribbon.js'); }
-                                                                    _spBodyOnLoadFunctionNames.push('loadMDN1');
-                                                                    function _spNavigateHierarchyEx(nodeDiv, dataSourceId, dataPath, url, listInContext, type, additionalQString) {
-                                                                        CoreInvoke('SetAdditionalNavigateHierarchyQString', additionalQString);
-                                                                        g_originalSPNavigateFunc(nodeDiv, dataSourceId, dataPath, url, listInContext, type);
-                                                                    }
-
-                                                                    g_originalSPNavigateFunc = _spNavigateHierarchy;
-                                                                    _spNavigateHierarchy = _spNavigateHierarchyEx;
-                                                                    var _fV4UI = true;
-                                                                    function _RegisterWebPartPageCUI() {
-                                                                        var initInfo = { editable: false, isEditMode: false, allowWebPartAdder: false, listId: "{fdd7bcf0-2570-4ba2-bca9-a3c5941edfd0}", itemId: 67, recycleBinEnabled: true, enableMinorVersioning: true, enableModeration: false, forceCheckout: true, rootFolderUrl: "\u002fPages", itemPermissions: { High: 16, Low: 196673 } };
-                                                                        SP.Ribbon.WebPartComponent.registerWithPageManager(initInfo);
-                                                                        var wpcomp = SP.Ribbon.WebPartComponent.get_instance();
-                                                                        var hid;
-                                                                        hid = document.getElementById("_wpSelected");
-                                                                        if (hid != null) {
-                                                                            var wpid = hid.value;
-                                                                            if (wpid.length > 0) {
-                                                                                var zc = document.getElementById(wpid);
-                                                                                if (zc != null)
-                                                                                    wpcomp.selectWebPart(zc, false);
-                                                                            }
-                                                                        }
-                                                                        hid = document.getElementById("_wzSelected");
-                                                                        if (hid != null) {
-                                                                            var wzid = hid.value;
-                                                                            if (wzid.length > 0) {
-                                                                                wpcomp.selectWebPartZone(null, wzid);
-                                                                            }
-                                                                        }
-                                                                    };
-                                                                    function __RegisterWebPartPageCUI() {
-                                                                        ExecuteOrDelayUntilScriptLoaded(_RegisterWebPartPageCUI, "sp.ribbon.js");
-                                                                    }
-                                                                    _spBodyOnLoadFunctionNames.push("__RegisterWebPartPageCUI"); var __wpmExportWarning = 'This Web Part Page has been personalized. As a result, one or more Web Part properties may contain confidential information. Make sure the properties contain information that is safe for others to read. After exporting this Web Part, view properties in the Web Part description file (.WebPart) by using a text editor such as Microsoft Notepad.'; var __wpmCloseProviderWarning = 'You are about to close this Web Part.  It is currently providing data to other Web Parts, and these connections will be deleted if this Web Part is closed.  To close this Web Part, click OK.  To keep this Web Part, click Cancel.'; var __wpmDeleteWarning = 'You are about to permanently delete this Web Part.  Are you sure you want to do this?  To delete this Web Part, click OK.  To keep this Web Part, click Cancel.';
-                                                                    ExecuteOrDelayUntilScriptLoaded(
-                                                                        function () {
-                                                                            Srch.ScriptApplicationManager.get_current().states = { "webUILanguageName": "en-US", "webDefaultLanguageName": "en-US", "contextUrl": "https://mic.gov.vn", "contextTitle": "Cổng TTĐT - Bộ Thông tin và Truyền thông", "supportedLanguages": [{ "id": 1025, "label": "Arabic" }, { "id": 1093, "label": "Bengali" }, { "id": 1026, "label": "Bulgarian" }, { "id": 1027, "label": "Catalan" }, { "id": 2052, "label": "Chinese (Simplified)" }, { "id": 1028, "label": "Chinese (Traditional)" }, { "id": 1050, "label": "Croatian" }, { "id": 1029, "label": "Czech" }, { "id": 1030, "label": "Danish" }, { "id": 1043, "label": "Dutch" }, { "id": 1033, "label": "English" }, { "id": 1035, "label": "Finnish" }, { "id": 1036, "label": "French" }, { "id": 1031, "label": "German" }, { "id": 1032, "label": "Greek" }, { "id": 1095, "label": "Gujarati" }, { "id": 1037, "label": "Hebrew" }, { "id": 1081, "label": "Hindi" }, { "id": 1038, "label": "Hungarian" }, { "id": 1039, "label": "Icelandic" }, { "id": 1057, "label": "Indonesian" }, { "id": 1040, "label": "Italian" }, { "id": 1041, "label": "Japanese" }, { "id": 1099, "label": "Kannada" }, { "id": 1042, "label": "Korean" }, { "id": 1062, "label": "Latvian" }, { "id": 1063, "label": "Lithuanian" }, { "id": 1086, "label": "Malay" }, { "id": 1100, "label": "Malayalam" }, { "id": 1102, "label": "Marathi" }, { "id": 1044, "label": "Norwegian" }, { "id": 1045, "label": "Polish" }, { "id": 1046, "label": "Portuguese (Brazil)" }, { "id": 2070, "label": "Portuguese (Portugal)" }, { "id": 1094, "label": "Punjabi" }, { "id": 1048, "label": "Romanian" }, { "id": 1049, "label": "Russian" }, { "id": 3098, "label": "Serbian (Cyrillic)" }, { "id": 2074, "label": "Serbian (Latin)" }, { "id": 1051, "label": "Slovak" }, { "id": 1060, "label": "Slovenian" }, { "id": 3082, "label": "Spanish (Spain)" }, { "id": 2058, "label": "Spanish (Mexico)" }, { "id": 1053, "label": "Swedish" }, { "id": 1097, "label": "Tamil" }, { "id": 1098, "label": "Telugu" }, { "id": 1054, "label": "Thai" }, { "id": 1055, "label": "Turkish" }, { "id": 1058, "label": "Ukrainian" }, { "id": 1056, "label": "Urdu" }, { "id": 1066, "label": "Vietnamese" }], "navigationNodes": [{ "id": 0, "name": "This Site", "url": "~site//Content2/_layouts/15/osssearchresults.aspx?u={contexturl}", "promptString": "Search this site" }], "showAdminDetails": false, "defaultPagesListName": "Pages", "isSPFSKU": false, "userAdvancedLanguageSettingsUrl": "//Content2/_layouts/15/regionalsetng.aspx?type=user\u0026Source=https%3A%2F%2Fmic%2Egov%2Evn%2F\u0026ShowAdvLang=1", "defaultQueryProperties": { "culture": 1033, "uiLanguage": 1033, "summaryLength": 180, "desiredSnippetLength": 90, "enableStemming": true, "enablePhonetic": false, "enableNicknames": false, "trimDuplicates": true, "bypassResultTypes": false, "enableInterleaving": true, "enableQueryRules": true, "processBestBets": true, "enableOrderingHitHighlightedProperty": false, "hitHighlightedMultivaluePropertyLimit": -1, "processPersonalFavorites": true } };
-                                                                            Srch.U.trace(null, 'SerializeToClient', 'ScriptApplicationManager state initialized.');
-                                                                        }, 'Search.ClientControls.js'); var g_clientIdDeltaPlaceHolderMain = "DeltaPlaceHolderMain";
-                                                                    var g_clientIdDeltaPlaceHolderPageTitleInTitleArea = "DeltaPlaceHolderPageTitleInTitleArea";
-                                                                    var g_clientIdDeltaPlaceHolderUtilityContent = "DeltaPlaceHolderUtilityContent";
-                                                                    g_QuickLaunchControlIds.push("zz1_TopNavigationMenu"); _spBodyOnLoadFunctionNames.push('QuickLaunchInitDroppable'); var g_zz1_TopNavigationMenu = null; function init_zz1_TopNavigationMenu() { if (g_zz1_TopNavigationMenu == null) g_zz1_TopNavigationMenu = $create(SP.UI.AspMenu, null, null, null, $get('zz1_TopNavigationMenu')); } if (g_spPreFetchKeys) { { g_spPreFetchKeys.push('SP.Core.js'); } } EnsureScriptFunc('SP.Core.js', 'SP.UI.AspMenu', init_zz1_TopNavigationMenu);
-
-                                                                    ExecuteOrDelayUntilScriptLoaded(
-                                                                        function () {
-                                                                            if ($isNull($find('ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr'))) {
-                                                                                var sb = $create(Srch.SearchBox, { "delayLoadTemplateScripts": true, "initialPrompt": "Search this site", "messages": [], "navigationNodes": [{ "id": 0, "name": "This Site", "url": "~site//Content2/_layouts/15/osssearchresults.aspx?u={contexturl}", "promptString": "Search this site" }], "queryGroupNames": ["MasterPage"], "renderTemplateId": "~sitecollection/_catalogs/masterpage/Display Templates/Search/Control_SearchBox_Compact.js", "resultsPageAddress": "~site//Content2/_layouts/15/osssearchresults.aspx?u={contexturl}", "serverInitialRender": true, "showDataErrors": true, "showNavigation": true, "states": {}, "tryInplaceQuery": false }, null, null, $get("ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr"));
-                                                                                sb.activate('Search this site', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sbox', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_sboxdiv', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_NavButton', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_AutoCompList', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_NavDropdownList', 'ctl00_PlaceHolderSearchArea_SmallSearchInputBox1_csr_SearchLink', 'ms-srch-sbprogress', 'ms-srch-sb-prompt ms-helperText');
-                                                                            }
-                                                                        }, 'Search.ClientControls.js'); g_QuickLaunchControlIds.push("zz3_V4QuickLaunchMenu"); _spBodyOnLoadFunctionNames.push('QuickLaunchInitDroppable'); var g_zz3_V4QuickLaunchMenu = null; function init_zz3_V4QuickLaunchMenu() { if (g_zz3_V4QuickLaunchMenu == null) g_zz3_V4QuickLaunchMenu = $create(SP.UI.AspMenu, null, null, null, $get('zz3_V4QuickLaunchMenu')); } ExecuteOrDelayUntilScriptLoaded(init_zz3_V4QuickLaunchMenu, 'SP.Core.js');
-                //]]>
-        </script>
-
-        <%--<header>
-            <nav class="nav justify-content-end">
-                <a class="nav-link active" href="/vn/default.aspx">
-                    <%if ((this.Page as ViewPage).CurrentLang.ID == 1)
-                        { %>
-                    <strong>Vietnamese</strong>
-                    <%}
-                        else
-                        { %>Vietnamese<%} %>
-                </a>
-                <a class="nav-link" href="/en/default.aspx">
-                    <%if ((this.Page as ViewPage).CurrentLang.ID == 2)
-                        { %>
-                    <strong>English</strong>
-                    <%}
-                        else
-                        { %>English<%} %>
-                </a>
-                <a class="nav-link" href="/cn/default.aspx">
-                    <%if ((this.Page as ViewPage).CurrentLang.ID == 3)
-                        { %>
-                    <strong>Chinese</strong>
-                    <%}
-                        else
-                        { %>Chinese<%} %>
-                </a>
-                <a class="nav-link" href="/<%= (this.Page as ViewPage).CurrentSite.Code %>/Site-map.aspx">Sitemap</a>
-            </nav>
-        </header>
-
-        <HL:StaticControl Code="CMenu" HLID="hlMenuTop" runat="server"></HL:StaticControl>
-
-        <div class="container-fluid" style="min-height: 560px;"></div>
-
-        <footer class="bg-primary text-center text-white p-3">
-            {RS:Web_Footer}
+        <section id="news" class="mt-15">
+            <div class="container">
+                <HL:DynamicControl runat="server" Code="MainContent" ID="MainContent"></HL:DynamicControl>
+            </div>
+            <div class="container mt-15">
+                <div class="row-fluid titleContainer">
+                    <span>Liên kết</span>
+                </div>
+                <div class="row-fluid contentNews">
+                    <div class="sameCate">
+                        <ul class="list-unstyled">
+                            <li><a href="#">- Thông báo tuyển dụng</a></li>
+                            <li><a href="#">- Thông báo tuyển dụng</a></li>
+                            <li><a href="#">- Thông báo tuyển dụng</a></li>
+                            <li><a href="#">- Thông báo tuyển dụng</a></li>
+                            <li><a href="#">- Thông báo tuyển dụng</a></li>
+                            <li><a href="#">- Thông báo tuyển dụng</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="documentation" class="mt-15">
+            <div class="container">
+                <div class="row-fluid titleContainer">
+                    <span>TÀI NGUYÊN VÀ TÀI LIỆU HƯỚNG DẪN</span>
+                </div>
+                <div class="row contentNews">
+                    <div class="col-xs-12 col-sm-4">
+                        <span class="titleContentNews">Mạng lưới điều phối</span>
+                        <div>
+                            <ul class="pull-left list-unstyled">
+                                <li><a href="#">- Quyết định 05/2017/QĐ-TTg</a></li>
+                                <li><a href="#">- Thông tư 20/2017/TT-BTTTT</a></li>
+                                <li><a href="#">- Đề án Đẩy mạnh hoạt động mạng lưới ƯCSC</a></li>
+                                <li><a href="#">- Bản khai hồ sơ thành viên</a></li>
+                                <li><a href="#">- Đăng ký mạng lưới ƯCSC</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <span class="titleContentNews">Mạng lưới điều phối</span>
+                        <div>
+                            <ul class="pull-left list-unstyled">
+                                <li><a href="#">- Quyết định 05/2017/QĐ-TTg</a></li>
+                                <li><a href="#">- Thông tư 20/2017/TT-BTTTT</a></li>
+                                <li><a href="#">- Đề án Đẩy mạnh hoạt động mạng lưới ƯCSC</a></li>
+                                <li><a href="#">- Bản khai hồ sơ thành viên</a></li>
+                                <li><a href="#">- Đăng ký mạng lưới ƯCSC</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <span class="titleContentNews">Mạng lưới điều phối</span>
+                        <div>
+                            <ul class="pull-left list-unstyled">
+                                <li><a href="#">- Quyết định 05/2017/QĐ-TTg</a></li>
+                                <li><a href="#">- Thông tư 20/2017/TT-BTTTT</a></li>
+                                <li><a href="#">- Đề án Đẩy mạnh hoạt động mạng lưới ƯCSC</a></li>
+                                <li><a href="#">- Bản khai hồ sơ thành viên</a></li>
+                                <li><a href="#">- Đăng ký mạng lưới ƯCSC</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container text-center">
+                <div class="row-fluid footerRow">
+                    {RS:Web_Footer}
+                </div>
+            </div>
         </footer>
-
-        <!-- jQuery first, then Tether, then Bootstrap JS. -->
-        <script src="/Content/bootstrap-4.0.0/js/jquery-3.1.1.slim.min.js"></script>
-        <script src="/Content/bootstrap-4.0.0/js/popper.min.js"></script>
-        <script src="/Content/bootstrap-4.0.0/js/bootstrap.min.js"></script>--%>
-
-        <%--<script src="/Content/js/jquery.min-1.12.4.js"></script>--%>
-        <script src="/Content/js/AjaxRequest.js"></script>
-        <script src="/Content/js/Function.js"></script>
-        <%--<script src="/Content/js/javascript.js"></script>--%>
+        <!-- Bootstrap core JavaScript -->
+        <script src="/Content1/js/jquery-1.12.3.min.js"></script>
+        <script src="/Content1/js/bootstrap.min.js"></script>
+        <script src="/Content1/js/jquery.touchSwipe.min.js"></script>
         <script>
-            $(document).ready(function () {
-                getrss();
+            $(".carousel").swipe({
+                swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+                    if (direction == 'left') $(this).carousel('next');
+                    if (direction == 'right') $(this).carousel('prev');
+                },
+                allowPageScroll: "vertical"
             });
         </script>
     </form>

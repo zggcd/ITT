@@ -7,15 +7,11 @@
     {
         item = listItem[0];
     }
-    %>
+%>
 
-<div id="banner_header">
-    <div class="img-banner">
-        <a href='<%=item.URL %>'>
-            <%if (!string.IsNullOrEmpty(item.File))
-                {%>
-            <img alt='<%=item.Name %>' title='<%=item.Name %>' src='<%=item.File.Replace("~/", "/") %>' />
-            <%} %>
-        </a>
-    </div>
-</div>
+<%if (!string.IsNullOrEmpty(item.File))
+    {%>
+<a href="<%=item.URL %>">
+    <img alt='<%=item.Name %>' title='<%=item.Name %>' src='<%=item.File.Replace("~/", "/") %>' class="img-responsive" style="width: 100%" />
+</a>
+<%} %>
