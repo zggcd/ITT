@@ -87,12 +87,12 @@
                 <form method="post" action="{ActionForm}" name="">
                     <div class="g-search">
                         <div class="box_content_input">
-                            <div class="frm_input no1">
+                            <%--<div class="frm_input no1">
                                 <span class="name">Họ tên:</span>
                                 <div class="input">
                                     <input name="Name" maxlength="255" id="Name" class="" type="text" value="<%=entity.Name %>">
                                 </div>
-                            </div>
+                            </div>--%>
                             <div class="frm_input no1">
                                 <span class="name">Tên truy cập:<span style="color: red">*</span></span>
                                 <div class="input">
@@ -111,7 +111,7 @@
                                     <input name="RePassword" maxlength="255" id="RePassword" class="DeepSearch textBox" type="password">
                                 </div>
                             </div>
-                            <div class="frm_input no1">
+                            <%--<div class="frm_input no1">
                                 <span class="name">Email:<span style="color: red">*</span></span>
                                 <div class="input">
                                     <input name="Email" maxlength="255" id="Email" class="" type="text" value="<%=entity.Email %>">
@@ -128,7 +128,7 @@
                                 <div class="input">
                                     <input onkeypress="return pkeypress(event);" name="Phone" maxlength="11" id="Phone" class="" type="text" value="<%=entity.Phone %>">
                                 </div>
-                            </div>
+                            </div>--%>
 
                             <%--<div class="">
                                 <span class="name" style="font-weight: bold">Loại tài khoản :<span style="color: red">*</span></span>

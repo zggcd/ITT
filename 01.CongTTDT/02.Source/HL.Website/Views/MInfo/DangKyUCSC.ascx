@@ -10,7 +10,8 @@
         }
         int userId = HL.Lib.Global.CPLogin.UserID;
         var dk = ModDonDangKyUCSCService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
-        if (dk != null)
+        var endCode = ViewBag.EndCode;
+        if (string.IsNullOrEmpty(endCode))
         {
             Response.Redirect("/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx");
             return;
@@ -243,6 +244,17 @@
                                     <input name="ToChuc_Email" maxlength="255" id="ToChuc_Email" class="textstyle1" type="text" value="<%=entityDk.ToChuc_Email %>" />
                                 </p>
 
+                                <p style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>6. Thành viên là:</span>
+                                    <input type="checkbox" name="IsGOV" id="IsGOV" class="textstyle1" value="<%if (entityDk.IsGOV)
+                                        {%>1<%}
+                                        else
+                                        {%>0<%} %>"
+                                        <%if (entityDk.IsGOV == true)
+                                        {%>checked<%} %> />
+                                    <span>GOV</span>
+                                </p>
+
                                 <p style='margin-top: 6.0pt'>
                                     <b style='mso-bidi-font-weight: normal'>
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>II. Giới thiệu về hoạt động của tổ chức</span>
@@ -261,7 +273,7 @@
 
                                 <p style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
                                     <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
-                                        <textarea name="Content" maxlength="255" id="Content" class="textstyle1" rows="1" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityDk.Content %></textarea>
+                                        <textarea name="Content" rows="5" maxlength="255" id="Content" class="textstyle1" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityDk.Content %></textarea>
                                     </span>
                                 </p>
 
@@ -337,8 +349,9 @@
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>(Cung cấp thông tin về nhân lực, an toàn thông tin, công nghệ thông tin thuộc đơn vị mình theo bảng kèm theo Biểu mẫu 01 của Thông tư này)</span>
                                     </i>
                                     <br />
-                                    <p style="line-height: 0; color: #00455A;">
-                                        Upload file <%--(dung lượng < 100Kb)--%>
+                                    <%-- Tam thoi bo di upload file, khi can thi mo comment --%>
+                                    <%--<p style="line-height: 0; color: #00455A;">
+                                        Upload file
                                     </p>
                                     <input type="file" id="Atack" name="Atack" onchange="AlertFilesize();" />
                                     <script type="text/javascript">
@@ -349,34 +362,8 @@
                                                 document.getElementById('Atack').value = "";
                                                 alert('Kích thước file phải nhỏ hơn 5MB')
                                             }
-
-                                            //if (window.ActiveXObject) {
-                                            //    var fso = new ActiveXObject("Scripting.FileSystemObject");
-                                            //    var filepath = document.getElementById('fileInput').value;
-                                            //    var thefile = fso.getFile(filepath);
-                                            //    var sizeinbytes = thefile.size;
-                                            //    var name = thefile.name;
-                                            //} else {
-                                            //    var sizeinbytes = document.getElementById('Atack').files[0].size;
-                                            //    var name = document.getElementById('Atack').files[0].name;
-                                            //}
-
-                                            //var fSExt = new Array('Bytes', 'KB', 'MB', 'GB');
-                                            //fSize = sizeinbytes;
-                                            //i = 0;
-                                            //while (fSize > 900) {
-                                            //    fSize /= 1024;
-                                            //    i++;
-                                            //}
-
-                                            //if (fSize > 100 && (name.contains('.jpg') || name.contains('.png') || name.contains('.bmp') || name.contains('.gif'))) {
-                                            //    document.getElementById('Atack').value = "";
-                                            //    alert('Kích thước file phải nhỏ hơn 100Kb')
-                                            //}
-
-                                            //alert((Math.round(fSize*100)/100)+' '+fSExt[i]);
                                         }
-                                    </script>
+                                    </script>--%>
                                 </p>
                                 <table class="thanh-vien">
                                     <thead>
@@ -427,6 +414,15 @@
                                     </tbody>
                                     <tfoot></tfoot>
                                 </table>
+
+                                <p style='margin-top: 6.0pt'>
+                                    <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>4. Danh sách dải IP đăng ký (Nhập mỗi IP trên một dòng):</span>
+                                </p>
+                                <p style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
+                                    <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
+                                        <textarea name="IPs" rows="5" maxlength="1000" id="IPs" class="textstyle1" style="max-width: 90%; width: 50%; max-height: 300px;"><%=entityDk.IPs %></textarea>
+                                    </span>
+                                </p>
 
                                 <p style='margin-top: 6.0pt'>
                                     <b style='mso-bidi-font-weight: normal'>
@@ -1212,6 +1208,12 @@
             $(this).parent().parent().remove();
             d--;
         });
+
+        // Onchange checkbox gov
+        $('#IsGOV').change(function (x) {
+            if ($(this).is(':checked')) $(this).val(1);
+            else $(this).val(0);
+        })
     });
 </script>
 <!-- End Modal -->

@@ -14,6 +14,12 @@ namespace HL.Lib.Models
         public override int ID { get; set; }
 
         [DataInfo]
+        public int ParentID { get; set; }
+
+        [DataInfo]
+        public bool IsGOV { get; set; }
+
+        [DataInfo]
         public int UserID { get; set; }
 
         [DataInfo]
@@ -51,6 +57,9 @@ namespace HL.Lib.Models
 
         [DataInfo]
         public string File { get; set; }
+
+        [DataInfo]
+        public string IPs { get; set; }
 
         [DataInfo]
         public string ThongTinLL_Web { get; set; }

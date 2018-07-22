@@ -67,6 +67,14 @@
             </tr>
             <tr>
                 <td class="key">
+                    <label>Mã nhóm người sử dụng :</label>
+                </td>
+                <td>
+                    <input class="text_input" type="text" name="Code" value="<%=entity.Code %>" maxlength="255" />
+                </td>
+            </tr>
+            <tr>
+                <td class="key">
                     <label>Quyền :</label>
                 </td>
                 <td>
@@ -77,7 +85,12 @@
                                     #
                                 </th>
                                 <th width="50">
-                                    Duyệt
+                                    Duyệt (User cấp 1)
+                                    <br />
+                                    <input onclick="javascript:hl_checkAll(document.forms[0], 'ArrApprove1', this.checked);" type="checkbox" />
+                                </th>
+                                <th width="50">
+                                    Duyệt (Admin)
                                     <br />
                                     <input onclick="javascript:hl_checkAll(document.forms[0], 'ArrApprove', this.checked);" type="checkbox" />
                                 </th>
@@ -111,6 +124,9 @@
                             <tr class="row<%= i%2 %>">
                                 <td>
                                     <%= i + 1%>
+                                </td>
+                                <td align="center">
+                                    <input name="ArrApprove1" value="<%= listCPModule[i].ID%>" <%if((GetAccess(listCPModule[i].ID)&32) == 32){ %>checked="checked"<%} %> <%if((listCPModule[i].Access&32) != 32){ %>disabled="disabled"<%} %> type="checkbox" />
                                 </td>
                                 <td align="center">
                                     <input name="ArrApprove" value="<%= listCPModule[i].ID%>" <%if((GetAccess(listCPModule[i].ID)&16) == 16){ %>checked="checked"<%} %> <%if((listCPModule[i].Access&16) != 16){ %>disabled="disabled"<%} %> type="checkbox" />

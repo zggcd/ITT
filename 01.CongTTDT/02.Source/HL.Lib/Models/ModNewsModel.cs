@@ -44,10 +44,22 @@ namespace HL.Lib.Models
         public int View { get; set; }
 
         [DataInfo]
+        public int CreateUser { get; set; }
+
+        [DataInfo]
         public DateTime Published { get; set; }
 
         [DataInfo]
+        public int UpdateUser { get; set; }
+
+        [DataInfo]
+        public DateTime Updated { get; set; }
+
+        [DataInfo]
         public int Order { get; set; }
+
+        [DataInfo]
+        public bool Activity1 { get; set; }
 
         [DataInfo]
         public bool Activity { get; set; }

@@ -20,6 +20,7 @@
             this.Edit = this.Edit || newPermissions.Edit;
             this.Delete = this.Delete || newPermissions.Delete;
             this.Approve = this.Approve || newPermissions.Approve;
+            this.Approve1 = this.Approve1 || newPermissions.Approve1;
         }
 
         private int _Access = 0;
@@ -45,6 +46,15 @@
             {
                 if (Approve && !value) Access = Access - 16;
                 if (!Approve && value) Access = Access + 16;
+            }
+        }
+        public bool Approve1
+        {
+            get { return (Access & 32) == 32; }
+            internal set
+            {
+                if (Approve1 && !value) Access = Access - 32;
+                if (!Approve1 && value) Access = Access + 32;
             }
         }
         public bool Delete
@@ -85,8 +95,8 @@
         }
         public bool Full
         {
-            get { return View && Add && Edit && Delete && Approve; }
-            internal set { View = Add = Edit = Delete = Approve = value; }
+            get { return View && Add && Edit && Delete && Approve && Approve1; }
+            internal set { View = Add = Edit = Delete = Approve = Approve1 = value; }
         }
         public bool Any
         {

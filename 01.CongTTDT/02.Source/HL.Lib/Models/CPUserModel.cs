@@ -2,6 +2,7 @@
 using HL.Core.Models;
 using HL.Lib.Global;
 using System;
+using System.Collections;
 
 namespace HL.Lib.Models
 {
@@ -302,6 +303,39 @@ namespace HL.Lib.Models
                     .ToInt(0);
             return i > 0;
         }
+
+        public string GetAllowAccessModule()
+        {
+            string result = string.Empty;
+
+            int userId = CPLogin.CurrentUser.ID;
+
+            // Get user role
+            CPUserRoleEntity userRole = CPUserRoleService.Instance.CreateQuery()
+                .Where(o => o.UserID == userId)
+                .ToSingle();
+            if (userRole == null) return result;
+
+            List<CPAccessEntity> access = CPAccessService.Instance.CreateQuery()
+                .Where(o => o.RoleID == userRole.RoleID)
+                .ToList();
+            if (access == null) return result;
+
+            ArrayList arrayList = new ArrayList();
+            foreach (CPAccessEntity a in access) {
+                CPModuleEntity module = CPModuleService.Instance.CreateQuery()
+                    .Where(o => o.ID == a.RefID)
+                    .ToSingle();
+                if (module != null)
+                {
+                    arrayList.Add(module.Code);
+                }
+            }
+            result = string.Join(",", arrayList.ToArray());
+
+            return result;
+        }
+
         public CPUserEntity GetForLogin(string LoginName, string md5_pass)
         {
             string where = "[Activity]=1 AND [LoginName]='" + LoginName + "' AND ([Password]='" + md5_pass + "' OR [TempPassword]='" + md5_pass + "')";

@@ -4,6 +4,7 @@ using HL.Lib.MVC;
 using HL.Lib.Models;
 using System.Collections.Generic;
 using HL.Lib.Global;
+using HL.Core.Models;
 
 namespace HL.Lib.Controllers
 {
@@ -25,14 +26,31 @@ namespace HL.Lib.Controllers
                 MenuID = ViewPage.CurrentPage.MenuID;
             int userId = HL.Lib.Global.CPLogin.UserID;
 
-            var dbQuery = ModDonDangKyUCSCService.Instance.CreateQuery()
-                            //.Where(o => o.Activity == true)
-                            .Where(userId > 0, o => o.UserID == userId)
-                            .Where(State > 0, o => (o.State & State) == State)
-                            .WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("DonDangKyUCSC", MenuID, ViewPage.CurrentLang.ID))
-                            .OrderByDesc(o => o.Order)
-                            .Take(PageSize)
-                            .Skip(PageSize * model.Page);
+            string endCode = ViewPage.CurrentPage.Code;
+            DBQuery<ModDonDangKyUCSCEntity> dbQuery;
+
+            if (endCode == "Thanh-vien-con-m2")
+            {
+                dbQuery = ModDonDangKyUCSCService.Instance.CreateQuery()
+                                .Where(userId > 0, o => o.UserID == userId)
+                                .Where(State > 0, o => (o.State & State) == State)
+                                .Where(o => o.ParentID > 0)
+                                .WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("DonDangKyUCSC", MenuID, ViewPage.CurrentLang.ID))
+                                .OrderByDesc(o => o.Order)
+                                .Take(PageSize)
+                                .Skip(PageSize * model.Page);
+            }
+            else
+            {
+                dbQuery = ModDonDangKyUCSCService.Instance.CreateQuery()
+                                //.Where(o => o.Activity == true)
+                                .Where(userId > 0, o => o.UserID == userId)
+                                .Where(State > 0, o => (o.State & State) == State)
+                                .WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("DonDangKyUCSC", MenuID, ViewPage.CurrentLang.ID))
+                                .OrderByDesc(o => o.Order)
+                                .Take(PageSize)
+                                .Skip(PageSize * model.Page);
+            }
 
             ViewBag.Data = dbQuery.ToList();
             model.TotalRecord = dbQuery.TotalRecord;

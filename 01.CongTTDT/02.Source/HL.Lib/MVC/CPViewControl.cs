@@ -70,6 +70,8 @@ namespace HL.Lib.MVC
                     s += "<a href=\"#\" onclick=\"javascript:if(document.hlForm.boxchecked.value>0){if(confirm('Bạn chắc là mình muốn xóa chứ !')){hl_exec_cmd('delete')}}\" class=\"toolbar\"><span class=\"icon-32-delete\" title=\"" + name + "\"></span>" + name + " </a>";
                 else if (key == "new")
                     s += "<a href=\"#\" onclick=\"javascript:HLRedirect('Add')\" class=\"toolbar\"><span class=\"icon-32-new\" title=\"" + name + "\"></span>" + name + " </a>";
+                else if (key == "publish1" || key == "unpublish1")
+                    s += "<a href=\"#\" onclick=\"javascript:if(document.hlForm.boxchecked.value>0){hl_exec_cmd('" + key + "')}\" class=\"toolbar\"><span class=\"icon-32-" + key.Replace('1', ' ') + "\" title=\"" + name + "\"></span>" + name + " </a>";
                 else if (key == "publish" || key == "unpublish" || key == "edit" || key == "copy")
                     s += "<a href=\"#\" onclick=\"javascript:if(document.hlForm.boxchecked.value>0){hl_exec_cmd('" + key + "')}\" class=\"toolbar\"><span class=\"icon-32-" + key + "\" title=\"" + name + "\"></span>" + name + " </a>";
                 else

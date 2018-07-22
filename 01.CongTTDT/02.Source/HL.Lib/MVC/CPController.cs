@@ -135,6 +135,24 @@ namespace HL.Lib.MVC
             CPViewPage.RefreshPage();
         }
 
+        public virtual void ActionPublish1(int[] arrID)
+        {
+            if (CheckPermissions && !CPViewPage.UserPermissions.Approve1)
+            {
+                //thong bao
+                CPViewPage.Message.MessageType = Message.MessageTypeEnum.Error;
+                CPViewPage.Message.ListMessage.Add("Quyền hạn chế.");
+                return;
+            }
+
+            DataService.Update("[ID] IN (" + HL.Core.Global.Array.ToString(arrID) + ")",
+                    "@Activity1", 1);
+
+            //thong bao
+            CPViewPage.SetMessage("Đã duyệt thành công.");
+            CPViewPage.RefreshPage();
+        }
+
         public virtual void ActionUnPublish(int[] arrID)
         {
             if (CheckPermissions && !CPViewPage.UserPermissions.Approve)
@@ -147,6 +165,24 @@ namespace HL.Lib.MVC
 
             DataService.Update("[ID] IN (" + HL.Core.Global.Array.ToString(arrID) + ")",
                     "@Activity", 0);
+
+            //thong bao
+            CPViewPage.SetMessage("Đã bỏ duyệt thành công.");
+            CPViewPage.RefreshPage();
+        }
+
+        public void ActionUnPublish1(int[] arrID)
+        {
+            if (CheckPermissions && !CPViewPage.UserPermissions.Approve1)
+            {
+                //thong bao
+                CPViewPage.Message.MessageType = Message.MessageTypeEnum.Error;
+                CPViewPage.Message.ListMessage.Add("Quyền hạn chế.");
+                return;
+            }
+
+            DataService.Update("[ID] IN (" + HL.Core.Global.Array.ToString(arrID) + ")",
+                    "@Activity1", 0);
 
             //thong bao
             CPViewPage.SetMessage("Đã bỏ duyệt thành công.");

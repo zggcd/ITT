@@ -19,6 +19,14 @@ function hl_exec_cmd(cmd_name) {
                 }
             }
         }
+        else if (cmd_name == "publish1" || cmd_name == "unpublish1") {
+            var list_cid = document.getElementsByName('cid');
+            for (var i = 0; i < list_cid.length; i++) {
+                if (list_cid[i].checked) {
+                    cmd_param += (cmd_param == '' ? '' : ',') + list_cid[i].value;
+                }
+            }
+        }
         else if (cmd_name == "edit") {
             var list_cid = document.getElementsByName('cid');
             for (var i = 0; i < list_cid.length; i++) {

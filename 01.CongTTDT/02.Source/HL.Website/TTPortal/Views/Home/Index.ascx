@@ -2,10 +2,10 @@
 
 <%= ShowMessage()%>
 <%
-    var deface = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "Incident" && o.Code == "Deface").ToSingle();
-    var botnet = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "Incident" && o.Code == "Botnet").ToSingle();
-    var phishing = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "Incident" && o.Code == "Phishing").ToSingle();
-    var malware = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "Incident" && o.Code == "Malware").ToSingle();
+    var deface = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.ParentID > 0 && o.Type == "Incident" && o.Code == "Deface").ToSingle();
+    var botnet = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.ParentID > 0 && o.Type == "Incident" && o.Code == "Botnet").ToSingle();
+    var phishing = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.ParentID > 0 && o.Type == "Incident" && o.Code == "Phishing").ToSingle();
+    var malware = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.ParentID > 0 && o.Type == "Incident" && o.Code == "Malware").ToSingle();
     var lstDeface = new List<ModIncidentEntity>();
     var lstBotnet = new List<ModIncidentEntity>();
     var lstMalware = new List<ModIncidentEntity>();
@@ -332,18 +332,18 @@
 
                         <%if (lstDeface2 != null)
                         {
-                            T1 = lstDeface2.Count(o => o.AttackOn.Value.Month == 1);
-                            T2 = lstDeface2.Count(o => o.AttackOn.Value.Month == 2);
-                            T3 = lstDeface2.Count(o => o.AttackOn.Value.Month == 3);
-                            T4 = lstDeface2.Count(o => o.AttackOn.Value.Month == 4);
-                            T5 = lstDeface2.Count(o => o.AttackOn.Value.Month == 5);
-                            T6 = lstDeface2.Count(o => o.AttackOn.Value.Month == 6);
-                            T7 = lstDeface2.Count(o => o.AttackOn.Value.Month == 7);
-                            T8 = lstDeface2.Count(o => o.AttackOn.Value.Month == 8);
-                            T9 = lstDeface2.Count(o => o.AttackOn.Value.Month == 9);
-                            T10 = lstDeface2.Count(o => o.AttackOn.Value.Month == 10);
-                            T11 = lstDeface2.Count(o => o.AttackOn.Value.Month == 11);
-                            T12 = lstDeface2.Count(o => o.AttackOn.Value.Month == 12);
+                            T1 = lstDeface2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 1);
+                            T2 = lstDeface2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 2);
+                            T3 = lstDeface2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 3);
+                            T4 = lstDeface2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 4);
+                            T5 = lstDeface2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 5);
+                            T6 = lstDeface2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 6);
+                            T7 = lstDeface2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 7);
+                            T8 = lstDeface2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 8);
+                            T9 = lstDeface2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 9);
+                            T10 = lstDeface2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 10);
+                            T11 = lstDeface2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 11);
+                            T12 = lstDeface2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 12);
                             %>
                         datasDeface.push('<%=T1%>');
                         datasDeface.push('<%=T2%>');
@@ -361,18 +361,18 @@
 
                         <%if (lstBotnet2 != null)
                         {
-                            T1 = lstBotnet2.Count(o => o.AttackOn.Value.Month == 1);
-                            T2 = lstBotnet2.Count(o => o.AttackOn.Value.Month == 2);
-                            T3 = lstBotnet2.Count(o => o.AttackOn.Value.Month == 3);
-                            T4 = lstBotnet2.Count(o => o.AttackOn.Value.Month == 4);
-                            T5 = lstBotnet2.Count(o => o.AttackOn.Value.Month == 5);
-                            T6 = lstBotnet2.Count(o => o.AttackOn.Value.Month == 6);
-                            T7 = lstBotnet2.Count(o => o.AttackOn.Value.Month == 7);
-                            T8 = lstBotnet2.Count(o => o.AttackOn.Value.Month == 8);
-                            T9 = lstBotnet2.Count(o => o.AttackOn.Value.Month == 9);
-                            T10 = lstBotnet2.Count(o => o.AttackOn.Value.Month == 10);
-                            T11 = lstBotnet2.Count(o => o.AttackOn.Value.Month == 11);
-                            T12 = lstBotnet2.Count(o => o.AttackOn.Value.Month == 12);
+                            T1 = lstBotnet2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 1);
+                            T2 = lstBotnet2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 2);
+                            T3 = lstBotnet2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 3);
+                            T4 = lstBotnet2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 4);
+                            T5 = lstBotnet2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 5);
+                            T6 = lstBotnet2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 6);
+                            T7 = lstBotnet2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 7);
+                            T8 = lstBotnet2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 8);
+                            T9 = lstBotnet2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 9);
+                            T10 = lstBotnet2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 10);
+                            T11 = lstBotnet2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 11);
+                            T12 = lstBotnet2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 12);
                             %>
                         datasBotnet.push('<%=T1%>');
                         datasBotnet.push('<%=T2%>');
@@ -390,18 +390,18 @@
 
                         <%if (lstPhishing2 != null)
                         {
-                            T1 = lstPhishing2.Count(o => o.AttackOn.Value.Month == 1);
-                            T2 = lstPhishing2.Count(o => o.AttackOn.Value.Month == 2);
-                            T3 = lstPhishing2.Count(o => o.AttackOn.Value.Month == 3);
-                            T4 = lstPhishing2.Count(o => o.AttackOn.Value.Month == 4);
-                            T5 = lstPhishing2.Count(o => o.AttackOn.Value.Month == 5);
-                            T6 = lstPhishing2.Count(o => o.AttackOn.Value.Month == 6);
-                            T7 = lstPhishing2.Count(o => o.AttackOn.Value.Month == 7);
-                            T8 = lstPhishing2.Count(o => o.AttackOn.Value.Month == 8);
-                            T9 = lstPhishing2.Count(o => o.AttackOn.Value.Month == 9);
-                            T10 = lstPhishing2.Count(o => o.AttackOn.Value.Month == 10);
-                            T11 = lstPhishing2.Count(o => o.AttackOn.Value.Month == 11);
-                            T12 = lstPhishing2.Count(o => o.AttackOn.Value.Month == 12);
+                            T1 = lstPhishing2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 1);
+                            T2 = lstPhishing2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 2);
+                            T3 = lstPhishing2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 3);
+                            T4 = lstPhishing2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 4);
+                            T5 = lstPhishing2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 5);
+                            T6 = lstPhishing2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 6);
+                            T7 = lstPhishing2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 7);
+                            T8 = lstPhishing2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 8);
+                            T9 = lstPhishing2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 9);
+                            T10 = lstPhishing2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 10);
+                            T11 = lstPhishing2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 11);
+                            T12 = lstPhishing2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 12);
                             %>
                         datasPhishing.push('<%=T1%>');
                         datasPhishing.push('<%=T2%>');
@@ -419,18 +419,18 @@
 
                         <%if (lstMalware2 != null)
                         {
-                            T1 = lstMalware2.Count(o => o.AttackOn.Value.Month == 1);
-                            T2 = lstMalware2.Count(o => o.AttackOn.Value.Month == 2);
-                            T3 = lstMalware2.Count(o => o.AttackOn.Value.Month == 3);
-                            T4 = lstMalware2.Count(o => o.AttackOn.Value.Month == 4);
-                            T5 = lstMalware2.Count(o => o.AttackOn.Value.Month == 5);
-                            T6 = lstMalware2.Count(o => o.AttackOn.Value.Month == 6);
-                            T7 = lstMalware2.Count(o => o.AttackOn.Value.Month == 7);
-                            T8 = lstMalware2.Count(o => o.AttackOn.Value.Month == 8);
-                            T9 = lstMalware2.Count(o => o.AttackOn.Value.Month == 9);
-                            T10 = lstMalware2.Count(o => o.AttackOn.Value.Month == 10);
-                            T11 = lstMalware2.Count(o => o.AttackOn.Value.Month == 11);
-                            T12 = lstMalware2.Count(o => o.AttackOn.Value.Month == 12);
+                            T1 = lstMalware2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 1);
+                            T2 = lstMalware2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 2);
+                            T3 = lstMalware2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 3);
+                            T4 = lstMalware2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 4);
+                            T5 = lstMalware2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 5);
+                            T6 = lstMalware2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 6);
+                            T7 = lstMalware2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 7);
+                            T8 = lstMalware2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 8);
+                            T9 = lstMalware2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 9);
+                            T10 = lstMalware2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 10);
+                            T11 = lstMalware2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 11);
+                            T12 = lstMalware2.Count(o => o.AttackOn.HasValue && o.AttackOn.Value.Month == 12);
                             %>
                         datasMalware.push('<%=T1%>');
                         datasMalware.push('<%=T2%>');
@@ -516,9 +516,9 @@
                 <div id="panel-sliders" class="pane-sliders">
 
                     <% var listUserLog = CPUserLogService.Instance.CreateQuery()
-                                                                                          .Take(5)
-                                                                                          .OrderByDesc(o => o.ID)
-                                                                                          .ToList(); %>
+                                                                                                .Take(5)
+                                                                                                .OrderByDesc(o => o.ID)
+                                                                                                .ToList(); %>
                     <div class="panel">
                         <h3 class="pane-toggler title" id="cpanel-panel-logged">
                             <a href="javascript:void(0);"><span>5 đăng nhập gần nhất</span></a>
@@ -570,9 +570,9 @@
                     </div>
 
                     <% var listNews = ModNewsService.Instance.CreateQuery()
-                                                                                          .Take(5)
-                                                                                          .OrderByDesc(o => o.ID)
-                                                                                          .ToList(); %>
+                                                                                                .Take(5)
+                                                                                                .OrderByDesc(o => o.ID)
+                                                                                                .ToList(); %>
                     <div class="panel">
                         <h3 class="pane-toggler title" id="cpanel-panel-latest">
                             <a href="javascript:void(0);"><span>5 bài viết mới</span></a>

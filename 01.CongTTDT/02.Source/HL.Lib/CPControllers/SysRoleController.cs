@@ -145,6 +145,8 @@ namespace HL.Lib.CPControllers
             {
                 int _Access = 0;
 
+                if (model.ArrApprove1 != null && Array.IndexOf(model.ArrApprove1, listCPModule[i].ID) > -1)
+                    _Access |= 32;
                 if (model.ArrApprove != null && Array.IndexOf(model.ArrApprove, listCPModule[i].ID) > -1)
                     _Access |= 16;
                 if (model.ArrDelete != null && Array.IndexOf(model.ArrDelete, listCPModule[i].ID) > -1)
@@ -184,6 +186,7 @@ namespace HL.Lib.CPControllers
     public class SysRoleModel : DefaultModel
     {
         public int[] ArrApprove { get; set; }
+        public int[] ArrApprove1 { get; set; }
         public int[] ArrDelete { get; set; }
         public int[] ArrEdit { get; set; }
         public int[] ArrAdd { get; set; }

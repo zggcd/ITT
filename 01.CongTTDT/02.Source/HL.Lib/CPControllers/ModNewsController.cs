@@ -19,14 +19,25 @@ namespace HL.Lib.CPControllers
             // sap xep tu dong
             string orderBy = AutoSort(model.Sort);
 
+            int userId = CPLogin.CurrentUser.ID;
+            CPUserRoleEntity userRole = CPUserRoleService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
+            string roleCode = string.Empty;
+            if (userRole != null)
+            {
+                var role = CPRoleService.Instance.CreateQuery().Where(o => o.ID == userRole.RoleID).ToSingle();
+                if (role != null) roleCode = role.Code;
+            }
+
             // tao danh sach
             var dbQuery = ModNewsService.Instance.CreateQuery()
-                                .Where(!string.IsNullOrEmpty(model.SearchText), o => o.Name.Contains(model.SearchText))
-                                .Where(model.State > 0, o => (o.State & model.State) == model.State)
-                                .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForCP("News", model.MenuID, model.LangID))
-                                .Take(model.PageSize)
-                                .OrderBy(orderBy)
-                                .Skip(model.PageIndex * model.PageSize);
+                .Where(!string.IsNullOrEmpty(model.SearchText), o => o.Name.Contains(model.SearchText))
+                .Where(model.State > 0, o => (o.State & model.State) == model.State)
+                .Where(roleCode == "C3", o => o.CreateUser == userId)
+                .Where(roleCode == "Admin", o => o.Activity1 == true)
+                .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForCP("News", model.MenuID, model.LangID))
+                .Take(model.PageSize)
+                .OrderBy(orderBy)
+                .Skip(model.PageIndex * model.PageSize);
 
             ViewBag.Data = dbQuery.ToList();
             model.TotalRecord = dbQuery.TotalRecord;
@@ -40,6 +51,8 @@ namespace HL.Lib.CPControllers
                 entity = ModNewsService.Instance.GetByID(model.RecordID);
 
                 // khoi tao gia tri mac dinh khi update
+                entity.UpdateUser = CPLogin.CurrentUser.ID;
+                entity.Updated = DateTime.Now;
             }
             else
             {
@@ -47,7 +60,9 @@ namespace HL.Lib.CPControllers
 
                 // khoi tao gia tri mac dinh khi insert
                 entity.MenuID = model.MenuID;
+                entity.CreateUser = CPLogin.CurrentUser.ID;
                 entity.Published = DateTime.Now;
+                entity.Activity1 = CPViewPage.UserPermissions.Approve1;
                 entity.Activity = CPViewPage.UserPermissions.Approve;
                 entity.Order = GetMaxOrder(model);
             }
@@ -72,6 +87,32 @@ namespace HL.Lib.CPControllers
         {
             if (ValidSave(model))
                 SaveNewRedirect(model.RecordID, entity.ID);
+        }
+
+        public void ActionActivity1(int id)
+        {
+            //update for id
+            ModNewsService.Instance.Update(o => o.ID == id,
+                "@Activity1", 1);
+
+            //update for != id
+            //ModNewsService.Instance.Update(o => o.ID != id,
+            //    "@Activity1", 0);
+
+            //thong bao
+            CPViewPage.SetMessage("Đã thực hiện thành công.");
+            CPViewPage.RefreshPage();
+        }
+
+        public void ActionUnActivity1(int id)
+        {
+            //update for id
+            ModNewsService.Instance.Update(o => o.ID == id,
+                "@Activity1", 0);
+
+            //thong bao
+            CPViewPage.SetMessage("Đã thực hiện thành công.");
+            CPViewPage.RefreshPage();
         }
 
         #region private func

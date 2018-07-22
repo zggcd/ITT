@@ -416,7 +416,7 @@
                                     <tr>
                                         <th width="1%">#</th>
                                         <th width="1%">
-                                            <input type="checkbox" name="toggle" value="" onclick="checkAll(<%= model.PageSize %>);" />
+                                            <input type="checkbox" name="" value="" <%--onclick="checkAll(<%= model.PageSize %>);"--%> />
                                         </th>
                                         <th width="1%" nowrap="nowrap">
                                             <%= GetSortLink("PID", "ID")%>

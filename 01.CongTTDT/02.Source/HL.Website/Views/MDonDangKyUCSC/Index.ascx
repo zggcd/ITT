@@ -39,7 +39,7 @@
             <!--.Main_container-->
         </div>
 
-        <div class="title-t2">ĐĂNG KÝ CỦA BẠN</div>
+        <div class="title-t2"><%=ViewPage.Title.ToUpper() %></div>
         <div class="main_vbtable" style="width: 100%">
             <form method="post" name="frmDsHs">
                 <table style="width: 100%;">

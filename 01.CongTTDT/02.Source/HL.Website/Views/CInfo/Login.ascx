@@ -95,6 +95,7 @@
             <ul>
                 <li><a href="/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx">1. Hồ sơ UCSC</a></li>
                 <li><a href="/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx">2. Đăng ký tham gia mạng lưới UCSC</a></li>
+                <%--<li><a href="/vn/Thanh-vien/Thanh-vien-con-m2.aspx">a. DS thành viên con</a></li>--%>
                 <li><a href="/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx">3. Báo cáo ban đầu sự cố mạng</a></li>
                 <li><a href="/vn/Thanh-vien/DS-bc-ket-thuc-su-co.aspx">4. Báo cáo kết thúc ứng phó sự cố</a></li>
                 <li><a href="/vn/Thanh-vien/DS-bc-tong-hop-su-co.aspx">5. Báo cáo tổng hợp</a></li>

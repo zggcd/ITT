@@ -1,0 +1,319 @@
+body{
+    background: transparent url("../images/bg.png") repeat scroll 0% 0%;
+}
+.p-0{
+    padding:0;
+}
+.m-0{
+    margin:0;
+}
+.mt-5{
+    margin-top: 5px;
+}
+.mt-15{
+    margin-top:15px;
+}
+.languages{
+    background: #054E8B;
+    color:#fff;
+}
+.languages select{
+    min-width: 150px;
+    margin: 1px 5px;
+    color:#212121;
+    text-align: center;
+}
+.texts{
+    line-height: 23px;
+}
+.navbar{
+    min-height: 40px;
+    background: #0C6DBE;
+    border-radius: 0;
+}
+.navbar-default{
+    border:none;
+    margin-bottom: 0;
+}
+.navbar-default .navbar-nav > li > a{
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700
+}
+.navbar-default .navbar-nav > li > a{
+    color:#f5f5f5;
+}
+.navbar-default .navbar-nav > li > a:hover{
+    color:#fff;
+}
+.navbar-default .navbar-nav > li > a:focus{
+    color:#f5f5f5;
+}
+.dropdown-menu{
+    padding-top:0;
+    padding-bottom: 0;
+    border:none;
+    border-radius: 0;
+}
+.dropdown-menu > li > a{
+    font-size: 12px;
+    padding:8px 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.navbar-default .navbar-nav.navbar-right > li > a{
+    background: #FFB133;
+    color:#fff;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+.navbar-default .navbar-nav.navbar-right > li > a:hover{
+    background: #E99816;
+}
+.carousel{
+    float:left;
+}
+.carousel-inner .item{
+    cursor: -webkit-grab; 
+    cursor: grab;
+}
+.certcontact {
+    float: left;
+    width: 350px;
+    height: 200px;
+    color: #FFF;
+    text-align: left;
+    padding: 2px;
+    font-size: 13px;
+    line-height: 2;
+    background:url(../images/bg-shadow.png);
+}
+.certcontactheader {
+    text-align: center;
+    margin-top: 2px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.certphone {
+    width: 250px;
+    margin-left: 20px;
+    margin-top: 0;
+}
+.certemail {
+    clear: both;
+    width: 100%;
+    margin-top: 0px;
+}
+.certiconphone {
+    float: left;
+    width: 40px;
+}
+.certiconemail {
+    float: left;
+    width: 40px;
+    margin-left: 20px
+}
+.certemailaddress a{
+    color:#fff;
+    text-decoration: none;
+}
+.certReport{
+    margin:0 -2px;
+    margin-top:15px;
+    padding-top: 10px;
+    border-top: 1px solid #aea7a7;
+    padding-left: 20px;
+}
+.btn-reportHome{
+    background: #1dbd45;
+    color:#fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding:7px 15px;
+    border-radius: 2px;
+    margin-left: 40px;
+    text-decoration: none!important;
+}
+.btn-reportHome:hover{
+    color:#fff;
+    background: #0e962f;
+}
+.titleContainer{
+    background:#0C6DBE ;
+    color:#fff;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    padding-left: 10px;
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
+    text-transform: uppercase;
+}
+
+.titleContainer .pull-right{
+    margin-right: 10px;
+}
+.contentNews{
+    border:1px solid #d2d2d2;
+    border-top:0;
+    background: #fff;
+    color:#212121;
+    padding:20px;
+    margin-right: 0;
+    margin-left: 0;
+}
+.contentNews .title{
+    color:#00578D;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    display: block;
+    text-decoration: none;
+}
+.img-blog{
+    float:left;
+    margin-right: 10px;
+}
+.img-blog img{
+    width: 140px;
+}
+.des-blog p{
+    text-align: justify;
+}
+.half{
+    padding:0 1px;
+}
+.titleContentNews{
+    text-align: center;
+    color:#00598C;
+    font-weight: bold;
+    display: block;
+}
+.contentNews .col-xs-12{
+    margin-top:10px;
+    border-right: 1px solid #00578D;
+}
+.contentNews .col-xs-12:last-child{
+    border-right: 0;
+}
+.contentNews ul li a{
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: italic;
+}
+.sameCate ul li a{
+    font-size: 14px;
+    color:#00598C;
+    margin-right: 3px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-style: unset;
+}
+.footerRow{
+    background: #005487;
+    padding:10px;
+    color:#fff;
+    font-weight: bold;
+    font-size: 12px;
+}
+.titleCate{
+    border-top:1px solid #005487;
+    padding-top:7px;
+}
+.titleCate:first-child{
+    border-top:0;
+}
+@media (min-width: 1200px){
+    .container{
+        width: 1000px;
+    }
+    .carousel{
+        width: 620px;
+        float:left;
+    }
+    .carousel-inner{
+        width: 620px;
+    }
+    .carousel-inner .item img{
+        width: 620px;
+        height: 200px;
+    }
+}
+@media (min-width: 768px){
+    .navbar-nav > li > a{
+        padding:10px 10px;
+    }
+    .navbar-right{
+        margin-right: 5px;
+    }
+    .carousel-indicators{
+        bottom:0;
+    }
+}
+@media (max-width: 767px){
+    .certReport{
+        text-align: center;
+        padding-left: 0
+    }
+    .btn-reportHome{
+        margin-left: 0;
+    }
+    .navbar-nav{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .navbar-default .navbar-nav.navbar-right > li > a{
+        margin:0 15px;
+        text-align: center;
+    }
+    .navbar-toggle{
+        margin-right: 25px;
+    }
+    .navbar-default .navbar-toggle .icon-bar{
+        background-color: #fff;
+    }
+    .navbar-default .navbar-toggle:focus,
+    .navbar-default .navbar-toggle:hover{
+        background: transparent;
+    }
+    .dropdown-menu > li > a{
+        color:#fff!important;
+    }
+    .navbar-default .navbar-nav > .open > a{
+        margin:0 5px;
+    }
+    .navbar-nav .open .dropdown-menu > li > a{
+        padding-left: 35px;
+    }
+    .certcontact{
+        width: 100%;
+    }
+    .contentNews .col-xs-12{
+        border-right: 0;
+        border-bottom: 1px solid #00578D
+    }
+    .carousel-indicators{
+        bottom:-5px;
+    }
+
+}
+@media (min-width: 1000px) and (max-width: 1024px){
+    .certcontact{
+        width: 320px;
+    }
+}
+@media (min-width: 768px) and (max-width: 770px){
+    .certcontact{
+        width: 100%;
+    }
+    .carousel{
+        width: 100%;
+    }
+    .carousel-inner .item img{
+        width: 100%;
+    }
+}
