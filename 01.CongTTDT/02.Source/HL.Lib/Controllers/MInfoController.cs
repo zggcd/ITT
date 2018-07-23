@@ -25,7 +25,7 @@ namespace HL.Lib.Controllers
             else if (ec == "thong-tin-ca-nhan") layout = "Info";
             else if (ec == "doi-mat-khau") layout = "ChangePass";
             else if (ec == "them-ho-so-ung-cuu-su-co") layout = "HoSoUCSC";
-            else if (ec == "dang-ky-ung-cuu-su-co") layout = "DangKyUCSC";
+            else if (ec == "dang-ky-ung-cuu-su-co") { ViewBag.EndCode = endcode; layout = "DangKyUCSC"; }
             else if (ec == "them-bc-ban-dau-su-co")
             {
                 layout = "BCBanDauUCSC";
@@ -88,7 +88,8 @@ namespace HL.Lib.Controllers
             }
             else if (ec == "dang-xuat")
             {
-                string currUrl = ViewPage.Request.RawUrl;
+                //string currUrl = ViewPage.Request.RawUrl;
+                string currUrl = "/vn/Dashboard.aspx";
                 CPLogin.Logout();
                 ViewPage.Response.Redirect(currUrl);
             }
@@ -179,7 +180,7 @@ namespace HL.Lib.Controllers
             if (CPLogin.CheckLogin1(model.LoginName, model.Password))
             {
                 string redirect = HL.Core.Web.HttpQueryString.GetValue("ReturnPath").ToString();
-                ViewPage.Response.Redirect(string.IsNullOrEmpty(redirect) ? "/" : redirect);
+                ViewPage.Response.Redirect(string.IsNullOrEmpty(redirect) ? "/vn/Dashboard.aspx" : redirect);
             }
             else
             {

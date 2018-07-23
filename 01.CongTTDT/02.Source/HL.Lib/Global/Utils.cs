@@ -276,12 +276,51 @@ namespace HL.Lib.Global
         public static string ShowDDLMenuByType(string type, int langID, int selectID)
         {
             List<ListItem.Item> list = ListItem.List.GetList(WebMenuService.Instance, langID, type);
+            int userId = CPLogin.CurrentUser.ID;
+            CPUserRoleEntity userRole = CPUserRoleService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
+            CPRoleEntity role = null;
+            if (userRole != null)
+            {
+                role = CPRoleService.Instance.CreateQuery().Where(o => o.ID == userRole.RoleID).ToSingle();
+            }
+            string s = string.Empty;
+
+            for (int i = 0; list != null && i < list.Count; i++)
+            {
+                if (role != null && role.MenuIDs != null && role.MenuIDs.Contains(list[i].Value))
+                {
+                    s += "<option " + (list[i].Value == selectID.ToString() ? "selected" : string.Empty) + " value=\"" + list[i].Value + "\">&nbsp; " + list[i].Name + "</option>";
+                }
+            }
+
+            return s;
+        }
+
+        //public static string ShowDDLMenuByType(string type, int langID, int selectID)
+        //{
+        //    List<ListItem.Item> list = ListItem.List.GetList(WebMenuService.Instance, langID, type);
+
+        //    string s = string.Empty;
+
+        //    for (int i = 0; list != null && i < list.Count; i++)
+        //    {
+        //        s += "<option " + (list[i].Value == selectID.ToString() ? "selected" : string.Empty) + " value=\"" + list[i].Value + "\">&nbsp; " + list[i].Name + "</option>";
+        //    }
+
+        //    return s;
+        //}
+
+        public static string ShowDDLMenuByTypeWithCheckbox(string type, int langID, string selectIDs)
+        {
+            List<ListItem.Item> list = ListItem.List.GetList(WebMenuService.Instance, langID, type);
 
             string s = string.Empty;
 
             for (int i = 0; list != null && i < list.Count; i++)
             {
-                s += "<option " + (list[i].Value == selectID.ToString() ? "selected" : string.Empty) + " value=\"" + list[i].Value + "\">&nbsp; " + list[i].Name + "</option>";
+                string check = "";
+                if (!string.IsNullOrEmpty(selectIDs) && selectIDs.Contains(list[i].Value)) check = "checked";
+                s += "<span><input type='checkbox' name='MenuIDs' value=\"" + list[i].Value + "\" " + check + " />&nbsp; " + list[i].Name + "</span><br />";
             }
 
             return s;
@@ -988,6 +1027,23 @@ namespace HL.Lib.Global
 
                 return new T();
             }
+        }
+
+        public static string getSubString(string s, int length)
+        {
+            if (String.IsNullOrEmpty(s))
+                throw new ArgumentNullException(s);
+            var words = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            if (words[0].Length > length)
+                throw new ArgumentException("Từ đầu tiên dài hơn chuỗi cần cắt");
+            var sb = new System.Text.StringBuilder();
+            foreach (var word in words)
+            {
+                if ((sb + word).Length > length)
+                    return string.Format("{0}...", sb.ToString().TrimEnd(' '));
+                sb.Append(word + " ");
+            }
+            return string.Format("{0}...", sb.ToString().TrimEnd(' '));
         }
 
     }

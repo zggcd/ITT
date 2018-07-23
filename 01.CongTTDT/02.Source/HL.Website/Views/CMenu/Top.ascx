@@ -31,7 +31,14 @@
                                 int j = 0;
                                 string cls = "";
                                 if (c1 > 0) cls = "dropdown";
-                                string href = ViewPage.GetPageURL(listItem[i]);%>
+                                string href = ViewPage.GetPageURL(listItem[i]);
+                                string type = MyClass.GetCusTomPage("TYPE", listItem[i].Custom);
+                                string target = "";
+                                if (type == "HTTP")
+                                {
+                                    href = listItem[i].Code;
+                                    target = "_blank";
+                                };%>
                         <%if (c1 > 0)
                             {%>
                         <li class="<%=cls %>">
@@ -51,7 +58,7 @@
                         <%} %>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Mạng lưới</a></li>
+                        <li><a href="/vn/Dashboard.aspx">Mạng lưới</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

@@ -8,13 +8,11 @@
     var detail = ViewBag.Detail as ModNewsEntity;
 %>
 
-<div class="container-fluid">
-    <nav class="breadcrumb">
-        <a class="breadcrumb-item" href="/">{RS:Web_HOME}</a>
-        <%= Utils.GetMapPage(ViewPage.CurrentPage, "", "breadcrumb-item")%>
-    </nav>
-
-    <div class="container">
+<div class="row-fluid titleContainer">
+    <span><%=ViewPage.CurrentPage.Name %></span>
+</div>
+<div class="row-fluid contentNews">
+    <div>
         <div id="details">
             <%if (detail != null)
                 { %> <%=detail.Content%> <%} %>
@@ -58,5 +56,6 @@
                 </div>
             </div>
         </form>
+        <hr>
     </div>
 </div>

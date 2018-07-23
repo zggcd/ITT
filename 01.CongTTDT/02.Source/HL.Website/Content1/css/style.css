@@ -13,6 +13,22 @@ body{
 .mt-15{
     margin-top:15px;
 }
+.clear-10 {
+    clear: both;
+    height: 10px;
+}
+.clear-15 {
+    clear: both;
+    height: 15px;
+}
+.clear-20 {
+    clear: both;
+    height: 20px;
+}
+.clear-30 {
+    clear: both;
+    height: 30px;
+}
 .languages{
     background: #054E8B;
     color:#fff;
@@ -23,8 +39,22 @@ body{
     color:#212121;
     text-align: center;
 }
+.languages span{
+    font-size: 13px;
+    padding-top:2px;
+}
+.languages i{
+    margin:0 5px;
+    color: #E99816;
+}
+.languages a{
+    color:#FAB74C;
+    padding-left: 5px;
+    font-size: 13px;
+}
 .texts{
     line-height: 23px;
+    font-size: 13px;
 }
 .navbar{
     min-height: 40px;
@@ -172,6 +202,38 @@ body{
     display: block;
     text-decoration: none;
 }
+ul.contentNews li a{
+    font-size: 15px;
+    color:#0C6DBE;
+    text-decoration: none;
+}
+ul.contentNews li a:hover{
+    color:#0E1378;
+}
+.btn-addMem{
+    color:#fff;
+    background: #30a130;
+    padding:7px 20px;
+    display: inline-block;
+    border-radius: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+}
+.btn-addMem:hover{
+    background: #48b617;
+    color:#fff;
+    text-decoration: none;
+}
+table.table-bordered th{
+    text-transform: uppercase;
+}
+table.table-bordered th,
+table.table-bordered td{
+    font-size: 12px;
+}
+
+
 .img-blog{
     float:left;
     margin-right: 10px;

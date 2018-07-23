@@ -2017,6 +2017,10 @@
     </Content>
     <Content Include="Views\Shared\Child.Master" />
     <Content Include="Views\Design\Child.Master" />
+    <Content Include="Views\Shared\Network.Master" />
+    <Content Include="Views\Design\Network.Master" />
+    <Content Include="Views\Design\NetworkChild.Master" />
+    <Content Include="Views\Shared\NetworkChild.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

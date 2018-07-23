@@ -191,5 +191,6 @@ namespace HL.Lib.CPControllers
         public int[] ArrEdit { get; set; }
         public int[] ArrAdd { get; set; }
         public int[] ArrView { get; set; }
+        public int[] MenuIDs { get; set; }
     }
 }

@@ -20,6 +20,9 @@ namespace HL.Lib.Models
         public bool Lock { get; set; }
 
         [DataInfo]
+        public string MenuIDs { get; set; }
+
+        [DataInfo]
         public int Order { get; set; }
 
         #endregion

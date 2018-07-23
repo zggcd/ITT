@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="System.Web.UI.MasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head id="Head" runat="server">
+    <title></title>
+    <meta name="Author" content="lehoanganhhd@gmail.com" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <form id="hlForm" runat="server">
+        <div id="hl_container">
+            <div style="">
+                <HL:StaticControl runat="server" Code="CAdv" HLID="cLogo"></HL:StaticControl>
+                <HL:StaticControl runat="server" Code="CMenu" HLID="cMenuTop"></HL:StaticControl>
+            </div>
+            <%--<div style="">
+                <div style="float: left; width: 50%; display: block;">
+                </div>
+                <div style="float: left; width: 50%; display: block;">
+                </div>
+            </div>--%>
+            <div style="float: left; width: 100%; display: block;">
+                <HL:DynamicControl runat="server" Code="MainContent" ID="MainContent"></HL:DynamicControl>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

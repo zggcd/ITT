@@ -22,25 +22,33 @@ namespace HL.Lib.CPControllers
             int userId = CPLogin.CurrentUser.ID;
             CPUserRoleEntity userRole = CPUserRoleService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
             string roleCode = string.Empty;
+            string menuIds = WebMenuService.Instance.GetChildIDForCP("News", model.MenuID, model.LangID);
             if (userRole != null)
             {
                 var role = CPRoleService.Instance.CreateQuery().Where(o => o.ID == userRole.RoleID).ToSingle();
-                if (role != null) roleCode = role.Code;
+                if (role != null)
+                {
+                    roleCode = role.Code;
+                    menuIds = role.MenuIDs;
+                }
             }
 
             // tao danh sach
-            var dbQuery = ModNewsService.Instance.CreateQuery()
-                .Where(!string.IsNullOrEmpty(model.SearchText), o => o.Name.Contains(model.SearchText))
-                .Where(model.State > 0, o => (o.State & model.State) == model.State)
-                .Where(roleCode == "C3", o => o.CreateUser == userId)
-                .Where(roleCode == "Admin", o => o.Activity1 == true)
-                .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForCP("News", model.MenuID, model.LangID))
-                .Take(model.PageSize)
-                .OrderBy(orderBy)
-                .Skip(model.PageIndex * model.PageSize);
+            if (!string.IsNullOrEmpty(menuIds))
+            {
+                var dbQuery = ModNewsService.Instance.CreateQuery()
+                    .Where(!string.IsNullOrEmpty(model.SearchText), o => o.Name.Contains(model.SearchText))
+                    .Where(model.State > 0, o => (o.State & model.State) == model.State)
+                    .Where(roleCode == "C3", o => o.CreateUser == userId)
+                    .Where(roleCode == "Admin", o => o.Activity1 == true)
+                    .WhereIn(o => o.MenuID, menuIds)
+                    .Take(model.PageSize)
+                    .OrderBy(orderBy)
+                    .Skip(model.PageIndex * model.PageSize);
 
-            ViewBag.Data = dbQuery.ToList();
-            model.TotalRecord = dbQuery.TotalRecord;
+                ViewBag.Data = dbQuery.ToList();
+                model.TotalRecord = dbQuery.TotalRecord;
+            }
             ViewBag.Model = model;
         }
 
