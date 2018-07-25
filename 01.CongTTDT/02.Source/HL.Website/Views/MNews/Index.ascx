@@ -42,7 +42,11 @@
     </div>
     <%} %>
     <div class="des-blog">
-        <%=listItem[i].Summary %>
+        <%if (listItem[i].Summary.Length > 800)
+            {%><%=Utils.getSubString(listItem[i].Summary, 800) %><%}
+    else
+    {%><%=listItem[i].Summary %><%} %>
     </div>
+    <div class="clear-20"></div>
     <%} %>
 </div>

@@ -141,51 +141,6 @@
                 </div>
             </div>
         </section>
-        <section id="documentation" class="mt-15">
-            <div class="container">
-                <div class="row-fluid titleContainer">
-                    <span>TÀI NGUYÊN VÀ TÀI LIỆU HƯỚNG DẪN</span>
-                </div>
-                <div class="row contentNews">
-                    <div class="col-xs-12 col-sm-4">
-                        <span class="titleContentNews">Mạng lưới điều phối</span>
-                        <div>
-                            <ul class="pull-left list-unstyled">
-                                <li><a href="#">- Quyết định 05/2017/QĐ-TTg</a></li>
-                                <li><a href="#">- Thông tư 20/2017/TT-BTTTT</a></li>
-                                <li><a href="#">- Đề án Đẩy mạnh hoạt động mạng lưới ƯCSC</a></li>
-                                <li><a href="#">- Bản khai hồ sơ thành viên</a></li>
-                                <li><a href="#">- Đăng ký mạng lưới ƯCSC</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <span class="titleContentNews">Mạng lưới điều phối</span>
-                        <div>
-                            <ul class="pull-left list-unstyled">
-                                <li><a href="#">- Quyết định 05/2017/QĐ-TTg</a></li>
-                                <li><a href="#">- Thông tư 20/2017/TT-BTTTT</a></li>
-                                <li><a href="#">- Đề án Đẩy mạnh hoạt động mạng lưới ƯCSC</a></li>
-                                <li><a href="#">- Bản khai hồ sơ thành viên</a></li>
-                                <li><a href="#">- Đăng ký mạng lưới ƯCSC</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <span class="titleContentNews">Mạng lưới điều phối</span>
-                        <div>
-                            <ul class="pull-left list-unstyled">
-                                <li><a href="#">- Quyết định 05/2017/QĐ-TTg</a></li>
-                                <li><a href="#">- Thông tư 20/2017/TT-BTTTT</a></li>
-                                <li><a href="#">- Đề án Đẩy mạnh hoạt động mạng lưới ƯCSC</a></li>
-                                <li><a href="#">- Bản khai hồ sơ thành viên</a></li>
-                                <li><a href="#">- Đăng ký mạng lưới ƯCSC</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <footer>
             <div class="container text-center">
                 <div class="row-fluid footerRow">

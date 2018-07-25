@@ -193,6 +193,7 @@ body{
     padding:20px;
     margin-right: 0;
     margin-left: 0;
+    min-height: 355px;
 }
 .contentNews .title{
     color:#00578D;
@@ -232,11 +233,15 @@ table.table-bordered th,
 table.table-bordered td{
     font-size: 12px;
 }
-
-
 .img-blog{
     float:left;
     margin-right: 10px;
+}
+@media (max-width: 767px){
+    .contentNews img{
+        width: 100%!important;
+        height: unset!important;
+    }
 }
 .img-blog img{
     width: 140px;

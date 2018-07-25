@@ -12,7 +12,7 @@ namespace HL.Lib.Controllers
         public int State;
 
         [HL.Core.MVC.PropertyInfo("Số lượng")]
-        public int PageSize = 20;
+        public int PageSize = 5;
 
         //[HL.Core.MVC.PropertyInfo("View")]
         //public string LayoutView = string.Empty;
@@ -49,7 +49,8 @@ namespace HL.Lib.Controllers
             {
                 ViewBag.Other = ModNewsService.Instance.CreateQuery()
                                         .Where(o => o.Activity == true && o.Order < entity.Order)
-                                        .WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("News", MenuID, ViewPage.CurrentLang.ID))
+                                        //.WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("News", MenuID, ViewPage.CurrentLang.ID))
+                                        .Where(o => o.MenuID == entity.MenuID)
                                         .OrderByDesc(o => o.Order)
                                         .Take(PageSize)
                                         .ToList();

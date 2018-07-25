@@ -1709,6 +1709,8 @@
     <Content Include="TTPortal\Views\ModVideo\Index.ascx" />
     <Content Include="Views\CAdv\Default.ascx" />
     <Content Include="Views\CAdv\Left.ascx" />
+    <Content Include="Views\CAdv\LienKet3ChuyenMuc.ascx" />
+    <Content Include="Views\CAdv\LienKet1ChuyenMuc.ascx" />
     <Content Include="Views\CAdv\SlideHome.ascx" />
     <Content Include="Views\CAdv\Logo.ascx" />
     <Content Include="Views\CAlbum\Default.ascx" />

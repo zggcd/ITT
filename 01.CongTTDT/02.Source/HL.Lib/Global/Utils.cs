@@ -287,7 +287,11 @@ namespace HL.Lib.Global
 
             for (int i = 0; list != null && i < list.Count; i++)
             {
-                if (role != null && role.MenuIDs != null && role.MenuIDs.Contains(list[i].Value))
+                if (type == "News" && role != null && role.MenuIDs != null && role.MenuIDs.Contains(list[i].Value))
+                {
+                    s += "<option " + (list[i].Value == selectID.ToString() ? "selected" : string.Empty) + " value=\"" + list[i].Value + "\">&nbsp; " + list[i].Name + "</option>";
+                }
+                if (type != "News")
                 {
                     s += "<option " + (list[i].Value == selectID.ToString() ? "selected" : string.Empty) + " value=\"" + list[i].Value + "\">&nbsp; " + list[i].Name + "</option>";
                 }

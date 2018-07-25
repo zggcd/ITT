@@ -82,68 +82,8 @@
             </div>
         </div>
         <section id="news" class="mt-15">
-            <HL:DynamicControl runat="server" Code="MainContent" ID="MainContent"></HL:DynamicControl>
-            <%--<div class="container mt-15">
-                <div class="row-fluid titleContainer">
-                    <span>Liên kết</span>
-                </div>
-                <div class="row-fluid contentNews">
-                    <div class="sameCate">
-                        <ul class="list-unstyled">
-                            <li><a href="#">- Thông báo tuyển dụng</a></li>
-                            <li><a href="#">- Thông báo tuyển dụng</a></li>
-                            <li><a href="#">- Thông báo tuyển dụng</a></li>
-                            <li><a href="#">- Thông báo tuyển dụng</a></li>
-                            <li><a href="#">- Thông báo tuyển dụng</a></li>
-                            <li><a href="#">- Thông báo tuyển dụng</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>--%>
-        </section>
-        <section id="documentation" class="mt-15">
             <div class="container">
-                <div class="row-fluid titleContainer">
-                    <span>TÀI NGUYÊN VÀ TÀI LIỆU HƯỚNG DẪN</span>
-                </div>
-                <div class="row contentNews">
-                    <div class="col-xs-12 col-sm-4">
-                        <span class="titleContentNews">Mạng lưới điều phối</span>
-                        <div>
-                            <ul class="pull-left list-unstyled">
-                                <li><a href="#">- Quyết định 05/2017/QĐ-TTg</a></li>
-                                <li><a href="#">- Thông tư 20/2017/TT-BTTTT</a></li>
-                                <li><a href="#">- Đề án Đẩy mạnh hoạt động mạng lưới ƯCSC</a></li>
-                                <li><a href="#">- Bản khai hồ sơ thành viên</a></li>
-                                <li><a href="#">- Đăng ký mạng lưới ƯCSC</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <span class="titleContentNews">Mạng lưới điều phối</span>
-                        <div>
-                            <ul class="pull-left list-unstyled">
-                                <li><a href="#">- Quyết định 05/2017/QĐ-TTg</a></li>
-                                <li><a href="#">- Thông tư 20/2017/TT-BTTTT</a></li>
-                                <li><a href="#">- Đề án Đẩy mạnh hoạt động mạng lưới ƯCSC</a></li>
-                                <li><a href="#">- Bản khai hồ sơ thành viên</a></li>
-                                <li><a href="#">- Đăng ký mạng lưới ƯCSC</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <span class="titleContentNews">Mạng lưới điều phối</span>
-                        <div>
-                            <ul class="pull-left list-unstyled">
-                                <li><a href="#">- Quyết định 05/2017/QĐ-TTg</a></li>
-                                <li><a href="#">- Thông tư 20/2017/TT-BTTTT</a></li>
-                                <li><a href="#">- Đề án Đẩy mạnh hoạt động mạng lưới ƯCSC</a></li>
-                                <li><a href="#">- Bản khai hồ sơ thành viên</a></li>
-                                <li><a href="#">- Đăng ký mạng lưới ƯCSC</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <HL:DynamicControl runat="server" Code="MainContent" ID="MainContent"></HL:DynamicControl>
             </div>
         </section>
         <footer>

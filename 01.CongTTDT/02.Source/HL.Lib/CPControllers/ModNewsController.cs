@@ -2,6 +2,7 @@
 using HL.Lib.MVC;
 using HL.Lib.Models;
 using HL.Lib.Global;
+using System.Collections;
 
 namespace HL.Lib.CPControllers
 {
@@ -23,13 +24,23 @@ namespace HL.Lib.CPControllers
             CPUserRoleEntity userRole = CPUserRoleService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
             string roleCode = string.Empty;
             string menuIds = WebMenuService.Instance.GetChildIDForCP("News", model.MenuID, model.LangID);
+            ArrayList menuIdsTemp = new ArrayList();
             if (userRole != null)
             {
                 var role = CPRoleService.Instance.CreateQuery().Where(o => o.ID == userRole.RoleID).ToSingle();
                 if (role != null)
                 {
                     roleCode = role.Code;
-                    menuIds = role.MenuIDs;
+                    string roleMenu = role.MenuIDs;
+                    string[] menuArr = menuIds.Split(',');
+                    foreach(string m in menuArr)
+                    {
+                        if (!string.IsNullOrEmpty(roleMenu))
+                        {
+                            if (roleMenu.Contains(m)) menuIdsTemp.Add(m);
+                        }
+                    }
+                    menuIds = string.Join(",", menuIdsTemp.ToArray());
                 }
             }
 
@@ -39,7 +50,7 @@ namespace HL.Lib.CPControllers
                 var dbQuery = ModNewsService.Instance.CreateQuery()
                     .Where(!string.IsNullOrEmpty(model.SearchText), o => o.Name.Contains(model.SearchText))
                     .Where(model.State > 0, o => (o.State & model.State) == model.State)
-                    .Where(roleCode == "C3", o => o.CreateUser == userId)
+                    .Where(roleCode == "NV", o => o.CreateUser == userId)
                     .Where(roleCode == "Admin", o => o.Activity1 == true)
                     .WhereIn(o => o.MenuID, menuIds)
                     .Take(model.PageSize)
