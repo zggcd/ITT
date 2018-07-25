@@ -95,11 +95,11 @@
                                     <tr>
                                         <th width="5">#
                                         </th>
-                                        <th width="50">Duyệt (User cấp 1)
+                                        <th width="50">Sơ duyệt
                                     <br />
                                             <input onclick="javascript: hl_checkAll(document.forms[0], 'ArrApprove1', this.checked);" type="checkbox" />
                                         </th>
-                                        <th width="50">Duyệt (Admin)
+                                        <th width="50">Duyệt
                                     <br />
                                             <input onclick="javascript: hl_checkAll(document.forms[0], 'ArrApprove', this.checked);" type="checkbox" />
                                         </th>

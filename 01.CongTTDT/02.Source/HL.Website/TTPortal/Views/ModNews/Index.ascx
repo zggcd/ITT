@@ -22,15 +22,15 @@
 
                 <%if (CPViewPage.UserPermissions.Approve)
                     { %>
-                <%=GetListCommand("new|Thêm,edit|Sửa,space,publish|Duyệt,unpublish|Bỏ duyệt,space,delete|Xóa,copy|Sao chép,space,config|Xóa cache") %>
+                <%=GetListCommand("new|Thêm,edit|Sửa,space,publish|Duyệt,unpublish|Bỏ duyệt,space,delete|Xóa,space,config|Xóa cache") %>
                 <%}
                     else if (CPViewPage.UserPermissions.Approve1)
                     {%>
-                <%=GetListCommand("new|Thêm,edit|Sửa,space,publish1|Duyệt,unpublish1|Bỏ duyệt,space,delete|Xóa,copy|Sao chép,space,config|Xóa cache") %>
+                <%=GetListCommand("new|Thêm,edit|Sửa,space,publish1|Duyệt,unpublish1|Bỏ duyệt,space,delete|Xóa,space,config|Xóa cache") %>
                 <%}
                     else
                     {%>
-                <%=GetListCommand("new|Thêm,edit|Sửa,space,delete|Xóa,copy|Sao chép,space,config|Xóa cache") %>
+                <%=GetListCommand("new|Thêm,edit|Sửa,space,delete|Xóa,space,config|Xóa cache") %>
                 <%} %>
             </div>
             <div class="pagetitle icon-48-article">
@@ -125,28 +125,34 @@
                         <th nowrap="nowrap">
                             <%= GetSortLink("Người biên tập", "UserID")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
+                        <th width="7%" nowrap="nowrap">
                             <%= GetSortLink("Xuất bản", "Published")%>
                         </th>
                         <%if (CPViewPage.UserPermissions.Approve1)
                             { %>
-                        <th width="1%" nowrap="nowrap">
+                        <th width="7%" nowrap="nowrap">
                             <%= GetSortLink("Duyệt", "Activity1")%>
                         </th>
-                        <%} %>
-                        <%if (CPViewPage.UserPermissions.Approve)
+                        <%}
+                            else if (CPViewPage.UserPermissions.Approve)
                             { %>
-                        <th width="1%" nowrap="nowrap">
+                        <th width="7%" nowrap="nowrap">
                             <%= GetSortLink("Duyệt", "Activity")%>
+                        </th>
+                        <%}
+                            else
+                            {%>
+                        <th width="7%" nowrap="nowrap">
+                            <%= GetSortLink("Duyệt", "Activity1")%>
                         </th>
                         <%} %>
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Sắp xếp", "Order")%>
                             <a href="javascript:hl_exec_cmd('saveorder')" class="saveorder" title="Lưu sắp xếp"></a>
                         </th>
-                        <th width="1%" nowrap="nowrap">
+                        <%--<th width="1%" nowrap="nowrap">
                             <%= GetSortLink("ID", "ID")%>
-                        </th>
+                        </th>--%>
                     </tr>
                 </thead>
                 <tfoot>
@@ -179,36 +185,114 @@
                             <%= GetName(listEntity[i].getMenu()) %>
                         </td>
                         <td align="center">
-                            <%= GetName(listEntity[i].getMenu()) %>
+                            <%= GetName(listEntity[i].getUser()) %>
                         </td>
                         <td align="center">
                             <%= string.Format("{0:dd-MM-yyyy HH:mm}", listEntity[i].Published) %>
                         </td>
                         <%if (CPViewPage.UserPermissions.Approve1)
+                            {%>
+                        <td align="center">
+                            <%if (listEntity[i].Activity1 == null)
+                                { %>
+                            <span class="jgrid">Chờ duyệt</span>
+                            <%}
+                                else if (listEntity[i].Activity1 == true)
+                                {%>
+                            <%if (listEntity[i].Activity == true)
+                                {%>
+                            <span class="jgrid" style="color: green;">Đã duyệt</span>
+                            <%}
+                            else
+                            {%>
+                            <span class="jgrid" style="color: orange;">Sơ duyệt</span>
+                            <%}%>
+                            <%}
+                                else
+                                {%>
+                            <span class="jgrid" style="color: red;">Không được duyệt</span>
+                            <%}%>
+                        </td>
+                        <%}
+                            else if (CPViewPage.UserPermissions.Approve)
+                            {%>
+                        <td align="center">
+                            <%if (listEntity[i].Activity == null)
+                                { %>
+                            <span class="jgrid" style="color: orange;">Sơ duyệt</span>
+                            <%}
+                                else if (listEntity[i].Activity == true)
+                                {%>
+                            <span class="jgrid" style="color: green;">Đã duyệt</span>
+                            <%}
+                                else
+                                {%>
+                            <span class="jgrid" style="color: red;">Không được duyệt</span>
+                            <%}%>
+                        </td>
+                        <%}
+                            else
+                            {%>
+                        <td align="center">
+                            <%if (listEntity[i].Activity == null)
+                                {
+                                    if (listEntity[i].Activity1 == null)
+                                    {%>
+                            <span class="jgrid">Chờ duyệt</span>
+                            <%}
+                                else if (listEntity[i].Activity1 == false)
+                                {%>
+                            <span class="jgrid" style="color: red;">Không được duyệt</span>
+                            <%}
+                                else
+                                {%>
+                            <span class="jgrid" style="color: orange;">Sơ duyệt</span>
+                            <%} %>
+                            <%}
+                                else if (listEntity[i].Activity == false)
+                                {%>
+                            <span class="jgrid" style="color: red;">Không được duyệt</span>
+                            <%}
+                                else
+                                {%>
+                            <span class="jgrid" style="color: green;">Đã duyệt</span>
+                            <%}%>
+                        </td>
+                        <%}%>
+
+                        <%--<%if (CPViewPage.UserPermissions.Approve1)
                             { %>
                         <td align="center">
                             <%if (!listEntity[i].Activity1)
                                 { %><a class="jgrid" href="javascript:void(0);" onclick="hl_exec_cmd('[activity1][<%= listEntity[i].ID %>]')"><%}
-    else
-    {%><a class="jgrid" href="javascript:void(0);" onclick="hl_exec_cmd('[unactivity1][<%= listEntity[i].ID %>]')"><%}%>
-                                    <span class="jgrid">
-                                        <span class="state <%= listEntity[i].Activity1 ? "publish" : "unpublish" %>"></span>
-                                    </span>
-                                    </a>
-                        </td>
-                        <%} %>
-                        <%if (CPViewPage.UserPermissions.Approve)
+                     else
+                     {%><a class="jgrid" href="javascript:void(0);" onclick="hl_exec_cmd('[unactivity1][<%= listEntity[i].ID %>]')"><%}%>
+        <span class="jgrid">
+            <span class="state <%= listEntity[i].Activity1 ? "publish" : "unpublish" %>"></span>
+        </span>
+    </a></td>
+                        <%}
+                            else if (CPViewPage.UserPermissions.Approve)
                             { %>
                         <td align="center">
                             <%= GetPublish(listEntity[i].ID, listEntity[i].Activity)%>
                         </td>
-                        <%} %>
+                        <%}
+                        else
+                        {%>
+                        <td align="center">
+                            <%if (!listEntity[i].Activity1)
+                                { %><span class="jgrid">Chờ duyệt</span><%}
+                                                                            else if (!listEntity[i].Activity)
+                                                                            {%><span class="jgrid" style="color: orange;">Đã sơ duyệt</span><%}%>
+                        </td>
+                        <%}%>--%>
                         <td class="order">
                             <%= GetOrder(listEntity[i].ID, listEntity[i].Order)%>
                         </td>
-                        <td align="center">
+                        <%--<td align="center">
                             <%= listEntity[i].ID%>
-                        </td>
+                        </td>--%>
                     </tr>
                     <%} %>
                 </tbody>

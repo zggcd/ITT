@@ -3,6 +3,7 @@ using HL.Lib.MVC;
 using HL.Lib.Models;
 using HL.Lib.Global;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace HL.Lib.CPControllers
 {
@@ -33,7 +34,7 @@ namespace HL.Lib.CPControllers
                     roleCode = role.Code;
                     string roleMenu = role.MenuIDs;
                     string[] menuArr = menuIds.Split(',');
-                    foreach(string m in menuArr)
+                    foreach (string m in menuArr)
                     {
                         if (!string.IsNullOrEmpty(roleMenu))
                         {
@@ -51,7 +52,7 @@ namespace HL.Lib.CPControllers
                     .Where(!string.IsNullOrEmpty(model.SearchText), o => o.Name.Contains(model.SearchText))
                     .Where(model.State > 0, o => (o.State & model.State) == model.State)
                     .Where(roleCode == "NV", o => o.CreateUser == userId)
-                    .Where(roleCode == "Admin", o => o.Activity1 == true)
+                    .Where(roleCode == "Admin" || roleCode == "GD", o => o.Activity1 == true)
                     .WhereIn(o => o.MenuID, menuIds)
                     .Take(model.PageSize)
                     .OrderBy(orderBy)
@@ -65,6 +66,19 @@ namespace HL.Lib.CPControllers
 
         public void ActionAdd(ModNewsModel model)
         {
+            int userId = CPLogin.CurrentUser.ID;
+            CPUserRoleEntity userRole = CPUserRoleService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
+            string roleCode = string.Empty;
+            if (userRole != null)
+            {
+                var role = CPRoleService.Instance.CreateQuery().Where(o => o.ID == userRole.RoleID).ToSingle();
+                if (role != null)
+                {
+                    roleCode = role.Code;
+                }
+            }
+            ViewBag.RoleCode = roleCode;
+
             if (model.RecordID > 0)
             {
                 entity = ModNewsService.Instance.GetByID(model.RecordID);
@@ -72,18 +86,24 @@ namespace HL.Lib.CPControllers
                 // khoi tao gia tri mac dinh khi update
                 entity.UpdateUser = CPLogin.CurrentUser.ID;
                 entity.Updated = DateTime.Now;
+                if (!string.IsNullOrEmpty(roleCode) && roleCode == "NV" && (entity.Activity == false || entity.Activity1 == false))
+                {
+                    entity.Activity = null;
+                    entity.Activity1 = null;
+                }
             }
             else
             {
-                entity = new ModNewsEntity();
-
                 // khoi tao gia tri mac dinh khi insert
-                entity.MenuID = model.MenuID;
-                entity.CreateUser = CPLogin.CurrentUser.ID;
-                entity.Published = DateTime.Now;
-                entity.Activity1 = CPViewPage.UserPermissions.Approve1;
-                entity.Activity = CPViewPage.UserPermissions.Approve;
-                entity.Order = GetMaxOrder(model);
+                entity = new ModNewsEntity
+                {
+                    MenuID = model.MenuID,
+                    CreateUser = CPLogin.CurrentUser.ID,
+                    Published = DateTime.Now,
+                    Activity1 = null,
+                    Activity = null,
+                    Order = GetMaxOrder(model)
+                };
             }
 
             ViewBag.Data = entity;
@@ -110,6 +130,18 @@ namespace HL.Lib.CPControllers
 
         public void ActionActivity1(int id)
         {
+            var item = ModNewsService.Instance.GetByID(id);
+            if (item != null)
+            {
+                if (item.Activity == true)
+                {
+                    CPViewPage.Message.ListMessage.Add("Bài viết đã được Duyệt");
+                    CPViewPage.Message.MessageType = Message.MessageTypeEnum.Error;
+                    CPViewPage.RefreshPage();
+                    return;
+                }
+            }
+
             //update for id
             ModNewsService.Instance.Update(o => o.ID == id,
                 "@Activity1", 1);
@@ -125,6 +157,18 @@ namespace HL.Lib.CPControllers
 
         public void ActionUnActivity1(int id)
         {
+            var item = ModNewsService.Instance.GetByID(id);
+            if (item != null)
+            {
+                if (item.Activity == true)
+                {
+                    CPViewPage.Message.ListMessage.Add("Bài viết đã được Duyệt");
+                    CPViewPage.Message.MessageType = Message.MessageTypeEnum.Error;
+                    CPViewPage.RefreshPage();
+                    return;
+                }
+            }
+
             //update for id
             ModNewsService.Instance.Update(o => o.ID == id,
                 "@Activity1", 0);
@@ -132,6 +176,122 @@ namespace HL.Lib.CPControllers
             //thong bao
             CPViewPage.SetMessage("Đã thực hiện thành công.");
             CPViewPage.RefreshPage();
+        }
+
+        public override void ActionPublish1(int[] arrID)
+        {
+            int userId = CPLogin.CurrentUser.ID;
+            CPUserRoleEntity userRole = CPUserRoleService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
+            string roleCode = string.Empty;
+            if (userRole != null)
+            {
+                var role = CPRoleService.Instance.CreateQuery().Where(o => o.ID == userRole.RoleID).ToSingle();
+                if (role != null)
+                {
+                    roleCode = role.Code;
+                }
+            }
+
+            var arr = string.Join(",", arrID);
+            List<ModNewsEntity> lst = new List<ModNewsEntity>();
+
+            if (roleCode == "TP")
+            {
+                lst = ModNewsService.Instance.CreateQuery()
+                    .WhereIn(o => o.ID, arr)
+                    .Where(o => o.Activity == true)
+                    .ToList();
+                CPViewPage.Message.ListMessage.Add("Bài viết đã được Duyệt");
+            }
+
+            if (lst != null && lst.Count > 0)
+            {
+                CPViewPage.Message.MessageType = Message.MessageTypeEnum.Error;
+            }
+            else
+            {
+                base.ActionPublish1(arrID);
+            }
+        }
+
+        public override void ActionUnPublish1(int[] arrID)
+        {
+            int userId = CPLogin.CurrentUser.ID;
+            CPUserRoleEntity userRole = CPUserRoleService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
+            string roleCode = string.Empty;
+            if (userRole != null)
+            {
+                var role = CPRoleService.Instance.CreateQuery().Where(o => o.ID == userRole.RoleID).ToSingle();
+                if (role != null)
+                {
+                    roleCode = role.Code;
+                }
+            }
+
+            var arr = string.Join(",", arrID);
+            List<ModNewsEntity> lst = new List<ModNewsEntity>();
+
+            if (roleCode == "TP")
+            {
+                lst = ModNewsService.Instance.CreateQuery()
+                    .WhereIn(o => o.ID, arr)
+                    .Where(o => o.Activity == true)
+                    .ToList();
+                CPViewPage.Message.ListMessage.Add("Bài viết đã được Duyệt");
+            }
+
+            if (lst != null && lst.Count > 0)
+            {
+                CPViewPage.Message.MessageType = Message.MessageTypeEnum.Error;
+            }
+            else
+            {
+                base.ActionUnPublish(arrID);
+            }
+        }
+
+        public override void ActionDelete(int[] arrID)
+        {
+            int userId = CPLogin.CurrentUser.ID;
+            CPUserRoleEntity userRole = CPUserRoleService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
+            string roleCode = string.Empty;
+            if (userRole != null)
+            {
+                var role = CPRoleService.Instance.CreateQuery().Where(o => o.ID == userRole.RoleID).ToSingle();
+                if (role != null)
+                {
+                    roleCode = role.Code;
+                }
+            }
+
+            var arr = string.Join(",", arrID);
+            List<ModNewsEntity> lst = new List<ModNewsEntity>();
+
+            if (roleCode == "NV")
+            {
+                lst = ModNewsService.Instance.CreateQuery()
+                    .WhereIn(o => o.ID, arr)
+                    .Where(o => o.Activity == true || o.Activity1 == true)
+                    .ToList();
+                CPViewPage.Message.ListMessage.Add("Bài viết đã được Duyệt hoặc Sơ duyệt");
+            }
+            else if (roleCode == "TP")
+            {
+                lst = ModNewsService.Instance.CreateQuery()
+                    .WhereIn(o => o.ID, arr)
+                    .Where(o => o.Activity == true)
+                    .ToList();
+                CPViewPage.Message.ListMessage.Add("Bài viết đã được Duyệt");
+            }
+
+            if (lst != null && lst.Count > 0)
+            {
+                CPViewPage.Message.MessageType = Message.MessageTypeEnum.Error;
+            }
+            else
+            {
+                base.ActionDelete(arrID);
+            }
         }
 
         #region private func

@@ -3,6 +3,7 @@
 <% 
     var model = ViewBag.Model as ModNewsModel;
     var entity = ViewBag.Data as ModNewsEntity;
+    string roleCode = ViewBag.RoleCode as string;
 %>
 
 <form id="hlForm" name="hlForm" method="post">
@@ -16,7 +17,34 @@
         </div>
         <div class="m">
             <div class="toolbar-list" id="toolbar">
-                <%= GetDefaultAddCommand()%>
+                <%--<%= GetDefaultAddCommand()%>--%>
+                <%if (roleCode == "GD" || roleCode == "Admin")
+                    {%>
+                <%=GetListCommand("apply|Lưu,save|Lưu  &amp; đóng,save-new|Lưu &amp; thêm,space,cancel|Đóng") %>
+                <%}
+                    else if (roleCode == "TP")
+                    {%>
+                <%if (entity.Activity == true)
+                    {%>
+                <%=GetListCommand("cancel|Đóng") %>
+                <%}
+                    else
+                    {%>
+                <%=GetListCommand("apply|Lưu,save|Lưu  &amp; đóng,save-new|Lưu &amp; thêm,space,cancel|Đóng") %>
+                <%}%>
+
+                <%}
+                    else if (roleCode == "NV")
+                    {%>
+                <%if (entity.Activity1 == true || entity.Activity == true)
+                    {%>
+                <%=GetListCommand("cancel|Đóng") %>
+                <%}
+                    else
+                    {%>
+                <%=GetListCommand("apply|Lưu,save|Lưu  &amp; đóng,save-new|Lưu &amp; thêm,space,cancel|Đóng") %>
+                <%}%>
+                <%}%>
             </div>
             <div class="pagetitle icon-48-article">
                 <h2>Bài viết  : <%=  model.RecordID > 0 ? "Chỉnh sửa" : "Thêm mới"%></h2>
@@ -86,7 +114,7 @@
                                 <label>Tóm tắt :</label>
                             </td>
                             <td>
-                                <textarea class="ckeditor" style="height: 100px; width: 98%" name="Summary"><%=entity.Summary%></textarea>
+                                <textarea style="height: 100px; width: 98%" name="Summary"><%=entity.Summary%></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -181,9 +209,9 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input name="Activity" <%= entity.Activity ? "checked" : "" %> type="radio" value='1' />
+                                        <input name="Activity" <%= entity.Activity == true ? "checked" : "" %> type="radio" value='1' />
                                         Có
-                                    <input name="Activity" <%= !entity.Activity ? "checked" : "" %> type="radio" value='0' />
+                                    <input name="Activity" <%= !entity.Activity == false ? "checked" : "" %> type="radio" value='0' />
                                         Không
                                     </td>
                                 </tr>
@@ -333,16 +361,16 @@
 
     <script type="text/javascript" src="/{CPPath}/Content/ckeditor/ckeditor.js"></script>
     <script type="text/javascript">
-                                CKFinder.setupCKEditor(null, '/{CPPath}/Content/ckfinder/');
+        CKFinder.setupCKEditor(null, '/{CPPath}/Content/ckfinder/');
 
-                                function refreshPage(arg) {
-                                    arg = '~' + arg;
-                                    document.getElementById(name_control).value = arg;
-                                    if (document.getElementById("img_view"))
-                                        document.getElementById("img_view").src = arg.replace('~/', '/{ApplicationPath}');
-                                }
+        function refreshPage(arg) {
+            arg = '~' + arg;
+            document.getElementById(name_control).value = arg;
+            if (document.getElementById("img_view"))
+                document.getElementById("img_view").src = arg.replace('~/', '/{ApplicationPath}');
+        }
 
-                                GetCustom('IsName');
+        GetCustom('IsName');
 
     </script>
 

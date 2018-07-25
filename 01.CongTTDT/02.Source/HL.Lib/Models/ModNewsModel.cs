@@ -59,10 +59,10 @@ namespace HL.Lib.Models
         public int Order { get; set; }
 
         [DataInfo]
-        public bool Activity1 { get; set; }
+        public bool? Activity1 { get; set; }
 
         [DataInfo]
-        public bool Activity { get; set; }
+        public bool? Activity { get; set; }
 
         #endregion
 
@@ -82,6 +82,18 @@ namespace HL.Lib.Models
                 _oMenu = new WebMenuEntity();
 
             return _oMenu;
+        }
+
+        private CPUserEntity _oUser = null;
+        public CPUserEntity getUser()
+        {
+            if (_oUser == null && CreateUser > 0)
+                _oUser = CPUserService.Instance.GetByID(CreateUser);
+
+            if (_oUser == null)
+                _oUser = new CPUserEntity();
+
+            return _oUser;
         }
     }
 

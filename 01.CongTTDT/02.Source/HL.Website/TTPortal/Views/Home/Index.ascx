@@ -603,7 +603,7 @@
                                         </td>
                                         <td class="center">
                                             <span class="jgrid">
-                                                <span class="state <%= listNews[i].Activity ? "publish" : "unpublish" %>"></span>
+                                                <span class="state <%= listNews[i].Activity == true ? "publish" : "unpublish" %>"></span>
                                             </span>
                                         </td>
                                         <td class="center">

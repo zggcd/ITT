@@ -166,12 +166,15 @@ namespace HL.Lib.MVC
             DataService.Update("[ID] IN (" + HL.Core.Global.Array.ToString(arrID) + ")",
                     "@Activity", 0);
 
+            DataService.Update("[ID] IN (" + HL.Core.Global.Array.ToString(arrID) + ")",
+                    "@Activity1", 0);
+
             //thong bao
             CPViewPage.SetMessage("Đã bỏ duyệt thành công.");
             CPViewPage.RefreshPage();
         }
 
-        public void ActionUnPublish1(int[] arrID)
+        public virtual void ActionUnPublish1(int[] arrID)
         {
             if (CheckPermissions && !CPViewPage.UserPermissions.Approve1)
             {
