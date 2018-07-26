@@ -88,6 +88,19 @@ namespace HL.Lib.CPControllers
             {
                 string sWhere = "[ID] IN (" + HL.Core.Global.Array.ToString(list.ToArray()) + ")";
 
+                var news = ModNewsService.Instance.CreateQuery()
+                    .WhereIn(o => o.MenuID, HL.Core.Global.Array.ToString(list.ToArray()))
+                    .ToList();
+                var advs = ModAdvService.Instance.CreateQuery()
+                    .WhereIn(o => o.MenuID, HL.Core.Global.Array.ToString(list.ToArray()))
+                    .ToList();
+                if (news != null && news.Count > 0 || advs != null && advs.Count > 0)
+                {
+                    CPViewPage.Message.ListMessage.Add("Chuyên mục đang được sử dụng.");
+                    CPViewPage.Message.MessageType = Message.MessageTypeEnum.Error;
+                    return;
+                }
+
                 //xoa menu
                 WebMenuService.Instance.Delete(sWhere);
 

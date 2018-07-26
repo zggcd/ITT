@@ -11,8 +11,9 @@ namespace HL.Lib.Controllers
     {
         public void ActionIndex()
         {
-            ////if (!CPLogin.IsLogin())
-            ////    ViewPage.Response.Redirect("/Thanh-vien/dang-ky.html");
+            string endcode = ViewPage.CurrentPage.Code;
+            if (!string.IsNullOrEmpty(endcode) && endcode.ToLower() == "dashboard" && !CPLogin.IsLogin())
+                ViewPage.Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx");
             ViewBag.Data = CPLogin.CurrentUser;
         }
         public void ActionDetail(string endcode)

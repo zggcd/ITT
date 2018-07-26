@@ -45,8 +45,16 @@
                             <a href="javscript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><%=listItem[i].Name %> <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <%for (j = 0; j < c1; j++)
-                                    {%>
-                                <li><a href="<%=ViewPage.GetPageURL(listChildItem[j]) %>"><%=listChildItem[j].Name %></a></li>
+                                    {
+                                        string href1 = ViewPage.GetPageURL(listChildItem[j]);
+                                        string type1 = MyClass.GetCusTomPage("TYPE", listChildItem[j].Custom);
+                                        string target1 = "";
+                                        if (type1 == "HTTP")
+                                        {
+                                            href1 = listChildItem[j].Code;
+                                            target1 = "_blank";
+                                        }%>
+                                <li><a href="<%=href1 %>" target="<%=target1 %>"><%=listChildItem[j].Name %></a></li>
                                 <%} %>
                             </ul>
                         </li>

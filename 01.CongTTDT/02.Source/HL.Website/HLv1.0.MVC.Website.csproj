@@ -1793,6 +1793,7 @@
     <Content Include="Views\MInfo\Index.ascx" />
     <Content Include="Views\MInfo\HoSoUCSC.ascx" />
     <Content Include="Views\MInfo\Info.ascx" />
+    <Content Include="Views\MInfo\Register.ascx" />
     <Content Include="Views\MInfo\ResetPass.ascx" />
     <Content Include="Views\MISP\Detail.ascx" />
     <Content Include="Views\MISP\Index.ascx" />

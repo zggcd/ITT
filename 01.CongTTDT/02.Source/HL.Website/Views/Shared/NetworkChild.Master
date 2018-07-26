@@ -25,6 +25,11 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/Content1/js/jquery-1.12.3.min.js"></script>
+    <script src="/Content1/js/bootstrap.min.js"></script>
+    <script src="/Content1/js/jquery.touchSwipe.min.js"></script>
 </head>
 <body>
     <form id="hlForm" runat="server">
@@ -57,7 +62,9 @@
         </div>
         <HL:StaticControl runat="server" Code="CMenu" HLID="cMenuTop"></HL:StaticControl>
         <section id="news" class="mt-15">
-            <HL:DynamicControl runat="server" Code="MainContent" ID="MainContent"></HL:DynamicControl>
+            <div class="container">
+                <HL:DynamicControl runat="server" Code="MainContent" ID="MainContent"></HL:DynamicControl>
+            </div>
         </section>
         <footer>
             <div class="container text-center">
@@ -66,10 +73,7 @@
                 </div>
             </div>
         </footer>
-        <!-- Bootstrap core JavaScript -->
-        <script src="/Content1/js/jquery-1.12.3.min.js"></script>
-        <script src="/Content1/js/bootstrap.min.js"></script>
-        <script src="/Content1/js/jquery.touchSwipe.min.js"></script>
+
         <script>
             $(document).ready(function () {
                 $('[data-toggle="tooltip"]').tooltip();
