@@ -48,7 +48,7 @@ namespace HL.Lib.Controllers
             if (entity != null)
             {
                 ViewBag.Other = ModNewsService.Instance.CreateQuery()
-                                        .Where(o => o.Activity == true && o.Order < entity.Order)
+                                        .Where(o => o.Activity == true && o.Order != entity.Order)
                                         //.WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("News", MenuID, ViewPage.CurrentLang.ID))
                                         .Where(o => o.MenuID == entity.MenuID)
                                         .OrderByDesc(o => o.Order)

@@ -90,6 +90,12 @@
             </div>
         </footer>
         <script>
+            $(document).ready(function () {
+                $('.CongTT').hide();
+                $('.Network').show();
+            });
+        </script>
+        <script>
             $(".carousel").swipe({
                 swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
                     if (direction == 'left') $(this).carousel('next');

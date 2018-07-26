@@ -66,7 +66,8 @@
                         <%} %>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/vn/Dashboard.aspx">Mạng lưới</a></li>
+                        <li class="Network" style="display: none;"><a href="/vn/Dashboard.aspx">Mạng lưới</a></li>
+                        <li class="CongTT" style="display: none;"><a href="/">Cổng thông tin</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

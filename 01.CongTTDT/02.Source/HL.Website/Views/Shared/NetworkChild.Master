@@ -77,6 +77,8 @@
         <script>
             $(document).ready(function () {
                 $('[data-toggle="tooltip"]').tooltip();
+                $('.Network').hide();
+                $('.CongTT').show();
             });
         </script>
         <script>
