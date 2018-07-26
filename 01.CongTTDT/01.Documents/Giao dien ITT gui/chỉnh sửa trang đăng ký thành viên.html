@@ -1,0 +1,59 @@
+﻿<!--Trang: http://qlvb.tinhtinh.com/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx -->
+<!--Trang tương tự: http://qlvb.tinhtinh.com/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx -->
+<div class="contentNews">
+    <div class="main_right">
+        <!--//#box-news-x-->
+        <div class="vanban_right">
+            <div class="contents">
+                <div class="top">
+                    <!-- ITT FIX -->
+                    <div class="button pull-right" style="margin-bottom: 10px;">
+                        <input style="margin-left: 10px;" class="btn_action search icon QAcustom" onclick="location.href = '/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx';" type="button" name="" value="Đăng ký">
+                    </div>
+
+                </div>
+                <!--.Main_container-->
+            </div>
+
+            <div class="title-t2">CÁC HỒ SƠ CỦA BẠN</div>
+            <div class="main_vbtable" style="width: 100%">
+                <form method="post" name="frmDsHs">
+                    <!-- ITT FIX -->
+                    <table style="width: 100%;" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-center" style="width: 5%;">#</th>
+                                <th class="text-center">Hồ sơ</th>
+                                <th class="text-center" style="width: 20%;">Trạng thái</th>
+                                <th class="text-center" style="width: 1%;"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="loadDsTbodyHetHan">
+                            <tr>
+                                <!-- ITT FIX -->
+                                <td style="width: 5%;text-align:center;">1</td>
+                                <td>
+                                    <a href="/vn/Thanh-vien/Ho-so-ung-cuu-su-co/HSUCSC1.aspx" style="display: block;"></a><br>
+                                    <p>
+                                        <span class="date">Mã hồ sơ: HSUCSC1</span>
+                                        <span class="date fr">Ngày thêm: 09/04/2018</span>
+                                    </p>
+                                </td>
+                                <td class="text-center" style="width: 20%;"><span style="color: red;">Chưa phê duyệt</span></td>
+                                <td class="text-center" style="width: 1%;padding: 0 5px;">
+                                    <a href="javascript: delHs('1');" id="btnXoaHs">Xóa</a>
+                                    <input class="btn_action search icon QAcustom" name="_hl_action[XoaHoSo]" id="XoaHoSo" value="Xóa" type="submit" style="display: none;">
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <input type="hidden" name="hoSoId" id="hoSoId" value="0">
+                </form>
+            </div>
+            <div class="navi-page">
+
+            </div>
+        </div>
+    </div>
+</div>

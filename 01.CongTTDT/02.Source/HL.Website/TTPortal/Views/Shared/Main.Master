@@ -9,7 +9,8 @@
     <title>Administration</title>
     <meta name="author" content="lehoanganhhd@gmail.com" />
     <meta name="generator" content="HLv1.0.MVC" />
-    <link href="/{CPPath}/Content/templates/bluestork/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <%--<link href="/{CPPath}/Content/templates/bluestork/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />--%>
+    <link href="/{CPPath}/Content/add/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
 
     <script src="/{CPPath}/Content/media/system/js/jquery.min-1.12.4.js"></script>
     <script src="/{CPPath}/Content/add/js/cp_v1.js"></script>
@@ -64,7 +65,7 @@
             <div>
                 <div>
                     <a href="/{CPPath}/">
-                        <img src="/{CPPath}/Content/add/img/logo.jpg" width="100%" alt="logo" /></a>
+                        <img src="/{CPPath}/Content/add/img/logo.png" width="100%" alt="logo" /></a>
                 </div>
             </div>
         </div>
@@ -98,7 +99,7 @@
         </div>
         <div id="footer">
             <p class="copyright">
-                <a href="http://www.tinhtinh.com" target="_blank">TINHTINH.COM</a> © Coppyright 2017.
+                <a href="http://www.ittsolution.com/" target="_blank">Copyright © ITTSOLUTION. All Rights Reserved.
             </p>
         </div>
     </form>

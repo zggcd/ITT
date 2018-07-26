@@ -8,6 +8,7 @@
     <meta name="author" content="lehoanganhhd@gmail.com" />
     <meta name="generator" content="HLv1.0.MVC" />
 
+    <link href="/{CPPath}/Content/add/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     <script type="text/javascript" src="/{CPPath}/Content/media/system/js/jquery.min-1.12.4.js"></script>
     <script type="text/javascript" src="/{CPPath}/Content/add/js/cp_v1.js"></script>
     <script type="text/javascript" src="/{CPPath}/Content/add/js/AjaxRequest.js"></script>
@@ -67,7 +68,7 @@
 
         <div id="footer">
             <p class="copyright">
-                <a href="http://www.tinhtinh.com" target="_blank">TINHTINH.COM</a> © Coppyright 2017.
+                <a href="http://www.ittsolution.com/" target="_blank">Copyright © ITTSOLUTION. All Rights Reserved.
             </p>
         </div>
 

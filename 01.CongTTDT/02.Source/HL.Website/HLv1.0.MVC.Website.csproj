@@ -407,6 +407,7 @@
     <Content Include="Content\temp\js\javascript.js" />
     <Content Include="Content\temp\js\jquery.min-1.12.4.js" />
     <Content Include="Content\temp\js\message.js" />
+    <Content Include="favicon.ico" />
     <Content Include="favicon.jpg" />
     <Content Include="google0de12854ebe87056.html" />
     <Content Include="robots.txt" />
@@ -422,8 +423,10 @@
     <Content Include="TTPortal\Content\add\img\down-16.gif" />
     <Content Include="TTPortal\Content\add\img\edit_f2.png" />
     <Content Include="TTPortal\Content\add\img\email.png" />
+    <Content Include="TTPortal\Content\add\img\favicon.ico" />
     <Content Include="TTPortal\Content\add\img\Folder.gif" />
     <Content Include="TTPortal\Content\add\img\logo.jpg" />
+    <Content Include="TTPortal\Content\add\img\logo.png" />
     <Content Include="TTPortal\Content\add\img\Root.gif" />
     <Content Include="TTPortal\Content\add\img\save-16.gif" />
     <Content Include="TTPortal\Content\add\img\search-16.gif" />

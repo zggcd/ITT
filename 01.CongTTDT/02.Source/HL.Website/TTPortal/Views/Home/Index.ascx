@@ -515,10 +515,76 @@
 
                 <div id="panel-sliders" class="pane-sliders">
 
+                    <% var listNews = ModNewsService.Instance.CreateQuery()
+                                .Take(10)
+                                .OrderByDesc(o => o.ID)
+                                .ToList(); %>
+                    <div class="panel">
+                        <h3 class="pane-toggler title" id="cpanel-panel-latest">
+                            <a href="javascript:void(0);"><span>10 bài viết mới</span></a>
+                        </h3>
+                        <div class="pane-slider content">
+                            <table class="adminlist">
+                                <thead>
+                                    <tr>
+                                        <th>Tiêu đề
+                                        </th>
+                                        <th style="width: 15%;">
+                                            <strong>Trạng thái</strong>
+                                        </th>
+                                        <th>
+                                            <strong>Xuất bản</strong>
+                                        </th>
+                                        <th>
+                                            <strong>Chuyên mục</strong>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <%for (int i = 0; listNews != null && i < listNews.Count; i++)
+                                        { %>
+                                    <tr>
+                                        <td>
+                                            <a href="/{CPPath}/ModNews/Add.aspx/RecordID/<%= listNews[i].ID%>/LangID/<%= listNews[i].getMenu().LangID%>"><%= listNews[i].Name%></a>
+                                        </td>
+                                        <td class="center">
+                                            <span class="jgrid">
+                                                <%--<span class="state <%= listNews[i].Activity == true ? "publish" : "unpublish" %>"></span>--%>
+                                                <%if (listNews[i].Activity == true)
+                                                    {%>
+                                                <span class="" style="color: green;">Đã duyệt</span>
+                                                <%}
+                                                else if (listNews[i].Activity1 == true)
+                                                {%>
+                                                <span class="" style="color: orange;">Sơ duyệt</span>
+                                                <%}
+                                                else if (listNews[i].Activity == false || listNews[i].Activity1 == false)
+                                                {%>
+                                                <span class="" style="color: red;">Không được duyệt</span>
+                                                <%}
+                                                else
+                                                {%>
+                                                <span class="">Chờ duyệt</span>
+                                                <%}%>
+                                            </span>
+                                        </td>
+                                        <td class="center">
+                                            <%= string.Format("{0:dd-MM-yyyy HH:mm}", listNews[i].Published)%>
+                                        </td>
+                                        <td class="center">
+                                            <%= GetName(listNews[i].getMenu())%>
+                                        </td>
+                                    </tr>
+                                    <%} %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
                     <% var listUserLog = CPUserLogService.Instance.CreateQuery()
-                                                                                                .Take(5)
-                                                                                                .OrderByDesc(o => o.ID)
-                                                                                                .ToList(); %>
+                                  .Take(5)
+                                  .OrderByDesc(o => o.ID)
+                                  .ToList(); %>
                     <div class="panel">
                         <h3 class="pane-toggler title" id="cpanel-panel-logged">
                             <a href="javascript:void(0);"><span>5 đăng nhập gần nhất</span></a>
@@ -561,56 +627,6 @@
                                         </td>
                                         <td class="center">
                                             <%= listUserLog[i].ID%>
-                                        </td>
-                                    </tr>
-                                    <%} %>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <% var listNews = ModNewsService.Instance.CreateQuery()
-                                                                                                .Take(5)
-                                                                                                .OrderByDesc(o => o.ID)
-                                                                                                .ToList(); %>
-                    <div class="panel">
-                        <h3 class="pane-toggler title" id="cpanel-panel-latest">
-                            <a href="javascript:void(0);"><span>5 bài viết mới</span></a>
-                        </h3>
-                        <div class="pane-slider content">
-                            <table class="adminlist">
-                                <thead>
-                                    <tr>
-                                        <th>Tiêu đề
-                                        </th>
-                                        <th>
-                                            <strong>Duyệt</strong>
-                                        </th>
-                                        <th>
-                                            <strong>Xuất bản</strong>
-                                        </th>
-                                        <th>
-                                            <strong>Chuyên mục</strong>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <%for (int i = 0; listNews != null && i < listNews.Count; i++)
-                                        { %>
-                                    <tr>
-                                        <td>
-                                            <a href="/{CPPath}/ModNews/Add.aspx/RecordID/<%= listNews[i].ID%>/LangID/<%= listNews[i].getMenu().LangID%>"><%= listNews[i].Name%></a>
-                                        </td>
-                                        <td class="center">
-                                            <span class="jgrid">
-                                                <span class="state <%= listNews[i].Activity == true ? "publish" : "unpublish" %>"></span>
-                                            </span>
-                                        </td>
-                                        <td class="center">
-                                            <%= string.Format("{0:dd-MM-yyyy HH:mm}", listNews[i].Published)%>
-                                        </td>
-                                        <td class="center">
-                                            <%= GetName(listNews[i].getMenu())%>
                                         </td>
                                     </tr>
                                     <%} %>

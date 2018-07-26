@@ -7,8 +7,9 @@
     <title>Login</title>
     <meta name="author" content="lehoanganhhd@gmail.com" />
     <meta name="generator" content="HLv1.0.MVC" />
-
-    <link href="/{CPPath}/Content/templates/bluestork/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    
+    <%--<link href="/{CPPath}/Content/templates/bluestork/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />--%>
+    <link href="/{CPPath}/Content/add/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     <script type="text/javascript" src="/{CPPath}/Content/media/system/js/mootools-core.js"></script>
     <script type="text/javascript" src="/{CPPath}/Content/media/system/js/mootools-more.js"></script>
     <link rel="stylesheet" href="/{CPPath}/Content/templates/system/css/system.css" type="text/css" />
@@ -32,7 +33,7 @@
         <div id="border-top" class="h_blue">
             <div>
                 <div>
-                    <img src="/{CPPath}/Content/add/img/logo.jpg" width="100%" alt="logo" />
+                    <img src="/{CPPath}/Content/add/img/logo.png" width="100%" alt="logo" />
                 </div>
             </div>
         </div>
@@ -53,7 +54,7 @@
         </div>
         <div id="footer">
             <p class="copyright">
-                <a href="http://www.tinhtinh.com" target="_blank">TINHTINH.COM</a> © Coppyright 2017.
+                <a href="http://www.ittsolution.com/" target="_blank">Copyright © ITTSOLUTION. All Rights Reserved.
             </p>
         </div>
     </form>
