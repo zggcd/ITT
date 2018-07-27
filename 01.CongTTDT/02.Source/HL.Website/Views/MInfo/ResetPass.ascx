@@ -60,39 +60,23 @@
     }
 </style>
 
-<div class="main_right">
-    <div class="box-category mb10">
-        <div class="vanban-new">
-            <h3 class="title-list-news">
-                <span class="title-t1">Lấy lại mật khẩu</span>
-            </h3>
+<div class="row-fluid titleContainer">
+    <span>Lấy lại mật khẩu</span>
+</div>
+<div class="contentNews">
+    <div class="row">
+        <div class="col-md-3">&nbsp;</div>
+        <div class="col-md-6">
+            <form method="post" action="{ActionForm}" name="">
+                <div class="form-group">
+                    <label for="Email">Email liên lạc hiện tại: <span style="color: red">*</span></label>
+                    <input type="text" class="form-control" id="Email" name="Email" placeholder="Email hiện tại" value="<%=model.Email %>">
+                </div>
+
+                <input class="btn btn-success" name="_hl_action[RePassPOST]" value="Reset mật khẩu" type="submit" />
+
+            </form>
         </div>
-    </div>
-    <!--//#box-news-x-->
-    <div class="vanban_right">
-        <div class="contents">
-            <div class="top">
-                <!--tim kiem form-->
-                <form method="post" action="{ActionForm}" name="">
-                    <div class="g-search">
-                        <div class="box_content_input">
-                            <div class="frm_input no1">
-                                <span class="name">Email liên lạc hiện tại:</span>
-                                <div class="input">
-                                    <input name="Email" maxlength="255" id="Email" class="" type="text" value="<%=model.Email %>">
-                                </div>
-                            </div>
-
-                            <div class="button">
-                                <input class="btn_action search icon QAcustom" name="_hl_action[RePassPOST]" value="Reset mật khẩu" type="submit" /><br />
-                            </div>
-
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <!--.Main_container-->
-
-        </div>
+        <div class="col-md-3">&nbsp;</div>
     </div>
 </div>

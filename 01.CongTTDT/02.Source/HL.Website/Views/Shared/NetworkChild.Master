@@ -40,10 +40,10 @@
                     <%if (CPLogin.IsLogin())
                         {%>
                     <span class="pull-left"><i class="fa fa-user"></i><%=CPLogin.CurrentUser.LoginName %></span>
-                    <a href="javascript: dx();" rel="nofollow">(Đăng xuất)</a>
+                    <a href="/vn/Thanh-vien/Dang-xuat.aspx" rel="nofollow">(Đăng xuất)</a>
                     <%}
-                        else
-                        {%>
+                    else
+                    {%>
                     <span class="pull-left"></span>
                     <a href="/vn/Thanh-vien/Dang-nhap.aspx">Đăng nhập</a>
                     <%} %>

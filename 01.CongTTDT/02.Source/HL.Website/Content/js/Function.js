@@ -59,6 +59,7 @@ function refreshSafeCode() {
                 with (req.responseXML.getElementsByTagName('S').item(0)) {
                     var content = getNodeValue(getElementsByTagName('Content'));
                     document.getElementById("safeCode").innerHTML = content;
+                    document.getElementById("sVY").value = content;
                 }
             },
             'onError': function (req) { }

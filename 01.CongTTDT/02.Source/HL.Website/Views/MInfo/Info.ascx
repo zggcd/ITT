@@ -71,71 +71,50 @@
     }
 </style>
 
-<div class="main_right">
-    <div class="box-category mb10">
-        <div class="vanban-new">
-            <h3 class="title-list-news">
-                <span class="title-t1">Thông tin cá nhân</span>
-            </h3>
-        </div>
-    </div>
-    <!--//#box-news-x-->
-    <div class="vanban_right">
-        <div class="contents">
-            <div class="top">
-                <!--tim kiem form-->
-                <form method="post" enctype="multipart/form-data">
-                    <div class="g-search">
-                        <div class="box_content_input">
-                            <div class="frm_input no1">
-                                <span class="name">Tên truy cập:</span>
-                                <div class="input">
-                                    <input name="LoginName" maxlength="255" id="LoginName" class="" type="text" value="<%=entity.LoginName %>">
-                                </div>
-                            </div>
-                            <div class="frm_input no1">
-                                <span class="name">Họ tên:</span>
-                                <div class="input">
-                                    <input name="Name" maxlength="255" id="Name" class="" type="text" value="<%=entity.Name %>">
-                                </div>
-                            </div>
-                            <div class="frm_input no1">
-                                <span class="name">Email:</span>
-                                <div class="input">
-                                    <input name="Email" maxlength="255" id="Email" class="" type="text" value="<%=entity.Email %>">
-                                </div>
-                            </div>
-                            <div class="frm_input no1">
-                                <span class="name">Điện thoại:</span>
-                                <div class="input">
-                                    <input onkeypress="return pkeypress(event);" type="text" id="" name="Phone" value="<%=entity.Phone %>" />
-                                </div>
-                            </div>
-                            <div class="frm_input no1">
-                                <span class="name">Cập nhật avatar:</span>
-                                <div class="input">
-                                    <%if (!string.IsNullOrEmpty(entity.File))
-                                        { %>
-                                    <img src="<%=entity.File.Replace("~/","/") %>" width="60" />
-                                    <br />
-                                    <%} %>
-                                    <input type="file" id="Avatar" name="Avatar" />
-                                </div>
-                            </div>
+<div class="row-fluid titleContainer">
+    <span>Thông tin cá nhân</span>
+</div>
+<div class="contentNews">
+    <div class="row">
+        <div class="col-md-3">&nbsp;</div>
+        <div class="col-md-6">
+            <form method="post" action="{ActionForm}" name="" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="LoginName">Tên truy cập: <span style="color: red">*</span></label>
+                    <input type="text" class="form-control" id="LoginName" name="LoginName" placeholder="Tên truy cập" value="<%=entity.LoginName %>" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="Password">Họ tên: <span style="color: red">*</span></label>
+                    <input type="text" class="form-control" id="Name" name="Name" placeholder="Họ tên" value="<%=entity.Name %>">
+                </div>
+                <div class="form-group">
+                    <label for="Password">Email: <span style="color: red">*</span></label>
+                    <input type="text" class="form-control" id="Email" name="Email" placeholder="Email" value="<%=entity.Email %>">
+                </div>
+                <div class="form-group">
+                    <label for="Password">Họ tên: <span style="color: red">*</span></label>
+                    <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Số điện thoại" onkeypress="return pkeypress(event);" value="<%=entity.Phone %>">
+                </div>
 
-                            <div class="button">
-                                <input class="btn_action search icon QAcustom" name="_hl_action[ChangeInfoPOST]" value="Cập nhật thông tin" type="submit" />
-
-                                <input style="margin-left: 10px;" onclick="location.href = '/vn/Thanh-vien/Doi-mat-khau.aspx';" type="button" name="" value="Đổi mật khẩu" />
-                                <input type="hidden" name="File" value="<%=entity.File %>" />
-                            </div>
-
-                        </div>
+                <div class="frm_input no1">
+                    <span class="name">Cập nhật avatar:</span>
+                    <div class="input">
+                        <%if (!string.IsNullOrEmpty(entity.File))
+                            { %>
+                        <img src="<%=entity.File.Replace("~/","/") %>" width="60" />
+                        <br />
+                        <%} %>
+                        <input type="file" id="Avatar" name="Avatar" />
                     </div>
-                </form>
-            </div>
-            <!--.Main_container-->
+                </div>
 
+                <div class="clear-25">&nbsp;</div>
+
+                <input class="btn btn-success" name="_hl_action[ChangeInfoPOST]" value="Cập nhật thông tin" type="submit" />
+                <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Thanh-vien/Doi-mat-khau.aspx';" type="button" name="" value="Đổi mật khẩu" />
+                <input type="hidden" name="File" value="<%=entity.File %>" />
+            </form>
         </div>
+        <div class="col-md-3">&nbsp;</div>
     </div>
 </div>

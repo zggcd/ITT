@@ -12,8 +12,10 @@ namespace HL.Lib.Controllers
         public void ActionIndex()
         {
             string endcode = ViewPage.CurrentPage.Code;
-            if (!string.IsNullOrEmpty(endcode) && endcode.ToLower() == "dashboard" && !CPLogin.IsLogin())
+            if (!string.IsNullOrEmpty(endcode) && (endcode.ToLower() == "dashboard" || endcode.ToLower() == "quan-ly-tai-khoan") && !CPLogin.IsLogin())
                 ViewPage.Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx");
+            else if (endcode.ToLower() == "quan-ly-tai-khoan")
+                ViewPage.Response.Redirect("/vn/Thanh-vien/Thong-tin-ca-nhan.aspx");
             ViewBag.Data = CPLogin.CurrentUser;
         }
         public void ActionDetail(string endcode)
@@ -101,6 +103,13 @@ namespace HL.Lib.Controllers
         {
             if (entity.LoginName.Trim() == string.Empty)
                 ViewPage.Message.ListMessage.Add("+ Nhập tên truy cập.");
+            else
+            {
+                if (CPUserService.Instance.exitsloginname(entity.LoginName.Trim()))
+                {
+                    ViewPage.Message.ListMessage.Add("Tên truy cập đã được sử dụng.");
+                }
+            }
 
             //if (entity.Name.Trim() == string.Empty)
             //    ViewPage.Message.ListMessage.Add("Nhập tên.");
@@ -108,18 +117,18 @@ namespace HL.Lib.Controllers
             //if (entity.CityID.Trim() == string.Empty)
             //    ViewPage.Message.ListMessage.Add("Chọn Tỉnh/Thành phố.");
 
-            if (Utils.GetEmailAddress(entity.Email) == string.Empty)
-                ViewPage.Message.ListMessage.Add("+ Địa chỉ email thiếu hoặc không chính xác.");
-            else
-            {
-                if (CPUserService.Instance.exits(entity.Email)) ViewPage.Message.ListMessage.Add("Địa chỉ email đã được sử dụng.");
-            }
+            //if (Utils.GetEmailAddress(entity.Email) == string.Empty)
+            //    ViewPage.Message.ListMessage.Add("+ Địa chỉ email thiếu hoặc không chính xác.");
+            //else
+            //{
+            //    if (CPUserService.Instance.exits(entity.Email)) ViewPage.Message.ListMessage.Add("Địa chỉ email đã được sử dụng.");
+            //}
 
             //if (entity.Year < 0)
             //    ViewPage.Message.ListMessage.Add("Chọn năm sinh.");
 
-            if (entity.Phone == string.Empty)
-                ViewPage.Message.ListMessage.Add("+ Nhập số điện thoại.");
+            //if (entity.Phone == string.Empty)
+            //    ViewPage.Message.ListMessage.Add("+ Nhập số điện thoại.");
 
             //if (entity.Note.Trim() == string.Empty)
             //    ViewPage.Message.ListMessage.Add("Nhập lý do tham gia.");
@@ -138,6 +147,10 @@ namespace HL.Lib.Controllers
             //if (model.Agree != 1)
             //    ViewPage.Message.ListMessage.Add("Bạn cần đồng ý điều khoản để trở thành thành viên.");
 
+            string sVY = model.sVY;
+            if (string.IsNullOrEmpty(model.ValidCode.Trim())) ViewPage.Message.ListMessage.Add("+ Bạn chưa nhập mã bảo vệ");
+            else if (sVY.ToLower().Trim() != model.ValidCode.ToLower().Trim())
+                ViewPage.Message.ListMessage.Add("+ Mã bảo vệ không chính xác");
 
             if (ViewPage.Message.ListMessage.Count > 0)
             {
@@ -158,15 +171,25 @@ namespace HL.Lib.Controllers
                 entity.Activity = true;
                 entity.ClientIP = System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
 
-                CPUserService.Instance.Save(entity);
-                CPUserRoleService.Instance.Save(new CPUserRoleEntity() { UserID = entity.ID, RoleID = 2 });
-                // xoa trang
-                entity = new CPUserEntity();
+                int userId = CPUserService.Instance.Save(entity);
+                //CPUserRoleService.Instance.Save(new CPUserRoleEntity() { UserID = entity.ID });
 
-                //ViewPage.Alert("Bạn đã đăng kí thành công! Bạn vui lòng chờ đợi Ban Quản trị chấp thuận. Thân chào."); ViewPage.Navigate("/");
-                ViewPage.Alert("Chào mừng bạn đăng ký thành công và đã được kích hoạt"); ViewPage.Navigate("/");
+                if (userId > 0)
+                {
+                    Cookies.SetValue("CP.UserID", userId.ToString(), Setting.Mod_CPTimeout, true);
+                    entity = new CPUserEntity();
+                    ViewPage.Alert("Chào mừng bạn đăng ký thành công và đã được kích hoạt"); ViewPage.Navigate("/vn/Dashboard.aspx");
+                }
+
+                ////ViewPage.Alert("Bạn đã đăng kí thành công! Bạn vui lòng chờ đợi Ban Quản trị chấp thuận. Thân chào."); ViewPage.Navigate("/");
+                //if (CPLogin.CheckLogin1(entity.LoginName.Trim(), entity.Password.Trim()))
+                //{
+                //    // xoa trang
+                //    //string redirect = HL.Core.Web.HttpQueryString.GetValue("ReturnPath").ToString();
+                //    //ViewPage.Response.Redirect(string.IsNullOrEmpty(redirect) ? "/vn/Dashboard.aspx" : redirect);
+                //}
             }
-            ViewBag.DataRes = entity;
+            //ViewBag.DataRes = entity;
         }
 
         public void ActionLogin(MLoginModel model)
@@ -262,7 +285,7 @@ namespace HL.Lib.Controllers
                 obj.Password = Security.GetPass(model.PassNew);
                 CPUserService.Instance.Save(obj, o => o.Password);
                 ViewPage.Alert("Cập nhật mật khẩu thành công !");
-                ViewPage.Navigate("/");
+                //ViewPage.Navigate("/");
             }
             ViewBag.ChangePass = model;
         }
@@ -502,7 +525,7 @@ namespace HL.Lib.Controllers
             var nhanLucs = append.NhanLuc.Split('|');
             var cNhanLucs = nhanLucs.Length;
             List<ModNhanLucUCSCEntity> entityNhanLuc = new List<ModNhanLucUCSCEntity>();
-            for(int i = 0; i < cNhanLucs; i++)
+            for (int i = 0; i < cNhanLucs; i++)
             {
                 if (string.IsNullOrEmpty(nhanLucs[i])) continue;
                 var nhanLuc = nhanLucs[i].Split('_');
@@ -988,6 +1011,7 @@ namespace HL.Lib.Controllers
     {
         public string ValidCode { get; set; }
         public string safeCode { get; set; }
+        public string sVY { get; set; }
         public string RePassword { get; set; }
         public int Agree { get; set; }
     }

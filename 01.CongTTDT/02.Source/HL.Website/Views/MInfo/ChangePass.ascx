@@ -60,51 +60,31 @@
     }
 </style>
 
-<div class="main_right">
-    <div class="box-category mb10">
-        <div class="vanban-new">
-            <h3 class="title-list-news">
-                <span class="title-t1">Đổi mật khẩu</span>
-            </h3>
+<div class="row-fluid titleContainer">
+    <span>Đổi mật khẩu</span>
+</div>
+<div class="contentNews">
+    <div class="row">
+        <div class="col-md-3">&nbsp;</div>
+        <div class="col-md-6">
+            <form method="post" action="{ActionForm}" name="">
+                <div class="form-group">
+                    <label for="Password">Mật khẩu hiện tại: <span style="color: red">*</span></label>
+                    <input type="password" class="form-control" id="PassCur" name="PassCur" placeholder="Mật khẩu hiện tại" value="<%=model.PassCur %>">
+                </div>
+                <div class="form-group">
+                    <label for="Password">Mật khẩu mới: <span style="color: red">*</span></label>
+                    <input type="password" class="form-control" id="PassNew" name="PassNew" placeholder="Mật khẩu mới" value="<%=model.PassNew %>">
+                </div>
+                <div class="form-group">
+                    <label for="Password">Nhập lại khẩu mới: <span style="color: red">*</span></label>
+                    <input type="password" class="form-control" id="RePass" name="RePass" placeholder="Nhập lại khẩu mới" value="<%=model.RePass %>">
+                </div>
+
+                <input class="btn btn-success" name="_hl_action[ChangePassPOST]" value="Đổi mật khẩu" type="submit" />
+
+            </form>
         </div>
-    </div>
-    <!--//#box-news-x-->
-    <div class="vanban_right">
-        <div class="contents">
-            <div class="top">
-                <!--tim kiem form-->
-                <form method="post" action="{ActionForm}" name="">
-                    <div class="g-search">
-                        <div class="box_content_input">
-                            <div class="frm_input no1">
-                                <span class="name">Mật khẩu hiện tại:</span>
-                                <div class="input">
-                                    <input name="PassCur" maxlength="255" id="PassCur" class="" type="password" value="<%=model.PassCur %>">
-                                </div>
-                            </div>
-                            <div class="frm_input no1">
-                                <span class="name">Mật khẩu mới:<span style="color: red">*</span></span>
-                                <div class="input">
-                                    <input name="PassNew" maxlength="255" id="PassNew" class="" type="password" value="<%=model.PassNew %>">
-                                </div>
-                            </div>
-                            <div class="frm_input no1">
-                                <span class="name">Nhập lại khẩu mới:<span style="color: red">*</span></span>
-                                <div class="input">
-                                    <input name="RePass" maxlength="255" id="RePass" class="" type="password" value="<%=model.RePass %>">
-                                </div>
-                            </div>
-
-                            <div class="button">
-                                <input class="btn_action search icon QAcustom" name="_hl_action[ChangePassPOST]" value="Đổi mật khẩu" type="submit" /><br />
-                            </div>
-
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <!--.Main_container-->
-
-        </div>
+        <div class="col-md-3">&nbsp;</div>
     </div>
 </div>
