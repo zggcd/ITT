@@ -17,8 +17,15 @@
                 {%>
             <ul class="list-unstyled">
                 <%for (i = 0; i < c; i++)
-                    {%>
-                <li><a href="<%=listItem[i].URL %>">- <%=listItem[i].Name %></a></li>
+                    {
+                        string href = listItem[i].URL;
+                        string down = string.Empty;
+                        if (!string.IsNullOrEmpty(listItem[i].LinkFile))
+                        {
+                            href = listItem[i].LinkFile.Replace("~/", "/");
+                                down = "download";
+                        }%>
+                <li><a href="<%=href %>" <%=down %>>- <%=listItem[i].Name %></a></li>
                 <%} %>
             </ul>
             <%} %>

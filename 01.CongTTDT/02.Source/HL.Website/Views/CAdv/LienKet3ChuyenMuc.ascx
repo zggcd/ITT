@@ -30,8 +30,16 @@
                     {%>
                 <ul class="pull-left list-unstyled">
                     <%for (i = 0; i < c; i++)
-                        {%>
-                    <li><a href="<%=listItem[i].URL %>">- <%=listItem[i].Name %></a></li>
+                        {
+                            string href = listItem[i].URL;
+                            string down = string.Empty;
+                            if (!string.IsNullOrEmpty(listItem[i].LinkFile))
+                            {
+                                href = listItem[i].LinkFile.Replace("~/", "/");
+                                down = "download";
+                            }
+                    %>
+                    <li><a href="<%=href %>" <%=down %>>- <%=listItem[i].Name %></a></li>
                     <%} %>
                 </ul>
                 <%} %>
@@ -44,8 +52,15 @@
                     {%>
                 <ul class="pull-left list-unstyled">
                     <%for (i = 0; i < c2; i++)
-                        {%>
-                    <li><a href="<%=listItem2[i].URL %>">- <%=listItem2[i].Name %></a></li>
+                        {
+                            string href = listItem2[i].URL;
+                            string down = string.Empty;
+                            if (!string.IsNullOrEmpty(listItem2[i].LinkFile))
+                            {
+                                href = listItem2[i].LinkFile.Replace("~/", "/");
+                                down = "download";
+                            }%>
+                    <li><a href="<%=href %>" <%=down %>>- <%=listItem2[i].Name %></a></li>
                     <%} %>
                 </ul>
                 <%} %>
@@ -58,8 +73,16 @@
                     {%>
                 <ul class="pull-left list-unstyled">
                     <%for (i = 0; i < c3; i++)
-                        {%>
-                    <li><a href="<%=listItem3[i].URL %>">- <%=listItem3[i].Name %></a></li>
+                        {
+                            string href = listItem3[i].URL;
+                            string down = string.Empty;
+                            if (!string.IsNullOrEmpty(listItem3[i].LinkFile))
+                            {
+                                href = listItem3[i].LinkFile.Replace("~/", "/");
+                                down = "download";
+                            }
+                    %>
+                    <li><a href="<%=href %>" <%=down %>>- <%=listItem3[i].Name %></a></li>
                     <%} %>
                 </ul>
                 <%} %>

@@ -73,11 +73,23 @@
                     <input class="text_input" type="text" name="AddInTag" value="<%=entity.AddInTag %>" maxlength="255" />
                 </td>
             </tr>
-             <tr>
+            <%--<tr>
                 <td class="key">
-                    <label>URL :</label>
+                    <label>Link file :</label>
                 </td>
                 <td>
+                    <input class="text_input" type="text" name="LinkFile" id="LinkFile" value="<%=entity.LinkFile %>" style="width:80%;" maxlength="255" />
+                    <input class="text_input" style="width:17%;" type="button" onclick="ShowFileForm('LinkFile');return false;" value="Chọn File" />
+                </td>
+            </tr>--%>
+             <tr>
+                <td class="key">
+                    <label>Link file/URL (Ưu tiên link file) :</label>
+                </td>
+                <td>
+                    <input class="text_input" type="text" name="LinkFile" id="LinkFile" value="<%=entity.LinkFile %>" style="width:80%;" maxlength="255" />
+                    <input class="text_input" style="width:17%;" type="button" onclick="ShowFileForm('LinkFile');return false;" value="Chọn File" />
+                    <div style="clear: both; height: 15px;">&nbsp;</div>
                     <input class="text_input" type="text" name="URL" value="<%=entity.URL %>" maxlength="255" />
                 </td>
             </tr>

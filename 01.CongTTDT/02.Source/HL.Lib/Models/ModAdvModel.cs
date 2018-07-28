@@ -31,6 +31,9 @@ namespace HL.Lib.Models
         public string AddInTag { get; set; }
 
         [DataInfo]
+        public string LinkFile { get; set; }
+
+        [DataInfo]
         public string URL { get; set; }
 
         [DataInfo]
