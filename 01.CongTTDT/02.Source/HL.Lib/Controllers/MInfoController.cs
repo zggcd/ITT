@@ -16,6 +16,8 @@ namespace HL.Lib.Controllers
                 ViewPage.Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx");
             else if (endcode.ToLower() == "quan-ly-tai-khoan")
                 ViewPage.Response.Redirect("/vn/Thanh-vien/Thong-tin-ca-nhan.aspx");
+            else if (!CPLogin.IsLogin() && endcode.ToLower() == "bao-cao-su-co")
+                ViewPage.Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx");
             ViewBag.Data = CPLogin.CurrentUser;
         }
         public void ActionDetail(string endcode)

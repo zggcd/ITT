@@ -11,7 +11,7 @@
     int c3 = listItem3 != null ? listItem3.Count : 0;
 
     string title = ViewBag.Title as string;
-    string title1 = ViewBag.Title as string;
+    string title1 = ViewBag.Title1 as string;
     string title2 = ViewBag.Title2 as string;
     string title3 = ViewBag.Title3 as string;
 

@@ -1770,6 +1770,8 @@
     <Content Include="Views\MDichVuCanhBaoIP\Index.ascx" />
     <Content Include="Views\MDichVuCanhBao\Detail.ascx" />
     <Content Include="Views\MDichVuCanhBao\Index.ascx" />
+    <Content Include="Views\MBaoCaoSuCo\Detail.ascx" />
+    <Content Include="Views\MBaoCaoSuCo\Index.ascx" />
     <Content Include="Views\MDonDangKyUCSC\Detail.ascx" />
     <Content Include="Views\MDonDangKyUCSC\Index.ascx" />
     <Content Include="Views\MDuThao\Detail.ascx" />

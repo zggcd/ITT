@@ -114,6 +114,7 @@
     <Compile Include="Controllers\CVideoController.cs" />
     <Compile Include="Controllers\MAlbumController.cs" />
     <Compile Include="Controllers\MAlbumDetailController.cs" />
+    <Compile Include="Controllers\MBaoCaoSuCoController.cs" />
     <Compile Include="Controllers\MBaoCaoBanDauSuCoController.cs" />
     <Compile Include="Controllers\MBaoCaoKetThucSuCoController.cs" />
     <Compile Include="Controllers\MBaoCaoTongHopController.cs" />
