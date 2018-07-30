@@ -22,6 +22,8 @@
 <% 
     var item = ViewBag.Data as ModBaoCaoSuCoEntity;
     var endCode = ViewBag.EndCode as string;
+        string prefix = string.Empty;
+        if (!string.IsNullOrEmpty(endCode)) prefix = endCode + "-";
 %>
 
 <style>
@@ -155,6 +157,11 @@
                             {%>
                         <input class="btn btn-success" name="_hl_action[Add]" value="Lưu" type="submit" />
                         <%}%>
+
+                        <div class="clear-10">&nbsp;</div>
+                        <input type="button" class="btn btn-warning" value="Báo cáo ban đầu" onclick="location.href = '/vn/Bao-cao-su-co/<%=prefix%>bc-ban-dau-su-co.aspx';" />
+                        <input type="button" class="btn btn-warning" value="Báo cáo tổng hợp" onclick="location.href = '/vn/Bao-cao-su-co/<%=prefix%>bc-tong-hop-su-co.aspx';" />
+                        <input type="button" class="btn btn-warning" value="Báo cáo kết thúc" onclick="location.href = '/vn/Bao-cao-su-co/<%=prefix%>bc-ket-thuc-su-co.aspx';" />
                     </form>
 
                 </div>

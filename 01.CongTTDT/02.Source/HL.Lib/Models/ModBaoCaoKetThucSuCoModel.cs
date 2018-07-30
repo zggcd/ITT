@@ -14,6 +14,9 @@ namespace HL.Lib.Models
         public override int ID { get; set; }
 
         [DataInfo]
+        public int BaoCaoSuCoID { get; set; }
+
+        [DataInfo]
         public int UserID { get; set; }
 
         [DataInfo]

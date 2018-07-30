@@ -1788,9 +1788,9 @@
     <Content Include="Views\MIncident\Index.ascx" />
     <Content Include="Views\MInfoMagic\Detail.ascx" />
     <Content Include="Views\MInfoMagic\Index.ascx" />
-    <Content Include="Views\MInfo\BCTongHopUCSC.ascx" />
-    <Content Include="Views\MInfo\BCKetThucUCSC.ascx" />
-    <Content Include="Views\MInfo\BCBanDauUCSC.ascx" />
+    <Content Include="Views\MBaoCaoSuCo\BCTongHopUCSC.ascx" />
+    <Content Include="Views\MBaoCaoSuCo\BCKetThucUCSC.ascx" />
+    <Content Include="Views\MBaoCaoSuCo\BCBanDauUCSC.ascx" />
     <Content Include="Views\MInfo\DVCanhBao.ascx" />
     <Content Include="Views\MInfo\DangKyUCSC.ascx" />
     <Content Include="Views\MInfo\Login.ascx" />

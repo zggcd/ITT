@@ -118,3 +118,52 @@
         <div class="col-md-3">&nbsp;</div>
     </div>
 </div>
+
+<div class="clear-20">&nbsp;</div>
+<div class="row-fluid titleContainer">
+    <span>Thông tin thành viên con</span>
+</div>
+<div class="contentNews">
+    <a href="" class="btn-addMem">Thêm mới thành viên</a>
+    <table class="table table-bordered mt-15">
+        <thead>
+            <tr>
+                <th class="text-center">Tên thành viên</th>
+                <th width="15%">Website</th>
+                <th width="15%">Email</th>
+                <th width="15%">Số điện thoại</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tổng công ty Dầu Việt Nam. Cơ quan chủ quản tập đoàn Dầu khí Việt Nam</td>
+                <td>pvoil.com.vn</td>
+                <td>contact@pvoil.com.vn</td>
+                <td>(84 - 28) 39106990</td>
+                <td><a href="#" data-toggle="toggle" data-placement="top" title="Chi tiết"><i class="fa fa-file-text-o"></i></a></td>
+            </tr>
+            <tr>
+                <td>Tổng công ty Dầu Việt Nam. Cơ quan chủ quản tập đoàn Dầu khí Việt Nam</td>
+                <td>pvoil.com.vn</td>
+                <td>contact@pvoil.com.vn</td>
+                <td>(84 - 28) 39106990</td>
+                <td><a href="#" data-toggle="tooltip" data-placement="top" title="Chi tiết"><i class="fa fa-file-text-o"></i></a></td>
+            </tr>
+            <tr>
+                <td>Tổng công ty Dầu Việt Nam. Cơ quan chủ quản tập đoàn Dầu khí Việt Nam</td>
+                <td>pvoil.com.vn</td>
+                <td>contact@pvoil.com.vn</td>
+                <td>(84 - 28) 39106990</td>
+                <td><a href="#" data-toggle="tooltip" data-placement="top" title="Chi tiết"><i class="fa fa-file-text-o"></i></a></td>
+            </tr>
+            <tr>
+                <td>Tổng công ty Dầu Việt Nam. Cơ quan chủ quản tập đoàn Dầu khí Việt Nam</td>
+                <td>pvoil.com.vn</td>
+                <td>contact@pvoil.com.vn</td>
+                <td>(84 - 28) 39106990</td>
+                <td><a href="#" data-toggle="tooltip" data-placement="top" title="Chi tiết"><i class="fa fa-file-text-o"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
