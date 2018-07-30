@@ -26,8 +26,8 @@
 <link href="/Content/css/style.css" rel="stylesheet" />--%>
 
 <%
-    var listItem = ViewBag.Data as List<ModDonDangKyUCSCEntity>;
-    int c2 = listItem != null ? listItem.Count : 0;
+    var listItem = ViewBag.Data as List<ModBaoCaoSuCoEntity>;
+    int c = listItem != null ? listItem.Count : 0;
     var model = ViewBag.Model as MBaoCaoSuCoModel;
 %>
 
@@ -35,16 +35,16 @@
     <div class="main_right">
         <!--//#box-news-x-->
         <div class="vanban_right">
-            <%--<div class="contents">
+            <div class="contents">
                 <div class="top">
                     <!-- ITT FIX -->
                     <div class="button pull-right" style="margin-bottom: 10px;">
-                        <input style="margin-left: 10px;" class="btn btn-success" onclick="location.href = '/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx';" type="button" name="" value="Báo cáo sự cố">
+                        <input style="margin-left: 10px;" class="btn btn-success" onclick="location.href = '/vn/Bao-cao-su-co/Them-bao-cao.aspx';" type="button" name="" value="Báo cáo sự cố">
                     </div>
 
                 </div>
                 <!--.Main_container-->
-            </div>--%>
+            </div>
 
             <div class="title-t2">CÁC BÁO CÁO CỦA BẠN</div>
             <div class="main_vbtable" style="width: 100%">
@@ -60,39 +60,56 @@
                             </tr>
                         </thead>
                         <tbody id="loadDsTbodyHetHan">
+                            <%if (c > 0)
+                                {
+                                    for (int i = 0; i < c; i++)
+                                    {%>
                             <tr>
                                 <!-- ITT FIX -->
-                                <td style="width: 5%;text-align:center;">1</td>
+                                <td style="width: 5%; text-align: center;"><%=i+1 %></td>
                                 <td>
-                                    <a href="/vn/Thanh-vien/Ho-so-ung-cuu-su-co/HSUCSC1.aspx" style="display: block;"></a><br>
+                                    <a href="/vn/Bao-cao-su-co/<%=listItem[i].Code %>.aspx" style="display: block;"><%=listItem[i].Name %></a>
+                                    <br>
                                     <p>
-                                        <span class="date">Mã báo cáo: HSUCSC1</span>
-                                        <span class="date fr">Ngày thêm: 09/04/2018</span>
+                                        <span class="date">Mã báo cáo: <%=listItem[i].Code %></span>
+                                        <span class="date fr">Ngày thêm: <%=string.Format("{0:dd/MM/yyyy}", listItem[i].Published) %></span>
                                     </p>
                                 </td>
                                 <td class="text-center" style="width: 20%;"><span style="color: red;">Báo cáo ban đầu, báo cáo tổng hợp</span></td>
-                                <td class="text-center" style="width: 1%;padding: 0 5px;">
-                                    <a href="javascript: delHs('1');" id="btnXoaHs">Xóa</a>
-                                    <input class="btn_action search icon QAcustom" name="_hl_action[XoaHoSo]" id="XoaHoSo" value="Xóa" type="submit" style="display: none;">
+                                <td class="text-center" style="width: 1%; padding: 0 5px;">
+                                    <a href="javascript: del('<%=listItem[i].ID %>');">Xóa</a>
+                                    <input class="btn_action search icon QAcustom" name="_hl_action[Delete]" id="Delete" value="Xóa" type="submit" style="display: none;">
                                 </td>
                             </tr>
-
+                            <%}
+                                }
+                            %>
                         </tbody>
                     </table>
 
                     <div class="clear-15">&nbsp;</div>
-                    <input style="margin-left: 10px;" class="btn btn-success" onclick="location.href = '/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx';" type="button" name="" value="Báo cáo ban đầu">
+                    <%--<input style="margin-left: 10px;" class="btn btn-success" onclick="location.href = '/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx';" type="button" name="" value="Báo cáo ban đầu">
                     <input style="margin-left: 10px;" class="btn btn-success" onclick="location.href = '/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx';" type="button" name="" value="Báo cáo tổng hợp">
-                    <input style="margin-left: 10px;" class="btn btn-success" onclick="location.href = '/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx';" type="button" name="" value="Báo cáo kết thúc">
-                    <input type="hidden" name="hoSoId" id="hoSoId" value="0">
+                    <input style="margin-left: 10px;" class="btn btn-success" onclick="location.href = '/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx';" type="button" name="" value="Báo cáo kết thúc">--%>
+                    <input type="hidden" name="baoCaoId" id="baoCaoId" value="0">
                 </form>
             </div>
             <div class="navi-page">
-
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    function del(id) {
+        if (id) {
+            if (window.confirm('Bạn có chắc muốn xóa báo cáo này?')) {
+                $('#baoCaoId').val(id);
+                $('#Delete').click();
+            }
+        }
+    }
+</script>
 
 <%--<div class="row-fluid titleContainer">
     <span>ĐƠN XIN ĐĂNG KÝ THAM GIA MẠNG LƯỚI ỨNG CỨU SỰ CỐ</span>

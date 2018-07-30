@@ -1758,6 +1758,7 @@
     <Content Include="Views\MBaoCaoBanDauSuCo\Index.ascx" />
     <Content Include="Views\MBaoCaoKetThucSuCo\Detail.ascx" />
     <Content Include="Views\MBaoCaoKetThucSuCo\Index.ascx" />
+    <Content Include="Views\MBaoCaoSuCo\Add.ascx" />
     <Content Include="Views\MBaoCaoTongHop\Detail.ascx" />
     <Content Include="Views\MBaoCaoTongHop\Index.ascx" />
     <Content Include="Views\MContentTemp\Index.ascx" />

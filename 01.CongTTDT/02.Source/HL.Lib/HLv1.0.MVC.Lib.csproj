@@ -87,6 +87,7 @@
     <Compile Include="Controllers\CAlbumDetailController.cs" />
     <Compile Include="Controllers\CBaoCaoBanDauSuCoController.cs" />
     <Compile Include="Controllers\CBaoCaoKetThucSuCoController.cs" />
+    <Compile Include="Controllers\CBaoCaoSuCoController.cs" />
     <Compile Include="Controllers\CBaoCaoTongHopController.cs" />
     <Compile Include="Controllers\CConfigSendMailController.cs" />
     <Compile Include="Controllers\CCoQuanController.cs" />
@@ -156,6 +157,7 @@
     <Compile Include="CPControllers\ModAlbumDetailController.cs" />
     <Compile Include="CPControllers\ModBaoCaoBanDauSuCoController.cs" />
     <Compile Include="CPControllers\ModBaoCaoKetThucSuCoController.cs" />
+    <Compile Include="CPControllers\ModBaoCaoSuCoController.cs" />
     <Compile Include="CPControllers\ModBaoCaoTongHopController.cs" />
     <Compile Include="CPControllers\ModConfigController.cs" />
     <Compile Include="CPControllers\ModConfigSendMailController.cs" />
@@ -242,6 +244,7 @@
     <Compile Include="Models\ModAlbumModel.cs" />
     <Compile Include="Models\ModBaoCaoBanDauSuCoModel.cs" />
     <Compile Include="Models\ModBaoCaoKetThucSuCoModel.cs" />
+    <Compile Include="Models\ModBaoCaoSuCoModel.cs" />
     <Compile Include="Models\ModBaoCaoTongHopModel.cs" />
     <Compile Include="Models\ModConfigSendMailModel.cs" />
     <Compile Include="Models\ModCoQuanModel.cs" />
