@@ -104,9 +104,11 @@ namespace HL.Lib.Controllers
                         .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("ThongTinGuiKem", MenuID, ViewPage.CurrentLang.ID))
                         .ToList();
 
-                    ViewBag.EndCode = code;
+                    //ViewBag.EndCode = code;
+                    ViewBag.IsEdit = 1;
                 }
 
+                ViewBag.EndCode = code;
                 ViewBag.BaoCao = bcBanDau;
             }
             else if (ec.Contains("bc-tong-hop-su-co"))
@@ -139,8 +141,10 @@ namespace HL.Lib.Controllers
                 }
                 else
                 {
+                    ViewBag.IsEdit = 1;
                     ViewBag.SuCo = ModSoLuongSuCoService.Instance.CreateQuery().Where(o => o.Activity == true && o.BaoCaoTongHopID == bcTongHop.ID).ToList();
                 }
+                ViewBag.EndCode = code;
             }
             else if (ec.Contains("bc-ket-thuc-su-co"))
             {
@@ -169,6 +173,11 @@ namespace HL.Lib.Controllers
                         NgayGioPhatHien = dt
                     };
                 }
+                else
+                {
+                    ViewBag.IsEdit = 1;
+                }
+                ViewBag.EndCode = code;
             }
 
             if (!string.IsNullOrEmpty(layout)) RenderView(layout);
@@ -378,10 +387,22 @@ namespace HL.Lib.Controllers
         public void ActionAddBCBanDauUCSC(ModBaoCaoBanDauSuCoEntity entity, MInfoMagicModel modelInfo, MAppend append, string endCode)
         {
             int userId = HL.Lib.Global.CPLogin.UserID;
+            string ec = endCode.ToLower();
+            string[] ecArr = ec.Split('-');
+            string codes = ecArr[0].ToString();
             ModBaoCaoSuCoEntity sc = ModBaoCaoSuCoService.Instance.CreateQuery()
                 .Where(userId > 0, o => o.UserID == userId)
-                .Where(o => o.Code == endCode)
+                .Where(o => o.Code == codes)
                 .ToSingle();
+            if (sc == null)
+            {
+                ViewPage.Alert("Bạn chưa tạo báo cáo sự cố.");
+                ViewPage.Navigate("/vn/Bao-cao-su-co.aspx");
+            }
+            //ModBaoCaoSuCoEntity sc = ModBaoCaoSuCoService.Instance.CreateQuery()
+            //    .Where(userId > 0, o => o.UserID == userId)
+            //    .Where(o => o.Code == endCode)
+            //    .ToSingle();
 
             DateTime date = DateTime.Now;
             string ngayGioPhatHien = append.Ngay + " " + append.Gio + ":" + append.Phut;

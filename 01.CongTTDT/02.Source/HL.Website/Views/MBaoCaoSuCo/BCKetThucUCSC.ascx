@@ -15,6 +15,7 @@
     CPUserEntity entity = ViewBag.Data as CPUserEntity ?? CPLogin.CurrentUser;
     ModBaoCaoKetThucSuCoEntity entityBc = ViewBag.BaoCao as ModBaoCaoKetThucSuCoEntity ?? new ModBaoCaoKetThucSuCoEntity();
     string endCode = ViewBag.EndCode;
+    int isEdit = ViewBag.IsEdit ?? 0;
 
     List<WebMenuEntity> lstCapDo = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "CapDo" && o.ParentID > 0).ToList_Cache();
     int countCapDo = lstCapDo != null ? lstCapDo.Count : 0;
@@ -420,7 +421,7 @@
 
                                 <div class="button">
                                     <input type="hidden" name="endCode" value="<%=endCode %>" />
-                                    <%if (!string.IsNullOrEmpty(endCode))
+                                    <%if (isEdit == 1)
                                         {%>
                                     <input class="btn btn-success" name="_hl_action[UpdateBCKetThucUCSC]" value="Cập nhật" type="submit" />
                                     <%}

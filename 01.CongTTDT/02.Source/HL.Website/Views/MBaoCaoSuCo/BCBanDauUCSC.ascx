@@ -26,6 +26,7 @@
     string strDichVu = string.Join(",", currDichVu.Select(o => o.MenuID));
     string strBienPhap = string.Join(",", currBienPhap.Select(o => o.MenuID));
     string strThongTinGuiKem = string.Join(",", currThongTinGuiKem.Select(o => o.MenuID));
+    int isEdit = ViewBag.IsEdit ?? 0;
     string endCode = ViewBag.EndCode;
 
     List<WebMenuEntity> lstCapDo = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "CapDo" && o.ParentID > 0).ToList_Cache();
@@ -765,7 +766,7 @@
                                 <div class="clear-20">&nbsp;</div>
                                 <div class="button">
                                     <input type="hidden" name="endCode" value="<%=endCode %>" />
-                                    <%if (!string.IsNullOrEmpty(endCode))
+                                    <%if (isEdit == 1)
                                         {%>
                                     <input class="btn btn-success" name="_hl_action[UpdateBCBanDauUCSC]" value="Cập nhật" type="submit" />
                                     <%}
