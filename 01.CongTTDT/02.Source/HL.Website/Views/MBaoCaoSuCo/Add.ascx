@@ -22,8 +22,17 @@
 <% 
     var item = ViewBag.Data as ModBaoCaoSuCoEntity;
     var endCode = ViewBag.EndCode as string;
-        string prefix = string.Empty;
-        if (!string.IsNullOrEmpty(endCode)) prefix = endCode + "-";
+    string prefix = string.Empty;
+    string bcBanDauUrl = "#", bcTongHopUrl = "#", bcKetThucUrl = "#";
+    if (!string.IsNullOrEmpty(endCode))
+    {
+        prefix = endCode + "-";
+        bcBanDauUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-ban-dau-su-co.aspx";
+        bcTongHopUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-tong-hop-su-co.aspx";
+        bcKetThucUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-ket-thuc-su-co.aspx";
+    }
+
+    WebMenuEntity menu = WebMenuService.Instance.GetByID(item.MenuID);
 %>
 
 <style>
@@ -112,13 +121,13 @@
 </div>
 <div class="contentNews">
     <div class="main_right">
-        <div class="box-category mb10">
+        <%--        <div class="box-category mb10">
             <div class="vanban-new">
                 <h3 class="title-list-news">
                     <span class="title-t1">BÁO CÁO SỰ CỐ MẠNG</span>
                 </h3>
             </div>
-        </div>
+        </div>--%>
         <!--//#box-news-x-->
         <div class="vanban_right">
             <div class="contents">
@@ -149,6 +158,8 @@
                         <input type="hidden" name="endCode" value="<%=endCode %>" />
 
                         <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Bao-cao-su-co.aspx';" type="button" name="" value="<< Danh sách báo cáo" />
+                        <%if (menu != null & menu.Code != "KetThuc")
+                            {%>
                         <%if (!string.IsNullOrEmpty(endCode))
                             {%>
                         <input class="btn btn-success" name="_hl_action[Update]" value="Cập nhật" type="submit" />
@@ -157,11 +168,15 @@
                             {%>
                         <input class="btn btn-success" name="_hl_action[Add]" value="Lưu" type="submit" />
                         <%}%>
+                        <%} %>
 
                         <div class="clear-10">&nbsp;</div>
-                        <input type="button" class="btn btn-warning" value="Báo cáo ban đầu" onclick="location.href = '/vn/Bao-cao-su-co/<%=prefix%>bc-ban-dau-su-co.aspx';" />
-                        <input type="button" class="btn btn-warning" value="Báo cáo tổng hợp" onclick="location.href = '/vn/Bao-cao-su-co/<%=prefix%>bc-tong-hop-su-co.aspx';" />
-                        <input type="button" class="btn btn-warning" value="Báo cáo kết thúc" onclick="location.href = '/vn/Bao-cao-su-co/<%=prefix%>bc-ket-thuc-su-co.aspx';" />
+                        <%if (!string.IsNullOrEmpty(prefix))
+                            {%>
+                        <input type="button" class="btn btn-warning" value="Báo cáo ban đầu" onclick="location.href = '<%=bcBanDauUrl%>';" />
+                        <input type="button" class="btn btn-warning" value="Báo cáo tổng hợp" onclick="location.href = '<%=bcTongHopUrl%>';" />
+                        <input type="button" class="btn btn-warning" value="Báo cáo kết thúc" onclick="location.href = '<%=bcKetThucUrl%>';" />
+                        <%} %>
                     </form>
 
                 </div>

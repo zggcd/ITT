@@ -55,15 +55,34 @@
                             <tr>
                                 <th class="text-center" style="width: 5%;">#</th>
                                 <th class="text-center">Báo cáo</th>
-                                <th class="text-center" style="width: 20%;">Trạng thái</th>
+                                <th class="text-center" style="width: 20%;">Đã báo cáo</th>
+                                <th class="text-center" style="width: 10%;">Trạng thái</th>
                                 <th class="text-center" style="width: 1%;"></th>
                             </tr>
                         </thead>
                         <tbody id="loadDsTbodyHetHan">
                             <%if (c > 0)
                                 {
+                                    string bcBanDauUrl = "", bcTongHopUrl = "", bcKetThucUrl = "";
                                     for (int i = 0; i < c; i++)
-                                    {%>
+                                    {
+                                        ModBaoCaoBanDauSuCoEntity bcBanDau = ModBaoCaoBanDauSuCoService.Instance.CreateQuery()
+                                            .Where(o => o.BaoCaoSuCoID == listItem[i].ID)
+                                            .ToSingle();
+                                        ModBaoCaoTongHopEntity bcTongHop = ModBaoCaoTongHopService.Instance.CreateQuery()
+                                            .Where(o => o.BaoCaoSuCoID == listItem[i].ID)
+                                            .ToSingle();
+                                        ModBaoCaoKetThucSuCoEntity bcKetThuc = ModBaoCaoKetThucSuCoService.Instance.CreateQuery()
+                                            .Where(o => o.BaoCaoSuCoID == listItem[i].ID)
+                                            .ToSingle();
+
+                                        if (bcBanDau != null) bcBanDauUrl = "/vn/Bao-cao-su-co/" + listItem[i].Code + "-bc-ban-dau-su-co.aspx";
+                                        if (bcTongHop != null) bcTongHopUrl = "/vn/Bao-cao-su-co/" + listItem[i].Code + "-bc-tong-hop-su-co.aspx";
+                                        if (bcKetThuc != null) bcKetThucUrl = "/vn/Bao-cao-su-co/" + listItem[i].Code + "-bc-ket-thuc-su-co.aspx";
+
+                                        WebMenuEntity menu = WebMenuService.Instance.GetByID(listItem[i].MenuID);
+                                        string trangThai = menu != null ? menu.Name : "";
+                            %>
                             <tr>
                                 <!-- ITT FIX -->
                                 <td style="width: 5%; text-align: center;"><%=i+1 %></td>
@@ -75,10 +94,27 @@
                                         <span class="date fr">Ngày thêm: <%=string.Format("{0:dd/MM/yyyy}", listItem[i].Published) %></span>
                                     </p>
                                 </td>
-                                <td class="text-center" style="width: 20%;"><span style="color: red;">Báo cáo ban đầu, báo cáo tổng hợp</span></td>
+                                <td class="text-center" style="width: 20%;">
+                                    <%if (!string.IsNullOrEmpty(bcBanDauUrl))
+                                        {%>
+                                    <a href="<%=bcBanDauUrl%>">Báo cáo ban đầu</a><br />
+                                    <%} %>
+                                    <%if (!string.IsNullOrEmpty(bcTongHopUrl))
+                                        {%>
+                                    <a href="<%=bcTongHopUrl%>">Báo cáo tổng hợp</a><br />
+                                    <%} %>
+                                    <%if (!string.IsNullOrEmpty(bcKetThucUrl))
+                                        {%>
+                                    <a href="<%=bcKetThucUrl%>">Báo cáo kết thúc</a><br />
+                                    <%} %>
+                                </td>
+                                <td class="text-center" style="width: 20%;"><%=trangThai %></td>
                                 <td class="text-center" style="width: 1%; padding: 0 5px;">
+                                    <%if (menu != null && menu.Code == "Cho")
+                                        {%>
                                     <a href="javascript: del('<%=listItem[i].ID %>');">Xóa</a>
                                     <input class="btn_action search icon QAcustom" name="_hl_action[Delete]" id="Delete" value="Xóa" type="submit" style="display: none;">
+                                    <%} %>
                                 </td>
                             </tr>
                             <%}

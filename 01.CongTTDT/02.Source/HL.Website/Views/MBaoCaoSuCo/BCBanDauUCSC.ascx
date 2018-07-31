@@ -49,6 +49,8 @@
 
     List<WebMenuEntity> lstThongTinGuiKem = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "ThongTinGuiKem" && o.ParentID > 0).ToList_Cache();
     int countThongTinGuiKem = lstThongTinGuiKem != null ? lstThongTinGuiKem.Count : 0;
+
+    WebMenuEntity menu = WebMenuService.Instance.GetByID(sc.MenuID);
 %>
 
 <style>
@@ -766,6 +768,8 @@
                                 <div class="clear-20">&nbsp;</div>
                                 <div class="button">
                                     <input type="hidden" name="endCode" value="<%=endCode %>" />
+                                    <%if (menu != null & menu.Code != "KetThuc")
+                                        {%>
                                     <%if (isEdit == 1)
                                         {%>
                                     <input class="btn btn-success" name="_hl_action[UpdateBCBanDauUCSC]" value="Cập nhật" type="submit" />
@@ -773,6 +777,7 @@
                                         else
                                         {%>
                                     <input class="btn btn-success" name="_hl_action[AddBCBanDauUCSC]" value="Lưu" type="submit" />
+                                    <%}%>
                                     <%}%>
 
                                     <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Bao-cao-su-co/<%=endCode %>.aspx';" type="button" name="" value="Hủy" />

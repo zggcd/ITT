@@ -13,6 +13,7 @@
 
 <%
     CPUserEntity entity = ViewBag.Data as CPUserEntity ?? CPLogin.CurrentUser;
+    ModBaoCaoSuCoEntity sc = ViewBag.BCSuCo as ModBaoCaoSuCoEntity ?? new ModBaoCaoSuCoEntity();
     ModBaoCaoTongHopEntity entityBc = ViewBag.BaoCao as ModBaoCaoTongHopEntity ?? new ModBaoCaoTongHopEntity();
     List<ModSoLuongSuCoEntity> currSuCo = ViewBag.SuCo as List<ModSoLuongSuCoEntity> ?? new List<ModSoLuongSuCoEntity>();
 
@@ -22,6 +23,8 @@
 
     List<WebMenuEntity> lstLoaiSuCo = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "LoaiSuCo" && o.ParentID > 0).ToList_Cache();
     int countLoaiSuCo = lstLoaiSuCo != null ? lstLoaiSuCo.Count : 0;
+
+    WebMenuEntity menu = WebMenuService.Instance.GetByID(sc.MenuID);
 %>
 
 <style>
@@ -380,6 +383,8 @@
 
                                 <div class="button">
                                     <input type="hidden" name="endCode" value="<%=endCode %>" />
+                                    <%if (menu != null & menu.Code != "KetThuc")
+                                        {%>
                                     <%if (isEdit == 1)
                                         {%>
                                     <input class="btn btn-success" name="_hl_action[UpdateBCTongHopUCSC]" value="Cập nhật" type="submit" />
@@ -387,6 +392,7 @@
                                         else
                                         {%>
                                     <input class="btn btn-success" name="_hl_action[AddBCTongHopUCSC]" value="Lưu" type="submit" />
+                                    <%}%>
                                     <%}%>
 
                                     <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Bao-cao-su-co/<%=endCode %>.aspx';" type="button" name="" value="Hủy" />

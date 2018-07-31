@@ -160,6 +160,7 @@ namespace HL.Lib.Controllers
                     ViewPage.Navigate("/vn/Bao-cao-su-co.aspx");
                 }
 
+                ViewBag.BCSuCo = sc;
                 layout = "BCKetThucUCSC";
                 ModBaoCaoKetThucSuCoEntity bcKetThuc = ModBaoCaoKetThucSuCoService.Instance.CreateQuery()
                     .Where(o => o.BaoCaoSuCoID == sc.ID)
@@ -283,8 +284,12 @@ namespace HL.Lib.Controllers
 
                 try
                 {
+                    WebMenuEntity menu = WebMenuService.Instance.CreateQuery()
+                        .Where(o => o.Activity == true && o.Code == "Cho")
+                        .ToSingle();
                     //save
                     entity.Code = code;
+                    entity.MenuID = menu != null ? menu.ID : 0;
                     entity.UserID = Lib.Global.CPLogin.UserID;
                     entity.Published = DateTime.Now;
                     ModBaoCaoSuCoService.Instance.Save(entity);
@@ -311,10 +316,13 @@ namespace HL.Lib.Controllers
 
             if (entity != null)
             {
+                DelBCBanDau(entity.ID);
+                DelBCTongHop(entity.ID);
+                DelBCKetThuc(entity.ID);
                 ModBaoCaoSuCoService.Instance.Delete(entity.ID);
 
                 ViewPage.Alert("Xóa báo cáo thành công.");
-                ViewPage.Navigate(ViewPage.CurrentURL);
+                ViewPage.RefreshPage();
             }
             else
             {
@@ -368,6 +376,7 @@ namespace HL.Lib.Controllers
                         bc.Address = entity.Address;
                         bc.Phone = entity.Phone;
                         bc.Email = entity.Email;
+                        bc.MenuID = entity.MenuID;
                         bc.UserID1 = Lib.Global.CPLogin.UserID;
                         bc.Published1 = DateTime.Now;
                         ModBaoCaoSuCoService.Instance.Save(bc);
@@ -379,7 +388,6 @@ namespace HL.Lib.Controllers
                     }
 
                     ViewPage.Alert("Cập nhật báo cáo thành công.");
-                    ViewPage.RefreshPage();
                 }
             }
         }
@@ -536,6 +544,7 @@ namespace HL.Lib.Controllers
             }
 
             //Thong tin gui kem
+            //TODO Phan nay dang insert chua day du checkbox khi check all
             num = modelInfo.chkThongTinGuiKem != null ? modelInfo.chkThongTinGuiKem.Length : 0;
             for (int i = 0; i < num; i++)
             {
@@ -756,8 +765,8 @@ namespace HL.Lib.Controllers
                 ViewBag.BaoCao = entityBc;
 
                 ViewPage.Alert("Cập nhật báo cáo ban đầu thành công.");
-                ViewPage.RefreshPage();
-                //ViewPage.Navigate("/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx");
+                //ViewPage.RefreshPage();
+                ViewPage.Navigate(ViewPage.ActionForm);
             }
         }
 
@@ -967,6 +976,55 @@ namespace HL.Lib.Controllers
             }
         }
 
+        #region private function
+        private void DelBCBanDau(int baoCaoId)
+        {
+            int userId = HL.Lib.Global.CPLogin.UserID;
+            var entity = ModBaoCaoBanDauSuCoService.Instance.CreateQuery()
+                        .Where(userId > 0, o => o.UserID == userId)
+                        .Where(baoCaoId > 0, o => o.BaoCaoSuCoID == baoCaoId)
+                        .ToSingle();
+
+            if (entity != null)
+            {
+                var entityInfoMagic = ModInfoMagicService.Instance.CreateQuery().Where(o => o.BaoCaoBanDauSuCoID == entity.ID).ToList();
+                if (entityInfoMagic != null) ModInfoMagicService.Instance.Delete(entityInfoMagic);
+
+                ModBaoCaoBanDauSuCoService.Instance.Delete(entity.ID);
+            }
+        }
+
+        private void DelBCTongHop(int baoCaoId)
+        {
+            int userId = HL.Lib.Global.CPLogin.UserID;
+            var entity = ModBaoCaoTongHopService.Instance.CreateQuery()
+                        .Where(userId > 0, o => o.UserID == userId)
+                        .Where(baoCaoId > 0, o => o.BaoCaoSuCoID == baoCaoId)
+                        .ToSingle();
+
+            if (entity != null)
+            {
+                var lstSuCo = ModSoLuongSuCoService.Instance.CreateQuery().Where(o => o.BaoCaoTongHopID == entity.ID).ToList();
+                if (lstSuCo != null) ModSoLuongSuCoService.Instance.Delete(lstSuCo);
+
+                ModBaoCaoTongHopService.Instance.Delete(entity.ID);
+            }
+        }
+
+        private void DelBCKetThuc(int baoCaoId)
+        {
+            int userId = HL.Lib.Global.CPLogin.UserID;
+            var entity = ModBaoCaoKetThucSuCoService.Instance.CreateQuery()
+                        .Where(userId > 0, o => o.UserID == userId)
+                        .Where(baoCaoId > 0, o => o.ID == baoCaoId)
+                        .ToSingle();
+
+            if (entity != null)
+            {
+                ModBaoCaoKetThucSuCoService.Instance.Delete(entity.ID);
+            }
+        }
+
         private int GetMaxOrder_InfoMagic()
         {
             return ModInfoMagicService.Instance.CreateQuery()
@@ -1001,6 +1059,7 @@ namespace HL.Lib.Controllers
                     .Max(o => o.Order)
                     .ToValue().ToInt(0) + 1;
         }
+        #endregion private function
     }
 
     public class MBaoCaoSuCoModel
