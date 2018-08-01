@@ -81,23 +81,47 @@
     <%} %>
 
     <%if (modules.Contains("ModHSThanhVienUCSC") || modules.Contains("ModDonDangKyUCSC")
-                            || modules.Contains("ModBaoCaoBanDauSuCo") || modules.Contains("ModBaoCaoKetThucSuCo") || modules.Contains("ModBaoCaoTongHop"))
+        || modules.Contains("ModBaoCaoBanDauSuCo") || modules.Contains("ModBaoCaoKetThucSuCo")
+        || modules.Contains("ModBaoCaoTongHop") || modules.Contains("ModIncident")
+        || modules.Contains("ModBaoCaoTK"))
         {%>
-    <li class="node"><a>Báo cáo sự cố</a>
+    <li class="node"><a>Mạng lưới</a>
         <ul>
-            <li><a class="icon-16-article" href="/{CPPath}/ModHSThanhVienUCSC/Index.aspx">Bản khai hồ sơ thành viên UCSC</a></li>
-            <li><a class="icon-16-article" href="/{CPPath}/ModDonDangKyUCSC/Index.aspx">Đăng ký tham gia mạng lưới UCSC</a></li>
-            <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoBanDauSuCo/Index.aspx">Báo cáo ban đầu sự cố mạng</a></li>
-            <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoKetThucSuCo/Index.aspx">Báo cáo kết thúc sự cố mạng</a></li>
-            <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTongHop/Index.aspx">Báo cáo tổng hợp</a></li>
+            <%if (modules.Contains("ModIncident"))
+                {%>
+            <li><a class="icon-16-article" href="/{CPPath}/ModIncident/Index.aspx">Quản lý sự cố</a></li>
+            <%} %>
+
+            <%if (modules.Contains("ModBaoCaoTK"))
+                {%>
+            <li class="node"><a class="icon-16-article">Thống kê sự cố</a>
+                <ul>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Deface.aspx">Deface</a></li>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Phishing.aspx">Phishing</a></li>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Malware.aspx">Malware</a></li>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Botnet.aspx">C&C botnet</a></li>
+                    <%--<li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Attack.aspx">Attack</a></li>--%>
+                </ul>
+            </li>
+            <%} %>
+
+            <li class="node"><a class="icon-16-article" href="/{CPPath}/ModBaoCaoSuCo/Index.aspx">Báo cáo sự cố</a>
+                <ul>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoBanDauSuCo/Index.aspx">Báo cáo ban đầu sự cố mạng</a></li>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoKetThucSuCo/Index.aspx">Báo cáo kết thúc sự cố mạng</a></li>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTongHop/Index.aspx">Báo cáo tổng hợp</a></li>
+                </ul>
+            </li>
+            <li class="node"><a class="icon-16-article">Thành viên mạng lưới</a>
+                <ul>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModHSThanhVienUCSC/Index.aspx">Đăng ký bắt buộc</a></li>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModDonDangKyUCSC/Index.aspx">Đăng ký tự nguyện</a></li>
+                </ul>
+            </li>
         </ul>
     </li>
     <%} %>
 
-    <%if (modules.Contains("ModIncident"))
-        {%>
-    <li class="node"><a href="/{CPPath}/ModIncident/Index.aspx">Quản lý sự cố</a></li>
-    <%} %>
     <%--<li class="node"><a href="/{CPPath}/ModBaoCaoTK/Index.aspx">Báo cáo TK sự cố</a>
         <ul>
             <li><a class="icon-16-article" href="/{CPPath}/ModIncident/Index.aspx">Deface</a></li>
@@ -107,19 +131,6 @@
             <li><a class="icon-16-article" href="/{CPPath}/ModIncident/Index.aspx">Attack</a></li>
         </ul>
     </li>--%>
-
-    <%if (modules.Contains("ModBaoCaoTK"))
-        {%>
-    <li class="node"><a>Báo cáo TK sự cố</a>
-        <ul>
-            <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Deface.aspx">Deface</a></li>
-            <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Phishing.aspx">Phishing</a></li>
-            <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Malware.aspx">Malware</a></li>
-            <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Botnet.aspx">C&C botnet</a></li>
-            <%--<li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Attack.aspx">Attack</a></li>--%>
-        </ul>
-    </li>
-    <%} %>
 
     <%if (CPLogin.CurrentUser.IsAdministrator == true)
         {%>

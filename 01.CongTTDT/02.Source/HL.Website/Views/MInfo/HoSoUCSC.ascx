@@ -434,14 +434,14 @@ Tên cơ quan chủ quản:</span>
                                     <input type="hidden" name="endCode" value="<%=endCode %>" />
                                     <%if (!string.IsNullOrEmpty(endCode))
                                         {%>
-                                    <input class="btn_action search icon QAcustom" name="_hl_action[UpdateHoSoUCSC]" value="Cập nhật" type="submit" onclick="fnSubmit()" />
+                                    <input class="btn btn-success" name="_hl_action[UpdateHoSoUCSC]" value="Cập nhật" type="submit" onclick="fnSubmit()" />
                                     <%}
                                         else
                                         {%>
-                                    <input class="btn_action search icon QAcustom" name="_hl_action[AddHoSoUCSC]" value="Lưu" type="submit" onclick="fnSubmit()" />
+                                    <input class="btn btn-success" name="_hl_action[AddHoSoUCSC]" value="Lưu" type="submit" onclick="fnSubmit()" />
                                     <%}%>
 
-                                    <input style="margin-left: 10px;" onclick="location.href = '/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx';" type="button" name="" value="Danh sách hồ sơ" />
+                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx';" type="button" name="" value="Danh sách hồ sơ" />
                                     <%--<input type="hidden" name="File" value="<%=entity.File %>" />--%>
                                 </div>
 

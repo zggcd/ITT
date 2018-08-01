@@ -28,9 +28,10 @@
 <link href="/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 <link href="/Content/css/style.css" rel="stylesheet" />--%>
 
-<%--<div class="row-fluid titleContainer">
-    <span>BẢN KHAI HỒ SƠ THÀNH VIÊN MẠNG LƯỚI ỨNG CỨU SỰ CỐ</span>
-</div>--%>
+<div class="row-fluid titleContainer">
+    <span>HỒ SƠ THÀNH VIÊN MẠNG LƯỚI ỨNG CỨU SỰ CỐ</span>
+</div>
+
 <div class="contentNews">
     <div class="main_right">
         <!--//#box-news-x-->

@@ -30,7 +30,7 @@ namespace HL.Lib.Controllers
             else if (ec == "thong-tin-ca-nhan") layout = "Info";
             else if (ec == "doi-mat-khau") layout = "ChangePass";
             else if (ec == "them-ho-so-ung-cuu-su-co") layout = "HoSoUCSC";
-            else if (ec == "dang-ky-ung-cuu-su-co") { ViewBag.EndCode = endcode; layout = "DangKyUCSC"; }
+            else if (ec == "dang-ky-ung-cuu-su-co") layout = "DangKyUCSC";
             else if (ec == "dich-vu-canh-bao-su-co")
             {
                 ViewBag.DichVu = new ModDichVuCanhBaoEntity()

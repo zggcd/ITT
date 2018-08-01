@@ -1655,6 +1655,8 @@
     <Content Include="TTPortal\Views\ModBaoCaoBanDauSuCo\Index.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoKetThucSuCo\Add.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoKetThucSuCo\Index.ascx" />
+    <Content Include="TTPortal\Views\ModBaoCaoSuCo\Add.ascx" />
+    <Content Include="TTPortal\Views\ModBaoCaoSuCo\Index.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoTK\Malware.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoTK\Phishing.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoTK\Botnet.ascx" />
@@ -1719,6 +1721,7 @@
     <Content Include="Views\CAlbum\Default.ascx" />
     <Content Include="Views\CBaoCaoBanDauSuCo\Default.ascx" />
     <Content Include="Views\CBaoCaoKetThucSuCo\Default.ascx" />
+    <Content Include="Views\CBaoCaoSuCo\Default.ascx" />
     <Content Include="Views\CBaoCaoTongHop\Default.ascx" />
     <Content Include="Views\CCoQuan\Default.ascx" />
     <Content Include="Views\CDauMoiUCSC\Default.ascx" />

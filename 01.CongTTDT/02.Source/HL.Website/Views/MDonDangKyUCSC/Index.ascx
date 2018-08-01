@@ -31,9 +31,10 @@
     var model = ViewBag.Model as MDonDangKyUCSCModel;
 %>
 
-<%--<div class="row-fluid titleContainer">
-    <span>ĐƠN XIN ĐĂNG KÝ THAM GIA MẠNG LƯỚI ỨNG CỨU SỰ CỐ</span>
-</div>--%>
+<div class="row-fluid titleContainer">
+    <span>ĐĂNG KÝ THAM GIA MẠNG LƯỚI ỨNG CỨU SỰ CỐ</span>
+</div>
+
 <div class="contentNews">
     <div class="vanban_right">
         <div class="contents">

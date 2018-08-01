@@ -8,14 +8,14 @@
             Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString("/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx"));
             return;
         }
-        int userId = HL.Lib.Global.CPLogin.UserID;
-        var dk = ModDonDangKyUCSCService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
-        var endCode = ViewBag.EndCode;
-        if (string.IsNullOrEmpty(endCode))
-        {
-            Response.Redirect("/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx");
-            return;
-        }
+        //int userId = HL.Lib.Global.CPLogin.UserID;
+        //var dk = ModDonDangKyUCSCService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
+        //var endCode = ViewBag.EndCode;
+        //if (string.IsNullOrEmpty(endCode))
+        //{
+        //    Response.Redirect("/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx");
+        //    return;
+        //}
     }
 </script>
 
@@ -762,14 +762,14 @@
                                     <input type="hidden" name="endCode" value="<%=endCode %>" />
                                     <%if (!string.IsNullOrEmpty(endCode))
                                         {%>
-                                    <input class="btn_action search icon QAcustom" name="_hl_action[UpdateDangKyUCSC]" value="Cập nhật" type="submit" onclick="fnSubmit()" />
+                                    <input class="btn btn-success" name="_hl_action[UpdateDangKyUCSC]" value="Cập nhật" type="submit" onclick="fnSubmit()" />
                                     <%}
                                         else
                                         {%>
-                                    <input class="btn_action search icon QAcustom" name="_hl_action[AddDangKyUCSC]" value="Lưu" type="submit" onclick="fnSubmit()" />
+                                    <input class="btn btn-success" name="_hl_action[AddDangKyUCSC]" value="Lưu" type="submit" onclick="fnSubmit()" />
                                     <%}%>
 
-                                    <input style="margin-left: 10px;" onclick="location.href = '/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx';" type="button" name="" value="Danh sách đăng ký" />
+                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx';" type="button" name="" value="Danh sách đăng ký" />
                                 </div>
 
                             </div>

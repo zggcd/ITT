@@ -66,6 +66,18 @@ namespace HL.Lib.Models
             return _oUser;
         }
 
+        private CPUserEntity _oThanhVien = null;
+        public CPUserEntity getThanhVien()
+        {
+            if (_oThanhVien == null && UserID > 0)
+                _oThanhVien = CPUserService.Instance.GetByID(UserID);
+
+            if (_oThanhVien == null)
+                _oThanhVien = new CPUserEntity();
+
+            return _oThanhVien;
+        }
+
         private WebMenuEntity _oMenu = null;
         public WebMenuEntity getMenu()
         {
