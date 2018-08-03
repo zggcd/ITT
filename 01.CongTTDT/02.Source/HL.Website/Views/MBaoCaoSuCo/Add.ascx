@@ -33,6 +33,7 @@
     }
 
     WebMenuEntity menu = WebMenuService.Instance.GetByID(item.MenuID);
+    if (menu == null) menu = new WebMenuEntity();
 %>
 
 <style>

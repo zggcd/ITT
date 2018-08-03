@@ -155,9 +155,12 @@
     <Compile Include="CPControllers\FormNewsController.cs" />
     <Compile Include="CPControllers\ModAlbumController.cs" />
     <Compile Include="CPControllers\ModAlbumDetailController.cs" />
+    <Compile Include="CPControllers\FormBaoCaoBanDauSuCoController.cs" />
     <Compile Include="CPControllers\ModBaoCaoBanDauSuCoController.cs" />
+    <Compile Include="CPControllers\FormBaoCaoKetThucSuCoController.cs" />
     <Compile Include="CPControllers\ModBaoCaoKetThucSuCoController.cs" />
     <Compile Include="CPControllers\ModBaoCaoSuCoController.cs" />
+    <Compile Include="CPControllers\FormBaoCaoTongHopController.cs" />
     <Compile Include="CPControllers\ModBaoCaoTongHopController.cs" />
     <Compile Include="CPControllers\ModConfigController.cs" />
     <Compile Include="CPControllers\ModConfigSendMailController.cs" />

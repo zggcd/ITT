@@ -1651,8 +1651,12 @@
     <Content Include="TTPortal\Views\FormText\Index.ascx" />
     <Content Include="TTPortal\Views\ModAlbum\Add.ascx" />
     <Content Include="TTPortal\Views\ModAlbum\Index.ascx" />
+    <Content Include="TTPortal\Views\FormBaoCaoBanDauSuCo\Add.ascx" />
+    <Content Include="TTPortal\Views\FormBaoCaoBanDauSuCo\Index.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoBanDauSuCo\Add.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoBanDauSuCo\Index.ascx" />
+    <Content Include="TTPortal\Views\FormBaoCaoKetThucSuCo\Add.ascx" />
+    <Content Include="TTPortal\Views\FormBaoCaoKetThucSuCo\Index.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoKetThucSuCo\Add.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoKetThucSuCo\Index.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoSuCo\Add.ascx" />
@@ -1661,6 +1665,8 @@
     <Content Include="TTPortal\Views\ModBaoCaoTK\Phishing.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoTK\Botnet.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoTK\Deface.ascx" />
+    <Content Include="TTPortal\Views\FormBaoCaoTongHop\Add.ascx" />
+    <Content Include="TTPortal\Views\FormBaoCaoTongHop\Index.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoTongHop\Add.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoTongHop\Index.ascx" />
     <Content Include="TTPortal\Views\ModConfigSendMail\Add.ascx" />
