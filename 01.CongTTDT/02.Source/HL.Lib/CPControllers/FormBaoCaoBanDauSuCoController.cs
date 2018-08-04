@@ -25,6 +25,7 @@ namespace HL.Lib.CPControllers
             var dbQuery = ModBaoCaoBanDauSuCoService.Instance.CreateQuery()
                                 .Where(!string.IsNullOrEmpty(model.SearchText), o => o.Name.Contains(model.SearchText))
                                 .Where(model.State > 0, o => (o.State & model.State) == model.State)
+                                .Where(o => o.BaoCaoSuCoID == model.BaoCaoSuCoID)
                                 .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForCP("BaoCaoBanDauSuCo", model.MenuID, model.LangID))
                                 .Take(model.PageSize)
                                 .OrderBy(orderBy)
@@ -538,6 +539,7 @@ namespace HL.Lib.CPControllers
         public string SearchText { get; set; }
 
         public int[] ArrState { get; set; }
+        public int BaoCaoSuCoID { get; set; }
     }
 
     /// <summary>

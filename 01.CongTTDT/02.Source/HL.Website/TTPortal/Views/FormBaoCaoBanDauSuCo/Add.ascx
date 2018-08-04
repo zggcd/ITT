@@ -68,7 +68,7 @@
                 <table class="admintable">
                     <tr>
                         <td class="key">
-                            <label>User :</label>
+                            <label>Người báo cáo :</label>
                         </td>
                         <td>
                             <% List<CPUserEntity> listUser = CPUserService.Instance.CreateQuery().ToList(); %>
@@ -112,7 +112,7 @@
                     </tr>--%>
                     <tr>
                         <td class="key">
-                            <label>Tên :</label>
+                            <label>Tên báo cáo :</label>
                         </td>
                         <td>
                             <input class="text_input" type="text" name="Name" id="Name" value="<%=entity.Name %>" maxlength="255" />
@@ -120,7 +120,7 @@
                     </tr>
                     <tr>
                         <td class="key">
-                            <label>Mã :</label>
+                            <label>Mã báo cáo :</label>
                         </td>
                         <td>
                             <input class="text_input" type="text" name="Code" id="Code" value="<%=entity.Code %>" maxlength="255" />
@@ -128,7 +128,7 @@
                     </tr>
                 </table>
 
-                <fieldset class="adminform">
+                <%--                <fieldset class="adminform">
                     <legend>THÔNG TIN VỀ TỔ CHỨC/CÁ NHÂN BÁO CÁO SỰ CỐ</legend>
                     <table class="admintable">
                         <tr>
@@ -164,7 +164,7 @@
                             </td>
                         </tr>
                     </table>
-                </fieldset>
+                </fieldset>--%>
 
                 <fieldset class="adminform">
                     <legend>NGƯỜI LIÊN HỆ</legend>
@@ -583,7 +583,7 @@
                             <input class="text_input" type="text" name="Published1" id="Published1" value="<%=entity.Published1 %>" maxlength="255" />
                         </td>
                     </tr>--%>
-                    <%if (CPViewPage.UserPermissions.Approve)
+<%--                    <%if (CPViewPage.UserPermissions.Approve)
                         {%>
                     <tr>
                         <td class="key">
@@ -596,7 +596,7 @@
                             Không
                         </td>
                     </tr>
-                    <%} %>
+                    <%} %>--%>
                 </table>
             </div>
             <div class="clr"></div>

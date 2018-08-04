@@ -105,12 +105,12 @@
             </li>
             <%} %>
 
-            <li class="node"><a class="icon-16-article" href="/{CPPath}/ModBaoCaoSuCo/Index.aspx">Báo cáo sự cố</a>
-                <ul>
+            <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoSuCo/Index.aspx">Báo cáo sự cố</a>
+                <%--<ul>
                     <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoBanDauSuCo/Index.aspx">Báo cáo ban đầu sự cố mạng</a></li>
                     <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoKetThucSuCo/Index.aspx">Báo cáo kết thúc sự cố mạng</a></li>
                     <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTongHop/Index.aspx">Báo cáo tổng hợp</a></li>
-                </ul>
+                </ul>--%>
             </li>
             <li class="node"><a class="icon-16-article">Thành viên mạng lưới</a>
                 <ul>

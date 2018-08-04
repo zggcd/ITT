@@ -157,6 +157,7 @@ namespace HL.Lib.CPControllers
         public string SearchText { get; set; }
 
         public int[] ArrState { get; set; }
+        public int BaoCaoSuCoID { get; set; }
     }
 }
 
