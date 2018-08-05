@@ -5,7 +5,7 @@
     {
         if (!HL.Lib.Global.CPLogin.IsLogin())
         {
-            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString("/vn/Thanh-vien/Them-bc-ket-thuc-su-co.aspx"));
+            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString(Request.RawUrl));
             return;
         }
     }
@@ -15,6 +15,7 @@
     CPUserEntity entity = ViewBag.Data as CPUserEntity ?? CPLogin.CurrentUser;
     ModBaoCaoSuCoEntity sc = ViewBag.BCSuCo as ModBaoCaoSuCoEntity ?? new ModBaoCaoSuCoEntity();
     ModBaoCaoKetThucSuCoEntity entityBc = ViewBag.BaoCao as ModBaoCaoKetThucSuCoEntity ?? new ModBaoCaoKetThucSuCoEntity();
+    ModBaoCaoBanDauSuCoEntity entityBcBanDau = ViewBag.BCBanDau as ModBaoCaoBanDauSuCoEntity ?? new ModBaoCaoBanDauSuCoEntity();
     string endCode = ViewBag.EndCode;
     int isEdit = ViewBag.IsEdit ?? 0;
 
@@ -164,19 +165,19 @@
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642; Tên tổ chức/cá nhân báo cáo sự cố (*)</span>
-                                        <input name="ToChuc_Ten" maxlength="255" id="ToChuc_Ten" class="textstyle1" type="text" value="<%=entityBc.ToChuc_Ten %>" />
+                                        <input name="ToChuc_Ten" maxlength="255" id="ToChuc_Ten" class="textstyle1" type="text" value="<%=sc.Name %>" disabled />
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'></span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'> Địa chỉ: (*)</span>
-                                        <input name="ToChuc_DiaChi" maxlength="255" id="ToChuc_DiaChi" class="textstyle1" type="text" value="<%=entityBc.ToChuc_DiaChi %>" />
+                                        <input name="ToChuc_DiaChi" maxlength="255" id="ToChuc_DiaChi" class="textstyle1" type="text" value="<%=sc.Address %>" disabled />
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'></span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'> Điện thoại (*)</span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
-                                            <input name="ToChuc_DienThoai" maxlength="255" id="ToChuc_DienThoai" class="textstyle1" type="text" value="<%=entityBc.ToChuc_DienThoai %>" />
+                                            <input name="ToChuc_DienThoai" maxlength="255" id="ToChuc_DienThoai" class="textstyle1" type="text" value="<%=sc.Phone %>" disabled />
                                             Email (*) 
-                                    <input name="ToChuc_Email" maxlength="255" id="ToChuc_Email" class="textstyle1" type="text" value="<%=entityBc.ToChuc_Email %>" />
+                                    <input name="ToChuc_Email" maxlength="255" id="ToChuc_Email" class="textstyle1" type="text" value="<%=sc.Email %>" disabled />
                                         </span>
                                     </p>
 
@@ -186,11 +187,11 @@
                                         </b>
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>: Số ký hiệu</span>
                                         <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
-                                            <input style="width: 15%;" name="SoKyHieu" maxlength="255" id="SoKyHieu" class="textstyle1" type="text" value="<%=entityBc.SoKyHieu %>" />
+                                            <input style="width: 15%;" name="SoKyHieu" maxlength="255" id="SoKyHieu" class="textstyle1" type="text" value="<%=entityBcBanDau.Code %>" disabled />
                                         </span>
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Ngày báo cáo:</span>
                                         <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
-                                            <input style="width: 10%;" name="NgayBaoCao" maxlength="255" id="NgayBaoCao" class="textstyle1" type="text" value="<%=string.Format("{0:dd/MM/yyyy}", entityBc.NgayBaoCao) %>" />
+                                            <input style="width: 10%;" name="NgayBaoCao" maxlength="255" id="NgayBaoCao" class="textstyle1" type="text" value="<%=string.Format("{0:dd/MM/yyyy}", entityBcBanDau.Published) %>" disabled />
                                         </span>
                                     </p>
 
@@ -282,7 +283,7 @@
                                             <td width="605" valign="top" style='width: 454.05pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.25pt'>
                                                     <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>
-                                                        <textarea name="Summary" maxlength="255" id="Summary" class="textstyle1" rows="1" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.Summary %></textarea>
+                                                        <textarea name="Summary" maxlength="255" id="Summary" class="textstyle1" rows="3" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.Summary %></textarea>
                                                     </span>
                                                 </p>
                                             </td>
@@ -351,7 +352,7 @@
                                                 </p>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.25pt'>
                                                     <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>
-                                                        <textarea name="KetQua" maxlength="255" id="KetQua" class="textstyle1" rows="1" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.KetQua %></textarea>
+                                                        <textarea name="KetQua" maxlength="255" id="KetQua" class="textstyle1" rows="3" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.KetQua %></textarea>
                                                     </span>
                                                 </p>
                                             </td>
@@ -379,7 +380,7 @@
                                                 </p>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.25pt'>
                                                     <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-fareast-font-family: "Times New Roman"; mso-ansi-language: EN-US'>
-                                                        <textarea name="Files" maxlength="255" id="Files" class="textstyle1" rows="1" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.Files %></textarea>
+                                                        <textarea name="Files" maxlength="255" id="Files" class="textstyle1" rows="3" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.Files %></textarea>
                                                     </span>
                                                 </p>
                                             </td>

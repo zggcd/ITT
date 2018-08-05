@@ -5,7 +5,7 @@
     {
         if (!HL.Lib.Global.CPLogin.IsLogin())
         {
-            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString("/vn/Thanh-vien/Them-bc-ban-dau-su-co.aspx"));
+            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString(Request.RawUrl));
             return;
         }
     }

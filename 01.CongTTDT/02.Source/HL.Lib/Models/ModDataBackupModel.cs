@@ -17,7 +17,7 @@ namespace HL.Lib.Models
         public string Url { get; set; }
 
         [DataInfo]
-        public DateTime Published { get; set; }
+        public DateTime? Published { get; set; }
 
         #endregion
 

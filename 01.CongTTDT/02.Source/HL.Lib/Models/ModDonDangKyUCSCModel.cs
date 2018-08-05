@@ -137,10 +137,10 @@ namespace HL.Lib.Models
         public string LLKhac_Khac { get; set; }
 
         [DataInfo]
-        public DateTime Published { get; set; }
+        public DateTime? Published { get; set; }
 
         [DataInfo]
-        public DateTime Published1 { get; set; }
+        public DateTime? Published1 { get; set; }
 
         [DataInfo]
         public int Order { get; set; }

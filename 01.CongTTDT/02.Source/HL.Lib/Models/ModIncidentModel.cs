@@ -119,7 +119,7 @@ namespace HL.Lib.Models
         public string Sector { get; set; }
 
         [DataInfo]
-        public DateTime Published { get; set; }
+        public DateTime? Published { get; set; }
 
         [DataInfo]
         public int Order { get; set; }

@@ -29,7 +29,7 @@ namespace HL.Lib.Models
         public override string Name { get; set; }
 
         [DataInfo]
-        public DateTime Published { get; set; }
+        public DateTime? Published { get; set; }
 
         [DataInfo]
         public DateTime? Published1 { get; set; }

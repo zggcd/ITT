@@ -59,10 +59,10 @@ namespace HL.Lib.Models
         public string DeXuat { get; set; }
 
         [DataInfo]
-        public DateTime Published { get; set; }
+        public DateTime? Published { get; set; }
 
         [DataInfo]
-        public DateTime Published1 { get; set; }
+        public DateTime? Published1 { get; set; }
 
         [DataInfo]
         public int Order { get; set; }

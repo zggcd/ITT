@@ -5,7 +5,7 @@
     {
         if (!HL.Lib.Global.CPLogin.IsLogin())
         {
-            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString("/vn/Thanh-vien/Them-bc-ket-thuc-su-co.aspx"));
+            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString(Request.RawUrl));
             return;
         }
     }
@@ -182,12 +182,12 @@
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Tên cơ quan/tổ chức:</span>
-                                        <input name="TenToChuc" maxlength="255" id="TenToChuc" class="textstyle1" type="text" value="<%=entityBc.TenToChuc %>" />
+                                        <input name="TenToChuc" maxlength="255" id="TenToChuc" class="textstyle1" type="text" value="<%=sc.Name %>" disabled />
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>Địa chỉ:</span>
-                                        <input name="DiaChi" maxlength="255" id="DiaChi" class="textstyle1" type="text" value="<%=entityBc.DiaChi %>" />
+                                        <input name="DiaChi" maxlength="255" id="DiaChi" class="textstyle1" type="text" value="<%=sc.Address %>" disabled />
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
@@ -241,7 +241,7 @@
 
                                         <%for (int i = 0; i < countLoaiSuCo; i++)
                                             {
-                                                var row = currSuCo.Where(o => o.MenuID == lstLoaiSuCo[i].ID).SingleOrDefault();
+                                                var row = currSuCo.Where(o => o.MenuID == lstLoaiSuCo[i].ID).FirstOrDefault();
                                                 if (row == null) row = new ModSoLuongSuCoEntity();
                                         %>
                                         <tr>
@@ -332,7 +332,7 @@
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                        <textarea name="DSToChucHoTro" maxlength="255" id="DSToChucHoTro" class="textstyle1" rows="1" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.DSToChucHoTro %></textarea>
+                                        <textarea name="DSToChucHoTro" maxlength="255" id="DSToChucHoTro" class="textstyle1" rows="3" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.DSToChucHoTro %></textarea>
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -340,7 +340,7 @@
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                        <textarea name="DSToChucNuocNgoaiHoTro" maxlength="255" id="DSToChucNuocNgoaiHoTro" class="textstyle1" rows="1" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.DSToChucNuocNgoaiHoTro %></textarea>
+                                        <textarea name="DSToChucNuocNgoaiHoTro" maxlength="255" id="DSToChucNuocNgoaiHoTro" class="textstyle1" rows="3" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.DSToChucNuocNgoaiHoTro %></textarea>
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
@@ -348,7 +348,7 @@
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                                        <textarea name="DeXuat" maxlength="255" id="DeXuat" class="textstyle1" rows="1" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.DeXuat %></textarea>
+                                        <textarea name="DeXuat" maxlength="255" id="DeXuat" class="textstyle1" rows="3" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityBc.DeXuat %></textarea>
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>

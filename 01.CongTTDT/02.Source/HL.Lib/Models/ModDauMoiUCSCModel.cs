@@ -47,7 +47,7 @@ namespace HL.Lib.Models
         public string Email { get; set; }
 
         [DataInfo]
-        public DateTime Published { get; set; }
+        public DateTime? Published { get; set; }
 
         [DataInfo]
         public int Order { get; set; }

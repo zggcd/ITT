@@ -47,7 +47,7 @@ namespace HL.Lib.Models
         public int CreateUser { get; set; }
 
         [DataInfo]
-        public DateTime Published { get; set; }
+        public DateTime? Published { get; set; }
 
         [DataInfo]
         public int UpdateUser { get; set; }

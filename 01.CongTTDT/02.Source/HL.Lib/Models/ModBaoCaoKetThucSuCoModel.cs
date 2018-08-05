@@ -77,10 +77,10 @@ namespace HL.Lib.Models
         public string Files { get; set; }
 
         [DataInfo]
-        public DateTime Published { get; set; }
+        public DateTime? Published { get; set; }
 
         [DataInfo]
-        public DateTime Published1 { get; set; }
+        public DateTime? Published1 { get; set; }
 
         [DataInfo]
         public int Order { get; set; }

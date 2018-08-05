@@ -42,7 +42,7 @@ namespace HL.Lib.Models
         public string IP { get; set; }
 
         [DataInfo]
-        public DateTime Published { get; set; }
+        public DateTime? Published { get; set; }
 
         [DataInfo]
         public int Order { get; set; }

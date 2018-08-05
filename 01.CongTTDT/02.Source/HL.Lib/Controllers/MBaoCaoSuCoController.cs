@@ -57,59 +57,56 @@ namespace HL.Lib.Controllers
                     .Where(userId > 0, o => o.UserID == userId)
                     .Where(o => o.Code == code)
                     .ToSingle();
-                if (sc == null)
+                if (sc != null)
                 {
-                    ViewPage.Alert("Bạn chưa tạo báo cáo sự cố.");
-                    ViewPage.Navigate("/vn/Bao-cao-su-co.aspx");
-                }
-
-                ViewBag.BCSuCo = sc;
-                layout = "BCBanDauUCSC";
-                ModBaoCaoBanDauSuCoEntity bcBanDau = ModBaoCaoBanDauSuCoService.Instance.CreateQuery()
-                    .Where(o => o.BaoCaoSuCoID == sc.ID)
-                    .ToSingle();
-                if (bcBanDau == null)
-                {
-                    DateTime dt = DateTime.Now;
-                    bcBanDau = new ModBaoCaoBanDauSuCoEntity()
+                    ViewBag.BCSuCo = sc;
+                    layout = "BCBanDauUCSC";
+                    ModBaoCaoBanDauSuCoEntity bcBanDau = ModBaoCaoBanDauSuCoService.Instance.CreateQuery()
+                        .Where(o => o.BaoCaoSuCoID == sc.ID)
+                        .ToSingle();
+                    if (bcBanDau == null)
                     {
-                        ChiTiet_NgayGioPhatHien = dt,
-                        ThoiGianThucHien = dt
-                    };
+                        DateTime dt = DateTime.Now;
+                        bcBanDau = new ModBaoCaoBanDauSuCoEntity()
+                        {
+                            ChiTiet_NgayGioPhatHien = dt,
+                            ThoiGianThucHien = dt
+                        };
+                    }
+                    else
+                    {
+                        ViewBag.CachThuc = ModInfoMagicService.Instance.CreateQuery()
+                            .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == bcBanDau.ID)
+                            .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("CachThuc", MenuID, ViewPage.CurrentLang.ID))
+                            .ToList();
+
+                        ViewBag.ThongBao = ModInfoMagicService.Instance.CreateQuery()
+                            .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == bcBanDau.ID)
+                            .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("GuiThongBaoSuCo", MenuID, ViewPage.CurrentLang.ID))
+                            .ToList();
+
+                        ViewBag.DichVu = ModInfoMagicService.Instance.CreateQuery()
+                            .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == bcBanDau.ID)
+                            .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("DichVu", MenuID, ViewPage.CurrentLang.ID))
+                            .ToList();
+
+                        ViewBag.BienPhap = ModInfoMagicService.Instance.CreateQuery()
+                            .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == bcBanDau.ID)
+                            .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("BienPhapATTT", MenuID, ViewPage.CurrentLang.ID))
+                            .ToList();
+
+                        ViewBag.ThongTinGuiKem = ModInfoMagicService.Instance.CreateQuery()
+                            .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == bcBanDau.ID)
+                            .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("ThongTinGuiKem", MenuID, ViewPage.CurrentLang.ID))
+                            .ToList();
+
+                        //ViewBag.EndCode = code;
+                        ViewBag.IsEdit = 1;
+                    }
+
+                    ViewBag.EndCode = code;
+                    ViewBag.BaoCao = bcBanDau;
                 }
-                else
-                {
-                    ViewBag.CachThuc = ModInfoMagicService.Instance.CreateQuery()
-                        .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == bcBanDau.ID)
-                        .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("CachThuc", MenuID, ViewPage.CurrentLang.ID))
-                        .ToList();
-
-                    ViewBag.ThongBao = ModInfoMagicService.Instance.CreateQuery()
-                        .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == bcBanDau.ID)
-                        .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("GuiThongBaoSuCo", MenuID, ViewPage.CurrentLang.ID))
-                        .ToList();
-
-                    ViewBag.DichVu = ModInfoMagicService.Instance.CreateQuery()
-                        .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == bcBanDau.ID)
-                        .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("DichVu", MenuID, ViewPage.CurrentLang.ID))
-                        .ToList();
-
-                    ViewBag.BienPhap = ModInfoMagicService.Instance.CreateQuery()
-                        .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == bcBanDau.ID)
-                        .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("BienPhapATTT", MenuID, ViewPage.CurrentLang.ID))
-                        .ToList();
-
-                    ViewBag.ThongTinGuiKem = ModInfoMagicService.Instance.CreateQuery()
-                        .Where(o => o.Activity == true && o.BaoCaoBanDauSuCoID == bcBanDau.ID)
-                        .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("ThongTinGuiKem", MenuID, ViewPage.CurrentLang.ID))
-                        .ToList();
-
-                    //ViewBag.EndCode = code;
-                    ViewBag.IsEdit = 1;
-                }
-
-                ViewBag.EndCode = code;
-                ViewBag.BaoCao = bcBanDau;
             }
             else if (ec.Contains("bc-tong-hop-su-co"))
             {
@@ -119,32 +116,31 @@ namespace HL.Lib.Controllers
                     .Where(userId > 0, o => o.UserID == userId)
                     .Where(o => o.Code == code)
                     .ToSingle();
-                if (sc == null)
+                if (sc != null)
                 {
-                    ViewPage.Alert("Bạn chưa tạo báo cáo sự cố.");
-                    ViewPage.Navigate("/vn/Bao-cao-su-co.aspx");
-                }
-
-                ViewBag.BCSuCo = sc;
-                layout = "BCTongHopUCSC";
-                ModBaoCaoTongHopEntity bcTongHop = ModBaoCaoTongHopService.Instance.CreateQuery()
-                    .Where(o => o.BaoCaoSuCoID == sc.ID)
-                    .ToSingle();
-                if (bcTongHop == null)
-                {
-                    DateTime dt = DateTime.Now;
-                    ViewBag.BaoCao = new ModBaoCaoTongHopEntity()
+                    ViewBag.BCSuCo = sc;
+                    layout = "BCTongHopUCSC";
+                    ModBaoCaoTongHopEntity bcTongHop = ModBaoCaoTongHopService.Instance.CreateQuery()
+                        .Where(o => o.BaoCaoSuCoID == sc.ID)
+                        .ToSingle();
+                    if (bcTongHop == null)
                     {
-                        TuNgay = dt,
-                        DenNgay = dt
-                    };
+                        DateTime dt = DateTime.Now;
+                        bcTongHop = new ModBaoCaoTongHopEntity()
+                        {
+                            TuNgay = dt,
+                            DenNgay = dt
+                        };
+                    }
+                    else
+                    {
+                        ViewBag.IsEdit = 1;
+                        ViewBag.SuCo = ModSoLuongSuCoService.Instance.CreateQuery().Where(o => o.Activity == true && o.BaoCaoTongHopID == bcTongHop.ID).ToList();
+                    }
+
+                    ViewBag.EndCode = code;
+                    ViewBag.BaoCao = bcTongHop;
                 }
-                else
-                {
-                    ViewBag.IsEdit = 1;
-                    ViewBag.SuCo = ModSoLuongSuCoService.Instance.CreateQuery().Where(o => o.Activity == true && o.BaoCaoTongHopID == bcTongHop.ID).ToList();
-                }
-                ViewBag.EndCode = code;
             }
             else if (ec.Contains("bc-ket-thuc-su-co"))
             {
@@ -154,31 +150,34 @@ namespace HL.Lib.Controllers
                     .Where(userId > 0, o => o.UserID == userId)
                     .Where(o => o.Code == code)
                     .ToSingle();
-                if (sc == null)
+                if (sc != null)
                 {
-                    ViewPage.Alert("Bạn chưa tạo báo cáo sự cố.");
-                    ViewPage.Navigate("/vn/Bao-cao-su-co.aspx");
-                }
 
-                ViewBag.BCSuCo = sc;
-                layout = "BCKetThucUCSC";
-                ModBaoCaoKetThucSuCoEntity bcKetThuc = ModBaoCaoKetThucSuCoService.Instance.CreateQuery()
-                    .Where(o => o.BaoCaoSuCoID == sc.ID)
-                    .ToSingle();
-                if (bcKetThuc == null)
-                {
-                    DateTime dt = DateTime.Now;
-                    ViewBag.BaoCao = new ModBaoCaoKetThucSuCoEntity()
+                    ViewBag.BCSuCo = sc;
+                    layout = "BCKetThucUCSC";
+                    ModBaoCaoKetThucSuCoEntity bcKetThuc = ModBaoCaoKetThucSuCoService.Instance.CreateQuery()
+                        .Where(o => o.BaoCaoSuCoID == sc.ID)
+                        .ToSingle();
+                    ViewBag.BCBanDau = ModBaoCaoBanDauSuCoService.Instance.CreateQuery()
+                        .Where(o => o.BaoCaoSuCoID == sc.ID)
+                        .ToSingle();
+                    if (bcKetThuc == null)
                     {
-                        NgayBaoCao = dt,
-                        NgayGioPhatHien = dt
-                    };
+                        DateTime dt = DateTime.Now;
+                        bcKetThuc = new ModBaoCaoKetThucSuCoEntity()
+                        {
+                            NgayBaoCao = dt,
+                            NgayGioPhatHien = dt
+                        };
+                    }
+                    else
+                    {
+                        ViewBag.IsEdit = 1;
+                    }
+
+                    ViewBag.EndCode = code;
+                    ViewBag.BaoCao = bcKetThuc;
                 }
-                else
-                {
-                    ViewBag.IsEdit = 1;
-                }
-                ViewBag.EndCode = code;
             }
 
             if (!string.IsNullOrEmpty(layout)) RenderView(layout);
@@ -292,6 +291,8 @@ namespace HL.Lib.Controllers
                     entity.MenuID = menu != null ? menu.ID : 0;
                     entity.UserID = Lib.Global.CPLogin.UserID;
                     entity.Published = DateTime.Now;
+                    entity.Order = GetMaxOrder_BCSuCo();
+                    entity.Activity = true;
                     ModBaoCaoSuCoService.Instance.Save(entity);
                 }
                 catch (Exception ex)
@@ -376,7 +377,6 @@ namespace HL.Lib.Controllers
                         bc.Address = entity.Address;
                         bc.Phone = entity.Phone;
                         bc.Email = entity.Email;
-                        bc.MenuID = entity.MenuID;
                         bc.UserID1 = Lib.Global.CPLogin.UserID;
                         bc.Published1 = DateTime.Now;
                         ModBaoCaoSuCoService.Instance.Save(bc);
@@ -402,181 +402,175 @@ namespace HL.Lib.Controllers
                 .Where(userId > 0, o => o.UserID == userId)
                 .Where(o => o.Code == codes)
                 .ToSingle();
-            if (sc == null)
+            if (sc != null)
             {
-                ViewPage.Alert("Bạn chưa tạo báo cáo sự cố.");
-                ViewPage.Navigate("/vn/Bao-cao-su-co.aspx");
-            }
-            //ModBaoCaoSuCoEntity sc = ModBaoCaoSuCoService.Instance.CreateQuery()
-            //    .Where(userId > 0, o => o.UserID == userId)
-            //    .Where(o => o.Code == endCode)
-            //    .ToSingle();
 
-            DateTime date = DateTime.Now;
-            string ngayGioPhatHien = append.Ngay + " " + append.Gio + ":" + append.Phut;
-            string[] arr = append.ThoiGian.Split('/');
-            string thoiGianThucHien = "";
-            if (arr.Length == 5) thoiGianThucHien = arr[0] + "/" + arr[1] + "/" + arr[2] + " " + arr[3] + ":" + arr[4];
-            string code = "BCBDSC" + ModBaoCaoBanDauSuCoService.Instance.GetMaxID();
-            entity.Name = code;
-            entity.Code = Data.GetCode(code);
-            entity.UserID = Lib.Global.CPLogin.UserID;
-            if (!string.IsNullOrEmpty(ngayGioPhatHien)) entity.ChiTiet_NgayGioPhatHien = HL.Core.Global.Convert.ToDateTime(ngayGioPhatHien);
-            else entity.ChiTiet_NgayGioPhatHien = DateTime.MinValue;
-            if (!string.IsNullOrEmpty(thoiGianThucHien)) entity.ThoiGianThucHien = HL.Core.Global.Convert.ToDateTime(thoiGianThucHien);
-            else entity.ThoiGianThucHien = DateTime.MinValue;
-            entity.Order = GetMaxOrder_BCBanDau();
-            entity.Published = date;
-            entity.Activity = false;
-            entity.BaoCaoSuCoID = sc.ID;
-            int id = ModBaoCaoBanDauSuCoService.Instance.Save(entity);
+                DateTime date = DateTime.Now;
+                string ngayGioPhatHien = append.Ngay + " " + append.Gio + ":" + append.Phut;
+                string[] arr = append.ThoiGian.Split('/');
+                string thoiGianThucHien = "";
+                if (arr.Length == 5) thoiGianThucHien = arr[0] + "/" + arr[1] + "/" + arr[2] + " " + arr[3] + ":" + arr[4];
+                string code = "BCBDSC" + ModBaoCaoBanDauSuCoService.Instance.GetMaxID();
+                entity.Name = code;
+                entity.Code = Data.GetCode(code);
+                entity.UserID = Lib.Global.CPLogin.UserID;
+                if (!string.IsNullOrEmpty(ngayGioPhatHien)) entity.ChiTiet_NgayGioPhatHien = HL.Core.Global.Convert.ToDateTime(ngayGioPhatHien);
+                else entity.ChiTiet_NgayGioPhatHien = DateTime.MinValue;
+                if (!string.IsNullOrEmpty(thoiGianThucHien)) entity.ThoiGianThucHien = HL.Core.Global.Convert.ToDateTime(thoiGianThucHien);
+                else entity.ThoiGianThucHien = DateTime.MinValue;
+                entity.Order = GetMaxOrder_BCBanDau();
+                entity.Published = date;
+                entity.Activity = true;
+                entity.BaoCaoSuCoID = sc.ID;
+                int id = ModBaoCaoBanDauSuCoService.Instance.Save(entity);
 
-            //Cach thuc phat hien
-            int num = modelInfo.chkCachThuc != null ? modelInfo.chkCachThuc.Length : 0;
-            for (int i = 0; i < num; i++)
-            {
-                string[] tmp = modelInfo.chkCachThuc[i].Split('_');
-                if (tmp.Length == 3)
+                //Cach thuc phat hien
+                int num = modelInfo.chkCachThuc != null ? modelInfo.chkCachThuc.Length : 0;
+                for (int i = 0; i < num; i++)
                 {
-                    ModInfoMagicEntity entityTmp = new ModInfoMagicEntity()
+                    string[] tmp = modelInfo.chkCachThuc[i].Split('_');
+                    if (tmp.Length == 3)
                     {
-                        BaoCaoBanDauSuCoID = id,
-                        Order = GetMaxOrder_InfoMagic(),
-                        Published = date,
-                        Activity = true
-                    };
-                    entityTmp.MenuID = HL.Core.Global.Convert.ToInt(tmp[2]);
-                    if (tmp[0] == "1")
-                    {
-                        int idx = HL.Core.Global.Convert.ToInt(tmp[1]);
-                        if (modelInfo.txtCachThuc != null && modelInfo.txtCachThuc.Length >= idx)
+                        ModInfoMagicEntity entityTmp = new ModInfoMagicEntity()
                         {
-                            entityTmp.Name = modelInfo.txtCachThuc[idx];
-                            entityTmp.Code = Data.GetCode(modelInfo.txtCachThuc[idx]);
-                        }
-                    }
-                    ModInfoMagicService.Instance.Save(entityTmp);
-                }
-            }
-
-            //Da gui thong bao su co
-            num = modelInfo.chkThongBao != null ? modelInfo.chkThongBao.Length : 0;
-            for (int i = 0; i < num; i++)
-            {
-                string[] tmp = modelInfo.chkThongBao[i].Split('_');
-                if (tmp.Length == 3)
-                {
-                    ModInfoMagicEntity entityTmp = new ModInfoMagicEntity()
-                    {
-                        BaoCaoBanDauSuCoID = id,
-                        Order = GetMaxOrder_InfoMagic(),
-                        Published = date,
-                        Activity = true
-                    };
-                    entityTmp.MenuID = HL.Core.Global.Convert.ToInt(tmp[2]);
-                    if (tmp[0] == "1")
-                    {
-                        int idx = HL.Core.Global.Convert.ToInt(tmp[1]);
-                        if (modelInfo.txtThongBao != null && modelInfo.txtThongBao.Length >= idx)
+                            BaoCaoBanDauSuCoID = id,
+                            Order = GetMaxOrder_InfoMagic(),
+                            Published = date,
+                            Activity = true
+                        };
+                        entityTmp.MenuID = HL.Core.Global.Convert.ToInt(tmp[2]);
+                        if (tmp[0] == "1")
                         {
-                            entityTmp.Name = modelInfo.txtThongBao[idx];
-                            entityTmp.Code = Data.GetCode(modelInfo.txtThongBao[idx]);
-                        }
-                    }
-                    ModInfoMagicService.Instance.Save(entityTmp);
-                }
-            }
-
-            //Dich vu
-            num = modelInfo.chkDichVu != null ? modelInfo.chkDichVu.Length : 0;
-            for (int i = 0; i < num; i++)
-            {
-                string[] tmp = modelInfo.chkDichVu[i].Split('_');
-                if (tmp.Length == 3)
-                {
-                    ModInfoMagicEntity entityTmp = new ModInfoMagicEntity()
-                    {
-                        BaoCaoBanDauSuCoID = id,
-                        Order = GetMaxOrder_InfoMagic(),
-                        Published = date,
-                        Activity = true
-                    };
-                    entityTmp.MenuID = HL.Core.Global.Convert.ToInt(tmp[2]);
-                    if (tmp[0] == "1")
-                    {
-                        int idx = HL.Core.Global.Convert.ToInt(tmp[1]);
-                        if (modelInfo.txtDichVu != null && modelInfo.txtDichVu.Length >= idx)
-                        {
-                            entityTmp.Name = modelInfo.txtDichVu[idx];
-                            entityTmp.Code = Data.GetCode(modelInfo.txtDichVu[idx]);
-                        }
-                    }
-                    ModInfoMagicService.Instance.Save(entityTmp);
-                }
-            }
-
-            //Bien phap
-            num = modelInfo.chkBienPhap != null ? modelInfo.chkBienPhap.Length : 0;
-            for (int i = 0; i < num; i++)
-            {
-                string[] tmp = modelInfo.chkBienPhap[i].Split('_');
-                if (tmp.Length == 3)
-                {
-                    ModInfoMagicEntity entityTmp = new ModInfoMagicEntity()
-                    {
-                        BaoCaoBanDauSuCoID = id,
-                        Order = GetMaxOrder_InfoMagic(),
-                        Published = date,
-                        Activity = true
-                    };
-                    entityTmp.MenuID = HL.Core.Global.Convert.ToInt(tmp[2]);
-                    if (tmp[0] == "1")
-                    {
-                        int idx = HL.Core.Global.Convert.ToInt(tmp[1]);
-                        if (modelInfo.txtBienPhap != null && modelInfo.txtBienPhap.Length >= idx)
-                        {
-                            entityTmp.Name = modelInfo.txtBienPhap[idx];
-                            entityTmp.Code = Data.GetCode(modelInfo.txtBienPhap[idx]);
-                        }
-                    }
-                    ModInfoMagicService.Instance.Save(entityTmp);
-                }
-            }
-
-            //Thong tin gui kem
-            //TODO Phan nay dang insert chua day du checkbox khi check all
-            num = modelInfo.chkThongTinGuiKem != null ? modelInfo.chkThongTinGuiKem.Length : 0;
-            for (int i = 0; i < num; i++)
-            {
-                string[] tmp = modelInfo.chkThongTinGuiKem[i].Split('_');
-                if (tmp.Length == 3)
-                {
-                    ModInfoMagicEntity entityTmp = new ModInfoMagicEntity()
-                    {
-                        BaoCaoBanDauSuCoID = id,
-                        Order = GetMaxOrder_InfoMagic(),
-                        Published = date,
-                        Activity = true
-                    };
-                    entityTmp.MenuID = HL.Core.Global.Convert.ToInt(tmp[2]);
-                    if (tmp[0] == "1")
-                    {
-                        int idx = HL.Core.Global.Convert.ToInt(tmp[1]);
-                        if (modelInfo.txtThongTinGuiKem != null && modelInfo.txtThongTinGuiKem.Length >= idx)
-                        {
-                            entityTmp.Name = modelInfo.txtThongTinGuiKem[idx];
-                            entityTmp.Code = Data.GetCode(modelInfo.txtThongTinGuiKem[idx]);
+                            int idx = HL.Core.Global.Convert.ToInt(tmp[1]);
+                            if (modelInfo.txtCachThuc != null && modelInfo.txtCachThuc.Length >= idx)
+                            {
+                                entityTmp.Name = modelInfo.txtCachThuc[idx];
+                                entityTmp.Code = Data.GetCode(modelInfo.txtCachThuc[idx]);
+                            }
                         }
                         ModInfoMagicService.Instance.Save(entityTmp);
                     }
                 }
+
+                //Da gui thong bao su co
+                num = modelInfo.chkThongBao != null ? modelInfo.chkThongBao.Length : 0;
+                for (int i = 0; i < num; i++)
+                {
+                    string[] tmp = modelInfo.chkThongBao[i].Split('_');
+                    if (tmp.Length == 3)
+                    {
+                        ModInfoMagicEntity entityTmp = new ModInfoMagicEntity()
+                        {
+                            BaoCaoBanDauSuCoID = id,
+                            Order = GetMaxOrder_InfoMagic(),
+                            Published = date,
+                            Activity = true
+                        };
+                        entityTmp.MenuID = HL.Core.Global.Convert.ToInt(tmp[2]);
+                        if (tmp[0] == "1")
+                        {
+                            int idx = HL.Core.Global.Convert.ToInt(tmp[1]);
+                            if (modelInfo.txtThongBao != null && modelInfo.txtThongBao.Length >= idx)
+                            {
+                                entityTmp.Name = modelInfo.txtThongBao[idx];
+                                entityTmp.Code = Data.GetCode(modelInfo.txtThongBao[idx]);
+                            }
+                        }
+                        ModInfoMagicService.Instance.Save(entityTmp);
+                    }
+                }
+
+                //Dich vu
+                num = modelInfo.chkDichVu != null ? modelInfo.chkDichVu.Length : 0;
+                for (int i = 0; i < num; i++)
+                {
+                    string[] tmp = modelInfo.chkDichVu[i].Split('_');
+                    if (tmp.Length == 3)
+                    {
+                        ModInfoMagicEntity entityTmp = new ModInfoMagicEntity()
+                        {
+                            BaoCaoBanDauSuCoID = id,
+                            Order = GetMaxOrder_InfoMagic(),
+                            Published = date,
+                            Activity = true
+                        };
+                        entityTmp.MenuID = HL.Core.Global.Convert.ToInt(tmp[2]);
+                        if (tmp[0] == "1")
+                        {
+                            int idx = HL.Core.Global.Convert.ToInt(tmp[1]);
+                            if (modelInfo.txtDichVu != null && modelInfo.txtDichVu.Length >= idx)
+                            {
+                                entityTmp.Name = modelInfo.txtDichVu[idx];
+                                entityTmp.Code = Data.GetCode(modelInfo.txtDichVu[idx]);
+                            }
+                        }
+                        ModInfoMagicService.Instance.Save(entityTmp);
+                    }
+                }
+
+                //Bien phap
+                num = modelInfo.chkBienPhap != null ? modelInfo.chkBienPhap.Length : 0;
+                for (int i = 0; i < num; i++)
+                {
+                    string[] tmp = modelInfo.chkBienPhap[i].Split('_');
+                    if (tmp.Length == 3)
+                    {
+                        ModInfoMagicEntity entityTmp = new ModInfoMagicEntity()
+                        {
+                            BaoCaoBanDauSuCoID = id,
+                            Order = GetMaxOrder_InfoMagic(),
+                            Published = date,
+                            Activity = true
+                        };
+                        entityTmp.MenuID = HL.Core.Global.Convert.ToInt(tmp[2]);
+                        if (tmp[0] == "1")
+                        {
+                            int idx = HL.Core.Global.Convert.ToInt(tmp[1]);
+                            if (modelInfo.txtBienPhap != null && modelInfo.txtBienPhap.Length >= idx)
+                            {
+                                entityTmp.Name = modelInfo.txtBienPhap[idx];
+                                entityTmp.Code = Data.GetCode(modelInfo.txtBienPhap[idx]);
+                            }
+                        }
+                        ModInfoMagicService.Instance.Save(entityTmp);
+                    }
+                }
+
+                //Thong tin gui kem
+                //TODO Phan nay dang insert chua day du checkbox khi check all
+                num = modelInfo.chkThongTinGuiKem != null ? modelInfo.chkThongTinGuiKem.Length : 0;
+                for (int i = 0; i < num; i++)
+                {
+                    string[] tmp = modelInfo.chkThongTinGuiKem[i].Split('_');
+                    if (tmp.Length == 3)
+                    {
+                        ModInfoMagicEntity entityTmp = new ModInfoMagicEntity()
+                        {
+                            BaoCaoBanDauSuCoID = id,
+                            Order = GetMaxOrder_InfoMagic(),
+                            Published = date,
+                            Activity = true
+                        };
+                        entityTmp.MenuID = HL.Core.Global.Convert.ToInt(tmp[2]);
+                        if (tmp[0] == "1")
+                        {
+                            int idx = HL.Core.Global.Convert.ToInt(tmp[1]);
+                            if (modelInfo.txtThongTinGuiKem != null && modelInfo.txtThongTinGuiKem.Length >= idx)
+                            {
+                                entityTmp.Name = modelInfo.txtThongTinGuiKem[idx];
+                                entityTmp.Code = Data.GetCode(modelInfo.txtThongTinGuiKem[idx]);
+                            }
+                        }
+                        ModInfoMagicService.Instance.Save(entityTmp);
+                    }
+                }
+
+                ViewBag.BaoCao = entity;
+
+                ViewPage.Alert("Tạo báo cáo ban đầu thành công.");
+                ViewPage.Navigate("/vn/Bao-cao-su-co.aspx");
+                //ViewPage.RefreshPage();
             }
-
-            ViewBag.BaoCao = entity;
-
-            ViewPage.Alert("Tạo báo cáo ban đầu thành công.");
-            ViewPage.RefreshPage();
-            //ViewPage.Navigate("/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx");
         }
 
         public void ActionUpdateBCBanDauUCSC(ModBaoCaoBanDauSuCoEntity entityBc, MInfoMagicModel modelInfo, MAppend append, string endCode)
@@ -613,7 +607,7 @@ namespace HL.Lib.Controllers
                 entityBc.Order = entity.Order;
                 entityBc.Published = entity.Published;
                 entityBc.Published1 = date;
-                entityBc.Activity = false;
+                entityBc.Activity = true;
                 ModBaoCaoBanDauSuCoService.Instance.Save(entityBc);
 
                 //Xoa toan bo thong tin InfoMagic cua Bao cao ban dau su co
@@ -770,33 +764,51 @@ namespace HL.Lib.Controllers
             }
         }
 
-        public void ActionAddBCKetThucUCSC(ModBaoCaoKetThucSuCoEntity entity, MAppend append)
+        public void ActionAddBCKetThucUCSC(ModBaoCaoKetThucSuCoEntity entity, MAppend append, string endCode)
         {
-            DateTime date = DateTime.Now;
-            string ngayGioPhatHien = append.Ngay + " " + append.Gio + ":" + append.Phut;
-            string code = "BCKTSC" + ModBaoCaoKetThucSuCoService.Instance.GetMaxID();
-            entity.Name = code;
-            entity.Code = Data.GetCode(code);
-            entity.UserID = Lib.Global.CPLogin.UserID;
-            if (!string.IsNullOrEmpty(ngayGioPhatHien)) entity.NgayGioPhatHien = HL.Core.Global.Convert.ToDateTime(ngayGioPhatHien);
-            else entity.NgayGioPhatHien = DateTime.MinValue;
-            entity.Order = GetMaxOrder_BCKetThuc();
-            entity.Published = date;
-            entity.Activity = false;
-            int id = ModBaoCaoKetThucSuCoService.Instance.Save(entity);
+            int userId = HL.Lib.Global.CPLogin.UserID;
+            string ec = endCode.ToLower();
+            string[] ecArr = ec.Split('-');
+            string codes = ecArr[0].ToString();
+            ModBaoCaoSuCoEntity sc = ModBaoCaoSuCoService.Instance.CreateQuery()
+                .Where(userId > 0, o => o.UserID == userId)
+                .Where(o => o.Code == codes)
+                .ToSingle();
+            if (sc != null)
+            {
 
-            ViewBag.BaoCao = entity;
+                DateTime date = DateTime.Now;
+                string ngayGioPhatHien = append.Ngay + " " + append.Gio + ":" + append.Phut;
+                string code = "BCKTSC" + ModBaoCaoKetThucSuCoService.Instance.GetMaxID();
+                entity.Name = code;
+                entity.Code = Data.GetCode(code);
+                entity.UserID = Lib.Global.CPLogin.UserID;
+                if (!string.IsNullOrEmpty(ngayGioPhatHien)) entity.NgayGioPhatHien = HL.Core.Global.Convert.ToDateTime(ngayGioPhatHien);
+                else entity.NgayGioPhatHien = DateTime.MinValue;
+                entity.Order = GetMaxOrder_BCKetThuc();
+                entity.Published = date;
+                entity.Activity = true;
+                entity.BaoCaoSuCoID = sc.ID;
+                int id = ModBaoCaoKetThucSuCoService.Instance.Save(entity);
 
-            ViewPage.Alert("Tạo mới báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
-            ViewPage.Navigate("/vn/Thanh-vien/DS-bc-ket-thuc-su-co.aspx");
+                ViewBag.BaoCao = entity;
+
+                ViewPage.Alert("Tạo báo cáo kết thúc thành công.");
+                ViewPage.Navigate("/vn/Bao-cao-su-co.aspx");
+                //ViewPage.RefreshPage();
+            }
         }
 
         public void ActionUpdateBCKetThucUCSC(ModBaoCaoKetThucSuCoEntity entityBc, MAppend append, string endCode)
         {
             int userId = HL.Lib.Global.CPLogin.UserID;
+            ModBaoCaoSuCoEntity sc = ModBaoCaoSuCoService.Instance.CreateQuery()
+                .Where(userId > 0, o => o.UserID == userId)
+                .Where(o => o.Code == endCode)
+                .ToSingle();
             var entity = ModBaoCaoKetThucSuCoService.Instance.CreateQuery()
                         .Where(userId > 0, o => o.UserID == userId)
-                        .Where(o => o.Code == endCode)
+                        .Where(o => o.BaoCaoSuCoID == sc.ID)
                         .ToSingle();
             if (entity != null)
             {
@@ -806,6 +818,7 @@ namespace HL.Lib.Controllers
                 else entityBc.NgayGioPhatHien = DateTime.MinValue;
 
                 entityBc.ID = entity.ID;
+                entityBc.BaoCaoSuCoID = entity.BaoCaoSuCoID;
                 entityBc.UserID = entity.UserID;
                 entityBc.UserID1 = userId;
                 entityBc.MenuID = entity.MenuID;
@@ -815,99 +828,111 @@ namespace HL.Lib.Controllers
                 entityBc.Order = entity.Order;
                 entityBc.Published = entity.Published;
                 entityBc.Published1 = date;
-                entityBc.Activity = false;
+                entityBc.Activity = true;
                 ModBaoCaoKetThucSuCoService.Instance.Save(entityBc);
 
                 ViewBag.BaoCao = entityBc;
 
-                ViewPage.Alert("Cập nhật báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
-                ViewPage.Navigate("/vn/Thanh-vien/DS-bc-ket-thuc-su-co.aspx");
+                ViewPage.Alert("Cập nhật báo cáo kết thúc thành công.");
+                ViewPage.Navigate(ViewPage.ActionForm);
             }
         }
 
         public void ActionAddBCTongHopUCSC(ModBaoCaoTongHopEntity entity, MSoLuongSuCoModel entitySuCo, string endCode)
         {
             int userId = HL.Lib.Global.CPLogin.UserID;
+            string ec = endCode.ToLower();
+            string[] ecArr = ec.Split('-');
+            string codes = ecArr[0].ToString();
             ModBaoCaoSuCoEntity sc = ModBaoCaoSuCoService.Instance.CreateQuery()
                 .Where(userId > 0, o => o.UserID == userId)
-                .Where(o => o.Code == endCode)
+                .Where(o => o.Code == codes)
                 .ToSingle();
-
-            ViewBag.BaoCao = entity;
-
-            DateTime date = DateTime.Now;
-            string code = "BCTHSC" + ModBaoCaoTongHopService.Instance.GetMaxID();
-            entity.Name = code;
-            entity.Code = Data.GetCode(code);
-            entity.UserID = Lib.Global.CPLogin.UserID;
-            entity.Order = GetMaxOrder_BCTongHop();
-            entity.Published = date;
-            entity.Activity = false;
-
-            int c = entitySuCo.MN.Length;
-            for (int i = 0; i < c; i++)
+            if (sc != null)
             {
-                var suCo = new ModSoLuongSuCoEntity();
-                bool flag = false;
-                if (entitySuCo.SoLuong[i] > 0)
-                {
-                    suCo.SoLuong = entitySuCo.SoLuong[i];
-                    flag = true;
-                }
-                if (entitySuCo.TuXuLy[i] > 0)
-                {
-                    suCo.TuXuLy = entitySuCo.TuXuLy[i];
-                    flag = true;
-                }
-                if (entitySuCo.ToChucHoTro[i] > 0)
-                {
-                    suCo.ToChucHoTro = entitySuCo.ToChucHoTro[i];
-                    flag = true;
-                }
-                if (entitySuCo.ToChucNuocNgoaiHoTro[i] > 0)
-                {
-                    suCo.ToChucNuocNgoaiHoTro = entitySuCo.ToChucNuocNgoaiHoTro[i];
-                    flag = true;
-                }
-                if (entitySuCo.DeNghi[i] > 0)
-                {
-                    suCo.DeNghi = entitySuCo.DeNghi[i];
-                    flag = true;
-                }
-                if (entitySuCo.ThietHaiUocTinh[i] > 0)
-                {
-                    suCo.ThietHaiUocTinh = entitySuCo.ThietHaiUocTinh[i];
-                    flag = true;
-                }
-                if (flag == true)
-                {
-                    int id = ModBaoCaoTongHopService.Instance.Save(entity);
-                    suCo.BaoCaoTongHopID = id;
-                    suCo.MenuID = entitySuCo.MN[i];
-                    suCo.Published = date;
-                    suCo.Order = GetMaxOrder_SoSuCo();
-                    suCo.Activity = true;
+                DateTime date = DateTime.Now;
+                string code = "BCTHSC" + ModBaoCaoTongHopService.Instance.GetMaxID();
+                entity.Name = code;
+                entity.Code = Data.GetCode(code);
+                entity.UserID = Lib.Global.CPLogin.UserID;
+                entity.Order = GetMaxOrder_BCTongHop();
+                entity.Published = date;
+                entity.Activity = true;
+                entity.BaoCaoSuCoID = sc.ID;
 
-                    ModSoLuongSuCoService.Instance.Save(suCo);
+                int c = entitySuCo.MN.Length;
+                for (int i = 0; i < c; i++)
+                {
+                    var suCo = new ModSoLuongSuCoEntity();
+                    bool flag = false;
+                    if (entitySuCo.SoLuong[i] > 0)
+                    {
+                        suCo.SoLuong = entitySuCo.SoLuong[i];
+                        flag = true;
+                    }
+                    if (entitySuCo.TuXuLy[i] > 0)
+                    {
+                        suCo.TuXuLy = entitySuCo.TuXuLy[i];
+                        flag = true;
+                    }
+                    if (entitySuCo.ToChucHoTro[i] > 0)
+                    {
+                        suCo.ToChucHoTro = entitySuCo.ToChucHoTro[i];
+                        flag = true;
+                    }
+                    if (entitySuCo.ToChucNuocNgoaiHoTro[i] > 0)
+                    {
+                        suCo.ToChucNuocNgoaiHoTro = entitySuCo.ToChucNuocNgoaiHoTro[i];
+                        flag = true;
+                    }
+                    if (entitySuCo.DeNghi[i] > 0)
+                    {
+                        suCo.DeNghi = entitySuCo.DeNghi[i];
+                        flag = true;
+                    }
+                    if (entitySuCo.ThietHaiUocTinh[i] > 0)
+                    {
+                        suCo.ThietHaiUocTinh = entitySuCo.ThietHaiUocTinh[i];
+                        flag = true;
+                    }
+                    if (flag == true)
+                    {
+                        int id = ModBaoCaoTongHopService.Instance.Save(entity);
+                        suCo.BaoCaoTongHopID = id;
+                        suCo.MenuID = entitySuCo.MN[i];
+                        suCo.Published = date;
+                        suCo.Order = GetMaxOrder_SoSuCo();
+                        suCo.Activity = true;
+
+                        ModSoLuongSuCoService.Instance.Save(suCo);
+                    }
                 }
+
+                ViewBag.BaoCao = entity;
+
+                ViewPage.Alert("Tạo báo cáo tổng hợp thành công.");
+                ViewPage.Navigate("/vn/Bao-cao-su-co.aspx");
+                //ViewPage.RefreshPage();
             }
-
-            ViewPage.Alert("Tạo mới báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
-            ViewPage.Navigate("/vn/Thanh-vien/DS-bc-tong-hop-su-co.aspx");
         }
 
         public void ActionUpdateBCTongHopUCSC(ModBaoCaoTongHopEntity entityBc, MSoLuongSuCoModel entitySuCo, string endCode)
         {
             int userId = HL.Lib.Global.CPLogin.UserID;
+            ModBaoCaoSuCoEntity sc = ModBaoCaoSuCoService.Instance.CreateQuery()
+                .Where(userId > 0, o => o.UserID == userId)
+                .Where(o => o.Code == endCode)
+                .ToSingle();
             var entity = ModBaoCaoTongHopService.Instance.CreateQuery()
                         .Where(userId > 0, o => o.UserID == userId)
-                        .Where(o => o.Code == endCode)
+                        .Where(o => o.BaoCaoSuCoID == sc.ID)
                         .ToSingle();
             if (entity != null)
             {
                 DateTime date = DateTime.Now;
 
                 entityBc.ID = entity.ID;
+                entityBc.BaoCaoSuCoID = entity.BaoCaoSuCoID;
                 entityBc.UserID = entity.UserID;
                 entityBc.UserID1 = userId;
                 entityBc.MenuID = entity.MenuID;
@@ -917,7 +942,7 @@ namespace HL.Lib.Controllers
                 entityBc.Order = entity.Order;
                 entityBc.Published = entity.Published;
                 entityBc.Published1 = date;
-                entityBc.Activity = false;
+                entityBc.Activity = true;
 
                 var lstSuCo = ModSoLuongSuCoService.Instance.CreateQuery().Where(o => o.BaoCaoTongHopID == entity.ID).ToList();
                 if (lstSuCo != null) ModSoLuongSuCoService.Instance.Delete(lstSuCo);
@@ -971,8 +996,8 @@ namespace HL.Lib.Controllers
 
                 ViewBag.BaoCao = entityBc;
 
-                ViewPage.Alert("Cập nhật báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
-                ViewPage.Navigate("/vn/Thanh-vien/DS-bc-tong-hop-su-co.aspx");
+                ViewPage.Alert("Cập nhật báo cáo tổng hợp thành công.");
+                ViewPage.Navigate(ViewPage.ActionForm);
             }
         }
 
@@ -1028,6 +1053,13 @@ namespace HL.Lib.Controllers
         private int GetMaxOrder_InfoMagic()
         {
             return ModInfoMagicService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
+
+        private int GetMaxOrder_BCSuCo()
+        {
+            return ModBaoCaoSuCoService.Instance.CreateQuery()
                     .Max(o => o.Order)
                     .ToValue().ToInt(0) + 1;
         }
