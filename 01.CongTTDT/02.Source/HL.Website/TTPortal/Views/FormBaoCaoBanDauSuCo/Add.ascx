@@ -21,7 +21,8 @@
         </div>
         <div class="m">
             <div class="toolbar-list" id="toolbar">
-                <%= GetDefaultAddCommand()%>
+                <%--<%= GetDefaultAddCommand()%>--%>
+                <%=GetListCommand("apply|Lưu,space,cancel|Đóng") %>
             </div>
             <div class="pagetitle icon-48-generic">
                 <h2>Báo cáo ban đầu sự cố : <%=  model.RecordID > 0 ? "Chỉnh sửa" : "Thêm mới"%></h2>

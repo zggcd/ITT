@@ -3,6 +3,7 @@
 <%
     var model = ViewBag.Model as FormBaoCaoBanDauSuCoModel;
     var listEntity = ViewBag.Data as List<ModBaoCaoBanDauSuCoEntity>;
+    int c = listEntity != null ? listEntity.Count : 0;
 %>
 
 <form id="hlForm" name="hlForm" method="post">
@@ -19,7 +20,14 @@
         <div class="m">
             <div class="toolbar-list" id="toolbar">
                 <%--<%=GetDefaultListCommand()%>--%>
+                <%if (c == 0)
+                    {%>
                 <%=GetListCommand("new|Thêm,edit|Sửa,space,delete|Xóa") %>
+                <%}
+                else
+                {%>
+                <%=GetListCommand("edit|Sửa,space,delete|Xóa") %>
+                <%}%>
             </div>
             <div class="pagetitle icon-48-generic">
                 <h2>Bao cáo ban đầu sự cố</h2>
@@ -74,7 +82,7 @@
         </div>
         <div class="m">
 
-<%--            <table>
+            <%--            <table>
                 <tr>
                     <td width="100%">Lọc:
                         <input type="text" id="filter_search" value="<%= model.SearchText %>" class="text_area" onchange="HLRedirect();return false;" />

@@ -24,7 +24,7 @@
         </div>
         <div class="m">
             <div class="toolbar-list" id="toolbar">
-                <%= GetDefaultAddCommand()%>
+                <%=GetListCommand("apply|Lưu,space,cancel|Đóng") %>
             </div>
             <div class="pagetitle icon-48-generic">
                 <h2>Báo cáo tổng hợp : <%=  model.RecordID > 0 ? "Chỉnh sửa" : "Thêm mới"%></h2>

@@ -3,6 +3,7 @@
 <%
     var model = ViewBag.Model as FormBaoCaoKetThucSuCoModel;
     var listEntity = ViewBag.Data as List<ModBaoCaoKetThucSuCoEntity>;
+    int c = listEntity != null ? listEntity.Count : 0;
 %>
 
 <form id="hlForm" name="hlForm" method="post">
@@ -18,7 +19,14 @@
         </div>
         <div class="m">
             <div class="toolbar-list" id="toolbar">
+                <%if (c == 0)
+                    {%>
                 <%=GetListCommand("new|Thêm,edit|Sửa,space,delete|Xóa") %>
+                <%}
+                else
+                {%>
+                <%=GetListCommand("edit|Sửa,space,delete|Xóa") %>
+                <%}%>
             </div>
             <div class="pagetitle icon-48-generic">
                 <h2>Báo cáo kết thúc sự cố</h2>
