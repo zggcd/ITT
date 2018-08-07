@@ -23,8 +23,17 @@ namespace HL.Lib.Global
             return false;
         }
 
-        public static bool CheckLogin1(string login_name, string password)
+        public static bool CheckLogin1(string login_name, string password, bool isTV = false)
         {
+            string role = GetRoleByLoginName(login_name);
+            if (isTV == true && !string.IsNullOrEmpty(role) && role != "TV")
+            {
+                return false;
+            }
+            else if (isTV == false && (string.IsNullOrEmpty(role) || role == "TV"))
+            {
+                return false;
+            }
             CPUserEntity _User = CPUserService.Instance.GetLogin2(login_name, password);
 
             if (_User != null)
@@ -98,6 +107,21 @@ namespace HL.Lib.Global
 
                 return null;
             }
+        }
+
+        public static string GetRoleByLoginName(string loginName)
+        {
+            string role = string.Empty;
+
+            CPUserEntity u = CPUserService.Instance.CreateQuery().Where(o => o.Activity == true && o.LoginName == loginName).ToSingle();
+            if (u == null) return role;
+            CPUserRoleEntity r = CPUserRoleService.Instance.CreateQuery().Where(o => o.UserID == u.ID).ToSingle();
+            if (r == null) return role;
+            CPRoleEntity ur = CPRoleService.Instance.CreateQuery().Where(o => o.ID == r.RoleID).ToSingle();
+            if (ur == null) return role;
+            role = ur.Code;
+
+            return role;
         }
     }
 }

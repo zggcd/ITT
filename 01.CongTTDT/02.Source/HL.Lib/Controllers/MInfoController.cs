@@ -173,7 +173,7 @@ namespace HL.Lib.Controllers
             //2553: dang ky moi; 2554: chap nhan; 2555: bi khoa; 2556: tu choi; 2557: bannick
             //var user = CPUserService.Instance.GetByEmail(model.Email.Trim());
             //var user = CPUserService.Instance.GetLogin(model.LoginName.Trim(), entity.Password);
-            if (CPLogin.CheckLogin1(model.LoginName, model.Password))
+            if (CPLogin.CheckLogin1(model.LoginName, model.Password, true))
             {
                 string redirect = HL.Core.Web.HttpQueryString.GetValue("ReturnPath").ToString();
                 ViewPage.Response.Redirect(string.IsNullOrEmpty(redirect) ? "/vn/Dashboard.aspx" : redirect);
