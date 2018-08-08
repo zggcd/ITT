@@ -246,7 +246,15 @@ namespace HL.Lib.Global
             return s;
         }
 
-        public static string ShowDDLMenuByType2(string type, int langID, int selectID)
+        /// <summary>
+        /// Gen select box
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="langID"></param>
+        /// <param name="selectID"></param>
+        /// <param name="isRemoveBefore">Cho phep an nhung item dung truoc</param>
+        /// <returns></returns>
+        public static string ShowDDLMenuByType2(string type, int langID, int selectID, bool isRemoveBefore = false)
         {
             string s = string.Empty;
 
@@ -261,6 +269,7 @@ namespace HL.Lib.Global
 
                 list = WebMenuService.Instance.CreateQuery()
                         .Where(o => o.ParentID == _parent_id)
+                        .Where(isRemoveBefore == true, o => o.ID >= selectID)
                         .OrderByAsc(o => o.Order)
                         .ToList_Cache();
 

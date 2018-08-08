@@ -126,8 +126,7 @@
                                 </td>
                                 <td>
                                     <select name="MenuID" id="MenuID" class="text_input">
-                                        <option value="0">Root</option>
-                                        <%= Utils.ShowDDLMenuByType2("BaoCaoSuCo", model.LangID, entity.MenuID)%>
+                                        <%= Utils.ShowDDLMenuByType2("BaoCaoSuCo", model.LangID, entity.MenuID, true)%>
                                     </select>
                                 </td>
                             </tr>
