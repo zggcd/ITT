@@ -762,7 +762,10 @@
                                     <input type="hidden" name="endCode" value="<%=endCode %>" />
                                     <%if (!string.IsNullOrEmpty(endCode))
                                         {%>
+                                    <%if (entityDk != null & entityDk.Activity == false)
+                                        {%>
                                     <input class="btn btn-success" name="_hl_action[UpdateDangKyUCSC]" value="Cập nhật" type="submit" onclick="fnSubmit()" />
+                                    <%} %>
                                     <%}
                                         else
                                         {%>

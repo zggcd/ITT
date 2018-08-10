@@ -78,8 +78,11 @@
                             </td>
                             <td class="text-center" style="width: 20%;"><%=tt %></td>
                             <td class="text-center" style="width: 1%; padding: 0 5px;">
+                                <%if (listItem[i].Activity == false)
+                                    {%>
                                 <a href="javascript: delDk('<%=listItem[i].ID %>');" id="btnXoaHs">Xóa</a>
                                 <input class="btn_action search icon QAcustom" name="_hl_action[XoaDangKy]" id="XoaDangKy" value="Xóa" type="submit" style="display: none;" />
+                                <%} %>
                             </td>
                         </tr>
                         <%}%>

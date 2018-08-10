@@ -37,8 +37,8 @@
                     <span class="pull-left"><i class="fa fa-user"></i><%=CPLogin.CurrentUserOnWeb.LoginName %></span>
                     <a href="/vn/Thanh-vien/Dang-xuat.aspx" rel="nofollow">(Đăng xuất)</a>
                     <%}
-                    else
-                    {%>
+                        else
+                        {%>
                     <span class="pull-left"></span>
                     <a href="/vn/Thanh-vien/Dang-nhap.aspx">Đăng nhập</a>
                     <%} %>
@@ -57,6 +57,11 @@
         </div>
         <HL:StaticControl runat="server" Code="CMenu" HLID="cMenuTop"></HL:StaticControl>
         <section id="news" class="mt-15">
+            <%var dk = ModDonDangKyUCSCService.Instance.CreateQuery().Where(o => o.UserID == CPLogin.CurrentUserOnWeb.ID && o.Activity == true).ToSingle();
+                var hs = ModHSThanhVienUCSCService.Instance.CreateQuery().Where(o => o.UserID == CPLogin.CurrentUserOnWeb.ID && o.Activity == true).ToSingle();
+
+                if (dk == null && hs == null)
+                {%>
             <div class="container">
                 <div class="row-fluid titleContainer">
                     <span>Đăng ký thành viên mạng lưới</span>
@@ -66,6 +71,9 @@
                     <li><a href="/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx">Đăng ký thành viên mạng lưới tự nguyện</a></li>
                 </ul>
             </div>
+            <%}
+            else
+            {%>
             <div class="container mt-15">
                 <div class="row-fluid titleContainer">
                     <span>TIN TỨC NỘI BỘ</span>
@@ -91,6 +99,7 @@
                     </div>
                 </div>
             </div>
+            <%}%>
         </section>
         <footer>
             <div class="container text-center">
