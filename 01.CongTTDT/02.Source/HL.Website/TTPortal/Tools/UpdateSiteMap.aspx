@@ -5,7 +5,7 @@
     {
         string sMes = string.Empty;
         string type = Request["Type"].ToString();
-        if (!CPLogin.IsLogin())
+        if (!CPLogin.IsLoginOnWeb())
             sMes = "Vui lòng đăng nhập !";
         else sMes = HL.Lib.Global.Sitemap.UpdateSitemap(type);
         Response.Clear();

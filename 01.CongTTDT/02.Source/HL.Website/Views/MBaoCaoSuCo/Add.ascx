@@ -3,7 +3,7 @@
 <script runat="server">
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!HL.Lib.Global.CPLogin.IsLogin())
+        if (!HL.Lib.Global.CPLogin.IsLoginOnWeb())
         {
             Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString("/vn/Bao-cao-su-co/Them-bao-cao.aspx"));
             return;

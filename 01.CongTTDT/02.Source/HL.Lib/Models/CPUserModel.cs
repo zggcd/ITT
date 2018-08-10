@@ -270,6 +270,7 @@ namespace HL.Lib.Models
                 .Where(o => o.LoginName == login_name && o.Password == password && o.Activity == true)
                 .ToSingle();
         }
+
         //danh cho thanh vien ngoai web
         public bool exits(string email)
         {
@@ -277,6 +278,7 @@ namespace HL.Lib.Models
 
             return i > 0;
         }
+
         public bool exitsloginname(string tentl)
         {
             int i = CPUserService.Instance.CreateQuery().Where(o => o.LoginName == tentl).Select(o => o.ID).ToValue().ToInt(0);
@@ -356,12 +358,14 @@ namespace HL.Lib.Models
             }
             return entity;
         }
+
         public CPUserEntity GetForLogin(int id)
         {
             if (id < 0) return null;
             return CreateQuery().Where(o => o.Activity == true && o.ID == id).ToSingle();
             //return Global.PS<ModUserEntity>.SSingle("*", "Mod_User", "[Activity]=1 AND [ID]=" + id);
         }
+
         //public override void Delete(int entity_id)
         //{
         //    ModThaoLuanService.Instance.Delete(o => o.UserID == entity_id);

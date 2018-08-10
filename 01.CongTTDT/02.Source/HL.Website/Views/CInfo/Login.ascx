@@ -58,7 +58,7 @@
             Đăng nhập
         </div>
         <div class="content" style="margin: 0px">
-            <%if (!HL.Lib.Global.CPLogin.IsLogin())
+            <%if (!HL.Lib.Global.CPLogin.IsLoginOnWeb())
                 {%>
             <%--<form method="post" id="" name="" action="{ActionForm}">--%>
             <p class="text1">

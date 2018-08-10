@@ -32,9 +32,9 @@
         <div class="container">
             <div class="row-fluid">
                 <div class="col-xs-12 p-0 languages">
-                    <%if (CPLogin.IsLogin())
+                    <%if (CPLogin.IsLoginOnWeb())
                         {%>
-                    <span class="pull-left"><i class="fa fa-user"></i><%=CPLogin.CurrentUser.LoginName %></span>
+                    <span class="pull-left"><i class="fa fa-user"></i><%=CPLogin.CurrentUserOnWeb.LoginName %></span>
                     <a href="/vn/Thanh-vien/Dang-xuat.aspx" rel="nofollow">(Đăng xuất)</a>
                     <%}
                     else

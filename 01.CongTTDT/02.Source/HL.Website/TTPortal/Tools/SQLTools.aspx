@@ -3,7 +3,7 @@
             
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!HL.Lib.Global.CPLogin.IsLogin() || !HL.Lib.Global.CPLogin.CurrentUser.IsAdministrator)
+        if (!HL.Lib.Global.CPLogin.IsLoginOnWeb() || !HL.Lib.Global.CPLogin.CurrentUser.IsAdministrator)
         {
             Response.Redirect("Login.aspx?ReturnPath=" + Server.UrlEncode(Request.RawUrl));
             return;

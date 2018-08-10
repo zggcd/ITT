@@ -13,7 +13,7 @@ namespace HL.Lib.CPControllers
         {
             //if (CPLogin.CheckLogin(loginModel.UserName, loginModel.Password))
             //{
-            if (CPLogin.CheckLogin1(loginModel.UserName, loginModel.Password))
+            if (CPLogin.CheckLogin0(loginModel.UserName, loginModel.Password))
             {
                 CPViewPage.SetLog("Đăng nhập hệ thống.");
 

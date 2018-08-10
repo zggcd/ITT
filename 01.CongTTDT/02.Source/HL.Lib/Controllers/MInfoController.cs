@@ -12,14 +12,15 @@ namespace HL.Lib.Controllers
         public void ActionIndex()
         {
             string endcode = ViewPage.CurrentPage.Code;
-            if (!string.IsNullOrEmpty(endcode) && (endcode.ToLower() == "dashboard" || endcode.ToLower() == "quan-ly-tai-khoan") && !CPLogin.IsLogin())
+            if (!string.IsNullOrEmpty(endcode) && (endcode.ToLower() == "dashboard" || endcode.ToLower() == "quan-ly-tai-khoan") && !CPLogin.IsLoginOnWeb())
                 ViewPage.Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx");
             else if (endcode.ToLower() == "quan-ly-tai-khoan")
                 ViewPage.Response.Redirect("/vn/Thanh-vien/Thong-tin-ca-nhan.aspx");
-            else if (!CPLogin.IsLogin() && endcode.ToLower() == "bao-cao-su-co")
+            else if (!CPLogin.IsLoginOnWeb() && endcode.ToLower() == "bao-cao-su-co")
                 ViewPage.Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx");
             ViewBag.Data = CPLogin.CurrentUser;
         }
+
         public void ActionDetail(string endcode)
         {
             string layout = "";
@@ -148,7 +149,7 @@ namespace HL.Lib.Controllers
 
                 if (userId > 0)
                 {
-                    Cookies.SetValue("CP.UserID", userId.ToString(), Setting.Mod_CPTimeout, true);
+                    Cookies.SetValue("CP.UserIDOnWeb", userId.ToString(), Setting.Mod_CPTimeout, true);
                     entity = new CPUserEntity();
                     ViewPage.Alert("Chào mừng bạn đăng ký thành công và đã được kích hoạt"); ViewPage.Navigate("/vn/Dashboard.aspx");
                 }
@@ -170,9 +171,7 @@ namespace HL.Lib.Controllers
             entity.LoginName = model.LoginName;
             entity.Password = model.Password;
             ViewBag.Data = entity;
-            //2553: dang ky moi; 2554: chap nhan; 2555: bi khoa; 2556: tu choi; 2557: bannick
-            //var user = CPUserService.Instance.GetByEmail(model.Email.Trim());
-            //var user = CPUserService.Instance.GetLogin(model.LoginName.Trim(), entity.Password);
+
             if (CPLogin.CheckLogin1(model.LoginName, model.Password, true))
             {
                 string redirect = HL.Core.Web.HttpQueryString.GetValue("ReturnPath").ToString();
@@ -183,51 +182,6 @@ namespace HL.Lib.Controllers
                 ViewBag.Login = model;
                 ViewPage.Alert("Đăng nhập không thành công! Tên đăng nhập hoặc mật khẩu không đúng.");
             }
-
-            //if (user.State == 2554)
-            //{
-            //    if (CPLogin.CheckLogin2(model.Email, model.Password))
-            //    {
-            //        string redirect = HL.Core.Web.HttpQueryString.GetValue("ReturnPath").ToString();
-            //        ViewPage.Response.Redirect(string.IsNullOrEmpty(redirect) ? "/Dang-tin.aspx" : redirect);
-            //    }
-            //    else
-            //    {
-            //        ViewBag.Login = model;
-            //        ViewPage.Alert("Đăng nhập không thành công! Tên đăng nhập hoặc mật khẩu không đúng.");
-            //    }
-            //}
-            //else if (user.State == 2553)
-            //    ViewPage.Alert("Đăng ký thành viên của bạn chưa được chấp thuận. Bạn vui lòng chờ đợi Ban Quản trị chấp thuận.Thân chào.");
-            //else if (user.State == 2555)
-            //{
-            //    var todate = string.Format("{0:dd/MM/yyyy}", user.NgayMoLock);
-            //    if (user.NgayMoLock < DateTime.Now)
-            //    {
-            //        if (CPLogin.CheckLogin2(model.Email, model.Password))
-            //        {
-            //            user.State = 2554;
-            //            user.NgayActive = user.NgayMoLock;
-            //            user.SoNgayLock = 0;
-            //            user.NgayLock = DateTime.MinValue;
-            //            user.NgayMoLock = DateTime.MinValue;
-            //            CPUserService.Instance.Save(user);
-            //            string redirect = HL.Core.Web.HttpQueryString.GetValue("ReturnPath").ToString();
-            //            ViewPage.Response.Redirect(string.IsNullOrEmpty(redirect) ? "/Dang-tin.aspx" : redirect);
-            //        }
-            //        else
-            //        {
-            //            ViewBag.Login = model;
-            //            ViewPage.Alert("Đăng nhập không thành công! Tên đăng nhập hoặc mật khẩu không đúng.");
-            //        }
-            //    }
-            //    else ViewPage.Alert("Tin post của bạn phạm quy, bạn vui lòng ở ngoài đọc tin cho đến hết ngày " + todate + ". Cần biết thêm chi tiết bạn vui lòng liên lạc với Ban Quản trị qua email: goldonlinesys@gmail.com hoặc điện thoại 0909993960.");
-            //}
-            //else if (user.State == 2556)
-            //{
-            //    ViewPage.Alert("Rất tiếc, thông tin đăng kí thành viên của bạn không phù hợp. Nên không được chấp thuận làm thành viên. Bạn vui lòng liên lạc với Ban Quản Trị để được hướng dẫn hoặc biết thêm chi tiết: Địa chỉ email goldonlinesys@gmail.com. Điện thoại: 0909993960.");
-            //}
-            //else if (user.State == 2557) { }
         }
 
         public void ActionChangePassPOST(PasswordModel model)

@@ -205,7 +205,7 @@ namespace HL.Website.Tools
             }
             else if (cmd == "dx")
             {
-                if (HL.Lib.Global.CPLogin.IsLogin())
+                if (HL.Lib.Global.CPLogin.IsLoginOnWeb())
                 {
                     CPLogin.Logout();
                     sHTML = "1";
@@ -270,7 +270,7 @@ namespace HL.Website.Tools
             }
             else if (cmd == "getrss")
             {
-                //if (!CPLogin.IsLogin()) return;
+                //if (!CPLogin.IsLoginOnWeb()) return;
                 //int hour = DateTime.Now.Hour;
                 //if (hour % 3 == 0)
                 //{

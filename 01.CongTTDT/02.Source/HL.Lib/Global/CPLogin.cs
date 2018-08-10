@@ -9,9 +9,37 @@ namespace HL.Lib.Global
             Cookies.Remove("CP.UserID");
         }
 
+        public static void LogoutOnWeb()
+        {
+            Cookies.Remove("CP.UserIDOnWeb");
+        }
+
         public static bool CheckLogin(string login_name, string password)
         {
             CPUserEntity _User = CPUserService.Instance.GetLogin(login_name, password);
+
+            if (_User != null)
+            {
+                SetLogin(_User.ID);
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool CheckLogin0(string login_name, string password, bool isTV = false)
+        {
+            string role = GetRoleByLoginName(login_name);
+            if (isTV == true && !string.IsNullOrEmpty(role) && role != "TV")
+            {
+                return false;
+            }
+            else if (isTV == false && (string.IsNullOrEmpty(role) || role == "TV"))
+            {
+                return false;
+            }
+            CPUserEntity _User = CPUserService.Instance.GetLogin2(login_name, password);
 
             if (_User != null)
             {
@@ -38,7 +66,7 @@ namespace HL.Lib.Global
 
             if (_User != null)
             {
-                SetLogin(_User.ID);
+                SetLoginOnWeb(_User.ID);
 
                 return true;
             }
@@ -79,10 +107,20 @@ namespace HL.Lib.Global
             Cookies.SetValue("CP.UserID", user_id.ToString(), Setting.Mod_CPTimeout, true);
         }
 
+        private static void SetLoginOnWeb(int user_id)
+        {
+            Cookies.SetValue("CP.UserIDOnWeb", user_id.ToString(), Setting.Mod_CPTimeout, true);
+        }
+
         public static bool IsLogin()
         {
             return (UserID > 0);
             //return (CurrentUser != null);
+        }
+
+        public static bool IsLoginOnWeb()
+        {
+            return (UserIDOnWeb > 0);
         }
 
         public static int UserID
@@ -98,12 +136,36 @@ namespace HL.Lib.Global
             }
         }
 
+        public static int UserIDOnWeb
+        {
+            get
+            {
+                int _UserID = HL.Core.Global.Convert.ToInt(Cookies.GetValue("CP.UserIDOnWeb", true));
+
+                if (_UserID > 0)
+                    SetLogin(_UserID);
+
+                return _UserID;
+            }
+        }
+
         public static CPUserEntity CurrentUser
         {
             get
             {
                 if (UserID > 0)
                     return CPUserService.Instance.GetLogin(UserID);
+
+                return null;
+            }
+        }
+
+        public static CPUserEntity CurrentUserOnWeb
+        {
+            get
+            {
+                if (UserIDOnWeb > 0)
+                    return CPUserService.Instance.GetLogin(UserIDOnWeb);
 
                 return null;
             }
