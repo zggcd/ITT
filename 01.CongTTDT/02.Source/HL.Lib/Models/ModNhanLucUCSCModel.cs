@@ -17,6 +17,9 @@ namespace HL.Lib.Models
         public int DonDangKyUCSCID { get; set; }
 
         [DataInfo]
+        public int HSThanhVienUCSCID { get; set; }
+
+        [DataInfo]
         public override string Name { get; set; }
 
         [DataInfo]

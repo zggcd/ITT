@@ -338,10 +338,11 @@ namespace HL.Lib.Controllers
 
         #region Dieu phoi, ung cuu su co ATTT mang
         /// <summary>
-        /// Them ho so ung cuu su co
+        /// Them ho so ung cuu su co (Dang ky bat buoc)
         /// </summary>
         /// <param name="entity">HS thanh vien</param>
         /// <param name="entityDm">Dau moi UCSC</param>
+        /// <param name="append">Doi tuong them</param>
         public void ActionAddHoSoUCSC(ModHSThanhVienUCSCEntity entity, ModDauMoiUCSCEntity entityDm, MAppend append)
         {
             ViewBag.HoSo = entity;
@@ -394,10 +395,47 @@ namespace HL.Lib.Controllers
                 ModHeThongThongTinService.Instance.Save(entityHTTT);
             }
 
+            // Nhan luc
+            var nhanLucs = append.NhanLuc.Split('|');
+            var cNhanLucs = nhanLucs.Length;
+            List<ModNhanLucUCSCEntity> entityNhanLuc = new List<ModNhanLucUCSCEntity>();
+            for (int i = 0; i < cNhanLucs; i++)
+            {
+                if (string.IsNullOrEmpty(nhanLucs[i])) continue;
+                var nhanLuc = nhanLucs[i].Split('_');
+                int cNhanLuc = nhanLuc.Length;
+                if (cNhanLuc != 10) continue;
+                var item = new ModNhanLucUCSCEntity()
+                {
+                    HSThanhVienUCSCID = id,
+                    Name = nhanLuc[0],
+                    School = nhanLuc[1],
+                    MenuIDs_LinhVucDT = nhanLuc[2],
+                    MenuIDs_TrinhDoDT = nhanLuc[3],
+                    MenuIDs_ChungChi = nhanLuc[4],
+                    MenuIDs_QuanLyATTT = nhanLuc[5],
+                    MenuIDs_KyThuatPhongThu = nhanLuc[6],
+                    MenuIDs_KyThuatBaoVe = nhanLuc[7],
+                    MenuIDs_KyThuatKiemTra = nhanLuc[8],
+                    NamTotNghiep = HL.Core.Global.Convert.ToInt(nhanLuc[9], 0),
+                    Activity = true,
+                    Published = DateTime.Now,
+                    Order = GetMaxOrder_NhanLuc()
+                };
+                entityNhanLuc.Add(item);
+            }
+            ViewBag.NhanLuc = entityNhanLuc;
+            ModNhanLucUCSCService.Instance.Save(entityNhanLuc);
+
             ViewPage.Alert("Tạo mới hồ sơ thành công! Chúng tôi sẽ xem xét và phê duyệt hồ sơ của bạn sớm nhất có thể.");
             ViewPage.Navigate("/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx");
         }
 
+        /// <summary>
+        /// Them dang ky ung cuu su co (Dang ky tu nguyen)
+        /// </summary>
+        /// <param name="entity">Don dang ky</param>
+        /// <param name="append">Doi tuong them</param>
         public void ActionAddDangKyUCSC(ModDonDangKyUCSCEntity entity, MAppend append)
         {
             string alert = string.Empty;

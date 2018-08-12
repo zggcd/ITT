@@ -1240,6 +1240,7 @@
     }
 
     function fnSubmit() {
+        debugger;
         var ln = <%=countCapDo%>;
         var s = '';
         for (var i = 0; i < ln; i++) {
@@ -1261,13 +1262,13 @@
             var nhanLuc = '';
             var name = $(elementNhanLuc[i]).find('input[name=Name]').val();
             var school = $(elementNhanLuc[i]).find('input[name=School]').val();
-            var linhvucdt = $(elementNhanLuc[i]).find('a[class=btnDaoTao]').attr('data-linhvucdt');
-            var trinhdodt = $(elementNhanLuc[i]).find('a[class=btnDaoTao]').attr('data-trinhdodt');
-            var chungchi = $(elementNhanLuc[i]).find('a[class=btnDaoTao]').attr('data-chungchi');
-            var quanlyattt = $(elementNhanLuc[i]).find('a[class=btnChungChi]').attr('data-quanlyattt');
-            var kythuatphongthu = $(elementNhanLuc[i]).find('a[class=btnChungChi]').attr('data-kythuatphongthu');
-            var kythuatbaove = $(elementNhanLuc[i]).find('a[class=btnChungChi]').attr('data-kythuatbaove');
-            var kythuatkiemtra = $(elementNhanLuc[i]).find('a[class=btnChungChi]').attr('data-kythuatkiemtra');
+            var linhvucdt = $(elementNhanLuc[i]).find('a[class*="btnDaoTao"]').attr('data-linhvucdt');
+            var trinhdodt = $(elementNhanLuc[i]).find('a[class*="btnDaoTao"]').attr('data-trinhdodt');
+            var chungchi = $(elementNhanLuc[i]).find('a[class*="btnDaoTao"]').attr('data-chungchi');
+            var quanlyattt = $(elementNhanLuc[i]).find('a[class*="btnChungChi"]').attr('data-quanlyattt');
+            var kythuatphongthu = $(elementNhanLuc[i]).find('a[class*="btnChungChi"]').attr('data-kythuatphongthu');
+            var kythuatbaove = $(elementNhanLuc[i]).find('a[class*="btnChungChi"]').attr('data-kythuatbaove');
+            var kythuatkiemtra = $(elementNhanLuc[i]).find('a[class*="btnChungChi"]').attr('data-kythuatkiemtra');
             var namTN = $(elementNhanLuc[i]).find('input[name=NamTotNghiep]').val();
 
             if (name) {

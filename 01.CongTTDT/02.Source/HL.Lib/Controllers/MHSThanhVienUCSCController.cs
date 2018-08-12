@@ -88,6 +88,9 @@ namespace HL.Lib.Controllers
                     ViewBag.HTTT1 = ModHeThongThongTinService.Instance.CreateQuery()
                         .Where(o => o.Activity == true && o.DonDangKyUCSCID == entity.ID)
                         .ToList();
+                    ViewBag.NhanLuc = ModNhanLucUCSCService.Instance.CreateQuery()
+                        .Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID)
+                        .ToList();
                     ViewBag.EndCode = endCode;
                     RenderView("../MInfo/HoSoUCSC");
                 }

@@ -129,6 +129,9 @@
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Email", "Email")%>
                         </th>
+                        <th width="10%" nowrap="nowrap">
+                            <span>Báo cáo đang có</span>
+                        </th>
                         <th width="7%" nowrap="nowrap">
                             <%= GetSortLink("Ngày tạo", "Published")%>
                         </th>
@@ -189,6 +192,19 @@
                         </td>
                         <td align="center">
                             <%= listEntity[i].Email%>
+                        </td>
+                        <td align="center">
+                            <%
+                                var bcBanDau = ModBaoCaoBanDauSuCoService.Instance.CreateQuery().Where(o => o.BaoCaoSuCoID == listEntity[i].ID).ToSingle();
+                                var bcTongHop = ModBaoCaoTongHopService.Instance.CreateQuery().Where(o => o.BaoCaoSuCoID == listEntity[i].ID).ToSingle();
+                                var bcKetThuc = ModBaoCaoKetThucSuCoService.Instance.CreateQuery().Where(o => o.BaoCaoSuCoID == listEntity[i].ID).ToSingle();
+                                %>
+                            <%if (bcBanDau != null)
+                                {%>Báo cáo ban đầu<br /><%} %>
+                            <%if (bcTongHop != null)
+                                {%>Báo cáo tổng hợp<br /><%} %>
+                            <%if (bcKetThuc != null)
+                                {%>Báo cáo kết thúc<br /><%} %>
                         </td>
                         <td align="center">
                             <%= string.Format("{0:dd/MM/yyyy HH:mm}", listEntity[i].Published) %>
