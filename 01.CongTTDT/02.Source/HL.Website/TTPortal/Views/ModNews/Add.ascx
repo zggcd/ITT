@@ -94,7 +94,7 @@
                     <table class="admintable">
                         <tr>
                             <td class="key">
-                                <label>Tiêu đề :</label>
+                                <label>Tiêu đề :<span class="red">*</span></label>
                             </td>
                             <td>
                                 <input class="text_input" type="text" name="Name" value="<%=entity.Name %>" maxlength="255" />
@@ -158,7 +158,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="center" style="text-align: center" class="key">Chuyên mục
+                                    <td align="center" style="text-align: center" class="key">Chuyên mục <span class="red">*</span>
                                     </td>
                                 </tr>
                                 <tr>

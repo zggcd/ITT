@@ -66,7 +66,7 @@ namespace HL.Lib.Controllers
             {
                 //string currUrl = ViewPage.Request.RawUrl;
                 string currUrl = "/vn/Dashboard.aspx";
-                CPLogin.Logout();
+                CPLogin.LogoutOnWeb();
                 ViewPage.Response.Redirect(currUrl);
             }
             RenderView(layout);

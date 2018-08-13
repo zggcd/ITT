@@ -35,6 +35,9 @@ namespace HL.Lib.Models
         public string Code { get; set; }
 
         [DataInfo]
+        public string IPs { get; set; }
+
+        [DataInfo]
         public TimeSpan Time { get; set; }
 
         [DataInfo]
