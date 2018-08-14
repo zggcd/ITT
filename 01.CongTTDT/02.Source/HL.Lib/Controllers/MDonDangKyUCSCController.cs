@@ -24,7 +24,7 @@ namespace HL.Lib.Controllers
         {
             if (ViewPage.CurrentPage.MenuID > 0)
                 MenuID = ViewPage.CurrentPage.MenuID;
-            int userId = HL.Lib.Global.CPLogin.UserID;
+            int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
 
             string endCode = ViewPage.CurrentPage.Code;
             DBQuery<ModDonDangKyUCSCEntity> dbQuery;
@@ -69,7 +69,7 @@ namespace HL.Lib.Controllers
             if (!string.IsNullOrEmpty(layout)) RenderView(layout);
             else
             {
-                int userId = HL.Lib.Global.CPLogin.UserID;
+                int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
                 var entity = ModDonDangKyUCSCService.Instance.CreateQuery()
                             //.Where(o => o.Activity == true)
                             .Where(userId > 0, o => o.UserID == userId)
@@ -109,7 +109,7 @@ namespace HL.Lib.Controllers
         public void ActionXoaDangKy(string dangKyId)
         {
             int dkId = HL.Core.Global.Convert.ToInt(dangKyId, 0);
-            int userId = HL.Lib.Global.CPLogin.UserID;
+            int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
             var entity = ModDonDangKyUCSCService.Instance.CreateQuery()
                         .Where(userId > 0, o => o.UserID == userId)
                         .Where(dkId > 0, o => o.ID == dkId)
@@ -140,7 +140,7 @@ namespace HL.Lib.Controllers
 
         public void ActionUpdateDangKyUCSC(ModDonDangKyUCSCEntity entityDk, MHSThanhVienUCSCModel model, string endCode)
         {
-            int userId = HL.Lib.Global.CPLogin.UserID;
+            int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
             var entity = ModDonDangKyUCSCService.Instance.CreateQuery()
                         .Where(userId > 0, o => o.UserID == userId)
                         .Where(o => o.Code == endCode)
@@ -151,7 +151,7 @@ namespace HL.Lib.Controllers
 
                 entityDk.ID = entity.ID;
                 entityDk.UserID = entity.UserID;
-                entityDk.UserID1 = entity.UserID1;
+                entityDk.UserID1 = userId;
                 entityDk.MenuID = entity.MenuID;
                 entityDk.State = entity.State;
                 entityDk.Name = entity.Name;

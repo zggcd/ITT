@@ -23,7 +23,7 @@ namespace HL.Lib.Controllers
         {
             if (ViewPage.CurrentPage.MenuID > 0)
                 MenuID = ViewPage.CurrentPage.MenuID;
-            int userId = HL.Lib.Global.CPLogin.UserID;
+            int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
 
             var dbQuery = ModHSThanhVienUCSCService.Instance.CreateQuery()
                             //.Where(o => o.Activity == true)
@@ -56,7 +56,7 @@ namespace HL.Lib.Controllers
             if (!string.IsNullOrEmpty(layout)) RenderView(layout);
             else
             {
-                int userId = HL.Lib.Global.CPLogin.UserID;
+                int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
                 var entity = ModHSThanhVienUCSCService.Instance.CreateQuery()
                             //.Where(o => o.Activity == true)
                             .Where(userId > 0, o => o.UserID == userId)
@@ -104,7 +104,7 @@ namespace HL.Lib.Controllers
         public void ActionXoaHoSo(string hoSoId)
         {
             int hsId = HL.Core.Global.Convert.ToInt(hoSoId, 0);
-            int userId = HL.Lib.Global.CPLogin.UserID;
+            int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
             var entity = ModHSThanhVienUCSCService.Instance.CreateQuery()
                         .Where(userId > 0, o => o.UserID == userId)
                         .Where(hsId > 0, o => o.ID == hsId)
@@ -136,7 +136,7 @@ namespace HL.Lib.Controllers
 
         public void ActionUpdateHoSoUCSC(ModHSThanhVienUCSCEntity entityHs, ModDauMoiUCSCEntity entityDm, MHSThanhVienUCSCModel model, string endCode)
         {
-            int userId = HL.Lib.Global.CPLogin.UserID;
+            int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
             var entity = ModHSThanhVienUCSCService.Instance.CreateQuery()
                         .Where(userId > 0, o => o.UserID == userId)
                         .Where(o => o.Code == endCode)
@@ -148,7 +148,7 @@ namespace HL.Lib.Controllers
                 //Thong tin chung
                 entityHs.ID = entity.ID;
                 entityHs.UserID = entity.UserID;
-                entityHs.UserID1 = entity.UserID1;
+                entityHs.UserID1 = userId;
                 entityHs.MenuID = entity.MenuID;
                 entityHs.State = entity.State;
                 entityHs.Name = entity.Name;
@@ -215,7 +215,7 @@ namespace HL.Lib.Controllers
             //string code = "HSUCSC" + ModHSThanhVienUCSCService.Instance.GetMaxID();
             //entity.Name = code;
             //entity.Code = Data.GetCode(code);
-            //entity.UserID = Lib.Global.CPLogin.UserID;
+            //entity.UserID = Lib.Global.CPLogin.UserIDOnWeb;
             //entity.Published = date;
             //entity.Activity = false;
             //int id = ModHSThanhVienUCSCService.Instance.Save(entity);

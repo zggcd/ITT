@@ -45,7 +45,7 @@ namespace HL.Lib.Controllers
                     Name = ""
                 };
 
-                int userId = Lib.Global.CPLogin.UserID;
+                int userId = Lib.Global.CPLogin.UserIDOnWeb;
                 var donDk = ModDonDangKyUCSCService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
                 if (donDk != null)
                 {
@@ -186,7 +186,7 @@ namespace HL.Lib.Controllers
 
         public void ActionChangePassPOST(PasswordModel model)
         {
-            var obj = CPUserService.Instance.CreateQuery().Where(o => o.ID == CPLogin.UserID).Select(o => new { o.Password, o.ID }).ToSingle();
+            var obj = CPUserService.Instance.CreateQuery().Where(o => o.ID == CPLogin.UserIDOnWeb).Select(o => new { o.Password, o.ID }).ToSingle();
             if (model.PassCur.Trim() == string.Empty)
                 ViewPage.Message.ListMessage.Add("Nhập mật khẩu hiện tại");
             else if (Security.GetPass(model.PassCur.Trim()) != obj.Password)
@@ -266,7 +266,7 @@ namespace HL.Lib.Controllers
             }
             else
             {
-                entity.ID = CPLogin.UserID;
+                entity.ID = CPLogin.UserIDOnWeb;
                 CPUserService.Instance.Save(entity, o => new { o.Name, o.Phone, o.Note, o.LoginName, o.Email, o.File, o.Sex, o.Year, o.CityID });
                 ViewPage.Alert("Cập nhật thông tin thành công!");
                 ViewPage.Navigate(ViewPage.Request.RawUrl);
@@ -352,7 +352,7 @@ namespace HL.Lib.Controllers
             string code = "HSUCSC" + ModHSThanhVienUCSCService.Instance.GetMaxID();
             entity.Name = code;
             entity.Code = Data.GetCode(code);
-            entity.UserID = Lib.Global.CPLogin.UserID;
+            entity.UserID = Lib.Global.CPLogin.UserIDOnWeb;
             entity.Order = GetMaxOrder_HoSo();
             entity.Published = date;
             entity.Activity = false;
@@ -445,7 +445,7 @@ namespace HL.Lib.Controllers
             string code = "DKUCSC" + ModDonDangKyUCSCService.Instance.GetMaxID();
             entity.Name = code;
             entity.Code = Data.GetCode(code);
-            entity.UserID = Lib.Global.CPLogin.UserID;
+            entity.UserID = Lib.Global.CPLogin.UserIDOnWeb;
             entity.Order = GetMaxOrder_DangKy();
 
             string folder = "/Data/upload/files/DKUCSC/" + CPLogin.CurrentUser.ID.ToString() + "_" + CPLogin.CurrentUser.LoginName + "/";
@@ -532,7 +532,7 @@ namespace HL.Lib.Controllers
             ViewBag.DichVu = entity;
             ViewBag.Append = append;
             DateTime date = DateTime.Now;
-            int userId = Lib.Global.CPLogin.UserID;
+            int userId = Lib.Global.CPLogin.UserIDOnWeb;
 
             try
             {

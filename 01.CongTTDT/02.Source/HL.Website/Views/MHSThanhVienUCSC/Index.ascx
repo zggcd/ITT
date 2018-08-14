@@ -62,7 +62,7 @@
                         <tbody id="loadDsTbodyHetHan">
                             <%for (int i = 0; i < c2; i++)
                                 {
-                                    string Url = ViewPage.GetURL(listItem[i].MenuID, listItem[i].Code);
+                                    string Url = "/vn/Thanh-vien/Ho-so-ung-cuu-su-co/" + listItem[i].Code + ".aspx";
                                     string tt = listItem[i].Activity ? "<span style=\"color: forestgreen;\">Đã phê duyệt</span>" : "<span style=\"color: red;\">Chưa phê duyệt</span>";
                             %>
                             <tr>

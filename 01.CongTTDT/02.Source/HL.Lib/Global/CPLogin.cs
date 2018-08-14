@@ -143,7 +143,7 @@ namespace HL.Lib.Global
                 int _UserID = HL.Core.Global.Convert.ToInt(Cookies.GetValue("CP.UserIDOnWeb", true));
 
                 if (_UserID > 0)
-                    SetLogin(_UserID);
+                    SetLoginOnWeb(_UserID);
 
                 return _UserID;
             }

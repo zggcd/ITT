@@ -253,7 +253,8 @@
                             <%= listEntity[i].ID%>
                         </td>
                         <td align="center">
-                            <%= GetName(listEntity[i].getUser1()) %>
+                            <%--<%= GetName(listEntity[i].getUser1()) %>--%>
+                            <%=CPUserService.Instance.GetByID(listEntity[i].UserID).LoginName %>
                         </td>
                         <%--<td align="center">
                             <%= string.Format("{0:#,##0}", listEntity[i].UserID1)%>

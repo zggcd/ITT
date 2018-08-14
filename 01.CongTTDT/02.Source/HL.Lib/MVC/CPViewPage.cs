@@ -14,6 +14,7 @@ namespace HL.Lib.MVC
         }
 
         public CPUserEntity CurrentUser { get; private set; }
+        public CPUserEntity CurrentUserOnWeb { get; private set; }
         public Permissions UserPermissions { get; private set; }
 
         private string ModuleCode = null;
