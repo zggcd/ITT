@@ -42,7 +42,7 @@
         <div class="m">
             <div class="col width-100">
                 <table class="admintable">
-<%--                    <tr>
+                    <%--                    <tr>
                         <td class="key">
                             <label>Don dang ky u c s c :</label>
                         </td>
@@ -58,7 +58,7 @@
                             </select>
                         </td>
                     </tr>--%>
-<%--                    <tr>
+                    <%--                    <tr>
                         <td class="key">
                             <label>User :</label>
                         </td>
@@ -102,18 +102,45 @@
                     </tr>--%>
                     <tr>
                         <td class="key">
-                            <label>Tên :</label>
+                            <label>Tên đơn vị đăng ký :</label>
                         </td>
                         <td>
                             <input class="text_input" type="text" name="Name" id="Name" value="<%=entity.Name %>" maxlength="255" />
                         </td>
                     </tr>
-                    <tr>
+                    <tr style="display: none;">
                         <td class="key">
                             <label>Mã :</label>
                         </td>
                         <td>
                             <input class="text_input" type="text" name="Code" id="Code" value="<%=entity.Code %>" maxlength="255" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="key">
+                            <label>Danh sách mail gửi :</label>
+                        </td>
+                        <td>
+                            <textarea style="height: 100px; width: 98%" name="ToEmails"><%=entity.ToEmails%></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="key">
+                            <label>Danh sách mail Cc :</label>
+                        </td>
+                        <td>
+                            <textarea style="height: 100px; width: 98%" name="CcEmails"><%=entity.CcEmails%></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="key">
+                            <label>Danh sách IP :</label>
+                        </td>
+                        <td>
+                            <textarea style="height: 100px; width: 98%" name="IPs"><%=entity.IPs%></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -124,14 +151,14 @@
                             <input class="text_input" type="text" name="Time" id="Time" value="<%=entity.Time %>" maxlength="255" />
                         </td>
                     </tr>
-                    <tr>
+<%--                    <tr>
                         <td class="key">
                             <label>Ngày tạo :</label>
                         </td>
                         <td>
                             <input class="text_input" type="text" name="Published" id="Published" value="<%=entity.Published %>" maxlength="255" />
                         </td>
-                    </tr>
+                    </tr>--%>
                     <%if (CPViewPage.UserPermissions.Approve)
                         {%>
                     <tr>

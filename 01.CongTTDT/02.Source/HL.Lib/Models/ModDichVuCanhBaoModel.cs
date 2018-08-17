@@ -7,14 +7,11 @@ namespace HL.Lib.Models
 {
     public class ModDichVuCanhBaoEntity : EntityBase
     {
-
+        
         #region Autogen by HL
 
         [DataInfo]
         public override int ID { get; set; }
-
-        [DataInfo]
-        public int DonDangKyUCSCID { get; set; }
 
         [DataInfo]
         public int UserID { get; set; }
@@ -35,16 +32,22 @@ namespace HL.Lib.Models
         public string Code { get; set; }
 
         [DataInfo]
+        public string ToEmails { get; set; }
+
+        [DataInfo]
+        public string CcEmails { get; set; }
+
+        [DataInfo]
         public string IPs { get; set; }
 
         [DataInfo]
         public TimeSpan Time { get; set; }
 
         [DataInfo]
-        public DateTime? Published { get; set; }
+        public DateTime Published { get; set; }
 
         [DataInfo]
-        public DateTime? Published1 { get; set; }
+        public DateTime Published1 { get; set; }
 
         [DataInfo]
         public int Order { get; set; }
@@ -52,20 +55,8 @@ namespace HL.Lib.Models
         [DataInfo]
         public bool Activity { get; set; }
 
-        #endregion
-
-        private ModDonDangKyUCSCEntity _oDonDangKyUCSC = null;
-        public ModDonDangKyUCSCEntity getDonDangKyUCSC()
-        {
-            if (_oDonDangKyUCSC == null && DonDangKyUCSCID > 0)
-                _oDonDangKyUCSC = ModDonDangKyUCSCService.Instance.GetByID(DonDangKyUCSCID);
-
-            if (_oDonDangKyUCSC == null)
-                _oDonDangKyUCSC = new ModDonDangKyUCSCEntity();
-
-            return _oDonDangKyUCSC;
-        }
-
+        #endregion      
+  
         private ModUserEntity _oUser = null;
         public ModUserEntity getUser()
         {
@@ -76,8 +67,8 @@ namespace HL.Lib.Models
                 _oUser = new ModUserEntity();
 
             return _oUser;
-        }
-
+        }      
+  
         private WebMenuEntity _oMenu = null;
         public WebMenuEntity getMenu()
         {

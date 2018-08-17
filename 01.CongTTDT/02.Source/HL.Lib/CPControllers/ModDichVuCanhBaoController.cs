@@ -49,6 +49,7 @@ namespace HL.Lib.CPControllers
 
                 // khoi tao gia tri mac dinh khi insert
                 entity.MenuID = model.MenuID;
+                entity.Published = DateTime.Now;
                 entity.Activity = CPViewPage.UserPermissions.Approve;
                 entity.Order = GetMaxOrder(model);
             }
@@ -100,8 +101,8 @@ namespace HL.Lib.CPControllers
                 CPViewPage.Message.ListMessage.Add("Nhập tên.");
 
             //kiem tra chuyen muc
-            if (entity.MenuID < 1)
-                CPViewPage.Message.ListMessage.Add("Chọn chuyên mục.");
+            //if (entity.MenuID < 1)
+            //    CPViewPage.Message.ListMessage.Add("Chọn chuyên mục.");
 
             if (CPViewPage.Message.ListMessage.Count == 0)
             {

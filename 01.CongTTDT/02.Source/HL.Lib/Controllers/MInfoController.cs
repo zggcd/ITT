@@ -45,20 +45,20 @@ namespace HL.Lib.Controllers
                     Name = ""
                 };
 
-                int userId = Lib.Global.CPLogin.UserIDOnWeb;
-                var donDk = ModDonDangKyUCSCService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
-                if (donDk != null)
-                {
-                    var dv = ModDichVuCanhBaoService.Instance.CreateQuery().Where(o => o.DonDangKyUCSCID == donDk.ID).ToSingle();
-                    if (dv != null)
-                    {
-                        ViewBag.DichVu = dv;
-                        ViewBag.Append = new MAppend() { ThoiGian = dv.Time.ToString(@"hh\:mm") };
-                        ViewBag.EndCode = dv.Name;
-                        var ips = ModDichVuCanhBaoIPService.Instance.CreateQuery().Where(o => o.DichVuCanhBaoID == dv.ID).ToList();
-                        if (ips != null && ips.Count > 0) ViewBag.IPs = ips;
-                    }
-                }
+                //int userId = Lib.Global.CPLogin.UserIDOnWeb;
+                //var donDk = ModDonDangKyUCSCService.Instance.CreateQuery().Where(o => o.UserID == userId).ToSingle();
+                //if (donDk != null)
+                //{
+                //    var dv = ModDichVuCanhBaoService.Instance.CreateQuery().Where(o => o.DonDangKyUCSCID == donDk.ID).ToSingle();
+                //    if (dv != null)
+                //    {
+                //        ViewBag.DichVu = dv;
+                //        ViewBag.Append = new MAppend() { ThoiGian = dv.Time.ToString(@"hh\:mm") };
+                //        ViewBag.EndCode = dv.Name;
+                //        var ips = ModDichVuCanhBaoIPService.Instance.CreateQuery().Where(o => o.DichVuCanhBaoID == dv.ID).ToList();
+                //        if (ips != null && ips.Count > 0) ViewBag.IPs = ips;
+                //    }
+                //}
 
                 layout = "DVCanhBao";
             }
@@ -605,7 +605,7 @@ namespace HL.Lib.Controllers
                     }
                     else
                     {
-                        entity.DonDangKyUCSCID = donDk.ID;
+                        //entity.DonDangKyUCSCID = donDk.ID;
                         ViewBag.EndCode = entity.Name;
                         id = ModDichVuCanhBaoService.Instance.Save(entity);
                     }

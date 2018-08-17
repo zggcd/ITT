@@ -241,7 +241,10 @@
                 </tfoot>
                 <tbody>
                     <%for (int i = 0; listEntity != null && i < listEntity.Count; i++)
-                        { %>
+                        {
+                            var user = CPUserService.Instance.GetByID(listEntity[i].UserID);
+                            string loginName = user != null ? user.LoginName : "";
+                            %>
                     <tr class="row<%= i%2 %>">
                         <td align="center">
                             <%= i + 1%>
@@ -254,7 +257,7 @@
                         </td>
                         <td align="center">
                             <%--<%= GetName(listEntity[i].getUser1()) %>--%>
-                            <%=CPUserService.Instance.GetByID(listEntity[i].UserID).LoginName %>
+                            <%=loginName %>
                         </td>
                         <%--<td align="center">
                             <%= string.Format("{0:#,##0}", listEntity[i].UserID1)%>

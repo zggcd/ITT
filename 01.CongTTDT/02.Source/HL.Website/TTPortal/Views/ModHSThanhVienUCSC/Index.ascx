@@ -35,31 +35,31 @@
 
     <script type="text/javascript">
 
-    var HLController = 'ModHSThanhVienUCSC';
+        var HLController = 'ModHSThanhVienUCSC';
 
-    var HLArrVar = [
-                        'filter_state', 'State',
-                        'filter_menu', 'MenuID',
-                        'filter_lang', 'LangID',  
-                        'limit', 'PageSize'
-                   ];
+        var HLArrVar = [
+            'filter_state', 'State',
+            'filter_menu', 'MenuID',
+            'filter_lang', 'LangID',
+            'limit', 'PageSize'
+        ];
 
 
-    var HLArrVar_QS = [
-                        'filter_search', 'SearchText'
-                      ];
+        var HLArrVar_QS = [
+            'filter_search', 'SearchText'
+        ];
 
-    var HLArrQT = [
+        var HLArrQT = [
                       '<%= model.PageIndex + 1 %>', 'PageIndex', 
                       '<%= model.Sort %>', 'Sort'
-                  ];
+        ];
 
-    var HLArrDefault =
-                  [
-                    '1', 'PageIndex',
-                    '1', 'LangID',
-                    '20', 'PageSize'
-                  ];
+        var HLArrDefault =
+            [
+                '1', 'PageIndex',
+                '1', 'LangID',
+                '20', 'PageSize'
+            ];
     </script>
 
     <%= ShowMessage()%>
@@ -187,7 +187,10 @@
                 </tfoot>
                 <tbody>
                     <%for (int i = 0; listEntity != null && i < listEntity.Count; i++)
-                 { %>
+                        {
+                            var user = CPUserService.Instance.GetByID(listEntity[i].UserID);
+                            string loginName = user != null ? user.LoginName : "";
+                    %>
                     <tr class="row<%= i%2 %>">
                         <td align="center">
                             <%= i + 1%>
@@ -200,7 +203,7 @@
                         </td>
                         <td align="center">
                             <%--<%= GetName(listEntity[i].getUser1()) %>--%>
-                            <%=CPUserService.Instance.GetByID(listEntity[i].UserID).LoginName %>
+                            <%=loginName %>
                         </td>
                         <%--<td align="center">
                             <%= GetName(listEntity[i].getMenu()) %>

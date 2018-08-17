@@ -83,7 +83,7 @@
     <%if (modules.Contains("ModHSThanhVienUCSC") || modules.Contains("ModDonDangKyUCSC")
         || modules.Contains("ModBaoCaoBanDauSuCo") || modules.Contains("ModBaoCaoKetThucSuCo")
         || modules.Contains("ModBaoCaoTongHop") || modules.Contains("ModIncident")
-        || modules.Contains("ModBaoCaoTK"))
+        || modules.Contains("ModBaoCaoTK")|| modules.Contains("ModDichVuCanhBao"))
         {%>
     <li class="node"><a>Mạng lưới</a>
         <ul>
@@ -105,6 +105,8 @@
             </li>
             <%} %>
 
+            <%if (modules.Contains("ModBaoCaoSuCo"))
+                {%>
             <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoSuCo/Index.aspx">Báo cáo sự cố</a>
                 <%--<ul>
                     <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoBanDauSuCo/Index.aspx">Báo cáo ban đầu sự cố mạng</a></li>
@@ -112,12 +114,22 @@
                     <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTongHop/Index.aspx">Báo cáo tổng hợp</a></li>
                 </ul>--%>
             </li>
+            <%} %>
+
+            <%if (modules.Contains("ModHSThanhVienUCSC") || modules.Contains("ModDonDangKyUCSC"))
+                {%>
             <li class="node"><a class="icon-16-article">Thành viên mạng lưới</a>
                 <ul>
                     <li><a class="icon-16-article" href="/{CPPath}/ModHSThanhVienUCSC/Index.aspx">Đăng ký bắt buộc</a></li>
                     <li><a class="icon-16-article" href="/{CPPath}/ModDonDangKyUCSC/Index.aspx">Đăng ký tự nguyện</a></li>
                 </ul>
             </li>
+            <%} %>
+
+            <%if (modules.Contains("ModDichVuCanhBao"))
+                {%>
+            <li><a class="icon-16-article" href="/{CPPath}/ModDichVuCanhBao/Index.aspx">Dịch vụ cảnh báo</a></li>
+            <%} %>
         </ul>
     </li>
     <%} %>
