@@ -170,7 +170,7 @@
                             <%= listEntity[i].ID%>
                         </td>
                         <td align="center">
-                            <%= GetName(listEntity[i].getThanhVien()) %>
+                            <%= listEntity[i].getThanhVien().LoginName %>
                         </td>
                         <%--<td align="center">
                             <%= string.Format("{0:#,##0}", listEntity[i].UserID1)%>

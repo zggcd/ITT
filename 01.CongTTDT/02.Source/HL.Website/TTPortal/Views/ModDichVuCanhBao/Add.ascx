@@ -119,7 +119,7 @@
 
                     <tr>
                         <td class="key">
-                            <label>Danh sách mail gửi :</label>
+                            <label>Danh sách mail gửi<br />(Mỗi Email trên một dòng) :</label>
                         </td>
                         <td>
                             <textarea style="height: 100px; width: 98%" name="ToEmails"><%=entity.ToEmails%></textarea>
@@ -128,7 +128,7 @@
 
                     <tr>
                         <td class="key">
-                            <label>Danh sách mail Cc :</label>
+                            <label>Danh sách mail Cc<br />(Mỗi Email trên một dòng) :</label>
                         </td>
                         <td>
                             <textarea style="height: 100px; width: 98%" name="CcEmails"><%=entity.CcEmails%></textarea>
@@ -137,7 +137,7 @@
 
                     <tr>
                         <td class="key">
-                            <label>Danh sách IP :</label>
+                            <label>Danh sách IP<br />(Mỗi IP trên một dòng) :</label>
                         </td>
                         <td>
                             <textarea style="height: 100px; width: 98%" name="IPs"><%=entity.IPs%></textarea>
@@ -148,7 +148,7 @@
                             <label>Thời gian nhận cảnh báo :</label>
                         </td>
                         <td>
-                            <input class="text_input" type="text" name="Time" id="Time" value="<%=entity.Time %>" maxlength="255" />
+                            <input class="text_input" type="text" name="ThoiGian" id="ThoiGian" value="<%=entity.Time %>" maxlength="255" />
                         </td>
                     </tr>
 <%--                    <tr>

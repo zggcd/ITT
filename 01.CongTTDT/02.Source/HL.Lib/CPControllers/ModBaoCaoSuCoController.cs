@@ -42,6 +42,8 @@ namespace HL.Lib.CPControllers
                 entity = ModBaoCaoSuCoService.Instance.GetByID(model.RecordID);
 
                 // khoi tao gia tri mac dinh khi update
+                entity.UserID1 = CPLogin.CurrentUser.ID;
+                entity.Published1 = DateTime.Now;
             }
             else
             {
@@ -49,6 +51,7 @@ namespace HL.Lib.CPControllers
 
                 // khoi tao gia tri mac dinh khi insert
                 entity.MenuID = model.MenuID;
+                entity.Published = DateTime.Now;
                 entity.Activity = CPViewPage.UserPermissions.Approve;
                 entity.Order = GetMaxOrder(model);
             }

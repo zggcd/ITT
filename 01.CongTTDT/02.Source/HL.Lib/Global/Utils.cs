@@ -100,6 +100,17 @@ namespace HL.Lib.Global
             return string.Empty;
         }
 
+        public static string GetMobilePhone(string number)
+        {
+            number = number.Trim().ToLower();
+            Match match = Regex.Match(number, @"^0(1\d{9}|9\d{8})$");
+            if (match.Success)
+            {
+                return match.Groups[1].Value;
+            }
+            return string.Empty;
+        }
+
         public bool IsGoodLoginName(string s)
         {
             if (s.Length < 4 || s.Length > 22) return false;

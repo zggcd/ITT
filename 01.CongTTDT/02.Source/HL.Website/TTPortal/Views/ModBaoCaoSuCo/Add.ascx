@@ -107,7 +107,7 @@
                                             { %>
                                         <option <%if (entity.UserID == listUser[i].ID)
                                             {%>
-                                            selected <%} %> value="<%= listUser[i].ID%>"><%= listUser[i].Name%></option>
+                                            selected <%} %> value="<%= listUser[i].ID%>"><%= listUser[i].LoginName%></option>
                                         <%} %>
                                     </select>
                                 </td>

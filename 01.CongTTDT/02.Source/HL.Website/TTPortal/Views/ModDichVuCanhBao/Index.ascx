@@ -169,8 +169,8 @@
                             <%= GetName(listEntity[i].getDonDangKyUCSC()) %>
                         </td>--%>
                         <td align="center">
-                            <%= GetName(listEntity[i].getUser()) %>
-                            <%--<%=loginName %>--%>
+                            <%--<%= GetName(listEntity[i].getUser()) %>--%>
+                            <%=loginName %>
                         </td>
                         <td>
                             <a href="javascript:HLRedirect('Add', <%= listEntity[i].ID %>)"><%= listEntity[i].Name%></a>

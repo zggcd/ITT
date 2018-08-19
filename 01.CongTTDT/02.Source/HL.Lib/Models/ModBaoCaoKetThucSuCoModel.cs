@@ -68,7 +68,7 @@ namespace HL.Lib.Models
         public string Summary { get; set; }
 
         [DataInfo]
-        public DateTime NgayGioPhatHien { get; set; }
+        public DateTime? NgayGioPhatHien { get; set; }
 
         [DataInfo]
         public string KetQua { get; set; }

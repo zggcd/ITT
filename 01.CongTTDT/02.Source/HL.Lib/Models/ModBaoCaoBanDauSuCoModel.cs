@@ -83,7 +83,7 @@ namespace HL.Lib.Models
         public string ChiTiet_MoTa { get; set; }
 
         [DataInfo]
-        public DateTime ChiTiet_NgayGioPhatHien { get; set; }
+        public DateTime? ChiTiet_NgayGioPhatHien { get; set; }
 
         [DataInfo]
         public int HienTrangID { get; set; }
@@ -110,7 +110,7 @@ namespace HL.Lib.Models
         public string Content { get; set; }
 
         [DataInfo]
-        public DateTime ThoiGianThucHien { get; set; }
+        public DateTime? ThoiGianThucHien { get; set; }
 
         [DataInfo]
         public DateTime? Published { get; set; }

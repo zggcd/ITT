@@ -42,12 +42,15 @@ namespace HL.Lib.CPControllers
                 entity = ModDichVuCanhBaoService.Instance.GetByID(model.RecordID);
 
                 // khoi tao gia tri mac dinh khi update
+                entity.UserID1 = CPLogin.CurrentUser.ID;
+                entity.Published1 = DateTime.Now;
             }
             else
             {
                 entity = new ModDichVuCanhBaoEntity();
 
                 // khoi tao gia tri mac dinh khi insert
+                entity.UserID = CPLogin.CurrentUser.ID;
                 entity.MenuID = model.MenuID;
                 entity.Published = DateTime.Now;
                 entity.Activity = CPViewPage.UserPermissions.Approve;
@@ -58,29 +61,29 @@ namespace HL.Lib.CPControllers
             ViewBag.Model = model;
         }
 
-        public void ActionSave(ModDichVuCanhBaoModel model)
+        public void ActionSave(ModDichVuCanhBaoModel model, MAppend append)
         {
-            if (ValidSave(model))
-               SaveRedirect();
+            if (ValidSave(model, append))
+                SaveRedirect();
         }
 
-        public void ActionApply(ModDichVuCanhBaoModel model)
+        public void ActionApply(ModDichVuCanhBaoModel model, MAppend append)
         {
-            if (ValidSave(model))
-               ApplyRedirect(model.RecordID, entity.ID);
+            if (ValidSave(model, append))
+                ApplyRedirect(model.RecordID, entity.ID);
         }
 
-        public void ActionSaveNew(ModDichVuCanhBaoModel model)
+        public void ActionSaveNew(ModDichVuCanhBaoModel model, MAppend append)
         {
-            if (ValidSave(model))
-               SaveNewRedirect(model.RecordID, entity.ID);
+            if (ValidSave(model, append))
+                SaveNewRedirect(model.RecordID, entity.ID);
         }
 
         #region private func
 
         private ModDichVuCanhBaoEntity entity = null;
 
-        private bool ValidSave(ModDichVuCanhBaoModel model)
+        private bool ValidSave(ModDichVuCanhBaoModel model, MAppend append)
         {
             TryUpdateModel(entity);
 
@@ -106,11 +109,13 @@ namespace HL.Lib.CPControllers
 
             if (CPViewPage.Message.ListMessage.Count == 0)
             {
-                 //neu khong nhap code -> tu sinh
-                 if (entity.Code.Trim() == string.Empty)
+                //neu khong nhap code -> tu sinh
+                if (entity.Code.Trim() == string.Empty)
                     entity.Code = Data.GetCode(entity.Name);
 
-                 //cap nhat state
+                entity.Time = TimeSpan.Parse(append.ThoiGian);
+
+                //cap nhat state
                 entity.State = GetState(model.ArrState);
 
                 //save
