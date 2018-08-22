@@ -23,6 +23,7 @@
     }
 
     int menuId = ViewPage.CurrentPage.MenuID;
+    var comment = ViewBag.Comment as ModCommentEntity;
 %>
 
 <div class="row-fluid titleContainer">
@@ -34,10 +35,52 @@
         <%=item.Content %>
         <hr>
     </div>
+    <div>
+        <p>Bình luận bài viết:</p>
+        <form class="form-horizontal" action="{ActionForm}" method="post">
+            <div class="form-group">
+                <label for="txtHoTen" class="col-sm-2 control-label">Họ và tên <span class="required">*</span></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="txtHoTen" name="HoTen" placeholder="Họ và tên" value="<%=comment.HoTen %>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="txtEmail" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="txtEmail" name="Email" placeholder="Email" value="<%=comment.Email %>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="txtPhoneNumber" class="col-sm-2 control-label">Số điện thoại <span class="required">*</span></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="txtPhoneNumber" name="PhoneNum" placeholder="Số điện thoại" value="<%=comment.PhoneNum %>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="txtTitle" class="col-sm-2 control-label">Tiêu đề <span class="required">*</span></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="txtTitle" name="Name" placeholder="Tiêu đề" value="<%=comment.Name %>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="txtTitle" class="col-sm-2 control-label">Nội dung</label>
+                <div class="col-sm-10">
+                    <textarea rows="5" class="form-control" id="txtContent" name="Content" placeholder="Nội dung" style="max-width: 100%; max-height: 300px; min-width: 150px; min-height: 100px;"><%=comment.Content %></textarea>
+                </div>
+            </div>
+            <input type="hidden" name="NewsID" value="<%=item.ID %>" />
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default" name="_hl_action[Comment]">Gửi bình luận</button>
+                </div>
+            </div>
+        </form>
+        <hr>
+    </div>
     <%if (c > 0)
         {%>
     <div class="sameCate">
-        <span>Bài cùng chuyên mục:</span>
+        <p>Bài cùng chuyên mục:</p>
         <ul class="list-unstyled">
             <%for (i = 0; i < c; i++)
                 {%>

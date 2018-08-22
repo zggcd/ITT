@@ -1,5 +1,7 @@
 ﻿using HL.Lib.MVC;
 using HL.Lib.Models;
+using HL.Lib.Global;
+using System;
 
 namespace HL.Lib.Controllers
 {
@@ -56,11 +58,82 @@ namespace HL.Lib.Controllers
                                         .ToList();
 
                 ViewBag.Data = entity;
+                ViewBag.Comment = new ModCommentEntity();
                 SetObject["view.Meta"] = entity;
             }
             else
             {
                 ViewPage.Error404();
+            }
+        }
+
+        public void ActionComment(ModCommentEntity entity)
+        {
+            ViewBag.Comment = entity;
+
+            // Ho va ten
+            if (string.IsNullOrEmpty(entity.HoTen))
+            {
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Họ và tên.");
+            }
+
+            // Dien thoai
+            if (string.IsNullOrEmpty(entity.PhoneNum))
+            {
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Điện thoại.");
+            }
+            else
+            {
+                string checkPhone = Utils.GetMobilePhone(entity.PhoneNum);
+                if (string.IsNullOrEmpty(checkPhone))
+                {
+                    ViewPage.Message.ListMessage.Add("Số điện thoại không hợp lệ.");
+                }
+            }
+
+            // Email
+            if (!string.IsNullOrEmpty(entity.Email))
+            {
+                string checkEmail = Utils.GetEmailAddress(entity.Email);
+                if (string.IsNullOrEmpty(checkEmail))
+                {
+                    ViewPage.Message.ListMessage.Add("Email không hợp lệ.");
+                }
+            }
+
+            // Tieu de
+            if (string.IsNullOrEmpty(entity.Name))
+            {
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Tiêu đề.");
+            }
+
+            // Noi dung
+            if (string.IsNullOrEmpty(entity.Content))
+            {
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Nội dung.");
+            }
+
+            if (ViewPage.Message.ListMessage.Count > 0)
+            {
+                string message = @"Thông tin còn thiếu hoặc chưa hợp lệ: \r\n";
+
+                for (int i = 0; i < ViewPage.Message.ListMessage.Count; i++)
+                    message += @"\r\n + " + ViewPage.Message.ListMessage[i];
+
+                ViewPage.Alert(message);
+            }
+            else
+            {
+                entity.Published = DateTime.Now;
+                entity.Activity = true;
+                if (CPLogin.IsLoginOnWeb())
+                {
+                    entity.CreateUser = CPLogin.CurrentUserOnWeb.ID;
+                }
+
+                ModCommentService.Instance.Save(entity);
+                ViewBag.Comment = new ModCommentEntity();
+                ViewPage.Alert("Cám ơn bạn đã gửi bình luận.");
             }
         }
     }

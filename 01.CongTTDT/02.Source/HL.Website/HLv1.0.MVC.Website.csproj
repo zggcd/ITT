@@ -1669,6 +1669,8 @@
     <Content Include="TTPortal\Views\FormBaoCaoTongHop\Index.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoTongHop\Add.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoTongHop\Index.ascx" />
+    <Content Include="TTPortal\Views\ModComment\Add.ascx" />
+    <Content Include="TTPortal\Views\ModComment\Index.ascx" />
     <Content Include="TTPortal\Views\ModConfigSendMail\Add.ascx" />
     <Content Include="TTPortal\Views\ModConfigSendMail\Index.ascx" />
     <Content Include="TTPortal\Views\ModCoQuan\Add.ascx" />
@@ -1729,6 +1731,7 @@
     <Content Include="Views\CBaoCaoKetThucSuCo\Default.ascx" />
     <Content Include="Views\CBaoCaoSuCo\Default.ascx" />
     <Content Include="Views\CBaoCaoTongHop\Default.ascx" />
+    <Content Include="Views\CComment\Default.ascx" />
     <Content Include="Views\CCoQuan\Default.ascx" />
     <Content Include="Views\CDauMoiUCSC\Default.ascx" />
     <Content Include="Views\CDichVuCanhBaoIP\Default.ascx" />
@@ -1770,6 +1773,8 @@
     <Content Include="Views\MBaoCaoSuCo\Add.ascx" />
     <Content Include="Views\MBaoCaoTongHop\Detail.ascx" />
     <Content Include="Views\MBaoCaoTongHop\Index.ascx" />
+    <Content Include="Views\MComment\Detail.ascx" />
+    <Content Include="Views\MComment\Index.ascx" />
     <Content Include="Views\MContentTemp\Index.ascx" />
     <Content Include="Views\MContent\MangLuoi.ascx" />
     <Content Include="Views\MCoQuan\Detail.ascx" />

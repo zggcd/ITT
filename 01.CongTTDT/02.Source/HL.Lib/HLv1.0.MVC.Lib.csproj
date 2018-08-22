@@ -89,6 +89,7 @@
     <Compile Include="Controllers\CBaoCaoKetThucSuCoController.cs" />
     <Compile Include="Controllers\CBaoCaoSuCoController.cs" />
     <Compile Include="Controllers\CBaoCaoTongHopController.cs" />
+    <Compile Include="Controllers\CCommentController.cs" />
     <Compile Include="Controllers\CConfigSendMailController.cs" />
     <Compile Include="Controllers\CCoQuanController.cs" />
     <Compile Include="Controllers\CDauMoiUCSCController.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="Controllers\MBaoCaoBanDauSuCoController.cs" />
     <Compile Include="Controllers\MBaoCaoKetThucSuCoController.cs" />
     <Compile Include="Controllers\MBaoCaoTongHopController.cs" />
+    <Compile Include="Controllers\MCommentController.cs" />
     <Compile Include="Controllers\MConfigSendMailController.cs" />
     <Compile Include="Controllers\MContentTempController.cs" />
     <Compile Include="Controllers\MCoQuanController.cs" />
@@ -162,6 +164,7 @@
     <Compile Include="CPControllers\ModBaoCaoSuCoController.cs" />
     <Compile Include="CPControllers\FormBaoCaoTongHopController.cs" />
     <Compile Include="CPControllers\ModBaoCaoTongHopController.cs" />
+    <Compile Include="CPControllers\ModCommentController.cs" />
     <Compile Include="CPControllers\ModConfigController.cs" />
     <Compile Include="CPControllers\ModConfigSendMailController.cs" />
     <Compile Include="CPControllers\ModCoQuanController.cs" />
@@ -249,6 +252,7 @@
     <Compile Include="Models\ModBaoCaoKetThucSuCoModel.cs" />
     <Compile Include="Models\ModBaoCaoSuCoModel.cs" />
     <Compile Include="Models\ModBaoCaoTongHopModel.cs" />
+    <Compile Include="Models\ModCommentModel.cs" />
     <Compile Include="Models\ModConfigSendMailModel.cs" />
     <Compile Include="Models\ModCoQuanModel.cs" />
     <Compile Include="Models\ModDataBackupModel.cs" />

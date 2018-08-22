@@ -170,7 +170,7 @@
                                     </td>
                                 </tr>
 
-                                <tr>
+                                <%--<tr>
                                     <td align="center" style="text-align: center" class="key">Chọn file Audio đọc nội dung
                                     </td>
                                 </tr>
@@ -179,7 +179,7 @@
                                         <input class="text_input" type="text" name="Audio" id="Audio" style="width: 65%" value="<%=entity.Audio %>" />
                                         <input class="text_input" style="width: 30%;" type="button" onclick="ShowFileForm('Audio'); return false;" value="Chọn file Audio" />
                                     </td>
-                                </tr>
+                                </tr>--%>
 
                                 <tr>
                                     <td align="center" style="text-align: center" class="key">Lượt xem

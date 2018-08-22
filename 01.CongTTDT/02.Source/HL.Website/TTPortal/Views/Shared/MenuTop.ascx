@@ -3,7 +3,7 @@
 <%
     string modules = CPUserService.Instance.GetAllowAccessModule();
     bool hasMenuTop_Management = false;
-    if (modules.Contains("ModNews") || modules.Contains("ModDuThao") || modules.Contains("ModVanBan") || modules.Contains("ModAdv")
+    if (modules.Contains("ModNews") || modules.Contains("ModComment") || modules.Contains("ModDuThao") || modules.Contains("ModVanBan") || modules.Contains("ModAdv")
          || modules.Contains("ModGopY") || modules.Contains("ModFile") || modules.Contains("ModUser")
           || modules.Contains("ModAlbum") || modules.Contains("ModVideo") || modules.Contains("ModConfigSendMail")
           || modules.Contains("ModEmailTemplate") || modules.Contains("ModISP"))
@@ -21,6 +21,10 @@
             <%if (modules.Contains("ModNews"))
                 {%>
             <li><a class="icon-16-article" href="/{CPPath}/ModNews/Index.aspx">{RS:MenuTop_News}</a></li>
+            <%} %>
+            <%if (modules.Contains("ModComment"))
+                {%>
+            <li><a class="icon-16-article" href="/{CPPath}/ModComment/Index.aspx">Quản lý bình luận</a></li>
             <%} %>
             <%--<li><a class="icon-16-article" href="/{CPPath}/ModTag/Index.aspx">Tags</a></li>
             <li><a class="icon-16-article" href="/{CPPath}/ModRSS/Index.aspx">RSS</a></li>--%>
