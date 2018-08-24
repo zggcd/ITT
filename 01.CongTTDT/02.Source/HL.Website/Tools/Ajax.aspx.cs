@@ -26,7 +26,6 @@ namespace HL.Website.Tools
                 //string content = HL.Core.Global.Convert.ToString(HL.Core.Web.HttpQueryString.GetValue("content")).Trim();
                 string content = HL.Core.Web.HttpQueryString.GetValue("content").ToString();
                 string sFile = HL.Core.Global.Convert.ToString(HL.Core.Web.HttpQueryString.GetValue("sFile")).Trim();
-                return;
 
                 if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(title) && !string.IsNullOrEmpty(content))
                 {
@@ -313,6 +312,31 @@ namespace HL.Website.Tools
                     Utils.GetContentFromRSS(list[i].Code, list[i].RSS, list[i].SourceID, gettag, getclassorid, deltag,
                         delclassorid);
                     //}
+                }
+            }
+            else if (cmd == "updatemenuid")
+            {
+                string type = HL.Core.Global.Convert.ToString(HL.Core.Web.HttpQueryString.GetValue("type"));
+                int recordid = HL.Core.Global.Convert.ToInt(HL.Core.Web.HttpQueryString.GetValue("recordid"), 0);
+                int menuid = HL.Core.Global.Convert.ToInt(HL.Core.Web.HttpQueryString.GetValue("menuidup"), 0);
+
+                if (type == "RSS")
+                {
+                    var obj = ModRSSService.Instance.CreateQuery().Where(o => o.ID == recordid).ToSingle();
+                    if (obj != null)
+                    {
+                        obj.MenuID = menuid;
+                        ModRSSService.Instance.Save(obj);
+                    }
+                }
+                else if (type == "News")
+                {
+                    var obj = ModNewsService.Instance.CreateQuery().Where(o => o.ID == recordid).ToSingle();
+                    if (obj != null)
+                    {
+                        obj.MenuID = menuid;
+                        ModNewsService.Instance.Save(obj);
+                    }
                 }
             }
 

@@ -61,15 +61,7 @@
         $("#to_date").datepicker({ dateFormat: "dd/mm/yy" });
     });
 </script>
-<script src="/mContent/js/Function.js"></script>
 <script src="/Content/js/Function.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        //alert('test');
-        getTotal('RSS');
-        getCountByMenuID('RSS', '<%=model.MenuID%>');
-    });
-</script>
 
 <form id="hlForm" name="hlForm" method="post">
 
@@ -86,6 +78,9 @@
             <div class="toolbar-list" id="toolbar">
                 <%--<%=GetDefaultListCommand()%>--%>
                 <%=GetListCommand("edit|Sửa,space,publish|Duyệt,unpublish|Bỏ duyệt,space,delete|Xóa,space,config|Xóa cache")%>
+                <ul style="float: right;">
+                    <li class="button" id="toolbar-new"><a href="#" onclick="javascript:getrss()" class="toolbar"><span class="icon-32-new" title="Lấy tin"></span>Lấy tin </a></li>
+                </ul>
             </div>
             <div class="pagetitle icon-48-generic">
                 <h2>Tin RSS</h2>
@@ -126,11 +121,11 @@
         ];
 
         var HLArrDefault =
-        [
-            '1', 'PageIndex',
-            '1', 'LangID',
-            '20', 'PageSize'
-        ];
+            [
+                '1', 'PageIndex',
+                '1', 'LangID',
+                '20', 'PageSize'
+            ];
     </script>
 
     <%= ShowMessage()%>
@@ -144,14 +139,13 @@
         <div class="m">
 
             <table>
-                <tr>
+                <%--                <tr>
                     <td width="100%" colspan="2">
                         <del class="container">
                             <%= GetPagination(model.PageIndex, model.PageSize, model.TotalRecord)%>
                         </del>
-                        <%--<span style="line-height: 20px;"><b>(Tổng số tin: <i style="color: red;" id="CountTotal"><%=ViewBag.CountTotal %></i>, Tin theo chuyên mục: <i style="color: red;" id="CountByMenuID"><%=ViewBag.CountByMenuID %></i>)</b></span>--%>
                     </td>
-                </tr>
+                </tr>--%>
                 <tr>
                     <td width="100%">Lọc:
                         <input style="width: 25%; line-height: 20px;" type="text" id="filter_search" value="<%= model.SearchText %>" class="text_area" onchange="HLRedirect();return false;" />
@@ -241,7 +235,7 @@
                         </th>
                     </tr>
                 </thead>
-                <%--                <tfoot>
+                <tfoot>
                     <tr>
                         <td colspan="15">
                             <del class="container">
@@ -249,10 +243,10 @@
                             </del>
                         </td>
                     </tr>
-                </tfoot>--%>
+                </tfoot>
                 <tbody>
                     <%for (int i = 0; listEntity != null && i < listEntity.Count; i++)
-                      { %>
+                        { %>
                     <tr class="row<%= i%2 %>">
                         <td align="center">
                             <%= i + 1%>
@@ -306,7 +300,7 @@
 
     <div class="hide"></div>
     <div class="wait" style="display: none;" id="Waiting">
-        <img src="/Content/image/loading.gif" />
+        <img src="/Content/imgs/loading.gif" />
         <p style="color: red; font-style: italic; font-weight: bold; font-size: 13px;">Đang cập nhật dữ liệu, vui lòng chờ giây lát...</p>
     </div>
 </form>

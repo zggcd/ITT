@@ -100,8 +100,7 @@ function checkdn(LoginName, pass) {
         'onSuccess': function (req) {
             with (req.responseXML.getElementsByTagName('I').item(0)) {
                 var check = getNodeValue(getElementsByTagName('Content'));
-                if (check == '1')
-                {
+                if (check == '1') {
                     window.location = window.location.href;
                     //$('#dn').click();
                 } else {
@@ -124,8 +123,7 @@ function dx(LoginName, pass) {
         'onSuccess': function (req) {
             with (req.responseXML.getElementsByTagName('I').item(0)) {
                 var check = getNodeValue(getElementsByTagName('Content'));
-                if (check == '1')
-                {
+                if (check == '1') {
                     window.location = window.location.href;
                 } else {
                     obj.hide();
@@ -148,7 +146,39 @@ function getrss() {
 
     AjaxRequest.get({
         'url': sLink,
-        'onSuccess': function (req) { },
+        'onSuccess': function (req) {
+            window.location.reload();
+        },
+        'onError': function (req) { }
+    });
+}
+
+function updateMenuID(type, recordid, menuidup) {
+    var obj = $('#Waiting,.hide');
+    obj.show();
+    var num = Math.floor(Math.random() * 999999);
+    sLink = '/Tools/Ajax.aspx?cmd=updatemenuid' + '&type=' + type + '&recordid=' + recordid + '&menuidup=' + menuidup + '&rnd=' + num;
+
+    AjaxRequest.get({
+        'url': sLink,
+        'onSuccess': function (req) {
+            obj.hide();
+        },
+        'onError': function (req) { }
+    });
+}
+
+function updateStatusOff(recordid, status) {
+    var obj = $('#Waiting,.hide');
+    obj.show();
+    var num = Math.floor(Math.random() * 999999);
+    sLink = '/Tools/Ajax.aspx?cmd=updateStatusOff' + '&recordid=' + recordid + '&status=' + status + '&rnd=' + num;
+
+    AjaxRequest.get({
+        'url': sLink,
+        'onSuccess': function (req) {
+            obj.hide();
+        },
         'onError': function (req) { }
     });
 }
