@@ -985,7 +985,6 @@ Tên cơ quan chủ quản:</span>
     }
 
     function fnSubmit() {
-        debugger;
         var ln = <%=countCapDo%>;
         var s = '';
         for (var i = 0; i < ln; i++) {

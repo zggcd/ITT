@@ -552,6 +552,7 @@ namespace HL.Lib.CPControllers
         public string ThoiGian { get; set; }    //Dinh dang: dd/MM/yyyy/HH/mm
         public string M { get; set; }
         public string Name1 { get; set; }
+        public string NhanLuc { get; set; }
     }
 
     public class MInfoMagicModel

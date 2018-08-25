@@ -50,12 +50,16 @@ namespace HL.Lib.CPControllers
                 entityHTTT = ModHeThongThongTinService.Instance.CreateQuery()
                     .Where(o => o.Activity == true && o.DauMoiUCSCID == entityDM.ID)
                     .ToList();
+                entityNhanLuc = ModNhanLucUCSCService.Instance.CreateQuery()
+                    .Where(o => o.Activity == true && o.HSThanhVienUCSCID == entityDM.ID)
+                    .ToList();
             }
             else
             {
                 entity = new ModHSThanhVienUCSCEntity();
                 entityDM = new ModDauMoiUCSCEntity();
                 entityHTTT = new List<ModHeThongThongTinEntity>();
+                entityNhanLuc = new List<ModNhanLucUCSCEntity>();
 
                 // khoi tao gia tri mac dinh khi insert
                 entity.MenuID = model.MenuID;
@@ -67,6 +71,7 @@ namespace HL.Lib.CPControllers
 
             ViewBag.DauMoi = entityDM;
             ViewBag.HTTT = entityHTTT;
+            ViewBag.NhanLuc = entityNhanLuc;
             ViewBag.Data = entity;
             ViewBag.Model = model;
         }
@@ -118,6 +123,7 @@ namespace HL.Lib.CPControllers
         private ModHSThanhVienUCSCEntity entity = null;
         private ModDauMoiUCSCEntity entityDM = null;
         private List<ModHeThongThongTinEntity> entityHTTT = null;
+        private List<ModNhanLucUCSCEntity> entityNhanLuc = null;
 
         private bool ValidSave(ModHSThanhVienUCSCModel model, ModDauMoiUCSCEntity entityDm, MAppend append)
         {
@@ -204,6 +210,38 @@ namespace HL.Lib.CPControllers
                 }
                 ModHeThongThongTinService.Instance.Save(entityHTTT);
             }
+
+            // Nhan luc
+            var nhanLucs = append.NhanLuc.Split('|');
+            var cNhanLucs = nhanLucs.Length;
+            List<ModNhanLucUCSCEntity> entityNhanLuc = new List<ModNhanLucUCSCEntity>();
+            for (int i = 0; i < cNhanLucs; i++)
+            {
+                if (string.IsNullOrEmpty(nhanLucs[i])) continue;
+                var nhanLuc = nhanLucs[i].Split('_');
+                int cNhanLuc = nhanLuc.Length;
+                if (cNhanLuc != 10) continue;
+                var item = new ModNhanLucUCSCEntity()
+                {
+                    HSThanhVienUCSCID = id,
+                    Name = nhanLuc[0],
+                    School = nhanLuc[1],
+                    MenuIDs_LinhVucDT = nhanLuc[2],
+                    MenuIDs_TrinhDoDT = nhanLuc[3],
+                    MenuIDs_ChungChi = nhanLuc[4],
+                    MenuIDs_QuanLyATTT = nhanLuc[5],
+                    MenuIDs_KyThuatPhongThu = nhanLuc[6],
+                    MenuIDs_KyThuatBaoVe = nhanLuc[7],
+                    MenuIDs_KyThuatKiemTra = nhanLuc[8],
+                    NamTotNghiep = HL.Core.Global.Convert.ToInt(nhanLuc[9], 0),
+                    Activity = true,
+                    Published = DateTime.Now,
+                    Order = GetMaxOrder_NhanLuc()
+                };
+                entityNhanLuc.Add(item);
+            }
+            ViewBag.NhanLuc = entityNhanLuc;
+            ModNhanLucUCSCService.Instance.Save(entityNhanLuc);
         }
 
         public void UpdateOther(ModHSThanhVienUCSCEntity entityHs, ModDauMoiUCSCEntity entityDm, MAppend append)
@@ -275,9 +313,44 @@ namespace HL.Lib.CPControllers
                     ModHeThongThongTinService.Instance.Save(entityHTTT);
                 }
 
+                // Nhan luc
+                var nhanLucExist = ModNhanLucUCSCService.Instance.CreateQuery().Where(o => o.Activity == true && o.HSThanhVienUCSCID == dm.ID).ToList();
+                if (nhanLucExist != null) ModNhanLucUCSCService.Instance.Delete(nhanLucExist);
+                var nhanLucs = append.NhanLuc.Split('|');
+                var cNhanLucs = nhanLucs.Length;
+                List<ModNhanLucUCSCEntity> entityNhanLuc = new List<ModNhanLucUCSCEntity>();
+                for (int i = 0; i < cNhanLucs; i++)
+                {
+                    if (string.IsNullOrEmpty(nhanLucs[i])) continue;
+                    var nhanLuc = nhanLucs[i].Split('_');
+                    int cNhanLuc = nhanLuc.Length;
+                    if (cNhanLuc != 10) continue;
+                    var item = new ModNhanLucUCSCEntity()
+                    {
+                        HSThanhVienUCSCID = entity.ID,
+                        Name = nhanLuc[0],
+                        School = nhanLuc[1],
+                        MenuIDs_LinhVucDT = nhanLuc[2],
+                        MenuIDs_TrinhDoDT = nhanLuc[3],
+                        MenuIDs_ChungChi = nhanLuc[4],
+                        MenuIDs_QuanLyATTT = nhanLuc[5],
+                        MenuIDs_KyThuatPhongThu = nhanLuc[6],
+                        MenuIDs_KyThuatBaoVe = nhanLuc[7],
+                        MenuIDs_KyThuatKiemTra = nhanLuc[8],
+                        NamTotNghiep = HL.Core.Global.Convert.ToInt(nhanLuc[9], 0),
+                        Activity = true,
+                        Published = DateTime.Now,
+                        Order = GetMaxOrder_NhanLuc()
+                    };
+                    entityNhanLuc.Add(item);
+                }
+                ViewBag.NhanLuc = entityNhanLuc;
+                ModNhanLucUCSCService.Instance.Save(entityNhanLuc);
+
                 ViewBag.HoSo = entityHs;
                 ViewBag.DauMoi = entityDm;
                 ViewBag.HTTT = entityHTTT;
+                ViewBag.NhanLuc = entityNhanLuc;
             }
         }
 
@@ -298,6 +371,13 @@ namespace HL.Lib.CPControllers
         private int GetMaxOrder_DauMoi()
         {
             return ModDauMoiUCSCService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
+
+        private int GetMaxOrder_NhanLuc()
+        {
+            return ModNhanLucUCSCService.Instance.CreateQuery()
                     .Max(o => o.Order)
                     .ToValue().ToInt(0) + 1;
         }
