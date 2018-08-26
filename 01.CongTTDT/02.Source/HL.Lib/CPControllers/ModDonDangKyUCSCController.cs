@@ -44,13 +44,21 @@ namespace HL.Lib.CPControllers
                 // khoi tao gia tri mac dinh khi update
                 entity.UserID1 = Lib.Global.CPLogin.UserID;
 
-                ViewBag.HTTT = ModHeThongThongTinService.Instance.CreateQuery()
+                //ViewBag.HTTT = ModHeThongThongTinService.Instance.CreateQuery()
+                //    .Where(o => o.Activity == true && o.DonDangKyUCSCID == model.RecordID)
+                //    .ToList();
+                entityHTTT = ModHeThongThongTinService.Instance.CreateQuery()
+                    .Where(o => o.Activity == true && o.DonDangKyUCSCID == model.RecordID)
+                    .ToList();
+                entityNhanLuc = ModNhanLucUCSCService.Instance.CreateQuery()
                     .Where(o => o.Activity == true && o.DonDangKyUCSCID == model.RecordID)
                     .ToList();
             }
             else
             {
                 entity = new ModDonDangKyUCSCEntity();
+                entityHTTT = new List<ModHeThongThongTinEntity>();
+                entityNhanLuc = new List<ModNhanLucUCSCEntity>();
 
                 // khoi tao gia tri mac dinh khi insert
                 entity.MenuID = model.MenuID;
@@ -60,6 +68,8 @@ namespace HL.Lib.CPControllers
                 entity.Order = GetMaxOrder(model);
             }
 
+            ViewBag.HTTT = entityHTTT;
+            ViewBag.NhanLuc = entityNhanLuc;
             ViewBag.Data = entity;
             ViewBag.Model = model;
         }
@@ -86,29 +96,31 @@ namespace HL.Lib.CPControllers
             CPViewPage.RefreshPage();
         }
 
-        public void ActionSave(ModDonDangKyUCSCModel model, ModDonDangKyUCSCEntity entityDk)
+        public void ActionSave(ModDonDangKyUCSCModel model, ModDonDangKyUCSCEntity entityDk, MAppend append)
         {
-            if (ValidSave(model, entityDk))
+            if (ValidSave(model, entityDk, append))
                 SaveRedirect();
         }
 
-        public void ActionApply(ModDonDangKyUCSCModel model, ModDonDangKyUCSCEntity entityDk)
+        public void ActionApply(ModDonDangKyUCSCModel model, ModDonDangKyUCSCEntity entityDk, MAppend append)
         {
-            if (ValidSave(model, entityDk))
+            if (ValidSave(model, entityDk, append))
                 ApplyRedirect(model.RecordID, entity.ID);
         }
 
-        public void ActionSaveNew(ModDonDangKyUCSCModel model, ModDonDangKyUCSCEntity entityDk)
+        public void ActionSaveNew(ModDonDangKyUCSCModel model, ModDonDangKyUCSCEntity entityDk, MAppend append)
         {
-            if (ValidSave(model, entityDk))
+            if (ValidSave(model, entityDk, append))
                 SaveNewRedirect(model.RecordID, entity.ID);
         }
 
         #region private func
 
         private ModDonDangKyUCSCEntity entity = null;
+        private List<ModHeThongThongTinEntity> entityHTTT = null;
+        private List<ModNhanLucUCSCEntity> entityNhanLuc = null;
 
-        private bool ValidSave(ModDonDangKyUCSCModel model, ModDonDangKyUCSCEntity entityDk)
+        private bool ValidSave(ModDonDangKyUCSCModel model, ModDonDangKyUCSCEntity entityDk, MAppend append)
         {
             TryUpdateModel(entity);
 
@@ -143,8 +155,8 @@ namespace HL.Lib.CPControllers
 
                 //save
                 int id = ModDonDangKyUCSCService.Instance.Save(entity);
-                if (model.RecordID > 0) UpdateOther(entity, model);
-                else SaveOther(id, model);
+                if (model.RecordID > 0) UpdateOther(entity, model, append);
+                else SaveOther(id, model, append);
 
                 return true;
             }
@@ -152,7 +164,7 @@ namespace HL.Lib.CPControllers
             return false;
         }
 
-        public void SaveOther(int id, ModDonDangKyUCSCModel append)
+        public void SaveOther(int id, ModDonDangKyUCSCModel donDkModel, MAppend append)
         {
             ViewBag.DangKy = entity;
 
@@ -184,9 +196,41 @@ namespace HL.Lib.CPControllers
                 }
                 ModHeThongThongTinService.Instance.Save(entityHTTT);
             }
+
+            // Nhan luc
+            var nhanLucs = append.NhanLuc.Split('|');
+            var cNhanLucs = nhanLucs.Length;
+            List<ModNhanLucUCSCEntity> entityNhanLuc = new List<ModNhanLucUCSCEntity>();
+            for (int i = 0; i < cNhanLucs; i++)
+            {
+                if (string.IsNullOrEmpty(nhanLucs[i])) continue;
+                var nhanLuc = nhanLucs[i].Split('_');
+                int cNhanLuc = nhanLuc.Length;
+                if (cNhanLuc != 10) continue;
+                var item = new ModNhanLucUCSCEntity()
+                {
+                    DonDangKyUCSCID = id,
+                    Name = nhanLuc[0],
+                    School = nhanLuc[1],
+                    MenuIDs_LinhVucDT = nhanLuc[2],
+                    MenuIDs_TrinhDoDT = nhanLuc[3],
+                    MenuIDs_ChungChi = nhanLuc[4],
+                    MenuIDs_QuanLyATTT = nhanLuc[5],
+                    MenuIDs_KyThuatPhongThu = nhanLuc[6],
+                    MenuIDs_KyThuatBaoVe = nhanLuc[7],
+                    MenuIDs_KyThuatKiemTra = nhanLuc[8],
+                    NamTotNghiep = HL.Core.Global.Convert.ToInt(nhanLuc[9], 0),
+                    Activity = true,
+                    Published = DateTime.Now,
+                    Order = GetMaxOrder_NhanLuc()
+                };
+                entityNhanLuc.Add(item);
+            }
+            ViewBag.NhanLuc = entityNhanLuc;
+            ModNhanLucUCSCService.Instance.Save(entityNhanLuc);
         }
 
-        public void UpdateOther(ModDonDangKyUCSCEntity entityDk, ModDonDangKyUCSCModel model)
+        public void UpdateOther(ModDonDangKyUCSCEntity entityDk, ModDonDangKyUCSCModel model, MAppend append)
         {
             int userId = HL.Lib.Global.CPLogin.UserID;
             var entity = ModDonDangKyUCSCService.Instance.CreateQuery()
@@ -213,7 +257,7 @@ namespace HL.Lib.CPControllers
                 //He thong thong tin
                 var httt = ModHeThongThongTinService.Instance.CreateQuery().Where(o => o.Activity == true && o.DonDangKyUCSCID == entity.ID).ToList();
                 if (httt != null) ModHeThongThongTinService.Instance.Delete(httt);
-                var arr = model.M.Split(';');
+                var arr = append.M.Split(';');
                 List<ModHeThongThongTinEntity> entityHTTT = new List<ModHeThongThongTinEntity>();
                 for (int i = 0; i < arr.Length; i++)
                 {
@@ -241,8 +285,43 @@ namespace HL.Lib.CPControllers
                     ModHeThongThongTinService.Instance.Save(entityHTTT);
                 }
 
+                // Nhan luc
+                var nhanLucExist = ModNhanLucUCSCService.Instance.CreateQuery().Where(o => o.Activity == true && o.DonDangKyUCSCID == entity.ID).ToList();
+                if (nhanLucExist != null) ModNhanLucUCSCService.Instance.Delete(nhanLucExist);
+                var nhanLucs = append.NhanLuc.Split('|');
+                var cNhanLucs = nhanLucs.Length;
+                List<ModNhanLucUCSCEntity> entityNhanLuc = new List<ModNhanLucUCSCEntity>();
+                for (int i = 0; i < cNhanLucs; i++)
+                {
+                    if (string.IsNullOrEmpty(nhanLucs[i])) continue;
+                    var nhanLuc = nhanLucs[i].Split('_');
+                    int cNhanLuc = nhanLuc.Length;
+                    if (cNhanLuc != 10) continue;
+                    var item = new ModNhanLucUCSCEntity()
+                    {
+                        DonDangKyUCSCID = entity.ID,
+                        Name = nhanLuc[0],
+                        School = nhanLuc[1],
+                        MenuIDs_LinhVucDT = nhanLuc[2],
+                        MenuIDs_TrinhDoDT = nhanLuc[3],
+                        MenuIDs_ChungChi = nhanLuc[4],
+                        MenuIDs_QuanLyATTT = nhanLuc[5],
+                        MenuIDs_KyThuatPhongThu = nhanLuc[6],
+                        MenuIDs_KyThuatBaoVe = nhanLuc[7],
+                        MenuIDs_KyThuatKiemTra = nhanLuc[8],
+                        NamTotNghiep = HL.Core.Global.Convert.ToInt(nhanLuc[9], 0),
+                        Activity = true,
+                        Published = DateTime.Now,
+                        Order = GetMaxOrder_NhanLuc()
+                    };
+                    entityNhanLuc.Add(item);
+                }
+                ViewBag.NhanLuc = entityNhanLuc;
+                ModNhanLucUCSCService.Instance.Save(entityNhanLuc);
+
                 ViewBag.HoSo = entityDk;
                 ViewBag.HTTT = entityHTTT;
+                ViewBag.NhanLuc = entityNhanLuc;
             }
         }
 
@@ -256,6 +335,13 @@ namespace HL.Lib.CPControllers
         private int GetMaxOrder_HTTT()
         {
             return ModHeThongThongTinService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
+
+        private int GetMaxOrder_NhanLuc()
+        {
+            return ModNhanLucUCSCService.Instance.CreateQuery()
                     .Max(o => o.Order)
                     .ToValue().ToInt(0) + 1;
         }
@@ -277,7 +363,6 @@ namespace HL.Lib.CPControllers
         public string SearchText { get; set; }
 
         public int[] ArrState { get; set; }
-        public string M { get; set; }
     }
 }
 
