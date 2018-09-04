@@ -68,7 +68,7 @@ namespace HL.Lib.Controllers
 
             var dbQueryTinNoiBo = ModNewsService.Instance.CreateQuery()
                 .Where(o => o.Activity == true)
-                .Where(loaiTV > 0, o => o.LoaiThanhVienID == loaiTV)
+                .Where(o => o.LoaiThanhVienID == loaiTV)
                 .WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("News", MenuID, ViewPage.CurrentLang.ID))
                 .Where(State > 0, o => (o.State & State) == State)
                 .OrderByDesc(o => o.Order)
