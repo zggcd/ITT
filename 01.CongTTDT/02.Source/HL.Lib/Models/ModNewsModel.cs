@@ -14,6 +14,9 @@ namespace HL.Lib.Models
         public int MenuID { get; set; }
 
         [DataInfo]
+        public int LoaiThanhVienID { get; set; }
+
+        [DataInfo]
         public int State { get; set; }
 
         [DataInfo]

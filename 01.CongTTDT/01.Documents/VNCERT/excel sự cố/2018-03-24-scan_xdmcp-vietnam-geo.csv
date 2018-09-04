@@ -1,0 +1,36 @@
+"timestamp","ip","protocol","port","hostname","tag","asn","geo","region","city","naics","sic","opcode","reported_hostname","status","size"
+"2018-03-24 01:19:15","222.255.124.89","udp",177,"hcm-cp89.vnn.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","hcm-cp88","1 user,  load: 9.7, 6.1, 5.4",48
+"2018-03-24 01:20:37","210.211.98.250","udp",177,,"xdmcp",38731,"VN","DA NANG","DA NANG",0,0,"Willing","xgameu19","Linux 2.6.32-431.el6.x86_64",47
+"2018-03-24 01:42:31","103.82.36.29","udp",177,,"xdmcp",45899,"VN","HO CHI MINH","THANH PHO HO CHI MINH",0,0,"Willing","nisqas","Linux 4.4.90-92.45-default",44
+"2018-03-24 01:44:00","203.162.0.164","udp",177,"m164.vnn.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","m164.vnn.vn","1 user,  load: 0.3, 0.1, 0.1",51
+"2018-03-24 01:50:11","222.255.124.88","udp",177,"hcm-cp88.vnn.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","hcm-cp88","1 user,  load: 3.1, 3.0, 3.6",48
+"2018-03-24 01:53:08","137.59.45.15","udp",177,,"xdmcp",131429,"VN","HA NOI","HANOI",0,0,"Willing","solaris10-mlmb-06.localdomain","0 user,  load: 0.0, 0.0, 0.0",69
+"2018-03-24 02:00:43","123.29.0.81","udp",177,"123.29.0.0.static.vnpt.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","HCM-SAM-O","2 users  load: 1.0, 1.0, 1.0",49
+"2018-03-24 02:00:51","103.42.56.76","udp",177,"ip.ptr.tgs.com.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","iccvn","Linux 3.0.101-63-default",41
+"2018-03-24 02:02:56","222.253.207.5","udp",177,"static.vnpt.vn","xdmcp",45899,"VN","HO CHI MINH","THANH PHO HO CHI MINH",0,0,"Willing","PUBLIC","1 user,  load: 0.0, 0.0, 0.0",46
+"2018-03-24 02:03:26","119.17.209.146","udp",177,"static.netnam.vn","xdmcp",24173,"VN","HA NOI","HANOI",0,0,"Willing","TIBCO01","0 user,  load: 0.0, 0.0, 0.0",47
+"2018-03-24 02:13:20","123.31.36.85","udp",177,"localhost","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","db-kideng","Linux 2.6.32-504.el6.x86_64",48
+"2018-03-24 02:28:42","203.162.96.66","udp",177,"ns2vdc2.vnn.vn","xdmcp",7643,"VN","HA NOI","HANOI",0,0,"Willing","ns2vdc2","0 user,  load: 0.0, 0.0, 0.0",47
+"2018-03-24 02:29:15","183.91.16.70","udp",177,"hcm.ns1.cmcti.vn","xdmcp",45903,"VN","HO CHI MINH","THANH PHO HO CHI MINH",0,0,"Willing","bnx0","1 user,  load: 1.2, 1.2, 1.2",44
+"2018-03-24 02:31:49","203.162.27.146","udp",177,"static.vnpt.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","dng-ldap2.vnn.vn","2 users  load: 2.1, 2.1, 2.1",56
+"2018-03-24 02:40:16","118.69.44.13","udp",177,,"xdmcp",18403,"VN","HA NOI","HANOI",518111,737401,"Willing","groupwise","Linux 3.0.13-0.27-default",46
+"2018-03-24 02:48:12","123.29.0.82","udp",177,"123.29.0.0.static.vnpt.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","HCM-SAM-D","0 user,  load: 0.0, 0.0, 0.0",49
+"2018-03-24 02:50:02","137.59.45.16","udp",177,,"xdmcp",131429,"VN","HA NOI","HANOI",0,0,"Willing","solaris10-mlmb-01.localdomain","0 user,  load: 0.1, 0.1, 0.1",69
+"2018-03-24 02:59:01","125.235.2.42","udp",177,"125.235.2.42.adsl.viettel.vn","xdmcp",7552,"VN","HA NOI","HANOI",0,0,"Willing","elib.isivast.org.vn","Linux 2.6.9-55.ELsmp",51
+"2018-03-24 03:12:54","203.162.0.166","udp",177,"dir0.vnn.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","dir0.vnn.vn","0 user,  load: 0.0, 0.0, 0.0",51
+"2018-03-24 03:15:23","203.113.146.242","udp",177,,"xdmcp",7552,"VN","DONG NAI","BIEN HOA",0,0,"Willing","hserpdev","0 users  load: 1.1, 1.0, 0.7",48
+"2018-03-24 03:18:12","123.30.185.16","udp",177,"static.vnpt.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","master1","0 user,  load: 0.1, 0.1, 0.1",47
+"2018-03-24 03:27:26","203.162.4.36","udp",177,"hcm-36.vnn.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","hcm-36","0 user,  load: 0.2, 0.2, 0.2",46
+"2018-03-24 03:33:57","203.162.4.111","udp",177,"hcm-111.vnn.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","hcm-111","0 user,  load: 0.4, 0.4, 0.4",47
+"2018-03-24 03:37:21","203.162.27.134","udp",177,"static.vnpt.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","dng-radius-02","1 user,  load: 0.0, 0.0, 0.0",53
+"2018-03-24 03:44:14","210.211.101.18","udp",177,,"xdmcp",38731,"VN","DA NANG","DA NANG",0,0,"Willing","brnvtel","Linux 2.6.32-504.el6.x86_64",46
+"2018-03-24 03:49:18","203.210.143.5","udp",177,"static.vnpt.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","PNVDB01","Linux 2.6.32-300.10.1.el5uek",47
+"2018-03-24 03:51:41","203.162.27.136","udp",177,"dng-ldap.vnn.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","dng-ldap","2 users  load: 0.1, 0.1, 0.1",48
+"2018-03-24 03:53:17","203.162.4.221","udp",177,"hcm-221.vnn.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","hcm-221","0 user,  load: 0.5, 0.5, 0.5",47
+"2018-03-24 04:14:23","203.113.146.240","udp",177,,"xdmcp",7552,"VN","DONG NAI","BIEN HOA",0,0,"Willing","hserpprd","0 users  load: 4.8, 5.4, 5.5",48
+"2018-03-24 04:19:08","222.255.124.87","udp",177,"hcm-cp87.vnn.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","hcm-cp86","1 user,  load: 2.5, 6.3, 5.8",48
+"2018-03-24 04:26:02","210.211.124.105","udp",177,,"xdmcp",38731,"VN","HA NOI","HANOI",0,0,"Willing","vtv","Linux 2.6.18-300.el5",35
+"2018-03-24 04:44:22","203.162.4.222","udp",177,"hcm-222.vnn.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","hcm-222","0 user,  load: 0.0, 0.0, 0.0",47
+"2018-03-24 04:52:04","203.162.27.137","udp",177,"dng-server1.vnn.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","n27m137","1 user,  load: 2.7, 2.6, 2.6",47
+"2018-03-24 05:10:10","222.255.124.86","udp",177,"hcm-cp86.vnn.vn","xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","hcm-cp86","1 user,  load: 1.9, 2.5, 3.2",48
+"2018-03-24 05:27:43","113.191.41.59","udp",177,,"xdmcp",45899,"VN","HA NOI","HANOI",0,0,"Willing","db01","Linux 2.6.32-504.el6.x86_64",43

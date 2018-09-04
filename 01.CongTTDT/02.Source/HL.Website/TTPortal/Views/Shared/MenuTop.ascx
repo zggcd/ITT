@@ -123,12 +123,13 @@
             </li>
             <%} %>
 
-            <%if (modules.Contains("ModHSThanhVienUCSC") || modules.Contains("ModDonDangKyUCSC"))
+            <%if (modules.Contains("ModHSThanhVienUCSC") || modules.Contains("ModDonDangKyUCSC") || modules.Contains("ModNhanLucUCSC"))
                 {%>
             <li class="node"><a class="icon-16-article">Thành viên mạng lưới</a>
                 <ul>
                     <li><a class="icon-16-article" href="/{CPPath}/ModHSThanhVienUCSC/Index.aspx">Đăng ký bắt buộc</a></li>
                     <li><a class="icon-16-article" href="/{CPPath}/ModDonDangKyUCSC/Index.aspx">Đăng ký tự nguyện</a></li>
+                    <li><a class="icon-16-article" href="/{CPPath}/ModNhanLucUCSC/Index.aspx">Nhân lực</a></li>
                 </ul>
             </li>
             <%} %>

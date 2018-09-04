@@ -1,0 +1,209 @@
+timestamp,ip,protocol,port,hostname,tag,asn,geo,region,city,naics,sic,opcode,errorcode,error,errormessage,size
+3/24/2018 0:10,113.171.149.145,udp,69,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:10,113.182.190.39,udp,69,static.vnpt.vn,tftp,45899,VN,TRA VINH,TRA VINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:10,113.171.153.245,udp,69,static.vnpt.vn,tftp,45899,VN,THUA THIEN-HUE,THON AN LAI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:10,116.118.82.134,udp,69,,tftp,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:10,113.162.167.12,udp,50322,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:10,113.168.25.176,udp,69,static.vnpt.vn,tftp,45899,VN,THUA THIEN-HUE,THON AN LAI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:10,116.118.86.33,udp,69,,tftp,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:10,222.252.119.222,udp,17849,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:10,14.169.138.12,udp,41277,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:10,113.173.28.39,udp,40505,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:10,113.167.161.223,udp,10315,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:10,113.166.229.147,udp,20715,static.vnpt.vn,tftp,45899,VN,GIA LAI,PLEIKU,0,0,3,0,No Error,File Exists,516
+3/24/2018 0:11,125.235.255.249,udp,57031,125.235.255.249.adsl.viettel.vn,tftp,7552,VN,HA NOI,HANOI,0,0,5,1,File not found,File not found,19
+3/24/2018 0:11,14.185.233.125,udp,44055,static.vnpt.vn,tftp,45899,VN,QUANG NGAI,QUANG NGAI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,123.20.98.65,udp,49125,,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,14.173.82.216,udp,69,static.vnpt.vn,tftp,45899,VN,TAY NINH,TAY NINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,14.164.201.106,udp,33223,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,116.97.133.176,udp,69,,tftp,7552,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,No such file or directory,30
+3/24/2018 0:11,113.161.57.214,udp,36031,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,113.165.50.120,udp,13687,static.vnpt.vn,tftp,45899,VN,BINH DINH,QUI NHON,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:11,203.205.27.167,udp,42664,static.cmcti.vn,tftp,45903,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,1,File not found,File not found,19
+3/24/2018 0:11,113.177.128.80,udp,53334,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,115.78.0.194,udp,35889,,tftp,7552,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,1,File not found,File not found,19
+3/24/2018 0:11,103.9.198.33,udp,69,static.cmcti.vn,tftp,45903,VN,HA NOI,HANOI,0,0,5,1,File not found,No such file,17
+3/24/2018 0:11,14.182.173.230,udp,69,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,No such file or directory,30
+3/24/2018 0:11,14.237.42.163,udp,57508,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,14.169.165.2,udp,32775,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,113.173.16.82,udp,56312,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,113.169.99.145,udp,69,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,113.182.190.236,udp,69,static.vnpt.vn,tftp,45899,VN,TRA VINH,TRA VINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,222.252.113.84,udp,26184,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:11,113.181.31.56,udp,10206,static.vnpt.vn,tftp,45899,VN,BAC NINH,BAC NINH,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:11,116.105.157.236,udp,40163,,tftp,24086,VN,DA NANG,DA NANG,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,113.166.83.39,udp,19998,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:11,14.186.65.173,udp,58117,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,14.167.87.180,udp,50874,static.vnpt.vn,tftp,45899,VN,GIA LAI,PLEIKU,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,14.175.13.68,udp,69,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,No such file or directory,30
+3/24/2018 0:11,113.166.82.115,udp,10764,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:11,113.169.213.115,udp,12852,static.vnpt.vn,tftp,45899,VN,CAN THO,CAN THO,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:11,14.172.141.5,udp,49491,static.vnpt.vn,tftp,45899,VN,CAN THO,CAN THO,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,14.161.140.107,udp,45869,static.vnpt.vn,tftp,45899,VN,AN GIANG,LONG AN,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,118.71.197.85,udp,69,ip-address-pool-xxx.fpt.vn,tftp,18403,VN,HA NOI,HANOI,518111,737401,3,0,No Error,File Exists,4
+3/24/2018 0:11,14.188.197.143,udp,39249,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,113.189.37.123,udp,51599,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,14.177.236.238,udp,55982,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,222.253.25.75,udp,19982,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:11,14.187.154.197,udp,56773,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,123.23.185.248,udp,69,,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,113.173.31.162,udp,34997,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,14.226.240.15,udp,60420,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,113.190.234.44,udp,39901,static.vnpt-hanoi.com.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,14.188.200.200,udp,58232,static.vnpt.vn,tftp,45899,VN,PHU THO,VIET TRI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,123.22.6.131,udp,56967,,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,180.93.132.44,udp,69,,tftp,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,113.186.10.34,udp,3123,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,4,Illegal TFTP operation,Invalid file,17
+3/24/2018 0:11,14.172.197.142,udp,69,static.vnpt.vn,tftp,45899,VN,VINH LONG,TAN BINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,113.170.101.87,udp,51107,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,14.186.212.209,udp,45927,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,116.118.80.27,udp,69,,tftp,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,183.91.26.222,udp,32771,static.cmcti.vn,tftp,45903,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,1,File not found,File not found,19
+3/24/2018 0:11,14.230.130.90,udp,55339,static.vnpt.vn,tftp,45899,VN,CAN THO,CAN THO,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,113.188.166.115,udp,69,static.vnpt.vn,tftp,45899,VN,DONG THAP,CAO LANH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,113.188.220.52,udp,52611,static.vnpt.vn,tftp,45899,VN,LAM DONG,DA LAT,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,14.239.87.81,udp,41814,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,14.161.215.240,udp,40551,static.vnpt.vn,tftp,45899,VN,AN GIANG,LONG AN,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,14.171.13.29,udp,39573,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,113.182.190.160,udp,69,static.vnpt.vn,tftp,45899,VN,TRA VINH,TRA VINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,14.172.192.65,udp,69,static.vnpt.vn,tftp,45899,VN,VINH LONG,TAN BINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,14.181.239.30,udp,46964,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,123.28.161.11,udp,69,localhost,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,14.187.246.225,udp,51455,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,123.23.32.189,udp,69,,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,123.21.19.135,udp,43781,,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,113.167.176.21,udp,10219,static.vnpt.vn,tftp,45899,VN,LANG SON,LANG SON,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:11,14.175.13.104,udp,18619,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:11,125.212.228.176,udp,39467,,tftp,7552,VN,HA NOI,HANOI,0,0,5,1,File not found,File not found,19
+3/24/2018 0:11,14.165.194.140,udp,34256,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,123.27.183.121,udp,69,localhost,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,180.93.192.91,udp,69,,tftp,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,14.187.182.42,udp,53280,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,113.182.190.222,udp,69,static.vnpt.vn,tftp,45899,VN,TRA VINH,TRA VINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,113.181.27.111,udp,13214,static.vnpt.vn,tftp,45899,VN,BAC NINH,BAC NINH,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:11,222.253.168.238,udp,69,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,113.171.143.95,udp,18270,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:11,14.172.197.64,udp,69,static.vnpt.vn,tftp,45899,VN,VINH LONG,TAN BINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:11,113.173.102.118,udp,37716,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,14.168.204.246,udp,17737,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:11,14.234.111.42,udp,34491,static.vnpt.vn,tftp,45899,VN,HAU GIANG,PHUNG HIEP,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,14.169.1.185,udp,33225,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:11,203.162.37.187,udp,69,static.vnpt.vn,tftp,7643,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,1,File not found,No such file,17
+3/24/2018 0:11,116.118.86.143,udp,69,,tftp,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,123.21.211.33,udp,34090,,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,14.164.101.19,udp,52896,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,113.167.176.239,udp,69,static.vnpt.vn,tftp,45899,VN,LANG SON,LANG SON,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,113.166.54.194,udp,26414,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:12,14.187.46.190,udp,40025,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,202.151.171.3,udp,54502,3.171.151.202.static.hcmc.netnam.vn,tftp,24176,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,1,File not found,File not found,19
+3/24/2018 0:12,123.26.64.128,udp,69,localhost,tftp,45899,VN,DA NANG,DA NANG,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,118.69.117.37,udp,24107,,tftp,18403,VN,HA NOI,HANOI,518111,737401,3,0,No Error,File Exists,516
+3/24/2018 0:12,14.164.213.143,udp,69,static.vnpt.vn,tftp,45899,VN,BEN TRE,BEN TRE,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:12,113.160.178.3,udp,35245,static.vnpt.vn,tftp,45899,VN,NGHE AN,VINH,0,0,5,1,File not found,File not found,19
+3/24/2018 0:12,123.22.246.47,udp,69,,tftp,45899,VN,CAN THO,CAN THO,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,221.132.35.9,udp,39473,,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,File not found,19
+3/24/2018 0:12,116.118.9.176,udp,69,,tftp,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,14.173.81.89,udp,69,static.vnpt.vn,tftp,45899,VN,TAY NINH,TAY NINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,113.173.66.64,udp,48529,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,14.231.73.95,udp,49208,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,113.165.49.250,udp,26853,static.vnpt.vn,tftp,45899,VN,BINH DINH,QUI NHON,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:12,123.28.248.243,udp,49361,localhost,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,116.118.81.5,udp,69,,tftp,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,14.186.201.205,udp,38492,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,116.118.6.164,udp,16758,,tftp,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:12,123.28.141.102,udp,69,localhost,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,123.22.98.106,udp,69,,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,14.173.207.54,udp,69,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,119.15.181.2,udp,18222,ci15.181-2.netnam.vn,tftp,24176,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:12,113.165.251.202,udp,36159,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,171.249.12.151,udp,11648,,tftp,7552,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:12,14.175.62.43,udp,58290,static.vnpt.vn,tftp,45899,VN,BAC GIANG,BAC GIANG,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,123.28.141.155,udp,69,localhost,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,222.255.236.113,udp,69,,tftp,7643,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,1,File not found,No such file,17
+3/24/2018 0:12,123.28.143.77,udp,69,localhost,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,222.252.84.75,udp,14102,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:12,116.118.39.133,udp,69,,tftp,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,123.22.243.35,udp,69,,tftp,45899,VN,TRA VINH,TRA VINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,222.254.248.40,udp,69,static.vnpt.vn,tftp,45899,VN,BINH DUONG,THU DAU MOT,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,113.172.92.196,udp,37766,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,1,File not found,File not found,19
+3/24/2018 0:12,123.28.120.69,udp,69,localhost,tftp,45899,VN,TRA VINH,TRA VINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,123.17.139.82,udp,69,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,123.20.80.194,udp,34136,,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,113.182.194.248,udp,39624,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,113.168.52.155,udp,69,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,14.169.229.252,udp,39507,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,113.168.51.242,udp,69,static.vnpt.vn,tftp,45899,VN,THUA THIEN-HUE,THON AN LAI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,14.236.50.165,udp,48384,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,113.166.175.167,udp,13759,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:12,14.172.243.216,udp,69,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,222.253.25.168,udp,27446,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:12,113.168.24.149,udp,69,static.vnpt.vn,tftp,45899,VN,THUA THIEN-HUE,THON AN LAI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,113.173.105.68,udp,51532,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,113.165.54.82,udp,22022,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:12,14.161.192.170,udp,43345,static.vnpt.vn,tftp,45899,VN,CAN THO,CAN THO,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,14.226.252.82,udp,58045,static.vnpt.vn,tftp,45899,VN,BA RIA-VUNG TAU,VUNG TAU,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,14.173.184.213,udp,43087,static.vnpt.vn,tftp,45899,VN,CAN THO,CAN THO,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,123.24.141.106,udp,12616,,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:12,116.118.6.25,udp,69,,tftp,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,113.166.92.89,udp,47318,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,123.28.142.173,udp,69,localhost,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,14.226.233.198,udp,41227,static.vnpt.vn,tftp,45899,VN,BA RIA-VUNG TAU,VUNG TAU,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,123.17.216.103,udp,50084,static.vnpt.vn,tftp,45899,VN,THANH HOA,THANH HOA,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,113.161.36.254,udp,58045,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,123.23.146.54,udp,34069,,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,14.187.231.9,udp,57859,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,113.167.162.55,udp,16674,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:12,116.96.204.58,udp,22390,,tftp,7552,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:12,14.164.196.53,udp,47941,static.vnpt.vn,tftp,45899,VN,CAN THO,CAN THO,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,116.96.193.79,udp,69,,tftp,7552,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,113.182.69.253,udp,51931,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,113.188.71.77,udp,44884,static.vnpt.vn,tftp,45899,VN,AN GIANG,LONG AN,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,14.170.238.36,udp,27942,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:12,113.170.234.139,udp,47009,static.vnpt.vn,tftp,45899,VN,AN GIANG,LONG XUYEN,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,14.186.116.129,udp,51056,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,222.254.20.104,udp,23949,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:12,113.173.249.255,udp,69,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:12,113.188.17.116,udp,57018,,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:12,203.162.180.217,udp,69,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,No such file,17
+3/24/2018 0:12,14.161.48.251,udp,52221,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,113.167.177.250,udp,12617,static.vnpt.vn,tftp,45899,VN,LANG SON,LANG SON,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:13,14.226.233.233,udp,58468,static.vnpt.vn,tftp,45899,VN,BA RIA-VUNG TAU,VUNG TAU,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,14.187.48.44,udp,58753,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,221.133.1.62,udp,52318,,tftp,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,1,File not found,No such file,17
+3/24/2018 0:13,113.173.114.106,udp,33485,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,113.161.91.30,udp,45617,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,14.237.5.141,udp,69,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:13,123.23.221.102,udp,69,,tftp,45899,VN,CAN THO,CAN THO,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:13,113.168.50.1,udp,69,static.vnpt.vn,tftp,45899,VN,THUA THIEN-HUE,THON AN LAI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:13,14.173.18.53,udp,69,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:13,123.20.54.207,udp,49086,,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,42.115.44.124,udp,21006,,tftp,131178,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:13,113.168.55.126,udp,69,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:13,123.20.119.91,udp,59080,,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,221.133.0.30,udp,49607,,tftp,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,1,File not found,No such file,17
+3/24/2018 0:13,14.232.161.96,udp,60595,,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,42.112.252.145,udp,10011,,tftp,18403,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,3,0,No Error,File Exists,516
+3/24/2018 0:13,113.169.12.151,udp,69,static.vnpt.vn,tftp,45899,VN,BINH DUONG,THU DAU MOT,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:13,183.91.3.22,udp,47250,static.cmcti.vn,tftp,45903,VN,HA NOI,HANOI,0,0,5,1,File not found,File not found,19
+3/24/2018 0:13,113.173.85.135,udp,49041,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,14.226.227.151,udp,48640,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,203.210.201.225,udp,14740,adsl.hnpt.com.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:13,123.28.11.186,udp,69,,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:13,14.172.102.175,udp,69,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:13,113.177.75.142,udp,51042,static.vnpt.vn,tftp,45899,VN,BAC GIANG,BAC GIANG,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,123.23.32.29,udp,69,,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:13,202.60.104.249,udp,64808,,tftp,24088,VN,HA NOI,HANOI,0,0,5,1,File not found,No such file,17
+3/24/2018 0:13,113.169.12.254,udp,69,static.vnpt.vn,tftp,45899,VN,BINH DUONG,THU DAU MOT,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:13,14.168.3.15,udp,69,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:13,115.75.125.227,udp,69,,tftp,7552,VN,CAN THO,CAN THO,0,0,3,0,No Error,File Exists,9
+3/24/2018 0:13,113.188.167.22,udp,69,static.vnpt.vn,tftp,45899,VN,DONG THAP,CAO LANH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:13,222.253.6.11,udp,51603,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,14.169.227.112,udp,47716,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,123.22.246.136,udp,69,,tftp,45899,VN,CAN THO,CAN THO,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:13,113.181.121.90,udp,37001,static.vnpt.vn,tftp,45899,VN,BAC GIANG,BAC GIANG,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,113.182.190.73,udp,69,static.vnpt.vn,tftp,45899,VN,TRA VINH,TRA VINH,0,0,5,2,Access violation,Access violation.,22
+3/24/2018 0:13,14.188.111.189,udp,37030,static.vnpt.vn,tftp,45899,VN,PHU THO,VIET TRI,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,123.18.248.12,udp,11126,,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:13,123.23.52.32,udp,51571,,tftp,45899,VN,BA RIA-VUNG TAU,VUNG TAU,0,0,5,0,Not defined,Get not supported,22
+3/24/2018 0:13,113.167.184.3,udp,17257,static.vnpt.vn,tftp,45899,VN,NGHE AN,VINH,0,0,5,1,File not found,The file name is not supported.,36
+3/24/2018 0:13,113.168.28.131,udp,69,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,2,Access violation,Access violation.,22

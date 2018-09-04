@@ -170,6 +170,19 @@
                                     </td>
                                 </tr>
 
+                                <tr>
+                                    <td align="center" style="text-align: center" class="key">Loại thành viên <span class="red"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select name="LoaiThanhVienID" id="LoaiThanhVienID" class="text_input">
+                                            <option value="0">Root</option>
+                                            <%= Utils.ShowDDLMenuByType("LoaiThanhVien", model.LangID, entity.LoaiThanhVienID)%>
+                                        </select>
+                                    </td>
+                                </tr>
+
                                 <%--<tr>
                                     <td align="center" style="text-align: center" class="key">Chọn file Audio đọc nội dung
                                     </td>

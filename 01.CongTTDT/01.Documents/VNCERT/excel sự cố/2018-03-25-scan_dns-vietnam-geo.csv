@@ -1,0 +1,344 @@
+timestamp,ip,protocol,port,hostname,tag,dns_version,asn,geo,region,city,min_amplification,p0f_genre,p0f_detail,naics,sic,sector
+3/25/2018 0:09,113.176.167.153,udp,53,static.vnpt.vn,openresolver,DNS Caching VDC3,45899,VN,KON TUM,KON TUM,1.6429,,,0,0,Communications
+3/25/2018 0:09,123.22.94.222,udp,53,,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.6429,,,0,0,Communications
+3/25/2018 0:09,14.172.8.124,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.55,45899,VN,HA NOI,HANOI,1.6429,,,0,0,Communications
+3/25/2018 0:09,14.187.94.100,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,123.21.107.187,udp,53,,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:09,14.169.165.137,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:09,27.72.137.29,udp,53,,openresolver,dnsmasq-2.72,7552,VN,HA NOI,HANOI,3.8095,,,0,0,Communications
+3/25/2018 0:09,113.175.66.32,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,123.23.125.77,udp,53,,openresolver,,45899,VN,CA MAU,CA MAU,1.381,,,0,0,Communications
+3/25/2018 0:09,27.73.31.9,udp,53,localhost,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:09,113.160.161.119,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.2,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,118.69.82.165,udp,53,,openresolver,,18403,VN,DONG NAI,BIEN HOA,1.381,,,518111,737401,Communications
+3/25/2018 0:09,113.180.8.112,udp,53,static.vnpt.vn,openresolver,,45899,VN,DONG NAI,BIEN HOA,1.381,,,0,0,Communications
+3/25/2018 0:09,113.190.197.127,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,115.74.202.19,udp,53,adsl.viettel.vn,openresolver,,7552,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,14.228.188.36,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.78,45899,VN,BAC GIANG,BAC GIANG,1.381,,,0,0,Communications
+3/25/2018 0:09,113.182.194.188,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,14.175.18.226,udp,53,static.vnpt.vn,openresolver,Blue!,45899,VN,HAI PHONG,HAI PHONG,1.381,,,0,0,Communications
+3/25/2018 0:09,14.176.1.114,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.51,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,116.110.38.245,udp,53,,openresolver,x.x.x,24086,VN,DA NANG,DA NANG,2.6667,,,0,0,Communications
+3/25/2018 0:09,123.16.243.50,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.78,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,113.161.166.69,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,117.7.251.248,udp,53,localhost,openresolver,dnsmasq-2.49,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:09,117.1.188.158,udp,53,localhost,openresolver,dnsmasq-2.49,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:09,123.21.96.93,udp,53,,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:09,113.173.121.128,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:09,113.162.215.140,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:09,118.70.8.50,udp,53,,openresolver,Microsoft DNS 6.1.7601 (1DB15D39),18403,VN,HA NOI,HANOI,1.381,,,518111,737401,Communications
+3/25/2018 0:09,123.24.98.156,udp,53,dynamic.vdc.vn,openresolver,dnsmasq-2.40,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,113.182.194.51,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,113.161.75.111,udp,53,mail.sagri.com.vn,openresolver,dnsmasq-2.72,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:09,123.21.77.22,udp,53,,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:09,27.79.60.122,udp,53,localhost,openresolver,x.x.x,7552,VN,HA NOI,HANOI,3.8095,,,0,0,Communications
+3/25/2018 0:09,222.252.63.252,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,14.186.228.30,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:09,116.107.139.4,udp,53,,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:09,183.80.154.231,udp,53,,openresolver,,18403,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,518111,737401,Communications
+3/25/2018 0:09,27.79.44.236,udp,53,localhost,openresolver,,7552,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,113.172.171.195,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:09,113.160.66.78,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,116.96.206.246,udp,53,,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:09,14.243.26.81,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,14.175.137.123,udp,53,static.vnpt.vn,openresolver,DNS Caching VDC3,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,113.173.26.135,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:09,14.237.120.2,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,BEN TRE,BEN TRE,1.381,,,0,0,Communications
+3/25/2018 0:09,113.161.167.15,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.40,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:09,14.167.248.118,udp,53,static.vnpt.vn,openresolver,,45899,VN,CAN THO,CAN THO,1.381,,,0,0,Communications
+3/25/2018 0:09,14.162.254.60,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,171.237.26.51,udp,53,,openresolver,dnsmasq-2.49,7552,VN,LANG SON,LANG SON,3.0476,,,0,0,Communications
+3/25/2018 0:09,27.69.246.157,udp,53,localhost,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:09,116.98.111.67,udp,53,,openresolver,,24086,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,14.177.32.185,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:09,171.234.225.11,udp,53,,openresolver,x.x.x,7552,VN,HA NOI,HANOI,3.0476,,,0,0,Communications
+3/25/2018 0:09,123.21.206.36,udp,53,,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:09,120.138.73.89,udp,53,,openresolver,,38244,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:09,14.169.22.43,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:09,27.0.15.205,udp,53,mx15205.superdata.vn,openresolver,,45544,VN,HO CHI MINH,THANH PHO HO CHI MINH,4.619,,,0,0,Communications
+3/25/2018 0:09,171.244.68.26,udp,53,,openresolver,,7552,VN,PHU THO,VIET TRI,2.6667,,,0,0,Communications
+3/25/2018 0:10,27.79.21.170,udp,53,localhost,openresolver,,7552,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,1.52.42.137,udp,53,,openresolver,,18403,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,518111,737401,Communications
+3/25/2018 0:10,115.146.127.236,udp,53,,openresolver,,38732,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,14.169.133.146,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,112.213.95.73,udp,53,mail.diaocxanh.vn,openresolver,,45544,VN,HO CHI MINH,THANH PHO HO CHI MINH,4.619,,,0,0,Communications
+3/25/2018 0:10,113.170.120.16,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,SOC TRANG,SOC TRANG,1.381,,,0,0,Communications
+3/25/2018 0:10,123.21.68.138,udp,53,,openresolver,dnsmasq-2.78,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,116.99.243.88,udp,53,,openresolver,x.x.x,24086,VN,DA NANG,DA NANG,2.6667,,,0,0,Communications
+3/25/2018 0:10,42.115.91.82,udp,53,,openresolver,,131178,VN,HA NOI,HANOI,6.4048,,,0,0,Communications
+3/25/2018 0:10,117.6.161.197,udp,53,,openresolver,dnsmasq-2.52,7552,VN,HO CHI MINH,THANH PHO HO CHI MINH,2.6667,,,0,0,Communications
+3/25/2018 0:10,171.247.69.252,udp,53,,openresolver,dnsmasq-2.40,7552,VN,HA NOI,HANOI,3.8095,,,0,0,Communications
+3/25/2018 0:10,117.5.15.85,udp,53,localhost,openresolver,x.x.x,7552,VN,HO CHI MINH,THANH PHO HO CHI MINH,3.8095,,,0,0,Communications
+3/25/2018 0:10,113.161.174.144,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.40,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,14.177.239.169,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,113.160.229.48,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HA NOI,HANOI,3.8095,,,0,0,Communications
+3/25/2018 0:10,113.170.234.12,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,123.20.178.179,udp,53,,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,113.160.113.98,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,115.78.173.5,udp,53,,openresolver,Microsoft DNS 6.1.7601 (1DB15D39),7552,VN,BA RIA-VUNG TAU,VUNG TAU,1.381,,,0,0,Communications
+3/25/2018 0:10,116.98.186.88,udp,53,,openresolver,x.x.x,24086,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,116.104.23.182,udp,53,,openresolver,dnsmasq-2.40,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,14.169.240.174,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,171.238.197.59,udp,53,,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,118.70.125.94,udp,53,,openresolver,Microsoft DNS 6.1.7601 (1DB15D39),18403,VN,HA NOI,HANOI,1.381,,,518111,737401,Communications
+3/25/2018 0:10,113.165.163.181,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,3.8095,,,0,0,Communications
+3/25/2018 0:10,117.1.111.140,udp,53,localhost,openresolver,,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,210.2.86.14,udp,53,,openresolver,,24085,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,116.98.239.157,udp,53,,openresolver,x.x.x,24086,VN,HA NOI,HANOI,3.8095,,,0,0,Communications
+3/25/2018 0:10,14.187.220.2,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.40,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,123.25.11.95,udp,53,static.vnpt-hanoi.com.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,163.44.207.187,udp,53,ga3ngon.com,openresolver,,131392,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,171.240.4.120,udp,53,,openresolver,x.x.x,7552,VN,BAC NINH,BAC NINH,3.0476,,,0,0,Communications
+3/25/2018 0:10,182.237.20.18,udp,53,ns2.itco.com.vn,openresolver,,55309,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,113.168.78.222,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,123.22.205.112,udp,53,,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,113.161.48.92,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,14.231.82.226,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,116.103.141.39,udp,53,,openresolver,x.x.x,24086,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,113.174.115.218,udp,53,static.vnpt.vn,openresolver,Microsoft DNS 6.0.6002 (17724D35),45899,VN,HA NOI,HANOI,4.619,,,0,0,Communications
+3/25/2018 0:10,113.186.206.200,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.78,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,14.187.62.43,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,222.252.0.161,udp,53,static.vnpt-hanoi.com.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,113.190.221.207,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,116.103.131.210,udp,53,,openresolver,x.x.x,24086,VN,HA NOI,HANOI,3.8095,,,0,0,Communications
+3/25/2018 0:10,116.118.85.207,udp,53,,openresolver,9.10.3-RedHat-9.10.3-0.el6,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,3.8095,,,0,0,Communications
+3/25/2018 0:10,123.21.94.124,udp,53,,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,113.189.44.235,udp,53,static.vnpt.vn,openresolver,DNS Caching VDC3,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,113.162.22.133,udp,53,static.vnpt.vn,openresolver,,45899,VN,HAI PHONG,HAI PHONG,1.381,,,0,0,Communications
+3/25/2018 0:10,117.1.113.216,udp,53,localhost,openresolver,dnsmasq-2.40,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,14.161.16.72,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,6.4048,,,0,0,Communications
+3/25/2018 0:10,116.103.142.112,udp,53,,openresolver,x.x.x,24086,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,113.173.68.143,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,171.251.173.122,udp,53,,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,113.163.52.99,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,116.101.246.51,udp,53,,openresolver,dnsmasq-2.40,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,123.16.139.19,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,171.251.109.47,udp,53,,openresolver,,7552,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,14.187.223.14,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,123.23.36.167,udp,53,,openresolver,dnsmasq-2.78,45899,VN,BA RIA-VUNG TAU,VUNG TAU,1.381,,,0,0,Communications
+3/25/2018 0:10,113.178.16.195,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.40,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,14.169.205.178,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,117.4.255.57,udp,53,localhost,openresolver,,7552,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,123.21.72.254,udp,53,,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,123.20.23.66,udp,53,,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,117.0.66.254,udp,53,localhost,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,14.175.33.5,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.78,45899,VN,HAI PHONG,HAI PHONG,2.6667,,,0,0,Communications
+3/25/2018 0:10,113.176.171.184,udp,53,static.vnpt.vn,openresolver,DNS Caching VDC3,45899,VN,DA NANG,DA NANG,1.381,,,0,0,Communications
+3/25/2018 0:10,113.161.162.16,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,6.4048,,,0,0,Communications
+3/25/2018 0:10,14.234.159.78,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,BEN TRE,BEN TRE,1.381,,,0,0,Communications
+3/25/2018 0:10,14.191.238.106,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,LONG AN,TAN AN,1.381,,,0,0,Communications
+3/25/2018 0:10,14.168.37.56,udp,53,static.vnpt.vn,openresolver,,45899,VN,DONG THAP,LAI VUNG,1.381,,,0,0,Communications
+3/25/2018 0:10,115.79.27.226,udp,53,adsl.viettel.vn,openresolver,,7552,VN,HO CHI MINH,THANH PHO HO CHI MINH,6.4048,,,0,0,Communications
+3/25/2018 0:10,116.98.105.197,udp,53,,openresolver,x.x.x,24086,VN,HA NOI,HANOI,3.8095,,,0,0,Communications
+3/25/2018 0:10,113.190.17.195,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,116.118.111.82,udp,53,,openresolver,dnsmasq-2.33,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,123.20.2.121,udp,53,,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,125.212.227.166,udp,53,,openresolver,Microsoft DNS 6.1.7600 (1DB04001),7552,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,14.187.223.198,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,14.161.19.230,udp,53,static.vdc.com.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,14.187.73.197,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,171.229.231.112,udp,53,,openresolver,dnsmasq-2.49,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,14.238.0.130,udp,53,static.vnpt.vn,openresolver,,45899,VN,HAI PHONG,HAI PHONG,1.381,,,0,0,Communications
+3/25/2018 0:10,113.160.3.2,udp,53,static.vnpt-hanoi.com.vn,openresolver,Microsoft DNS 6.1.7600 (1DB04001),45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,113.172.136.135,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,116.118.104.88,udp,53,,openresolver,,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,11.3571,,,0,0,Communications
+3/25/2018 0:10,113.172.123.111,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,117.2.18.136,udp,53,localhost,openresolver,,7552,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,116.107.140.124,udp,53,,openresolver,,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,113.173.102.99,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,27.79.79.77,udp,53,localhost,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,113.173.42.42,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,171.251.34.203,udp,53,,openresolver,,7552,VN,LAM DONG,DA LAT,1.381,,,0,0,Communications
+3/25/2018 0:10,118.69.109.30,udp,53,,openresolver,dnsmasq-2.72,18403,VN,HA NOI,HANOI,1.381,,,518111,737401,Communications
+3/25/2018 0:10,123.21.154.84,udp,53,,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,116.104.252.215,udp,53,,openresolver,x.x.x,7552,VN,BAC NINH,BAC NINH,2.6667,,,0,0,Communications
+3/25/2018 0:10,113.175.156.147,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,14.189.38.227,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA TINH,HA TINH,1.381,,,0,0,Communications
+3/25/2018 0:10,113.190.118.14,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.40,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,14.226.200.22,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,123.20.52.162,udp,53,,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,113.168.43.142,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.55,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,116.98.96.78,udp,53,,openresolver,x.x.x,24086,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,14.173.238.229,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,113.176.202.23,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.78,45899,VN,QUANG NGAI,QUANG NGAI,1.381,,,0,0,Communications
+3/25/2018 0:10,222.252.187.72,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,6.4048,,,0,0,Communications
+3/25/2018 0:10,14.186.188.107,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,14.173.86.25,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,TAY NINH,TAY NINH,1.381,,,0,0,Communications
+3/25/2018 0:10,171.224.231.89,udp,53,,openresolver,x.x.x,7552,VN,HA NOI,HANOI,3.0476,,,0,0,Communications
+3/25/2018 0:10,118.70.124.205,udp,53,,openresolver,not available,18403,VN,HA NOI,HANOI,1.381,,,518111,737401,Communications
+3/25/2018 0:10,171.240.40.197,udp,53,,openresolver,x.x.x,7552,VN,BAC NINH,BAC NINH,2.6667,,,0,0,Communications
+3/25/2018 0:10,125.235.8.139,udp,53,125.235.8.139.adsl.viettel.vn,openresolver,,7552,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,45.117.80.51,udp,53,,openresolver,,131353,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,117.5.133.206,udp,53,localhost,openresolver,dnsmasq-2.49,7552,VN,HO CHI MINH,THANH PHO HO CHI MINH,2.6667,,,0,0,Communications
+3/25/2018 0:10,113.160.67.122,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,171.240.22.252,udp,53,,openresolver,,7552,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,14.169.53.12,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,113.170.66.210,udp,53,static.vnpt.vn,openresolver,,45899,VN,CAN THO,CAN THO,1.381,,,0,0,Communications
+3/25/2018 0:10,221.132.51.246,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,118.70.222.105,udp,53,,openresolver,,18403,VN,HA NOI,HANOI,1.381,,,518111,737401,Communications
+3/25/2018 0:10,171.229.167.1,udp,53,,openresolver,,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,14.170.47.31,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HA TINH,HA TINH,1.381,,,0,0,Communications
+3/25/2018 0:10,113.186.47.153,udp,53,static.vnpt.vn,openresolver,Blue!,45899,VN,VINH PHUC,VINH YEN,1.381,,,0,0,Communications
+3/25/2018 0:10,14.169.107.193,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,171.224.87.100,udp,53,,openresolver,dnsmasq-2.40,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:10,14.170.65.32,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.55,45899,VN,THANH HOA,THANH HOA,1.381,,,0,0,Communications
+3/25/2018 0:10,14.229.116.151,udp,53,static.vnpt.vn,openresolver,,45899,VN,HAI PHONG,HAI PHONG,1.381,,,0,0,Communications
+3/25/2018 0:10,14.164.60.42,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,LONG AN,CAN GIUOC,1.381,,,0,0,Communications
+3/25/2018 0:10,1.55.249.228,udp,53,,openresolver,,18403,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:10,171.255.254.62,udp,53,,openresolver,dnsmasq-2.40,7552,VN,HA NOI,HANOI,3.0476,,,0,0,Communications
+3/25/2018 0:10,123.23.0.74,udp,53,,openresolver,DNS server,45899,VN,VINH LONG,VINH LONG,1.381,,,0,0,Communications
+3/25/2018 0:10,123.21.236.128,udp,53,,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:10,14.182.95.129,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.78,45899,VN,BAC GIANG,BAC GIANG,1.381,,,0,0,Communications
+3/25/2018 0:10,113.181.30.103,udp,53,static.vnpt.vn,openresolver,Blue!,45899,VN,BAC NINH,BAC NINH,1.381,,,0,0,Communications
+3/25/2018 0:11,113.190.42.108,udp,53,,openresolver,dnsmasq-2.40,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,117.6.58.233,udp,53,,openresolver,dnsmasq-2.55,7552,VN,HO CHI MINH,THANH PHO HO CHI MINH,2.6667,,,0,0,Communications
+3/25/2018 0:11,113.172.234.109,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,116.118.111.31,udp,53,,openresolver,dnsmasq-2.33,7602,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,123.21.143.197,udp,53,,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,14.169.52.242,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,112.213.84.46,udp,53,duylinh.vn,openresolver,9.3.6-P1-RedHat-9.3.6-20.P1.el5_8.6,45544,VN,HO CHI MINH,THANH PHO HO CHI MINH,3.4762,,,0,0,Communications
+3/25/2018 0:11,171.251.168.175,udp,53,,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:11,14.236.75.201,udp,53,static.vnpt.vn,openresolver,DNS Caching VDC3,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,3.8095,,,0,0,Communications
+3/25/2018 0:11,116.104.86.223,udp,53,,openresolver,dnsmasq-2.40,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:11,14.187.59.50,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,115.75.7.251,udp,53,,openresolver,,7552,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,113.183.76.237,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,113.163.251.16,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,14.186.124.125,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,171.237.51.214,udp,53,,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:11,113.172.161.185,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,14.172.15.117,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.55,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,123.24.200.236,udp,53,,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,1.52.48.88,udp,53,,openresolver,,18403,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,518111,737401,Communications
+3/25/2018 0:11,42.112.31.104,udp,53,mail.thaibinhduong.vn,openresolver,Microsoft DNS 6.0.6002 (17724D35),18403,VN,HA NOI,HANOI,1.381,,,518111,737401,Communications
+3/25/2018 0:11,115.78.123.204,udp,53,,openresolver,,7552,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,14.161.32.91,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,14.184.190.157,udp,53,static.vnpt.vn,openresolver,,45899,VN,BINH DUONG,DI AN,1.381,,,0,0,Communications
+3/25/2018 0:11,221.132.37.86,udp,53,m86.filter.lnk.com.vn,openresolver,Microsoft DNS 6.0.6002 (17724D35),45899,VN,HA NOI,HANOI,4.619,,,0,0,Communications
+3/25/2018 0:11,123.20.55.163,udp,53,,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,101.99.48.70,udp,53,dng.ns.cmcti.vn,openresolver,REFUSED,45903,VN,DA NANG,DA NANG,3.4762,,,0,0,Communications
+3/25/2018 0:11,113.172.99.173,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,116.105.102.168,udp,53,,openresolver,x.x.x,24086,VN,HA NOI,HANOI,3.8095,,,0,0,Communications
+3/25/2018 0:11,210.245.87.56,udp,53,,openresolver,,18403,VN,HA NOI,HANOI,1.381,,,518111,737401,Communications
+3/25/2018 0:11,117.1.83.72,udp,53,localhost,openresolver,dnsmasq-2.49,7552,VN,HA NOI,HANOI,9.619,,,0,0,Communications
+3/25/2018 0:11,113.161.232.252,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.78,45899,VN,TIEN GIANG,MY THO,1.381,,,0,0,Communications
+3/25/2018 0:11,14.232.33.66,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.40,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,113.173.105.68,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,116.97.168.233,udp,53,,openresolver,x.x.x,7552,VN,HA NOI,HANOI,3.8095,,,0,0,Communications
+3/25/2018 0:11,117.4.201.189,udp,53,localhost,openresolver,,7552,VN,HA NOI,HANOI,12.0238,,,0,0,Communications
+3/25/2018 0:11,117.7.241.237,udp,53,localhost,openresolver,,7552,VN,BAC GIANG,BAC GIANG,2.6667,,,0,0,Communications
+3/25/2018 0:11,113.172.164.54,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,116.107.195.76,udp,53,,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:11,123.30.110.177,udp,53,static.vnpt.vn,openresolver,Microsoft DNS 6.0.6002 (17724D35),45899,VN,HA NOI,HANOI,4.619,,,0,0,Communications
+3/25/2018 0:11,117.4.116.8,udp,53,localhost,openresolver,x.x.x,7552,VN,BAC NINH,BAC NINH,2.6667,,,0,0,Communications
+3/25/2018 0:11,171.229.253.49,udp,53,,openresolver,dnsmasq-2.40,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:11,14.226.224.149,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,42.117.7.182,udp,53,,openresolver,Microsoft DNS 6.1.7601 (1DB15D39),18403,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,42.116.160.200,udp,53,,openresolver,ZyWALL DNS,18403,VN,HO CHI MINH,THANH PHO HO CHI MINH,6.4048,,,0,0,Communications
+3/25/2018 0:11,14.187.4.26,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,113.162.169.57,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,14.186.58.174,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.78,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,103.238.214.109,udp,53,no-ptr.bizmac.vn,openresolver,,45899,VN,QUANG NGAI,BINH THANH,1.381,,,0,0,Communications
+3/25/2018 0:11,221.132.48.33,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,27.79.16.211,udp,53,localhost,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:11,113.180.69.16,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,CAN THO,CAN THO,1.381,,,0,0,Communications
+3/25/2018 0:11,42.117.2.168,udp,53,,openresolver,,18403,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,182.237.22.154,udp,53,mail.onehealth.vn,openresolver,,55309,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,171.251.107.207,udp,53,,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:11,14.187.173.62,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,210.86.225.185,udp,53,,openresolver,,24173,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,117.6.48.174,udp,53,,openresolver,,7552,VN,HO CHI MINH,THANH PHO HO CHI MINH,2.6667,,,0,0,Communications
+3/25/2018 0:11,14.237.57.45,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.78,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,14.162.201.223,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,113.170.41.187,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,116.98.182.159,udp,53,,openresolver,x.x.x,24086,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:11,27.79.18.26,udp,53,localhost,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:11,113.173.20.181,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,14.187.179.69,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,116.111.79.153,udp,53,,openresolver,x.x.x,7552,VN,BAC NINH,BAC NINH,2.6667,,,0,0,Communications
+3/25/2018 0:11,116.97.92.49,udp,53,,openresolver,,7552,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,103.56.160.18,udp,53,,openresolver,,131431,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,14.186.126.140,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,27.69.231.70,udp,53,localhost,openresolver,,7552,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,116.97.84.239,udp,53,,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:11,210.245.51.43,udp,53,210-245-51-office-net-static-ip.fpt.vn,openresolver,,18403,VN,HA NOI,HANOI,1.381,,,518111,737401,Communications
+3/25/2018 0:11,14.240.243.174,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,KIEN GIANG,KIEN LUONG,1.381,,,0,0,Communications
+3/25/2018 0:11,116.98.236.64,udp,53,,openresolver,x.x.x,24086,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:11,123.24.106.179,udp,53,dynamic.vdc.vn,openresolver,dnsmasq-2.49,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,14.231.80.127,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,14.236.190.92,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,123.16.169.179,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,113.178.119.156,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,113.177.121.243,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,123.22.177.241,udp,53,,openresolver,DNS server,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,123.21.208.20,udp,53,,openresolver,DNS server,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,113.169.28.62,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,171.234.182.81,udp,53,,openresolver,dnsmasq-2.49,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:11,14.187.196.29,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,14.187.145.95,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,14.187.99.57,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,14.187.0.217,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,116.105.92.42,udp,53,,openresolver,,24086,VN,DONG NAI,BIEN HOA,1.381,,,0,0,Communications
+3/25/2018 0:11,171.231.84.142,udp,53,,openresolver,x.x.x,7552,VN,GIA LAI,PLEIKU,2.6667,,,0,0,Communications
+3/25/2018 0:11,113.161.93.7,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.40,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,113.161.74.69,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,14.187.214.239,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,113.163.236.118,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,CA MAU,CA MAU,1.381,,,0,0,Communications
+3/25/2018 0:11,113.163.53.147,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,123.27.220.18,udp,53,localhost,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,113.188.151.150,udp,53,static.vnpt.vn,openresolver,,45899,VN,BA RIA-VUNG TAU,VUNG TAU,1.381,,,0,0,Communications
+3/25/2018 0:11,113.161.162.140,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,116.107.201.205,udp,53,,openresolver,x.x.x,7552,VN,HA NOI,HANOI,8.1905,,,0,0,Communications
+3/25/2018 0:11,113.160.210.226,udp,53,static.vnpt.vn,openresolver,Blue!,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,113.160.73.198,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.40,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,123.20.97.122,udp,53,,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,123.21.214.81,udp,53,,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,171.234.124.39,udp,53,,openresolver,,7552,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,103.92.26.206,udp,53,dcsg.bkc.vn,openresolver,,135915,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,14.186.207.52,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,123.19.107.206,udp,53,,openresolver,,45899,VN,QUANG NGAI,QUANG NGAI,1.381,,,0,0,Communications
+3/25/2018 0:11,171.245.68.1,udp,53,,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:11,14.182.84.30,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,123.21.139.220,udp,53,,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,123.24.71.199,udp,53,dynamic.vdc.vn,openresolver,dnsmasq-2.40,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,113.181.66.87,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,14.182.104.227,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.78,45899,VN,BAC GIANG,BAC GIANG,1.381,,,0,0,Communications
+3/25/2018 0:11,123.28.142.47,udp,53,localhost,openresolver,DNS server,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:11,113.161.130.131,udp,53,static.vnpt.vn,openresolver,,45899,VN,BA RIA-VUNG TAU,VUNG TAU,1.381,,,0,0,Communications
+3/25/2018 0:11,222.253.252.118,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,AN GIANG,LONG AN,1.381,,,0,0,Communications
+3/25/2018 0:11,116.103.142.128,udp,53,,openresolver,x.x.x,24086,VN,HA NOI,HANOI,3.8095,,,0,0,Communications
+3/25/2018 0:11,14.169.252.118,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:11,117.2.123.23,udp,53,localhost,openresolver,,7552,VN,DA NANG,DA NANG,6.4048,,,0,0,Communications
+3/25/2018 0:11,113.161.4.56,udp,53,static.vnpt.vn,openresolver,,45899,VN,PHU YEN,TUY HOA,12.0238,,,0,0,Communications
+3/25/2018 0:11,45.252.250.105,udp,53,,openresolver,,63760,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:12,113.188.123.249,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,LONG AN,TAN AN,1.381,,,0,0,Communications
+3/25/2018 0:12,171.248.7.62,udp,53,,openresolver,x.x.x,7552,VN,HO CHI MINH,THANH PHO HO CHI MINH,3.8095,,,0,0,Communications
+3/25/2018 0:12,117.0.120.194,udp,53,localhost,openresolver,,7552,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:12,113.173.11.126,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,BA RIA-VUNG TAU,VUNG TAU,1.381,,,0,0,Communications
+3/25/2018 0:12,14.169.56.142,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:12,171.248.21.95,udp,53,,openresolver,,7552,VN,HO CHI MINH,THANH PHO HO CHI MINH,6.7857,,,0,0,Communications
+3/25/2018 0:12,113.184.157.252,udp,53,static.vnpt.vn,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:12,116.107.222.186,udp,53,,openresolver,dnsmasq-2.49,7552,VN,HA NOI,HANOI,3.0476,,,0,0,Communications
+3/25/2018 0:12,117.1.183.59,udp,53,localhost,openresolver,dnsmasq-2.55,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:12,27.79.4.207,udp,53,localhost,openresolver,x.x.x,7552,VN,HA NOI,HANOI,3.8095,,,0,0,Communications
+3/25/2018 0:12,14.187.116.31,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.40,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:12,14.169.10.197,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:12,42.116.7.60,udp,53,,openresolver,dnsmasq-2.40,18403,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:12,222.252.28.65,udp,53,static.vnpt-hanoi.com.vn,openresolver,dnsmasq-2.40,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:12,125.212.207.210,udp,53,,openresolver,Microsoft DNS 6.1.7601 (1DB15D39),7552,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:12,113.161.230.208,udp,53,static.vnpt.vn,openresolver,,45899,VN,BEN TRE,BEN TRE,1.381,,,0,0,Communications
+3/25/2018 0:12,113.182.160.29,udp,53,static.vnpt.vn,openresolver,dnsmasq-2.49,45899,VN,TAY NINH,TAY NINH,1.381,,,0,0,Communications
+3/25/2018 0:12,123.23.55.90,udp,53,,openresolver,DNS server,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:12,116.110.34.206,udp,53,,openresolver,x.x.x,24086,VN,DA NANG,DA NANG,3.8095,,,0,0,Communications
+3/25/2018 0:12,27.79.78.42,udp,53,localhost,openresolver,x.x.x,7552,VN,HA NOI,HANOI,2.6667,,,0,0,Communications
+3/25/2018 0:12,118.69.198.80,udp,53,,openresolver,dnsmasq-2.48,18403,VN,HA NOI,HANOI,1.381,,,518111,737401,Communications
+3/25/2018 0:12,171.240.25.83,udp,53,,openresolver,x.x.x,7552,VN,BAC NINH,BAC NINH,2.6667,,,0,0,Communications
+3/25/2018 0:12,123.22.137.249,udp,53,,openresolver,DNS server,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:12,14.226.225.80,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:12,118.69.67.229,udp,53,,openresolver,ZyWALL DNS,18403,VN,HA NOI,HANOI,6.4048,,,518111,737401,Communications
+3/25/2018 0:12,171.251.103.4,udp,53,,openresolver,x.x.x,7552,VN,HO CHI MINH,THANH PHO HO CHI MINH,2.6667,,,0,0,Communications
+3/25/2018 0:12,116.99.250.145,udp,53,,openresolver,x.x.x,24086,VN,DA NANG,DA NANG,3.8095,,,0,0,Communications
+3/25/2018 0:12,14.169.11.226,udp,53,static.vnpt.vn,openresolver,,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,1.381,,,0,0,Communications
+3/25/2018 0:12,14.232.162.110,udp,53,static.vnpt.vn,openresolver,,45899,VN,HA NOI,HANOI,1.381,,,0,0,Communications
+3/25/2018 0:12,116.97.220.122,udp,53,,openresolver,,7552,VN,HA NOI,HANOI,3.8095,,,0,0,Communications
+3/25/2018 0:12,118.70.62.135,udp,53,,openresolver,FPT TELECOM,18403,VN,HA NOI,HANOI,1.381,,,518111,737401,Communications

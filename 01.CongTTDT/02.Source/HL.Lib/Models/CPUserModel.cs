@@ -14,6 +14,9 @@ namespace HL.Lib.Models
         public override int ID { get; set; }
 
         [DataInfo]
+        public int MenuID { get; set; } // Loai thanh vien
+
+        [DataInfo]
         public string LoginName { get; set; }
 
         [DataInfo]

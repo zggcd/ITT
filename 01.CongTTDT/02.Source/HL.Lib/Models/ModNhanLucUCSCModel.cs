@@ -7,7 +7,7 @@ namespace HL.Lib.Models
 {
     public class ModNhanLucUCSCEntity : EntityBase
     {
-        
+
         #region Autogen by HL
 
         [DataInfo]
@@ -61,8 +61,8 @@ namespace HL.Lib.Models
         [DataInfo]
         public bool Activity { get; set; }
 
-        #endregion      
-  
+        #endregion
+
         private ModDonDangKyUCSCEntity _oDonDangKyUCSC = null;
         public ModDonDangKyUCSCEntity getDonDangKyUCSC()
         {
@@ -73,6 +73,18 @@ namespace HL.Lib.Models
                 _oDonDangKyUCSC = new ModDonDangKyUCSCEntity();
 
             return _oDonDangKyUCSC;
+        }
+
+        private ModHSThanhVienUCSCEntity _oHSThanhVienUCSC = null;
+        public ModHSThanhVienUCSCEntity getModHSThanhVienUCSC()
+        {
+            if (_oHSThanhVienUCSC == null && HSThanhVienUCSCID > 0)
+                _oHSThanhVienUCSC = ModHSThanhVienUCSCService.Instance.GetByID(HSThanhVienUCSCID);
+
+            if (_oHSThanhVienUCSC == null)
+                _oHSThanhVienUCSC = new ModHSThanhVienUCSCEntity();
+
+            return _oHSThanhVienUCSC;
         }
 
     }

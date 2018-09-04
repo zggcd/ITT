@@ -1,0 +1,7 @@
+timestamp,ip,protocol,port,hostname,tag,asn,geo,region,city,naics,sic,opcode,errorcode,error,errormessage,size
+3/25/2018 0:10,14.173.113.155,udp,24131,static.vnpt.vn,tftp,45899,VN,NGHE AN,VINH,0,0,5,1,File not found,The file name is not supported.,36
+3/25/2018 0:10,14.167.210.15,udp,39924,static.vnpt.vn,tftp,45899,VN,VINH LONG,VINH LONG,0,0,5,0,Not defined,Get not supported,22
+3/25/2018 0:10,171.255.207.1,udp,64006,,tftp,7552,VN,HAI PHONG,HAI PHONG,0,0,5,1,File not found,File not found,19
+3/25/2018 0:10,14.226.224.250,udp,44490,static.vnpt.vn,tftp,45899,VN,HO CHI MINH,THANH PHO HO CHI MINH,0,0,5,0,Not defined,Get not supported,22
+3/25/2018 0:10,171.229.212.222,udp,15822,,tftp,7552,VN,HA NOI,HANOI,0,0,3,0,No Error,File Exists,516
+3/25/2018 0:10,113.167.128.121,udp,15589,static.vnpt.vn,tftp,45899,VN,HA NOI,HANOI,0,0,5,1,File not found,The file name is not supported.,36

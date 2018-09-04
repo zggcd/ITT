@@ -24,6 +24,8 @@ namespace HL.Lib.CPControllers
             // tao danh sach
             var dbQuery = ModNhanLucUCSCService.Instance.CreateQuery()
                                 .Where(!string.IsNullOrEmpty(model.SearchText), o => o.Name.Contains(model.SearchText))
+                                .Where(model.MenuIDs_TrinhDoDT > 0, o => o.MenuIDs_TrinhDoDT.Contains(model.MenuIDs_TrinhDoDT.ToString()))
+                                .Where(model.MenuIDs_ChungChi > 0, o => o.MenuIDs_ChungChi.Contains(model.MenuIDs_ChungChi.ToString()))
                                 .Take(model.PageSize)
                                 .OrderBy(orderBy)
                                 .Skip(model.PageIndex * model.PageSize);
@@ -57,19 +59,19 @@ namespace HL.Lib.CPControllers
         public void ActionSave(ModNhanLucUCSCModel model)
         {
             if (ValidSave(model))
-               SaveRedirect();
+                SaveRedirect();
         }
 
         public void ActionApply(ModNhanLucUCSCModel model)
         {
             if (ValidSave(model))
-               ApplyRedirect(model.RecordID, entity.ID);
+                ApplyRedirect(model.RecordID, entity.ID);
         }
 
         public void ActionSaveNew(ModNhanLucUCSCModel model)
         {
             if (ValidSave(model))
-               SaveNewRedirect(model.RecordID, entity.ID);
+                SaveNewRedirect(model.RecordID, entity.ID);
         }
 
         #region private func
@@ -120,7 +122,20 @@ namespace HL.Lib.CPControllers
 
     public class ModNhanLucUCSCModel : DefaultModel
     {
+        private int _LangID = 1;
+        public int LangID
+        {
+            get { return _LangID; }
+            set { _LangID = value; }
+        }
+
+        public int MenuID { get; set; }
+        public int State { get; set; }
         public string SearchText { get; set; }
+
+        public int[] ArrState { get; set; }
+        public int MenuIDs_TrinhDoDT { get; set; }
+        public int MenuIDs_ChungChi { get; set; }
     }
 }
 

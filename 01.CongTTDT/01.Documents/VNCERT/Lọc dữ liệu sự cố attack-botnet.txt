@@ -1,0 +1,168 @@
+            #blacklist-vietnam-geo.csv
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("blacklist",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],row['source'],' /  ',' /  ',' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0]+'-'+row['reason'])
+                i += 1
+            #botnet_drone-vietnam-geo.csv
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("botnet_drone",fname)):   
+                print(i,row['timestamp'],row['ip'],row['asn'],row['cc_dns'],row['infection'],row['port'],row['cc_port'],row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #cc_ip-vietnam-geo.csv
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("cc_ip",fname)):
+                print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),row['ip'],row['asn'],row['channel'],row['port'],row['port'],fname[11:].split('-vietnam-geo.csv')[0]+row['reason'])
+                i += 1
+            #cisco_smart_install-vietnam-geo.csv
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("cisco_smart_install",fname)):   
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',row['port'],row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #compromised_website-vietnam-geo.csv Danh sách các trang web bị tấn công deface, phishing, malware hoặc bị lợi dụng để gây ra cuộc tấn công như gửi thư rác, DDoS,...
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("compromised_website",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],row['http_host']+row['url'],' /  ',row['port'],row['port'],row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #cwsandbox_url Các URL đang chạy ở chế độ Sandbox
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("cwsandbox_url",fname)):   
+                print(i,row['timestamp'],row['ip'],row['asn'],row['url'],row['md5hash'],' /  ',' /  ',row['host'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #drone_brute_force-
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("drone_brute_force",fname)):   
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],row['dest_port'],row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #microsoft_sinkhole   
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("microsoft_sinkhole",fname)):   
+                print(i,row['timestamp'],row['ip'],row['asn'],row['url'],row['type'],row['src_port'],row['dst_port'],row['http_host'],fname[11:].split('-vietnam-geo.csv')[0])   
+                i += 1
+                
+                
+            #scan_chargen
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_chargen",fname)):   
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_cwmp
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_cwmp",fname)):   
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_db2
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_db2",fname)):   
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname']+'\nName DB:'+row['db2_hostname']+'\nServer name:'+row['servername'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_dns
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_dns",fname)):   
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_elasticsearch
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_elasticsearch",fname)):   
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_hadoop
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_hadoop",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_http
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_http",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_ipmi
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_ipmi",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_isakmp
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_isakmp",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_ldap
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_ldap",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_mdns
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_mdns",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_memcached
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_memcached",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_mongodb
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_mongodb",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_mssql
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_mssql",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname']+'\nServer name:'+row['server_name']+'\nInstance name:'+row['instance_name'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_nat_pmp
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_nat_pmp",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_netbios
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_netbios",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname']+'\nMachine name:'+row['machine_name'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_ntpmonitor
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_ntpmonitor",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_ntp
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_ntp",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_portmapper
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_portmapper",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_qotd
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_qotd",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_rdp
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_rdp",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_redis
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_redis",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_smb
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_smb",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_snmp
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_snmp",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_ssdp
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_ssdp",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_ssl_freak
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_ssl_freak",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_ssl_poodle
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_ssl_poodle",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_telnet
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_telnet",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #can_tftp
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("can_tftp",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_vnc
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_vnc",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #scan_xdmcp
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("scan_xdmcp",fname)):
+                print(i,row['timestamp'],row['ip'],row['asn'],' /  ',' /  ',row['port'],' /  ',row['hostname'],fname[11:].split('-vietnam-geo.csv')[0])
+                i += 1
+            #sinkhole6_http
+            if (re.search("sinkhole6_http",fname)):
+                print("")
+                #if row[ip]:
+                    #print(i,row['timestamp'],row['src_ip'],row['src_asn'],' /  ',' /  ',row['src_port'],row['src_port'],' /  ',fname[11:].split('-vietnam-geo.csv')[0])    
+            #sinkhole_http_drone
+            if (netdc1 or netdc2 or netdc3 or netdc4 or netdc5 or netdcTTCNTT1 or netdcTTCNTT2 or netdcTTCNTT3 or nettrangthi1 or nettrangthi2) and (re.search("sinkhole_http_drone",fname)):
+                
+                print(i,row['timestamp'],row['ip'],row['asn'],row['http_host'],row['type'],row['src_port'],row['src_port'],row['dst_port'],fname[11:].split('-vietnam-geo.csv')[0])    
+                i += 1

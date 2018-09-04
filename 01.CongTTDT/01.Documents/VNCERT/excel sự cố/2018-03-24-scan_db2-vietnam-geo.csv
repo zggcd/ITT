@@ -1,0 +1,9 @@
+"timestamp","ip","protocol","port","hostname","tag","asn","geo","region","city","naics","sic","db2_hostname","servername","size"
+"2018-03-24 00:41:56","222.255.132.61","udp",523,"static.vnpt.vn","db2",45899,"VN","DA NANG","DA NANG",0,0,"VEBRARY4","VEBRARY4",298
+"2018-03-24 01:17:07","221.132.37.94","udp",523,,"db2",45899,"VN","HA NOI","HANOI",0,0,"SERVER2","server2",298
+"2018-03-24 02:02:13","221.132.37.93","udp",523,,"db2",45899,"VN","HA NOI","HANOI",0,0,"SERVER1","server1",298
+"2018-03-24 02:03:09","220.231.90.155","udp",523,,"db2",7552,"VN","HO CHI MINH","THANH PHO HO CHI MINH",0,0,"CXIVNS21","CXIVNS21",298
+"2018-03-24 02:37:46","101.99.3.164","udp",523,"static.cmcti.vn","db2",45903,"VN","HA NOI","HANOI",0,0,"VN2C","vn2c",298
+"2018-03-24 02:42:29","118.70.203.247","udp",523,,"db2",18403,"VN","HA NOI","HANOI",518111,737401,"WINDOWS-5EVZ1Y6","WINDOWS-5EVZ1Y6",298
+"2018-03-24 03:01:08","222.255.144.49","udp",523,"static.vnpt.vn","db2",45899,"VN","HA NOI","HANOI",0,0,"THUVIEN","THUVIEN",298
+"2018-03-24 03:14:50","222.255.41.177","udp",523,"static.vnpt.vn","db2",45899,"VN","HA NOI","HANOI",0,0,"WEB_SOVHTTDL","Web_sovhttdl",298

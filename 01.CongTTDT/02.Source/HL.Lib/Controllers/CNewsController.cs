@@ -1,5 +1,6 @@
 ﻿using HL.Lib.MVC;
 using HL.Lib.Models;
+using HL.Lib.Global;
 
 namespace HL.Lib.Controllers
 {
@@ -9,7 +10,8 @@ namespace HL.Lib.Controllers
             "HomeCarousel[MenuID-true|Title-false|MenuID2-false|Title2-false|PageSize-true|State-true]," +
             "Hot[MenuID-true|Title-false|MenuID2-false|Title2-false|PageSize-false|State-true]," +
             "MotChuyenMuc[MenuID-true|Title-true|MenuID2-false|Title2-false|PageSize-true|State-true]," +
-            "MultiMedia[MenuID-true|Title-true|MenuID2-false|Title2-false|PageSize-true|State-true]")]
+            "MultiMedia[MenuID-true|Title-true|MenuID2-false|Title2-false|PageSize-true|State-true]," +
+            "TinNoiBo[MenuID-true|Title-true|MenuID2-false|Title2-false|PageSize-true|State-true]")]
         public string LayoutDefine;
 
         [HL.Core.MVC.PropertyInfo("Chuyên mục 1", "Type|News")]
@@ -55,6 +57,23 @@ namespace HL.Lib.Controllers
                 .OrderByDesc(o => o.Order)
                 .Take(PageSize)
                 .ToSingle();
+
+            // Lay thong tin user dang nhap
+            int loaiTV = 0;
+            CPUserEntity user = CPLogin.CurrentUserOnWeb;
+            if (user != null)
+            {
+                loaiTV = user.MenuID;
+            }
+
+            var dbQueryTinNoiBo = ModNewsService.Instance.CreateQuery()
+                .Where(o => o.Activity == true)
+                .Where(loaiTV > 0, o => o.LoaiThanhVienID == loaiTV)
+                .WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("News", MenuID, ViewPage.CurrentLang.ID))
+                .Where(State > 0, o => (o.State & State) == State)
+                .OrderByDesc(o => o.Order)
+                .Take(PageSize);
+            ViewBag.TinNoiBo = dbQueryTinNoiBo.ToList();
 
             ViewBag.Title = Title;
             ViewBag.Title2 = Title2;

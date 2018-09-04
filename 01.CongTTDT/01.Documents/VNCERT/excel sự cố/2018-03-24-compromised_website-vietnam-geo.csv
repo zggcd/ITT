@@ -1,0 +1,5 @@
+timestamp,ip,port,hostname,tag,application,asn,geo,region,city,url,http_host,category,system,detected_since,server,redirect_target,naics,sic,sector
+3/24/2018 0:15,42.117.1.243,80,,hacked-webserver-stealrat-t1,http,18403,VN,HO CHI MINH,THANH PHO HO CHI MINH,wp-content/uploads/siteorigin-widgets/user.php,anhhongfood.com,spam,WINNT,3/2/2016 22:44,Microsoft-IIS/7.5,,0,0,Communications
+3/24/2018 0:15,123.30.235.163,80,static.vnpt.vn,hacked-webserver-stealrat-t1,http,45899,VN,HA NOI,HANOI,ckeditor/themes/default/help.php,anninh.thainguyen.vn,spam,Linux,5/9/2015 1:09,nginx,,0,0,Communications
+3/24/2018 0:15,118.69.169.82,80,mail.thiennamluat.vn,hacked-webserver-stealrat-t1,http,18403,VN,HA NOI,HANOI,Userfiles/Products/AutoUpdate/PCGDQuanNormal/lib.php,baocongnghe.com.vn,spam,WINNT,5/9/2015 1:48,Microsoft-IIS/7.0,,518111,737401,Communications
+3/24/2018 0:15,210.211.97.242,80,,hacked-webserver-stealrat-t1,http,38731,VN,DA NANG,DA NANG,wp-includes/js/tinymce/plugins/colorpicker/dump.php,beatchuan.vn,spam,Linux,4/20/2016 23:56,Apache/2,,0,0,Communications
