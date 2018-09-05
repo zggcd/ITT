@@ -103,7 +103,7 @@ namespace HL.Lib.Global
         public static string GetMobilePhone(string number)
         {
             number = number.Trim().ToLower();
-            Match match = Regex.Match(number, @"^0(1\d{9}|9\d{8})$");
+            Match match = Regex.Match(number, @"^0(1\d{9}|2\d{9}|9\d{8})$");
             if (match.Success)
             {
                 return match.Groups[1].Value;
