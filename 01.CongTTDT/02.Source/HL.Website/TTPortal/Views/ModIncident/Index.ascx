@@ -105,7 +105,6 @@
                     <td nowrap="nowrap">
                         <span>Loại sự cố:</span>
                         <select id="filter_menu" onchange="HLRedirect()" class="inputbox" size="1">
-                            <option value="0">(Tất cả)</option>
                             <%= Utils.ShowDDLMenuByType2("Incident", model.LangID, model.MenuID)%>
                         </select>
                         <%-- Vị trí :
@@ -125,6 +124,8 @@
 
             <table class="adminlist" cellspacing="1">
                 <thead>
+                    <%if (model.MenuID == 191 || model.MenuID == 192)
+                        {%>
                     <tr>
                         <th width="1%">#</th>
                         <th width="1%">
@@ -132,9 +133,6 @@
                         </th>
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("PID", "ID")%>
-                        </th>
-                        <th width="5%" nowrap="nowrap">
-                            <%= GetSortLink("Loại sự cố", "MenuID")%>
                         </th>
                         <th width="10%" nowrap="nowrap">
                             <%= GetSortLink("Domain/URL", "Path")%>
@@ -146,7 +144,10 @@
                             <%= GetSortLink("ISP", "ISP")%>
                         </th>
                         <th width="5%" nowrap="nowrap">
-                            <%= GetSortLink("Tên Virus", "MalwareName")%>
+                            <%= GetSortLink("Nguồn", "Source")%>
+                        </th>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("Người tấn công", "Attacker")%>
                         </th>
                         <th width="5%" nowrap="nowrap">
                             <%= GetSortLink("Thời gian", "AttackOn")%>
@@ -160,96 +161,113 @@
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Lần gửi", "EmailNo")%>
                         </th>
-
-                        <%--<th class="title">
-                            <%= GetSortLink("Tên", "Name")%>
+                    </tr>
+                    <%}
+                        else if (model.MenuID == 193)
+                        { %>
+                    <tr>
+                        <th width="1%">#</th>
+                        <th width="1%">
+                            <input type="checkbox" name="toggle" value="" onclick="checkAll(<%= model.PageSize %>);" />
                         </th>
                         <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Mã", "Code")%>
+                            <%= GetSortLink("PID", "ID")%>
+                        </th>
+                        <th width="10%" nowrap="nowrap">
+                            <%= GetSortLink("Domain/URL", "Path")%>
+                        </th>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("IP", "IP")%>
+                        </th>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("ISP", "ISP")%>
+                        </th>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("Nguồn", "Source")%>
+                        </th>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("Tên virut", "MalwareName")%>
+                        </th>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("Thời gian", "AttackOn")%>
                         </th>
                         <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Path", "Url")%>
+                            <%= GetSortLink("Đã giải quyết", "Resolve")%>
                         </th>
                         <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Fake destination", "FakeDestination")%>
+                            <span>Gửi mail</span>
                         </th>
                         <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Source", "Source")%>
+                            <%= GetSortLink("Lần gửi", "EmailNo")%>
+                        </th>
+                    </tr>
+                    <%}
+                        else if (model.MenuID == 194 || model.MenuID == 195)
+                        { %>
+                    <tr>
+                        <th width="1%">#</th>
+                        <th width="1%">
+                            <input type="checkbox" name="toggle" value="" onclick="checkAll(<%= model.PageSize %>);" />
                         </th>
                         <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Attacker", "Attacker")%>
+                            <%= GetSortLink("PID", "ID")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Attacker i p", "AttackerIP")%>
+                        <th width="10%" nowrap="nowrap">
+                            <%= GetSortLink("Domain/URL", "Path")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Network name", "NetworkName")%>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("IP", "IP")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Local i p", "LocalIP")%>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("ISP", "ISP")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Local t c p port", "LocalTCPPort")%>
-                        </th>
-                        <th width="1%" nowrap="nowrap">
+                        <th width="5%" nowrap="nowrap">
                             <%= GetSortLink("Timestamp", "Timestamp")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("A s n", "ASN")%>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("ASN", "ASN")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Geo", "Geo")%>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("Type", "Type")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Loại", "Type")%>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("HttpAgent", "HttpAgent")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Http agent", "HttpAgent")%>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("SrcPort", "SrcPort")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Src port", "SrcPort")%>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("HostName", "HostName")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Host name", "HostName")%>
-                        </th>
-                        <th width="1%" nowrap="nowrap">
+                        <th width="5%" nowrap="nowrap">
                             <%= GetSortLink("Destinationport", "Destinationport")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
+                        <th width="5%" nowrap="nowrap">
                             <%= GetSortLink("Protocol", "Protocol")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Server name", "ServerName")%>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("ServerName", "ServerName")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
+                        <th width="5%" nowrap="nowrap">
                             <%= GetSortLink("Server", "Server")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
+                        <th width="5%" nowrap="nowrap">
                             <%= GetSortLink("Header", "Header")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
+                        <th width="5%" nowrap="nowrap">
                             <%= GetSortLink("Tag", "Tag")%>
                         </th>
                         <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Region", "Region")%>
+                            <%= GetSortLink("Đã giải quyết", "Resolve")%>
                         </th>
                         <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Tỉnh thành", "City")%>
+                            <span>Gửi mail</span>
                         </th>
                         <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Sector", "Sector")%>
+                            <%= GetSortLink("Lần gửi", "EmailNo")%>
                         </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Xuất bản", "Published")%>
-                        </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Thứ tự", "Order")%>
-                            <a href="javascript:hl_exec_cmd('saveorder')" class="saveorder" title="Lưu sắp xếp"></a>
-                        </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Duyệt", "Activity")%>
-                        </th>--%>
                     </tr>
+                    <%} %>
                 </thead>
                 <tfoot>
                     <tr>
@@ -268,7 +286,9 @@
                             var listChild = ModIncidentService.Instance.CreateQuery().Where(o => o.ParentID == listEntity[i].ID).ToList();
                             if (listChild != null) c = listChild.Count;
                     %>
-                    <tr class="row<%= i%2 %> openchild" id="p_<%=i %>">
+                    <%if (model.MenuID == 191 || model.MenuID == 192)
+                        {%>
+                    <tr class="row<%= i % 2 %> openchild" id="p_<%=i %>">
                         <td align="center">
                             <%= i + 1%>
                         </td>
@@ -277,9 +297,6 @@
                         </td>
                         <td align="center">
                             <%= listEntity[i].ID%>
-                        </td>
-                        <td align="center">
-                            <%= GetName(listEntity[i].getMenu()) %>
                         </td>
                         <td align="center">
                             <%if (c > 0)
@@ -293,6 +310,64 @@
                         </td>
                         <td align="center">
                             <%= listEntity[i].ISP%>
+                        </td>
+                        <td align="center">
+                            <%= listEntity[i].Source%>
+                        </td>
+                        <td align="center">
+                            <%= listEntity[i].Attacker%>
+                        </td>
+                        <td align="center">
+                            <%= string.Format("{0:dd/MM/yyyy HH:mm}", listEntity[i].AttackOn) %>
+                        </td>
+                        <td align="center">
+                            <%--<%= GetPublish(listEntity[i].ID, listEntity[i].Resolve)%>--%>
+                            <%if (!listEntity[i].Resolve)
+                                { %><a class="jgrid" href="javascript:void(0);" onclick="hl_exec_cmd('[resolvegx][<%= listEntity[i].ID %>]')"><%} %>
+                                    <span class="jgrid">
+                                        <span class="state <%= listEntity[i].Resolve ? "publish" : "unpublish" %>"></span>
+                                    </span>
+                                    <%if (!listEntity[i].Resolve)
+                                        { %></a><%} %>
+                        </td>
+                        <td align="center">
+                            <a href="javascript:HLRedirect('SendMail', <%= listEntity[i].ID %>)" title="Gửi email cảnh báo tới đơn vị bị sự cố">
+                                <img src="/{CPPath}/Content/add/img/email.png" />
+                            </a>
+                        </td>
+                        <td align="right">
+                            <%= string.Format("{0:#,##0}", listEntity[i].EmailNo)%>
+                        </td>
+
+                    </tr>
+                    <%}
+                        else if (model.MenuID == 193)
+                        { %>
+                    <tr class="row<%= i % 2 %> openchild" id="p_<%=i %>">
+                        <td align="center">
+                            <%= i + 1%>
+                        </td>
+                        <td align="center">
+                            <%= GetCheckbox(listEntity[i].ID, i)%>
+                        </td>
+                        <td align="center">
+                            <%= listEntity[i].ID%>
+                        </td>
+                        <td align="center">
+                            <%if (c > 0)
+                                {%>
+                            <span style="float: left; font-weight: bold; color: blue;">&or;</span>
+                            <%} %>
+                            <%= listEntity[i].Path%>
+                        </td>
+                        <td align="center">
+                            <%= listEntity[i].IP%>
+                        </td>
+                        <td align="center">
+                            <%= listEntity[i].ISP%>
+                        </td>
+                        <td align="center">
+                            <%= listEntity[i].Source%>
                         </td>
                         <td align="center">
                             <%= listEntity[i].MalwareName%>
@@ -318,63 +393,53 @@
                         <td align="right">
                             <%= string.Format("{0:#,##0}", listEntity[i].EmailNo)%>
                         </td>
-
-                        <%--<td>
-                            <a href="javascript:HLRedirect('Add', <%= listEntity[i].ID %>)"><%= listEntity[i].Name%></a>
+                    </tr>
+                    <%}
+                        else if (model.MenuID == 194 || model.MenuID == 195)
+                        { %>
+                        <tr class="row<%= i % 2 %> openchild" id="p_<%=i %>">
+                        <td align="center">
+                            <%= i + 1%>
                         </td>
                         <td align="center">
-                            <%= listEntity[i].Code%>
+                            <%= GetCheckbox(listEntity[i].ID, i)%>
                         </td>
                         <td align="center">
-                            <%= listEntity[i].Url%>
+                            <%= listEntity[i].ID%>
                         </td>
                         <td align="center">
-                            <%= listEntity[i].FakeDestination%>
+                            <%if (c > 0)
+                                {%>
+                            <span style="float: left; font-weight: bold; color: blue;">&or;</span>
+                            <%} %>
+                            <%= listEntity[i].Path%>
                         </td>
                         <td align="center">
-                            <%= listEntity[i].Source%>
+                            <%= listEntity[i].IP%>
                         </td>
                         <td align="center">
-                            <%= listEntity[i].Attacker%>
+                            <%= listEntity[i].ISP%>
                         </td>
                         <td align="center">
-                            <%= listEntity[i].AttackerIP%>
-                        </td>
-                        <td align="center">
-                            <%= listEntity[i].NetworkName%>
-                        </td>
-                        <td align="center">
-                            <%= listEntity[i].LocalIP%>
-                        </td>
-                        <td align="center">
-                            <%= string.Format("{0:#,##0}", listEntity[i].LocalTCPPort)%>
-                        </td>
-                        <td align="center">
-                            <%= string.Format("{0:dd/MM/yyyy HH:mm}", listEntity[i].Timestamp) %>
+                            <%= listEntity[i].Timestamp%>
                         </td>
                         <td align="center">
                             <%= listEntity[i].ASN%>
                         </td>
                         <td align="center">
-                            <%= listEntity[i].Geo%>
+                            <%= listEntity[i].Type%>
                         </td>
                         <td align="center">
-                            <%= string.Format("{0:#,##0}", listEntity[i].Type)%>
-                        </td>
-                        <td align="center">
-                            <%= listEntity[i].HttpAgent%>
-                        </td>
-                        <td align="center">
-                            <%= string.Format("{0:#,##0}", listEntity[i].SrcPort)%>
+                            <%= listEntity[i].SrcPort%>
                         </td>
                         <td align="center">
                             <%= listEntity[i].HostName%>
                         </td>
                         <td align="center">
-                            <%= string.Format("{0:#,##0}", listEntity[i].Destinationport)%>
+                            <%= listEntity[i].Destinationport%>
                         </td>
                         <td align="center">
-                            <%= string.Format("{0:#,##0}", listEntity[i].Protocol)%>
+                            <%= listEntity[i].Protocol%>
                         </td>
                         <td align="center">
                             <%= listEntity[i].ServerName%>
@@ -386,55 +451,57 @@
                             <%= listEntity[i].Header%>
                         </td>
                         <td align="center">
+                            <%= listEntity[i].Header%>
+                        </td>
+                        <td align="center">
                             <%= listEntity[i].Tag%>
                         </td>
                         <td align="center">
-                            <%= listEntity[i].Region%>
+                            <%--<%= GetPublish(listEntity[i].ID, listEntity[i].Resolve)%>--%>
+                            <%if (!listEntity[i].Resolve)
+                                { %><a class="jgrid" href="javascript:void(0);" onclick="hl_exec_cmd('[resolvegx][<%= listEntity[i].ID %>]')"><%} %>
+                                    <span class="jgrid">
+                                        <span class="state <%= listEntity[i].Resolve ? "publish" : "unpublish" %>"></span>
+                                    </span>
+                                    <%if (!listEntity[i].Resolve)
+                                        { %></a><%} %>
                         </td>
                         <td align="center">
-                            <%= listEntity[i].City%>
+                            <a href="javascript:HLRedirect('SendMail', <%= listEntity[i].ID %>)" title="Gửi email cảnh báo tới đơn vị bị sự cố">
+                                <img src="/{CPPath}/Content/add/img/email.png" />
+                            </a>
                         </td>
-                        <td align="center">
-                            <%= listEntity[i].Sector%>
+                        <td align="right">
+                            <%= string.Format("{0:#,##0}", listEntity[i].EmailNo)%>
                         </td>
-                        <td align="center">
-                            <%= string.Format("{0:dd/MM/yyyy HH:mm}", listEntity[i].Published) %>
-                        </td>
-                        <td class="order">
-                            <%= GetOrder(listEntity[i].ID, listEntity[i].Order)%>
-                        </td>
-                        <td align="center">
-                            <%= GetPublish(listEntity[i].ID, listEntity[i].Activity)%>
-                        </td>--%>
                     </tr>
+                    <%} %>
                     <%if (c > 0)
                         {%>
                     <tr class="row<%= i%2 %>" id="c_<%=i %>" style="display: none;" data-child="<%=listEntity[i].ID %>">
                         <td colspan="12">
                             <table class="adminlist" cellspacing="1" style="border: 1px solid blue;">
                                 <thead>
+                                    <%if (model.MenuID == 191 || model.MenuID == 192)
+                                        {%>
                                     <tr>
                                         <th width="1%">#</th>
                                         <th width="1%">
-                                            <input type="checkbox" name="" value="" <%--onclick="checkAll(<%= model.PageSize %>);"--%> />
+                                            <input type="checkbox" name="toggle" value="" onclick="checkAll(<%= model.PageSize %>);" />
                                         </th>
                                         <th width="1%" nowrap="nowrap">
-                                            <%= GetSortLink("PID", "ID")%>
-                                        </th>
-                                        <th width="5%" nowrap="nowrap">
-                                            <%= GetSortLink("Loại sự cố", "MenuID")%>
-                                        </th>
+                                            <%= GetSortLink("PID", "ID")%></th>
                                         <th width="10%" nowrap="nowrap">
-                                            <%= GetSortLink("Domain/URL", "Path")%>
+                                            <%= GetSortLink("Domain/URL", "Path")%></th>
+                                        <th width="5%" nowrap="nowrap">
+                                            <%= GetSortLink("IP", "IP")%></th>
+                                        <th width="5%" nowrap="nowrap">
+                                            <%= GetSortLink("ISP", "ISP")%></th>
+                                        <th width="5%" nowrap="nowrap">
+                                            <%= GetSortLink("Nguồn", "Source")%>
                                         </th>
                                         <th width="5%" nowrap="nowrap">
-                                            <%= GetSortLink("IP", "IP")%>
-                                        </th>
-                                        <th width="5%" nowrap="nowrap">
-                                            <%= GetSortLink("ISP", "ISP")%>
-                                        </th>
-                                        <th width="5%" nowrap="nowrap">
-                                            <%= GetSortLink("Tên Virus", "MalwareName")%>
+                                            <%= GetSortLink("Người tấn công", "Attacker")%>
                                         </th>
                                         <th width="5%" nowrap="nowrap">
                                             <%= GetSortLink("Thời gian", "AttackOn")%>
@@ -449,11 +516,50 @@
                                             <%= GetSortLink("Lần gửi", "EmailNo")%>
                                         </th>
                                     </tr>
+                                    <%}
+                                        else if (model.MenuID == 193)
+                                        { %>
+                                    <tr>
+                                        <th width="1%">#</th>
+                                        <th width="1%">
+                                            <input type="checkbox" name="toggle" value="" onclick="checkAll(<%= model.PageSize %>);" />
+                                        </th>
+                                        <th width="1%" nowrap="nowrap">
+                                            <%= GetSortLink("PID", "ID")%></th>
+                                        <th width="10%" nowrap="nowrap">
+                                            <%= GetSortLink("Domain/URL", "Path")%></th>
+                                        <th width="5%" nowrap="nowrap">
+                                            <%= GetSortLink("IP", "IP")%></th>
+                                        <th width="5%" nowrap="nowrap">
+                                            <%= GetSortLink("ISP", "ISP")%></th>
+                                        <th width="5%" nowrap="nowrap">
+                                            <%= GetSortLink("Nguồn", "Source")%>
+                                        </th>
+                                        <th width="5%" nowrap="nowrap">
+                                            <%= GetSortLink("Tên virut", "MalwareName")%>
+                                        </th>
+                                        <th width="5%" nowrap="nowrap">
+                                            <%= GetSortLink("Thời gian", "AttackOn")%>
+                                        </th>
+                                        <th width="1%" nowrap="nowrap">
+                                            <%= GetSortLink("Đã giải quyết", "Resolve")%>
+                                        </th>
+                                        <th width="1%" nowrap="nowrap">
+                                            <span>Gửi mail</span>
+                                        </th>
+                                        <th width="1%" nowrap="nowrap">
+                                            <%= GetSortLink("Lần gửi", "EmailNo")%>
+                                        </th>
+                                    </tr>
+                                    <%} %>
                                 </thead>
+
+                                <%if (model.MenuID == 191 || model.MenuID == 192)
+                                    {%>
                                 <%for (int j = 0; listChild != null && j < listChild.Count; j++)
                                     {
                                 %>
-                                <tr class="row<%= i%2 %>">
+                                <tr class="row<%= i % 2 %>">
                                     <td align="center">
                                         <%= j + 1%>
                                     </td>
@@ -462,9 +568,6 @@
                                     </td>
                                     <td align="center">
                                         <%= listChild[j].ID%>
-                                    </td>
-                                    <td align="center">
-                                        <%= GetName(listChild[j].getMenu()) %>
                                     </td>
                                     <td align="center">
                                         <%= listChild[j].Path%>
@@ -476,8 +579,9 @@
                                         <%= listChild[j].ISP%>
                                     </td>
                                     <td align="center">
-                                        <%= listChild[j].MalwareName%>
-                                    </td>
+                                        <%= listEntity[i].Source%></td>
+                                    <td align="center">
+                                        <%= listEntity[i].Attacker%></td>
                                     <td align="center">
                                         <%= string.Format("{0:dd/MM/yyyy HH:mm}", listChild[j].AttackOn) %>
                                     </td>
@@ -500,6 +604,59 @@
                                         <%= string.Format("{0:#,##0}", listChild[j].EmailNo)%>
                                     </td>
                                 </tr>
+                                <%} %>
+                                <%}
+                                    else if (model.MenuID == 193)
+                                    { %>
+                                <%for (int j = 0; listChild != null && j < listChild.Count; j++)
+                                    {
+                                %>
+                                <tr class="row<%= i % 2 %>">
+                                    <td align="center">
+                                        <%= j + 1%>
+                                    </td>
+                                    <td align="center">
+                                        <%= GetCheckbox(listChild[j].ID, j)%>
+                                    </td>
+                                    <td align="center">
+                                        <%= listChild[j].ID%>
+                                    </td>
+                                    <td align="center">
+                                        <%= listChild[j].Path%>
+                                    </td>
+                                    <td align="center">
+                                        <%= listChild[j].IP%>
+                                    </td>
+                                    <td align="center">
+                                        <%= listChild[j].ISP%>
+                                    </td>
+                                    <td align="center">
+                                        <%= listEntity[i].Source%></td>
+                                    <td align="center">
+                                        <%= listEntity[i].MalwareName%></td>
+                                    <td align="center">
+                                        <%= string.Format("{0:dd/MM/yyyy HH:mm}", listChild[j].AttackOn) %>
+                                    </td>
+                                    <td align="center">
+                                        <%--<%= GetPublish(listChild[j].ID, listChild[j].Resolve)%>--%>
+                                        <%if (!listChild[j].Resolve)
+                                            { %><a class="jgrid" href="javascript:void(0);" onclick="hl_exec_cmd('[resolvegx][<%= listChild[j].ID %>]')"><%} %>
+                                                <span class="jgrid">
+                                                    <span class="state <%= listChild[j].Resolve ? "publish" : "unpublish" %>"></span>
+                                                </span>
+                                                <%if (!listChild[j].Resolve)
+                                                    { %></a><%} %>
+                                    </td>
+                                    <td align="center">
+                                        <%--<a href="javascript:HLRedirect('SendMail', <%= listChild[j].ID %>)" title="Gửi email cảnh báo tới đơn vị bị sự cố">
+                                            <img src="/{CPPath}/Content/add/img/email.png" />
+                                        </a>--%>
+                                    </td>
+                                    <td align="right">
+                                        <%= string.Format("{0:#,##0}", listChild[j].EmailNo)%>
+                                    </td>
+                                </tr>
+                                <%} %>
                                 <%} %>
                             </table>
                         </td>
