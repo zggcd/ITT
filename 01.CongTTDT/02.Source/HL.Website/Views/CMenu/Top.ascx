@@ -23,6 +23,9 @@
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse p-0">
+                    <%if (!CPLogin.isNetwork || (CPLogin.isNetwork && CPLogin.IsLoginOnWeb()))
+                         {
+                            %>
                     <ul class="nav navbar-nav">
                         <%for (i = 0; i < c; i++)
                             {
@@ -62,6 +65,7 @@
                             else
                             {%>
                         <li><a href="<%=href %>"><%=listItem[i].Name %></a></li>
+                        <%} %>
                         <%} %>
                         <%} %>
                     </ul>
