@@ -18,7 +18,7 @@ namespace HL.Lib.Controllers
                 ViewPage.Response.Redirect("/vn/Thanh-vien/Thong-tin-ca-nhan.aspx");
             else if (!CPLogin.IsLoginOnWeb() && endcode.ToLower() == "bao-cao-su-co")
                 ViewPage.Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx");
-            ViewBag.Data = CPLogin.CurrentUser;
+            ViewBag.Data = CPLogin.CurrentUserOnWeb;
         }
 
         public void ActionDetail(string endcode)
@@ -448,7 +448,7 @@ namespace HL.Lib.Controllers
             entity.UserID = Lib.Global.CPLogin.UserIDOnWeb;
             entity.Order = GetMaxOrder_DangKy();
 
-            string folder = "/Data/upload/files/DKUCSC/" + CPLogin.CurrentUser.ID.ToString() + "_" + CPLogin.CurrentUser.LoginName + "/";
+            string folder = "/Data/upload/files/DKUCSC/" + CPLogin.CurrentUserOnWeb.ID.ToString() + "_" + CPLogin.CurrentUserOnWeb.LoginName + "/";
             Lib.Global.Directory.Create(HL.Core.Global.Application.BaseDirectory + folder);
             entity.File = Utils.Upload("Atack", entity.File, folder, ref alert, true);
 

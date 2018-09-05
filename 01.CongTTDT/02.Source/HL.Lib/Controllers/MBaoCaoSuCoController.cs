@@ -34,10 +34,22 @@ namespace HL.Lib.Controllers
                             .OrderByDesc(o => o.Order)
                             .Take(PageSize)
                             .Skip(PageSize * model.Page);
-
             ViewBag.Data = dbQuery.ToList();
             model.TotalRecord = dbQuery.TotalRecord;
             model.PageSize = PageSize;
+
+            var dbThongBaoQuery = ModThongBaoSuCoService.Instance.CreateQuery()
+                            //.Where(o => o.Activity == true)
+                            .Where(userId > 0, o => o.UserID == userId)
+                            .Where(State > 0, o => (o.State & State) == State)
+                            .WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("ThongBaoSuCo", MenuID, ViewPage.CurrentLang.ID))
+                            .OrderByDesc(o => o.Order)
+                            .Take(PageSize)
+                            .Skip(PageSize * model.Page);
+            ViewBag.ListThongBao = dbThongBaoQuery.ToList();
+            model.TBSC_TotalRecord = dbThongBaoQuery.TotalRecord;
+            model.TBSC_PageSize = PageSize;
+
             ViewBag.Model = model;
         }
 
@@ -181,6 +193,110 @@ namespace HL.Lib.Controllers
                     ViewBag.BaoCao = bcKetThuc;
                 }
             }
+            else if (ec.Contains("bc-dien-bien-su-co"))
+            {
+                int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
+                string code = ecArr[0].ToString();
+                ModBaoCaoSuCoEntity sc = ModBaoCaoSuCoService.Instance.CreateQuery()
+                    .Where(userId > 0, o => o.UserID == userId)
+                    .Where(o => o.Code == code)
+                    .ToSingle();
+                if (sc != null)
+                {
+
+                    ViewBag.BCSuCo = sc;
+                    layout = "BCDienBienUCSC";
+                    List<ModBaoCaoDienBienSuCoEntity> lstBCDienBien = ModBaoCaoDienBienSuCoService.Instance.CreateQuery()
+                        .Where(o => o.BaoCaoSuCoID == sc.ID)
+                        .ToList();
+                    if (lstBCDienBien == null)
+                    {
+                        lstBCDienBien = new List<ModBaoCaoDienBienSuCoEntity>();
+                    }
+
+
+                    ViewBag.EndCode = code;
+                    ViewBag.ListBaoCao = lstBCDienBien;
+                }
+            }
+            else if (ec.Contains("bc-phuong-an-su-co"))
+            {
+                int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
+                string code = ecArr[0].ToString();
+                ModBaoCaoSuCoEntity sc = ModBaoCaoSuCoService.Instance.CreateQuery()
+                    .Where(userId > 0, o => o.UserID == userId)
+                    .Where(o => o.Code == code)
+                    .ToSingle();
+                if (sc != null)
+                {
+
+                    ViewBag.BCSuCo = sc;
+                    layout = "BCPhuongAnUCSC";
+                    List<ModBaoCaoPhuongAnSuCoEntity> lstBCPhuongAn = ModBaoCaoPhuongAnSuCoService.Instance.CreateQuery()
+                        .Where(o => o.BaoCaoSuCoID == sc.ID)
+                        .ToList();
+                    if (lstBCPhuongAn == null)
+                    {
+                        lstBCPhuongAn = new List<ModBaoCaoPhuongAnSuCoEntity>();
+                    }
+
+
+                    ViewBag.EndCode = code;
+                    ViewBag.ListBaoCao = lstBCPhuongAn;
+                }
+            }
+            else if (ec.Contains("bc-ho-tro-phoi-hop-su-co"))
+            {
+                int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
+                string code = ecArr[0].ToString();
+                ModBaoCaoSuCoEntity sc = ModBaoCaoSuCoService.Instance.CreateQuery()
+                    .Where(userId > 0, o => o.UserID == userId)
+                    .Where(o => o.Code == code)
+                    .ToSingle();
+                if (sc != null)
+                {
+
+                    ViewBag.BCSuCo = sc;
+                    layout = "BCHoTroPhoiHopUCSC";
+                    List<ModBaoCaoHoTroPhoiHopSuCoEntity> lstBCPhoiHop = ModBaoCaoHoTroPhoiHopSuCoService.Instance.CreateQuery()
+                        .Where(o => o.BaoCaoSuCoID == sc.ID)
+                        .ToList();
+                    if (lstBCPhoiHop == null)
+                    {
+                        lstBCPhoiHop = new List<ModBaoCaoHoTroPhoiHopSuCoEntity>();
+                    }
+
+
+                    ViewBag.EndCode = code;
+                    ViewBag.ListBaoCao = lstBCPhoiHop;
+                }
+            }
+            else if (ec.Contains("them-thong-bao-su-co"))
+            {
+                layout = "ThongBaoUCSC";
+                ViewBag.ThongBaoUCSC = new ModThongBaoSuCoEntity();
+            }
+            else if (ec.Contains("cap-nhat-thong-bao-su-co"))
+            {
+                endCode = ecArr[0];
+                int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
+                var entity = ModThongBaoSuCoService.Instance.CreateQuery()
+                            .Where(userId > 0, o => o.UserID == userId)
+                            .Where(o => o.Code == endCode)
+                            .ToSingle();
+
+                if (entity != null)
+                {
+                    ViewBag.ThongBaoUCSC = entity;
+                    ViewBag.EndCode = endCode;
+                    ViewBag.IsEdit = 1;
+                    layout = "ThongBaoUCSC";
+                }
+                else
+                {
+                    ViewPage.Error404();
+                }
+            }
 
             if (!string.IsNullOrEmpty(layout)) RenderView(layout);
             else
@@ -247,6 +363,21 @@ namespace HL.Lib.Controllers
         {
             ViewBag.Data = entity;
 
+            // Lay thong tin neu la thanh vien mang luoi
+            //var dk = ModDonDangKyUCSCService.Instance.CreateQuery().Where(o => o.UserID == CPLogin.CurrentUserOnWeb.ID && o.Activity == true).ToSingle();
+            //var hs = ModHSThanhVienUCSCService.Instance.CreateQuery().Where(o => o.UserID == CPLogin.CurrentUserOnWeb.ID && o.Activity == true).ToSingle();
+            //if (dk != null || hs != null)
+            //{
+            //    entity.Name = CPLogin.CurrentUserOnWeb.Name;
+            //    entity.Address = CPLogin.CurrentUserOnWeb.Address;
+            //    entity.Phone = CPLogin.CurrentUserOnWeb.Phone;
+            //    entity.Email = CPLogin.CurrentUserOnWeb.Email;
+            //}
+
+            if (string.IsNullOrEmpty(entity.Title))
+            {
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Tên sự cố.");
+            }
             if (string.IsNullOrEmpty(entity.Name))
             {
                 ViewPage.Message.ListMessage.Add("Bạn chưa nhập Tên tổ chức/cá nhân báo cáo sự cố.");
@@ -360,6 +491,10 @@ namespace HL.Lib.Controllers
             {
                 ViewBag.Data = entity;
 
+                if (string.IsNullOrEmpty(entity.Title))
+                {
+                    ViewPage.Message.ListMessage.Add("Bạn chưa nhập Tên sự cố.");
+                }
                 if (string.IsNullOrEmpty(entity.Name))
                 {
                     ViewPage.Message.ListMessage.Add("Bạn chưa nhập Tên tổ chức/cá nhân báo cáo sự cố.");
@@ -391,6 +526,7 @@ namespace HL.Lib.Controllers
                     try
                     {
                         //save
+                        bc.Title = entity.Title;
                         bc.Name = entity.Name;
                         bc.Address = entity.Address;
                         bc.Phone = entity.Phone;
@@ -1186,6 +1322,308 @@ namespace HL.Lib.Controllers
             }
         }
 
+        #region ITT UPDATE
+        public void ActionAddBCDienBienUCSC(ModBaoCaoDienBienSuCoEntity entity, MAppend append, string endCode)
+        {
+            bool isValid = ValidBCDienBien(ref entity, append, endCode);
+            ViewBag.BaoCao = entity;
+
+            if (isValid == true)
+            {
+                int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
+                string ec = endCode.ToLower();
+                string[] ecArr = ec.Split('-');
+                string codes = ecArr[0].ToString();
+                ModBaoCaoSuCoEntity sc = ModBaoCaoSuCoService.Instance.CreateQuery()
+                    .Where(userId > 0, o => o.UserID == userId)
+                    .Where(o => o.Code == codes)
+                    .ToSingle();
+                if (sc != null)
+                {
+                    string code = "BCDBSC" + ModBaoCaoDienBienSuCoService.Instance.GetMaxID();
+                    entity.Name = code;
+                    entity.Code = Data.GetCode(code);
+                    entity.UserID = Lib.Global.CPLogin.UserIDOnWeb;
+                    entity.Activity = true;
+                    entity.BaoCaoSuCoID = sc.ID;
+                    entity.ToChuc_Ten = sc.Name;
+                    entity.ToChuc_DiaChi = sc.Address;
+                    entity.ToChuc_DienThoai = sc.Phone;
+                    entity.ToChuc_Email = sc.Email;
+                    int id = ModBaoCaoDienBienSuCoService.Instance.Save(entity);
+
+                    ViewBag.BaoCao = entity;
+
+                    ViewPage.Alert("Thêm báo cáo diễn biến thành công.");
+                    ViewPage.RefreshPage();
+                    //ViewPage.Navigate("/vn/Bao-cao-su-co/" + sc.Code + "-bc-dien-bien-su-co.aspx");
+                }
+            }
+        }
+
+        public void ActionDeleteBCDienBienUCSC(string baoCaoDBId, string endCode)
+        {
+            int bcId = HL.Core.Global.Convert.ToInt(baoCaoDBId, 0);
+            if (bcId == 0)
+            {
+                ViewPage.Alert("Không thể xóa báo cáo.");
+            }
+            else
+            {
+                int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
+                var entity = ModBaoCaoDienBienSuCoService.Instance.CreateQuery()
+                            .Where(userId > 0, o => o.UserID == userId)
+                            .Where(bcId > 0, o => o.ID == bcId)
+                            .ToSingle();
+
+                if (entity != null)
+                {
+                    ModBaoCaoDienBienSuCoService.Instance.Delete(entity.ID);
+
+                    ViewPage.Alert("Xóa thành công.");
+                    ViewPage.RefreshPage();
+                }
+                else
+                {
+                    ViewPage.Alert("Bạn không có quyền thao tác trên báo cáo này.");
+                }
+            }
+        }
+
+        public void ActionAddBCPhuongAnUCSC(ModBaoCaoPhuongAnSuCoEntity entity, MAppend append, string endCode)
+        {
+            bool isValid = ValidBCPhuongAn(ref entity, append, endCode);
+            ViewBag.BaoCao = entity;
+
+            if (isValid == true)
+            {
+                int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
+                string ec = endCode.ToLower();
+                string[] ecArr = ec.Split('-');
+                string codes = ecArr[0].ToString();
+                ModBaoCaoSuCoEntity sc = ModBaoCaoSuCoService.Instance.CreateQuery()
+                    .Where(userId > 0, o => o.UserID == userId)
+                    .Where(o => o.Code == codes)
+                    .ToSingle();
+                if (sc != null)
+                {
+                    string code = "BCPAUCSC" + ModBaoCaoPhuongAnSuCoService.Instance.GetMaxID();
+                    entity.Name = code;
+                    entity.Code = Data.GetCode(code);
+                    entity.UserID = Lib.Global.CPLogin.UserIDOnWeb;
+                    entity.Activity = true;
+                    entity.BaoCaoSuCoID = sc.ID;
+                    entity.ToChuc_Ten = sc.Name;
+                    entity.ToChuc_DiaChi = sc.Address;
+                    entity.ToChuc_DienThoai = sc.Phone;
+                    entity.ToChuc_Email = sc.Email;
+                    int id = ModBaoCaoPhuongAnSuCoService.Instance.Save(entity);
+
+                    ViewBag.BaoCao = entity;
+
+                    ViewPage.Alert("Thêm báo cáo diễn biến thành công.");
+                    ViewPage.RefreshPage();
+                    //ViewPage.Navigate("/vn/Bao-cao-su-co/" + sc.Code + "-bc-phuong-an-su-co.aspx");
+                }
+            }
+        }
+
+        public void ActionDeleteBCPhuongAnUCSC(string baoCaoDBId, string endCode)
+        {
+            int bcId = HL.Core.Global.Convert.ToInt(baoCaoDBId, 0);
+            if (bcId == 0)
+            {
+                ViewPage.Alert("Không thể xóa báo cáo.");
+            }
+            else
+            {
+                int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
+                var entity = ModBaoCaoPhuongAnSuCoService.Instance.CreateQuery()
+                            .Where(userId > 0, o => o.UserID == userId)
+                            .Where(bcId > 0, o => o.ID == bcId)
+                            .ToSingle();
+
+                if (entity != null)
+                {
+                    ModBaoCaoPhuongAnSuCoService.Instance.Delete(entity.ID);
+
+                    ViewPage.Alert("Xóa thành công.");
+                    ViewPage.RefreshPage();
+                }
+                else
+                {
+                    ViewPage.Alert("Bạn không có quyền thao tác trên báo cáo này.");
+                }
+            }
+        }
+
+        public void ActionAddBCHoTroPhoiHopUCSC(ModBaoCaoHoTroPhoiHopSuCoEntity entity, MAppend append, string endCode)
+        {
+            bool isValid = ValidBCHoTroPhoiHop(ref entity, append, endCode);
+            ViewBag.BaoCao = entity;
+
+            if (isValid == true)
+            {
+                int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
+                string ec = endCode.ToLower();
+                string[] ecArr = ec.Split('-');
+                string codes = ecArr[0].ToString();
+                ModBaoCaoSuCoEntity sc = ModBaoCaoSuCoService.Instance.CreateQuery()
+                    .Where(userId > 0, o => o.UserID == userId)
+                    .Where(o => o.Code == codes)
+                    .ToSingle();
+                if (sc != null)
+                {
+                    string code = "BCHTPHUCSC" + ModBaoCaoHoTroPhoiHopSuCoService.Instance.GetMaxID();
+                    entity.Name = code;
+                    entity.Code = Data.GetCode(code);
+                    entity.UserID = Lib.Global.CPLogin.UserIDOnWeb;
+                    entity.Activity = true;
+                    entity.BaoCaoSuCoID = sc.ID;
+                    entity.ToChuc_Ten = sc.Name;
+                    entity.ToChuc_DiaChi = sc.Address;
+                    entity.ToChuc_DienThoai = sc.Phone;
+                    entity.ToChuc_Email = sc.Email;
+                    int id = ModBaoCaoHoTroPhoiHopSuCoService.Instance.Save(entity);
+
+                    ViewBag.BaoCao = entity;
+
+                    ViewPage.Alert("Thêm báo cáo diễn biến thành công.");
+                    ViewPage.RefreshPage();
+                    // ViewPage.Navigate("/vn/Bao-cao-su-co/" + sc.Code + "-bc-ho-tro-phoi-hop-su-co.aspx");
+                }
+            }
+        }
+
+        public void ActionDeleteBCHoTroPhoiHopUCSC(string baoCaoDBId, string endCode)
+        {
+            int bcId = HL.Core.Global.Convert.ToInt(baoCaoDBId, 0);
+            if (bcId == 0)
+            {
+                ViewPage.Alert("Không thể xóa báo cáo.");
+            }
+            else
+            {
+                int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
+                var entity = ModBaoCaoHoTroPhoiHopSuCoService.Instance.CreateQuery()
+                            .Where(userId > 0, o => o.UserID == userId)
+                            .Where(bcId > 0, o => o.ID == bcId)
+                            .ToSingle();
+
+                if (entity != null)
+                {
+                    ModBaoCaoHoTroPhoiHopSuCoService.Instance.Delete(entity.ID);
+
+                    ViewPage.Alert("Xóa thành công.");
+                    ViewPage.RefreshPage();
+                }
+                else
+                {
+                    ViewPage.Alert("Bạn không có quyền thao tác trên báo cáo này.");
+                }
+            }
+        }
+
+        public void ActionAddThongBaoUCSC(ModThongBaoSuCoEntity entity, MAppend append)
+        {
+            bool isValid = ValidThongBaoUCSC(ref entity, append);
+            ViewBag.ThongBao = entity;
+
+            if (isValid == true)
+            {
+                try
+                {
+                    WebMenuEntity menu = WebMenuService.Instance.CreateQuery()
+                        .Where(o => o.Activity == true && o.Code == "TBSC_Cho")
+                        .ToSingle();
+
+                    //save
+                    entity.MenuID = menu != null ? menu.ID : 0;
+                    entity.UserID = Lib.Global.CPLogin.UserIDOnWeb;
+                    entity.CreatedDate = DateTime.Now;
+                    entity.Order = GetMaxOrder_ThongBaoSC();
+                    entity.Activity = false;
+                    entity.Code = "TBSC" + ModThongBaoSuCoService.Instance.GetMaxID();
+                    ModThongBaoSuCoService.Instance.Save(entity);
+
+                    ViewPage.Alert("Thêm thông báo sự cố thành công.");
+                    ViewPage.Navigate("/vn/Bao-cao-su-co.aspx");
+                }
+                catch (Exception ex)
+                {
+                    Global.Error.Write(ex);
+                    ViewPage.Alert(ex.Message);
+                }
+            }
+        }
+
+        public void ActionDeleteThongBaoUCSC(string thongBaoId)
+        {
+            int tbId = HL.Core.Global.Convert.ToInt(thongBaoId, 0);
+            int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
+            var entity = ModThongBaoSuCoService.Instance.CreateQuery()
+                        .Where(userId > 0, o => o.UserID == userId)
+                        .Where(tbId > 0, o => o.ID == tbId)
+                        .ToSingle();
+
+            if (entity != null)
+            {
+                ModThongBaoSuCoService.Instance.Delete(entity.ID);
+                ViewPage.Alert("Xóa thông báo thành công.");
+                ViewPage.RefreshPage();
+            }
+            else
+            {
+                ViewPage.Alert("Bạn không có quyền thao tác trên báo cáo này.");
+            }
+        }
+
+        public void ActionUpdateThongBaoUCSC(ModThongBaoSuCoEntity entity, MAppend append, string endCode)
+        {
+            int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
+            var tbsc = ModThongBaoSuCoService.Instance.CreateQuery()
+                        .Where(userId > 0, o => o.UserID == userId)
+                        .Where(o => o.Code == endCode)
+                        .ToSingle();
+            if (tbsc != null)
+            {
+                ViewBag.Data = entity;
+                if (ValidThongBaoUCSC(ref entity, append))
+                {
+                    try
+                    {
+                        WebMenuEntity menu = WebMenuService.Instance.CreateQuery()
+                       .Where(o => o.Activity == true && o.Code == "TBSC_Cho")
+                       .ToSingle();
+
+                        //save
+                        tbsc.MenuID = menu != null ? menu.ID : 0; // Doi ve trang thai cho
+                        tbsc.ChiTiet_CoQuan = entity.ChiTiet_CoQuan;
+                        tbsc.ChiTiet_KetQua = entity.ChiTiet_KetQua;
+                        tbsc.ChiTiet_KienNghi = entity.ChiTiet_KienNghi;
+                        tbsc.ChiTiet_MoTa = entity.ChiTiet_MoTa;
+                        tbsc.ChiTiet_NgayGioPhatHien = entity.ChiTiet_NgayGioPhatHien;
+                        tbsc.ChiTiet_TenDonVi = entity.ChiTiet_TenDonVi;
+                        tbsc.ChiTiet_TenHeThong = entity.ChiTiet_TenHeThong;
+                        tbsc.ToChuc_DiaChi = entity.ToChuc_DiaChi;
+                        tbsc.ToChuc_Ten = entity.ToChuc_Ten;
+                        tbsc.UserID1 = Lib.Global.CPLogin.UserIDOnWeb;
+                        tbsc.UpdatedDate = DateTime.Now;
+                        ModThongBaoSuCoService.Instance.Save(tbsc);
+                    }
+                    catch (Exception ex)
+                    {
+                        Global.Error.Write(ex);
+                        ViewPage.Alert(ex.Message);
+                    }
+
+                    ViewPage.Alert("Cập nhật thông báo thành công.");
+                    ViewPage.Navigate("/vn/Bao-cao-su-co/" + endCode + "-cap-nhat-thong-bao-su-co.aspx");
+                }
+            }
+        }
+        #endregion
+
         #region private function
         private void DelBCBanDau(int baoCaoId)
         {
@@ -1273,6 +1711,13 @@ namespace HL.Lib.Controllers
         private int GetMaxOrder_SoSuCo()
         {
             return ModSoLuongSuCoService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
+
+        private int GetMaxOrder_ThongBaoSC()
+        {
+            return ModThongBaoSuCoService.Instance.CreateQuery()
                     .Max(o => o.Order)
                     .ToValue().ToInt(0) + 1;
         }
@@ -1487,6 +1932,155 @@ namespace HL.Lib.Controllers
 
             return true;
         }
+
+        private bool ValidBCDienBien(ref ModBaoCaoDienBienSuCoEntity entity, MAppend append, string endCode)
+        {
+            if (string.IsNullOrEmpty(entity.ChiTiet_MoTa))
+            {
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Mô tả diễn biến sự cố.");
+            }
+
+            if (ViewPage.Message.ListMessage.Count > 0)
+            {
+                string message = @"Thông tin còn thiếu hoặc chưa hợp lệ: \n";
+
+                for (int i = 0; i < ViewPage.Message.ListMessage.Count; i++)
+                    message += @"\n + " + ViewPage.Message.ListMessage[i];
+
+                ViewPage.Alert(message);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidBCPhuongAn(ref ModBaoCaoPhuongAnSuCoEntity entity, MAppend append, string endCode)
+        {
+            if (string.IsNullOrEmpty(entity.ChiTiet_MoTa))
+            {
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Mô tả diễn biến sự cố.");
+            }
+
+            if (ViewPage.Message.ListMessage.Count > 0)
+            {
+                string message = @"Thông tin còn thiếu hoặc chưa hợp lệ: \n";
+
+                for (int i = 0; i < ViewPage.Message.ListMessage.Count; i++)
+                    message += @"\n + " + ViewPage.Message.ListMessage[i];
+
+                ViewPage.Alert(message);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidBCHoTroPhoiHop(ref ModBaoCaoHoTroPhoiHopSuCoEntity entity, MAppend append, string endCode)
+        {
+            if (string.IsNullOrEmpty(entity.ChiTiet_MoTa))
+            {
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Mô tả diễn biến sự cố.");
+            }
+
+            if (ViewPage.Message.ListMessage.Count > 0)
+            {
+                string message = @"Thông tin còn thiếu hoặc chưa hợp lệ: \n";
+
+                for (int i = 0; i < ViewPage.Message.ListMessage.Count; i++)
+                    message += @"\n + " + ViewPage.Message.ListMessage[i];
+
+                ViewPage.Alert(message);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidThongBaoUCSC(ref ModThongBaoSuCoEntity entity, MAppend append)
+        {
+            if (string.IsNullOrEmpty(entity.ToChuc_Ten))
+            {
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Tên tổ chức/cá nhân thông báo sự cố.");
+            }
+            if (string.IsNullOrEmpty(entity.ToChuc_DiaChi))
+            {
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Địa chỉ tổ chức/cá nhân thông báo sự cố.");
+            }
+            if (string.IsNullOrEmpty(entity.ChiTiet_TenHeThong))
+            {
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Tên hoặc tên miền, địa chỉ IP của hệ thống thông tin bị sự cố.");
+            }
+            if (string.IsNullOrEmpty(entity.ChiTiet_TenDonVi))
+            {
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Tên cơ quan chủ quản hệ thống thông tin bị sự cố.");
+            }
+            if (string.IsNullOrEmpty(entity.ChiTiet_MoTa))
+            {
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Mô tả sơ bộ về sự cố.");
+            }
+
+            // Ngay & thoi gian phat hien su co
+            if (entity.ChiTiet_NgayGioPhatHien == DateTime.MinValue)
+            {
+                ViewPage.Message.ListMessage.Add("Ngày hoặc Thời gian phát hiện sự cố không hợp lệ.");
+            }
+            else
+            {
+                bool hasThoiGian = true;
+                if (string.IsNullOrEmpty(append.Ngay))
+                {
+                    ViewPage.Message.ListMessage.Add("Bạn chưa nhập Ngày phát hiện sự cố.");
+                    hasThoiGian = false;
+                }
+                if (string.IsNullOrEmpty(append.Gio.ToString()) && string.IsNullOrEmpty(append.Phut.ToString()))
+                {
+                    ViewPage.Message.ListMessage.Add("Bạn chưa nhập Thời gian phát hiện sự cố.");
+                    hasThoiGian = false;
+                }
+                if (hasThoiGian == true)
+                {
+                    string gio = !string.IsNullOrEmpty(append.Gio.ToString()) ? append.Gio.ToString() : "00";
+                    string phut = !string.IsNullOrEmpty(append.Phut.ToString()) ? append.Phut.ToString() : "00";
+                    string ngayGioPhatHien = append.Ngay + " " + append.Gio + ":" + append.Phut;
+
+                    if (append.Gio < 0 || append.Gio > 24 || append.Phut < 0 || append.Phut > 59)
+                    {
+                        ViewPage.Message.ListMessage.Add("Thời gian phát hiện sự cố không hợp lệ.");
+                        entity.ChiTiet_NgayGioPhatHien = null;
+                    }
+                    else
+                    {
+                        DateTime dt = HL.Core.Global.Convert.ToDateTime(ngayGioPhatHien);
+                        entity.ChiTiet_NgayGioPhatHien = dt;
+                        if (dt == DateTime.MinValue)
+                        {
+                            ViewPage.Message.ListMessage.Add("Ngày phát hiện sự cố không hợp lệ.");
+                            entity.ChiTiet_NgayGioPhatHien = null;
+                        }
+                    }
+                }
+            }
+
+            if (string.IsNullOrEmpty(entity.ChiTiet_KetQua))
+            {
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Kết quả xử lý sự cố đề xuất.");
+            }
+
+
+            if (ViewPage.Message.ListMessage.Count > 0)
+            {
+                string message = @"Thông tin còn thiếu hoặc chưa hợp lệ: \n";
+
+                for (int i = 0; i < ViewPage.Message.ListMessage.Count; i++)
+                    message += @"\n + " + ViewPage.Message.ListMessage[i];
+
+                ViewPage.Alert(message);
+                return false;
+            }
+
+            return true;
+        }
+
         #endregion private function
     }
 
@@ -1501,5 +2095,19 @@ namespace HL.Lib.Controllers
 
         public int PageSize { get; set; }
         public int TotalRecord { get; set; }
+
+
+        #region ITT UPDATE
+        private int _TBSC_Page = 0;
+        public int TBSC_Page
+        {
+            get { return _TBSC_Page; }
+            set { _TBSC_Page = value - 1; }
+        }
+
+        public int TBSC_PageSize { get; set; }
+        public int TBSC_TotalRecord { get; set; }
+
+        #endregion
     }
 }

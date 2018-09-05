@@ -2,6 +2,7 @@
 using HL.Lib.Models;
 using System.Web.UI.WebControls;
 using System.Collections.Generic;
+using HL.Lib.Global;
 
 namespace HL.Lib.Controllers
 {
@@ -25,6 +26,8 @@ namespace HL.Lib.Controllers
 
             if (_Page != null)
             {
+                if (_Page.Name == "Menu Network") CPLogin.isNetwork = true;
+                else CPLogin.isNetwork = false;
                 ViewBag.Data = SysPageService.Instance.GetByParent_Cache(_Page.ID);
                 ViewBag.Page = _Page;
 
