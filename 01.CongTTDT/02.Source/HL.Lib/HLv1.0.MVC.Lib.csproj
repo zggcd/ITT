@@ -153,6 +153,9 @@
     <Compile Include="CPControllers\AccessDeniedController.cs" />
     <Compile Include="CPControllers\AjaxController.cs" />
     <Compile Include="CPControllers\FormAlbumDetailController.cs" />
+    <Compile Include="CPControllers\FormBaoCaoDienBienSuCoController.cs" />
+    <Compile Include="CPControllers\FormBaoCaoHoTroPhoiHopSuCoController.cs" />
+    <Compile Include="CPControllers\FormBaoCaoPhuongAnSuCoController.cs" />
     <Compile Include="CPControllers\FormTextController.cs" />
     <Compile Include="CPControllers\FormNewsController.cs" />
     <Compile Include="CPControllers\ModAlbumController.cs" />
@@ -190,6 +193,7 @@
     <Compile Include="CPControllers\ModRSSController.cs" />
     <Compile Include="CPControllers\ModSoLuongSuCoController.cs" />
     <Compile Include="CPControllers\ModTagController.cs" />
+    <Compile Include="CPControllers\ModThongBaoSuCoController.cs" />
     <Compile Include="CPControllers\ModUserController.cs" />
     <Compile Include="CPControllers\ModUserResetPassController.cs" />
     <Compile Include="CPControllers\ModVanBanController.cs" />
@@ -249,7 +253,10 @@
     <Compile Include="Models\ModAlbumDetailModel.cs" />
     <Compile Include="Models\ModAlbumModel.cs" />
     <Compile Include="Models\ModBaoCaoBanDauSuCoModel.cs" />
+    <Compile Include="Models\ModBaoCaoDienBienSuCoModel.cs" />
+    <Compile Include="Models\ModBaoCaoHoTroPhoiHopSuCoModel.cs" />
     <Compile Include="Models\ModBaoCaoKetThucSuCoModel.cs" />
+    <Compile Include="Models\ModBaoCaoPhuongAnSuCoModel.cs" />
     <Compile Include="Models\ModBaoCaoSuCoModel.cs" />
     <Compile Include="Models\ModBaoCaoTongHopModel.cs" />
     <Compile Include="Models\ModCommentModel.cs" />
@@ -276,6 +283,7 @@
     <Compile Include="Models\ModRSSModel.cs" />
     <Compile Include="Models\ModSoLuongSuCoModel.cs" />
     <Compile Include="Models\ModTagModel.cs" />
+    <Compile Include="Models\ModThongBaoSuCoModel.cs" />
     <Compile Include="Models\ModUserModel.cs" />
     <Compile Include="Models\ModUserResetPassModel.cs" />
     <Compile Include="Models\ModVanBanModel.cs" />
