@@ -23,17 +23,26 @@
     var item = ViewBag.Data as ModBaoCaoSuCoEntity;
     var endCode = ViewBag.EndCode as string;
     string prefix = string.Empty;
-    string bcBanDauUrl = "#", bcTongHopUrl = "#", bcKetThucUrl = "#";
+    string bcBanDauUrl = "#", bcTongHopUrl = "#", bcKetThucUrl = "#", bcDienBienUrl = "#", bcPhuongAnUrl = "#", bcHoTroPhoiHopUrl = "#";
     if (!string.IsNullOrEmpty(endCode))
     {
         prefix = endCode + "-";
         bcBanDauUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-ban-dau-su-co.aspx";
         bcTongHopUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-tong-hop-su-co.aspx";
         bcKetThucUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-ket-thuc-su-co.aspx";
+
+        bcDienBienUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-dien-bien-su-co.aspx";
+        bcPhuongAnUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-phuong-an-su-co.aspx";
+        bcHoTroPhoiHopUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-ho-tro-phoi-hop-su-co.aspx";
     }
 
     WebMenuEntity menu = WebMenuService.Instance.GetByID(item.MenuID);
     if (menu == null) menu = new WebMenuEntity();
+
+    var dk = ModDonDangKyUCSCService.Instance.CreateQuery().Where(o => o.UserID == CPLogin.CurrentUserOnWeb.ID && o.Activity == true).ToSingle();
+    var hs = ModHSThanhVienUCSCService.Instance.CreateQuery().Where(o => o.UserID == CPLogin.CurrentUserOnWeb.ID && o.Activity == true).ToSingle();
+
+    bool isUCSC = (dk != null || hs != null);
 %>
 
 <style>
@@ -135,22 +144,27 @@
                 <div class="top">
 
                     <form method="post" enctype="multipart/form-data">
+                        <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
+                            <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642; Tên sự cố (*)</span>
+                            <input name="Title" maxlength="250" id="Title" class="textstyle1" type="text" value="<%=item.Title %>" autocomplete="off" />
+                        </p>
 
                         <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
                             <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642; Tên tổ chức/cá nhân báo cáo sự cố (*)</span>
-                            <input name="Name" maxlength="255" id="Name" class="textstyle1" type="text" value="<%=item.Name %>" />
+                            <input name="Name" maxlength="250" id="Name" class="textstyle1" type="text" value="<%= isUCSC ? (dk == null ? hs.ToChuc_Ten : dk.ToChuc_Ten) : item.Name %>" autocomplete="off" />
                         </p>
 
                         <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
                             <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'></span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'> Địa chỉ: (*)</span>
-                            <input name="Address" maxlength="255" id="Address" class="textstyle1" type="text" value="<%=item.Address %>" />
+                            <input name="Address" maxlength="500" id="Address" class="textstyle1" type="text" value="<%= isUCSC ? (dk == null ? hs.ToChuc_DiaChi : dk.ToChuc_DiaChi) : item.Address %>" autocomplete="off" />
                         </p>
 
                         <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
                             <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'></span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'> Điện thoại (*)</span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
-                                <input name="Phone" maxlength="255" id="Phone" class="textstyle1" type="text" value="<%=item.Phone %>" />
+                                <input name="Phone" maxlength="15" id="Phone" class="textstyle1" type="text" value="<%= isUCSC ? (dk == null ? hs.ToChuc_DienThoai : dk.ToChuc_DienThoai) : item.Phone %>" autocomplete="off" />
                                 Email (*) 
-                                    <input name="Email" maxlength="255" id="Email" class="textstyle1" type="text" value="<%=item.Email %>" />
+                                   
+                                <input name="Email" maxlength="250" id="Email" class="textstyle1" type="text" value="<%= isUCSC ? (dk == null ? hs.ToChuc_Email : dk.ToChuc_Email) : item.Email %>" autocomplete="off" />
                             </span>
                         </p>
 
@@ -175,7 +189,10 @@
                         <%if (!string.IsNullOrEmpty(prefix))
                             {%>
                         <input type="button" class="btn btn-warning" value="Báo cáo ban đầu" onclick="location.href = '<%=bcBanDauUrl%>';" />
-                        <input type="button" class="btn btn-warning" value="Báo cáo tổng hợp" onclick="location.href = '<%=bcTongHopUrl%>';" />
+                        <input type="button" class="btn btn-warning" value="Diễn biến sự cố" onclick="location.href = '<%=bcDienBienUrl%>';" />
+                        <input type="button" class="btn btn-warning" value="Phương án ứng cứu" onclick="location.href = '<%=bcPhuongAnUrl%>';" />
+                        <input type="button" class="btn btn-warning" value="Đề nghị hỗ trợ-phối hợp" onclick="location.href = '<%=bcHoTroPhoiHopUrl%>';" />
+                        <%--<input type="button" class="btn btn-warning" value="Báo cáo tổng hợp" onclick="location.href = '<%=bcTongHopUrl%>';" />--%>
                         <input type="button" class="btn btn-warning" value="Báo cáo kết thúc" onclick="location.href = '<%=bcKetThucUrl%>';" />
                         <%} %>
                     </form>

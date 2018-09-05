@@ -259,7 +259,7 @@
                                             <td width="227" valign="top" style='width: 170.5pt; border: solid windowtext 1.0pt; border-top: none; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
                                                     <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>Cơ quan chủ quản:</span>
-                                                </p>
+                                                </p>Chưa được xử lý
                                             </td>
                                             <td width="378" colspan="5" valign="top" style='width: 283.55pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -434,7 +434,7 @@
                                                 {%>
                                             <td width="302" valign="top" style='width: 226.75pt; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
-                                                    <input name="HienTrangID" <%= entityBc.HienTrangID == lstHienTrang[i].ID ? "checked" : "" %> type="radio" value='<%=lstHienTrang[i].ID %>' /><%=lstHienTrang[i].Name %>
+                                                    <input name="HienTrangID" <%= entityBc.HienTrangID == lstHienTrang[i].ID ? "checked" : "" %> type="radio" value='<%=lstHienTrang[i].ID %>' /> <%=lstHienTrang[i].Name %>
                                                 </p>
                                             </td>
                                             <%} %>
@@ -778,7 +778,7 @@
                                     <%}%>
                                     <%}%>
 
-                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Bao-cao-su-co/<%=endCode %>.aspx';" type="button" name="" value="Hủy" />
+                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Bao-cao-su-co/<%=endCode %>.aspx';" type="button" name="" value="Đóng" />
                                 </div>
 
                             </div>

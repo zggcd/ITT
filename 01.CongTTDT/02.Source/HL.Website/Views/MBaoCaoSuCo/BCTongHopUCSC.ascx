@@ -395,7 +395,7 @@
                                     <%}%>
                                     <%}%>
 
-                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Bao-cao-su-co/<%=endCode %>.aspx';" type="button" name="" value="Hủy" />
+                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Bao-cao-su-co/<%=endCode %>.aspx';" type="button" name="" value="Đóng" />
                                 </div>
 
                             </div>

@@ -29,6 +29,10 @@
     var listItem = ViewBag.Data as List<ModBaoCaoSuCoEntity>;
     int c = listItem != null ? listItem.Count : 0;
     var model = ViewBag.Model as MBaoCaoSuCoModel;
+
+
+    var tbsc_listItem = ViewBag.ListThongBao as List<ModThongBaoSuCoEntity>;
+    int tbsc_c = tbsc_listItem != null ? tbsc_listItem.Count : 0;
 %>
 
 <div class="contentNews">
@@ -39,9 +43,12 @@
                 <div class="top">
                     <!-- ITT FIX -->
                     <div class="button pull-right" style="margin-bottom: 10px;">
-                        <input style="margin-left: 10px;" class="btn btn-success" onclick="location.href = '/vn/Bao-cao-su-co/Them-bao-cao.aspx';" type="button" name="" value="Báo cáo sự cố">
+                        <input style="margin-left: 10px;" class="btn btn-info" onclick="location.href = '/vn/Bao-cao-su-co/Them-thong-bao-su-co.aspx';" type="button" name="" value="Thông báo sự cố">
                     </div>
 
+                    <div class="button pull-right" style="margin-bottom: 10px;">
+                        <input style="margin-left: 10px;" class="btn btn-success" onclick="location.href = '/vn/Bao-cao-su-co/Them-bao-cao.aspx';" type="button" name="" value="Thêm sự cố mới">
+                    </div>
                 </div>
                 <!--.Main_container-->
             </div>
@@ -55,15 +62,17 @@
                             <tr>
                                 <th class="text-center" style="width: 5%;">#</th>
                                 <th class="text-center">Báo cáo</th>
-                                <th class="text-center" style="width: 20%;">Đã báo cáo</th>
-                                <th class="text-center" style="width: 10%;">Trạng thái</th>
+                                <th class="text-center" style="width: 22%;">Đã báo cáo</th>
+                                <th class="text-center" style="width: 13%;">Ngày bắt đầu</th>
+                                <th class="text-center" style="width: 13%;">Ngày kết thúc</th>
+                                <th class="text-center" style="width: 12%;">Trạng thái</th>
                                 <th class="text-center" style="width: 1%;"></th>
                             </tr>
                         </thead>
                         <tbody id="loadDsTbodyHetHan">
                             <%if (c > 0)
                                 {
-                                    string bcBanDauUrl = "", bcTongHopUrl = "", bcKetThucUrl = "";
+                                    string bcBanDauUrl = "", bcTongHopUrl = "", bcKetThucUrl = "", bcDienBienUrl = "", bcPhuongAnUrl = "", bcHoTroPhoiHopUrl = "";
                                     for (int i = 0; i < c; i++)
                                     {
                                         ModBaoCaoBanDauSuCoEntity bcBanDau = ModBaoCaoBanDauSuCoService.Instance.CreateQuery()
@@ -76,9 +85,23 @@
                                             .Where(o => o.BaoCaoSuCoID == listItem[i].ID)
                                             .ToSingle();
 
+                                        ModBaoCaoDienBienSuCoEntity bcDienBien = ModBaoCaoDienBienSuCoService.Instance.CreateQuery()
+                                           .Where(o => o.BaoCaoSuCoID == listItem[i].ID)
+                                           .ToSingle();
+                                        ModBaoCaoPhuongAnSuCoEntity bcPhuongAn = ModBaoCaoPhuongAnSuCoService.Instance.CreateQuery()
+                                            .Where(o => o.BaoCaoSuCoID == listItem[i].ID)
+                                            .ToSingle();
+                                        ModBaoCaoHoTroPhoiHopSuCoEntity bcHoTroPhoiHop = ModBaoCaoHoTroPhoiHopSuCoService.Instance.CreateQuery()
+                                            .Where(o => o.BaoCaoSuCoID == listItem[i].ID)
+                                            .ToSingle();
+
                                         if (bcBanDau != null) bcBanDauUrl = "/vn/Bao-cao-su-co/" + listItem[i].Code + "-bc-ban-dau-su-co.aspx";
                                         if (bcTongHop != null) bcTongHopUrl = "/vn/Bao-cao-su-co/" + listItem[i].Code + "-bc-tong-hop-su-co.aspx";
                                         if (bcKetThuc != null) bcKetThucUrl = "/vn/Bao-cao-su-co/" + listItem[i].Code + "-bc-ket-thuc-su-co.aspx";
+
+                                        if (bcDienBien != null) bcDienBienUrl = "/vn/Bao-cao-su-co/" + listItem[i].Code + "-bc-dien-bien-su-co.aspx";
+                                        if (bcPhuongAn != null) bcPhuongAnUrl = "/vn/Bao-cao-su-co/" + listItem[i].Code + "-bc-phuong-an-su-co.aspx";
+                                        if (bcHoTroPhoiHop != null) bcHoTroPhoiHopUrl = "/vn/Bao-cao-su-co/" + listItem[i].Code + "-bc-ho-tro-phoi-hop-su-co.aspx";
 
                                         WebMenuEntity menu = WebMenuService.Instance.GetByID(listItem[i].MenuID);
                                         string trangThai = menu != null ? menu.Name : "";
@@ -94,21 +117,39 @@
                                         <span class="date fr">Ngày thêm: <%=string.Format("{0:dd/MM/yyyy}", listItem[i].Published) %></span>
                                     </p>
                                 </td>
-                                <td class="text-center" style="width: 20%;">
+                                <td style="width: 20%;">
                                     <%if (!string.IsNullOrEmpty(bcBanDauUrl))
                                         {%>
                                     <a href="<%=bcBanDauUrl%>">Báo cáo ban đầu</a><br />
                                     <%} %>
-                                    <%if (!string.IsNullOrEmpty(bcTongHopUrl))
+                                    <%--<%if (!string.IsNullOrEmpty(bcTongHopUrl))
                                         {%>
                                     <a href="<%=bcTongHopUrl%>">Báo cáo tổng hợp</a><br />
+                                    <%} %>--%>
+                                    <%if (!string.IsNullOrEmpty(bcDienBienUrl))
+                                        {%>
+                                    <a href="<%=bcDienBienUrl%>">Báo cáo diễn biến sự cố</a><br />
+                                    <%} %>
+                                    <%if (!string.IsNullOrEmpty(bcPhuongAnUrl))
+                                        {%>
+                                    <a href="<%=bcPhuongAnUrl%>">Báo cáo phương án ứng cứu sự cố</a><br />
+                                    <%} %>
+                                    <%if (!string.IsNullOrEmpty(bcHoTroPhoiHopUrl))
+                                        {%>
+                                    <a href="<%=bcHoTroPhoiHopUrl%>">Báo cáo đề nghị phối hợp hỗ trợ</a><br />
                                     <%} %>
                                     <%if (!string.IsNullOrEmpty(bcKetThucUrl))
                                         {%>
                                     <a href="<%=bcKetThucUrl%>">Báo cáo kết thúc</a><br />
                                     <%} %>
                                 </td>
-                                <td class="text-center" style="width: 20%;"><%=trangThai %></td>
+                                <td class="text-center">
+                                    <span class="date fr"><%=string.Format("{0:dd/MM/yyyy}", listItem[i].Published) %></span>
+                                </td>
+                                <td class="text-center">
+                                    <span class="date fr"><%= listItem[i].MenuID == 255 ? string.Format("{0:dd/MM/yyyy}", listItem[i].Published1) : "..." %></span>
+                                </td>
+                                <td class="text-center"><%=trangThai %></td>
                                 <td class="text-center" style="width: 1%; padding: 0 5px;">
                                     <%if (menu != null && menu.Code == "Cho")
                                         {%>
@@ -130,6 +171,72 @@
                     <input type="hidden" name="baoCaoId" id="baoCaoId" value="0">
                 </form>
             </div>
+
+
+            <div class="title-t2">CÁC THÔNG BÁO CỦA BẠN</div>
+            <div class="main_vbtable" style="width: 100%">
+                <form method="post" name="frmDsHs">
+                    <!-- ITT FIX -->
+                    <table style="width: 100%;" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-center" style="width: 5%;">#</th>
+                                <th class="text-center">Thông báo</th>
+                                <th class="text-center" style="width: 22%;">Hệ thống bị sự cố</th>
+                                <th class="text-center" style="width: 13%;">Ngày phát hiện</th>
+                                <th class="text-center" style="width: 13%;">Ngày tạo</th>
+                                <th class="text-center" style="width: 12%;">Trạng thái</th>
+                                <th class="text-center" style="width: 1%;"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="loadDsTbodyThongBao">
+                            <%if (tbsc_c > 0)
+                                {
+                                    for (int i = 0; i < tbsc_c; i++)
+                                    {
+                                        WebMenuEntity menu = WebMenuService.Instance.GetByID(tbsc_listItem[i].MenuID);
+                                        string trangThai = menu != null ? menu.Name : "";
+                            %>
+                            <tr>
+                                <td style="width: 5%; text-align: center;"><%=i+1 %></td>
+                                <td>
+                                    <a href="/vn/Bao-cao-su-co/<%=tbsc_listItem[i].Code %>-cap-nhat-thong-bao-su-co.aspx" style="display: block;"><%=tbsc_listItem[i].ToChuc_Ten %></a>
+                                    <br>
+                                    <p>
+                                        <span class="date">Mã thông cáo: <%=tbsc_listItem[i].Code %></span>
+                                        <span class="date fr">Ngày thêm: <%=string.Format("{0:dd/MM/yyyy}", tbsc_listItem[i].CreatedDate) %></span>
+                                    </p>
+                                </td>
+                                <td> <%=tbsc_listItem[i].ChiTiet_TenHeThong %></td>
+                                <td class="text-center">
+                                    <span class="date fr"><%=string.Format("{0:dd/MM/yyyy}", tbsc_listItem[i].ChiTiet_NgayGioPhatHien) %></span>
+                                </td>
+                                <td class="text-center">
+                                    <span class="date fr"><%=string.Format("{0:dd/MM/yyyy}", tbsc_listItem[i].CreatedDate) %></span>
+                                </td>
+                                <td class="text-center"><%= tbsc_listItem[i].Activity ? "Đã duyệt" : "Chờ duyệt" %></td>
+                                <td class="text-center" style="width: 1%; padding: 0 5px;">
+                                    <%if (!tbsc_listItem[i].Activity) %>
+                                    <%{%>
+                                    <a href="javascript: tbsc_del('<%=tbsc_listItem[i].ID %>');">Xóa</a>
+                                    <input class="btn_action search icon QAcustom" name="_hl_action[DeleteThongBaoUCSC]" id="tbscDelete" value="Xóa" type="submit" style="display: none;">
+                                    <%}%>
+                                </td>
+                            </tr>
+                            <%}
+                                }
+                            %>
+                        </tbody>
+                    </table>
+
+                    <div class="clear-15">&nbsp;</div>
+                    <%--<input style="margin-left: 10px;" class="btn btn-success" onclick="location.href = '/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx';" type="button" name="" value="Báo cáo ban đầu">
+                    <input style="margin-left: 10px;" class="btn btn-success" onclick="location.href = '/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx';" type="button" name="" value="Báo cáo tổng hợp">
+                    <input style="margin-left: 10px;" class="btn btn-success" onclick="location.href = '/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx';" type="button" name="" value="Báo cáo kết thúc">--%>
+                    <input type="hidden" name="thongBaoId" id="thongBaoId" value="0">
+                </form>
+            </div>
+
             <div class="navi-page">
             </div>
         </div>
@@ -145,6 +252,15 @@
             }
         }
     }
+
+    function tbsc_del(id) {
+        if (id) {
+            if (window.confirm('Bạn có chắc muốn xóa thông báo này?')) {
+                $('#thongBaoId').val(id);
+                $('#tbscDelete').click();
+            }
+        }
+    } 
 </script>
 
 <%--<div class="row-fluid titleContainer">
