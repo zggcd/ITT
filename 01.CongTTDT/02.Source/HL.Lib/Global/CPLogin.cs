@@ -1,9 +1,11 @@
-﻿using HL.Lib.Models;
+﻿using HL.Core.MVC;
+using HL.Lib.Models;
 
 namespace HL.Lib.Global
 {
     public class CPLogin
     {
+        public static bool isNetwork = false;
         public static void Logout()
         {
             Cookies.Remove("CP.UserID");
