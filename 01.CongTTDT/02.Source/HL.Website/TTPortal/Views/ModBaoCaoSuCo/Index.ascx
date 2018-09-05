@@ -105,13 +105,16 @@
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("ID", "ID")%>
                         </th>
-                        <th width="10%" nowrap="nowrap">
+                        <th width="8%" nowrap="nowrap">
+                            <%= GetSortLink("Tên báo cáo", "Title")%>
+                        </th>
+                        <th width="8%" nowrap="nowrap">
                             <%= GetSortLink("Người báo cáo", "UserID")%>
                         </th>
                         <%--<th width="1%" nowrap="nowrap">
                             <%= GetSortLink("User i d1", "UserID1")%>
                         </th>--%>
-                        <th width="5%" nowrap="nowrap">
+                        <th width="4%" nowrap="nowrap">
                             <%= GetSortLink("Trạng thái", "MenuID")%>
                         </th>
                         <th class="title">
@@ -120,7 +123,7 @@
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Mã", "Code")%>
                         </th>
-                        <th width="15%" nowrap="nowrap">
+                        <th width="12%" nowrap="nowrap">
                             <%= GetSortLink("Địa chỉ", "Address")%>
                         </th>
                         <th width="1%" nowrap="nowrap">
@@ -129,7 +132,7 @@
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Email", "Email")%>
                         </th>
-                        <th width="10%" nowrap="nowrap">
+                        <th width="6%" nowrap="nowrap">
                             <span>Báo cáo đang có</span>
                         </th>
                         <th width="7%" nowrap="nowrap">
@@ -168,6 +171,9 @@
                         </td>
                         <td align="center">
                             <%= listEntity[i].ID%>
+                        </td>
+                        <td align="center">
+                            <%= listEntity[i].Title%>
                         </td>
                         <td align="center">
                             <%= listEntity[i].getThanhVien().LoginName %>

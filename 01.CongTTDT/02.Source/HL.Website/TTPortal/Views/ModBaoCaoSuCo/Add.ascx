@@ -60,8 +60,11 @@
                     <ul id="submenu" class="configuration">
                         <li><a id="General" class="active">THÔNG TIN CHUNG</a></li>
                         <li><a id="tab1">BÁO CÁO BAN ĐẦU</a></li>
-                        <li><a id="tab2">BÁO CÁO TỔNG HỢP</a></li>
-                        <li><a id="tab3">BÁO CÁO kẾT THÚC</a></li>
+                        <%--<li><a id="tab2">BÁO CÁO TỔNG HỢP</a></li>--%>
+                        <%--<li><a id="tab4">BÁO CÁO DIỄN BIẾN SỰ CỐ</a></li>--%>
+                        <%--<li><a id="tab5">BÁO CÁO PHƯƠNG ÁN ỨNG CỨU SỰ CỐ</a></li>
+                        <li><a id="tab6">BÁO ĐỀ NGHỊ HỖ TRỢ-PHỐI HỢP</a></li>--%>
+                        <li><a id="tab3">BÁO CÁO KẾT THÚC</a></li>
                     </ul>
                     <div class="clr">
                     </div>
@@ -140,10 +143,18 @@
                     </tr>--%>
                             <tr>
                                 <td class="key">
+                                    <label>Tên sự cố :</label>
+                                </td>
+                                <td>
+                                    <input class="text_input" type="text" name="Title" id="Title" value="<%=entity.Title %>" maxlength="250" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="key">
                                     <label>Tổ chức :</label>
                                 </td>
                                 <td>
-                                    <input class="text_input" type="text" name="Name" id="Name" value="<%=entity.Name %>" maxlength="255" />
+                                    <input class="text_input" type="text" name="Name" id="Name" value="<%=entity.Name %>" maxlength="250" />
                                 </td>
                             </tr>
                             <tr>
@@ -151,7 +162,7 @@
                                     <label>Mã :</label>
                                 </td>
                                 <td>
-                                    <input class="text_input" type="text" name="Code" id="Code" value="<%=entity.Code %>" maxlength="255" />
+                                    <input class="text_input" type="text" name="Code" id="Code" value="<%=entity.Code %>" maxlength="250" />
                                 </td>
                             </tr>
                             <tr>
@@ -159,7 +170,7 @@
                                     <label>Địa chỉ :</label>
                                 </td>
                                 <td>
-                                    <input class="text_input" type="text" name="Address" id="Address" value="<%=entity.Address %>" maxlength="255" />
+                                    <input class="text_input" type="text" name="Address" id="Address" value="<%=entity.Address %>" maxlength="500" />
                                 </td>
                             </tr>
                             <tr>
@@ -167,7 +178,7 @@
                                     <label>Điện thoại :</label>
                                 </td>
                                 <td>
-                                    <input class="text_input" type="text" name="Phone" id="Phone" value="<%=entity.Phone %>" maxlength="255" />
+                                    <input class="text_input" type="text" name="Phone" id="Phone" value="<%=entity.Phone %>" maxlength="15" />
                                 </td>
                             </tr>
                             <tr>
@@ -175,7 +186,7 @@
                                     <label>Email :</label>
                                 </td>
                                 <td>
-                                    <input class="text_input" type="text" name="Email" id="Email" value="<%=entity.Email %>" maxlength="255" />
+                                    <input class="text_input" type="text" name="Email" id="Email" value="<%=entity.Email %>" maxlength="250" />
                                 </td>
                             </tr>
                             <tr>
@@ -219,9 +230,12 @@
             <div id="page-tab1" class="tab">
                 <iframe src="/TTPortal/FormBaoCaoBanDauSuCo/Index.aspx/BaoCaoSuCoID/<%=model.RecordID %>" style='position: static; top: 240px; left: 0px; width: 100%; height: 1000px; z-index: 999; overflow: auto;' frameborder='no'></iframe>
             </div>
-            <div id="page-tab2" class="tab">
+            <%--<div id="page-tab2" class="tab">
                 <iframe src="/TTPortal/FormBaoCaoTongHop/Index.aspx/BaoCaoSuCoID/<%=model.RecordID %>" style='position: static; top: 240px; left: 0px; width: 100%; height: 1000px; z-index: 999; overflow: auto;' frameborder='no'></iframe>
-            </div>
+            </div>--%>
+            <%--<div id="page-tab4" class="tab">
+                <iframe src="/TTPortal/FormBaoCaoDienBienSuCo/Index.aspx/BaoCaoSuCoID/<%=model.RecordID %>" style='position: static; top: 240px; left: 0px; width: 100%; height: 1000px; z-index: 999; overflow: auto;' frameborder='no'></iframe>
+            </div>--%>
             <div id="page-tab3" class="tab">
                 <iframe src="/TTPortal/FormBaoCaoKetThucSuCo/Index.aspx/BaoCaoSuCoID/<%=model.RecordID %>" style='position: static; top: 240px; left: 0px; width: 100%; height: 1000px; z-index: 999; overflow: auto;' frameborder='no'></iframe>
             </div>
