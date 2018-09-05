@@ -98,9 +98,13 @@ namespace HL.Lib.CPControllers
             if ((model.RecordID < 1 && !CPViewPage.UserPermissions.Add) || (model.RecordID > 0 && !CPViewPage.UserPermissions.Edit))
                 CPViewPage.Message.ListMessage.Add("Quyền hạn chế.");
 
+            // kiem tra ten su co
+            if (entity.Title.Trim() == string.Empty)
+                CPViewPage.Message.ListMessage.Add("Nhập tên sự cố.");
+
             //kiem tra ten 
             if (entity.Name.Trim() == string.Empty)
-                CPViewPage.Message.ListMessage.Add("Nhập tên.");
+                CPViewPage.Message.ListMessage.Add("Nhập tên tổ chức.");
 
             //kiem tra chuyen muc
             if (entity.MenuID < 1)
