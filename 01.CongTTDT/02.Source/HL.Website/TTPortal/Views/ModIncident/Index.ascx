@@ -134,6 +134,9 @@
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("PID", "ID")%>
                         </th>
+                        <th width="5%" nowrap="nowrap">
+                            <%= GetSortLink("Loại sự cố", "MenuID")%>
+                        </th>
                         <th width="10%" nowrap="nowrap">
                             <%= GetSortLink("Domain/URL", "Path")%>
                         </th>
@@ -299,6 +302,9 @@
                             <%= listEntity[i].ID%>
                         </td>
                         <td align="center">
+                            <%= GetName(listEntity[i].getMenu()) %>
+                        </td>
+                        <td align="center">
                             <%if (c > 0)
                                 {%>
                             <span style="float: left; font-weight: bold; color: blue;">&or;</span>
@@ -397,7 +403,7 @@
                     <%}
                         else if (model.MenuID == 194 || model.MenuID == 195)
                         { %>
-                        <tr class="row<%= i % 2 %> openchild" id="p_<%=i %>">
+                    <tr class="row<%= i % 2 %> openchild" id="p_<%=i %>">
                         <td align="center">
                             <%= i + 1%>
                         </td>

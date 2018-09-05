@@ -38,6 +38,10 @@ body {
     height: 30px;
 }
 
+.required {
+    color: red;
+}
+
 .languages {
     background: #054E8B;
     color: #fff;
