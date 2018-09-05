@@ -5,13 +5,15 @@ using HL.Core.Models;
 
 namespace HL.Lib.Models
 {
-    public class ModBaoCaoSuCoEntity : EntityBase
+    public class ModBaoCaoDienBienSuCoEntity : EntityBase
     {
-
-        #region Autogen by HL
+        #region Code by NQT
 
         [DataInfo]
         public override int ID { get; set; }
+
+        [DataInfo]
+        public int BaoCaoSuCoID { get; set; }
 
         [DataInfo]
         public int UserID { get; set; }
@@ -32,28 +34,26 @@ namespace HL.Lib.Models
         public string Code { get; set; }
 
         [DataInfo]
-        public string Address { get; set; }
+        public string ToChuc_Ten { get; set; }
 
         [DataInfo]
-        public string Phone { get; set; }
+        public string ToChuc_DiaChi { get; set; }
 
         [DataInfo]
-        public string Email { get; set; }
+        public string ToChuc_DienThoai { get; set; }
 
         [DataInfo]
-        public DateTime? Published { get; set; }
+        public string ToChuc_Email { get; set; }
 
         [DataInfo]
-        public DateTime? Published1 { get; set; }
+        public string ChiTiet_MoTa { get; set; }
 
         [DataInfo]
-        public int Order { get; set; }
+        public DateTime ChiTiet_NgayTao { get; set; }
 
         [DataInfo]
         public bool Activity { get; set; }
 
-        [DataInfo]
-        public string Title { get; set; }
         #endregion
 
         private ModUserEntity _oUser = null;
@@ -68,16 +68,16 @@ namespace HL.Lib.Models
             return _oUser;
         }
 
-        private CPUserEntity _oThanhVien = null;
-        public CPUserEntity getThanhVien()
+        private CPUserEntity _oUser1 = null;
+        public CPUserEntity getUser1()
         {
-            if (_oThanhVien == null && UserID > 0)
-                _oThanhVien = CPUserService.Instance.GetByID(UserID);
+            if (_oUser1 == null && UserID > 0)
+                _oUser1 = CPUserService.Instance.GetByID(UserID);
 
-            if (_oThanhVien == null)
-                _oThanhVien = new CPUserEntity();
+            if (_oUser1 == null)
+                _oUser1 = new CPUserEntity();
 
-            return _oThanhVien;
+            return _oUser1;
         }
 
         private WebMenuEntity _oMenu = null;
@@ -91,27 +91,27 @@ namespace HL.Lib.Models
 
             return _oMenu;
         }
-
     }
 
-    public class ModBaoCaoSuCoService : ServiceBase<ModBaoCaoSuCoEntity>
+
+    public class ModBaoCaoDienBienSuCoService : ServiceBase<ModBaoCaoDienBienSuCoEntity>
     {
 
-        #region Autogen by HL
+        #region Code by NQT
 
-        private ModBaoCaoSuCoService()
-            : base("[Mod_BaoCaoSuCo]")
+        private ModBaoCaoDienBienSuCoService()
+            : base("[Mod_BaoCaoDienBienSuCo]")
         {
 
         }
 
-        private static ModBaoCaoSuCoService _Instance = null;
-        public static ModBaoCaoSuCoService Instance
+        private static ModBaoCaoDienBienSuCoService _Instance = null;
+        public static ModBaoCaoDienBienSuCoService Instance
         {
             get
             {
                 if (_Instance == null)
-                    _Instance = new ModBaoCaoSuCoService();
+                    _Instance = new ModBaoCaoDienBienSuCoService();
 
                 return _Instance;
             }
@@ -119,7 +119,7 @@ namespace HL.Lib.Models
 
         #endregion
 
-        public ModBaoCaoSuCoEntity GetByID(int id)
+        public ModBaoCaoDienBienSuCoEntity GetByID(int id)
         {
             return base.CreateQuery()
                .Where(o => o.ID == id)
