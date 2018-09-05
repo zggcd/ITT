@@ -38,10 +38,6 @@ body {
     height: 30px;
 }
 
-.required {
-    color: red;
-}
-
 .languages {
     background: #054E8B;
     color: #fff;
@@ -225,6 +221,16 @@ body {
 
     .titleContainer .pull-right {
         margin-right: 10px;
+    }
+
+    .titleContainer a {
+        text-transform: none !important;
+        color: #FAB74C;
+        text-decoration: none;
+    }
+
+    .titleContainer.warning-news {
+        background: #a94442;
     }
 
 .contentNews {
