@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="HL.Lib.MVC.ViewControl" %>
-<%CPUserEntity entity = ViewBag.Data as CPUserEntity ?? CPLogin.CurrentUser; %>
+<%CPUserEntity entity = ViewBag.Data as CPUserEntity ?? CPLogin.CurrentUserOnWeb; %>
 
 <script runat="server">
     protected void Page_Load(object sender, EventArgs e)
@@ -120,7 +120,8 @@
 </div>
 
 <div class="clear-20">&nbsp;</div>
-<div class="row-fluid titleContainer">
+<%-- tạm thời ẩn chức năng tạo thành viên con --%>
+<%--<div class="row-fluid titleContainer">
     <span>Thông tin thành viên con</span>
 </div>
 <div class="contentNews">
@@ -166,4 +167,4 @@
             </tr>
         </tbody>
     </table>
-</div>
+</div>--%>

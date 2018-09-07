@@ -33,7 +33,7 @@
 
     List<WebMenuEntity> lstCapDo = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "CapDo" && o.ParentID > 0).ToList_Cache();
     int countCapDo = lstCapDo != null ? lstCapDo.Count : 0;
-
+    int countHeThong = 0;
     List<WebMenuEntity> lstDaoTao = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "LinhVucDaoDao" && o.ParentID > 0).ToList_Cache();
     int countDaoTao = lstDaoTao != null ? lstDaoTao.Count : 0;
 
@@ -55,6 +55,23 @@
     List<WebMenuEntity> lstKyThuatKiemTra = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "KyThuatKiemTra" && o.ParentID > 0).ToList_Cache();
     int countKyThuatKiemTra = lstKyThuatKiemTra != null ? lstKyThuatKiemTra.Count : 0;
 
+    // Danh sach tong hop theo LinhVucDaoDao
+    List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucLVDT = ViewBag.ListTongHopNhanLucLVDT as List<ModTongHopNhanLucUCSCEntity> ?? ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(0, "LinhVucDaoDao");
+    // Danh sach tong hop theo TrinhDoDaoTao
+    List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucTDDT = ViewBag.ListTongHopNhanLucTDDT as List<ModTongHopNhanLucUCSCEntity> ?? ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(0, "TrinhDoDaoTao");
+    // Danh sach tong hop theo ChungChi
+    List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucCC = ViewBag.ListTongHopNhanLucCC as List<ModTongHopNhanLucUCSCEntity> ?? ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(0, "ChungChi");
+
+
+    // Danh sach tong hop theo nhom chuyen gia QuanLyATTT
+    List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucNhomATTT = ViewBag.ListTongHopNhanLucNhomATTT as List<ModTongHopNhanLucUCSCEntity> ?? ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(0, "QuanLyATTT");
+    // Danh sach tong hop theo nhom chuyen gia KyThuatPhongThu
+    List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucNhomKTPT = ViewBag.ListTongHopNhanLucNhomKTPT as List<ModTongHopNhanLucUCSCEntity> ?? ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(0, "KyThuatPhongThu");
+    // Danh sach tong hop theo nhom chuyen gia KyThuatBaoVe
+    List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucNhomKTBV = ViewBag.ListTongHopNhanLucNhomKTBV as List<ModTongHopNhanLucUCSCEntity> ?? ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(0, "KyThuatBaoVe");
+    // Danh sach tong hop theo nhom chuyen gia KyThuatKiemTra
+    List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucNhomKTKT = ViewBag.ListTongHopNhanLucNhomKTKT as List<ModTongHopNhanLucUCSCEntity> ?? ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(0, "KyThuatKiemTra");
+
     int d = 0;
 %>
 
@@ -63,15 +80,23 @@
         border: none !important;
         border-bottom: 1px dotted !important;
         padding: 0 !important;
+        width: 70%;
+    }
+
+    .textstyle2 {
+        border: none !important;
+        border-bottom: 1px dotted !important;
+        padding: 0 !important;
+        width: 30%;
     }
 
     .name {
         width: 30% !important;
     }
 
-    .input {
+    /*.input {
         width: 70% !important;
-    }
+    }*/
 
     .radio_loaitaikhoan td {
         padding-right: 10px;
@@ -135,7 +160,7 @@
 
         table.thanh-vien td input,
         table.thanh-vien td select {
-            width: 90% !important;
+            width: 90% ;
         }
 </style>
 
@@ -225,39 +250,30 @@
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>1. Tên tổ chức:</span>
-                                        <input name="ToChuc_Ten" maxlength="255" id="ToChuc_Ten" class="textstyle1" type="text" value="<%=entityDk.ToChuc_Ten %>" />
+                                        <input name="ToChuc_Ten" maxlength="250" id="ToChuc_Ten" class="textstyle1" type="text" value="<%=entityDk.ToChuc_Ten %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>2. Địa chỉ: </span>
-                                        <input name="ToChuc_DiaChi" maxlength="255" id="ToChuc_DiaChi" class="textstyle1" type="text" value="<%=entityDk.ToChuc_DiaChi %>" />
+                                        <input name="ToChuc_DiaChi" maxlength="250" id="ToChuc_DiaChi" class="textstyle1" type="text" value="<%=entityDk.ToChuc_DiaChi %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>3. Điện thoại:</span>
-                                        <input name="ToChuc_DienThoai" maxlength="255" id="ToChuc_DienThoai" class="textstyle1" type="text" value="<%=entityDk.ToChuc_DienThoai %>" />
+                                        <input name="ToChuc_DienThoai" maxlength="250" id="ToChuc_DienThoai" class="textstyle1" type="text" value="<%=entityDk.ToChuc_DienThoai %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>4. Fax:</span>
-                                        <input name="ToChuc_Fax" maxlength="255" id="ToChuc_Fax" class="textstyle1" type="text" value="<%=entityDk.ToChuc_Fax %>" />
+                                        <input name="ToChuc_Fax" maxlength="250" id="ToChuc_Fax" class="textstyle1" type="text" value="<%=entityDk.ToChuc_Fax %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>5. Email:</span>
-                                        <input name="ToChuc_Email" maxlength="255" id="ToChuc_Email" class="textstyle1" type="text" value="<%=entityDk.ToChuc_Email %>" />
+                                        <input name="ToChuc_Email" maxlength="250" id="ToChuc_Email" class="textstyle1" type="text" value="<%=entityDk.ToChuc_Email %>" />
                                     </p>
 
-                                    <p style='margin-top: 6.0pt;'>
-                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>6. Thành viên là:</span>
-                                        <input type="checkbox" name="IsGOV" id="IsGOV" class="textstyle1" value="<%if (entityDk.IsGOV)
-                                            {%>1<%}
-                                            else
-                                            {%>0<%} %>"
-                                            <%if (entityDk.IsGOV == true)
-                                            {%>checked<%} %> />
-                                        <span>GOV</span>
-                                    </p>
+
 
                                     <p style='margin-top: 6.0pt'>
                                         <b>
@@ -277,7 +293,7 @@
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>
-                                            <textarea name="Content" rows="5" maxlength="255" id="Content" class="textstyle1" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityDk.Content %></textarea>
+                                            <textarea name="Content" rows="5" id="Content" class="textstyle1" style="max-width: 90%; width: 90%; max-height: 300px;"><%=entityDk.Content %></textarea>
                                         </span>
                                     </p>
 
@@ -286,66 +302,198 @@
                                         </span>
                                     </p>
 
-                                    <table border="0" cellspacing="0" cellpadding="0" style='border-collapse: collapse;'>
-                                        <tr>
-                                            <%int lvl = 2;
-                                                if (currHTTT != null && currHTTT.Count > 0) lvl = currHTTT.GroupBy(o => o.MenuID).Select(o => o.Count()).Max();
-                                                for (int i = 0; i < countCapDo; i++)
-                                                {%>
-                                            <td width="121" valign="top" style='width: 90.65pt; padding: 0in 0in 0in 0in' data-m="<%=lstCapDo[i].ID %>" id="M<%=i %>">
-                                                <p style='margin-top: 6.0pt;'>
-                                                    <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>&#9642;</span>
-                                                    <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'><%=lstCapDo[i].Name %>:</span>
-                                                </p>
-                                                <%int lnHt = 0;
-                                                    List<ModHeThongThongTinEntity> ht = null;
-                                                    if (currHTTT != null && currHTTT.Count > 0)
-                                                    {
-                                                        ht = currHTTT.Where(o => o.MenuID == lstCapDo[i].ID).ToList();
-                                                        lnHt = ht.Count;
-                                                    }
-                                                    for (int j = 0; j < lvl; j++)
-                                                    {
-                                                        var val = "";
-                                                        if (lnHt > j && ht != null) val = ht[j].Name;
-                                                %>
-                                                <p class="MsoNormal Del<%=j+1 %>" style='margin-top: 6.0pt;'>
-                                                    <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>
-                                                        <input name="" maxlength="255" id="" class="textstyle1 input" type="text" value="<%=val %>" /></span>
-                                                </p>
-                                                <%} %>
-                                                <output class="Out"></output>
-                                            </td>
+                                    <%-- ======================================= START: ITT UPDATE ======================================= --%>
+                                    <table id="TblHTTT" class="thanh-vien" style="width: 100%" border="1">
+                                        <thead>
+                                            <tr>
+                                                <th width="5%">STT</th>
+                                                <th width="20%">Cấp</th>
+                                                <th>Thông tin</th>
+                                                <th width="5%"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <%  int lnHt = 2;
+                                                List<ModHeThongThongTinEntity> ht = null;
+                                                if (currHTTT != null && currHTTT.Count > 0)
+                                                {
+                                                    ht = currHTTT;
+                                                    lnHt = ht.Count;
+                                                }
+                                                for (int i = 0; i < lnHt; i++)
+                                                {
+                                                    var name = "";
+                                                    if (lnHt > i && ht != null) name = ht[i].Name;
+                                                    countHeThong += 1;
+                                            %>
+                                            <tr id="Row<%=(i+1) %>">
+                                                <td><%=(i+1) %>
+                                                </td>
+                                                <td>
+                                                    <select style="width: 100%; height: 80px" onchange="selectCapDo(this, <%=(i+1) %>)">
+                                                        <%for (int j = 0; j < lstCapDo.Count; j++)
+                                                            { %>
+                                                        <option <%if (ht != null && ht[i].MenuID == lstCapDo[j].ID)
+                                                            { %>selected<%} %>
+                                                            value="<%=lstCapDo[j].ID %>"><%=lstCapDo[j].Name %></option>
+                                                        <%} %>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <textarea id="M<%=(i+1) %>" data-m="<%=ht!=null?ht[i].MenuID:lstCapDo[0].ID %>" name="HTTT<%=(i+1) %>" class="textstyle1" rows="3" style="max-width: 90%; width: 90%; max-height: 300px;"><%=name %></textarea>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:fnDel(<%=(i+1) %>)" data-idx="<%=(i+1) %>">Xóa</a>
+                                                </td>
+                                            </tr>
                                             <%} %>
-                                            <td width="121" valign="top" style='width: 90.65pt; padding: 0in 0in 0in 0in'>
-                                                <p style='margin-top: 6.0pt;'>
-                                                    <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif;'></span>
-                                                    <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>&nbsp;</span>
-                                                </p>
-                                                <%for (int j = 0; j < lvl; j++)
-                                                    {%>
-                                                <p class="MsoNormal Del<%=j+1 %>" style='margin-top: 6.0pt;'>
-                                                    <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>
-                                                        <a href="javascript:fnDel(<%=j+1 %>)" data-idx="<%=j+1 %>">Xóa</a>
-                                                    </span>
-                                                </p>
-                                                <%} %>
-                                                <output class="Out1"></output>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <p style='margin-top: 6.0pt;'>
-                                                    <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>
-                                                        <a href="javascript:void(0)" id="btnThem">+ Thêm</a>
-                                                    </span>
-                                                </p>
-                                            </td>
-                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <br />
+                                    <a href="javascript:void(0)" id="btnThem">+ Thêm</a>
+
+                                    <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                                        <b><span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>3. Thông tin về Số lượng nhân lực liên quan đến CNTT, ATTT hoặc tương đương</span></b>
+                                    </p>
+                                    <table class="thanh-vien" style="width: 100%">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 4%;">TT</th>
+                                                <th>Phân loại</th>
+                                                <th style="width: 17%;">Số lượng (người)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="tongHopNhanLuc boldTitle">
+                                                <td>3.1</td>
+                                                <td class="tongHopTitle">Số lượng cán bộ theo lĩnh vực đào tạo</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <%for (int i = 0; i < lstTongHopNhanLucLVDT.Count; i++)%>
+                                            <%{ %>
+                                            <tr class="tongHopNhanLuc tongHopNhanLucLVDT">
+                                                <td><%= ((char) (65+i)).ToString().ToLower() %>)</td>
+                                                <td class="tongHopTitle"><%=lstTongHopNhanLucLVDT[i].Name %></td>
+                                                <td>
+                                                    <input type="number" name="TongHopNhanLucInput" max="999999" id="" class="textstyle1 input" value="<%= lstTongHopNhanLucLVDT[i].MenuID_Value > 0 ? lstTongHopNhanLucLVDT[i].MenuID_Value.ToString() : "" %>" menu-id="<%= lstTongHopNhanLucLVDT[i].MenuID%>" autocomplete="off">
+                                                </td>
+                                            </tr>
+                                            <%} %>
+
+                                            <tr class="tongHopNhanLuc boldTitle">
+                                                <td>3.2</td>
+                                                <td class="tongHopTitle">Số lượng cán bộ phân theo trình độ đào tạo</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <%for (int i = 0; i < lstTongHopNhanLucTDDT.Count; i++)%>
+                                            <%{ %>
+                                            <tr class="tongHopNhanLuc tongHopNhanLucTDDT">
+                                                <td><%= ((char) (65+i)).ToString().ToLower() %>)</td>
+                                                <td class="tongHopTitle"><%=lstTongHopNhanLucTDDT[i].Name %></td>
+                                                <td>
+                                                    <input type="number" name="TongHopNhanLucInput" max="999999" id="" class="textstyle1 input" value="<%= lstTongHopNhanLucTDDT[i].MenuID_Value > 0 ? lstTongHopNhanLucTDDT[i].MenuID_Value.ToString() : "" %>" menu-id="<%= lstTongHopNhanLucTDDT[i].MenuID%>" autocomplete="off">
+                                                </td>
+                                            </tr>
+                                            <%} %>
+
+                                            <tr class="tongHopNhanLuc boldTitle">
+                                                <td>3.3</td>
+                                                <td class="tongHopTitle">Số lượng cán bộ có chứng chỉ về CNTT, ATTT hoặc tương đương</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <%for (int i = 0; i < lstTongHopNhanLucCC.Count; i++)%>
+                                            <%{ %>
+                                            <tr class="tongHopNhanLuc tongHopNhanLucCC">
+                                                <td><%= ((char) (65+i)).ToString().ToLower() %>)</td>
+                                                <td class="tongHopTitle"><%=lstTongHopNhanLucCC[i].Name %></td>
+                                                <td>
+                                                    <input type="number" name="TongHopNhanLucInput" max="999999" id="" class="textstyle1 input" value="<%= lstTongHopNhanLucCC[i].MenuID_Value > 0 ? lstTongHopNhanLucCC[i].MenuID_Value.ToString() : "" %>" menu-id="<%= lstTongHopNhanLucCC[i].MenuID%>" autocomplete="off">
+                                                </td>
+                                            </tr>
+                                            <%} %>
+                                        </tbody>
                                     </table>
 
+                                    <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                                        <b><span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>4. Thông tin về Số lượng nhân lực có kinh nghiệm, được đào tạo về ATTT</span></b>
+                                    </p>
+                                    <table class="thanh-vien" style="width: 100%">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 4%;">TT</th>
+                                                <th>Phân loại</th>
+                                                <th style="width: 17%;">Số lượng (người)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="tongHopNhanLuc boldTitle">
+                                                <td>4.1</td>
+                                                <td class="tongHopTitle">Nhóm chuyên gia quản lý ATTT</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <%for (int i = 0; i < lstTongHopNhanLucNhomATTT.Count; i++)%>
+                                            <%{ %>
+                                            <tr class="tongHopNhanLuc tongHopNhanLucNhomATTT">
+                                                <td><%= ((char) (65+i)).ToString().ToLower() %>)</td>
+                                                <td class="tongHopTitle"><%=lstTongHopNhanLucNhomATTT[i].Name %></td>
+                                                <td>
+                                                    <input type="number" name="TongHopNhanLucInput" max="999999" id="" class="textstyle1 input" value="<%= lstTongHopNhanLucNhomATTT[i].MenuID_Value > 0 ? lstTongHopNhanLucNhomATTT[i].MenuID_Value.ToString() : "" %>" menu-id="<%= lstTongHopNhanLucNhomATTT[i].MenuID%>" autocomplete="off">
+                                                </td>
+                                            </tr>
+                                            <%} %>
+
+                                            <tr class="tongHopNhanLuc boldTitle">
+                                                <td>4.2</td>
+                                                <td class="tongHopTitle">Nhóm chuyên gia kỹ thuật phòng thủ, chống tấn công</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <%for (int i = 0; i < lstTongHopNhanLucNhomKTPT.Count; i++)%>
+                                            <%{ %>
+                                            <tr class="tongHopNhanLuc tongHopNhanLucNhomKTPT">
+                                                <td><%= ((char) (65+i)).ToString().ToLower() %>)</td>
+                                                <td class="tongHopTitle"><%=lstTongHopNhanLucNhomKTPT[i].Name %></td>
+                                                <td>
+                                                    <input type="number" name="TongHopNhanLucInput" max="999999" id="" class="textstyle1 input" value="<%= lstTongHopNhanLucNhomKTPT[i].MenuID_Value > 0 ? lstTongHopNhanLucNhomKTPT[i].MenuID_Value.ToString() : "" %>" menu-id="<%= lstTongHopNhanLucNhomKTPT[i].MenuID%>" autocomplete="off">
+                                                </td>
+                                            </tr>
+                                            <%} %>
+
+                                            <tr class="tongHopNhanLuc boldTitle">
+                                                <td>4.3</td>
+                                                <td class="tongHopTitle">Nhóm chuyên gia kỹ thuật bảo vệ an toàn hệ thống và ứng dụng</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <%for (int i = 0; i < lstTongHopNhanLucNhomKTBV.Count; i++)%>
+                                            <%{ %>
+                                            <tr class="tongHopNhanLuc tongHopNhanLucNhomKTBV">
+                                                <td><%= ((char) (65+i)).ToString().ToLower() %>)</td>
+                                                <td class="tongHopTitle"><%=lstTongHopNhanLucNhomKTBV[i].Name %></td>
+                                                <td>
+                                                    <input type="number" name="TongHopNhanLucInput" max="999999" id="" class="textstyle1 input" value="<%= lstTongHopNhanLucNhomKTBV[i].MenuID_Value > 0 ? lstTongHopNhanLucNhomKTBV[i].MenuID_Value.ToString() : "" %>" menu-id="<%= lstTongHopNhanLucNhomKTBV[i].MenuID%>" autocomplete="off">
+                                                </td>
+                                            </tr>
+                                            <%} %>
+
+                                            <tr class="tongHopNhanLuc boldTitle">
+                                                <td>4.4</td>
+                                                <td class="tongHopTitle">Nhóm chuyên gia kỹ thuật kiểm tra, đánh giá ATTT</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <%for (int i = 0; i < lstTongHopNhanLucNhomKTKT.Count; i++)%>
+                                            <%{ %>
+                                            <tr class="tongHopNhanLuc tongHopNhanLucNhomKTKT">
+                                                <td><%= ((char) (65+i)).ToString().ToLower() %>)</td>
+                                                <td class="tongHopTitle"><%=lstTongHopNhanLucNhomKTKT[i].Name %></td>
+                                                <td>
+                                                    <input type="number" name="TongHopNhanLucInput" max="999999" id="" class="textstyle1 input" value="<%= lstTongHopNhanLucNhomKTKT[i].MenuID_Value > 0 ? lstTongHopNhanLucNhomKTKT[i].MenuID_Value.ToString() : "" %>" menu-id="<%= lstTongHopNhanLucNhomKTKT[i].MenuID%>" autocomplete="off">
+                                                </td>
+                                            </tr>
+                                            <%} %>
+                                        </tbody>
+                                    </table>
+                                    <%-- ======================================== END: ITT UPDATE ======================================== --%>
                                     <p style='margin-top: 6.0pt'>
-                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>3. Thông tin về nhân lực, chuyên gia an toàn thông tin, công nghệ thông tin và tương đương</span>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>5. Thông tin về nhân lực, chuyên gia an toàn thông tin, công nghệ thông tin và tương đương</span>
                                     </p>
 
                                     <p style='margin-top: 6.0pt'>
@@ -386,29 +534,29 @@
                                                 {
                                             %>
                                             <tr class="nhanLuc">
-                                                <td style="width: 3%;"><%=i+1 %></td>
+                                                <td class='nhanLucTT' style="width: 3%;"><%=i+1 %></td>
                                                 <td style="width: 20%;">
-                                                    <input name="Name" maxlength="255" id="" class="textstyle1 input" type="text" value="<%=lstNhanLuc[i].Name %>" /></td>
+                                                    <input autocomplete='off' name="Name" maxlength="250" id="" class="textstyle1 input" type="text" value="<%=lstNhanLuc[i].Name %>" /></td>
                                                 <td style="width: 20%;">
-                                                    <input name="School" maxlength="255" id="" class="textstyle1 input" type="text" value="<%=lstNhanLuc[i].School %>" /></td>
+                                                    <input autocomplete='off' name="School" maxlength="250" id="" class="textstyle1 input" type="text" value="<%=lstNhanLuc[i].School %>" /></td>
                                                 <td style="width: 10%;"><a href="javascript: void(0)" class="btnDaoTao" data-linhvucdt="<%=lstNhanLuc[i].MenuIDs_LinhVucDT %>" data-trinhdodt="<%=lstNhanLuc[i].MenuIDs_TrinhDoDT %>" data-chungchi="<%=lstNhanLuc[i].MenuIDs_ChungChi %>">+ Chi tiết</a></td>
                                                 <td style="width: 13%;"><a href="javascript: void(0)" class="btnChungChi" data-quanlyattt="<%=lstNhanLuc[i].MenuIDs_QuanLyATTT %>" data-kythuatphongthu="<%=lstNhanLuc[i].MenuIDs_KyThuatPhongThu %>" data-kythuatbaove="<%=lstNhanLuc[i].MenuIDs_KyThuatBaoVe %>" data-kythuatkiemtra="<%=lstNhanLuc[i].MenuIDs_KyThuatKiemTra %>">+ Chi tiết</a></td>
                                                 <td style="width: 1%;">
-                                                    <input name="NamTotNghiep" maxlength="255" id="" class="textstyle1 input" type="text" value="<%=lstNhanLuc[i].NamTotNghiep %>" style="width: 60px;" /></td>
+                                                    <input autocomplete='off' name="NamTotNghiep" maxlength="250" id="" class="textstyle1 input" type="text" value="<%=lstNhanLuc[i].NamTotNghiep > 0 ? (lstNhanLuc[i].ThangTotNghiep + "/" + lstNhanLuc[i].NamTotNghiep) : "" %>" style="width: 60px;" /></td>
                                                 <td style="width: 1%;"><a href="javascript: void(0)" class="btnRemove">Xóa</a></td>
                                             </tr>
                                             <%}
                                                 d = countNhanLuc + 1; %>
                                             <tr class="nhanLuc">
-                                                <td style="width: 3%;"><%=d %></td>
+                                                <td class='nhanLucTT' style="width: 3%;"><%=d %></td>
                                                 <td style="width: 20%;">
-                                                    <input name="Name" maxlength="255" id="" class="textstyle1 input" type="text" value="" /></td>
+                                                    <input autocomplete='off' name="Name" maxlength="250" id="" class="textstyle1 input" type="text" value="" /></td>
                                                 <td style="width: 20%;">
-                                                    <input name="School" maxlength="255" id="" class="textstyle1 input" type="text" value="" /></td>
+                                                    <input autocomplete='off' name="School" maxlength="250" id="" class="textstyle1 input" type="text" value="" /></td>
                                                 <td style="width: 10%;"><a href="javascript: void(0)" class="btnDaoTao">+ Chi tiết</a></td>
                                                 <td style="width: 13%;"><a href="javascript: void(0)" class="btnChungChi">+ Chi tiết</a></td>
                                                 <td style="width: 1%;">
-                                                    <input name="NamTotNghiep" maxlength="255" id="" class="textstyle1 input" type="text" value="" style="width: 60px;" /></td>
+                                                    <input autocomplete='off' name="NamTotNghiep" maxlength="250" id="" class="textstyle1 input" type="text" value="" style="width: 60px;" /></td>
                                                 <td style="width: 1%;"><a href="javascript: void(0)" class="btnRemove">Xóa</a></td>
                                             </tr>
                                             <tr id="append"></tr>
@@ -420,7 +568,7 @@
                                     </table>
 
                                     <p style='margin-top: 6.0pt'>
-                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>4. Danh sách dải IP đăng ký (Nhập mỗi IP trên một dòng):</span>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>6. Danh sách dải IP đăng ký (Nhập mỗi IP trên một dòng):</span>
                                     </p>
                                     <p style='margin-top: 6.0pt;'>
                                         <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>
@@ -436,7 +584,8 @@
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>1. Địa chỉ Website:
-                                        <input name="ThongTinLL_Web" maxlength="255" id="ThongTinLL_Web" class="textstyle1" type="text" value="<%=entityDk.ThongTinLL_Web %>" />
+                                       
+                                            <input name="ThongTinLL_Web" maxlength="250" id="ThongTinLL_Web" class="textstyle1" type="text" value="<%=entityDk.ThongTinLL_Web %>" />
                                         </span>
                                     </p>
 
@@ -450,17 +599,18 @@
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>a) Tên (User ID):</span>
-                                        <input name="ThongTinLL_ThuDT_Ten" maxlength="255" id="ThongTinLL_ThuDT_Ten" class="textstyle1" type="text" value="<%=entityDk.ThongTinLL_ThuDT_Ten %>" />
+                                        <input name="ThongTinLL_ThuDT_Ten" maxlength="250" id="ThongTinLL_ThuDT_Ten" class="textstyle1" type="text" value="<%=entityDk.ThongTinLL_ThuDT_Ten %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>b) Fingerprint:
-                                    <input name="ThongTinLL_ThuDT_Fingerprint" maxlength="255" id="ThongTinLL_ThuDT_Fingerprint" class="textstyle1" type="text" value="<%=entityDk.ThongTinLL_ThuDT_Fingerprint %>" />
+                                   
+                                            <input name="ThongTinLL_ThuDT_Fingerprint" maxlength="250" id="ThongTinLL_ThuDT_Fingerprint" class="textstyle1" type="text" value="<%=entityDk.ThongTinLL_ThuDT_Fingerprint %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>c) Liên kết đến Public key của tổ chức<sup>(3)</sup>:</span>
-                                        <input name="ThongTinLL_ThuDT_LinkToPublicKey" maxlength="255" id="ThongTinLL_ThuDT_LinkToPublicKey" class="textstyle1" type="text" value="<%=entityDk.ThongTinLL_ThuDT_LinkToPublicKey %>" />
+                                        <input name="ThongTinLL_ThuDT_LinkToPublicKey" maxlength="250" id="ThongTinLL_ThuDT_LinkToPublicKey" class="textstyle1" type="text" value="<%=entityDk.ThongTinLL_ThuDT_LinkToPublicKey %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt'>
@@ -505,19 +655,19 @@
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>a) Tên bộ phận/người giải quyết:</span>
-                                        <input name="DauMoiLL_TrongGio_Ten" maxlength="255" id="DauMoiLL_TrongGio_Ten" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_TrongGio_Ten %>" />
+                                        <input name="DauMoiLL_TrongGio_Ten" maxlength="250" id="DauMoiLL_TrongGio_Ten" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_TrongGio_Ten %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>b) Điện thoại cố định:</span>
-                                        <input name="DauMoiLL_TrongGio_DienThoai" maxlength="255" id="DauMoiLL_TrongGio_DienThoai" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_TrongGio_DienThoai %>" />
+                                        <input name="DauMoiLL_TrongGio_DienThoai" maxlength="250" id="DauMoiLL_TrongGio_DienThoai" class="textstyle2" type="text" value="<%=entityDk.DauMoiLL_TrongGio_DienThoai %>" />
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>c) Điện thoại di động:</span>
-                                        <input name="DauMoiLL_TrongGio_DienThoaiDD" maxlength="255" id="DauMoiLL_TrongGio_DienThoaiDD" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_TrongGio_DienThoaiDD %>" />
+                                        <input name="DauMoiLL_TrongGio_DienThoaiDD" maxlength="250" id="DauMoiLL_TrongGio_DienThoaiDD" class="textstyle2" type="text" value="<%=entityDk.DauMoiLL_TrongGio_DienThoaiDD %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>d) Số Fax:</span>
-                                        <input name="DauMoiLL_TrongGio_Fax" maxlength="255" id="DauMoiLL_TrongGio_Fax" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_TrongGio_Fax %>" />
+                                        <input name="DauMoiLL_TrongGio_Fax" maxlength="250" id="DauMoiLL_TrongGio_Fax" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_TrongGio_Fax %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
@@ -528,19 +678,19 @@
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>a) Tên bộ phận/người giải quyết:</span>
-                                        <input name="DauMoiLL_NgoaiGio_Ten" maxlength="255" id="DauMoiLL_NgoaiGio_Ten" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_NgoaiGio_Ten %>" />
+                                        <input name="DauMoiLL_NgoaiGio_Ten" maxlength="250" id="DauMoiLL_NgoaiGio_Ten" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_NgoaiGio_Ten %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>b) Điện thoại cố định:</span>
-                                        <input name="DauMoiLL_NgoaiGio_DienThoai" maxlength="255" id="DauMoiLL_NgoaiGio_DienThoai" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_NgoaiGio_DienThoai %>" />
+                                        <input name="DauMoiLL_NgoaiGio_DienThoai" maxlength="250" id="DauMoiLL_NgoaiGio_DienThoai" class="textstyle2" type="text" value="<%=entityDk.DauMoiLL_NgoaiGio_DienThoai %>" />
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>c) Điện thoại di động:</span>
-                                        <input name="DauMoiLL_NgoaiGio_DienThoaiDD" maxlength="255" id="DauMoiLL_NgoaiGio_DienThoaiDD" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_NgoaiGio_DienThoaiDD %>" />
+                                        <input name="DauMoiLL_NgoaiGio_DienThoaiDD" maxlength="250" id="DauMoiLL_NgoaiGio_DienThoaiDD" class="textstyle2" type="text" value="<%=entityDk.DauMoiLL_NgoaiGio_DienThoaiDD %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>d) Số Fax:</span>
-                                        <input name="DauMoiLL_NgoaiGio_Fax" maxlength="255" id="DauMoiLL_NgoaiGio_Fax" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_NgoaiGio_Fax %>" />
+                                        <input name="DauMoiLL_NgoaiGio_Fax" maxlength="250" id="DauMoiLL_NgoaiGio_Fax" class="textstyle1" type="text" value="<%=entityDk.DauMoiLL_NgoaiGio_Fax %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
@@ -551,14 +701,14 @@
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>a) Tên bộ phận/người giải quyết:</span>
-                                        <input name="DauMoiLanhDao_Ten" maxlength="255" id="DauMoiLanhDao_Ten" class="textstyle1" type="text" value="<%=entityDk.DauMoiLanhDao_Ten %>" />
+                                        <input name="DauMoiLanhDao_Ten" maxlength="250" id="DauMoiLanhDao_Ten" class="textstyle1" type="text" value="<%=entityDk.DauMoiLanhDao_Ten %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>b) Điện thoại cố định:</span>
-                                        <input name="DauMoiLanhDao_DienThoai" maxlength="255" id="DauMoiLanhDao_DienThoai" class="textstyle1" type="text" value="<%=entityDk.DauMoiLanhDao_DienThoai %>" />
+                                        <input name="DauMoiLanhDao_DienThoai" maxlength="250" id="DauMoiLanhDao_DienThoai" class="textstyle1" type="text" value="<%=entityDk.DauMoiLanhDao_DienThoai %>" />
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>c) Điện thoại di động:</span>
-                                        <input name="DauMoiLanhDao_DienThoaiDD" maxlength="255" id="DauMoiLanhDao_DienThoaiDD" class="textstyle1" type="text" value="<%=entityDk.DauMoiLanhDao_DienThoaiDD %>" />
+                                        <input name="DauMoiLanhDao_DienThoaiDD" maxlength="250" id="DauMoiLanhDao_DienThoaiDD" class="textstyle1" type="text" value="<%=entityDk.DauMoiLanhDao_DienThoaiDD %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt'>
@@ -580,27 +730,27 @@
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>a) Tên bộ phận/người nhận:</span>
-                                        <input name="DCNhanThu_TenBoPhan" maxlength="255" id="DCNhanThu_TenBoPhan" class="textstyle1" type="text" value="<%=entityDk.DCNhanThu_TenBoPhan %>" />
+                                        <input name="DCNhanThu_TenBoPhan" maxlength="250" id="DCNhanThu_TenBoPhan" class="textstyle1" type="text" value="<%=entityDk.DCNhanThu_TenBoPhan %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>b) Vị trí, chức vụ:</span>
-                                        <input name="DCNhanThu_ViTri" maxlength="255" id="DCNhanThu_ViTri" class="textstyle1" type="text" value="<%=entityDk.DCNhanThu_ViTri %>" />
+                                        <input name="DCNhanThu_ViTri" maxlength="250" id="DCNhanThu_ViTri" class="textstyle1" type="text" value="<%=entityDk.DCNhanThu_ViTri %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>c) Tên tổ chức:</span>
-                                        <input name="DCNhanThu_TenToChuc" maxlength="255" id="DCNhanThu_TenToChuc" class="textstyle1" type="text" value="<%=entityDk.DCNhanThu_TenToChuc %>" />
+                                        <input name="DCNhanThu_TenToChuc" maxlength="250" id="DCNhanThu_TenToChuc" class="textstyle1" type="text" value="<%=entityDk.DCNhanThu_TenToChuc %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>d) Địa chỉ liên hệ:</span>
-                                        <input name="DCNhanThu_DiaChi" maxlength="255" id="DCNhanThu_DiaChi" class="textstyle1" type="text" value="<%=entityDk.DCNhanThu_DiaChi %>" />
+                                        <input name="DCNhanThu_DiaChi" maxlength="250" id="DCNhanThu_DiaChi" class="textstyle1" type="text" value="<%=entityDk.DCNhanThu_DiaChi %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>đ) Điện thoại:</span>
-                                        <input name="DCNhanThu_DienThoai" maxlength="255" id="DCNhanThu_DienThoai" class="textstyle1" type="text" value="<%=entityDk.DCNhanThu_DienThoai %>" />
+                                        <input name="DCNhanThu_DienThoai" maxlength="250" id="DCNhanThu_DienThoai" class="textstyle1" type="text" value="<%=entityDk.DCNhanThu_DienThoai %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt'>
@@ -628,7 +778,7 @@
                                             <td width="398" valign="top" style='width: 298.6pt; border: solid windowtext 1.0pt; border-bottom: none; background: white; padding: 0in 0in 0in 0in'>
                                                 <p style='margin-top: 6.0pt'>
                                                     <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>
-                                                        <input name="LLKhac_Yahoo" maxlength="255" id="LLKhac_Yahoo" class="textstyle1" type="text" value="<%=entityDk.LLKhac_Yahoo %>" />
+                                                        <input name="LLKhac_Yahoo" maxlength="250" id="LLKhac_Yahoo" class="textstyle1" type="text" value="<%=entityDk.LLKhac_Yahoo %>" />
                                                     </span>
                                                 </p>
                                             </td>
@@ -642,7 +792,7 @@
                                             <td width="398" valign="top" style="width: 298.6pt; border: solid windowtext 1.0pt; border-bottom: none; background: white; padding: 0in 0in 0in 0in">
                                                 <p style='margin-top: 6.0pt'>
                                                     <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>
-                                                        <input name="LLKhac_Skype" maxlength="255" id="LLKhac_Skype" class="textstyle1" type="text" value="<%=entityDk.LLKhac_Skype %>" />
+                                                        <input name="LLKhac_Skype" maxlength="250" id="LLKhac_Skype" class="textstyle1" type="text" value="<%=entityDk.LLKhac_Skype %>" />
                                                     </span>
                                                 </p>
                                             </td>
@@ -656,7 +806,7 @@
                                             <td width="398" valign="top" style='width: 298.6pt; border: solid windowtext 1.0pt; border-bottom: none; background: white; padding: 0in 0in 0in 0in'>
                                                 <p style='margin-top: 6.0pt'>
                                                     <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>
-                                                        <input name="LLKhac_GoogleTalk" maxlength="255" id="LLKhac_GoogleTalk" class="textstyle1" type="text" value="<%=entityDk.LLKhac_GoogleTalk %>" />
+                                                        <input name="LLKhac_GoogleTalk" maxlength="250" id="LLKhac_GoogleTalk" class="textstyle1" type="text" value="<%=entityDk.LLKhac_GoogleTalk %>" />
                                                     </span>
                                                 </p>
                                             </td>
@@ -670,7 +820,7 @@
                                             <td width="398" valign="top" style='width: 298.6pt; border: solid windowtext 1.0pt; border-bottom: none; background: white; padding: 0in 0in 0in 0in'>
                                                 <p style='margin-top: 6.0pt'>
                                                     <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>
-                                                        <input name="LLKhac_Hotmail" maxlength="255" id="LLKhac_Hotmail" class="textstyle1" type="text" value="<%=entityDk.LLKhac_Hotmail %>" />
+                                                        <input name="LLKhac_Hotmail" maxlength="250" id="LLKhac_Hotmail" class="textstyle1" type="text" value="<%=entityDk.LLKhac_Hotmail %>" />
                                                     </span>
                                                 </p>
                                             </td>
@@ -684,7 +834,7 @@
                                             <td width="398" valign="top" style='width: 298.6pt; border: solid windowtext 1.0pt; border-bottom: none; background: white; padding: 0in 0in 0in 0in'>
                                                 <p style='margin-top: 6.0pt'>
                                                     <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>
-                                                        <input name="LLKhac_Khac" maxlength="255" id="LLKhac_Khac" class="textstyle1" type="text" value="<%=entityDk.LLKhac_Khac %>" />
+                                                        <input name="LLKhac_Khac" maxlength="250" id="LLKhac_Khac" class="textstyle1" type="text" value="<%=entityDk.LLKhac_Khac %>" />
                                                     </span>
                                                 </p>
                                             </td>
@@ -779,6 +929,13 @@
                         </div>
                         <input type="hidden" name="M" value="" id="M" />
                         <input type="hidden" name="NhanLuc" value="" id="NhanLuc" />
+                        <input type="hidden" name="TongHopNhanLucLVDT" value="" id="TongHopNhanLucLVDT" />
+                        <input type="hidden" name="TongHopNhanLucTDDT" value="" id="TongHopNhanLucTDDT" />
+                        <input type="hidden" name="TongHopNhanLucCC" value="" id="TongHopNhanLucCC" />
+                        <input type="hidden" name="TongHopNhanLucNhomATTT" value="" id="TongHopNhanLucNhomATTT" />
+                        <input type="hidden" name="TongHopNhanLucNhomKTPT" value="" id="TongHopNhanLucNhomKTPT" />
+                        <input type="hidden" name="TongHopNhanLucNhomKTBV" value="" id="TongHopNhanLucNhomKTBV" />
+                        <input type="hidden" name="TongHopNhanLucNhomKTKT" value="" id="TongHopNhanLucNhomKTKT" />
                     </form>
                 </div>
                 <!--.Main_container-->
@@ -1123,15 +1280,15 @@
             d++;
             var rnd = Math.floor(Math.random() * 999999);
             var html = "<tr class='nhanLuc'>";
-            html += "<td style='width: 3%;'>" + d + "</td>";
+            html += "<td class='nhanLucTT' style='width: 3%;'>" + d + "</td>";
             html += "<td style='width: 20%;'>";
-            html += "<input name='Name' maxlength='255' id='' class='textstyle1 input' type='text' value='' /></td>";
+            html += "<input autocomplete='off' name='Name' maxlength='255' id='' class='textstyle1 input' type='text' value='' /></td>";
             html += "<td style='width: 20%;'>";
-            html += "<input name='School' maxlength='255' id='' class='textstyle1 input' type='text' value='' /></td>";
+            html += "<input autocomplete='off' name='School' maxlength='255' id='' class='textstyle1 input' type='text' value='' /></td>";
             html += "<td style='width: 10%;'><a href='javascript: void(0)' class='btnDaoTao dt" + rnd + "'>+ Chi tiết</a></td>";
             html += "<td style='width: 13%;'><a href='javascript: void(0)' class='btnChungChi cc" + rnd + "'>+ Chi tiết</a></td>";
             html += "<td style='width: 1%;'>";
-            html += "<input name='NamTotNghiep' maxlength='255' id='' class='textstyle1 input' type='text' value='' style='width: 60px;' /></td>";
+            html += "<input autocomplete='off' name='NamTotNghiep' maxlength='255' id='' class='textstyle1 input' type='text' value='' style='width: 60px;' /></td>";
             html += "<td style='width: 1%;'><a href='javascript: void(0)' class='btnRemove" + rnd + "'>Xóa</a></td>";
             html += "</tr>";
             $('#append').before(html);
@@ -1209,16 +1366,29 @@
                     }
                 }
             });
-            $('.btnRemove' + rnd).click(function () { $(this).parent().parent().remove(); d--; });
+            $('.btnRemove' + rnd).click(function () {
+                $(this).parent().parent().remove();
+                d--;
+
+                var elementNhanLucTT = $('.nhanLucTT');
+                for (var i = 0; i < d; i++) {
+                    $(elementNhanLucTT[i]).html(i + 1);
+                }
+            });
         });
 
         $('.btnRemove').click(function () {
             $(this).parent().parent().remove();
             d--;
+
+            var elementNhanLucTT = $('.nhanLucTT');
+            for (var i = 0; i < d; i++) {
+                $(elementNhanLucTT[i]).html(i + 1);
+            }
         });
 
         // Onchange checkbox gov
-        $('#IsGOV').change(function (x) {
+        $('.IsGOV').change(function (x) {
             if ($(this).is(':checked')) $(this).val(1);
             else $(this).val(0);
         })
@@ -1227,33 +1397,52 @@
 <!-- End Modal -->
 
 <script>
+    function selectCapDo(obj, ind) {
+        $("#M" + ind).attr('data-m', $(obj)[0].value);
+    }
+
+    var indexM = <%=countHeThong%> + 1;
+    var lstId = [];
+    for (var j = 0; j < <%=countHeThong%>; j++) {
+        lstId.push(j + 1);
+    }
+
     $('#btnThem').click(function () {
-        var ranNum = Math.floor(Math.random() * 999999).toString();
-        var html = '<p class="MsoNormal Del' + ranNum + '" style="margin-top: 6.0pt;"><input name="" maxlength="255" id="" class="textstyle1 input" type="text" value="" /></span></p>';
-        var html1 = '<p class="MsoNormal Del' + ranNum + '" style="margin-top: 6.0pt;"><a href="javascript:fnDel(' + ranNum + ')">Xóa</a></span></p>';
-        $('.Out').before(html);
-        $('.Out1').before(html1);
+        $("#TblHTTT tbody").append('<tr id="Row' + indexM + '">' +
+            '<td>' + indexM +
+            '</td>' +
+            '<td>' +
+            ' <select style="width: 100%; height: 80px" onchange="selectCapDo(this, ' + indexM + ')">' +
+            <%for (int j = 0; j < lstCapDo.Count; j++)%>
+            <%{ %>
+            '<option value="<%=lstCapDo[j].ID %>"><%=lstCapDo[j].Name %></option>' +
+            <%} %>
+            '</select>' +
+            '</td>' +
+            '<td>' +
+            '<textarea id="M' + indexM + '" data-m="<%=lstCapDo[0].ID %>" name="HTTT' + indexM + '" class="textstyle1" rows="3" style="max-width: 90%; width: 90%; max-height: 300px;"></textarea>' +
+            '</td>' +
+            '<td>' +
+            '<a href="javascript:fnDel(' + indexM + ')" data-idx="' + indexM + '">Xóa</a>' +
+            '</td>' +
+            '</tr>');
+        lstId.push(indexM);
+        indexM++;
     });
 
     function fnDel(r) {
-        $('.Del' + r).remove();
+        $('#Row' + r).remove();
+        lstId.splice(lstId.indexOf(r), 1);
     }
 
     function fnSubmit() {
-        debugger;
-        var ln = <%=countCapDo%>;
         var s = '';
-        for (var i = 0; i < ln; i++) {
-            var m = $('#M' + i).attr('data-m');
+        for (var i = 0; i < lstId.length; i++) {
+            var m = $('#M' + lstId[i]).attr('data-m');
             s += m + '_';
-            var n = $('#M' + i).find('input[type=text]');
-            var ln1 = n.length;
-            for (var j = 0; j < ln1; j++) {
-                s += $(n[j]).val() + ',';
-            }
-            s += ';';
+            s += $('#M' + lstId[i]).val() + '|';
         }
-        $('#M').val(s);
+        $('#M').val(s.substr(0, s.length - 1));
 
         var nhanLucs = '';
         var elementNhanLuc = $('.nhanLuc');
@@ -1286,5 +1475,112 @@
         }
         //console.log(nhanLucs);
         $('#NhanLuc').val(nhanLucs);
+
+        /* ===================================================== */
+        /* ===================================================== */
+        var arrTongHopNhanLuc = [];
+        var elementTongHopNhanLucLVDT = $('.tongHopNhanLucLVDT');
+        for (var i = 0; i < elementTongHopNhanLucLVDT.length; i++) {
+            var tongHopNhanLuc = '';
+            var menuId = $(elementTongHopNhanLucLVDT[i]).find('input[name=TongHopNhanLucInput]').attr("menu-id");
+            var menuId_Value = $(elementTongHopNhanLucLVDT[i]).find('input[name=TongHopNhanLucInput]').val();
+
+            if (menuId_Value) {
+                arrTongHopNhanLuc.push(menuId + '_' + menuId_Value);
+            } else {
+                arrTongHopNhanLuc.push(menuId + '_0');
+            }
+        }
+        $('#TongHopNhanLucLVDT').val(arrTongHopNhanLuc.join("|"));
+
+        arrTongHopNhanLuc = [];
+        elementTongHopNhanLucTDDT = $('.tongHopNhanLucTDDT');
+        for (var i = 0; i < elementTongHopNhanLucTDDT.length; i++) {
+            var tongHopNhanLuc = '';
+            var menuId = $(elementTongHopNhanLucTDDT[i]).find('input[name=TongHopNhanLucInput]').attr("menu-id");
+            var menuId_Value = $(elementTongHopNhanLucTDDT[i]).find('input[name=TongHopNhanLucInput]').val();
+
+            if (menuId_Value) {
+                arrTongHopNhanLuc.push(menuId + '_' + menuId_Value);
+            } else {
+                arrTongHopNhanLuc.push(menuId + '_0');
+            }
+        }
+        $('#TongHopNhanLucTDDT').val(arrTongHopNhanLuc.join("|"));
+
+        arrTongHopNhanLuc = [];
+        elementTongHopNhanLucCC = $('.tongHopNhanLucCC');
+        for (var i = 0; i < elementTongHopNhanLucCC.length; i++) {
+            var tongHopNhanLuc = '';
+            var menuId = $(elementTongHopNhanLucCC[i]).find('input[name=TongHopNhanLucInput]').attr("menu-id");
+            var menuId_Value = $(elementTongHopNhanLucCC[i]).find('input[name=TongHopNhanLucInput]').val();
+
+            if (menuId_Value) {
+                arrTongHopNhanLuc.push(menuId + '_' + menuId_Value);
+            } else {
+                arrTongHopNhanLuc.push(menuId + '_0');
+            }
+        }
+        $('#TongHopNhanLucCC').val(arrTongHopNhanLuc.join("|"));
+
+        arrTongHopNhanLuc = [];
+        elementTongHopNhanLucNhomATTT = $('.tongHopNhanLucNhomATTT');
+        for (var i = 0; i < elementTongHopNhanLucNhomATTT.length; i++) {
+            var tongHopNhanLuc = '';
+            var menuId = $(elementTongHopNhanLucNhomATTT[i]).find('input[name=TongHopNhanLucInput]').attr("menu-id");
+            var menuId_Value = $(elementTongHopNhanLucNhomATTT[i]).find('input[name=TongHopNhanLucInput]').val();
+
+            if (menuId_Value) {
+                arrTongHopNhanLuc.push(menuId + '_' + menuId_Value);
+            } else {
+                arrTongHopNhanLuc.push(menuId + '_0');
+            }
+        }
+        $('#TongHopNhanLucNhomATTT').val(arrTongHopNhanLuc.join("|"));
+
+        arrTongHopNhanLuc = [];
+        elementTongHopNhanLucNhomKTPT = $('.tongHopNhanLucNhomKTPT');
+        for (var i = 0; i < elementTongHopNhanLucNhomKTPT.length; i++) {
+            var tongHopNhanLuc = '';
+            var menuId = $(elementTongHopNhanLucNhomKTPT[i]).find('input[name=TongHopNhanLucInput]').attr("menu-id");
+            var menuId_Value = $(elementTongHopNhanLucNhomKTPT[i]).find('input[name=TongHopNhanLucInput]').val();
+
+            if (menuId_Value) {
+                arrTongHopNhanLuc.push(menuId + '_' + menuId_Value);
+            } else {
+                arrTongHopNhanLuc.push(menuId + '_0');
+            }
+        }
+        $('#TongHopNhanLucNhomKTPT').val(arrTongHopNhanLuc.join("|"));
+
+        arrTongHopNhanLuc = [];
+        elementTongHopNhanLucNhomKTBV = $('.tongHopNhanLucNhomKTBV');
+        for (var i = 0; i < elementTongHopNhanLucNhomKTBV.length; i++) {
+            var tongHopNhanLuc = '';
+            var menuId = $(elementTongHopNhanLucNhomKTBV[i]).find('input[name=TongHopNhanLucInput]').attr("menu-id");
+            var menuId_Value = $(elementTongHopNhanLucNhomKTBV[i]).find('input[name=TongHopNhanLucInput]').val();
+
+            if (menuId_Value) {
+                arrTongHopNhanLuc.push(menuId + '_' + menuId_Value);
+            } else {
+                arrTongHopNhanLuc.push(menuId + '_0');
+            }
+        }
+        $('#TongHopNhanLucNhomKTBV').val(arrTongHopNhanLuc.join("|"));
+
+        arrTongHopNhanLuc = [];
+        elementTongHopNhanLucNhomKTKT = $('.tongHopNhanLucNhomKTKT');
+        for (var i = 0; i < elementTongHopNhanLucNhomKTKT.length; i++) {
+            var tongHopNhanLuc = '';
+            var menuId = $(elementTongHopNhanLucNhomKTKT[i]).find('input[name=TongHopNhanLucInput]').attr("menu-id");
+            var menuId_Value = $(elementTongHopNhanLucNhomKTKT[i]).find('input[name=TongHopNhanLucInput]').val();
+
+            if (menuId_Value) {
+                arrTongHopNhanLuc.push(menuId + '_' + menuId_Value);
+            } else {
+                arrTongHopNhanLuc.push(menuId + '_0');
+            }
+        }
+        $('#TongHopNhanLucNhomKTKT').val(arrTongHopNhanLuc.join("|"));
     }
 </script>
