@@ -553,6 +553,13 @@ namespace HL.Lib.CPControllers
         public string M { get; set; }
         public string Name1 { get; set; }
         public string NhanLuc { get; set; }
+        public string TongHopNhanLucLVDT { get; set; }
+        public string TongHopNhanLucTDDT { get; set; }
+        public string TongHopNhanLucCC { get; set; }
+        public string TongHopNhanLucNhomATTT { get; set; }
+        public string TongHopNhanLucNhomKTPT { get; set; }
+        public string TongHopNhanLucNhomKTBV { get; set; }
+        public string TongHopNhanLucNhomKTKT { get; set; }
     }
 
     public class MInfoMagicModel
