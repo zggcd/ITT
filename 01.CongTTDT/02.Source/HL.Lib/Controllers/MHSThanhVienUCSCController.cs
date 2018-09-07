@@ -92,6 +92,15 @@ namespace HL.Lib.Controllers
                         .Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID)
                         .ToList();
                     ViewBag.EndCode = endCode;
+
+                    ViewBag.ListTongHopNhanLucLVDT = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "LinhVucDaoDao");
+                    ViewBag.ListTongHopNhanLucTDDT = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "TrinhDoDaoTao");
+                    ViewBag.ListTongHopNhanLucCC = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "ChungChi");
+                    ViewBag.ListTongHopNhanLucNhomATTT = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "QuanLyATTT");
+                    ViewBag.ListTongHopNhanLucNhomKTPT = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "KyThuatPhongThu");
+                    ViewBag.ListTongHopNhanLucNhomKTBV = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "KyThuatBaoVe");
+                    ViewBag.ListTongHopNhanLucNhomKTKT = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "KyThuatKiemTra");
+
                     RenderView("../MInfo/HoSoUCSC");
                 }
                 else
@@ -123,6 +132,15 @@ namespace HL.Lib.Controllers
                         .ToList();
                     if (httt != null) ModHeThongThongTinService.Instance.Delete(httt);
                     ModDauMoiUCSCService.Instance.Delete(dm);
+
+                    // Xoa nha luc
+                    var nhanLuc = ModNhanLucUCSCService.Instance.CreateQuery()
+                                    .Where(o => o.HSThanhVienUCSCID == entity.ID).ToList();
+                    if (nhanLuc != null) ModNhanLucUCSCService.Instance.Delete(nhanLuc);
+
+                    // Xoa tong hop nhan luc
+                    List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLuc = ModTongHopNhanLucUCSCService.Instance.GetByHSThanhVienID(hsId);
+                    if (lstTongHopNhanLuc != null) ModTongHopNhanLucUCSCService.Instance.Delete(lstTongHopNhanLuc);
                 }
 
                 ViewPage.Alert("Xóa hồ sơ thành công.");
@@ -134,7 +152,7 @@ namespace HL.Lib.Controllers
             }
         }
 
-        public void ActionUpdateHoSoUCSC(ModHSThanhVienUCSCEntity entityHs, ModDauMoiUCSCEntity entityDm, MHSThanhVienUCSCModel model, string endCode)
+        public void ActionUpdateHoSoUCSC(ModHSThanhVienUCSCEntity entityHs, MAppend append, ModDauMoiUCSCEntity entityDm, MHSThanhVienUCSCModel model, string endCode)
         {
             int userId = HL.Lib.Global.CPLogin.UserIDOnWeb;
             var entity = ModHSThanhVienUCSCService.Instance.CreateQuery()
@@ -175,7 +193,7 @@ namespace HL.Lib.Controllers
                 //He thong thong tin
                 var httt = ModHeThongThongTinService.Instance.CreateQuery().Where(o => o.Activity == true && o.DauMoiUCSCID == dm.ID).ToList();
                 if (httt != null) ModHeThongThongTinService.Instance.Delete(httt);
-                var arr = model.M.Split(';');
+                var arr = model.M.Split('|');
                 List<ModHeThongThongTinEntity> entityHTTT = new List<ModHeThongThongTinEntity>();
                 for (int i = 0; i < arr.Length; i++)
                 {
@@ -183,23 +201,21 @@ namespace HL.Lib.Controllers
                     var tmp = arr[i].Split('_');
                     int m = HL.Core.Global.Convert.ToInt(tmp[0], 0);
                     if (m <= 0 || tmp.Length != 2) continue;
-                    var lstName = tmp[1].Split(',');
+                    string sName = tmp[1];
 
-                    for (int j = 0; j < lstName.Length; j++)
+                    if (string.IsNullOrEmpty(sName)) continue;
+                    var entityTmp = new ModHeThongThongTinEntity
                     {
-                        if (string.IsNullOrEmpty(lstName[j])) continue;
-                        var entityTmp = new ModHeThongThongTinEntity
-                        {
-                            DauMoiUCSCID = dm.ID,
-                            MenuID = m,
-                            Name = lstName[j],
-                            Code = Data.GetCode(lstName[j]),
-                            Published = DateTime.Now,
-                            Order = GetMaxOrder_HTTT(),
-                            Activity = true
-                        };
-                        entityHTTT.Add(entityTmp);
-                    }
+                        DauMoiUCSCID = dm.ID,
+                        MenuID = m,
+                        Name = sName,
+                        Code = Data.GetCode(sName),
+                        Published = DateTime.Now,
+                        Order = GetMaxOrder_HTTT(),
+                        Activity = true,
+                        DonDangKyUCSCID = entityHs.ID
+                    };
+                    entityHTTT.Add(entityTmp);
                     ModHeThongThongTinService.Instance.Save(entityHTTT);
                 }
 
@@ -207,6 +223,188 @@ namespace HL.Lib.Controllers
                 ViewBag.DauMoi = entityDm;
                 ViewBag.HTTT = entityHTTT;
 
+
+                /* =======================================================*/
+                /* =======================================================*/
+                #region ITT UPDATE
+                string[] arrNhanLucInString = append.NhanLuc.Split('|');
+                List<ModNhanLucUCSCEntity> lstNhanLucInViewBag = ViewBag.NhanLuc as List<ModNhanLucUCSCEntity> ?? new List<ModNhanLucUCSCEntity>();
+                List<ModNhanLucUCSCEntity> lstNhanLucMoi = new List<ModNhanLucUCSCEntity>();
+
+                for (int i = 0; i < arrNhanLucInString.Length; i++)
+                {
+                    if (string.IsNullOrEmpty(arrNhanLucInString[i])) continue;
+                    var nhanLuc = arrNhanLucInString[i].Split('_');
+                    int cNhanLuc = nhanLuc.Length;
+                    if (cNhanLuc != 10) continue;
+
+                    // Parse Nam/Thang tot nghiệp
+                    int iThang = 0;
+                    int iNam = 0;
+                    string[] arrNamThangTotNghiep = nhanLuc[9].Split('/');
+                    if (arrNamThangTotNghiep.Length == 2)
+                    {
+                        iThang = Int32.Parse(arrNamThangTotNghiep[0], 0);
+                        iNam = Int32.Parse(arrNamThangTotNghiep[1], 0);
+                    }
+
+                    var item = new ModNhanLucUCSCEntity()
+                    {
+                        HSThanhVienUCSCID = entityHs.ID,
+                        Name = nhanLuc[0],
+                        School = nhanLuc[1],
+                        MenuIDs_LinhVucDT = nhanLuc[2],
+                        MenuIDs_TrinhDoDT = nhanLuc[3],
+                        MenuIDs_ChungChi = nhanLuc[4],
+                        MenuIDs_QuanLyATTT = nhanLuc[5],
+                        MenuIDs_KyThuatPhongThu = nhanLuc[6],
+                        MenuIDs_KyThuatBaoVe = nhanLuc[7],
+                        MenuIDs_KyThuatKiemTra = nhanLuc[8],
+                        ThangTotNghiep = iThang,
+                        NamTotNghiep = iNam,
+                        Activity = true,
+                        Published = DateTime.Now,
+                        Order = GetMaxOrder_NhanLuc()
+                    };
+                    lstNhanLucMoi.Add(item);
+                }
+                ModNhanLucUCSCService.Instance.Delete(lstNhanLucInViewBag);
+                ModNhanLucUCSCService.Instance.Save(lstNhanLucMoi);
+                ViewBag.NhanLuc = lstNhanLucMoi;
+
+                // LinhVucDaoDao
+                string[] tongHopNhanLucs = append.TongHopNhanLucLVDT.Split('|');
+                List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucLVDT = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "LinhVucDaoDao");
+                for (int i = 0; i < tongHopNhanLucs.Length; i++)
+                {
+                    if (string.IsNullOrEmpty(tongHopNhanLucs[i])) continue;
+                    string[] thnl = tongHopNhanLucs[i].Split('_');
+                    int menuId = Int32.Parse(thnl[0], 0);
+                    int menuId_value = Int32.Parse(thnl[1], 0);
+                    if (menuId == 0) continue;
+
+                    // REPLACE OR ADD TO LIST
+                    int index = lstTongHopNhanLucLVDT.FindIndex(ind => ind.MenuID == menuId);
+                    lstTongHopNhanLucLVDT[index].MenuID_Value = menuId_value;
+                    lstTongHopNhanLucLVDT[index].UpdatedDate = DateTime.Now;
+                }
+                ModTongHopNhanLucUCSCService.Instance.Save(lstTongHopNhanLucLVDT.FindAll(o => o.MenuID_Value > 0));
+                ModTongHopNhanLucUCSCService.Instance.Delete(lstTongHopNhanLucLVDT.FindAll(o => o.MenuID_Value <= 0));
+
+                // TrinhDoDaoTao
+                tongHopNhanLucs = append.TongHopNhanLucTDDT.Split('|');
+                List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucTDDT = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "TrinhDoDaoTao");
+                for (int i = 0; i < tongHopNhanLucs.Length; i++)
+                {
+                    if (string.IsNullOrEmpty(tongHopNhanLucs[i])) continue;
+                    string[] thnl = tongHopNhanLucs[i].Split('_');
+                    int menuId = Int32.Parse(thnl[0], 0);
+                    int menuId_value = Int32.Parse(thnl[1], 0);
+                    if (menuId == 0) continue;
+
+                    // REPLACE OR ADD TO LIST
+                    int index = lstTongHopNhanLucTDDT.FindIndex(ind => ind.MenuID == menuId);
+                    lstTongHopNhanLucTDDT[index].MenuID_Value = menuId_value;
+                    lstTongHopNhanLucTDDT[index].UpdatedDate = DateTime.Now;
+                }
+                ModTongHopNhanLucUCSCService.Instance.Save(lstTongHopNhanLucTDDT.FindAll(o => o.MenuID_Value > 0));
+                ModTongHopNhanLucUCSCService.Instance.Delete(lstTongHopNhanLucTDDT.FindAll(o => o.MenuID_Value <= 0));
+
+                // ChungChi
+                tongHopNhanLucs = append.TongHopNhanLucCC.Split('|');
+                List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucCC = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "ChungChi");
+                for (int i = 0; i < tongHopNhanLucs.Length; i++)
+                {
+                    if (string.IsNullOrEmpty(tongHopNhanLucs[i])) continue;
+                    string[] thnl = tongHopNhanLucs[i].Split('_');
+                    int menuId = Int32.Parse(thnl[0], 0);
+                    int menuId_value = Int32.Parse(thnl[1], 0);
+                    if (menuId == 0) continue;
+
+                    // REPLACE OR ADD TO LIST
+                    int index = lstTongHopNhanLucCC.FindIndex(ind => ind.MenuID == menuId);
+                    lstTongHopNhanLucCC[index].MenuID_Value = menuId_value;
+                    lstTongHopNhanLucCC[index].UpdatedDate = DateTime.Now;
+                }
+                ModTongHopNhanLucUCSCService.Instance.Save(lstTongHopNhanLucCC.FindAll(o => o.MenuID_Value > 0));
+                ModTongHopNhanLucUCSCService.Instance.Delete(lstTongHopNhanLucCC.FindAll(o => o.MenuID_Value <= 0));
+
+                // QuanLyATTT
+                tongHopNhanLucs = append.TongHopNhanLucNhomATTT.Split('|');
+                List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucNhomATTT = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "QuanLyATTT");
+                for (int i = 0; i < tongHopNhanLucs.Length; i++)
+                {
+                    if (string.IsNullOrEmpty(tongHopNhanLucs[i])) continue;
+                    string[] thnl = tongHopNhanLucs[i].Split('_');
+                    int menuId = Int32.Parse(thnl[0], 0);
+                    int menuId_value = Int32.Parse(thnl[1], 0);
+                    if (menuId == 0) continue;
+
+                    // REPLACE OR ADD TO LIST
+                    int index = lstTongHopNhanLucNhomATTT.FindIndex(ind => ind.MenuID == menuId);
+                    lstTongHopNhanLucNhomATTT[index].MenuID_Value = menuId_value;
+                    lstTongHopNhanLucNhomATTT[index].UpdatedDate = DateTime.Now;
+                }
+                ModTongHopNhanLucUCSCService.Instance.Save(lstTongHopNhanLucNhomATTT.FindAll(o => o.MenuID_Value > 0));
+                ModTongHopNhanLucUCSCService.Instance.Delete(lstTongHopNhanLucNhomATTT.FindAll(o => o.MenuID_Value <= 0));
+
+                //KyThuatPhongThu
+                tongHopNhanLucs = append.TongHopNhanLucNhomKTPT.Split('|');
+                List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucNhomKTPT = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "KyThuatPhongThu");
+                for (int i = 0; i < tongHopNhanLucs.Length; i++)
+                {
+                    if (string.IsNullOrEmpty(tongHopNhanLucs[i])) continue;
+                    string[] thnl = tongHopNhanLucs[i].Split('_');
+                    int menuId = Int32.Parse(thnl[0], 0);
+                    int menuId_value = Int32.Parse(thnl[1], 0);
+                    if (menuId == 0) continue;
+
+                    // REPLACE OR ADD TO LIST
+                    int index = lstTongHopNhanLucNhomKTPT.FindIndex(ind => ind.MenuID == menuId);
+                    lstTongHopNhanLucNhomKTPT[index].MenuID_Value = menuId_value;
+                    lstTongHopNhanLucNhomKTPT[index].UpdatedDate = DateTime.Now;
+                }
+                ModTongHopNhanLucUCSCService.Instance.Save(lstTongHopNhanLucNhomKTPT.FindAll(o => o.MenuID_Value > 0));
+                ModTongHopNhanLucUCSCService.Instance.Delete(lstTongHopNhanLucNhomKTPT.FindAll(o => o.MenuID_Value <= 0));
+
+                // KyThuatBaoVe
+                tongHopNhanLucs = append.TongHopNhanLucNhomKTBV.Split('|');
+                List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucNhomKTBV = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "KyThuatBaoVe");
+                for (int i = 0; i < tongHopNhanLucs.Length; i++)
+                {
+                    if (string.IsNullOrEmpty(tongHopNhanLucs[i])) continue;
+                    string[] thnl = tongHopNhanLucs[i].Split('_');
+                    int menuId = Int32.Parse(thnl[0], 0);
+                    int menuId_value = Int32.Parse(thnl[1], 0);
+                    if (menuId == 0) continue;
+
+                    // REPLACE OR ADD TO LIST
+                    int index = lstTongHopNhanLucNhomKTBV.FindIndex(ind => ind.MenuID == menuId);
+                    lstTongHopNhanLucNhomKTBV[index].MenuID_Value = menuId_value;
+                    lstTongHopNhanLucNhomKTBV[index].UpdatedDate = DateTime.Now;
+                }
+                ModTongHopNhanLucUCSCService.Instance.Save(lstTongHopNhanLucNhomKTBV.FindAll(o => o.MenuID_Value > 0));
+                ModTongHopNhanLucUCSCService.Instance.Delete(lstTongHopNhanLucNhomKTBV.FindAll(o => o.MenuID_Value <= 0));
+
+                tongHopNhanLucs = append.TongHopNhanLucNhomKTKT.Split('|');
+                List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucNhomKTKT = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "KyThuatKiemTra");
+                for (int i = 0; i < tongHopNhanLucs.Length; i++)
+                {
+                    if (string.IsNullOrEmpty(tongHopNhanLucs[i])) continue;
+                    string[] thnl = tongHopNhanLucs[i].Split('_');
+                    int menuId = Int32.Parse(thnl[0], 0);
+                    int menuId_value = Int32.Parse(thnl[1], 0);
+                    if (menuId == 0) continue;
+
+                    // REPLACE OR ADD TO LIST
+                    int index = lstTongHopNhanLucNhomKTKT.FindIndex(ind => ind.MenuID == menuId);
+                    lstTongHopNhanLucNhomKTKT[index].MenuID_Value = menuId_value;
+                    lstTongHopNhanLucNhomKTKT[index].UpdatedDate = DateTime.Now;
+                }
+                ModTongHopNhanLucUCSCService.Instance.Save(lstTongHopNhanLucNhomKTKT.FindAll(o => o.MenuID_Value > 0));
+                ModTongHopNhanLucUCSCService.Instance.Delete(lstTongHopNhanLucNhomKTKT.FindAll(o => o.MenuID_Value <= 0));
+
+                #endregion
                 ViewPage.Alert("Cập nhật hồ sơ thành công! Chúng tôi sẽ xem xét và phê duyệt hồ sơ của bạn sớm nhất có thể.");
                 ViewPage.Navigate("/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx");
             }
@@ -234,6 +432,13 @@ namespace HL.Lib.Controllers
         private int GetMaxOrder_HTTT()
         {
             return ModHeThongThongTinService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue().ToInt(0) + 1;
+        }
+
+        private int GetMaxOrder_NhanLuc()
+        {
+            return ModNhanLucUCSCService.Instance.CreateQuery()
                     .Max(o => o.Order)
                     .ToValue().ToInt(0) + 1;
         }
