@@ -30,12 +30,21 @@ namespace HL.Lib.Models
 
         [DataInfo]
         public string Code { get; set; }
-
+        
         [DataInfo]
         public string ToChuc_Ten { get; set; }
 
         [DataInfo]
+        public string ToChuc_TenKhac { get; set; }
+
+        [DataInfo]
         public string ToChuc_TenCoQuan { get; set; }
+
+        [DataInfo]
+        public string ToChuc_TenCoQuanKhac { get; set; }
+
+        [DataInfo]
+        public string ToChuc_SoVanBan { get; set; }
 
         [DataInfo]
         public string ToChuc_DiaChi { get; set; }
