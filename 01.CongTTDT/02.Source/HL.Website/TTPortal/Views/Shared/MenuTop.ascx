@@ -83,6 +83,10 @@
                 {%>
             <li><a class="icon-16-media" href="/{CPPath}/ModISP/Index.aspx">ISP</a></li>
             <%} %>
+			<%if (modules.Contains("ModNews")) %>
+            <%{ %>
+            <li><a class="icon-16-info" href="/{CPPath}/QuyTrinhTaoTin/Index.aspx">Quy trình đăng, kiểm duyệt và xuất bản thông tin</a></li>
+            <%} %>									 
         </ul>
     </li>
     <%} %>
@@ -122,6 +126,10 @@
                 </ul>--%>
             </li>
             <%} %>
+			<%if (modules.Contains("ModThongBaoSuCo"))
+                {%>
+            <li><a class="icon-16-article" href="/{CPPath}/ModThongBaoSuCo/Index.aspx">Thông báo sự cố</a></li>
+            <%} %>										   
 
             <%if (modules.Contains("ModHSThanhVienUCSC") || modules.Contains("ModDonDangKyUCSC") || modules.Contains("ModNhanLucUCSC"))
                 {%>
