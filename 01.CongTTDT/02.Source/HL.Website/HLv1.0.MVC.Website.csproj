@@ -1726,6 +1726,7 @@
     <Content Include="TTPortal\Views\ModVanBan\Index.ascx" />
     <Content Include="TTPortal\Views\ModVideo\Add.ascx" />
     <Content Include="TTPortal\Views\ModVideo\Index.ascx" />
+    <Content Include="TTPortal\Views\QuyTrinhTaoTin\Index.ascx" />
     <Content Include="Views\CAdv\Default.ascx" />
     <Content Include="Views\CAdv\Left.ascx" />
     <Content Include="Views\CAdv\LienKet3ChuyenMuc.ascx" />

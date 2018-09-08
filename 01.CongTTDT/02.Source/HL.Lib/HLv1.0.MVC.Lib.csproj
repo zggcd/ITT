@@ -198,6 +198,7 @@
     <Compile Include="CPControllers\ModUserResetPassController.cs" />
     <Compile Include="CPControllers\ModVanBanController.cs" />
     <Compile Include="CPControllers\ModVideoController.cs" />
+    <Compile Include="CPControllers\QuyTrinhTaoTinController.cs" />
     <Compile Include="CPControllers\SysModuleController.cs" />
     <Compile Include="CPControllers\SysSiteController.cs" />
     <Compile Include="CPControllers\SysTemplateController.cs" />
@@ -284,6 +285,7 @@
     <Compile Include="Models\ModSoLuongSuCoModel.cs" />
     <Compile Include="Models\ModTagModel.cs" />
     <Compile Include="Models\ModThongBaoSuCoModel.cs" />
+    <Compile Include="Models\ModTongHopNhanLucUCSCModel.cs" />
     <Compile Include="Models\ModUserModel.cs" />
     <Compile Include="Models\ModUserResetPassModel.cs" />
     <Compile Include="Models\ModVanBanModel.cs" />
