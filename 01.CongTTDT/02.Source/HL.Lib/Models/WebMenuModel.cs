@@ -20,6 +20,9 @@ namespace HL.Lib.Models
         public override string Name { get; set; }
 
         [DataInfo]
+        public string Alias { get; set; }
+
+        [DataInfo]
         public string Code { get; set; }
 
         [DataInfo]
