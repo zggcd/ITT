@@ -76,6 +76,10 @@
                 {%>
             <li><a class="icon-16-media" href="/{CPPath}/ModISP/Index.aspx">ISP</a></li>
             <%} %>
+            <%if (modules.Contains("ModNews")) %>
+            <%{ %>
+            <li><a class="icon-16-info" href="/{CPPath}/QuyTrinhTaoTin/Index.aspx">Quy trình đăng, kiểm duyệt và xuất bản thông tin</a></li>
+            <%} %>
         </ul>
     </li>
     <%} %>
