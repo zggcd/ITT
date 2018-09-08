@@ -28,9 +28,12 @@
 
 <div class="row-fluid titleContainer">
     <span><%=ViewPage.CurrentPage.Name %></span>
+    <%if (ViewPage.CurrentPage.Code == "Hoi-dap") { %>
+        <a href="mailto:ir@vncert.vn" class="pull-right" style="color: #fff"><i class="fa fa-envelope"></i> Gửi câu hỏi</a>
+    <%} %>
 </div>
 <div class="row-fluid contentNews">
-    <%for (int i = 0; i < c; i++)
+    <%for (int i = 0;   i < c; i++)
         {%>
     <div class="titleCate">
         <a href="<%=ViewPage.GetURL(listItem[i].MenuID, listItem[i].Code) %>" class="title"><%=listItem[i].Name %></a>
