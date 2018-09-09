@@ -60,7 +60,6 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="bin\Debug\NLog.config" />
     <None Include="NLog.config" />
     <None Include="packages.config" />
   </ItemGroup>
