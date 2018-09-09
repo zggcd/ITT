@@ -1701,6 +1701,8 @@
     <Content Include="TTPortal\Views\ModHSThanhVienUCSC\Index.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoTK\Index.ascx" />
     <Content Include="TTPortal\Views\ModBaoCaoTK\Export.ascx" />
+    <Content Include="TTPortal\Views\ModImportLogs\Add.ascx" />
+    <Content Include="TTPortal\Views\ModImportLogs\Index.ascx" />
     <Content Include="TTPortal\Views\ModIncident\SendMail.ascx" />
     <Content Include="TTPortal\Views\ModIncident\Add.ascx" />
     <Content Include="TTPortal\Views\ModIncident\Export.ascx" />
@@ -1751,6 +1753,7 @@
     <Content Include="Views\CGopY\Default.ascx" />
     <Content Include="Views\CHeThongThongTin\Default.ascx" />
     <Content Include="Views\CHSThanhVienUCSC\Default.ascx" />
+    <Content Include="Views\CImportLogs\Default.ascx" />
     <Content Include="Views\CIncident\Default.ascx" />
     <Content Include="Views\CInfoMagic\Default.ascx" />
     <Content Include="Views\CInfo\Login.ascx" />
@@ -1810,6 +1813,8 @@
     <Content Include="Views\MHeThongThongTin\Index.ascx" />
     <Content Include="Views\MHSThanhVienUCSC\Detail.ascx" />
     <Content Include="Views\MHSThanhVienUCSC\Index.ascx" />
+    <Content Include="Views\MImportLogs\Detail.ascx" />
+    <Content Include="Views\MImportLogs\Index.ascx" />
     <Content Include="Views\MIncident\Detail.ascx" />
     <Content Include="Views\MIncident\Index.ascx" />
     <Content Include="Views\MInfoMagic\Detail.ascx" />

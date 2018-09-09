@@ -18,3 +18,7 @@ web.release.config
 /01.CongTTDT/01.Documents/VNCERT_Tai lieu chuan nghiep vu/~$ tả chức năng hệ thống VNCERT - bản chỉnh sửa 30-07.docx
 /01.CongTTDT/script_TestBCSuCo.sql
 /01.CongTTDT/script_TestDKTVMangLuoi.sql
+/01.CongTTDT/02.Source/HLv1.0.FileTransfer/obj/Debug
+/01.CongTTDT/02.Source/HLv1.0.FileTransfer/bin
+/01.CongTTDT/02.Source/HLv1.0.FileTransfer/HLv1.0.FileTransfer.csproj.user
+/01.CongTTDT/02.Source/packages/NLog.4.5.9

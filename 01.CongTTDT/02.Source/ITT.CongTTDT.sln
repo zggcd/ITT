@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLv1.0.MVC.Lib", "HL.Lib\HL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLv1.0.MVC.Website", "HL.Website\HLv1.0.MVC.Website.csproj", "{C83D5107-B6BE-4A52-9416-056F4A0A7070}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLv1.0.FileTransfer", "HLv1.0.FileTransfer\HLv1.0.FileTransfer.csproj", "{47A32893-069F-4D75-BBD7-726A3359EAD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,14 @@ Global
 		{C83D5107-B6BE-4A52-9416-056F4A0A7070}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C83D5107-B6BE-4A52-9416-056F4A0A7070}.Release|x86.ActiveCfg = Release|Any CPU
 		{C83D5107-B6BE-4A52-9416-056F4A0A7070}.Release|x86.Build.0 = Release|Any CPU
+		{47A32893-069F-4D75-BBD7-726A3359EAD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47A32893-069F-4D75-BBD7-726A3359EAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47A32893-069F-4D75-BBD7-726A3359EAD5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{47A32893-069F-4D75-BBD7-726A3359EAD5}.Debug|x86.Build.0 = Debug|Any CPU
+		{47A32893-069F-4D75-BBD7-726A3359EAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47A32893-069F-4D75-BBD7-726A3359EAD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47A32893-069F-4D75-BBD7-726A3359EAD5}.Release|x86.ActiveCfg = Release|Any CPU
+		{47A32893-069F-4D75-BBD7-726A3359EAD5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

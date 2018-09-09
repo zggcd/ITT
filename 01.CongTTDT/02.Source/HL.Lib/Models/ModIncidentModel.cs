@@ -80,19 +80,19 @@ namespace HL.Lib.Models
         public string Url { get; set; }
 
         [DataInfo]
-        public int Type { get; set; }
+        public string Type { get; set; }
 
         [DataInfo]
         public string HttpAgent { get; set; }
 
         [DataInfo]
-        public int SrcPort { get; set; }
+        public string SrcPort { get; set; }
 
         [DataInfo]
         public string HostName { get; set; }
 
         [DataInfo]
-        public int Destinationport { get; set; }
+        public string Destinationport { get; set; }
 
         [DataInfo]
         public int Protocol { get; set; }
@@ -117,6 +117,9 @@ namespace HL.Lib.Models
 
         [DataInfo]
         public string Sector { get; set; }
+
+        [DataInfo]
+        public string HandShake { get; set; }
 
         [DataInfo]
         public DateTime? Published { get; set; }
