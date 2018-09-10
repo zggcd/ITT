@@ -5,7 +5,8 @@ namespace HL.Lib.Controllers
 {
     public class CAdvController : Controller
     {
-        [HL.Core.MVC.PropertyInfo("LienKet1ChuyenMuc[Title-true|MenuID-true|Title1-false|MenuID2-false|Title2-false|MenuID3-false|Title3-false]," +
+        [HL.Core.MVC.PropertyInfo("BoxMarquee[Title-true|MenuID-true|Title1-false|MenuID2-false|Title2-false|MenuID3-false|Title3-false]," +
+            "LienKet1ChuyenMuc[Title-true|MenuID-true|Title1-false|MenuID2-false|Title2-false|MenuID3-false|Title3-false]," +
             "LienKet3ChuyenMuc[Title-true|MenuID-true|Title-true|MenuID2-true|Title2-true|MenuID3-true|Title3-true]," +
             "Logo[Title-false|MenuID-true|Title-false|MenuID2-false|Title2-false|MenuID3-false|Title3-false]," +
             "SlideHome[Title-false|MenuID-false|Title-false|MenuID2-false|Title2-false|MenuID3-false|Title3-false]")]
