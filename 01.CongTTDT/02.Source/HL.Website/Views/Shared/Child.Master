@@ -36,11 +36,17 @@
         <div class="container">
             <div class="row-fluid">
                 <div class="col-xs-12 p-0 languages">
-                    <select name="" id="" class="pull-right">
-                        <option value="VN">Tiếng Việt</option>
-                        <option value="EN">English</option>
+                    <%
+                        string code = (this.Page as ViewPage).CurrentSite.Code;
+                        int langId = (this.Page as ViewPage).CurrentLang.ID;
+                        %>
+                    <select name="" id="" class="pull-right" onchange="location = this.value">
+                        <option value="/vn/default.aspx" <%if (code == "vn")
+                            {%>selected<%} %>>{RS:Web_TiengViet}</option>
+                        <option value="/en/default.aspx" <%if (code == "en")
+                            {%>selected<%} %>>{RS:Web_English}</option>
                     </select>
-                    <div class="pull-right texts">Chọn ngôn ngữ</div>
+                    <div class="pull-right texts">{RS:Web_ChonNgonNgu}</div>
                 </div>
             </div>
         </div>

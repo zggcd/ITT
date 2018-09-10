@@ -35,6 +35,7 @@ namespace HL.Lib.Controllers
                                         .Where(o => o.ParentID == 0 && o.LangID == ViewPage.CurrentLang.ID && o.Type == "VBLinhVuc")
                                         .OrderByAsc(o => o.Order)
                                         .ToList_Cache();
+                if (list == null) return;
                 int _parent_id = list[0].ID;
                 ViewBag.LinhVuc = WebMenuService.Instance.CreateQuery()
                         .Where(o => o.ParentID == _parent_id)
