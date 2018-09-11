@@ -78,7 +78,7 @@ namespace HL.Lib.Controllers
                     .OrderByDesc(o => o.Published)
                     .Skip(PageSize * model.Page);
                 ViewBag.Other = dbQuery.ToList();
-                Lib.Global.PS<ModRSSEntity>.NonQuery("upviews", new object[] { "@id", entity.ID });
+                //Lib.Global.PS<ModRSSEntity>.NonQuery("upviews", new object[] { "@id", entity.ID });
                 ViewBag.Data = entity;
 
                 model.TotalRecord = dbQuery.TotalRecord;

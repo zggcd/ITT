@@ -1771,6 +1771,7 @@
     <Content Include="Views\CNews\MultiMedia.ascx" />
     <Content Include="Views\CNews\HaiChuyenMuc.ascx" />
     <Content Include="Views\CNhanLucUCSC\Default.ascx" />
+    <Content Include="Views\CRSS\Default.ascx" />
     <Content Include="Views\CSoLuongSuCo\Default.ascx" />
     <Content Include="Views\CStatic\Date.ascx" />
     <Content Include="Views\CStatic\Search.ascx" />
@@ -1838,6 +1839,8 @@
     <Content Include="Views\MISP\Index.ascx" />
     <Content Include="Views\MNhanLucUCSC\Detail.ascx" />
     <Content Include="Views\MNhanLucUCSC\Index.ascx" />
+    <Content Include="Views\MRSS\Detail.ascx" />
+    <Content Include="Views\MRSS\Index.ascx" />
     <Content Include="Views\MSiteMapTemp\Index.ascx" />
     <Content Include="Views\MSiteMap\Index.ascx" />
     <Content Include="Views\MSearch\Index.ascx" />
@@ -2033,7 +2036,6 @@
     <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-regular.woff" />
     <Content Include="Content1\css\fonts\Muli\muli-v11-latin_latin-ext_vietnamese-regular.woff2" />
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="TTPortal\Content\ckeditor\CHANGES.md" />
     <Content Include="TTPortal\Content\ckeditor\LICENSE.md" />
     <Content Include="TTPortal\Content\ckeditor\plugins\scayt\CHANGELOG.md" />
