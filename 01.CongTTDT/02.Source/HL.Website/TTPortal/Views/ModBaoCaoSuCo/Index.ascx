@@ -204,6 +204,10 @@
                                 var bcBanDau = ModBaoCaoBanDauSuCoService.Instance.CreateQuery().Where(o => o.BaoCaoSuCoID == listEntity[i].ID).ToSingle();
                                 var bcTongHop = ModBaoCaoTongHopService.Instance.CreateQuery().Where(o => o.BaoCaoSuCoID == listEntity[i].ID).ToSingle();
                                 var bcKetThuc = ModBaoCaoKetThucSuCoService.Instance.CreateQuery().Where(o => o.BaoCaoSuCoID == listEntity[i].ID).ToSingle();
+                                
+                                var bcDienBien = ModBaoCaoDienBienSuCoService.Instance.CreateQuery().Where(o => o.BaoCaoSuCoID == listEntity[i].ID).ToSingle();
+                                var bcPhuongAnUngCuu = ModBaoCaoPhuongAnSuCoService.Instance.CreateQuery().Where(o => o.BaoCaoSuCoID == listEntity[i].ID).ToSingle();
+                                var bcHoTroPhoiHop = ModBaoCaoHoTroPhoiHopSuCoService.Instance.CreateQuery().Where(o => o.BaoCaoSuCoID == listEntity[i].ID).ToSingle();
                                 %>
                             <%if (bcBanDau != null)
                                 {%>Báo cáo ban đầu<br /><%} %>
@@ -211,6 +215,13 @@
                                 {%>Báo cáo tổng hợp<br /><%} %>
                             <%if (bcKetThuc != null)
                                 {%>Báo cáo kết thúc<br /><%} %>
+                            
+                            <%if (bcDienBien != null)
+                                {%>Báo cáo diễn biến<br /><%} %>
+                            <%if (bcPhuongAnUngCuu != null)
+                                {%>Báo cáo phương án ứng cứu<br /><%} %>
+                            <%if (bcHoTroPhoiHop != null)
+                                {%>Báo cáo hỗ trợ phối hợp<br /><%} %>
                         </td>
                         <td align="center">
                             <%= string.Format("{0:dd/MM/yyyy HH:mm}", listEntity[i].Published) %>

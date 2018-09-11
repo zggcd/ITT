@@ -61,9 +61,9 @@
                         <li><a id="General" class="active">THÔNG TIN CHUNG</a></li>
                         <li><a id="tab1">BÁO CÁO BAN ĐẦU</a></li>
                         <%--<li><a id="tab2">BÁO CÁO TỔNG HỢP</a></li>--%>
-                        <%--<li><a id="tab4">BÁO CÁO DIỄN BIẾN SỰ CỐ</a></li>--%>
-                        <%--<li><a id="tab5">BÁO CÁO PHƯƠNG ÁN ỨNG CỨU SỰ CỐ</a></li>
-                        <li><a id="tab6">BÁO ĐỀ NGHỊ HỖ TRỢ-PHỐI HỢP</a></li>--%>
+                        <li><a id="tab4">BÁO CÁO DIỄN BIẾN SỰ CỐ</a></li>
+                        <li><a id="tab5">BÁO CÁO PHƯƠNG ÁN ỨNG CỨU SỰ CỐ</a></li>
+                        <li><a id="tab6">BÁO ĐỀ NGHỊ HỖ TRỢ-PHỐI HỢP</a></li>
                         <li><a id="tab3">BÁO CÁO KẾT THÚC</a></li>
                     </ul>
                     <div class="clr">
@@ -233,9 +233,15 @@
             <%--<div id="page-tab2" class="tab">
                 <iframe src="/TTPortal/FormBaoCaoTongHop/Index.aspx/BaoCaoSuCoID/<%=model.RecordID %>" style='position: static; top: 240px; left: 0px; width: 100%; height: 1000px; z-index: 999; overflow: auto;' frameborder='no'></iframe>
             </div>--%>
-            <%--<div id="page-tab4" class="tab">
+            <div id="page-tab4" class="tab">
                 <iframe src="/TTPortal/FormBaoCaoDienBienSuCo/Index.aspx/BaoCaoSuCoID/<%=model.RecordID %>" style='position: static; top: 240px; left: 0px; width: 100%; height: 1000px; z-index: 999; overflow: auto;' frameborder='no'></iframe>
-            </div>--%>
+            </div>
+            <div id="page-tab5" class="tab">
+                <iframe src="/TTPortal/FormBaoCaoPhuongAnSuCo/Index.aspx/BaoCaoSuCoID/<%=model.RecordID %>" style='position: static; top: 240px; left: 0px; width: 100%; height: 1000px; z-index: 999; overflow: auto;' frameborder='no'></iframe>
+            </div>
+            <div id="page-tab6" class="tab">
+                <iframe src="/TTPortal/FormBaoCaoHoTroPhoiHopSuCo/Index.aspx/BaoCaoSuCoID/<%=model.RecordID %>" style='position: static; top: 240px; left: 0px; width: 100%; height: 1000px; z-index: 999; overflow: auto;' frameborder='no'></iframe>
+            </div>
             <div id="page-tab3" class="tab">
                 <iframe src="/TTPortal/FormBaoCaoKetThucSuCo/Index.aspx/BaoCaoSuCoID/<%=model.RecordID %>" style='position: static; top: 240px; left: 0px; width: 100%; height: 1000px; z-index: 999; overflow: auto;' frameborder='no'></iframe>
             </div>
