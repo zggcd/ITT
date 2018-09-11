@@ -90,9 +90,9 @@
 }
 
 .vanban_right {
-    float: right;
+    float: left;
     margin-left: 10px;
-    width: 100%;
+    width: 90%;
     padding: 10px 10px;
 }
 

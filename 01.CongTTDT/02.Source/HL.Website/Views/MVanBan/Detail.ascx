@@ -99,7 +99,7 @@
     });
 </script>
 
-<link href="/Content2/style/datetimepicker/jquery-ui-timepicker-addon.css" type="text/css" media="all" rel="stylesheet" />
+<%--<link href="/Content2/style/datetimepicker/jquery-ui-timepicker-addon.css" type="text/css" media="all" rel="stylesheet" />
 <link href="/Content2/style/datetimepicker/jquery-ui.css" type="text/css" media="all" rel="stylesheet" />
 <script src="/Content2/style/datetimepicker/jquery-1.11.0.min.js"></script>
 <script src="/Content2/style/datetimepicker/jquery-ui.min.js"></script>
@@ -113,7 +113,7 @@
 <link rel="stylesheet" href="/Content2/style/validation/template.css" type="text/css" />
 <script src="/Content2/style/js/jquery-1.12.4.min.js"></script>
 <script src="/Content2/style/validation/jquery.validationEngine-vi.js" charset="utf-8"></script>
-<script src="/Content2/style/validation/jquery.validationEngine.js" charset="utf-8"></script>
+<script src="/Content2/style/validation/jquery.validationEngine.js" charset="utf-8"></script>--%>
 
 <script>
     function setFormSubmitToFalse() {
@@ -138,8 +138,14 @@
     <input type="submit" name="btnSearch" value="Search" onclick="javascript: fnSearchVB()" id="btnSearch" class="btn btn-primary" />
 </span>
 
-<div class="main_right">
-    <div class="box-category mb10">
+<div class="row-fluid titleContainer">
+    <span><%= ViewPage.CurrentPage.Name %>: <%=item.Name %></span>
+    <span class="pull-right"><%=string.Format("{0:dd/MM/yyyy HH:mm:ss}", item.Published) %></span>
+</div>
+
+<div class="row-fluid contentNews">
+    <div class="main_right">
+        <%--<div class="box-category mb10">
         <div class="vanban-new">
             <h3 class="title-list-news">
                 <span class="title-t1">
@@ -148,113 +154,114 @@
 
             </h3>
         </div>
-    </div>
-    <!--//#box-news-x-->
-    <div class="vanban_right">
-        <div class="contents">
+    </div>--%>
+        <!--//#box-news-x-->
+        <div class="vanban_right">
+            <div class="contents">
 
-            <div class="main_vbtable" style="width: 100%">
-                <table style="color: #100404; width: 100%">
-                    <tbody>
-                        <tr>
-                            <td style="width: 150px;"><b>Số hiệu</b></td>
-                            <td><%= item.Name %></td>
-                        </tr>
-                        <tr>
-                            <td><b>Trích yếu nội dung</b></td>
-                            <td><%= item.Summary %></td>
-                        </tr>
+                <div class="main_vbtable" style="width: 100%">
+                    <table style="color: #100404; width: 100%">
+                        <tbody>
+                            <tr>
+                                <td style="width: 150px;"><b>Số hiệu</b></td>
+                                <td><%= item.Name %></td>
+                            </tr>
+                            <tr>
+                                <td><b>Trích yếu nội dung</b></td>
+                                <td><%= item.Summary %></td>
+                            </tr>
 
-                        <tr>
-                            <td><b>Ngày ban hành</b></td>
-                            <td><%=string.Format("{0:dd/MM/yyyy}", item.NgayBanHanh) %></td>
-                        </tr>
-                        <tr>
-                            <td><b>Ngày có hiệu lực</b></td>
-                            <td><%=string.Format("{0:dd/MM/yyyy}", item.NgayCoHieuLuc) %></td>
-                        </tr>
-                        <tr>
-                            <td><b>Ngày hết hiệu lực</b></td>
-                            <%if (item.NgayHetHieuLuc != DateTime.MinValue && item.NgayHetHieuLuc != DateTime.MaxValue)
-                                {%>
-                            <td><%=string.Format("{0:dd/MM/yyyy}", item.NgayHetHieuLuc) %></td>
-                            <%}
-                                else
-                                {%>
-                            <td>(Văn bản còn hiệu lực)</td>
-                            <%} %>
-                        </tr>
-
-                        <tr>
-                            <td><b>Hình thức văn bản</b></td>
-                            <td><%= HL.Lib.MVC.ViewControl.GetName(item.getMenu1()) %></td>
-                        </tr>
-                        <tr>
-                            <td><b>Lĩnh vực</b></td>
-                            <td><%=Utils.ShowTextByType3("VBLinhVuc", ViewPage.CurrentLang.ID, item.MenuIDs, "MenuIDs") %></td>
-                        </tr>
-                        <tr>
-                            <td><b>Cơ quan ban hành</b></td>
-                            <td><%= HL.Lib.MVC.ViewControl.GetName(item.getMenu2()) %></td>
-                        </tr>
-                        <tr>
-                            <td><b>Người ký duyệt</b></td>
-                            <%--<td>Phạm Hồng Hải - Thứ trưởng Bộ Thông tin và Truyền thông</td>--%>
-                            <td><%=item.getNguoiKyDuyet() %></td>
-                        </tr>
-                        <tr>
-                        </tr>
-                        <tr>
-                            <td><b>Văn bản liên quan</b></td>
-                            <td>
-                                <%if (!string.IsNullOrEmpty(item.Urls))
-                                    {
-                                        var s = item.Urls.Split('\n');
-                                        for (int i = 0; i < s.Length; i++)
-                                        {%>
-                                <p><a href="<%=s[i] %>"><%=s[i] %></a></p>
+                            <tr>
+                                <td><b>Ngày ban hành</b></td>
+                                <td><%=string.Format("{0:dd/MM/yyyy}", item.NgayBanHanh) %></td>
+                            </tr>
+                            <tr>
+                                <td><b>Ngày có hiệu lực</b></td>
+                                <td><%=string.Format("{0:dd/MM/yyyy}", item.NgayCoHieuLuc) %></td>
+                            </tr>
+                            <tr>
+                                <td><b>Ngày hết hiệu lực</b></td>
+                                <%if (item.NgayHetHieuLuc != DateTime.MinValue && item.NgayHetHieuLuc != DateTime.MaxValue)
+                                    {%>
+                                <td><%=string.Format("{0:dd/MM/yyyy}", item.NgayHetHieuLuc) %></td>
                                 <%}
-                                %>
+                                    else
+                                    {%>
+                                <td>(Văn bản còn hiệu lực)</td>
                                 <%} %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b>Download</b></td>
-                            <td>
-                                <%if (!string.IsNullOrEmpty(item.File))
-                                    {
-                                        var s = item.File.Split('/');
-                                %>
-                                <p><a href="<%=item.File.Replace("~/", "/") %>"><%=s[s.Length - 1] %></a> </p>
-                                <%} %>
-                                <%if (!string.IsNullOrEmpty(item.File1))
-                                    {
-                                        var s = item.File1.Split('/');
-                                %>
-                                <p><a href="<%=item.File1.Replace("~/", "/") %>"><%=s[s.Length - 1] %></a> </p>
-                                <%} %>
-                                <%if (!string.IsNullOrEmpty(item.File2))
-                                    {
-                                        var s = item.File2.Split('/');
-                                %>
-                                <p><a href="<%=item.File2.Replace("~/", "/") %>"><%=s[s.Length - 1] %></a> </p>
-                                <%} %>
-                                <%if (!string.IsNullOrEmpty(item.File3))
-                                    {
-                                        var s = item.File3.Split('/');
-                                %>
-                                <p><a href="<%=item.File3.Replace("~/", "/") %>"><%=s[s.Length - 1] %></a> </p>
-                                <%} %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b>Chi tiết văn bản</b></td>
-                            <td><%=item.Content %></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                            </tr>
 
+                            <tr>
+                                <td><b>Hình thức văn bản</b></td>
+                                <td><%= HL.Lib.MVC.ViewControl.GetName(item.getMenu1()) %></td>
+                            </tr>
+                            <tr>
+                                <td><b>Lĩnh vực</b></td>
+                                <td><%=Utils.ShowTextByType3("VBLinhVuc", ViewPage.CurrentLang.ID, item.MenuIDs, "MenuIDs") %></td>
+                            </tr>
+                            <tr>
+                                <td><b>Cơ quan ban hành</b></td>
+                                <td><%= HL.Lib.MVC.ViewControl.GetName(item.getMenu2()) %></td>
+                            </tr>
+                            <tr>
+                                <td><b>Người ký duyệt</b></td>
+                                <%--<td>Phạm Hồng Hải - Thứ trưởng Bộ Thông tin và Truyền thông</td>--%>
+                                <td><%=item.getNguoiKyDuyet() %></td>
+                            </tr>
+                            <tr>
+                            </tr>
+                            <tr>
+                                <td><b>Văn bản liên quan</b></td>
+                                <td>
+                                    <%if (!string.IsNullOrEmpty(item.Urls))
+                                        {
+                                            var s = item.Urls.Split('\n');
+                                            for (int i = 0; i < s.Length; i++)
+                                            {%>
+                                    <p><a href="<%=s[i] %>"><%=s[i] %></a></p>
+                                    <%}
+                                    %>
+                                    <%} %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Download</b></td>
+                                <td>
+                                    <%if (!string.IsNullOrEmpty(item.File))
+                                        {
+                                            var s = item.File.Split('/');
+                                    %>
+                                    <p><a href="<%=item.File.Replace("~/", "/") %>"><%=s[s.Length - 1] %></a> </p>
+                                    <%} %>
+                                    <%if (!string.IsNullOrEmpty(item.File1))
+                                        {
+                                            var s = item.File1.Split('/');
+                                    %>
+                                    <p><a href="<%=item.File1.Replace("~/", "/") %>"><%=s[s.Length - 1] %></a> </p>
+                                    <%} %>
+                                    <%if (!string.IsNullOrEmpty(item.File2))
+                                        {
+                                            var s = item.File2.Split('/');
+                                    %>
+                                    <p><a href="<%=item.File2.Replace("~/", "/") %>"><%=s[s.Length - 1] %></a> </p>
+                                    <%} %>
+                                    <%if (!string.IsNullOrEmpty(item.File3))
+                                        {
+                                            var s = item.File3.Split('/');
+                                    %>
+                                    <p><a href="<%=item.File3.Replace("~/", "/") %>"><%=s[s.Length - 1] %></a> </p>
+                                    <%} %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Chi tiết văn bản</b></td>
+                                <td><%=item.Content %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
