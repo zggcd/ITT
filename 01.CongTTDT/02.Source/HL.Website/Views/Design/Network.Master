@@ -12,6 +12,7 @@
         <div id="hl_container">
             <div style="">
                 <HL:StaticControl runat="server" Code="CAdv" HLID="cLogo"></HL:StaticControl>
+                <HL:StaticControl runat="server" Code="CStatic" HLID="cSearch"></HL:StaticControl>
                 <HL:StaticControl runat="server" Code="CMenu" HLID="cMenuTop"></HL:StaticControl>
             </div>
             <%--<div style="">

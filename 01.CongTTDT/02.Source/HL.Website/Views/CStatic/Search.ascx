@@ -1,5 +1,34 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="HL.Lib.MVC.ViewControl" %>
 
+<style>
+    .search-container {
+        position: absolute;
+        bottom: 70px;
+        right: 10px;
+    }
+
+        .search-container .input-search {
+            width: 218px;
+            height: 26px;
+            border: 1px solid #a7a5a5;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            background-color: rgba( 255,255,255,0.85 );
+        }
+
+        .search-container .btn-search {
+            width: 25px;
+            height: 22px;
+            background: url("/Content2/style/img/bg-search.jpg") no-repeat;
+            display: block;
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            cursor: pointer;
+        }
+</style>
+
 <script>
     var Base64 = {
         _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
@@ -119,14 +148,14 @@
     function searchOfCom() {
         var inputSearch = $('input[id="search"]').val().trim();
         if (inputSearch.length > 500) {
-            alert("số kí tự trong câu tìm kiếm không được vượt 500!");
+            alert("Số kí tự trong câu tìm kiếm không được vượt 500!");
             return false;
         }
         inputSearch = encodeURIComponent(inputSearch);
         //inputSearch = inputSearch.replace("&", "*va*");
         //inputSearch = inputSearch.replace("?", "*hoicham*");
         //inputSearch = inputSearch.replace("=", "*bang*");
-        window.location.assign("/Pages/Kết-quả-tìm-kiếm.aspx?page=1&query=" + inputSearch.trim().replace("\"", ""));
+                window.location.assign("/vn/Tim-kiem.aspx?Keyword=" + inputSearch.trim().replace("\"", ""));
     }
 
     $(document).ready(function () {
@@ -136,14 +165,15 @@
                 e.preventDefault();
                 var inputSearch = $('input[id="search"]').val().trim();
                 if (inputSearch.length > 500) {
-                    alert("số kí tự trong câu tìm kiếm không được vượt 500!");
+                    alert("Số kí tự trong câu tìm kiếm không được vượt 500!");
                     return false;
                 }
                 inputSearch = encodeURIComponent(inputSearch);
                 //inputSearch = inputSearch.replace("&", "*va*");
                 //inputSearch = inputSearch.replace("?", "*hoicham*");
                 //inputSearch = inputSearch.replace("=", "*bang*");
-                window.location.assign("/Pages/Kết-quả-tìm-kiếm.aspx?page=1&query=" + inputSearch.trim().replace("\"", ""));
+                window.location.assign("/vn/Tim-kiem.aspx?Keyword=" + inputSearch.trim().replace("\"", ""));
+                //window.location.assign("/en/Search.aspx?Keyword=" + inputSearch.trim().replace("\"", ""));
                 return false;
             }
 

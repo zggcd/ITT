@@ -62,8 +62,9 @@
             </div>
         </div>
         <div class="container">
-            <div class="row-fluid">
+            <div class="row-fluid" style="position: relative;">
                 <HL:StaticControl runat="server" Code="CAdv" HLID="cLogo"></HL:StaticControl>
+                <HL:StaticControl runat="server" Code="CStatic" HLID="cSearch"></HL:StaticControl>
             </div>
         </div>
         <HL:StaticControl runat="server" Code="CMenu" HLID="cMenuTop"></HL:StaticControl>
