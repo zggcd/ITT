@@ -197,6 +197,7 @@
     <Compile Include="CPControllers\ModSoLuongSuCoController.cs" />
     <Compile Include="CPControllers\ModTagController.cs" />
     <Compile Include="CPControllers\ModThongBaoSuCoController.cs" />
+    <Compile Include="CPControllers\ModThongKeBaoCaoController.cs" />
     <Compile Include="CPControllers\ModUserController.cs" />
     <Compile Include="CPControllers\ModUserResetPassController.cs" />
     <Compile Include="CPControllers\ModVanBanController.cs" />

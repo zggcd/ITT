@@ -1722,6 +1722,7 @@
     <Content Include="TTPortal\Views\ModTag\Index.ascx" />
     <Content Include="TTPortal\Views\ModThongBaoSuCo\Add.ascx" />
     <Content Include="TTPortal\Views\ModThongBaoSuCo\Index.ascx" />
+    <Content Include="TTPortal\Views\ModThongKeBaoCao\Index.ascx" />
     <Content Include="TTPortal\Views\ModUser\Add.ascx" />
     <Content Include="TTPortal\Views\ModUser\Index.ascx" />
     <Content Include="TTPortal\Views\ModVanBan\Add.ascx" />
