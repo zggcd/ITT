@@ -1716,6 +1716,8 @@
     <Content Include="TTPortal\Views\ModNhanLucUCSC\Index.ascx" />
     <Content Include="TTPortal\Views\ModRSS\Add.ascx" />
     <Content Include="TTPortal\Views\ModRSS\Index.ascx" />
+    <Content Include="TTPortal\Views\ModSendMailLogs\Add.ascx" />
+    <Content Include="TTPortal\Views\ModSendMailLogs\Index.ascx" />
     <Content Include="TTPortal\Views\ModSoLuongSuCo\Add.ascx" />
     <Content Include="TTPortal\Views\ModSoLuongSuCo\Index.ascx" />
     <Content Include="TTPortal\Views\ModTag\Add.ascx" />
@@ -1772,6 +1774,7 @@
     <Content Include="Views\CNews\HaiChuyenMuc.ascx" />
     <Content Include="Views\CNhanLucUCSC\Default.ascx" />
     <Content Include="Views\CRSS\Default.ascx" />
+    <Content Include="Views\CSendMailLogs\Default.ascx" />
     <Content Include="Views\CSoLuongSuCo\Default.ascx" />
     <Content Include="Views\CStatic\Date.ascx" />
     <Content Include="Views\CStatic\Search.ascx" />
@@ -1841,6 +1844,8 @@
     <Content Include="Views\MNhanLucUCSC\Index.ascx" />
     <Content Include="Views\MRSS\Detail.ascx" />
     <Content Include="Views\MRSS\Index.ascx" />
+    <Content Include="Views\MSendMailLogs\Detail.ascx" />
+    <Content Include="Views\MSendMailLogs\Index.ascx" />
     <Content Include="Views\MSiteMapTemp\Index.ascx" />
     <Content Include="Views\MSiteMap\Index.ascx" />
     <Content Include="Views\MSearch\Index.ascx" />

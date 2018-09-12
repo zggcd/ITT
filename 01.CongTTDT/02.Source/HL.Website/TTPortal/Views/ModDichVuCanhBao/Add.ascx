@@ -119,7 +119,7 @@
 
                     <tr>
                         <td class="key">
-                            <label>Danh sách mail gửi<br />(Mỗi Email trên một dòng) :</label>
+                            <label>Danh sách mail gửi<br />(Mỗi Email cách nhau bằng dấu ;) :</label>
                         </td>
                         <td>
                             <textarea style="height: 100px; width: 98%" name="ToEmails"><%=entity.ToEmails%></textarea>
@@ -128,7 +128,7 @@
 
                     <tr>
                         <td class="key">
-                            <label>Danh sách mail Cc<br />(Mỗi Email trên một dòng) :</label>
+                            <label>Danh sách mail Cc<br />(Mỗi Email cách nhau bằng dấu ;) :</label>
                         </td>
                         <td>
                             <textarea style="height: 100px; width: 98%" name="CcEmails"><%=entity.CcEmails%></textarea>
