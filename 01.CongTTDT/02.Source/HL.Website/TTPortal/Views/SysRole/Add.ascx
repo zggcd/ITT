@@ -187,7 +187,11 @@
                         <td id="ListMenu">
                             <%--<span>
                                 <input type="checkbox" value="0" />Root</span><br />--%>
+                            <p><b><u>Chuyên mục Tiếng Việt:</u></b></p>
                             <%= Utils.ShowDDLMenuByTypeWithCheckbox("News", 1, entity.MenuIDs)%>
+                            <br />
+                            <p><b><u>Chuyên mục Tiếng Anh:</u></b></p>
+                            <%= Utils.ShowDDLMenuByTypeWithCheckbox("News", 2, entity.MenuIDs)%>
                         </td>
                     </tr>
                 </table>
