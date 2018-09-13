@@ -7,7 +7,7 @@ namespace HL.Lib.Models
 {
     public class ModSendMailLogsEntity : EntityBase
     {
-        
+
         #region Autogen by HL
 
         [DataInfo]
@@ -41,13 +41,16 @@ namespace HL.Lib.Models
         public string Body { get; set; }
 
         [DataInfo]
+        public bool SendSuccess { get; set; }
+
+        [DataInfo]
         public DateTime Publish { get; set; }
 
         [DataInfo]
         public bool Activity { get; set; }
 
-        #endregion      
-  
+        #endregion
+
         private ModDichVuCanhBaoEntity _oDichVuCanhBao = null;
         public ModDichVuCanhBaoEntity getDichVuCanhBao()
         {

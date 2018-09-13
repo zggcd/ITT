@@ -23,14 +23,14 @@ namespace KPMG.PageUpMiddleware.BatchJob
 
                 SendMail();
 
-//#pragma warning disable CS0618 // Type or member is obsolete
-//                string SmtpServer = System.Configuration.ConfigurationSettings.AppSettings["SmtpServer"].ToString();
-//                string MailUserName = System.Configuration.ConfigurationSettings.AppSettings["MailUserName"].ToString();
-//                string MailPassword = System.Configuration.ConfigurationSettings.AppSettings["MailPassword"].ToString();
-//                string MailFrom = System.Configuration.ConfigurationSettings.AppSettings["MailFrom"].ToString();
-//                string MailPort = System.Configuration.ConfigurationSettings.AppSettings["MailPort"].ToString();
-//                string EnableSsl = System.Configuration.ConfigurationSettings.AppSettings["EnableSsl"].ToString();
-//#pragma warning restore CS0618 // Type or member is obsolete
+                //#pragma warning disable CS0618 // Type or member is obsolete
+                //                string SmtpServer = System.Configuration.ConfigurationSettings.AppSettings["SmtpServer"].ToString();
+                //                string MailUserName = System.Configuration.ConfigurationSettings.AppSettings["MailUserName"].ToString();
+                //                string MailPassword = System.Configuration.ConfigurationSettings.AppSettings["MailPassword"].ToString();
+                //                string MailFrom = System.Configuration.ConfigurationSettings.AppSettings["MailFrom"].ToString();
+                //                string MailPort = System.Configuration.ConfigurationSettings.AppSettings["MailPort"].ToString();
+                //                string EnableSsl = System.Configuration.ConfigurationSettings.AppSettings["EnableSsl"].ToString();
+                //#pragma warning restore CS0618 // Type or member is obsolete
 
                 //                if (string.IsNullOrEmpty(SmtpServer) || string.IsNullOrEmpty(MailUserName) || string.IsNullOrEmpty(MailPassword)
                 //                    || string.IsNullOrEmpty(MailFrom) || string.IsNullOrEmpty(MailPort) || string.IsNullOrEmpty(EnableSsl))
@@ -52,6 +52,14 @@ namespace KPMG.PageUpMiddleware.BatchJob
             // Khai bao bien
             List<ModIncidentEntity> incidents;
             EmailEntity emailEntity;
+            DateTime dateNow = DateTime.Now;
+            DateTime ngayDauTuan;
+            TimeSpan subtract;
+            WebMenuEntity menuIncident = null;
+            WebMenuEntity chuKyGuiMail = null;
+            bool allowSend = false;
+            string sSuCo = string.Empty, isp = string.Empty, ip = string.Empty;
+            string s2 = string.Empty, s3 = string.Empty, s4 = string.Empty, sName = string.Empty;
 
             // Lay ds Dich vu canh bao
             List<ModDichVuCanhBaoEntity> dvs = ModDichVuCanhBaoService.Instance.CreateQuery()
@@ -76,26 +84,99 @@ namespace KPMG.PageUpMiddleware.BatchJob
                 return;
             }
 
-            // Lay log gui mail
-            string incidentIds = string.Empty;
-            ModSendMailLogsEntity sendMailLog = ModSendMailLogsService.Instance.CreateQuery().Where(o => o.Activity == true).OrderByDesc(o => o.Publish).ToSingle();
-            if (sendMailLog != null)
-            {
-                incidentIds = sendMailLog.IncidentIDs;
-            }
-
             // Duyet qua cac ban ghi dv canh bao va thuc hien gui mail tuong ung
-            WebMenuEntity menuIncident = null;
-            string sSuCo = string.Empty, isp = string.Empty, ip = string.Empty;
-            string s2 = string.Empty, s3 = string.Empty, s4 = string.Empty, sName = string.Empty;
             foreach (ModDichVuCanhBaoEntity dv in dvs)
             {
+                // Lay log gui mail
+                string incidentIds = string.Empty;
+                ModSendMailLogsEntity sendMailLog = ModSendMailLogsService.Instance.CreateQuery().Where(o => o.Activity == true && o.DichVuCanhBaoID == dv.ID).OrderByDesc(o => o.Publish).ToSingle();
+                if (sendMailLog != null)
+                {
+                    // Neu dich vu canh bao da gui mail trong ngay hom nay roi thi khong thuc hien gui mail nua
+                    if (sendMailLog.Publish == dateNow)
+                    {
+                        continue;
+                    }
+                    incidentIds = sendMailLog.IncidentIDs;
+                }
+
                 incidents = ModIncidentService.Instance.CreateQuery()
                     .Where(o => o.Activity == true && o.Resolve == false)
                     .WhereIn(incidentIds != "", o => o.ID, incidentIds)
                     .ToList();
 
                 if (incidents == null) continue;
+
+                // Lay chu ky gui mail
+                chuKyGuiMail = WebMenuService.Instance.CreateQuery()
+                    .Where(o => o.Activity == true && o.ID == dv.MenuID)
+                    .ToSingle();
+                if (chuKyGuiMail == null)
+                {
+                    Console.WriteLine("WARN: Dich vu canh bao co ID = " + dv.ID + " khong co chu ky gui mail.");
+                    Logger.Warn($"Dich vu canh bao co ID = {dv.ID} khong co chu ky gui mail.");
+                    continue;
+                }
+
+                allowSend = false;
+                subtract = dv.Time.Subtract(dateNow.TimeOfDay);
+                switch (chuKyGuiMail.Code)
+                {
+                    case "Nam":
+                        if (dateNow.Day.ToString() == "1" && dateNow.Month.ToString() == "1")
+                        {
+                            if (subtract.Hours == 0 && subtract.Minutes <= 5)
+                            {
+                                allowSend = true;
+                            }
+                        }
+                        break;
+                    case "Quy":
+                        if (dateNow.Day.ToString() == "1" && dateNow.Month.ToString() == "4"
+                            || dateNow.Day.ToString() == "1" && dateNow.Month.ToString() == "7"
+                            || dateNow.Day.ToString() == "1" && dateNow.Month.ToString() == "10"
+                            || dateNow.Day.ToString() == "1" && dateNow.Month.ToString() == "1")
+                        {
+                            if (subtract.Hours == 0 && subtract.Minutes <= 5)
+                            {
+                                allowSend = true;
+                            }
+                        }
+                        break;
+                    case "Thang":
+                        if (dateNow.Day.ToString() == "1")
+                        {
+                            if (subtract.Hours == 0 && subtract.Minutes <= 5)
+                            {
+                                allowSend = true;
+                            }
+                        }
+                        break;
+                    case "Tuan":
+                        ngayDauTuan = GetFirstDayOfWeek(dateNow);
+                        if (ngayDauTuan == dateNow)
+                        {
+                            if (subtract.Hours == 0 && subtract.Minutes <= 5)
+                            {
+                                allowSend = true;
+                            }
+                        }
+                        break;
+                    case "Ngay":
+                        if (subtract.Hours == 0 && subtract.Minutes <= 5)
+                        {
+                            allowSend = true;
+                        }
+                        break;
+                    default:
+                        allowSend = false;
+                        break;
+                }
+
+                if (allowSend == false)
+                {
+                    continue;
+                }
 
                 try
                 {
@@ -140,11 +221,13 @@ namespace KPMG.PageUpMiddleware.BatchJob
                     // Ghi lai log gui mail
                     ModSendMailLogsEntity logEntity = new ModSendMailLogsEntity()
                     {
+                        DichVuCanhBaoID = dv.ID,
                         EmailTo = emailEntity.To,
                         EmailCc = emailEntity.Cc,
                         Subject = emailEntity.Subject,
                         Body = emailEntity.Body,
                         IncidentIDs = incidentIds + "," + string.Join(",", incidents.Select(o => o.ID).ToArray()),
+                        SendSuccess = string.IsNullOrEmpty(sendResult) ? true : false,
                         Publish = DateTime.Now,
                         Activity = true
                     };
@@ -158,6 +241,30 @@ namespace KPMG.PageUpMiddleware.BatchJob
 
             }
 
+        }
+
+        /// <summary>
+        /// Returns the first day of the week that the specified
+        /// date is in using the current culture. 
+        /// </summary>
+        public static DateTime GetFirstDayOfWeek(DateTime dayInWeek)
+        {
+            CultureInfo defaultCultureInfo = CultureInfo.CurrentCulture;
+            return GetFirstDayOfWeek(dayInWeek, defaultCultureInfo);
+        }
+
+        /// <summary>
+        /// Returns the first day of the week that the specified date 
+        /// is in. 
+        /// </summary>
+        public static DateTime GetFirstDayOfWeek(DateTime dayInWeek, CultureInfo cultureInfo)
+        {
+            DayOfWeek firstDay = cultureInfo.DateTimeFormat.FirstDayOfWeek;
+            DateTime firstDayInWeek = dayInWeek.Date;
+            while (firstDayInWeek.DayOfWeek != firstDay)
+                firstDayInWeek = firstDayInWeek.AddDays(-1);
+
+            return firstDayInWeek;
         }
 
     }
