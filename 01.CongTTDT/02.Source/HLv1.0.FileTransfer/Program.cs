@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using CsvHelper;
 using HL.Lib.Global;
 using HL.Lib.Models;
 using NLog;
@@ -24,7 +25,9 @@ namespace FileTransfer
             try
             {
 #pragma warning disable CS0618 // Type or member is obsolete
-                string incidentPath = System.Configuration.ConfigurationSettings.AppSettings["IncidentPath"].ToString();
+                DateTime dateNow = DateTime.Now.Date;
+                string sToday = dateNow.ToString("yyyyMMdd");
+                string incidentPath = System.Configuration.ConfigurationSettings.AppSettings["IncidentPath"].ToString() + sToday;
                 string botnetFileName = System.Configuration.ConfigurationSettings.AppSettings["BotnetFileName"].ToString();
                 string incidentFileExtension = System.Configuration.ConfigurationSettings.AppSettings["IncidentFileExtension"].ToString();
 #pragma warning restore CS0618 // Type or member is obsolete
@@ -50,7 +53,6 @@ namespace FileTransfer
                 WebMenuEntity menu = null;
                 ModImportLogsEntity importLog = null;
                 int attackMenuId = 0, botnetMenuId = 0, menuId = 0;
-                DateTime dateNow = DateTime.Now;
 
                 menu = WebMenuService.Instance.CreateQuery()
                     .Where(o => o.Activity == true && o.Code == "Attack")
@@ -105,11 +107,13 @@ namespace FileTransfer
                      4) cc_port, port, dest_port, dst_port, src_port
                      5) hostname, host, http_host, dst_port
                      */
+                    int row = 0;
                     try
                     {
                         menuId = attackMenuId;
                         for (i = 0; i < rowCount; i++)
                         {
+                            row += 1;
                             order++;
                             ModIncidentEntity entity = new ModIncidentEntity
                             {
@@ -160,7 +164,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("cc_ip-vietnam-geo.csv") == true)
                             {   // cc_ip-vietnam-geo.csv
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = dt.Rows[i]["channel"].ToString();
@@ -175,7 +179,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("cisco_smart_install-vietnam-geo.csv") == true)
                             {   // cisco_smart_install-vietnam-geo.csv
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -190,7 +194,8 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("compromised_website-vietnam-geo.csv") == true)
                             {   // compromised_website-vietnam-geo.csv
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
+                                var s = dt.Rows[i];
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = dt.Rows[i]["http_host"].ToString() + dt.Rows[i]["url"].ToString();
@@ -205,14 +210,14 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("cwsandbox_url") == true)
                             {   // cwsandbox_url
-                                entity.Timestamp = dateNow;
-                                entity.IP = dt.Rows[i]["ip"].ToString();
-                                entity.ASN = dt.Rows[i]["asn"].ToString();
-                                entity.Url = dt.Rows[i]["url"].ToString();
-                                entity.Type = dt.Rows[i]["md5hash"].ToString();
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i][0]);
+                                entity.IP = dt.Rows[i][1].ToString();
+                                entity.ASN = dt.Rows[i][2].ToString();
+                                entity.Url = dt.Rows[i][5].ToString();
+                                entity.Type = dt.Rows[i][4].ToString();
                                 entity.SrcPort = " /  ";
                                 entity.Destinationport = " /  ";
-                                entity.HostName = dt.Rows[i]["host"].ToString();
+                                entity.HostName = dt.Rows[i][7].ToString();
                                 entity.HandShake = "cwsandbox_url";
 
                                 entity.Name = entity.Url;
@@ -220,7 +225,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("drone_brute_force") == true)
                             {   // drone_brute_force
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -235,7 +240,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("microsoft_sinkhole") == true)
                             {   // microsoft_sinkhole
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = dt.Rows[i]["url"].ToString();
@@ -250,7 +255,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_chargen") == true)
                             {   // scan_chargen
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -265,7 +270,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_cwmp") == true)
                             {   // scan_cwmp
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -280,14 +285,14 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_db2") == true)
                             {   // scan_db2
-                                entity.Timestamp = dateNow;
-                                entity.IP = dt.Rows[i]["ip"].ToString();
-                                entity.ASN = dt.Rows[i]["asn"].ToString();
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i][0]);
+                                entity.IP = dt.Rows[i][1].ToString();
+                                entity.ASN = dt.Rows[i][6].ToString();
                                 entity.Url = " /  ";
                                 entity.Type = " /  ";
-                                entity.SrcPort = dt.Rows[i]["port"].ToString();
+                                entity.SrcPort = dt.Rows[i][3].ToString();
                                 entity.Destinationport = " /  ";
-                                entity.HostName = dt.Rows[i]["hostname"].ToString() + "\nName DB:" + dt.Rows[i]["db2_hostname"].ToString() + "\nServer name:" + dt.Rows[i]["servername"].ToString();
+                                entity.HostName = dt.Rows[i][4].ToString() + "\nName DB:" + dt.Rows[i][12].ToString() + "\nServer name:" + dt.Rows[i][13].ToString();
                                 entity.HandShake = "scan_db2";
 
                                 entity.Name = entity.Url;
@@ -295,7 +300,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_dns") == true)
                             {   // scan_dns
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -310,14 +315,14 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_elasticsearch") == true)
                             {   // scan_elasticsearch
-                                entity.Timestamp = dateNow;
-                                entity.IP = dt.Rows[i]["ip"].ToString();
-                                entity.ASN = dt.Rows[i]["asn"].ToString();
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i][0]);
+                                entity.IP = dt.Rows[i][1].ToString();
+                                entity.ASN = dt.Rows[i][7].ToString();
                                 entity.Url = " /  ";
                                 entity.Type = " /  ";
-                                entity.SrcPort = dt.Rows[i]["port"].ToString();
+                                entity.SrcPort = dt.Rows[i][3].ToString();
                                 entity.Destinationport = " /  ";
-                                entity.HostName = dt.Rows[i]["hostname"].ToString();
+                                entity.HostName = dt.Rows[i][4].ToString();
                                 entity.HandShake = "scan_elasticsearch";
 
                                 entity.Name = entity.Url;
@@ -325,7 +330,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_hadoop") == true)
                             {   // scan_hadoop
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -340,7 +345,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_http") == true)
                             {   // scan_http
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -355,14 +360,14 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_ipmi") == true)
                             {   // scan_ipmi
-                                entity.Timestamp = dateNow;
-                                entity.IP = dt.Rows[i]["ip"].ToString();
-                                entity.ASN = dt.Rows[i]["asn"].ToString();
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i][0]);
+                                entity.IP = dt.Rows[i][1].ToString();
+                                entity.ASN = dt.Rows[i][6].ToString();
                                 entity.Url = " /  ";
                                 entity.Type = " /  ";
-                                entity.SrcPort = dt.Rows[i]["port"].ToString();
+                                entity.SrcPort = dt.Rows[i][3].ToString();
                                 entity.Destinationport = " /  ";
-                                entity.HostName = dt.Rows[i]["hostname"].ToString();
+                                entity.HostName = dt.Rows[i][4].ToString();
                                 entity.HandShake = "scan_ipmi";
 
                                 entity.Name = entity.Url;
@@ -370,7 +375,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_isakmp") == true)
                             {   // scan_isakmp
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -385,7 +390,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_ldap") == true)
                             {   // scan_ldap
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -400,7 +405,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_mdns") == true)
                             {   // scan_mdns
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -415,7 +420,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_memcached") == true)
                             {   // scan_memcached
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -430,7 +435,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_mongodb") == true)
                             {   // scan_mongodb
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -445,7 +450,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_mssql") == true)
                             {   // scan_mssql
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -460,14 +465,14 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_nat_pmp") == true)
                             {   // scan_nat_pmp
-                                entity.Timestamp = dateNow;
-                                entity.IP = dt.Rows[i]["ip"].ToString();
-                                entity.ASN = dt.Rows[i]["asn"].ToString();
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i][0]);
+                                entity.IP = dt.Rows[i][1].ToString();
+                                entity.ASN = dt.Rows[i][7].ToString();
                                 entity.Url = " /  ";
                                 entity.Type = " /  ";
-                                entity.SrcPort = dt.Rows[i]["port"].ToString();
+                                entity.SrcPort = dt.Rows[i][3].ToString();
                                 entity.Destinationport = " /  ";
-                                entity.HostName = dt.Rows[i]["hostname"].ToString();
+                                entity.HostName = dt.Rows[i][4].ToString();
                                 entity.HandShake = "scan_nat_pmp";
 
                                 entity.Name = entity.Url;
@@ -475,7 +480,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_netbios") == true)
                             {   // scan_netbios
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -490,7 +495,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_ntpmonitor") == true)
                             {   // scan_ntpmonitor
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -505,7 +510,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_ntp") == true)
                             {   // scan_ntp
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -520,7 +525,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_portmapper") == true)
                             {   // scan_portmapper
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -535,14 +540,14 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_qotd") == true)
                             {   // scan_qotd
-                                entity.Timestamp = dateNow;
-                                entity.IP = dt.Rows[i]["ip"].ToString();
-                                entity.ASN = dt.Rows[i]["asn"].ToString();
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i][0]);
+                                entity.IP = dt.Rows[i][1].ToString();
+                                entity.ASN = dt.Rows[i][7].ToString();
                                 entity.Url = " /  ";
                                 entity.Type = " /  ";
-                                entity.SrcPort = dt.Rows[i]["port"].ToString();
+                                entity.SrcPort = dt.Rows[i][3].ToString();
                                 entity.Destinationport = " /  ";
-                                entity.HostName = dt.Rows[i]["hostname"].ToString();
+                                entity.HostName = dt.Rows[i][4].ToString();
                                 entity.HandShake = "scan_qotd";
 
                                 entity.Name = entity.Url;
@@ -550,7 +555,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_rdp") == true)
                             {   // scan_rdp
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -565,7 +570,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_redis") == true)
                             {   // scan_redis
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -580,7 +585,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_smb") == true)
                             {   // scan_smb
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -595,7 +600,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_snmp") == true)
                             {   // scan_snmp
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -610,7 +615,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_ssdp") == true)
                             {   // scan_ssdp
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -625,7 +630,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_ssl_freak") == true)
                             {   // scan_ssl_freak
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -640,7 +645,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_ssl_poodle") == true)
                             {   // scan_ssl_poodle
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -655,7 +660,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_telnet") == true)
                             {   // scan_telnet
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -670,7 +675,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("can_tftp") == true)
                             {   // can_tftp
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -685,7 +690,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_vnc") == true)
                             {   // scan_vnc
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = " /  ";
@@ -700,14 +705,14 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("scan_xdmcp") == true)
                             {   // scan_xdmcp
-                                entity.Timestamp = dateNow;
-                                entity.IP = dt.Rows[i]["ip"].ToString();
-                                entity.ASN = dt.Rows[i]["asn"].ToString();
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i][0]);
+                                entity.IP = dt.Rows[i][1].ToString();
+                                entity.ASN = dt.Rows[i][6].ToString();
                                 entity.Url = " /  ";
                                 entity.Type = " /  ";
-                                entity.SrcPort = dt.Rows[i]["port"].ToString();
+                                entity.SrcPort = dt.Rows[i][3].ToString();
                                 entity.Destinationport = " /  ";
-                                entity.HostName = dt.Rows[i]["hostname"].ToString();
+                                entity.HostName = dt.Rows[i][4].ToString();
                                 entity.HandShake = "scan_xdmcp";
 
                                 entity.Name = entity.Url;
@@ -715,13 +720,13 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("sinkhole6_http") == true)
                             {   // sinkhole6_http
-                                entity.Timestamp = dateNow;
-                                entity.IP = dt.Rows[i]["src_ip"].ToString();
-                                entity.ASN = dt.Rows[i]["src_asn"].ToString();
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i][0]);
+                                entity.IP = dt.Rows[i][1].ToString();
+                                entity.ASN = dt.Rows[i][2].ToString();
                                 entity.Url = " /  ";
                                 entity.Type = " /  ";
-                                entity.SrcPort = dt.Rows[i]["src_port"].ToString();
-                                entity.Destinationport = dt.Rows[i]["src_port"].ToString();
+                                entity.SrcPort = dt.Rows[i][5].ToString();
+                                entity.Destinationport = dt.Rows[i][10].ToString();
                                 entity.HostName = " /  ";
                                 entity.HandShake = "sinkhole6_http";
 
@@ -730,7 +735,7 @@ namespace FileTransfer
                             }
                             else if (incidentFile.Contains("sinkhole_http_drone") == true)
                             {   // sinkhole_http_drone
-                                entity.Timestamp = dateNow;
+                                entity.Timestamp = HL.Core.Global.Convert.ToDateTime(dt.Rows[i]["timestamp"]);
                                 entity.IP = dt.Rows[i]["ip"].ToString();
                                 entity.ASN = dt.Rows[i]["asn"].ToString();
                                 entity.Url = dt.Rows[i]["http_host"].ToString();
@@ -825,10 +830,11 @@ namespace FileTransfer
                         importLog = new ModImportLogsEntity()
                         {
                             FileName = incidentFile,
-                            Messages = "Import fail",
+                            Messages = "Import fail: " + ex.Message + "==================" + ex.StackTrace,
                             MenuID = menuId,
                             Publish = dateNow,
-                            Activity = false
+                            Activity = false,
+                            ErrorRows = row.ToString()
                         };
                         ModImportLogsService.Instance.Save(importLog);
 
@@ -845,7 +851,7 @@ namespace FileTransfer
                             Messages = "Import success",
                             MenuID = menuId,
                             Publish = dateNow,
-                            Activity = true
+                            Activity = true,
                         };
 
                         try
@@ -854,7 +860,7 @@ namespace FileTransfer
                         }
                         catch (Exception ex)
                         {
-                            importLog.Messages = "Import error: " + ex.Message;
+                            importLog.Messages = "Import error: " + ex.Message + "==================" + ex.StackTrace;
                             Logger.Error($"Failed: {ex.Message}\n {ex.StackTrace}");
                         }
                         ModImportLogsService.Instance.Save(importLog);
@@ -874,24 +880,43 @@ namespace FileTransfer
         public static DataTable ConvertCSVtoDataTable(string strFilePath)
         {
             DataTable dt = new DataTable();
-            using (StreamReader sr = new StreamReader(strFilePath))
+            //using (StreamReader sr = new StreamReader(strFilePath))
+            //{
+            //    string[] headers = sr.ReadLine().Split(',');
+            //    foreach (string header in headers)
+            //    {
+            //        dt.Columns.Add(header);
+            //    }
+            //    while (!sr.EndOfStream)
+            //    {
+            //        string[] rows = sr.ReadLine().Split(',');
+            //        DataRow dr = dt.NewRow();
+            //        for (int i = 0; i < headers.Length; i++)
+            //        {
+            //            dr[i] = rows[i];
+            //        }
+            //        dt.Rows.Add(dr);
+            //    }
+            //}
+
+            using (CsvFileReader csv = new CsvFileReader(strFilePath))
             {
-                string[] headers = sr.ReadLine().Split(',');
+                string[] headers = csv.ReadLine().Split(',');
                 foreach (string header in headers)
                 {
                     dt.Columns.Add(header);
                 }
-                while (!sr.EndOfStream)
+                CsvHelper.CsvHelper csvRow = new CsvHelper.CsvHelper();
+                while (csv.ReadRow(csvRow))
                 {
-                    string[] rows = sr.ReadLine().Split(',');
                     DataRow dr = dt.NewRow();
                     for (int i = 0; i < headers.Length; i++)
                     {
-                        dr[i] = rows[i];
+                        if (i > csvRow.Count - 1) dr[i] = "";
+                        else dr[i] = csvRow[i];
                     }
                     dt.Rows.Add(dr);
                 }
-
             }
 
             return dt;
