@@ -226,6 +226,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Global\Application.cs" />
+    <Compile Include="Global\CsvHelper.cs" />
     <Compile Include="Global\Pdf.cs" />
     <Compile Include="Global\Excel.cs" />
     <Compile Include="Global\MyClass.cs" />
