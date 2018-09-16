@@ -80,32 +80,7 @@
             <%}
                 else
                 {%>
-            <div class="container mt-15">
-                <div class="row-fluid titleContainer warning-news">
-                    <span>TIN TỨC CẢNH BÁO</span>
-                    <a class="pull-right" href="/vn/Tin-tuc-canh-bao.aspx">Xem thêm...</a>
-                </div>
-                <div class="row-fluid contentNews">
-                    <div>
-                        <a href="#" class="title">DIỄN TẬP TRONG NƯỚC KHU VỰC MIỀN TRUNG, TÂY NGUYÊN NĂM 2018</a>
-                    </div>
-                    <div class="img-blog">
-                        <img src="/Content1/images/demo.jpg" alt="">
-                    </div>
-                    <div class="des-blog">
-                        <p>[vncert.gov.vn] Ngày 29/6/2018 tại Công ty Phát triển Công viên Phần mềm Quang Trung, thành phố Đà Nẵng, Trung tâm Ứng cứu khẩn cấp máy tính Việt Nam (VNCERT) chủ trì, phối hợp với Sở Thông tin và Truyền thông thành phố Đà Nẵng , Tập đoàn Bưu chính Viễn thông Việt Nam (VNPT) tổ chức Hội thảo - Diễn tập Ứng cứu sự cố an toàn thông tin mạng khu vực miền Trung và Tây Nguyên năm 2018. Đây là lần đầu tiên một hoạt động diễn tập an toàn thông tin, an ninh mạng quy mô được tổ chức tại khu vực miền Trung và Tây Nguyên nhằm tăng cường kỹ năng phối hợp, xử lý sự cố, đảm bảo an toàn thông tin mạng cho đội ngũ...</p>
-                    </div>
-                    <div>
-                        <a href="#" class="title">DIỄN TẬP TRONG NƯỚC KHU VỰC MIỀN TRUNG, TÂY NGUYÊN NĂM 2018</a>
-                    </div>
-                    <div class="img-blog">
-                        <img src="/Content1/images/demo.jpg" alt="">
-                    </div>
-                    <div class="des-blog">
-                        <p>[vncert.gov.vn] Ngày 29/6/2018 tại Công ty Phát triển Công viên Phần mềm Quang Trung, thành phố Đà Nẵng, Trung tâm Ứng cứu khẩn cấp máy tính Việt Nam (VNCERT) chủ trì, phối hợp với Sở Thông tin và Truyền thông thành phố Đà Nẵng , Tập đoàn Bưu chính Viễn thông Việt Nam (VNPT) tổ chức Hội thảo - Diễn tập Ứng cứu sự cố an toàn thông tin mạng khu vực miền Trung và Tây Nguyên năm 2018. Đây là lần đầu tiên một hoạt động diễn tập an toàn thông tin, an ninh mạng quy mô được tổ chức tại khu vực miền Trung và Tây Nguyên nhằm tăng cường kỹ năng phối hợp, xử lý sự cố, đảm bảo an toàn thông tin mạng cho đội ngũ...</p>
-                    </div>
-                </div>
-            </div>
+            <HL:StaticControl runat="server" Code="CNews" HLID="cTinCanhBao"></HL:StaticControl>
             <HL:StaticControl runat="server" Code="CNews" HLID="cTinNoiBo"></HL:StaticControl>
             <%}%>
         </section>

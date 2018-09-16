@@ -23,6 +23,7 @@
             </div>--%>
             <div style="float: left; width: 100%; display: block;">
                 <%--<HL:DynamicControl runat="server" Code="MainContent" ID="MainContent"></HL:DynamicControl>--%>
+                <HL:StaticControl runat="server" Code="CNews" HLID="cTinCanhBao"></HL:StaticControl>
                 <HL:StaticControl runat="server" Code="CNews" HLID="cTinNoiBo"></HL:StaticControl>
             </div>
         </div>

@@ -1768,6 +1768,7 @@
     <Content Include="Views\CMenu\TopLeft.ascx" />
     <Content Include="Views\CMenu\Left2.ascx" />
     <Content Include="Views\CMenu\Left.ascx" />
+    <Content Include="Views\CNews\TinCanhBao.ascx" />
     <Content Include="Views\CNews\TinNoiBo.ascx" />
     <Content Include="Views\CNews\MotChuyenMuc.ascx" />
     <Content Include="Views\CNews\MultiMedia.ascx" />

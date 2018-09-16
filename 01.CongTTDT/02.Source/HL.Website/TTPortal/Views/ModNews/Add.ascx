@@ -183,6 +183,52 @@
                                     </td>
                                 </tr>
 
+                                <tr>
+                                    <td align="center" style="text-align: center" class="key">Tin cảnh báo <span class="red"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input name="WarnNews" type="checkbox" <%if (entity.WarnNews == true)
+                                            {%>checked value="1"<%} else {%>value="0"<%} %>
+                                            onclick="fnWarnNews(this)">
+                                        Là tin cảnh báo
+
+                                        <div id="ListUser" <%if (entity.WarnNews != true)
+                                            {%>style="display: none;"
+                                            <%} %>>
+                                            <br />
+                                            <br />
+                                            <span>Chọn thành viên xem tin cảnh báo:</span>
+                                            <% List<CPUserEntity> listUser = CPUserService.Instance.CreateQuery().Where(o => o.Activity == true).ToList();
+                                                string[] loginNames = listUser != null ? listUser.Select(o => o.LoginName).ToArray() : null;
+                                                string loginName = loginNames != null ? string.Join(";", loginNames) : "";
+                                                int userCount = listUser != null ? listUser.Count : 0;
+                                                int userChecked = string.IsNullOrEmpty(entity.WarnUserIDs) ? 0 : entity.WarnUserIDs.Split(';').Length;
+                                                %>
+                                            <input class="text_input my-select" type="text" name="WarnUserIDs" id="WarnUserIDs" value="<%=Utils.ShowTextByUserID(entity.WarnUserIDs) %>" maxlength="255" onclick="fnDropdown(event)" readonly />
+                                            <div class="text_input multiselect" id="List1" <%if (string.IsNullOrEmpty(entity.WarnUserIDs))
+                                                {%>style="display: none;"
+                                                <%} %>>
+                                                <label>
+                                                    <input type="checkbox" id="chkAll" onclick="fnSetCheckAll(this)" <%if (userCount == userChecked)
+                                                        {%>checked<%} %>>Tất cả</label><br />
+                                                <%for (int i = 0; i < userCount; i++)
+                                                    {
+                                                        string sChecked = "";
+                                                        string temp = ";" + entity.WarnUserIDs + ";";
+                                                        if (entity.WarnUserIDs != null && temp.Contains(";" + listUser[i].ID.ToString() + ";"))
+                                                        {
+                                                            sChecked = "checked";
+                                                        }%>
+                                                <label style="display: block; width: 45%; float: left;">
+                                                    <input name="ArrWarnUserIDs" value="<%=listUser[i].ID %>" onclick="fnSetCheck(event, '<%=listUser[i].LoginName %>', '#WarnUserIDs')" type="checkbox" <%=sChecked %> /><%=listUser[i].LoginName %></label>
+                                                <%} %>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
                                 <%--<tr>
                                     <td align="center" style="text-align: center" class="key">Chọn file Audio đọc nội dung
                                     </td>
@@ -371,6 +417,82 @@
             </div>
         </div>
     </div>
+
+    <script>
+        jQuery.fn.multiselect = function () {
+            $(this).each(function () {
+                var checkboxes = $(this).find("input:checkbox");
+                checkboxes.each(function () {
+                    var checkbox = $(this);
+                    // Highlight pre-selected checkboxes
+                    if (checkbox.prop("checked"))
+                        checkbox.parent().addClass("multiselect-on");
+
+                    // Highlight checkboxes that the user selects
+                    checkbox.click(function () {
+                        if (checkbox.prop("checked"))
+                            checkbox.parent().addClass("multiselect-on");
+                        else
+                            checkbox.parent().removeClass("multiselect-on");
+                    });
+                });
+            });
+        };
+
+        $(function () {
+            $(".multiselect").multiselect();
+        });
+
+        function fnDropdown(event) {
+            $(event.target).next().slideToggle();
+        }
+
+        function fnWarnNews(e) {
+            var isChecked = $(e).is(':checked');
+            var status = 'none', val = 0;
+            if (isChecked == true) {
+                status = 'block';
+                val = 1;
+            }
+            $('#ListUser').css('display', status);
+            $(e).val(val);
+        }
+
+        function fnSetCheckAll(e) {
+            var loginName = '<%=loginName%>';
+            var isChecked = $(e).is(':checked');
+            $('input[name="ArrWarnUserIDs"]').prop('checked', isChecked);
+
+            if (isChecked == true) {
+                $('#WarnUserIDs').val(loginName);
+            } else {
+                $('#WarnUserIDs').val('');
+            }
+        }
+
+        function fnSetCheck(e, name, id) {
+            var v = $(id).val();
+            var v1 = v;
+            if (e.target.checked) {
+                if (v) v1 = v + ";";
+                $(id).val(v1.replace(";;", ";") + name);
+            } else {
+                v1 = v1.replace(name + ";", "").replace(name, "").replace(";;", ";");
+                v1 = v1.replace(/^[\;]+|[\;]+$/g, "");
+                $(id).val(v1);
+            }
+
+            // Check to set tick all
+            //debugger;
+            var userCount = <%=userCount%>;
+            var userChecked = $('#WarnUserIDs').val().split(';').length;
+            if (userCount == userChecked) {
+                $('#chkAll').prop('checked', true);
+            } else {
+                $('#chkAll').prop('checked', false);
+            }
+        }
+    </script>
 
     <script type="text/javascript" src="/{CPPath}/Content/ckeditor/ckeditor.js"></script>
     <script type="text/javascript">

@@ -47,6 +47,12 @@ namespace HL.Lib.Models
         public int View { get; set; }
 
         [DataInfo]
+        public bool? WarnNews { get; set; }
+
+        [DataInfo]
+        public string WarnUserIDs { get; set; }
+
+        [DataInfo]
         public int CreateUser { get; set; }
 
         [DataInfo]

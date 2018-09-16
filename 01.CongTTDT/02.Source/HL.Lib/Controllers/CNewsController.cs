@@ -1,6 +1,7 @@
 ﻿using HL.Lib.MVC;
 using HL.Lib.Models;
 using HL.Lib.Global;
+using System.Linq;
 
 namespace HL.Lib.Controllers
 {
@@ -11,6 +12,7 @@ namespace HL.Lib.Controllers
             "Hot[MenuID-true|Title-false|MenuID2-false|Title2-false|PageSize-false|State-true]," +
             "MotChuyenMuc[MenuID-true|Title-true|MenuID2-false|Title2-false|PageSize-true|State-true]," +
             "MultiMedia[MenuID-true|Title-true|MenuID2-false|Title2-false|PageSize-true|State-true]," +
+            "TinCanhBao[MenuID-true|Title-true|MenuID2-false|Title2-false|PageSize-true|State-true]," +
             "TinNoiBo[MenuID-true|Title-true|MenuID2-false|Title2-false|PageSize-true|State-true]")]
         public string LayoutDefine;
 
@@ -34,8 +36,24 @@ namespace HL.Lib.Controllers
 
         public override void OnLoad()
         {
+            // Lay thong tin user dang nhap
+            int loaiTV = 0, userId = 0;
+            CPUserEntity user = CPLogin.CurrentUserOnWeb;
+            if (user != null)
+            {
+                loaiTV = user.MenuID;
+                userId = user.ID;
+            }
+
+            // Lay id chuyen muc la "Tin noi bo"
+            int tinNoiBoId = 0;
+            WebMenuEntity menu = WebMenuService.Instance.CreateQuery()
+                .Where(o => o.Activity == true && o.Code == "TinNoiBo")
+                .ToSingle();
+            if (menu != null) tinNoiBoId = menu.ID;
+
             ViewBag.Data = ModNewsService.Instance.CreateQuery()
-                .Where(o => o.Activity == true)
+                .Where(o => o.Activity == true && o.WarnNews != true && o.MenuID != tinNoiBoId)
                 .WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("News", MenuID, ViewPage.CurrentLang.ID))
                 .Where(State > 0, o => (o.State & State) == State)
                 .OrderByDesc(o => o.Order)
@@ -43,7 +61,7 @@ namespace HL.Lib.Controllers
                 .ToList();
 
             ViewBag.Data2 = ModNewsService.Instance.CreateQuery()
-                .Where(o => o.Activity == true)
+                .Where(o => o.Activity == true && o.WarnNews != true && o.MenuID != tinNoiBoId)
                 .WhereIn(MenuID2 > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("News", MenuID2, ViewPage.CurrentLang.ID))
                 .Where(State > 0, o => (o.State & State) == State)
                 .OrderByDesc(o => o.Order)
@@ -51,29 +69,33 @@ namespace HL.Lib.Controllers
                 .ToList();
 
             ViewBag.HotNews = ModNewsService.Instance.CreateQuery()
-                .Where(o => o.Activity == true)
+                .Where(o => o.Activity == true && o.WarnNews != true && o.MenuID != tinNoiBoId)
                 .WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("News", MenuID, ViewPage.CurrentLang.ID))
                 .Where(State > 0, o => (o.State & State) == State)
                 .OrderByDesc(o => o.Order)
                 .Take(PageSize)
                 .ToSingle();
 
-            // Lay thong tin user dang nhap
-            int loaiTV = 0;
-            CPUserEntity user = CPLogin.CurrentUserOnWeb;
-            if (user != null)
-            {
-                loaiTV = user.MenuID;
-            }
-
             var dbQueryTinNoiBo = ModNewsService.Instance.CreateQuery()
                 .Where(o => o.Activity == true)
-                .Where(o => o.LoaiThanhVienID == loaiTV)
+                .Where(o => o.MenuID == tinNoiBoId && o.LoaiThanhVienID == loaiTV)
                 .WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("News", MenuID, ViewPage.CurrentLang.ID))
                 .Where(State > 0, o => (o.State & State) == State)
                 .OrderByDesc(o => o.Order)
                 .Take(PageSize);
             ViewBag.TinNoiBo = dbQueryTinNoiBo.ToList();
+
+            var tmp = ModNewsService.Instance.CreateQuery().Where(a => a.Activity == true && a.WarnUserIDs != "" && a.WarnUserIDs != null).ToList();
+            string s = "";
+            if (tmp != null) s = string.Join(";", tmp.Select(o => o.WarnUserIDs).ToArray());
+            var dbQueryTinCanhBao = ModNewsService.Instance.CreateQuery()
+                .Where(o => o.Activity == true && o.WarnNews == true)
+                .Where(userId > 0, o => o.WarnUserIDs.Contains(userId.ToString()))
+                .WhereIn(MenuID > 0, o => o.MenuID, WebMenuService.Instance.GetChildIDForWeb_Cache("News", MenuID, ViewPage.CurrentLang.ID))
+                .Where(State > 0, o => (o.State & State) == State)
+                .OrderByDesc(o => o.Order)
+                .Take(PageSize);
+            ViewBag.TinCanhBao = dbQueryTinCanhBao.ToList();
 
             ViewBag.Title = Title;
             ViewBag.Title2 = Title2;

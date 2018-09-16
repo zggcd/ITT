@@ -98,6 +98,8 @@ namespace HL.Lib.CPControllers
                 entity = new ModNewsEntity
                 {
                     MenuID = model.MenuID,
+                    WarnNews = false,
+                    WarnUserIDs = "",
                     CreateUser = CPLogin.CurrentUser.ID,
                     Published = DateTime.Now,
                     Activity1 = null,
@@ -305,6 +307,14 @@ namespace HL.Lib.CPControllers
             //chong hack
             entity.ID = model.RecordID;
 
+            entity.WarnNews = false;
+            entity.WarnUserIDs = "";
+            if (model.WarnNews == 1)
+            {
+                entity.WarnNews = true;
+                entity.WarnUserIDs = GetMenuIDs(model.ArrWarnUserIDs);
+            }
+
             ViewBag.Data = entity;
             ViewBag.Model = model;
 
@@ -376,5 +386,8 @@ namespace HL.Lib.CPControllers
         public string SearchText { get; set; }
 
         public int[] ArrState { get; set; }
+        public int[] ArrWarnUserIDs { get; set; }
+
+        public int WarnNews { get; set; }
     }
 }

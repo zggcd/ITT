@@ -214,10 +214,36 @@ namespace HL.Lib.Global
 
                 for (int i = 0; list != null && i < list.Count; i++)
                 {
-                    if (selectIDs != null && selectIDs.Contains(list[i].ID.ToString()))
+                    if (selectIDs != null && (";" + selectIDs + ";").Contains(";" + list[i].ID.ToString() + ";"))
                     {
                         if (i == list.Count - 1) split = "";
                         s += list[i].Name + split;
+                    }
+                }
+            }
+
+            return s.Trim(';');
+        }
+
+        public static string ShowTextByUserID(string selectIDs)
+        {
+            string s = string.Empty;
+
+            List<CPUserEntity> list = CPUserService.Instance.CreateQuery()
+                                        .Where(o => o.Activity == true)
+                                        .OrderByAsc(o => o.LoginName)
+                                        .ToList_Cache();
+
+            if (list != null)
+            {
+                string split = ";";
+
+                for (int i = 0; list != null && i < list.Count; i++)
+                {
+                    if (selectIDs != null && (";" + selectIDs + ";").Contains(";" + list[i].ID.ToString() + ";"))
+                    {
+                        if (i == list.Count - 1) split = "";
+                        s += list[i].LoginName + split;
                     }
                 }
             }
