@@ -5,7 +5,14 @@
     {
         if (!HL.Lib.Global.CPLogin.IsLoginOnWeb())
         {
-            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString(ViewPage.CurrentURL));
+            int langId = ViewPage.CurrentPage.LangID;
+            string loginUrl = "/vn/Thanh-vien/Dang-nhap.aspx";
+            if (langId == 2)
+            {
+                loginUrl = "/en/Member/Login.aspx";
+            }
+
+            Response.Redirect(loginUrl + "?ReturnPath=" + HttpUtility.ParseQueryString(ViewPage.CurrentURL));
             return;
         }
     }
@@ -15,6 +22,14 @@
     var listItem = ViewBag.Data as List<ModBaoCaoTongHopEntity>;
     int c2 = listItem != null ? listItem.Count : 0;
     var model = ViewBag.Model as MBaoCaoTongHopModel;
+
+    int langId = ViewPage.CurrentPage.LangID;
+    string themBcThUrl = "/vn/Thanh-vien/Them-bc-tong-hop-su-co.aspx";
+    if (langId == 2)
+    {
+        themBcThUrl = "/en/Member/Them-bc-tong-hop-su-co.aspx";
+    }
+
 %>
 
 <div class="main_right">
@@ -31,22 +46,22 @@
             <div class="top">
 
                 <div class="button">
-                    <input style="margin-left: 10px;" class="btn_action search icon QAcustom" onclick="location.href = '/vn/Thanh-vien/Them-bc-tong-hop-su-co.aspx';" type="button" name="" value="Thêm mới" />
+                    <input style="margin-left: 10px;" class="btn_action search icon QAcustom" onclick="location.href = '<%=themBcThUrl%>';" type="button" name="" value="{RS:Web_ThemMoiBtn}" />
                 </div>
 
             </div>
             <!--.Main_container-->
         </div>
 
-        <div class="title-t2">CÁC BÁO CÁO CỦA BẠN</div>
+        <div class="title-t2">{RS:Web_CacBCCuaBan}</div>
         <div class="main_vbtable" style="width: 100%">
             <form method="post" name="frmDsHs">
                 <table style="width: 100%;">
                     <thead>
                         <tr>
                             <th class="text-center" style="width: 5%;">#</th>
-                            <th class="text-center">Báo cáo</th>
-                            <th class="text-center" style="width: 20%;">Trạng thái</th>
+                            <th class="text-center">{RS:Web_BaoCaoHeadTable}</th>
+                            <th class="text-center" style="width: 20%;">{RS:Web_TrangThaiHeadTable}</th>
                             <th class="text-center" style="width: 1%;"></th>
                         </tr>
                     </thead>
@@ -54,21 +69,21 @@
                         <%for (int i = 0; i < c2; i++)
                             {
                                 string Url = ViewPage.GetURL(listItem[i].MenuID, listItem[i].Code);
-                                string tt = listItem[i].Activity ? "<span style=\"color: forestgreen;\">Đã phê duyệt</span>" : "<span style=\"color: red;\">Chưa phê duyệt</span>";
+                                string tt = listItem[i].Activity ? "<span style=\"color: forestgreen;\">{RS:Web_DaPheDuyet}</span>" : "<span style=\"color: red;\">{RS:Web_ChuaPheDuyet}</span>";
                         %>
                         <tr>
                             <td style="width: 5%;"><%=(i+1) %></td>
                             <td>
                                 <a href="<%=Url %>" style="display: block;"><%= listItem[i].Name %></a><br />
                                 <p>
-                                    <span class="date">Mã báo cáo: <%=listItem[i].Code %></span>
-                                    <span class="date fr">Ngày thêm: <%=string.Format("{0:dd/MM/yyyy}", listItem[i].Published) %></span>
+                                    <span class="date">{RS:Web_MaBaoCao} <%=listItem[i].Code %></span>
+                                    <span class="date fr">{RS:Web_NgayThem} <%=string.Format("{0:dd/MM/yyyy}", listItem[i].Published) %></span>
                                 </p>
                             </td>
                             <td class="text-center" style="width: 20%;"><%=tt %></td>
                             <td class="text-center" style="width: 1%;">
-                                <a href="javascript: delBc('<%=listItem[i].ID %>');" id="btnXoaBc">Xóa</a>
-                                <input class="btn_action search icon QAcustom" name="_hl_action[XoaBaoCao]" id="XoaBaoCao" value="Xóa" type="submit" style="display: none;" />
+                                <a href="javascript: delBc('<%=listItem[i].ID %>');" id="btnXoaBc">{RS:Web_XoaBtn}</a>
+                                <input class="btn_action search icon QAcustom" name="_hl_action[XoaBaoCao]" id="XoaBaoCao" value="{RS:Web_XoaBtn}" type="submit" style="display: none;" />
                             </td>
                         </tr>
                         <%}%>
@@ -86,7 +101,7 @@
 <script>
     function delBc(id) {
         if (id) {
-            if (window.confirm('Bạn có chắc muốn xóa báo cáo này?')) {
+            if (window.confirm('{RS:Web_BanCoChacXoa}')) {
                 $('#baoCaoId').val(id);
                 $('#XoaBaoCao').click();
             }

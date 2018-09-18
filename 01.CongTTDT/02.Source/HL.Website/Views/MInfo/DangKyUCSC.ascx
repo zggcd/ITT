@@ -5,7 +5,16 @@
     {
         if (!HL.Lib.Global.CPLogin.IsLoginOnWeb())
         {
-            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString("/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx"));
+            int langId = ViewPage.CurrentPage.LangID;
+            string loginUrl = "/vn/Thanh-vien/Dang-nhap.aspx"
+                , themHsUrl = "/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx";
+            if (langId == 2)
+            {
+                loginUrl = "/en/Member/Login.aspx";
+                themHsUrl = "/en/Member/Them-ho-so-ung-cuu-su-co.aspx";
+            }
+
+            Response.Redirect(loginUrl + "?ReturnPath=" + HttpUtility.ParseQueryString(themHsUrl));
             return;
         }
         //int userId = HL.Lib.Global.CPLogin.UserID;
@@ -73,6 +82,13 @@
     List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucNhomKTKT = ViewBag.ListTongHopNhanLucNhomKTKT as List<ModTongHopNhanLucUCSCEntity> ?? ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(0, "KyThuatKiemTra");
 
     int d = 0;
+
+    int langId = ViewPage.CurrentPage.LangID;
+    string dsUrl = "/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx";
+    if (langId == 2)
+    {
+        dsUrl = "/en/Member/DS-dang-ky-ung-cuu-su-co.aspx";
+    }
 %>
 
 <style>
@@ -914,15 +930,15 @@
                                         {%>
                                     <%if (entityDk != null & entityDk.Activity == false)
                                         {%>
-                                    <input class="btn btn-success" name="_hl_action[UpdateDangKyUCSC]" value="Cập nhật" type="submit" onclick="fnSubmit()" />
+                                    <input class="btn btn-success" name="_hl_action[UpdateDangKyUCSC]" value="{RS:Form_CapNhatBtn}" type="submit" onclick="fnSubmit()" />
                                     <%} %>
                                     <%}
                                         else
                                         {%>
-                                    <input class="btn btn-success" name="_hl_action[AddDangKyUCSC]" value="Lưu" type="submit" onclick="fnSubmit()" />
+                                    <input class="btn btn-success" name="_hl_action[AddDangKyUCSC]" value="{RS:Form_LuuBtn}" type="submit" onclick="fnSubmit()" />
                                     <%}%>
 
-                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx';" type="button" name="" value="Danh sách đăng ký" />
+                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '<%=dsUrl%>';" type="button" name="" value="{RS:Form_DSDangKyBtn}" />
                                 </div>
 
                             </div>

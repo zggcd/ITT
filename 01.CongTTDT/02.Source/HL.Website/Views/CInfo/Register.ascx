@@ -6,7 +6,14 @@
     {
         if (HL.Lib.Global.CPLogin.IsLoginOnWeb())
         {
-            Response.Redirect("/vn/Thanh-vien/Thong-tin-ca-nhan.aspx");
+            int langId = ViewPage.CurrentPage.LangID;
+            string thongtinUrl = "/vn/Thanh-vien/Thong-tin-ca-nhan.aspx";
+            if (langId == 2)
+            {
+                thongtinUrl = "/en/Member/Info.aspx";
+            }
+
+            Response.Redirect(thongtinUrl);
             return;
         }
     }
@@ -75,7 +82,7 @@
     <div class="box-category mb10">
         <div class="vanban-new">
             <h3 class="title-list-news">
-                <span class="title-t1">Đăng ký tài khoản</span>
+                <span class="title-t1">{RS:Web_DangKyTK}</span>
             </h3>
         </div>
     </div>
@@ -94,19 +101,19 @@
                                 </div>
                             </div>--%>
                             <div class="frm_input no1">
-                                <span class="name">Tên truy cập:<span style="color: red">*</span></span>
+                                <span class="name">{RS:Web_LoginName}<span style="color: red">*</span></span>
                                 <div class="input">
                                     <input name="LoginName" maxlength="255" id="LoginName1" class="" type="text" value="<%=entity.LoginName %>">
                                 </div>
                             </div>
                             <div class="frm_input no1">
-                                <span class="name">Mật khẩu:<span style="color: red">*</span></span>
+                                <span class="name">{RS:Web_Password}<span style="color: red">*</span></span>
                                 <div class="input">
                                     <input name="Password" maxlength="255" id="Password" class="" type="password" value="<%=entity.Password %>">
                                 </div>
                             </div>
                             <div class="frm_input no1">
-                                <span class="name">Xác nhận mật khẩu:<span style="color: red">*</span></span>
+                                <span class="name">{RS:Web_ConfirmPassword}<span style="color: red">*</span></span>
                                 <div class="input" style="margin-top: 8px">
                                     <input name="RePassword" maxlength="255" id="RePassword" class="DeepSearch textBox" type="password">
                                 </div>
@@ -280,9 +287,9 @@
                             </div>
 
                             <div class="button">
-                                <input name="_hl_action[RegisterPOST]" value="Đăng ký tài khoản" id="dk" class="btn_action search icon QAcustom" type="submit" style="display: none;">
+                                <input name="_hl_action[RegisterPOST]" value="{RS:Web_DangKyTK}" id="dk" class="btn_action search icon QAcustom" type="submit" style="display: none;">
                                 <%--<a class="btn_action search icon QAcustom" href="javascript:;" onclick="check();">Đăng ký tài khoản</a>--%>
-                                <input class="btn_action search icon QAcustom" onclick="check();" value="Đăng ký tài khoản" type="button" />
+                                <input class="btn_action search icon QAcustom" onclick="check();" value="{RS:Web_DangKyTK}" type="button" />
                             </div>
 
                         </div>
@@ -441,7 +448,7 @@
 <div class="hidediv"></div>
 <div class="wait" style="display: none;" id="Waiting">
     <img src="/Content/imgs/loading.gif" style="height: 20px;" />
-    <p style="color: red; font-style: italic; font-weight: normal; font-size: 11px;">Đang kiểm tra thông tin, vui lòng chờ giây lát...</p>
+    <p style="color: red; font-style: italic; font-weight: normal; font-size: 11px;">{RS:Web_DangKiemTraTT}</p>
 </div>
 <script src="/Content/js/AjaxRequest.js"></script>
 <script src="/Content/js/Function.js"></script>

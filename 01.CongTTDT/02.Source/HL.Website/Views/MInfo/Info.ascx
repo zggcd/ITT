@@ -6,11 +6,29 @@
     {
         if (!HL.Lib.Global.CPLogin.IsLoginOnWeb())
         {
-            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString("/vn/Thanh-vien/Thong-tin-ca-nhan.aspx"));
+            int langId = ViewPage.CurrentPage.LangID;
+            string loginUrl = "/vn/Thanh-vien/Dang-nhap.aspx"
+                , infoUrl = "/vn/Thanh-vien/Thong-tin-ca-nhan.aspx";
+            if (langId == 2)
+            {
+                loginUrl = "/en/Member/Login.aspx";
+                infoUrl = "/en/Member/Info.aspx";
+            }
+
+            Response.Redirect(loginUrl + "?ReturnPath=" + HttpUtility.ParseQueryString(infoUrl));
             return;
         }
     }
 </script>
+
+<%    
+    int langId = ViewPage.CurrentPage.LangID;
+    string doiMkUrl = "/vn/Thanh-vien/Doi-mat-khau.aspx";
+    if (langId == 2)
+    {
+        doiMkUrl = "/en/Member/Change-password.aspx";
+    }
+%>
 
 <style>
     .name {
@@ -110,8 +128,8 @@
 
                 <div class="clear-25">&nbsp;</div>
 
-                <input class="btn btn-success" name="_hl_action[ChangeInfoPOST]" value="Cập nhật thông tin" type="submit" />
-                <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Thanh-vien/Doi-mat-khau.aspx';" type="button" name="" value="Đổi mật khẩu" />
+                <input class="btn btn-success" name="_hl_action[ChangeInfoPOST]" value="{RS:Form_CapNhatBtn}" type="submit" />
+                <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '<%=doiMkUrl%>';" type="button" name="" value="{RS:Web_DoiMatKhau}" />
                 <input type="hidden" name="File" value="<%=entity.File %>" />
             </form>
         </div>

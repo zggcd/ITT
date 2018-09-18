@@ -14,7 +14,7 @@
 <div class="container mt-15">
     <div class="row-fluid titleContainer warning-news">
         <span><%=title %></span>
-        <a class="pull-right" href="<%=tinCanhBaoUrl %>">Xem thêm...</a>
+        <a class="pull-right" href="<%=tinCanhBaoUrl %>">{RS:Web_XemThem}</a>
     </div>
     <div class="row-fluid contentNews">
         <%if (c > 0)

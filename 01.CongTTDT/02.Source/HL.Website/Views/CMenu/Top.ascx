@@ -4,6 +4,15 @@
     var listItem = ViewBag.Data as List<SysPageEntity>;
     int i = 0;
     int c = listItem != null ? listItem.Count : 0;
+
+    int langId = ViewPage.CurrentPage.LangID;
+    string homeUrl = "/vn/default.aspx"
+        , dashBoard = "/vn/Dashboard.aspx";
+    if (langId == 2)
+    {
+        homeUrl = "/en/default.aspx";
+        dashBoard = "/en/Dashboard.aspx";
+    }
 %>
 
 <%if (c > 0)
@@ -24,8 +33,8 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse p-0">
                     <%if (!CPLogin.isNetwork || (CPLogin.isNetwork && CPLogin.IsLoginOnWeb()))
-                         {
-                            %>
+                        {
+                    %>
                     <ul class="nav navbar-nav">
                         <%for (i = 0; i < c; i++)
                             {
@@ -70,8 +79,8 @@
                         <%} %>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="Network" style="display: none;"><a href="/vn/Dashboard.aspx">Mạng lưới</a></li>
-                        <li class="CongTT" style="display: none;"><a href="/">Cổng thông tin</a></li>
+                        <li class="Network" style="display: none;"><a href="<%=dashBoard %>">{RS:Web_MangLuoi}</a></li>
+                        <li class="CongTT" style="display: none;"><a href="<%=homeUrl %>">{RS:Web_CongThongTin}</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

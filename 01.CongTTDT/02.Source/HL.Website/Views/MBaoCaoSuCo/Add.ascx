@@ -5,7 +5,15 @@
     {
         if (!HL.Lib.Global.CPLogin.IsLoginOnWeb())
         {
-            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString("/vn/Bao-cao-su-co/Them-bao-cao.aspx"));
+            int langId = ViewPage.CurrentPage.LangID;
+            string loginUrl = "/vn/Thanh-vien/Dang-nhap.aspx"
+                , thembcUrl = "/vn/Bao-cao-su-co/Them-bao-cao.aspx";
+            if (langId == 2)
+            {
+                loginUrl = "/en/Member/Login.aspx";
+                thembcUrl = "/en/Bao-cao-su-co/Them-bao-cao.aspx";
+            }
+            Response.Redirect(loginUrl + "?ReturnPath=" + HttpUtility.ParseQueryString(thembcUrl));
             return;
         }
         int userId = HL.Lib.Global.CPLogin.UserID;
@@ -26,6 +34,8 @@
     string bcBanDauUrl = "#", bcTongHopUrl = "#", bcKetThucUrl = "#", bcDienBienUrl = "#", bcPhuongAnUrl = "#", bcHoTroPhoiHopUrl = "#";
     if (!string.IsNullOrEmpty(endCode))
     {
+        int langId = ViewPage.CurrentPage.LangID;
+
         prefix = endCode + "-";
         bcBanDauUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-ban-dau-su-co.aspx";
         bcTongHopUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-tong-hop-su-co.aspx";
@@ -34,6 +44,20 @@
         bcDienBienUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-dien-bien-su-co.aspx";
         bcPhuongAnUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-phuong-an-su-co.aspx";
         bcHoTroPhoiHopUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-ho-tro-phoi-hop-su-co.aspx";
+
+        string bcscUrl = "/vn/Bao-cao-su-co.aspx";
+
+        if (langId == 2)
+        {
+            bcBanDauUrl = "/en/Bao-cao-su-co/" + prefix + "bc-ban-dau-su-co.aspx";
+            bcTongHopUrl = "/en/Bao-cao-su-co/" + prefix + "bc-tong-hop-su-co.aspx";
+            bcKetThucUrl = "/en/Bao-cao-su-co/" + prefix + "bc-ket-thuc-su-co.aspx";
+
+            bcDienBienUrl = "/en/Bao-cao-su-co/" + prefix + "bc-dien-bien-su-co.aspx";
+            bcPhuongAnUrl = "/en/Bao-cao-su-co/" + prefix + "bc-phuong-an-su-co.aspx";
+            bcHoTroPhoiHopUrl = "/en/Bao-cao-su-co/" + prefix + "bc-ho-tro-phoi-hop-su-co.aspx";
+            bcscUrl = "/en/Bao-cao-su-co.aspx";
+        }
     }
 
     WebMenuEntity menu = WebMenuService.Instance.GetByID(item.MenuID);
@@ -127,7 +151,7 @@
 </style>
 
 <div class="row-fluid titleContainer">
-    <span>BÁO CÁO SỰ CỐ MẠNG</span>
+    <span>{RS:Web_BCSuCoHeader}</span>
 </div>
 <div class="contentNews">
     <div class="main_right">
@@ -145,22 +169,22 @@
 
                     <form method="post" enctype="multipart/form-data">
                         <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                            <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642; Tên sự cố (*)</span>
+                            <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642; {RS:Form_TenSuCo}</span>
                             <input name="Title" maxlength="250" id="Title" class="textstyle1" type="text" value="<%=item.Title %>" autocomplete="off" />
                         </p>
 
                         <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                            <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642; Tên tổ chức/cá nhân báo cáo sự cố (*)</span>
+                            <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642; {RS:Form_TenToChuc}</span>
                             <input name="Name" maxlength="250" id="Name" class="textstyle1" type="text" value="<%= isUCSC ? (dk == null ? hs.ToChuc_Ten : dk.ToChuc_Ten) : item.Name %>" autocomplete="off" />
                         </p>
 
                         <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                            <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'></span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'> Địa chỉ: (*)</span>
+                            <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'></span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'> {RS:Form_DiaChi}</span>
                             <input name="Address" maxlength="500" id="Address" class="textstyle1" type="text" value="<%= isUCSC ? (dk == null ? hs.ToChuc_DiaChi : dk.ToChuc_DiaChi) : item.Address %>" autocomplete="off" />
                         </p>
 
                         <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
-                            <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'></span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'> Điện thoại (*)</span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
+                            <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'></span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'> {RS:Form_DienThoai}</span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
                                 <input name="Phone" maxlength="15" id="Phone" class="textstyle1" type="text" value="<%= isUCSC ? (dk == null ? hs.ToChuc_DienThoai : dk.ToChuc_DienThoai) : item.Phone %>" autocomplete="off" />
                                 Email (*) 
                                    
@@ -172,28 +196,28 @@
 
                         <input type="hidden" name="endCode" value="<%=endCode %>" />
 
-                        <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Bao-cao-su-co.aspx';" type="button" name="" value="<< Danh sách báo cáo" />
+                        <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '<%=bcscUrl%>';" type="button" name="" value="<< {RS:Form_DSBaoCao}" />
                         <%if (menu != null & menu.Code != "KetThuc")
                             {%>
                         <%if (!string.IsNullOrEmpty(endCode))
                             {%>
-                        <input class="btn btn-success" name="_hl_action[Update]" value="Cập nhật" type="submit" />
+                        <input class="btn btn-success" name="_hl_action[Update]" value="{RS:Form_CapNhatBtn}" type="submit" />
                         <%}
                             else
                             {%>
-                        <input class="btn btn-success" name="_hl_action[Add]" value="Lưu" type="submit" />
+                        <input class="btn btn-success" name="_hl_action[Add]" value="{RS:Form_LuuBtn}" type="submit" />
                         <%}%>
                         <%} %>
 
                         <div class="clear-10">&nbsp;</div>
                         <%if (!string.IsNullOrEmpty(prefix))
                             {%>
-                        <input type="button" class="btn btn-warning" value="Báo cáo ban đầu" onclick="location.href = '<%=bcBanDauUrl%>';" />
-                        <input type="button" class="btn btn-warning" value="Diễn biến sự cố" onclick="location.href = '<%=bcDienBienUrl%>';" />
-                        <input type="button" class="btn btn-warning" value="Phương án ứng cứu" onclick="location.href = '<%=bcPhuongAnUrl%>';" />
-                        <input type="button" class="btn btn-warning" value="Đề nghị hỗ trợ-phối hợp" onclick="location.href = '<%=bcHoTroPhoiHopUrl%>';" />
+                        <input type="button" class="btn btn-warning" value="{RS:Form_BCBanDauBtn}" onclick="location.href = '<%=bcBanDauUrl%>';" />
+                        <input type="button" class="btn btn-warning" value="{RS:Form_DienBienSuCoBtn}" onclick="location.href = '<%=bcDienBienUrl%>';" />
+                        <input type="button" class="btn btn-warning" value="{RS:Form_PhuongAnUngCuuBtn}" onclick="location.href = '<%=bcPhuongAnUrl%>';" />
+                        <input type="button" class="btn btn-warning" value="{RS:Form_DeNghiHoTroBtn}" onclick="location.href = '<%=bcHoTroPhoiHopUrl%>';" />
                         <%--<input type="button" class="btn btn-warning" value="Báo cáo tổng hợp" onclick="location.href = '<%=bcTongHopUrl%>';" />--%>
-                        <input type="button" class="btn btn-warning" value="Báo cáo kết thúc" onclick="location.href = '<%=bcKetThucUrl%>';" />
+                        <input type="button" class="btn btn-warning" value="{RS:Form_BCKetThucBtn}" onclick="location.href = '<%=bcKetThucUrl%>';" />
                         <%} %>
                     </form>
 

@@ -71,7 +71,13 @@
     {
         if (!HL.Lib.Global.CPLogin.IsLoginOnWeb())
         {
-            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString(Request.RawUrl));
+            int langId = ViewPage.CurrentPage.LangID;
+            string loginUrl = "/vn/Thanh-vien/Dang-nhap.aspx";
+            if (langId == 2)
+            {
+                loginUrl = "/en/Member/Login.aspx";
+            }
+            Response.Redirect(loginUrl + "?ReturnPath=" + HttpUtility.ParseQueryString(Request.RawUrl));
             return;
         }
     }
@@ -84,10 +90,17 @@
     List<ModBaoCaoDienBienSuCoEntity> lstBCDienBien = ViewBag.ListBaoCao as List<ModBaoCaoDienBienSuCoEntity> ?? new List<ModBaoCaoDienBienSuCoEntity>();
 
     string endCode = ViewBag.EndCode;
+
+    int langId = ViewPage.CurrentPage.LangID;
+    string bcscUrl = "/vn/Bao-cao-su-co/";
+    if (langId == 2)
+    {
+        bcscUrl = "/en/Bao-cao-su-co/";
+    }
 %>
 
 <div class="row-fluid titleContainer">
-    <span>BÁO CÁO DIỄN BIẾN SỰ CỐ MẠNG</span>
+    <span>{RS:Form_BCDienBienHeader}</span>
 </div>
 
 <div class="contentNews">
@@ -107,7 +120,7 @@
                                     <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
                                         <a style="cursor: context-menu; text-decoration: none">
                                             <b>
-                                                <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>BÁO CÁO DIỄN BIẾN SỰ CỐ MẠNG</span>
+                                                <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>{RS:Form_BCDienBienHeader}</span>
                                             </b>
                                         </a>
                                         <b>
@@ -185,7 +198,7 @@
                                                     <input class="btn_action search icon QAcustom" name="_hl_action[DeleteBCDienBienUCSC]" id="DeleteBCDienBien" value="Xóa" type="submit" style="display: none;">
                                                 </p>
                                             </td>
-                                        </tr> 
+                                        </tr>
                                         <%} %>
                                     </table>
 
@@ -205,8 +218,8 @@
                                 <div class="button">
                                     <input type="hidden" name="baoCaoDBId" id="baoCaoDBId" value="0">
                                     <input type="hidden" name="endCode" value="<%=endCode %>" />
-                                    <input class="btn btn-success" name="_hl_action[AddBCDienBienUCSC]" value="Thêm mới" type="submit" />
-                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Bao-cao-su-co/<%=endCode %>.aspx';" type="button" name="" value="Đóng" />
+                                    <input class="btn btn-success" name="_hl_action[AddBCDienBienUCSC]" value="{RS:Web_ThemMoiBtn}" type="submit" />
+                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '<%=bcscUrl%><%=endCode %>.aspx';" type="button" name="" value="{RS:Form_DongBtn}" />
                                 </div>
                             </div>
                         </div>
@@ -221,7 +234,7 @@
 <script type="text/javascript">
     function del(id, encode) {
         if (id && encode) {
-            if (window.confirm('Bạn có chắc muốn xóa diễn biến này?')) {
+            if (window.confirm('{RS:Web_BanCoChacXoa}')) {
                 $('#baoCaoDBId').val(id);
                 $('#DeleteBCDienBien').click();
             } else {

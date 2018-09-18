@@ -5,7 +5,16 @@
     {
         if (!HL.Lib.Global.CPLogin.IsLoginOnWeb())
         {
-            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString("/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx"));
+            int langId = ViewPage.CurrentPage.LangID;
+            string loginUrl = "/vn/Thanh-vien/Dang-nhap.aspx"
+                , themHsUrl = "/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx";
+            if (langId == 2)
+            {
+                loginUrl = "/en/Member/Login.aspx";
+                themHsUrl = "/en/Member/Them-ho-so-ung-cuu-su-co.aspx";
+            }
+
+            Response.Redirect(loginUrl + "?ReturnPath=" + HttpUtility.ParseQueryString(themHsUrl));
             return;
         }
     }
@@ -66,6 +75,14 @@
     List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucNhomKTKT = ViewBag.ListTongHopNhanLucNhomKTKT as List<ModTongHopNhanLucUCSCEntity> ?? ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(0, "KyThuatKiemTra");
 
     int d = 0;
+
+    int langId = ViewPage.CurrentPage.LangID;
+    string hsUrl = "/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx";
+    if (langId == 2)
+    {
+        hsUrl = "/en/Member/Ho-so-ung-cuu-su-co.aspx";
+    }
+
 %>
 
 <style>
@@ -679,15 +696,15 @@
                                         {%>
                                     <%if (entityHs != null & entityHs.Activity == false)
                                         {%>
-                                    <input class="btn btn-success" name="_hl_action[UpdateHoSoUCSC]" value="Cập nhật" type="submit" onclick="fnSubmit()" />
+                                    <input class="btn btn-success" name="_hl_action[UpdateHoSoUCSC]" value="{RS:Form_CapNhatBtn}" type="submit" onclick="fnSubmit()" />
                                     <%} %>
                                     <%}
                                         else
                                         {%>
-                                    <input class="btn btn-success" name="_hl_action[AddHoSoUCSC]" value="Lưu" type="submit" onclick="fnSubmit()" />
+                                    <input class="btn btn-success" name="_hl_action[AddHoSoUCSC]" value="{RS:Form_LuuBtn}" type="submit" onclick="fnSubmit()" />
                                     <%}%>
 
-                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx';" type="button" name="" value="Danh sách hồ sơ" />
+                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '<%=hsUrl%>';" type="button" name="" value="{RS:Form_DSHSBtn}" />
                                     <%--<input type="hidden" name="File" value="<%=entity.File %>" />--%>
                                 </div>
 

@@ -5,7 +5,14 @@
     {
         if (!HL.Lib.Global.CPLogin.IsLoginOnWeb())
         {
-            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString(Request.RawUrl));
+            int langId = ViewPage.CurrentPage.LangID;
+            string loginUrl = "/vn/Thanh-vien/Dang-nhap.aspx";
+            if (langId == 2)
+            {
+                loginUrl = "/en/Member/Login.aspx";
+            }
+
+            Response.Redirect(loginUrl + "?ReturnPath=" + HttpUtility.ParseQueryString(Request.RawUrl));
             return;
         }
     }
@@ -25,6 +32,13 @@
     int countLoaiSuCo = lstLoaiSuCo != null ? lstLoaiSuCo.Count : 0;
 
     WebMenuEntity menu = WebMenuService.Instance.GetByID(sc.MenuID);
+
+    int langId = ViewPage.CurrentPage.LangID;
+    string bcscUrl = "/vn/Bao-cao-su-co/";
+    if (langId == 2)
+    {
+        bcscUrl = "/en/Bao-cao-su-co/";
+    }
 %>
 
 <style>
@@ -93,7 +107,7 @@
 </style>
 
 <div class="row-fluid titleContainer">
-    <span>BÁO CÁO TỔNG HỢP VỀ HOẠT ĐỘNG TIẾP NHẬN VÀ XỬ LÝ SỰ CỐ</span>
+    <span>{RS:Form_BCTongHopHeader}</span>
 </div>
 
 <div class="contentNews">
@@ -387,15 +401,15 @@
                                         {%>
                                     <%if (isEdit == 1)
                                         {%>
-                                    <input class="btn btn-success" name="_hl_action[UpdateBCTongHopUCSC]" value="Cập nhật" type="submit" />
+                                    <input class="btn btn-success" name="_hl_action[UpdateBCTongHopUCSC]" value="{RS:Form_CapNhatBtn}" type="submit" />
                                     <%}
                                         else
                                         {%>
-                                    <input class="btn btn-success" name="_hl_action[AddBCTongHopUCSC]" value="Lưu" type="submit" />
+                                    <input class="btn btn-success" name="_hl_action[AddBCTongHopUCSC]" value="{RS:Form_LuuBtn}" type="submit" />
                                     <%}%>
                                     <%}%>
 
-                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Bao-cao-su-co/<%=endCode %>.aspx';" type="button" name="" value="Đóng" />
+                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '<%=bcscUrl%><%=endCode %>.aspx';" type="button" name="" value="{RS:Form_DongBtn}" />
                                 </div>
 
                             </div>

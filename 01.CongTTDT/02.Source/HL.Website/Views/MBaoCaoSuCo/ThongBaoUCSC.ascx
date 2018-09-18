@@ -70,7 +70,14 @@
     {
         if (!HL.Lib.Global.CPLogin.IsLoginOnWeb())
         {
-            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString(Request.RawUrl));
+            int langId = ViewPage.CurrentPage.LangID;
+            string loginUrl = "/vn/Thanh-vien/Dang-nhap.aspx";
+            if (langId == 2)
+            {
+                loginUrl = "/en/Member/Login.aspx";
+            }
+
+            Response.Redirect(loginUrl + "?ReturnPath=" + HttpUtility.ParseQueryString(Request.RawUrl));
             return;
         }
     }
@@ -81,10 +88,17 @@
     ModThongBaoSuCoEntity entityTB = ViewBag.ThongBaoUCSC as ModThongBaoSuCoEntity ?? new ModThongBaoSuCoEntity();
     var endCode = ViewBag.EndCode ?? "";
     int isEdit = ViewBag.IsEdit ?? 0;
+
+    int langId = ViewPage.CurrentPage.LangID;
+    string bcscUrl = "/vn/Bao-cao-su-co.aspx";
+    if (langId == 2)
+    {
+        bcscUrl = "/en/Bao-cao-su-co.aspx";
+    }
 %>
 
 <div class="row-fluid titleContainer">
-    <span>THÔNG BÁO SỰ CỐ MẠNG</span>
+    <span>{RS:Form_BCThongBaoSuCoHeader}</span>
 </div>
 
 <div class="contentNews">
@@ -104,7 +118,7 @@
                                     <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
                                         <a style="cursor: context-menu; text-decoration: none">
                                             <b>
-                                                <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>THÔNG BÁO SỰ CỐ MẠNG</span>
+                                                <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>{RS:Form_BCThongBaoSuCoHeader}</span>
                                             </b>
                                         </a>
                                         <b>
@@ -310,14 +324,14 @@
                                     <input type="hidden" name="baoCaoDBId" id="baoCaoDBId" value="0">
                                     <%if (isEdit == 1)
                                         {%>
-                                    <input class="btn btn-success" name="_hl_action[UpdateThongBaoUCSC]" value="Cập nhật" type="submit" />
+                                    <input class="btn btn-success" name="_hl_action[UpdateThongBaoUCSC]" value="{RS:Form_CapNhatBtn}" type="submit" />
                                     <%}
                                         else
                                         {%>
-                                   <input class="btn btn-success" name="_hl_action[AddThongBaoUCSC]" value="Lưu" type="submit" />
+                                   <input class="btn btn-success" name="_hl_action[AddThongBaoUCSC]" value="{RS:Form_LuuBtn}" type="submit" />
                                     <%}%>
                                     
-                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '/vn/Bao-cao-su-co.aspx';" type="button" name="" value="Đóng" />
+                                    <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '<%=bcscUrl%>';" type="button" name="" value="{RS:Form_DongBtn}" />
                                 </div>
                             </div>
                         </div>
@@ -332,7 +346,7 @@
 <script type="text/javascript">
     function del(id, encode) {
         if (id && encode) {
-            if (window.confirm('Bạn có chắc muốn xóa thông tin đề nghị phối hợp-hỗ trợ này?')) {
+            if (window.confirm('{RS:Web_BanCoChacXoaDeNghi}')) {
                 $('#baoCaoDBId').val(id);
                 $('#DeleteBCHoTroPhoiHop').click();
             } else {

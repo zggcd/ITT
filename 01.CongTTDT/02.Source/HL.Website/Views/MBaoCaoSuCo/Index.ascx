@@ -5,7 +5,14 @@
     {
         if (!HL.Lib.Global.CPLogin.IsLoginOnWeb())
         {
-            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString(ViewPage.CurrentURL));
+            int langId = ViewPage.CurrentPage.LangID;
+            string loginUrl = "/vn/Thanh-vien/Dang-nhap.aspx";
+            if (langId == 2)
+            {
+                loginUrl = "/en/Member/Login.aspx";
+            }
+
+            Response.Redirect(loginUrl + "?ReturnPath=" + HttpUtility.ParseQueryString(ViewPage.CurrentURL));
             return;
         }
     }
@@ -33,6 +40,17 @@
 
     var tbsc_listItem = ViewBag.ListThongBao as List<ModThongBaoSuCoEntity>;
     int tbsc_c = tbsc_listItem != null ? tbsc_listItem.Count : 0;
+
+    int langId = ViewPage.CurrentPage.LangID;
+    string bcscUrl = "/vn/Bao-cao-su-co/"
+        , themThongBaoUrl = "/vn/Bao-cao-su-co/Them-thong-bao-su-co.aspx"
+        , themBcUrl = "/vn/Bao-cao-su-co/Them-bao-cao.aspx";
+    if (langId == 2)
+    {
+        bcscUrl = "/en/Bao-cao-su-co/";
+        themThongBaoUrl = "/en/Bao-cao-su-co/Them-thong-bao-su-co.aspx";
+        themBcUrl = "/en/Bao-cao-su-co/Them-bao-cao.aspx";
+    }
 %>
 
 <div class="contentNews">
@@ -43,17 +61,17 @@
                 <div class="top">
                     <!-- ITT FIX -->
                     <div class="button pull-right" style="margin-bottom: 10px;">
-                        <input style="margin-left: 10px;" class="btn btn-info" onclick="location.href = '/vn/Bao-cao-su-co/Them-thong-bao-su-co.aspx';" type="button" name="" value="Thông báo sự cố">
+                        <input style="margin-left: 10px;" class="btn btn-info" onclick="location.href = '<%=themThongBaoUrl%>';" type="button" name="" value="{RS:Form_ThongBaoSuCoBtn}">
                     </div>
 
                     <div class="button pull-right" style="margin-bottom: 10px;">
-                        <input style="margin-left: 10px;" class="btn btn-success" onclick="location.href = '/vn/Bao-cao-su-co/Them-bao-cao.aspx';" type="button" name="" value="Thêm sự cố mới">
+                        <input style="margin-left: 10px;" class="btn btn-success" onclick="location.href = '<%=themBcUrl%>';" type="button" name="" value="{RS:Form_ThemSuCoBtn}">
                     </div>
                 </div>
                 <!--.Main_container-->
             </div>
 
-            <div class="title-t2">CÁC BÁO CÁO CỦA BẠN</div>
+            <div class="title-t2">{RS:Web_CacBCCuaBan}</div>
             <div class="main_vbtable" style="width: 100%">
                 <form method="post" name="frmDsHs">
                     <!-- ITT FIX -->
@@ -61,11 +79,11 @@
                         <thead>
                             <tr>
                                 <th class="text-center" style="width: 5%;">#</th>
-                                <th class="text-center">Báo cáo</th>
-                                <th class="text-center" style="width: 22%;">Đã báo cáo</th>
-                                <th class="text-center" style="width: 13%;">Ngày bắt đầu</th>
-                                <th class="text-center" style="width: 13%;">Ngày kết thúc</th>
-                                <th class="text-center" style="width: 12%;">Trạng thái</th>
+                                <th class="text-center">{RS:Web_BaoCaoHeadTable}</th>
+                                <th class="text-center" style="width: 22%;">{RS:Web_DaBaoCaoHeadTable}</th>
+                                <th class="text-center" style="width: 13%;">{RS:Web_NgayBatDauHeadTable}</th>
+                                <th class="text-center" style="width: 13%;">{RS:Web_NgayKetThucHeadTable}</th>
+                                <th class="text-center" style="width: 12%;">{RS:Web_TrangThaiHeadTable}</th>
                                 <th class="text-center" style="width: 1%;"></th>
                             </tr>
                         </thead>
@@ -103,6 +121,17 @@
                                         if (bcPhuongAn != null) bcPhuongAnUrl = "/vn/Bao-cao-su-co/" + listItem[i].Code + "-bc-phuong-an-su-co.aspx";
                                         if (bcHoTroPhoiHop != null) bcHoTroPhoiHopUrl = "/vn/Bao-cao-su-co/" + listItem[i].Code + "-bc-ho-tro-phoi-hop-su-co.aspx";
 
+                                        if (langId == 2)
+                                        {
+                                        if (bcBanDau != null) bcBanDauUrl = "/en/Bao-cao-su-co/" + listItem[i].Code + "-bc-ban-dau-su-co.aspx";
+                                        if (bcTongHop != null) bcTongHopUrl = "/en/Bao-cao-su-co/" + listItem[i].Code + "-bc-tong-hop-su-co.aspx";
+                                        if (bcKetThuc != null) bcKetThucUrl = "/en/Bao-cao-su-co/" + listItem[i].Code + "-bc-ket-thuc-su-co.aspx";
+
+                                        if (bcDienBien != null) bcDienBienUrl = "/en/Bao-cao-su-co/" + listItem[i].Code + "-bc-dien-bien-su-co.aspx";
+                                        if (bcPhuongAn != null) bcPhuongAnUrl = "/en/Bao-cao-su-co/" + listItem[i].Code + "-bc-phuong-an-su-co.aspx";
+                                        if (bcHoTroPhoiHop != null) bcHoTroPhoiHopUrl = "/en/Bao-cao-su-co/" + listItem[i].Code + "-bc-ho-tro-phoi-hop-su-co.aspx";
+                                        }
+
                                         WebMenuEntity menu = WebMenuService.Instance.GetByID(listItem[i].MenuID);
                                         string trangThai = menu != null ? menu.Name : "";
                             %>
@@ -110,11 +139,11 @@
                                 <!-- ITT FIX -->
                                 <td style="width: 5%; text-align: center;"><%=i+1 %></td>
                                 <td>
-                                    <a href="/vn/Bao-cao-su-co/<%=listItem[i].Code %>.aspx" style="display: block;"><%=listItem[i].Name %></a>
+                                    <a href="<%=bcscUrl + listItem[i].Code %>.aspx" style="display: block;"><%=listItem[i].Name %></a>
                                     <br>
                                     <p>
-                                        <span class="date">Mã báo cáo: <%=listItem[i].Code %></span>
-                                        <span class="date fr">Ngày thêm: <%=string.Format("{0:dd/MM/yyyy}", listItem[i].Published) %></span>
+                                        <span class="date">{RS:Web_MaBaoCao} <%=listItem[i].Code %></span>
+                                        <span class="date fr">{RS:Web_NgayThem} <%=string.Format("{0:dd/MM/yyyy}", listItem[i].Published) %></span>
                                     </p>
                                 </td>
                                 <td style="width: 20%;">
@@ -200,7 +229,7 @@
                             <tr>
                                 <td style="width: 5%; text-align: center;"><%=i+1 %></td>
                                 <td>
-                                    <a href="/vn/Bao-cao-su-co/<%=tbsc_listItem[i].Code %>-cap-nhat-thong-bao-su-co.aspx" style="display: block;"><%=tbsc_listItem[i].ToChuc_Ten %></a>
+                                    <a href="<%=bcscUrl + tbsc_listItem[i].Code %>-cap-nhat-thong-bao-su-co.aspx" style="display: block;"><%=tbsc_listItem[i].ToChuc_Ten %></a>
                                     <br>
                                     <p>
                                         <span class="date">Mã thông cáo: <%=tbsc_listItem[i].Code %></span>
@@ -246,7 +275,7 @@
 <script>
     function del(id) {
         if (id) {
-            if (window.confirm('Bạn có chắc muốn xóa báo cáo này?')) {
+            if (window.confirm('{RS:Web_BanCoChacXoa}')) {
                 $('#baoCaoId').val(id);
                 $('#Delete').click();
             }
@@ -255,7 +284,7 @@
 
     function tbsc_del(id) {
         if (id) {
-            if (window.confirm('Bạn có chắc muốn xóa thông báo này?')) {
+            if (window.confirm('{RS:Web_BanCoChacXoaThongBao}')) {
                 $('#thongBaoId').val(id);
                 $('#tbscDelete').click();
             }

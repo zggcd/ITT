@@ -29,6 +29,19 @@
         }
 </style>
 
+<% 
+    var listItem = ViewBag.Data as List<SysPageEntity>;
+    int i = 0;
+    int c = listItem != null ? listItem.Count : 0;
+
+    int langId = ViewPage.CurrentPage.LangID;
+    string searchUrl = "/vn/Tim-kiem.aspx";
+    if (langId == 2)
+    {
+        searchUrl = "/en/Search.aspx";
+    }
+%>
+
 <script>
     var Base64 = {
         _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
@@ -148,14 +161,14 @@
     function searchOfCom() {
         var inputSearch = $('input[id="search"]').val().trim();
         if (inputSearch.length > 500) {
-            alert("Số kí tự trong câu tìm kiếm không được vượt 500!");
+            alert("{RS:Web_Search_GioiHanKyTu}");
             return false;
         }
         inputSearch = encodeURIComponent(inputSearch);
         //inputSearch = inputSearch.replace("&", "*va*");
         //inputSearch = inputSearch.replace("?", "*hoicham*");
         //inputSearch = inputSearch.replace("=", "*bang*");
-                window.location.assign("/vn/Tim-kiem.aspx?Keyword=" + inputSearch.trim().replace("\"", ""));
+                window.location.assign("<%=searchUrl%>?Keyword=" + inputSearch.trim().replace("\"", ""));
     }
 
     $(document).ready(function () {
@@ -165,14 +178,14 @@
                 e.preventDefault();
                 var inputSearch = $('input[id="search"]').val().trim();
                 if (inputSearch.length > 500) {
-                    alert("Số kí tự trong câu tìm kiếm không được vượt 500!");
+                    alert("{RS:Web_Search_GioiHanKyTu}");
                     return false;
                 }
                 inputSearch = encodeURIComponent(inputSearch);
                 //inputSearch = inputSearch.replace("&", "*va*");
                 //inputSearch = inputSearch.replace("?", "*hoicham*");
                 //inputSearch = inputSearch.replace("=", "*bang*");
-                window.location.assign("/vn/Tim-kiem.aspx?Keyword=" + inputSearch.trim().replace("\"", ""));
+                window.location.assign("<%=searchUrl%>?Keyword=" + inputSearch.trim().replace("\"", ""));
                 //window.location.assign("/en/Search.aspx?Keyword=" + inputSearch.trim().replace("\"", ""));
                 return false;
             }

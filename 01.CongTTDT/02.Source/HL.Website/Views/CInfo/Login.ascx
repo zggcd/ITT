@@ -1,5 +1,29 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="HL.Lib.MVC.ViewControl" %>
-<%var item = ViewBag.Login as CPUserEntity ?? new CPUserEntity(); %>
+<%var item = ViewBag.Login as CPUserEntity ?? new CPUserEntity();
+
+    int langId = ViewPage.CurrentPage.LangID;
+    string quenmkUrl = "/vn/Thanh-vien/Quen-mat-khau.aspx"
+        , doimkUrl = "/vn/Thanh-vien/Doi-mat-khau.aspx"
+        , thongtinUrl = "/vn/Thanh-vien/Thong-tin-ca-nhan.aspx"
+        , hsucscUrl = "/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx"
+        , dsucscUrl = "/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx"
+        , dsbcbdUrl = "/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx"
+        , dsbcktUrl = "/vn/Thanh-vien/DS-bc-ket-thuc-su-co.aspx"
+        , dsbcthUrl = "/vn/Thanh-vien/DS-bc-tong-hop-su-co.aspx"
+        , dvUrl = "/vn/Thanh-vien/Dich-vu-canh-bao-su-co.aspx";
+    if (langId == 2)
+    {
+        quenmkUrl = "/en/Member/Forget-password.aspx";
+        doimkUrl = "/en/Member/Change-password.aspx";
+        thongtinUrl = "/en/Member/Info.aspx";
+        hsucscUrl = "/en/Member/Ho-so-ung-cuu-su-co.aspx";
+        dsucscUrl = "/en/Member/DS-dang-ky-ung-cuu-su-co.aspx";
+        dsbcbdUrl = "/en/Member/DS-bc-ban-dau-su-co.aspx";
+        dsbcktUrl = "/en/Member/DS-bc-ket-thuc-su-co.aspx";
+        dsbcthUrl = "/en/Member/DS-bc-tong-hop-su-co.aspx";
+        dvUrl = "/en/Member/Dich-vu-canh-bao-su-co.aspx";
+    }
+%>
 
 <style type="text/css">
     .btnButtonLogin {
@@ -55,51 +79,50 @@
 <div class="thong_ke">
     <div class="main">
         <div class="title">
-            Đăng nhập
+            {RS:Web_Login}
         </div>
         <div class="content" style="margin: 0px">
             <%if (!HL.Lib.Global.CPLogin.IsLoginOnWeb())
                 {%>
             <%--<form method="post" id="" name="" action="{ActionForm}">--%>
             <p class="text1">
-                Tên truy nhập 
+                {RS:Web_LoginName} 
             </p>
             <p>
                 <input id="LoginName" name="LoginName" value="<%=item.LoginName %>" class="com-input" type="text">
             </p>
-            <p class="text1">Mật khẩu</p>
+            <p class="text1">{RS:Web_Password}</p>
             <p>
                 <input value="<%=item.Password %>" id="Password" name="Password" class="com-input" type="password">
             </p>
             <span>
-                <a href="/vn/Thanh-vien/Quen-mat-khau.aspx" style="color: #444">Quên mật khẩu</a>
+                <a href="<%=quenmkUrl %>" style="color: #444">{RS:Web_QuenMatKhau}</a>
             </span>
             <span class="button">
-                <input id="dn" class="dn-btn" name="_hl_action[LoginPOST]" value="Đăng nhập" type="submit" style="display: none;">
-                <input name="" value="Đăng nhập" id="" class="btn_action search icon btnButtonLogin" type="button" onclick="checkdn($('#LoginName').val(), $('#Password').val());">
+                <input id="dn" class="dn-btn" name="_hl_action[LoginPOST]" value="{RS:Web_Login}" type="submit" style="display: none;">
+                <input name="" value="{RS:Web_Login}" id="" class="btn_action search icon btnButtonLogin" type="button" onclick="checkdn($('#LoginName').val(), $('#Password').val());">
             </span>
             <%--</form>--%>
             <%}
                 else
                 {%>
-            Đăng nhập thành công!
+            {RS:Web_DangNhapThanhCong}
             <br />
-            <a href="javascript: dx();" rel="nofollow">Đăng xuất</a>
+            <a href="javascript: dx();" rel="nofollow">{RS:Web_DangXuat}</a>
             <br />
-            <a href="/vn/Thanh-vien/Doi-mat-khau.aspx" title="Đổi mật khẩu">Đổi mật khẩu</a>
+            <a href="<%=doimkUrl %>" title="{RS:Web_DoiMatKhau}">{RS:Web_DoiMatKhau}</a>
             <br />
-            <a href="/vn/Thanh-vien/Thong-tin-ca-nhan.aspx" title="Thay đổi thông tin cá nhân">Thay đổi thông tin cá nhân</a>
+            <a href="<%=thongtinUrl %>" title="{RS:Web_DoiThongTinCaNhan}">{RS:Web_DoiThongTinCaNhan}</a>
             <br />
             <br />
-            <u><b>Điều phối, ứng cứu sự cố ATTT mạng:</b></u>
+            <u><b>{RS:Web_DieuPhoiUCSC}</b></u>
             <ul>
-                <li><a href="/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx">1. Hồ sơ UCSC</a></li>
-                <li><a href="/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx">2. Đăng ký tham gia mạng lưới UCSC</a></li>
-                <%--<li><a href="/vn/Thanh-vien/Thanh-vien-con-m2.aspx">a. DS thành viên con</a></li>--%>
-                <li><a href="/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx">3. Báo cáo ban đầu sự cố mạng</a></li>
-                <li><a href="/vn/Thanh-vien/DS-bc-ket-thuc-su-co.aspx">4. Báo cáo kết thúc ứng phó sự cố</a></li>
-                <li><a href="/vn/Thanh-vien/DS-bc-tong-hop-su-co.aspx">5. Báo cáo tổng hợp</a></li>
-                <li><a href="/vn/Thanh-vien/Dich-vu-canh-bao-su-co.aspx">6. Dịch vụ cảnh báo</a></li>
+                <li><a href="<%=hsucscUrl %>">{RS:Web_HSUCSC}</a></li>
+                <li><a href="<%=dsucscUrl %>">{RS:Web_DangKyMangLuoi}</a></li>
+                <li><a href="<%=dsbcbdUrl %>">{RS:Web_BCBanDau}</a></li>
+                <li><a href="<%=dsbcktUrl %>">{RS:Web_BCKetThuc}</a></li>
+                <li><a href="<%=dsbcthUrl %>">{RS:Web_BCTongHop}</a></li>
+                <li><a href="<%=dvUrl %>">{RS:Web_DVCanhBao}</a></li>
             </ul>
             <%}%>
         </div>
@@ -109,7 +132,7 @@
 <div class="hidediv"></div>
 <div class="wait" style="display: none;" id="Waiting">
     <img src="/Content/imgs/loading.gif" style="height: 20px;" />
-    <p style="color: red; font-style: italic; font-weight: normal; font-size: 11px;">Đang kiểm tra đăng nhập, vui lòng chờ giây lát...</p>
+    <p style="color: red; font-style: italic; font-weight: normal; font-size: 11px;">{RS:Web_DangKiemTraDN}</p>
 </div>
 <script src="/Content/js/AjaxRequest.js"></script>
 <script src="/Content/js/Function.js"></script>

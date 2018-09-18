@@ -5,7 +5,14 @@
     {
         if (!HL.Lib.Global.CPLogin.IsLoginOnWeb())
         {
-            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString(ViewPage.CurrentURL));
+            int langId = ViewPage.CurrentPage.LangID;
+            string loginUrl = "/vn/Thanh-vien/Dang-nhap.aspx";
+            if (langId == 2)
+            {
+                loginUrl = "/en/Member/Login.aspx";
+            }
+
+            Response.Redirect(loginUrl + "?ReturnPath=" + HttpUtility.ParseQueryString(ViewPage.CurrentURL));
             return;
         }
     }
@@ -29,10 +36,17 @@
     var listItem = ViewBag.Data as List<ModDonDangKyUCSCEntity>;
     int c2 = listItem != null ? listItem.Count : 0;
     var model = ViewBag.Model as MDonDangKyUCSCModel;
+
+    int langId = ViewPage.CurrentPage.LangID;
+    string dangKyUrl = "/vn/Thanh-vien/Dang-ky-ung-cuu-su-co.aspx";
+    if (langId == 2)
+    {
+        dangKyUrl = "/en/Member/Dang-ky-ung-cuu-su-co.aspx";
+    }
 %>
 
 <div class="row-fluid titleContainer">
-    <span>ĐĂNG KÝ THAM GIA MẠNG LƯỚI ỨNG CỨU SỰ CỐ</span>
+    <span>{RS:Form_DangKyMangLuoiHeader}</span>
 </div>
 
 <div class="contentNews">
@@ -42,22 +56,22 @@
                 <%if (c2 == 0)
                     { %>
                 <div class="button pull-right" style="margin-bottom: 10px;">
-                    <input style="margin-left: 10px;" class="btn btn-success" onclick="javascript: location.href = '/vn/Thanh-vien/Dang-ky-ung-cuu-su-co.aspx';" type="button" name="" value="Đăng ký" />
+                    <input style="margin-left: 10px;" class="btn btn-success" onclick="javascript: location.href = '<%=dangKyUrl%>';" type="button" name="" value="{RS:Form_DangKyBtn}" />
                 </div>
                 <%} %>
             </div>
             <!--.Main_container-->
         </div>
 
-        <div class="title-t2">CÁC HỒ SƠ CỦA BẠN</div>
+        <div class="title-t2">{RS:Form_CacHSCuaBanHeader}</div>
         <div class="main_vbtable" style="width: 100%">
             <form method="post" name="frmDsHs">
                 <table style="width: 100%;" class="table-bordered">
                     <thead>
                         <tr>
                             <th class="text-center" style="width: 5%;">#</th>
-                            <th class="text-center">Hồ sơ</th>
-                            <th class="text-center" style="width: 20%;">Trạng thái</th>
+                            <th class="text-center">{RS:Web_HoSoHeadTable}</th>
+                            <th class="text-center" style="width: 20%;">{RS:Web_TrangThaiHeadTable}</th>
                             <th class="text-center" style="width: 1%;"></th>
                         </tr>
                     </thead>
@@ -65,7 +79,7 @@
                         <%for (int i = 0; i < c2; i++)
                             {
                                 //string Url = ViewPage.GetURL(listItem[i].MenuID, listItem[i].Code);
-                                string Url = "/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co/" + listItem[i].Code + ".aspx";
+                                string Url = langId == 1 ? "/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co/" : "/en/Member/DS-dang-ky-ung-cuu-su-co/" + listItem[i].Code + ".aspx";
                                 string tt = listItem[i].Activity ? "<span style=\"color: forestgreen;\">Đã phê duyệt</span>" : "<span style=\"color: red;\">Chưa phê duyệt</span>";
                         %>
                         <tr>
@@ -73,16 +87,16 @@
                             <td>
                                 <a href="<%=Url %>" style="display: block;"><%= listItem[i].ToChuc_Ten %></a><br />
                                 <p>
-                                    <span class="date">Mã đăng ký: <%=listItem[i].Code %></span>
-                                    <span class="date fr">Ngày thêm: <%=string.Format("{0:dd/MM/yyyy}", listItem[i].Published) %></span>
+                                    <span class="date">{RS:Web_MaDangKy} <%=listItem[i].Code %></span>
+                                    <span class="date fr">{RS:Web_NgayThem} <%=string.Format("{0:dd/MM/yyyy}", listItem[i].Published) %></span>
                                 </p>
                             </td>
                             <td class="text-center" style="width: 20%;"><%=tt %></td>
                             <td class="text-center" style="width: 1%; padding: 0 5px;">
                                 <%if (listItem[i].Activity == false)
                                     {%>
-                                <a href="javascript: delDk('<%=listItem[i].ID %>');" id="btnXoaHs">Xóa</a>
-                                <input class="btn_action search icon QAcustom" name="_hl_action[XoaDangKy]" id="XoaDangKy" value="Xóa" type="submit" style="display: none;" />
+                                <a href="javascript: delDk('<%=listItem[i].ID %>');" id="btnXoaHs">{RS:Web_XoaBtn}</a>
+                                <input class="btn_action search icon QAcustom" name="_hl_action[XoaDangKy]" id="XoaDangKy" value="{RS:Web_XoaBtn}" type="submit" style="display: none;" />
                                 <%} %>
                             </td>
                         </tr>

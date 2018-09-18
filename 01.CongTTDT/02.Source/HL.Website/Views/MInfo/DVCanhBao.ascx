@@ -5,7 +5,16 @@
     {
         if (!HL.Lib.Global.CPLogin.IsLoginOnWeb())
         {
-            Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx?ReturnPath=" + HttpUtility.ParseQueryString("/vn/Thanh-vien/Dich-vu-canh-bao-su-co.aspx"));
+            int langId = ViewPage.CurrentPage.LangID;
+            string loginUrl = "/vn/Thanh-vien/Dang-nhap.aspx"
+                , dvUrl = "/vn/Thanh-vien/Dich-vu-canh-bao-su-co.aspx";
+            if (langId == 2)
+            {
+                loginUrl = "/en/Member/Login.aspx";
+                dvUrl = "/en/Member/Dich-vu-canh-bao-su-co.aspx";
+            }
+
+            Response.Redirect(loginUrl + "?ReturnPath=" + HttpUtility.ParseQueryString(dvUrl));
             return;
         }
     }
@@ -90,7 +99,7 @@
     <div class="box-category mb10">
         <div class="vanban-new">
             <h3 class="title-list-news">
-                <span class="title-t1">ĐĂNG KÝ NHẬN EMAIL CẢNH BÁO </span>
+                <span class="title-t1">{RS:Form_DKNhanMailHeader} </span>
             </h3>
         </div>
     </div>
@@ -176,7 +185,7 @@
                                 <%}
                                     else
                                     {%>--%>
-                                <input class="btn_action search icon QAcustom" name="_hl_action[AddDVCanhBao]" value="Lưu" type="submit" onclick="fnSubmit()" />
+                                <input class="btn_action search icon QAcustom" name="_hl_action[AddDVCanhBao]" value="{RS:Form_LuuBtn}" type="submit" onclick="fnSubmit()" />
                                 <%--<%}%>--%>
                             </div>
 
