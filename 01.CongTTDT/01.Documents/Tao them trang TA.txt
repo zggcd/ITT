@@ -1,0 +1,121 @@
+I. Tao them trang tieng Anh:
+	1. /en/Dashboard.aspx
+	2. /en/Search.aspx?Keyword=
+	3. /en/Member/Login.aspx (/vn/Thanh-vien/Dang-nhap.aspx)
+	4. /en/Member/Forget-password.aspx (/vn/Thanh-vien/Quen-mat-khau.aspx)
+	5. /en/Member/Change-password.aspx (/vn/Thanh-vien/Doi-mat-khau.aspx)
+	6. /en/Member/Info.aspx (/vn/Thanh-vien/Thong-tin-ca-nhan.aspx)
+	7. /en/Member/Ho-so-ung-cuu-su-co.aspx (/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx)
+	8. /en/Member/DS-dang-ky-ung-cuu-su-co.aspx (/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx)
+	9. /en/Member/DS-bc-ban-dau-su-co.aspx (/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx)
+	10. /en/Member/DS-bc-ket-thuc-su-co.aspx (/vn/Thanh-vien/DS-bc-ket-thuc-su-co.aspx)
+	11. /en/Member/DS-bc-tong-hop-su-co.aspx (/vn/Thanh-vien/DS-bc-tong-hop-su-co.aspx)
+	12. /en/Member/Dich-vu-canh-bao-su-co.aspx (/vn/Thanh-vien/Dich-vu-canh-bao-su-co.aspx)
+	13. /en/Member/Them-bc-ban-dau-su-co.aspx (/vn/Thanh-vien/Them-bc-ban-dau-su-co.aspx)
+	14. /en/Member/Them-bc-ket-thuc-su-co.aspx (/vn/Thanh-vien/Them-bc-ket-thuc-su-co.aspx)
+	15. /en/Bao-cao-su-co/Them-bao-cao.aspx (/vn/Bao-cao-su-co/Them-bao-cao.aspx)
+	16. /en/Bao-cao-su-co.aspx (/vn/Bao-cao-su-co.aspx)
+	17. /en/Bao-cao-su-co/Them-thong-bao-su-co.aspx (/vn/Bao-cao-su-co/Them-thong-bao-su-co.aspx)
+	18. /en/Member/Them-bc-tong-hop-su-co.aspx (/vn/Thanh-vien/Them-bc-tong-hop-su-co.aspx)
+	19. /en/Member/Them-ho-so-ung-cuu-su-co.aspx (/vn/Thanh-vien/Them-ho-so-ung-cuu-su-co.aspx)
+	
+II. Tao them Tai nguyen:
+	1.  Web_MangLuoi=Mạng lưới
+	2.  Web_CongThongTin=Cổng thông tin
+	3.  Web_XemThem=Xem thêm...
+	4.  Web_Search_GioiHanKyTu=Số kí tự trong câu tìm kiếm không được vượt 500!
+	5.  Web_Login=Đăng nhập
+	6.  Web_LoginName=Tên truy nhập
+	7.  Web_Password=Mật khẩu
+	8.  Web_QuenMatKhau=Quên mật khẩu
+	9.  Web_DangNhapThanhCong=Đăng nhập thành công!
+	10. Web_DangXuat=Đăng xuất
+	11. Web_DoiMatKhau=Đổi mật khẩu
+	12. Web_DoiThongTinCaNhan=Thay đổi thông tin cá nhân
+	13. Web_DieuPhoiUCSC=Điều phối, ứng cứu sự cố ATTT mạng:
+	14. Web_HSUCSC=1. Hồ sơ UCSC
+	15. Web_DangKyMangLuoi=2. Đăng ký tham gia mạng lưới UCSC
+	16. Web_BCBanDau=3. Báo cáo ban đầu sự cố mạng
+	17. Web_BCKetThuc=4. Báo cáo kết thúc ứng phó sự cố
+	18. Web_BCTongHop=5. Báo cáo tổng hợp
+	19. Web_DVCanhBao=6. Dịch vụ cảnh báo
+	20. Web_DangKiemTraDN=Đang kiểm tra đăng nhập, vui lòng chờ giây lát...
+	21. Web_DangKyTK=Đăng ký tài khoản
+	22. Web_ConfirmPassword=Xác nhận mật khẩu
+	23. Web_DangKiemTraTT=Đang kiểm tra thông tin, vui lòng chờ giây lát...
+	24. Web_BCBanDauHeader=BÁO CÁO BAN ĐẦU SỰ CỐ MẠNG
+	25. Web_ThemMoiBtn=Thêm mới
+	26. Web_CacBCCuaBan=CÁC BÁO CÁO CỦA BẠN
+	27. Web_BaoCaoHeadTable=Báo cáo
+	28. Web_TrangThaiHeadTable=Trạng thái
+	29. Web_DaPheDuyet=Đã phê duyệt
+	30. Web_ChuaPheDuyet=Chưa phê duyệt
+	31. Web_MaBaoCao=Mã báo cáo:
+	32. Web_NgayThem=Ngày thêm:
+	33. Web_XoaBtn=Xóa
+	34. Web_BanCoChacXoa=Bạn có chắc muốn xóa báo cáo này?
+	35. Web_BCKetThucHeader=BÁO CÁO KẾT THÚC ỨNG PHÓ SỰ CỐ
+	36. Web_BCSuCoHeader=BÁO CÁO SỰ CỐ MẠNG
+	37. Form_TenSuCo=Tên sự cố (*)
+	38. Form_TenToChuc=Tên tổ chức/cá nhân báo cáo sự cố (*)
+	39. Form_DiaChi=Địa chỉ: (*)
+	40. Form_DienThoai=Điện thoại (*)
+	41. Form_DSBaoCao=Danh sách báo cáo
+	42. Form_CapNhatBtn=Cập nhật
+	43. Form_LuuBtn=Lưu
+	44. Form_BCBanDauBtn=Báo cáo ban đầu
+	45. Form_DienBienSuCoBtn=Diễn biến sự cố
+	46. Form_PhuongAnUngCuuBtn=Phương án ứng cứu
+	47. Form_DeNghiHoTroBtn=Đề nghị hỗ trợ-phối hợp
+	48. Form_BCKetThucBtn=Báo cáo kết thúc
+	49. Form_DongBtn=Đóng
+	50. Form_BCDienBienHeader=BÁO CÁO DIỄN BIẾN SỰ CỐ MẠNG
+	51. Form_BCDeNghiHeader=BÁO CÁO ĐỀ NGHỊ HỖ TRỢ-PHỐI HỢP
+	52. Web_BanCoChacXoaDeNghi=Bạn có chắc muốn xóa thông tin đề nghị phối hợp-hỗ trợ này?
+	53. Web_BanCoChacXoaPhuongAn=Bạn có chắc muốn xóa thông tin phương án ứng cứu sự cố này?
+	54. Web_BCPhuongAnHeader=BÁO CÁO PHƯƠNG ÁN ỨNG CỨU SỰ CỐ MẠNG
+	55. Form_BCTongHopHeader=BÁO CÁO TỔNG HỢP VỀ HOẠT ĐỘNG TIẾP NHẬN VÀ XỬ LÝ SỰ CỐ
+	56. Form_ThongBaoSuCoBtn=Thông báo sự cố
+	57. Form_ThemSuCoBtn=Thêm sự cố mới
+	58. Web_DaBaoCaoHeadTable=Đã báo cáo
+	59. Web_NgayBatDauHeadTable=Ngày bắt đầu
+	60. Web_NgayKetThucHeadTable=Ngày kết thúc
+	61. Web_BanCoChacXoaThongBao=Bạn có chắc muốn xóa thông báo này?
+	62. Form_BCThongBaoSuCoHeader=THÔNG BÁO SỰ CỐ MẠNG
+	63. Form_DangKyMangLuoiHeader=ĐĂNG KÝ THAM GIA MẠNG LƯỚI ỨNG CỨU SỰ CỐ
+	64. Form_DangKyBtn=Đăng ký
+	66. Form_CacHSCuaBanHeader=CÁC HỒ SƠ CỦA BẠN
+	67. Web_HoSoHeadTable=Hồ sơ
+	68. Web_MaDangKy=Mã đăng ký:
+	69. Form_HSTVMangLuoiHeader=HỒ SƠ THÀNH VIÊN MẠNG LƯỚI ỨNG CỨU SỰ CỐ
+	70. Web_MaHoSo=Mã hồ sơ:
+	71. Web_BanCoChacXoaHoSo=Bạn có chắc muốn xóa hồ sơ này?
+	72. Form_DSDangKyBtn=Danh sách đăng ký
+	73. Form_DKNhanMailHeader=ĐĂNG KÝ NHẬN EMAIL CẢNH BÁO
+	74. Form_DSHSBtn=Danh sách hồ sơ
+	
+	
+	
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\MDuThao\Detail.ascx(105):            <%= GetPagination("/vn/Van-ban-quan-ly/Lay-y-kien-nhan-dan-ve-Du-thao-VBQPPL/Du-thao-Thong-tu-huong-dan-chi-tiet-quan-ly-xuat-ban-va-phat-hanh-xuat-ban-pham-dien-tu.aspx", model.Page, model.PageSize, model.TotalRecord)%>
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\MDuThao\Index.ascx(85):                        <a class="binh-luan" href="/vn/Gop-y-du-thao.aspx?dt=<%=listItem[i].ID %>&replyUrl=/pages/duthaovanban/danhsachduthaovanban.aspx">{RS:Web_GuiGopY}</a></td>
+
+
+
+
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\MInfo\Login.ascx(11):            Response.Redirect("/vn/Thanh-vien/Thong-tin-ca-nhan.aspx");
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\MInfo\Login.ascx(35):                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/vn/Thanh-vien/Dang-ky.aspx">Đăng ký >></a>
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\MInfo\Register.ascx(9):            Response.Redirect("/vn/Thanh-vien/Thong-tin-ca-nhan.aspx");
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\MVideo\Detail.ascx(138):    <%--<%= GetPagination("/vn/Van-ban-quan-ly/Lay-y-kien-nhan-dan-ve-Du-thao-VBQPPL/Du-thao-Thong-tu-huong-dan-chi-tiet-quan-ly-xuat-ban-va-phat-hanh-xuat-ban-pham-dien-tu.aspx", model.Page, model.PageSize, model.TotalRecord)%>--%>
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\Shared\Child.Master(44):                        <option value="/vn/default.aspx" <%if (code == "vn")
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\Shared\Child.Master(82):                        <a href="/vn/Bao-cao-su-co.aspx" class="btn-reportHome">Báo cáo sự cố</a>
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\Shared\Default.Master(49):                        <option value="/vn/default.aspx" <%if (code == "vn")
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\Shared\Default.Master(87):                        <a href="/vn/Bao-cao-su-co.aspx" class="btn-reportHome">Báo cáo sự cố</a>
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\Shared\Network.Master(38):                    <a href="/vn/Thanh-vien/Dang-xuat.aspx" rel="nofollow">(Đăng xuất)</a>
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\Shared\Network.Master(43):                    <a href="/vn/Thanh-vien/Dang-nhap.aspx">Đăng nhập</a>
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\Shared\Network.Master(50):                        <option value="/vn/default.aspx" <%if (code == "vn")
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\Shared\Network.Master(76):                    <li><a href="/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx">Đăng ký thành viên mạng lưới bắt buộc</a></li>
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\Shared\Network.Master(77):                    <li><a href="/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx">Đăng ký thành viên mạng lưới tự nguyện</a></li>
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\Shared\NetworkChild.Master(43):                    <a href="/vn/Thanh-vien/Dang-xuat.aspx" rel="nofollow">(Đăng xuất)</a>
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\Shared\NetworkChild.Master(48):                    <a href="/vn/Thanh-vien/Dang-nhap.aspx">Đăng nhập</a>
+  E:\JOB\ITT\01.CongTTDT\02.Source\HL.Website\Views\Shared\NetworkChild.Master(55):                        <option value="/vn/default.aspx" <%if (code == "vn")
+  Matching lines: 96    Matching files: 32    Total files searched: 1071

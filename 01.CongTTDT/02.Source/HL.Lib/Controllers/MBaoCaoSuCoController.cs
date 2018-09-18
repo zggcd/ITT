@@ -451,7 +451,9 @@ namespace HL.Lib.Controllers
                 }
 
                 ViewPage.Alert("Tạo báo cáo sự cố thành công.");
-                ViewPage.Navigate("/vn/Bao-cao-su-co.aspx");
+                string url = "/vn/Bao-cao-su-co.aspx";
+                if (ViewPage.CurrentPage.LangID == 2) url = "/en/Bao-cao-su-co.aspx";
+                ViewPage.Navigate(url);
             }
         }
 
@@ -797,7 +799,9 @@ namespace HL.Lib.Controllers
                     }
 
                     ViewPage.Alert("Tạo báo cáo ban đầu thành công.");
-                    ViewPage.Navigate("/vn/Bao-cao-su-co.aspx");
+                    string url = "/vn/Bao-cao-su-co.aspx";
+                    if (ViewPage.CurrentPage.LangID == 2) url = "/en/Bao-cao-su-co.aspx";
+                    ViewPage.Navigate(url);
                     //ViewPage.RefreshPage();
                 }
             }
@@ -1108,7 +1112,9 @@ namespace HL.Lib.Controllers
                     ViewBag.BaoCao = entity;
 
                     ViewPage.Alert("Tạo báo cáo kết thúc thành công.");
-                    ViewPage.Navigate("/vn/Bao-cao-su-co.aspx");
+                    string url = "/vn/Bao-cao-su-co.aspx";
+                    if (ViewPage.CurrentPage.LangID == 2) url = "/en/Bao-cao-su-co.aspx";
+                    ViewPage.Navigate(url);
                     //ViewPage.RefreshPage();
                 }
             }
@@ -1232,7 +1238,9 @@ namespace HL.Lib.Controllers
                 ViewBag.BaoCao = entity;
 
                 ViewPage.Alert("Tạo báo cáo tổng hợp thành công.");
-                ViewPage.Navigate("/vn/Bao-cao-su-co.aspx");
+                string url = "/vn/Bao-cao-su-co.aspx";
+                if (ViewPage.CurrentPage.LangID == 2) url = "/en/Bao-cao-su-co.aspx";
+                ViewPage.Navigate(url);
                 //ViewPage.RefreshPage();
             }
         }
@@ -1547,7 +1555,9 @@ namespace HL.Lib.Controllers
                     ModThongBaoSuCoService.Instance.Save(entity);
 
                     ViewPage.Alert("Thêm thông báo sự cố thành công.");
-                    ViewPage.Navigate("/vn/Bao-cao-su-co.aspx");
+                    string url = "/vn/Bao-cao-su-co.aspx";
+                    if (ViewPage.CurrentPage.LangID == 2) url = "/en/Bao-cao-su-co.aspx";
+                    ViewPage.Navigate(url);
                 }
                 catch (Exception ex)
                 {
@@ -1618,7 +1628,9 @@ namespace HL.Lib.Controllers
                     }
 
                     ViewPage.Alert("Cập nhật thông báo thành công.");
-                    ViewPage.Navigate("/vn/Bao-cao-su-co/" + endCode + "-cap-nhat-thong-bao-su-co.aspx");
+                    string url = "/vn/Bao-cao-su-co/";
+                    if (ViewPage.CurrentPage.LangID == 2) url = "/en/Bao-cao-su-co/";
+                    ViewPage.Navigate(url + endCode + "-cap-nhat-thong-bao-su-co.aspx");
                 }
             }
         }

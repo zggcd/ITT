@@ -406,7 +406,9 @@ namespace HL.Lib.Controllers
 
                 #endregion
                 ViewPage.Alert("Cập nhật hồ sơ thành công! Chúng tôi sẽ xem xét và phê duyệt hồ sơ của bạn sớm nhất có thể.");
-                ViewPage.Navigate("/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx");
+                string url = "/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx";
+                if (ViewPage.CurrentPage.LangID == 2) url = "/en/Member/Ho-so-ung-cuu-su-co.aspx";
+                ViewPage.Navigate(url);
             }
 
             //DateTime date = DateTime.Now;

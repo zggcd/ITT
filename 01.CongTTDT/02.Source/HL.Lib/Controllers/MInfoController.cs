@@ -13,11 +13,20 @@ namespace HL.Lib.Controllers
         {
             string endcode = ViewPage.CurrentPage.Code;
             if (!string.IsNullOrEmpty(endcode) && (endcode.ToLower() == "dashboard" || endcode.ToLower() == "quan-ly-tai-khoan") && !CPLogin.IsLoginOnWeb())
-                ViewPage.Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx");
+            {
+                if (ViewPage.CurrentPage.LangID == 1) ViewPage.Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx");
+                else if (ViewPage.CurrentPage.LangID == 2) ViewPage.Response.Redirect("/en/Member/Login.aspx");
+            }
             else if (endcode.ToLower() == "quan-ly-tai-khoan")
-                ViewPage.Response.Redirect("/vn/Thanh-vien/Thong-tin-ca-nhan.aspx");
+            {
+                if (ViewPage.CurrentPage.LangID == 1) ViewPage.Response.Redirect("/vn/Thanh-vien/Thong-tin-ca-nhan.aspx");
+                else if (ViewPage.CurrentPage.LangID == 2) ViewPage.Response.Redirect("/en/Member/Info.aspx");
+            }
             else if (!CPLogin.IsLoginOnWeb() && endcode.ToLower() == "bao-cao-su-co")
-                ViewPage.Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx");
+            {
+                if (ViewPage.CurrentPage.LangID == 1) ViewPage.Response.Redirect("/vn/Thanh-vien/Dang-nhap.aspx");
+                else if (ViewPage.CurrentPage.LangID == 2) ViewPage.Response.Redirect("/en/Member/Login.aspx");
+            }
             ViewBag.Data = CPLogin.CurrentUserOnWeb;
         }
 
@@ -25,11 +34,11 @@ namespace HL.Lib.Controllers
         {
             string layout = "";
             string ec = endcode.ToLower();
-            if (ec == "dang-nhap") layout = "Login";
+            if (ec == "dang-nhap" || ec == "login") layout = "Login";
             else if (ec == "dang-ky") layout = "Register";
-            else if (ec == "quen-mat-khau") layout = "ResetPass";
+            else if (ec == "quen-mat-khau" || ec == "forget-password") layout = "ResetPass";
             else if (ec == "thong-tin-ca-nhan") layout = "Info";
-            else if (ec == "doi-mat-khau") layout = "ChangePass";
+            else if (ec == "doi-mat-khau" || ec == "change-password") layout = "ChangePass";
             else if (ec == "them-ho-so-ung-cuu-su-co") layout = "HoSoUCSC";
             else if (ec == "dang-ky-ung-cuu-su-co") layout = "DangKyUCSC";
             else if (ec == "dich-vu-canh-bao-su-co")
@@ -66,6 +75,7 @@ namespace HL.Lib.Controllers
             {
                 //string currUrl = ViewPage.Request.RawUrl;
                 string currUrl = "/vn/Dashboard.aspx";
+                if (ViewPage.CurrentPage.LangID == 2) currUrl = "/en/Dashboard.aspx";
                 CPLogin.LogoutOnWeb();
                 ViewPage.Response.Redirect(currUrl);
             }
@@ -151,7 +161,9 @@ namespace HL.Lib.Controllers
                 {
                     Cookies.SetValue("CP.UserIDOnWeb", userId.ToString(), Setting.Mod_CPTimeout, true);
                     entity = new CPUserEntity();
-                    ViewPage.Alert("Chào mừng bạn đăng ký thành công và đã được kích hoạt"); ViewPage.Navigate("/vn/Dashboard.aspx");
+                    string url = "/vn/Dashboard.aspx";
+                    if (ViewPage.CurrentPage.LangID == 2) url = "/en/Dashboard.aspx";
+                    ViewPage.Alert("Chào mừng bạn đăng ký thành công và đã được kích hoạt"); ViewPage.Navigate(url);
                 }
 
                 ////ViewPage.Alert("Bạn đã đăng kí thành công! Bạn vui lòng chờ đợi Ban Quản trị chấp thuận. Thân chào."); ViewPage.Navigate("/");
@@ -175,7 +187,9 @@ namespace HL.Lib.Controllers
             if (CPLogin.CheckLogin1(model.LoginName, model.Password, true))
             {
                 string redirect = HL.Core.Web.HttpQueryString.GetValue("ReturnPath").ToString();
-                ViewPage.Response.Redirect(string.IsNullOrEmpty(redirect) ? "/vn/Dashboard.aspx" : redirect);
+                string url = "/vn/Dashboard.aspx";
+                if (ViewPage.CurrentPage.LangID == 2) url = "/en/Dashboard.aspx";
+                ViewPage.Response.Redirect(string.IsNullOrEmpty(redirect) ? url : redirect);
             }
             else
             {
@@ -596,7 +610,9 @@ namespace HL.Lib.Controllers
             #endregion
 
             ViewPage.Alert("Tạo mới hồ sơ thành công! Chúng tôi sẽ xem xét và phê duyệt hồ sơ của bạn sớm nhất có thể.");
-            ViewPage.Navigate("/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx");
+            string url = "/vn/Thanh-vien/Ho-so-ung-cuu-su-co.aspx";
+            if (ViewPage.CurrentPage.LangID == 2) url = "/en/Member/Ho-so-ung-cuu-su-co.aspx";
+            ViewPage.Navigate(url);
         }
 
         /// <summary>
@@ -860,7 +876,9 @@ namespace HL.Lib.Controllers
             #endregion
 
             ViewPage.Alert("Tạo mới đăng ký thành công! Chúng tôi sẽ xem xét và phê duyệt đăng ký của bạn sớm nhất có thể.");
-            ViewPage.Navigate("/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx");
+            string url = "/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx";
+            if (ViewPage.CurrentPage.LangID == 2) url = "/en/Member/DS-dang-ky-ung-cuu-su-co.aspx";
+            ViewPage.Navigate(url);
         }
 
         public void ActionAddDVCanhBao(ModDichVuCanhBaoEntity entity, MAppend append, string endCode)

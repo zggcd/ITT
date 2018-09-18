@@ -313,7 +313,9 @@ namespace HL.Lib.Controllers
                 ViewBag.BaoCao = entityBc;
 
                 ViewPage.Alert("Cập nhật báo cáo thành công! Chúng tôi sẽ xem xét và phê duyệt báo cáo của bạn sớm nhất có thể.");
-                ViewPage.Navigate("/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx");
+                string url = "/vn/Thanh-vien/DS-bc-ban-dau-su-co.aspx";
+                if (ViewPage.CurrentPage.LangID == 2) url = "/en/Member/DS-bc-ban-dau-su-co.aspx";
+                ViewPage.Navigate(url);
             }
         }
 

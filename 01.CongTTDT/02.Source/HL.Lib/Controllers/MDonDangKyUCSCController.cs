@@ -383,7 +383,9 @@ namespace HL.Lib.Controllers
                 ModTongHopNhanLucUCSCService.Instance.Delete(lstTongHopNhanLucNhomKTKT.FindAll(o => o.MenuID_Value <= 0));
 
                 ViewPage.Alert("Cập nhật đăng ký thành công! Chúng tôi sẽ xem xét và phê duyệt đăng ký của bạn sớm nhất có thể.");
-                ViewPage.Navigate("/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx");
+                string url = "/vn/Thanh-vien/DS-dang-ky-ung-cuu-su-co.aspx";
+                if (ViewPage.CurrentPage.LangID == 2) url = "/en/Member/DS-dang-ky-ung-cuu-su-co.aspx";
+                ViewPage.Navigate(url);
             }
         }
 
