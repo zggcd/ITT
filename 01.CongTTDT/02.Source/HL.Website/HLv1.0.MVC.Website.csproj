@@ -1931,7 +1931,7 @@
     <Content Include="TTPortal\Views\Lang\vi-VN.ini" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\upload\files\" />
+    <Folder Include="Data\upload\files\Export\" />
     <Folder Include="Data\upload\flash\" />
     <Folder Include="Data\upload\images\Adv\" />
     <Folder Include="Data\upload\images\User\" />

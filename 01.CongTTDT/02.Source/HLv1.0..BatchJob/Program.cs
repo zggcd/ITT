@@ -8,8 +8,15 @@ using NLog;
 using HL.Lib.CPControllers;
 using HL.Lib.Models;
 using HL.Lib.Global;
+using System.Web;
+using System.Xml.Linq;
+using System.Xml.Xsl;
+using System.Xml.XPath;
+using Aspose.Words;
+using System.Data;
+using System.Configuration;
 
-namespace KPMG.PageUpMiddleware.BatchJob
+namespace BatchJob
 {
     static class Program
     {
@@ -60,6 +67,31 @@ namespace KPMG.PageUpMiddleware.BatchJob
             bool allowSend = false;
             string sSuCo = string.Empty, isp = string.Empty, ip = string.Empty;
             string s2 = string.Empty, s3 = string.Empty, s4 = string.Empty, sName = string.Empty;
+            string tempFolderConfig = ConfigurationManager.AppSettings.Get("TempFolder");
+            string exportTemp = ConfigurationManager.AppSettings.Get("ExportTemp");
+            string exportConfig = ConfigurationManager.AppSettings.Get("Export");
+
+            if (string.IsNullOrEmpty(tempFolderConfig))
+            {
+                Console.WriteLine("ERROR: Ban chua cau hinh cho key TempFolder.");
+                Console.WriteLine("===== Ket thuc chuong trinh =====");
+                Logger.Error($"Ban chua cau hinh cho key TempFolder.");
+                return;
+            }
+            if (string.IsNullOrEmpty(exportConfig))
+            {
+                Console.WriteLine("ERROR: Ban chua cau hinh cho key Export.");
+                Console.WriteLine("===== Ket thuc chuong trinh =====");
+                Logger.Error($"Ban chua cau hinh cho key Export.");
+                return;
+            }
+            if (string.IsNullOrEmpty(exportTemp))
+            {
+                Console.WriteLine("ERROR: Ban chua cau hinh cho key ExportTemp.");
+                Console.WriteLine("===== Ket thuc chuong trinh =====");
+                Logger.Error($"Ban chua cau hinh cho key ExportTemp.");
+                return;
+            }
 
             // Lay ds Dich vu canh bao
             List<ModDichVuCanhBaoEntity> dvs = ModDichVuCanhBaoService.Instance.CreateQuery()
@@ -75,7 +107,7 @@ namespace KPMG.PageUpMiddleware.BatchJob
             }
 
             // Lay template
-            ModEmailTemplateEntity emailTemp = ModEmailTemplateService.Instance.CreateQuery().Where(o => o.Activity == true && o.Code == "Type1").ToSingle();
+            ModEmailTemplateEntity emailTemp = ModEmailTemplateService.Instance.CreateQuery().Where(o => o.Activity == true && o.Code == "Type2").ToSingle();
             if (emailTemp == null)
             {
                 Console.WriteLine("FAILED: Khong co Email template.");
@@ -93,11 +125,11 @@ namespace KPMG.PageUpMiddleware.BatchJob
                 if (sendMailLog != null)
                 {
                     // Neu dich vu canh bao da gui mail trong ngay hom nay roi thi khong thuc hien gui mail nua
-                    if (sendMailLog.Publish == dateNow)
+                    if (sendMailLog.Publish.Date == dateNow.Date)
                     {
                         continue;
                     }
-                    incidentIds = sendMailLog.IncidentIDs;
+                    incidentIds = sendMailLog.IncidentIDs.Trim(',');
                 }
 
                 incidents = ModIncidentService.Instance.CreateQuery()
@@ -202,15 +234,18 @@ namespace KPMG.PageUpMiddleware.BatchJob
                                     }
                                 }
                             }
-                            sSuCo += "<br />&nbsp;&nbsp;&nbsp;&nbsp;" + incidents[i].Path + "<br />";
+                            //sSuCo += "<br />&nbsp;&nbsp;&nbsp;&nbsp;" + incidents[i].Path + "<br />";
                         }
                     }
 
-                    emailEntity = new EmailEntity();
-                    emailEntity.To = dv.ToEmails;
-                    emailEntity.Cc = string.IsNullOrEmpty(dv.CcEmails) ? "tnchung@vncert.vn" : dv.CcEmails;
-                    emailEntity.Subject = string.Format(emailTemp.Subject, dv.Name);
-                    emailEntity.Body = string.Format(emailTemp.Content, isp, sSuCo, s2, (!string.IsNullOrEmpty(s3) ? ", và các sự cố " + s3 : ""), s2 + (!string.IsNullOrEmpty(s3) ? ", " + s3 : ""));
+                    emailEntity = new EmailEntity
+                    {
+                        To = dv.ToEmails,
+                        Cc = string.IsNullOrEmpty(dv.CcEmails) ? "tnchung@vncert.vn" : dv.CcEmails,
+                        Subject = string.Format(emailTemp.Subject, dv.Name),
+                        Body = string.Format(emailTemp.Content, dv.Name, s2 + (!string.IsNullOrEmpty(s3) ? ", " + s3 : "")),
+                        Attach = Export(dv, incidents, "Word")
+                    };
 
                     // Goi ham send mail
                     Console.WriteLine("INFO: Thuc hien gui mail...");
@@ -267,5 +302,252 @@ namespace KPMG.PageUpMiddleware.BatchJob
             return firstDayInWeek;
         }
 
+        private static string Export(ModDichVuCanhBaoEntity dv, List<ModIncidentEntity> incidents, string type)
+        {
+            string result = string.Empty;
+            try
+            {
+                string domain = ConfigurationManager.AppSettings.Get("Domain");
+                string tempFolder = ConfigurationManager.AppSettings.Get("TempFolder");
+                string exportTemp = ConfigurationManager.AppSettings.Get("ExportTemp");
+                string export = ConfigurationManager.AppSettings.Get("Export");
+                string exportUrl = ConfigurationManager.AppSettings.Get("ExportUrl");
+                string fileName = string.Empty;
+                DateTime dateNow = DateTime.Now;
+                int tongSuCo = incidents.Count;
+                string exportFileName = ""; // "yyyymmdd_XXX_Report.pdf";
+                exportFileName = string.Format("{0:yyyyMMdd}", dateNow) + "_" + Data.GetCode(dv.Name) + "_Report.pdf";
+
+                if (string.IsNullOrEmpty(tempFolder))
+                {
+                    Console.WriteLine("ERROR: Ban chua cau hinh cho key TempFolder.");
+                    Console.WriteLine("===== Ket thuc chuong trinh =====");
+                    Logger.Error($"Ban chua cau hinh cho key TempFolder.");
+                    return "";
+                }
+                if (string.IsNullOrEmpty(export))
+                {
+                    Console.WriteLine("ERROR: Ban chua cau hinh cho key Export.");
+                    Console.WriteLine("===== Ket thuc chuong trinh =====");
+                    Logger.Error($"Ban chua cau hinh cho key Export.");
+                    return "";
+                }
+                if (string.IsNullOrEmpty(exportTemp))
+                {
+                    Console.WriteLine("ERROR: Ban chua cau hinh cho key ExportTemp.");
+                    Console.WriteLine("===== Ket thuc chuong trinh =====");
+                    Logger.Error($"Ban chua cau hinh cho key ExportTemp.");
+                    return "";
+                }
+
+                // Xoa file cu
+                CleanUpTemporaryFiles(exportTemp);
+
+                #region Word
+                if (type == "Word")
+                {
+                    Document doc = new Document(tempFolder + "DanhSachSuCo.doc");
+
+                    doc.MailMerge.Execute(
+                        new string[] { "Field1",
+                                    "Field2",
+                                    "Field3",
+                                    "Field4",
+                                    "Field5",
+                                    "Field6",
+                                    "Field7",
+                                    "Field8"
+                        },
+                        new object[] { "",
+                                    string.Format("{0:dd/MM/yyyy}", dateNow),
+                                    string.Format("{0:dd/MM/yyyy HH:mm:ss}", dateNow),
+                                    "Trung tâm VNCERT (ir@vncert.vn)",
+                                    dv.Name,
+                                    tongSuCo,
+                                    domain + "/" + exportUrl + exportFileName,
+                                    "1"
+                        });
+
+                    //Grid
+                    DataTable dt = new DataTable("dataTable");
+                    dt.Columns.Add("Field9");
+                    dt.Columns.Add("Field10");
+                    dt.Columns.Add("Field11");
+                    dt.Columns.Add("Field12");
+                    dt.Columns.Add("Field13");
+                    dt.Columns.Add("Field14");
+                    dt.Columns.Add("Field15");
+                    dt.Columns.Add("Field16");
+                    dt.Columns.Add("Field17");
+                    dt.Columns.Add("Field18");
+                    dt.Columns.Add("Field19");
+                    dt.Columns.Add("Field20");
+                    int _countSTT = 0;
+                    foreach (ModIncidentEntity incident in incidents)
+                    {
+                        _countSTT += 1;
+                        dt.Rows.Add(new object[]
+                                    {
+                                        _countSTT,
+                                        incident.Timestamp,
+                                        incident.IP,
+                                        incident.ASN,
+                                        incident.Url,
+                                        incident.MalwareName,
+                                        incident.SrcPort,
+                                        incident.Destinationport,
+                                        incident.HostName,
+                                        incident.Source,
+                                        incident.AttackOn,
+                                        incident.HandShake
+                                    });
+                    }
+                    DataSet dataSet = new DataSet();
+                    dataSet.Tables.Add(dt);
+                    doc.MailMerge.ExecuteWithRegions(dataSet);
+
+                    fileName = "DanhSachSuCo.doc";
+                    doc.Save(exportTemp + fileName);
+
+                    doc = new Document(exportTemp + fileName);
+                    doc.Save(export + exportFileName, SaveFormat.Pdf);
+                    result = export + exportFileName;
+                }
+                #endregion
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"Failed: {ex.Message}\n {ex.StackTrace}");
+                Console.WriteLine("Exception: " + ex.Message);
+                return "";
+            }
+        }
+
+        #region Export use xslt format
+        public static void Export()
+        {
+            try
+            {
+                var KeHoach02 = new List<string>();
+                var FileName = "yyyymmdd_XXX_Report";
+
+                var p = CreateFile(KeHoach02, @"~/Manages/xslt/" + FileName + ".xslt", FileName + ".doc");
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"Failed: {ex.Message}\n {ex.StackTrace}");
+                Console.WriteLine("Exception: " + ex.Message);
+            }
+        }
+
+        public static string CreateFile(object ds, string XSLTFilePath, string fileName)
+        {
+            string TempFolder = HttpContext.Current.Server.MapPath(@"~/ExportTemp/");
+            CleanUpTemporaryFiles(TempFolder);
+
+            var doc = ToXml(ds);
+            // doc.Save(@"d:\demo.xml");
+            string path = HttpContext.Current.Server.MapPath(XSLTFilePath);
+            var strHTML = ToHTML(doc, path, new XsltArgumentList());
+
+            string p = DownLoadHelper.Save(TempFolder + fileName, strHTML);
+            p = p.Replace(TempFolder, "");
+            return p;
+        }
+
+        public static System.Xml.Linq.XElement ToXml(object obj)
+        {
+            try
+            {
+                System.Xml.Serialization.XmlSerializer xmlSerializer = new System.Xml.Serialization.XmlSerializer(obj.GetType());
+                using (System.IO.MemoryStream xmlStream = new System.IO.MemoryStream())
+                {
+                    xmlSerializer.Serialize(xmlStream, obj);
+                    xmlStream.Position = 0;
+                    System.Xml.Linq.XElement doc = System.Xml.Linq.XElement.Load(xmlStream);
+                    return doc;
+                }
+            }
+            catch (Exception) { throw; }
+        }
+
+        public static string ToHTML(XElement InputXMLDocument, string XSLTFilePath, XsltArgumentList XSLTArgs)
+        {
+            try
+            {
+                System.IO.StringWriter sw = new System.IO.StringWriter();
+                XslCompiledTransform xslTrans = new XslCompiledTransform();
+                xslTrans.Load(XSLTFilePath);
+                xslTrans.Transform(InputXMLDocument.CreateNavigator(), XSLTArgs, sw);
+                return sw.ToString();
+            }
+            catch (Exception) { throw; }
+        }
+
+        /// <summary>
+        /// Xoa file trong folder dua vao lan cuoi truy cap
+        /// </summary>
+        /// <param name="TempFolder"></param>
+        /// <param name="minutes"></param>
+        public static void CleanUpTemporaryFiles(string TempFolder, int minutes = 0)
+        {
+            string strFile = null;
+            try
+            {
+                if (TempFolder != HttpContext.Current.Server.MapPath(HttpContext.Current.Request.ApplicationPath))
+                {
+                    foreach (var dir in System.IO.Directory.GetDirectories(TempFolder))
+                    {
+                        CleanUpTemporaryFiles(dir, minutes);
+                        System.IO.Directory.Delete(dir);
+                    }
+
+                    foreach (string strFile_loopVariable in System.IO.Directory.GetFiles(TempFolder))
+                    {
+                        strFile = strFile_loopVariable;
+                        if (System.IO.File.GetLastAccessTime(strFile).AddMinutes(minutes) < DateTime.Now)
+                        {
+                            System.IO.File.Delete(strFile);
+                        }
+                    }
+                }
+            }
+            catch { }
+        }
+        #endregion Export use xslt format
+
+    }
+
+    public class DownLoadHelper
+    {
+        public static string Save(string path, string Html)
+        {
+            FileStream fstream = default(FileStream);
+            StreamWriter wstream = default(StreamWriter);
+            try
+            {
+                fstream = new FileStream(path, FileMode.Create);
+                wstream = new StreamWriter(fstream);
+                //  wstream.Write(path.LastIndexOf(".doc") != -1 ? Html = System.Web.HttpUtility.HtmlDecode(Html) : Html);
+                wstream.Write(System.Web.HttpUtility.HtmlDecode(Html));
+                wstream.Flush();
+                wstream.Close();
+                return path;
+            }
+            catch (Exception) { return string.Empty; }
+            finally
+            {
+                if (wstream != null)
+                {
+                    wstream.Close(); wstream = null;
+                }
+                if ((fstream != null))
+                {
+                    fstream.Close(); fstream = null;
+                }
+            }
+        }
     }
 }
