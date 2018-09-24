@@ -1679,6 +1679,10 @@
     <Content Include="TTPortal\Views\ModConfigSendMail\Index.ascx" />
     <Content Include="TTPortal\Views\ModCoQuan\Add.ascx" />
     <Content Include="TTPortal\Views\ModCoQuan\Index.ascx" />
+    <Content Include="TTPortal\Views\ModCVE\Add.ascx" />
+    <Content Include="TTPortal\Views\ModCVE\Import.ascx" />
+    <Content Include="TTPortal\Views\ModCVE\Index.ascx" />
+    <Content Include="TTPortal\Views\ModCVE\SendMail.ascx" />
     <Content Include="TTPortal\Views\ModDataBackup\Add.ascx" />
     <Content Include="TTPortal\Views\ModDataBackup\Index.ascx" />
     <Content Include="TTPortal\Views\ModDauMoiUCSC\Add.ascx" />
@@ -1746,6 +1750,7 @@
     <Content Include="Views\CBaoCaoTongHop\Default.ascx" />
     <Content Include="Views\CComment\Default.ascx" />
     <Content Include="Views\CCoQuan\Default.ascx" />
+    <Content Include="Views\CCVE\Default.ascx" />
     <Content Include="Views\CDauMoiUCSC\Default.ascx" />
     <Content Include="Views\CDichVuCanhBaoIP\Default.ascx" />
     <Content Include="Views\CDichVuCanhBao\Default.ascx" />
@@ -1801,6 +1806,8 @@
     <Content Include="Views\MContent\MangLuoi.ascx" />
     <Content Include="Views\MCoQuan\Detail.ascx" />
     <Content Include="Views\MCoQuan\Index.ascx" />
+    <Content Include="Views\MCVE\Detail.ascx" />
+    <Content Include="Views\MCVE\Index.ascx" />
     <Content Include="Views\MDauMoiUCSC\Detail.ascx" />
     <Content Include="Views\MDauMoiUCSC\Index.ascx" />
     <Content Include="Views\MDichVuCanhBaoIP\Detail.ascx" />

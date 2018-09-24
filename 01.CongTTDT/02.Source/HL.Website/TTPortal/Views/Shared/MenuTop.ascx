@@ -133,7 +133,8 @@
         </ul>
     </li>
     <%} %>
-    <%if (modules.Contains("ModIncident") || modules.Contains("ModBaoCaoTK") || modules.Contains("ModDichVuCanhBao"))
+    <%if (modules.Contains("ModIncident") || modules.Contains("ModBaoCaoTK")
+            || modules.Contains("ModCVE") || modules.Contains("ModDichVuCanhBao"))
         {%>
     <li class="node"><a>Quản lý sự cố</a>
         <ul>
@@ -153,6 +154,11 @@
                     <%--<li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Attack.aspx">Attack</a></li>--%>
                 </ul>
             </li>
+            <%} %>
+
+            <%if (modules.Contains("ModCVE"))
+                {%>
+            <li><a class="icon-16-article" href="/{CPPath}/ModCVE/Index.aspx">Quản lý CVE</a></li>
             <%} %>
 
             <%if (modules.Contains("ModDichVuCanhBao"))

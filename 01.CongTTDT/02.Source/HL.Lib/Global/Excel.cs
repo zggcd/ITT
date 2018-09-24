@@ -1018,6 +1018,96 @@ namespace HL.Lib
             return insertedCount;
         }
 
+        public static int ImportExcel_CVE(ModCVEModel model, ref string errMsg, ref string succMsg)
+        {
+            string rowNumNotValid = string.Empty, rowNotGetAPI = string.Empty, rowExist = string.Empty;
+            int j = 0, rowCount = 0, colCount = 0, c = 0, count = 0;
+
+            try
+            {
+                Workbook workbook = new Workbook();
+#pragma warning disable CS0618 // Type or member is obsolete
+                workbook.Open(model.FilePath);
+#pragma warning restore CS0618 // Type or member is obsolete
+
+                string apiWhoisDomain = HL.Core.Global.Config.GetValue("Mod.APIWhoIsDomain1").ToString();
+                c = workbook.Worksheets.Count;
+                Worksheet ws = workbook.Worksheets[0];
+
+                rowCount = ws.Cells.Rows.Count;
+                colCount = ws.Cells.Columns.Count;
+
+
+                int i = 0, order = 0, insertedCount = 0;
+                DateTime d = DateTime.Now;
+                ModCVEEntity item = null, p = null;
+
+                order = ModCVEService.Instance.CreateQuery()
+                    .Max(o => o.Order)
+                    .ToValue()
+                    .ToInt(0);
+
+                for (i = 1; i < rowCount; i++)
+                {
+                    if (colCount != 6)
+                    {
+                        rowNumNotValid += string.IsNullOrEmpty(rowNumNotValid) ? (i + 1).ToString() : ("," + (i + 1));
+                        continue;
+                    }
+
+                    try
+                    {
+                        item = new ModCVEEntity()
+                        {
+                            VulnerabilityType = ws.Cells[i, 0].Value.ToString(),
+                            Product = ws.Cells[i, 1].Value.ToString(),
+                            Published = HL.Core.Global.Convert.ToDateTime(ws.Cells[i, 2].Value.ToString()),
+                            Updated = HL.Core.Global.Convert.ToDateTime(ws.Cells[i, 2].Value.ToString()),
+                            Score = ws.Cells[i, 3].Value.ToString(),
+                            GainedAccessLevel = ws.Cells[i, 3].Value.ToString()
+                        };
+                    }
+                    catch
+                    {
+                        rowNumNotValid += string.IsNullOrEmpty(rowNumNotValid) ? (i + 1).ToString() : ("," + (i + 1));
+                        continue;
+                    }
+
+                    item.EmailNo = 0;       // Lan gui mail
+                    item.State = 0;
+                    item.Resolve = false;
+                    item.Published = d;
+                    item.Activity = true;
+
+                    ModCVEService.Instance.Save(item);
+
+                    insertedCount++;
+                }
+
+                if (!string.IsNullOrEmpty(rowNumNotValid))
+                {
+                    succMsg += "<br />Dữ liệu không hợp lệ, dòng số: " + rowNumNotValid;
+                }
+                if (!string.IsNullOrEmpty(rowExist))
+                {
+                    succMsg += "<br />Dữ liệu đã tồn tại, dòng số: " + rowExist;
+                }
+                if (!string.IsNullOrEmpty(rowNotGetAPI))
+                {
+                    succMsg += "<br />Không lấy được IP, ISP từ API, dòng số: " + rowNotGetAPI;
+                }
+
+                count = insertedCount;
+            }
+            catch (Exception ex)
+            {
+                Error.Write(ex.Message);
+                errMsg = "Lỗi import file. Dữ liệu không đúng định dạng.";
+            }
+
+            return count;
+        }
+
         private static string Valid_Incident_ColNum(WebMenuEntity loaiSuCo, int colCount)
         {
             string errMsg = "";

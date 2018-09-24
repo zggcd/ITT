@@ -92,6 +92,7 @@
     <Compile Include="Controllers\CCommentController.cs" />
     <Compile Include="Controllers\CConfigSendMailController.cs" />
     <Compile Include="Controllers\CCoQuanController.cs" />
+    <Compile Include="Controllers\CCVEController.cs" />
     <Compile Include="Controllers\CDauMoiUCSCController.cs" />
     <Compile Include="Controllers\CDichVuCanhBaoController.cs" />
     <Compile Include="Controllers\CDichVuCanhBaoIPController.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="Controllers\MConfigSendMailController.cs" />
     <Compile Include="Controllers\MContentTempController.cs" />
     <Compile Include="Controllers\MCoQuanController.cs" />
+    <Compile Include="Controllers\MCVEController.cs" />
     <Compile Include="Controllers\MDauMoiUCSCController.cs" />
     <Compile Include="Controllers\MDichVuCanhBaoController.cs" />
     <Compile Include="Controllers\MDichVuCanhBaoIPController.cs" />
@@ -175,6 +177,7 @@
     <Compile Include="CPControllers\ModConfigController.cs" />
     <Compile Include="CPControllers\ModConfigSendMailController.cs" />
     <Compile Include="CPControllers\ModCoQuanController.cs" />
+    <Compile Include="CPControllers\ModCVEController.cs" />
     <Compile Include="CPControllers\ModDataBackupController.cs" />
     <Compile Include="CPControllers\ModDauMoiUCSCController.cs" />
     <Compile Include="CPControllers\ModDichVuCanhBaoController.cs" />
@@ -271,6 +274,7 @@
     <Compile Include="Models\ModCommentModel.cs" />
     <Compile Include="Models\ModConfigSendMailModel.cs" />
     <Compile Include="Models\ModCoQuanModel.cs" />
+    <Compile Include="Models\ModCVEModel.cs" />
     <Compile Include="Models\ModDataBackupModel.cs" />
     <Compile Include="Models\ModDauMoiUCSCModel.cs" />
     <Compile Include="Models\ModDichVuCanhBaoIPModel.cs" />
