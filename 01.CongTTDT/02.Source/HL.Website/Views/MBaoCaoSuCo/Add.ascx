@@ -32,6 +32,8 @@
     var endCode = ViewBag.EndCode as string;
     string prefix = string.Empty;
     string bcBanDauUrl = "#", bcTongHopUrl = "#", bcKetThucUrl = "#", bcDienBienUrl = "#", bcPhuongAnUrl = "#", bcHoTroPhoiHopUrl = "#";
+
+    string bcscUrl = "/vn/Bao-cao-su-co.aspx";
     if (!string.IsNullOrEmpty(endCode))
     {
         int langId = ViewPage.CurrentPage.LangID;
@@ -44,8 +46,6 @@
         bcDienBienUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-dien-bien-su-co.aspx";
         bcPhuongAnUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-phuong-an-su-co.aspx";
         bcHoTroPhoiHopUrl = "/vn/Bao-cao-su-co/" + prefix + "bc-ho-tro-phoi-hop-su-co.aspx";
-
-        string bcscUrl = "/vn/Bao-cao-su-co.aspx";
 
         if (langId == 2)
         {

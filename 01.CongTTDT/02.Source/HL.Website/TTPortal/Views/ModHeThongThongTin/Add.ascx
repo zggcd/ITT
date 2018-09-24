@@ -32,6 +32,20 @@
           <table class="admintable">
             <tr>
                 <td class="key">
+                    <label>Dau moi u c s c :</label>
+                </td>
+                <td>
+                     <% List<ModDauMoiUCSCEntity> listDauMoiUCSC = ModDauMoiUCSCService.Instance.CreateQuery().ToList(); %>
+                     <select name="DauMoiUCSCID" id="DauMoiUCSCID" class="text_input">
+                         <option value="0">-</option>
+                         <%for (int i = 0; listDauMoiUCSC != null && i < listDauMoiUCSC.Count;i++ ){ %>
+                         <option <%if(entity.DauMoiUCSCID==listDauMoiUCSC[i].ID) {%> selected <%} %> value="<%= listDauMoiUCSC[i].ID%>"><%= listDauMoiUCSC[i].Name%></option>
+                         <%} %>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="key">
                     <label>Don dang ky u c s c :</label>
                 </td>
                 <td>
@@ -42,14 +56,6 @@
                          <option <%if(entity.DonDangKyUCSCID==listDonDangKyUCSC[i].ID) {%> selected <%} %> value="<%= listDonDangKyUCSC[i].ID%>"><%= listDonDangKyUCSC[i].Name%></option>
                          <%} %>
                     </select>
-                </td>
-            </tr>
-           <tr>
-                <td class="key">
-                    <label>H s thanh vien u c s c :</label>
-                </td>
-                <td>
-                    <input class="text_input" type="text" name="HSThanhVienUCSC" id="HSThanhVienUCSC" value="<%=entity.HSThanhVienUCSC %>" maxlength="255" />
                 </td>
             </tr>
             <tr>

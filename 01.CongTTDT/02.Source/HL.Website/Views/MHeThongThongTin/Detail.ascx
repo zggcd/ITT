@@ -9,8 +9,8 @@
 
 <div class="item">
     <p class="item-id">ID : <%= item.ID %></p>
+    <p class="item-daumoiucscid">Dau moi u c s c : <%= item.getDauMoiUCSC().Name %></p>
     <p class="item-dondangkyucscid">Don dang ky u c s c : <%= item.getDonDangKyUCSC().Name %></p>
-    <p class="item-hsthanhvienucsc">H s thanh vien u c s c : <%= string.Format("{0:#,##0}", item.HSThanhVienUCSC) %></p>
     <p class="item-menuid">Chuyên mục : <%= item.getMenu().Name %></p>
     <p class="item-state">Vị trí : <%= string.Format("{0:#,##0}", item.State) %></p>
     <p class="item-name">Tên : <%= item.Name %></p>

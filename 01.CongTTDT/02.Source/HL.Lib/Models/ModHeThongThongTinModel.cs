@@ -7,17 +7,17 @@ namespace HL.Lib.Models
 {
     public class ModHeThongThongTinEntity : EntityBase
     {
-
+        
         #region Autogen by HL
 
         [DataInfo]
         public override int ID { get; set; }
 
         [DataInfo]
-        public int DonDangKyUCSCID { get; set; }
+        public int DauMoiUCSCID { get; set; }
 
         [DataInfo]
-        public int DauMoiUCSCID { get; set; }
+        public int DonDangKyUCSCID { get; set; }
 
         [DataInfo]
         public int MenuID { get; set; }
@@ -32,7 +32,7 @@ namespace HL.Lib.Models
         public string Code { get; set; }
 
         [DataInfo]
-        public DateTime? Published { get; set; }
+        public DateTime Published { get; set; }
 
         [DataInfo]
         public int Order { get; set; }
@@ -40,8 +40,20 @@ namespace HL.Lib.Models
         [DataInfo]
         public bool Activity { get; set; }
 
-        #endregion
+        #endregion      
+  
+        private ModDauMoiUCSCEntity _oDauMoiUCSC = null;
+        public ModDauMoiUCSCEntity getDauMoiUCSC()
+        {
+            if (_oDauMoiUCSC == null && DauMoiUCSCID > 0)
+                _oDauMoiUCSC = ModDauMoiUCSCService.Instance.GetByID(DauMoiUCSCID);
 
+            if (_oDauMoiUCSC == null)
+                _oDauMoiUCSC = new ModDauMoiUCSCEntity();
+
+            return _oDauMoiUCSC;
+        }      
+  
         private ModDonDangKyUCSCEntity _oDonDangKyUCSC = null;
         public ModDonDangKyUCSCEntity getDonDangKyUCSC()
         {
@@ -52,8 +64,8 @@ namespace HL.Lib.Models
                 _oDonDangKyUCSC = new ModDonDangKyUCSCEntity();
 
             return _oDonDangKyUCSC;
-        }
-
+        }      
+  
         private WebMenuEntity _oMenu = null;
         public WebMenuEntity getMenu()
         {
