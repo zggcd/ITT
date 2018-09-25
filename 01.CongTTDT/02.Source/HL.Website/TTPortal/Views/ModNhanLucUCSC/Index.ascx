@@ -3,6 +3,28 @@
 <%
     var model = ViewBag.Model as ModNhanLucUCSCModel;
     var listEntity = ViewBag.Data as List<ModNhanLucUCSCEntity>;
+
+    var lstDonDk = ModDonDangKyUCSCService.Instance.CreateQuery()
+        .Where(o => o.Activity == true)
+        .ToList();
+    var lstHSThanhVien = ModHSThanhVienUCSCService.Instance.CreateQuery()
+        .Where(o => o.Activity == true)
+        .ToList();
+
+    string thanhVienIds = "";
+    if (lstDonDk != null)
+    {
+        thanhVienIds += string.Join(",", lstDonDk.Select(o => o.UserID).ToArray());
+    }
+    if (lstHSThanhVien != null)
+    {
+        thanhVienIds += string.Join(",", lstHSThanhVien.Select(o => o.UserID).ToArray());
+    }
+
+    var lstThanhVien = CPUserService.Instance.CreateQuery()
+        .Where(o => o.Activity == true && string.IsNullOrEmpty(thanhVienIds) == false)
+        .WhereIn(!string.IsNullOrEmpty(thanhVienIds), o => o.ID, thanhVienIds)
+        .ToList();
 %>
 
 <form id="hlForm" name="hlForm" method="post">
@@ -18,7 +40,13 @@
         </div>
         <div class="m">
             <div class="toolbar-list" id="toolbar">
-                <%=GetDefaultListCommand()%>
+                <ul style="float: left; padding-right: 15px;">
+                    <li id="toolbar-apply" class="button">
+                        <a class="toolbar" href="javascript: void(0)" onclick="hl_exec_cmd('Export')">
+                            <span title="Xuất Excel" class="icon-32-fileexport"></span>Xuất File</a>
+                    </li>
+                </ul>
+                <%=GetListCommand("cancel|Đóng")%>
             </div>
             <div class="pagetitle icon-48-generic">
                 <h2>Nhân lực</h2>
@@ -38,6 +66,7 @@
         var HLController = 'ModNhanLucUCSC';
 
         var HLArrVar = [
+            'filter_tv', 'ThanhVienID',
             'filter_trinhdo', 'MenuIDs_TrinhDoDT',
             'filter_chungchi', 'MenuIDs_ChungChi',
             'limit', 'PageSize'
@@ -79,9 +108,14 @@
                     <!-- Chức năng tìm kiếm, thống kê nhân lực theo thành viên, theo trình độ và theo văn bằng chứng chỉ, theo khu vực. Export excel danh sách nhân lực -->
                     <td nowrap="nowrap">
                         <span>Thành viên</span>
-                        <select id="filter_menu" onchange="HLRedirect()" class="inputbox" size="1">
+                        <select id="filter_tv" onchange="HLRedirect()" class="inputbox" size="1">
                             <option value="0">(Tất cả)</option>
-                            <%= Utils.ShowDDLMenuByType("News", model.LangID, model.MenuID)%>
+                            <%--<%= Utils.ShowDDLMenuByType("News", model.LangID, model.MenuID)%>--%>
+                            <%for (int i = 0; i < lstThanhVien.Count; i++)
+                                {%>
+                            <option value="<%=lstThanhVien[i].ID %>" <%if (lstThanhVien[i].ID == model.ThanhVienID)
+                                {%>selected="selected"<%} %>><%=lstThanhVien[i].LoginName %></option>
+                            <%} %>
                         </select>
 
                         <span>Trình độ</span>
@@ -119,6 +153,12 @@
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Hồ sơ UCSC", "ModHSThanhVienUCSC")%>
                         </th>
+                        <th width="1%" nowrap="nowrap">
+                            <%= GetSortLink("Trình độ", "MenuIDs_TrinhDoDT")%>
+                        </th>
+                        <th width="1%" nowrap="nowrap">
+                            <%= GetSortLink("Văn bằng, chứng chỉ", "MenuIDs_ChungChi")%>
+                        </th>
                         <th class="title">
                             <%= GetSortLink("Họ tên", "Name")%>
                         </th>
@@ -127,12 +167,6 @@
                         </th>
                         <%--<th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Menu i ds_ linh vuc d t", "MenuIDs_LinhVucDT")%>
-                        </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Menu i ds_ trinh do d t", "MenuIDs_TrinhDoDT")%>
-                        </th>
-                        <th width="1%" nowrap="nowrap">
-                            <%= GetSortLink("Menu i ds_ chung chi", "MenuIDs_ChungChi")%>
                         </th>
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Menu i ds_ quan ly a t t t", "MenuIDs_QuanLyATTT")%>
@@ -175,7 +209,13 @@
                 </tfoot>
                 <tbody>
                     <%for (int i = 0; listEntity != null && i < listEntity.Count; i++)
-                        { %>
+                        {
+                            var lstTd = listEntity[i].getMenuTrinhDo().Select(o => o.Name).ToArray();
+                            var lstCc = listEntity[i].getMenuChungChi().Select(o => o.Name).ToArray();
+                            string td = "", cc = "";
+                            if (lstTd.Length > 0) td = string.Join(",", lstTd);
+                            if (lstCc.Length > 0) cc = string.Join(",", lstCc);
+                            %>
                     <tr class="row<%= i%2 %>">
                         <td align="center">
                             <%= i + 1%>
@@ -192,20 +232,21 @@
                         <td align="center">
                             <%= GetName(listEntity[i].getModHSThanhVienUCSC()) %>
                         </td>
+                        <td align="center">
+                            <%= td%>
+                        </td>
+                        <td align="center">
+                            <%= cc%>
+                        </td>
                         <td>
-                            <a href="javascript:HLRedirect('Add', <%= listEntity[i].ID %>)"><%= listEntity[i].Name%></a>
+                            <%--<a href="javascript:HLRedirect('Add', <%= listEntity[i].ID %>)"><%= listEntity[i].Name%></a>--%>
+                            <%= listEntity[i].Name%>
                         </td>
                         <td align="center">
                             <%= listEntity[i].School%>
                         </td>
                         <%--<td align="center">
                             <%= listEntity[i].MenuIDs_LinhVucDT%>
-                        </td>
-                        <td align="center">
-                            <%= listEntity[i].MenuIDs_TrinhDoDT%>
-                        </td>
-                        <td align="center">
-                            <%= listEntity[i].MenuIDs_ChungChi%>
                         </td>
                         <td align="center">
                             <%= listEntity[i].MenuIDs_QuanLyATTT%>

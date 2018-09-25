@@ -87,6 +87,36 @@ namespace HL.Lib.Models
             return _oHSThanhVienUCSC;
         }
 
+        private List<WebMenuEntity> _oMenuTrinhDo = null;
+        public List<WebMenuEntity> getMenuTrinhDo()
+        {
+            if (_oMenuTrinhDo == null)
+                _oMenuTrinhDo = WebMenuService.Instance.CreateQuery()
+                    .Where(o => o.Activity == true && string.IsNullOrEmpty(MenuIDs_TrinhDoDT) == false)
+                    .WhereIn(!string.IsNullOrEmpty(MenuIDs_TrinhDoDT), o => o.ID, MenuIDs_TrinhDoDT)
+                    .ToList();
+
+            if (_oMenuTrinhDo == null)
+                _oMenuTrinhDo = new List<WebMenuEntity>();
+
+            return _oMenuTrinhDo;
+        }
+
+        private List<WebMenuEntity> _oMenuChungChi = null;
+        public List<WebMenuEntity> getMenuChungChi()
+        {
+            if (_oMenuChungChi == null)
+                _oMenuChungChi = WebMenuService.Instance.CreateQuery()
+                    .Where(o => o.Activity == true && string.IsNullOrEmpty(MenuIDs_ChungChi) == false)
+                    .WhereIn(!string.IsNullOrEmpty(MenuIDs_ChungChi), o => o.ID, MenuIDs_ChungChi)
+                    .ToList();
+
+            if (_oMenuChungChi == null)
+                _oMenuChungChi = new List<WebMenuEntity>();
+
+            return _oMenuChungChi;
+        }
+
     }
 
     public class ModNhanLucUCSCService : ServiceBase<ModNhanLucUCSCEntity>
