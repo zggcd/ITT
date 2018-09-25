@@ -19,6 +19,12 @@
         <div class="m">
             <div class="toolbar-list" id="toolbar">
                 <%=GetDefaultListCommand()%>
+                <ul style="float: left; padding-right: 15px;">
+                    <li id="toolbar-apply" class="button">
+                        <a class="toolbar" href="javascript: void(0)" onclick="hl_exec_cmd('Export')">
+                            <span title="Xuất Excel" class="icon-32-fileexport"></span>Xuất File</a>
+                    </li>
+                </ul>
             </div>
             <div class="pagetitle icon-48-generic">
                 <h2>Đơn đăng ký ứng cứu sự cố</h2>

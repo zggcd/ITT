@@ -842,6 +842,61 @@ namespace HL.Lib.CPControllers
         }
 
         #endregion
+
+        #region Export
+        public void ActionExport(ModDonDangKyUCSCModel model)
+        {
+            //lấy danh sách
+            // sap xep tu dong
+            string orderBy = AutoSort(model.Sort);
+
+            // tao danh sach
+            var dbQuery = ModDonDangKyUCSCService.Instance.CreateQuery()
+                                .Where(!string.IsNullOrEmpty(model.SearchText), o => o.Name.Contains(model.SearchText))
+                                .Where(model.State > 0, o => (o.State & model.State) == model.State)
+                                .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForCP("DonDangKyUCSC", model.MenuID, model.LangID))
+                                .OrderBy(orderBy);
+            var listEntity = dbQuery.ToList();
+            if (listEntity == null)
+            {
+                CPViewPage.SetMessage("Không có dữ liệu.");
+                return;
+            }
+
+            //khai báo tập hợp bản ghi excel
+            List<List<object>> list = new List<List<object>>();
+            //khai báo 1 dòng excel
+            List<object> _list = null;
+            for (int i = 0; listEntity != null && listEntity.Count > 0 && i < listEntity.Count; i++)
+            {
+                var user = CPUserService.Instance.GetByID(listEntity[i].UserID);
+                _list = new List<object>();
+                _list.Add(user?.LoginName);
+                _list.Add(listEntity[i].ToChuc_DiaChi);
+                _list.Add(listEntity[i].ToChuc_Email);
+                _list.Add(listEntity[i].ToChuc_DienThoai);
+                _list.Add(listEntity[i].DauMoiLanhDao_DienThoaiDD);
+                _list.Add(listEntity[i].DauMoiLanhDao_Ten);
+                list.Add(_list);
+            }
+
+            //ghi exel
+            string temp_file = CPViewPage.Server.MapPath("~/Data/upload/files/Excel/ThanhVien_" +
+            string.Format("{0:yyyy_MM_dd}", DateTime.Now) + ".xlsx");
+            string filePath = CPViewPage.Server.MapPath("~/TTPortal/Templates/Export_ThanhVien.xlsx");
+            Excel.Export(list, 1, filePath, temp_file);
+            //CPViewPage.Response.Write("Here!6");
+
+
+            CPViewPage.Response.Clear();
+            CPViewPage.Response.ContentType = "application/excel";
+            CPViewPage.Response.AppendHeader("Content-Disposition", "attachment; filename=" + System.IO.Path.GetFileName(temp_file));
+            CPViewPage.Response.WriteFile(temp_file);
+            CPViewPage.Response.End();
+
+            //CPViewPage.Response.Write("Here!");
+        }
+        #endregion Export
     }
 
     public class ModDonDangKyUCSCModel : DefaultModel
