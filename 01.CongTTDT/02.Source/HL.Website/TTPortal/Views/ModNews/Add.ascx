@@ -4,6 +4,28 @@
     var model = ViewBag.Model as ModNewsModel;
     var entity = ViewBag.Data as ModNewsEntity;
     string roleCode = ViewBag.RoleCode as string;
+
+    var lstDonDk = ModDonDangKyUCSCService.Instance.CreateQuery()
+        .Where(o => o.Activity == true)
+        .ToList();
+    var lstHSThanhVien = ModHSThanhVienUCSCService.Instance.CreateQuery()
+        .Where(o => o.Activity == true)
+        .ToList();
+
+    string thanhVienIds = "";
+    if (lstDonDk != null)
+    {
+        thanhVienIds += string.Join(",", lstDonDk.Select(o => o.UserID).ToArray());
+    }
+    if (lstHSThanhVien != null)
+    {
+        thanhVienIds += string.Join(",", lstHSThanhVien.Select(o => o.UserID).ToArray());
+    }
+
+    var listUser = CPUserService.Instance.CreateQuery()
+        .Where(o => o.Activity == true && string.IsNullOrEmpty(thanhVienIds) == false)
+        .WhereIn(!string.IsNullOrEmpty(thanhVienIds), o => o.ID, thanhVienIds)
+        .ToList();
 %>
 
 <form id="hlForm" name="hlForm" method="post">
@@ -190,7 +212,10 @@
                                 <tr>
                                     <td>
                                         <input name="WarnNews" type="checkbox" <%if (entity.WarnNews == true)
-                                            {%>checked value="1"<%} else {%>value="0"<%} %>
+                                            {%>checked
+                                            value="1" <%}
+                                            else
+                                            {%>value="0" <%} %>
                                             onclick="fnWarnNews(this)">
                                         Là tin cảnh báo
 
@@ -200,12 +225,12 @@
                                             <br />
                                             <br />
                                             <span>Chọn thành viên xem tin cảnh báo:</span>
-                                            <% List<CPUserEntity> listUser = CPUserService.Instance.CreateQuery().Where(o => o.Activity == true).ToList();
+                                            <% 
                                                 string[] loginNames = listUser != null ? listUser.Select(o => o.LoginName).ToArray() : null;
                                                 string loginName = loginNames != null ? string.Join(";", loginNames) : "";
                                                 int userCount = listUser != null ? listUser.Count : 0;
                                                 int userChecked = string.IsNullOrEmpty(entity.WarnUserIDs) ? 0 : entity.WarnUserIDs.Split(';').Length;
-                                                %>
+                                            %>
                                             <input class="text_input my-select" type="text" name="WarnUserIDs" id="WarnUserIDs" value="<%=Utils.ShowTextByUserID(entity.WarnUserIDs) %>" maxlength="255" onclick="fnDropdown(event)" readonly />
                                             <div class="text_input multiselect" id="List1" <%if (string.IsNullOrEmpty(entity.WarnUserIDs))
                                                 {%>style="display: none;"
