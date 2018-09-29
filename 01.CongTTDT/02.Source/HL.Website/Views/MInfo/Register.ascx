@@ -6,11 +6,27 @@
     {
         if (HL.Lib.Global.CPLogin.IsLoginOnWeb())
         {
-            Response.Redirect("/vn/Thanh-vien/Thong-tin-ca-nhan.aspx");
+            int langId = ViewPage.CurrentPage.LangID;
+            string infoUrl = "/vn/Thanh-vien/Thong-tin-ca-nhan.aspx";
+            if (langId == 2)
+            {
+                infoUrl = "/en/Member/Info.aspx";
+            }
+
+            Response.Redirect(infoUrl);
             return;
         }
     }
 </script>
+
+<%
+    int langId = ViewPage.CurrentPage.LangID;
+    string loginUrl = "/vn/Thanh-vien/Dang-nhap.aspx";
+    if (langId == 2)
+    {
+        loginUrl = "/en/Member/Login.aspx";
+    }
+%>
 
 <div class="row-fluid titleContainer">
     <span>Đăng ký tài khoản</span>
@@ -45,6 +61,7 @@
                 </div>
 
                 <input name="_hl_action[RegisterPOST]" value="Đăng ký tài khoản" id="dk" class="btn_action search icon QAcustom" type="submit" style="display: none;">
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="<%=loginUrl %>"><< Đăng Nhập</a>
                 <input class="btn btn-success" onclick="check();" value="Đăng ký tài khoản" type="button" />
 
                 <input type="hidden" name="sVY" id="sVY" value="" />

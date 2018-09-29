@@ -8,12 +8,27 @@
     {
         if (HL.Lib.Global.CPLogin.IsLoginOnWeb())
         {
-            Response.Redirect("/vn/Thanh-vien/Thong-tin-ca-nhan.aspx");
+            int langId = ViewPage.CurrentPage.LangID;
+            string infoUrl = "/vn/Thanh-vien/Thong-tin-ca-nhan.aspx";
+            if (langId == 2)
+            {
+                infoUrl = "/en/Member/Info.aspx";
+            }
+
+            Response.Redirect(infoUrl);
             return;
         }
     }
 </script>
 
+<%
+    int langId = ViewPage.CurrentPage.LangID;
+    string registerUrl = "/vn/Thanh-vien/Dang-ky.aspx";
+    if (langId == 2)
+    {
+        registerUrl = "/en/Member/Register.aspx";
+    }
+%>
 <div class="row-fluid titleContainer">
     <span>Đăng nhập</span>
 </div>
@@ -32,7 +47,7 @@
                 </div>
 
                 <input class="btn btn-success" name="_hl_action[Login]" value="Đăng nhập" type="submit" />
-                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/vn/Thanh-vien/Dang-ky.aspx">Đăng ký >></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="<%=registerUrl %>">Đăng ký >></a>
 
             </form>
         </div>
