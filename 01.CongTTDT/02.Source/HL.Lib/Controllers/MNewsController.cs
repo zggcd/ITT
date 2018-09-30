@@ -60,6 +60,10 @@ namespace HL.Lib.Controllers
                 ViewBag.Data = entity;
                 ViewBag.Comment = new ModCommentEntity();
                 SetObject["view.Meta"] = entity;
+
+                // Update view
+                entity.View += 1;
+                ModNewsService.Instance.Save(entity);
             }
             else
             {

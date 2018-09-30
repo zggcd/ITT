@@ -1784,6 +1784,7 @@
     <Content Include="Views\CSoLuongSuCo\Default.ascx" />
     <Content Include="Views\CStatic\Date.ascx" />
     <Content Include="Views\CStatic\Search.ascx" />
+    <Content Include="Views\CStatic\ThongKeTruyCap.ascx" />
     <Content Include="Views\CUser\Default.ascx" />
     <Content Include="Views\CVanBan\Default.ascx" />
     <Content Include="Views\CVideo\Default.ascx" />
