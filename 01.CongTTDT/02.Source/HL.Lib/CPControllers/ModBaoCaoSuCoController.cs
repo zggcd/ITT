@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using HL.Lib.MVC;
 using HL.Lib.Models;
 using HL.Lib.Global;
+using System.Linq;
 
 namespace HL.Lib.CPControllers
 {
@@ -21,9 +22,20 @@ namespace HL.Lib.CPControllers
             // sap xep tu dong
             string orderBy = AutoSort(model.Sort);
 
+            // Search theo user
+            var user = CPUserService.Instance.CreateQuery()
+                                .Where(!string.IsNullOrEmpty(model.SearchText), o => o.LoginName.Contains(model.SearchText))
+                                .ToList();
+            string s = "";
+            if (user != null)
+            {
+                s = string.Join(",", user.Select(o => o.ID).ToArray());
+            }
+
             // tao danh sach
             var dbQuery = ModBaoCaoSuCoService.Instance.CreateQuery()
-                                .Where(!string.IsNullOrEmpty(model.SearchText), o => o.Name.Contains(model.SearchText))
+                                .Where(!string.IsNullOrEmpty(model.SearchText) && string.IsNullOrEmpty(s), o => o.Title.Contains(model.SearchText))
+                                .WhereIn(!string.IsNullOrEmpty(s), o => o.UserID, s)
                                 .Where(model.State > 0, o => (o.State & model.State) == model.State)
                                 .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForCP("BaoCaoSuCo", model.MenuID, model.LangID))
                                 .Take(model.PageSize)

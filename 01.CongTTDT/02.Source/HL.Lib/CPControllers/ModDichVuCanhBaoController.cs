@@ -101,7 +101,7 @@ namespace HL.Lib.CPControllers
 
             //kiem tra ten 
             if (entity.Name.Trim() == string.Empty)
-                CPViewPage.Message.ListMessage.Add("Nhập tên.");
+                CPViewPage.Message.ListMessage.Add("Nhập tên đơn vị đăng ký.");
 
             //kiem tra chuyen muc
             //if (entity.MenuID < 1)

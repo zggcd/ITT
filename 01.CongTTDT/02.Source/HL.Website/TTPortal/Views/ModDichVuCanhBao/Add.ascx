@@ -102,7 +102,7 @@
                     </tr>--%>
                     <tr>
                         <td class="key">
-                            <label>Tên đơn vị đăng ký :</label>
+                            <label>Tên đơn vị đăng ký :<span class="red">*</span></label>
                         </td>
                         <td>
                             <input class="text_input" type="text" name="Name" id="Name" value="<%=entity.Name %>" maxlength="255" />
