@@ -1735,6 +1735,8 @@
     <Content Include="TTPortal\Views\ModVanBan\Index.ascx" />
     <Content Include="TTPortal\Views\ModVideo\Add.ascx" />
     <Content Include="TTPortal\Views\ModVideo\Index.ascx" />
+    <Content Include="TTPortal\Views\Preview\PrintDKUCSC.aspx" />
+    <Content Include="TTPortal\Views\Preview\PrintHSThanhVien.aspx" />
     <Content Include="TTPortal\Views\QuyTrinhTaoTin\Index.ascx" />
     <Content Include="Views\CAdv\BoxMarquee.ascx" />
     <Content Include="Views\CAdv\Default.ascx" />

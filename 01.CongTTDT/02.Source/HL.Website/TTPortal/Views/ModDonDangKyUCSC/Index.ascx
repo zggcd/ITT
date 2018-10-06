@@ -24,6 +24,10 @@
                         <a class="toolbar" href="javascript: void(0)" onclick="hl_exec_cmd('Export')">
                             <span title="Xuất Excel" class="icon-32-fileexport"></span>Xuất File</a>
                     </li>
+                    <li id="toolbar-print" class="button">
+                        <a class="toolbar" href="javascript: void(0)" onclick="javascript:if(document.hlForm.boxchecked.value>0){fnPrint()}">
+                            <span title="In" class="icon-32-fileexport"></span>In</a>
+                    </li>
                 </ul>
             </div>
             <div class="pagetitle icon-48-generic">
@@ -398,5 +402,20 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function fnPrint() {
+            var cmd_param = '';
+            var list_cid = document.getElementsByName('cid');
+            for (var i = 0; i < list_cid.length; i++) {
+                if (list_cid[i].checked) {
+                    cmd_param = list_cid[i].value;
+                    break;
+                }
+            }
+
+            open("/TTPortal/Views/Preview/PrintDKUCSC.aspx?RecordID=" + cmd_param, "_blank");
+        }
+    </script>
 
 </form>
