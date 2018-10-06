@@ -263,22 +263,22 @@
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt;'>
-                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;Tên tổ chức:</span>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642; Tên tổ chức:<span class="required">*</span></span>
                                         <input name="ToChuc_Ten" maxlength="250" id="ToChuc_Ten" class="textstyle1" type="text" value="<%=entityHs.ToChuc_Ten %>" />
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt;'>
-                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;Tên cơ quan chủ quản:</span>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642; Tên cơ quan chủ quản:<span class="required">*</span></span>
                                         <input name="ToChuc_TenCoQuan" maxlength="250" id="ToChuc_TenCoQuan" class="textstyle1" type="text" value="<%=entityHs.ToChuc_TenCoQuan %>" />
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt;'>
-                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;Địa chỉ:</span>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642; Địa chỉ:<span class="required">*</span></span>
                                         <input name="ToChuc_DiaChi" maxlength="250" id="ToChuc_DiaChi" class="textstyle1" type="text" value="<%=entityHs.ToChuc_DiaChi %>" />
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt;'>
-                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642; Điện thoại:</span>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642; Điện thoại:<span class="required">*</span></span>
                                         <input name="ToChuc_DienThoai" maxlength="250" id="ToChuc_DienThoai" class="textstyle2" type="text" value="<%=entityHs.ToChuc_DienThoai %>" />
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span
                                             style='font-size: 10.0pt; font-family: "Arial",sans-serif;'> Fax: 
@@ -289,7 +289,7 @@
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span
-                                            lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif;'> </span><span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>Email:</span>
+                                            lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif;'> </span><span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>Email:<span class="required">*</span></span>
                                         <input name="ToChuc_Email" maxlength="250" id="ToChuc_Email" class="textstyle2" type="text" value="<%=entityHs.ToChuc_Email %>" />
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span
                                             style='font-size: 10.0pt; font-family: "Arial",sans-serif;'> Website: 

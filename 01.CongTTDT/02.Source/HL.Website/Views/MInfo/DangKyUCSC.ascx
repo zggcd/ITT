@@ -265,17 +265,17 @@
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
-                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>1. Tên tổ chức:</span>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>1. Tên tổ chức:<span class="required">*</span></span>
                                         <input name="ToChuc_Ten" maxlength="250" id="ToChuc_Ten" class="textstyle1" type="text" value="<%=entityDk.ToChuc_Ten %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
-                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>2. Địa chỉ: </span>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>2. Địa chỉ:<span class="required">*</span></span>
                                         <input name="ToChuc_DiaChi" maxlength="250" id="ToChuc_DiaChi" class="textstyle1" type="text" value="<%=entityDk.ToChuc_DiaChi %>" />
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
-                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>3. Điện thoại:</span>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>3. Điện thoại:<span class="required">*</span></span>
                                         <input name="ToChuc_DienThoai" maxlength="250" id="ToChuc_DienThoai" class="textstyle1" type="text" value="<%=entityDk.ToChuc_DienThoai %>" />
                                     </p>
 
@@ -285,7 +285,7 @@
                                     </p>
 
                                     <p style='margin-top: 6.0pt;'>
-                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>5. Email:</span>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>5. Email:<span class="required">*</span></span>
                                         <input name="ToChuc_Email" maxlength="250" id="ToChuc_Email" class="textstyle1" type="text" value="<%=entityDk.ToChuc_Email %>" />
                                     </p>
 
