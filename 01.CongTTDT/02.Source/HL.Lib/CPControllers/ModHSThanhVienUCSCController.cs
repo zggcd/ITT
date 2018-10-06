@@ -611,7 +611,7 @@ namespace HL.Lib.CPControllers
                 entityHs.Order = entity.Order;
                 entityHs.Published = entity.Published;
                 entityHs.Published1 = date;
-                entityHs.Activity = false;
+                entityHs.Activity = entity.Activity;
                 ModHSThanhVienUCSCService.Instance.Save(entityHs);
 
                 //Dau moi UCSC

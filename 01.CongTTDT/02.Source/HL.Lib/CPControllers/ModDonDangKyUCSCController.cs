@@ -595,7 +595,7 @@ namespace HL.Lib.CPControllers
                 entityDk.Order = entity.Order;
                 entityDk.Published = entity.Published;
                 entityDk.Published1 = date;
-                entityDk.Activity = false;
+                entityDk.Activity = entity.Activity;
                 ModDonDangKyUCSCService.Instance.Save(entityDk);
 
                 //He thong thong tin

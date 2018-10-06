@@ -110,8 +110,8 @@
                     <input type="text" class="form-control" id="Email" name="Email" placeholder="Email" value="<%=entity.Email %>">
                 </div>
                 <div class="form-group">
-                    <label for="Password">Họ tên: <span style="color: red">*</span></label>
-                    <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Họ tên" onkeypress="return pkeypress(event);" value="<%=entity.Phone %>">
+                    <label for="Password">Số điện thoại: <span style="color: red">*</span></label>
+                    <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Số điện thoại" onkeypress="return pkeypress(event);" value="<%=entity.Phone %>">
                 </div>
 
                 <div class="frm_input no1">
