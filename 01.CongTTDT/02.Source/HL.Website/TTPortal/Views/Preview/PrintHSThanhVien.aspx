@@ -7,6 +7,29 @@
     <title>Preview</title>
     <meta name="author" content="lehoanganhhd@gmail.com" />
     <meta name="generator" content="HLv3.0.Min" />
+
+    <style>
+        table.thanh-vien {
+            border-collapse: collapse;
+        }
+
+            table.thanh-vien th {
+                text-align: center;
+            }
+
+            table.thanh-vien th,
+            table.thanh-vien td {
+                border: 1px solid #000;
+                border-collapse: collapse;
+                text-align: center;
+                padding: 5px;
+            }
+
+                table.thanh-vien td input,
+                table.thanh-vien td select {
+                    width: 90%;
+                }
+    </style>
 </head>
 <body>
     <form id="hlForm" runat="server">
@@ -20,9 +43,22 @@
             List<WebMenuEntity> lstCapDo = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "CapDo" && o.ParentID > 0).ToList_Cache();
             int countCapDo = lstCapDo != null ? lstCapDo.Count : 0;
 
+            List<ModNhanLucUCSCEntity> lstNhanLuc = ModNhanLucUCSCService.Instance.CreateQuery()
+                        .Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID)
+                        .ToList();
+            int countNhanLuc = lstNhanLuc != null ? lstNhanLuc.Count : 0;
+
             //List<ModHeThongThongTinEntity> currHTTT = ModHeThongThongTinService.Instance.CreateQuery()
             //    .Where(o => o.Activity == true && o.DauMoiUCSCID == entity.ID)
             //    .ToList();
+
+            var lstTongHopNhanLucLVDT = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "LinhVucDaoDao");
+            var lstTongHopNhanLucTDDT = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "TrinhDoDaoTao");
+            var lstTongHopNhanLucCC = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "ChungChi");
+            var lstTongHopNhanLucNhomATTT = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "QuanLyATTT");
+            var lstTongHopNhanLucNhomKTPT = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "KyThuatPhongThu");
+            var lstTongHopNhanLucNhomKTBV = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "KyThuatBaoVe");
+            var lstTongHopNhanLucNhomKTKT = ModTongHopNhanLucUCSCService.Instance.GetTongHopNhanLucByHSThanhVienID(entity.ID, "KyThuatKiemTra");
         %>
 
 
@@ -276,7 +312,7 @@ trách ho&#7863;c cung c&#7845;p d&#7883;ch v&#7909;:</span></b>
                 </tr>
             </table>
 
-            <p class="MsoNormal" style='margin-top: 6.0pt;'>
+            <%--<p class="MsoNormal" style='margin-top: 6.0pt;'>
                 <b><span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>6. Thông tin v&#7873;
 Danh sách nhân l&#7921;c, chuyên gia an toàn thông tin, công ngh&#7879; thông
 tin và t&#432;&#417;ng &#273;&#432;&#417;ng</span></b>
@@ -299,7 +335,303 @@ ho&#7841;t &#273;&#7897;ng &#273;i&#7873;u ph&#7889;i &#7913;ng c&#7913;u s&#792
 c&#7889; <span class="GramE">theo</span> quy &#273;&#7883;nh pháp lu&#7853;t và
 h&#432;&#7899;ng d&#7851;n c&#7911;a C&#417; quan &#273;i&#7873;u ph&#7889;i qu&#7889;c
 gia ban hành.</span></i></b>
+            </p>--%>
+
+            <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                <b><span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>6. Thông tin về Số lượng nhân lực liên quan đến CNTT, ATTT hoặc tương đương</span></b>
             </p>
+            <table class="thanh-vien" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th style="width: 4%;">TT</th>
+                        <th>Phân loại</th>
+                        <th style="width: 17%;">Số lượng (người)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tongHopNhanLuc boldTitle">
+                        <td>6.1</td>
+                        <td class="tongHopTitle">Số lượng cán bộ theo lĩnh vực đào tạo</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <%for (int i = 0; i < lstTongHopNhanLucLVDT.Count; i++)%>
+                    <%{ %>
+                    <tr class="tongHopNhanLuc tongHopNhanLucLVDT">
+                        <td><%= ((char) (65+i)).ToString().ToLower() %>)</td>
+                        <td class="tongHopTitle"><%=lstTongHopNhanLucLVDT[i].Name %></td>
+                        <td>
+                            <%= lstTongHopNhanLucLVDT[i].MenuID_Value > 0 ? lstTongHopNhanLucLVDT[i].MenuID_Value.ToString() : "0" %>
+                        </td>
+                    </tr>
+                    <%} %>
+
+                    <tr class="tongHopNhanLuc boldTitle">
+                        <td>6.2</td>
+                        <td class="tongHopTitle">Số lượng cán bộ phân theo trình độ đào tạo</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <%for (int i = 0; i < lstTongHopNhanLucTDDT.Count; i++)%>
+                    <%{ %>
+                    <tr class="tongHopNhanLuc tongHopNhanLucTDDT">
+                        <td><%= ((char) (65+i)).ToString().ToLower() %>)</td>
+                        <td class="tongHopTitle"><%=lstTongHopNhanLucTDDT[i].Name %></td>
+                        <td>
+                            <%= lstTongHopNhanLucTDDT[i].MenuID_Value > 0 ? lstTongHopNhanLucTDDT[i].MenuID_Value.ToString() : "0" %>
+                        </td>
+                    </tr>
+                    <%} %>
+
+                    <tr class="tongHopNhanLuc boldTitle">
+                        <td>6.3</td>
+                        <td class="tongHopTitle">Số lượng cán bộ có chứng chỉ về CNTT, ATTT hoặc tương đương</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <%for (int i = 0; i < lstTongHopNhanLucCC.Count; i++)%>
+                    <%{ %>
+                    <tr class="tongHopNhanLuc tongHopNhanLucCC">
+                        <td><%= ((char) (65+i)).ToString().ToLower() %>)</td>
+                        <td class="tongHopTitle"><%=lstTongHopNhanLucCC[i].Name %></td>
+                        <td>
+                            <%= lstTongHopNhanLucCC[i].MenuID_Value > 0 ? lstTongHopNhanLucCC[i].MenuID_Value.ToString() : "0" %>
+                        </td>
+                    </tr>
+                    <%} %>
+                </tbody>
+            </table>
+
+            <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                <b><span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>7. Thông tin về Số lượng nhân lực có kinh nghiệm, được đào tạo về ATTT</span></b>
+            </p>
+            <table class="thanh-vien" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th style="width: 4%;">TT</th>
+                        <th>Phân loại</th>
+                        <th style="width: 17%;">Số lượng (người)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tongHopNhanLuc boldTitle">
+                        <td>7.1</td>
+                        <td class="tongHopTitle">Nhóm chuyên gia quản lý ATTT</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <%for (int i = 0; i < lstTongHopNhanLucNhomATTT.Count; i++)%>
+                    <%{ %>
+                    <tr class="tongHopNhanLuc tongHopNhanLucNhomATTT">
+                        <td><%= ((char) (65+i)).ToString().ToLower() %>)</td>
+                        <td class="tongHopTitle"><%=lstTongHopNhanLucNhomATTT[i].Name %></td>
+                        <td>
+                            <%= lstTongHopNhanLucNhomATTT[i].MenuID_Value > 0 ? lstTongHopNhanLucNhomATTT[i].MenuID_Value.ToString() : "0" %>
+                        </td>
+                    </tr>
+                    <%} %>
+
+                    <tr class="tongHopNhanLuc boldTitle">
+                        <td>7.2</td>
+                        <td class="tongHopTitle">Nhóm chuyên gia kỹ thuật phòng thủ, chống tấn công</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <%for (int i = 0; i < lstTongHopNhanLucNhomKTPT.Count; i++)%>
+                    <%{ %>
+                    <tr class="tongHopNhanLuc tongHopNhanLucNhomKTPT">
+                        <td><%= ((char) (65+i)).ToString().ToLower() %>)</td>
+                        <td class="tongHopTitle"><%=lstTongHopNhanLucNhomKTPT[i].Name %></td>
+                        <td>
+                            <%= lstTongHopNhanLucNhomKTPT[i].MenuID_Value > 0 ? lstTongHopNhanLucNhomKTPT[i].MenuID_Value.ToString() : "0" %>
+                        </td>
+                    </tr>
+                    <%} %>
+
+                    <tr class="tongHopNhanLuc boldTitle">
+                        <td>7.3</td>
+                        <td class="tongHopTitle">Nhóm chuyên gia kỹ thuật bảo vệ an toàn hệ thống và ứng dụng</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <%for (int i = 0; i < lstTongHopNhanLucNhomKTBV.Count; i++)%>
+                    <%{ %>
+                    <tr class="tongHopNhanLuc tongHopNhanLucNhomKTBV">
+                        <td><%= ((char) (65+i)).ToString().ToLower() %>)</td>
+                        <td class="tongHopTitle"><%=lstTongHopNhanLucNhomKTBV[i].Name %></td>
+                        <td>
+                            <%= lstTongHopNhanLucNhomKTBV[i].MenuID_Value > 0 ? lstTongHopNhanLucNhomKTBV[i].MenuID_Value.ToString() : "0" %>
+                        </td>
+                    </tr>
+                    <%} %>
+
+                    <tr class="tongHopNhanLuc boldTitle">
+                        <td>7.4</td>
+                        <td class="tongHopTitle">Nhóm chuyên gia kỹ thuật kiểm tra, đánh giá ATTT</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <%for (int i = 0; i < lstTongHopNhanLucNhomKTKT.Count; i++)%>
+                    <%{ %>
+                    <tr class="tongHopNhanLuc tongHopNhanLucNhomKTKT">
+                        <td><%= ((char) (65+i)).ToString().ToLower() %>)</td>
+                        <td class="tongHopTitle"><%=lstTongHopNhanLucNhomKTKT[i].Name %></td>
+                        <td>
+                            <%= lstTongHopNhanLucNhomKTKT[i].MenuID_Value > 0 ? lstTongHopNhanLucNhomKTKT[i].MenuID_Value.ToString() : "0" %>
+                        </td>
+                    </tr>
+                    <%} %>
+                </tbody>
+            </table>
+
+            <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                <b><span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>8. Thông tin về Danh sách nhân lực, chuyên gia an toàn thông tin, công nghệ thông tin và tương đương</span></b>
+            </p>
+            <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                <i><span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>(Cung cấp thông tin về nhân lực an toàn thông tin, công nghệ thông tin thuộc đơn vị hoặc các đơn vị liên quan trong phạm vi mình phụ trách theo mẫu Tổng hợp kèm theo Biểu mẫu 01 này)</span></i>
+            </p>
+            <table class="thanh-vien">
+                <thead>
+                    <tr>
+                        <th>TT</th>
+                        <th>Họ và tên</th>
+                        <th>Tên trường, cơ sở đào tạo</th>
+                        <th>Chuyên ngành đào tạo, bồi dưỡng</th>
+                        <th>Văn bằng, chứng chỉ, trình độ về ATTT, CNTT hoặc tương đương</th>
+                        <th>Tháng/năm tốt nghiệp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%for (int i = 0; i < countNhanLuc; i++)
+                        {
+                            string sLinhVuc = "";
+                            string sTrinhDo = "";
+                            string sChungChi = "";
+
+                            if (!string.IsNullOrEmpty(lstNhanLuc[i].MenuIDs_LinhVucDT))
+                            {
+                                var linhVuc = WebMenuService.Instance.CreateQuery()
+                                    .Where(o => o.Activity == true)
+                                    .WhereIn(o => o.ID, lstNhanLuc[i].MenuIDs_LinhVucDT)
+                                    .ToList();
+                                var tenLinhVuc = linhVuc.Select(o => o.Name).ToArray();
+                                if (tenLinhVuc != null) sLinhVuc = string.Join(", ", tenLinhVuc);
+                            }
+
+                            if (!string.IsNullOrEmpty(lstNhanLuc[i].MenuIDs_TrinhDoDT))
+                            {
+                                var trinhDo = WebMenuService.Instance.CreateQuery()
+                                    .Where(o => o.Activity == true)
+                                    .WhereIn(o => o.ID, lstNhanLuc[i].MenuIDs_TrinhDoDT)
+                                    .ToList();
+                                var tenTrinhDo = trinhDo.Select(o => o.Name).ToArray();
+                                if (tenTrinhDo != null) sTrinhDo = string.Join(", ", tenTrinhDo);
+                            }
+
+                            if (!string.IsNullOrEmpty(lstNhanLuc[i].MenuIDs_ChungChi))
+                            {
+                                var chungChi = WebMenuService.Instance.CreateQuery()
+                                    .Where(o => o.Activity == true)
+                                    .WhereIn(o => o.ID, lstNhanLuc[i].MenuIDs_ChungChi)
+                                    .ToList();
+                                var tenChungChi = chungChi.Select(o => o.Name).ToArray();
+                                if (tenChungChi != null) sChungChi = string.Join(", ", tenChungChi);
+                            }
+
+                            string sQuanLyATTT = "";
+                            string sKyThuatPhongThu = "";
+                            string sKyThuatBaoVe = "";
+                            string sKyThuatKiemTra = "";
+
+                            if (!string.IsNullOrEmpty(lstNhanLuc[i].MenuIDs_QuanLyATTT))
+                            {
+                                var quanLyATTT = WebMenuService.Instance.CreateQuery()
+                                    .Where(o => o.Activity == true)
+                                    .WhereIn(o => o.ID, lstNhanLuc[i].MenuIDs_QuanLyATTT)
+                                    .ToList();
+                                var tenQuanLyATTT = quanLyATTT.Select(o => o.Name).ToArray();
+                                if (tenQuanLyATTT != null) sQuanLyATTT = string.Join(", ", tenQuanLyATTT);
+                            }
+
+                            if (!string.IsNullOrEmpty(lstNhanLuc[i].MenuIDs_KyThuatPhongThu))
+                            {
+                                var kyThuatPhongThu = WebMenuService.Instance.CreateQuery()
+                                    .Where(o => o.Activity == true)
+                                    .WhereIn(o => o.ID, lstNhanLuc[i].MenuIDs_KyThuatPhongThu)
+                                    .ToList();
+                                var tenKyThuatPhongThu = kyThuatPhongThu.Select(o => o.Name).ToArray();
+                                if (tenKyThuatPhongThu != null) sKyThuatPhongThu = string.Join(", ", tenKyThuatPhongThu);
+                            }
+
+                            if (!string.IsNullOrEmpty(lstNhanLuc[i].MenuIDs_KyThuatBaoVe))
+                            {
+                                var kyThuatBaoVe = WebMenuService.Instance.CreateQuery()
+                                    .Where(o => o.Activity == true)
+                                    .WhereIn(o => o.ID, lstNhanLuc[i].MenuIDs_KyThuatBaoVe)
+                                    .ToList();
+                                var tenThuatBaoVe = kyThuatBaoVe.Select(o => o.Name).ToArray();
+                                if (tenThuatBaoVe != null) sKyThuatBaoVe = string.Join(", ", tenThuatBaoVe);
+                            }
+
+                            if (!string.IsNullOrEmpty(lstNhanLuc[i].MenuIDs_KyThuatKiemTra))
+                            {
+                                var kyThuatKiemTra = WebMenuService.Instance.CreateQuery()
+                                    .Where(o => o.Activity == true)
+                                    .WhereIn(o => o.ID, lstNhanLuc[i].MenuIDs_KyThuatKiemTra)
+                                    .ToList();
+                                var tenKyThuatKiemTra = kyThuatKiemTra.Select(o => o.Name).ToArray();
+                                if (tenKyThuatKiemTra != null) sKyThuatKiemTra = string.Join(", ", tenKyThuatKiemTra);
+                            }
+                    %>
+                    <tr class="nhanLuc">
+                        <td class='nhanLucTT' style="width: 3%;"><%=i+1 %></td>
+                        <td style="width: 20%;"><%=lstNhanLuc[i].Name %></td>
+                        <td style="width: 20%;"><%=lstNhanLuc[i].School %></td>
+                        <td style="width: 10%;">
+                            <%if (!string.IsNullOrEmpty(sLinhVuc))
+                                {%>
+                            Lĩnh vực: <%=sLinhVuc %>
+                            <%} %>
+                            <%if (!string.IsNullOrEmpty(sTrinhDo))
+                                {%>
+                            <br />
+                            Trình độ: <%=sTrinhDo %>
+                            <%} %>
+                            <%if (!string.IsNullOrEmpty(sChungChi))
+                                {%>
+                            <br />
+                            Chứng chỉ: <%=sChungChi %>
+                            <%} %>
+                        </td>
+                        <td style="width: 13%;">
+                            <%if (!string.IsNullOrEmpty(sQuanLyATTT))
+                                {%>
+                            Chuyên gia quản lý ATTT: <%=sQuanLyATTT %>
+                            <%} %>
+                            <%if (!string.IsNullOrEmpty(sKyThuatPhongThu))
+                                {%>
+                            <br />
+                            Chuyên gia kỹ thuật phòng thủ, chống tấn công: <%=sKyThuatPhongThu %>
+                            <%} %>
+                            <%if (!string.IsNullOrEmpty(sKyThuatBaoVe))
+                                {%>
+                            <br />
+                            Chuyên gia kỹ thuật bảo vệ an toàn hệ thống và ứng dụng: <%=sKyThuatBaoVe %>
+                            <%} %>
+                            <%if (!string.IsNullOrEmpty(sKyThuatKiemTra))
+                                {%>
+                            <br />
+                            Chuyên gia kỹ thuật kiểm tra, đánh giá ATTT: <%=sKyThuatKiemTra %>
+                            <%} %>
+                        </td>
+                        <td style="width: 1%;">
+                            <%=lstNhanLuc[i].NamTotNghiep > 0 ? (lstNhanLuc[i].ThangTotNghiep + "/" + lstNhanLuc[i].NamTotNghiep) : "" %></td>
+                    </tr>
+                    <%}%>
+                    <tr class="nhanLuc">
+                        <td class='nhanLucTT' style="width: 3%;"></td>
+                        <td style="width: 10%;">&nbsp;</td>
+                        <td style="width: 10%;">&nbsp;</td>
+                        <td style="width: 20%;">&nbsp;</td>
+                        <td style="width: 23%;">&nbsp;</td>
+                        <td style="width: 1%;">&nbsp;</td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
 
             <table class="MsoNormalTable" border="0" align="left"
                 style='border-collapse: collapse; margin-left: 6.75pt; margin-right: 6.75pt;'>

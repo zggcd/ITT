@@ -461,7 +461,7 @@
                                     <a href="javascript:void(0)" id="btnThem">+ Thêm</a>
                                     <%-- ======================================= START: ITT UPDATE ======================================= --%>
                                     <p class="MsoNormal" style='margin-top: 6.0pt;'>
-                                        <b><span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>8. Thông tin về Số lượng nhân lực liên quan đến CNTT, ATTT hoặc tương đương</span></b>
+                                        <b><span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>6. Thông tin về Số lượng nhân lực liên quan đến CNTT, ATTT hoặc tương đương</span></b>
                                     </p>
                                     <table class="thanh-vien" style="width: 100%">
                                         <thead>
