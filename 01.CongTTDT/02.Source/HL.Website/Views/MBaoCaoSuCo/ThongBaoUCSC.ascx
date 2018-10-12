@@ -1,10 +1,14 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="HL.Lib.MVC.ViewControl" %>
 
+<link href="/Content2/style/datetimepicker/jquery-ui-timepicker-addon.css" type="text/css" media="all" rel="stylesheet" />
+<link href="/Content2/style/datetimepicker/jquery-ui.css" type="text/css" media="all" rel="stylesheet" />
+
 <style>
     .textstyle1 {
         border: none !important;
         border-bottom: 1px dotted !important;
-        padding: 0 !important;
+        padding-left: 10px;
+        width: 70%;
     }
 
     .name {
@@ -152,7 +156,7 @@
                                         </b>
                                     </p>
 
-                                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style='border-collapse: collapse; border: none;'>
+                                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style='width: 100%; border-collapse: collapse; border: none;'>
                                         <tr>
                                             <td valign="top" style='width: 170.5pt; border: solid windowtext 1.0pt; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -203,7 +207,7 @@
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'></span>
                                     </p>
 
-                                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style='border-collapse: collapse; border: none;'>
+                                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style='width: 100%; border-collapse: collapse; border: none;'>
                                         <tr>
                                             <td width="605" valign="top" style='width: 454.05pt; border: solid windowtext 1.0pt; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -232,7 +236,7 @@
                                     </p>
 
                                     <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0"
-                                        style='border-collapse: collapse; border: none;'>
+                                        style='width: 100%; border-collapse: collapse; border: none;'>
                                         <tr>
                                             <td valign="top" style='width: 140.8pt; border: solid windowtext 1.0pt; border-right: none; background: white; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -241,7 +245,7 @@
                                             </td>
                                             <td style='width: 33.45pt; border-top: solid windowtext 1.0pt; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: none; background: white; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
-                                                    <input name="Ngay" maxlength="250" id="" class="textstyle1" type="text" value="<%=string.Format("{0:dd/MM/yyyy}", entityTB.ChiTiet_NgayGioPhatHien) %>" style="width: 80px;" />
+                                                    <input name="Ngay" maxlength="250" id="" class="datepicker textstyle1" type="text" value="<%=string.Format("{0:dd/MM/yyyy}", entityTB.ChiTiet_NgayGioPhatHien) %>" style="width: 80px;" />
                                                 </p>
                                             </td>
                                             <td width="52" style='width: 38.7pt; border: solid windowtext 1.0pt; border-left: none; background: white; padding: 0in 0in 0in 0in'>
@@ -257,11 +261,11 @@
                                             <td width="147" style='width: 109.9pt; border: solid windowtext 1.0pt; border-left: none; background: white; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
                                                     <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>
-                                                        <input name="Gio" maxlength="250" id="" class="textstyle1" type="text" value="<%=string.Format("{0:HH}", entityTB.ChiTiet_NgayGioPhatHien) %>" style="width: 20%;" />
+                                                        <input name="Gio" type="number" min="0" max="23" id="" class="textstyle1" type="text" value="<%=string.Format("{0:HH}", entityTB.ChiTiet_NgayGioPhatHien) %>" style="width: 20%;" />
                                                     </span>
                                                     <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>giờ
                                                    
-                                                        <input name="Phut" maxlength="250" id="" class="textstyle1" type="text" value="<%=string.Format("{0:mm}", entityTB.ChiTiet_NgayGioPhatHien) %>" style="width: 20%;" />
+                                                        <input name="Phut" type="number" min="0" max="59" id="" class="textstyle1" type="text" value="<%=string.Format("{0:mm}", entityTB.ChiTiet_NgayGioPhatHien) %>" style="width: 20%;" />
                                                         phút
                                                     </span>
                                                 </p>
@@ -273,7 +277,7 @@
                                         <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'></span>
                                     </p>
 
-                                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style='border-collapse: collapse; border: none;'>
+                                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style='width: 100%; border-collapse: collapse; border: none;'>
                                         <tr>
                                             <td width="605" valign="top" style='width: 454.05pt; border: solid windowtext 1.0pt; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -296,7 +300,7 @@
                                         <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'></span>
                                     </p>
 
-                                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style='border-collapse: collapse; border: none;'>
+                                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style='width: 100%; border-collapse: collapse; border: none;'>
                                         <tr>
                                             <td width="605" valign="top" style='width: 454.05pt; border: solid windowtext 1.0pt; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -328,9 +332,9 @@
                                     <%}
                                         else
                                         {%>
-                                   <input class="btn btn-success" name="_hl_action[AddThongBaoUCSC]" value="{RS:Form_LuuBtn}" type="submit" />
+                                    <input class="btn btn-success" name="_hl_action[AddThongBaoUCSC]" value="{RS:Form_LuuBtn}" type="submit" />
                                     <%}%>
-                                    
+
                                     <input class="btn btn-danger" style="margin-left: 10px;" onclick="location.href = '<%=bcscUrl%>';" type="button" name="" value="{RS:Form_DongBtn}" />
                                 </div>
                             </div>
@@ -342,6 +346,13 @@
         </div>
     </div>
 </div>
+
+<script src="/Content2/style/datetimepicker/jquery-1.11.0.min.js"></script>
+<script src="/Content2/style/datetimepicker/jquery-ui.min.js"></script>
+<script src="/Content2/style/datetimepicker/jquery-ui-timepicker-addon.js"></script>
+<script src="/Content2/style/datetimepicker/jquery-ui-sliderAccess.js"></script>
+<script src="/Content2/style/datetimepicker/api_buttons.js"></script>
+<script src="/Content2/style/datetimepicker/custom.js"></script>
 
 <script type="text/javascript">
     function del(id, encode) {
