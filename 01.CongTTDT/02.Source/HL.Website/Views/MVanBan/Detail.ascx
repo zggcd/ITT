@@ -193,7 +193,7 @@
 
                             <tr>
                                 <td><b>Hình thức văn bản</b></td>
-                                <td><%= HL.Lib.MVC.ViewControl.GetName(item.getMenu1()) %></td>
+                                <td><%= HL.Lib.MVC.ViewControl.GetName(item.getMenu2()) %></td>
                             </tr>
                             <tr>
                                 <td><b>Lĩnh vực</b></td>
@@ -201,7 +201,7 @@
                             </tr>
                             <tr>
                                 <td><b>Cơ quan ban hành</b></td>
-                                <td><%= HL.Lib.MVC.ViewControl.GetName(item.getMenu2()) %></td>
+                                <td><%= HL.Lib.MVC.ViewControl.GetName(item.getMenu1()) %></td>
                             </tr>
                             <tr>
                                 <td><b>Người ký duyệt</b></td>
