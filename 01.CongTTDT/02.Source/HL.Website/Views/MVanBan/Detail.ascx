@@ -160,7 +160,7 @@
             <div class="contents">
 
                 <div class="main_vbtable" style="width: 100%">
-                    <table style="color: #100404; width: 100%">
+                    <table class="table table-bordered" style="color: #100404; width: 100%">
                         <tbody>
                             <tr>
                                 <td style="width: 150px;"><b>Số hiệu</b></td>

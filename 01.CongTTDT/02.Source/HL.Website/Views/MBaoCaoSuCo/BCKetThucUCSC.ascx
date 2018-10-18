@@ -38,11 +38,22 @@
     }
 %>
 
+<link href="/Content2/style/datetimepicker/jquery-ui-timepicker-addon.css" type="text/css" media="all" rel="stylesheet" />
+<link href="/Content2/style/datetimepicker/jquery-ui.css" type="text/css" media="all" rel="stylesheet" />
+
 <style>
     .textstyle1 {
         border: none !important;
         border-bottom: 1px dotted !important;
-        padding: 0 !important;
+        padding-left: 10px;
+        width: 70%;
+    }
+
+    .textstyle2 {
+        border: none !important;
+        border-bottom: 1px dotted !important;
+        padding-left: 10px;
+        width: 30%;
     }
 
     .name {
@@ -188,9 +199,9 @@
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt; tab-stops: dotted 420.0pt'>
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'></span><span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'> Điện thoại (*)</span><span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
-                                            <input name="ToChuc_DienThoai" maxlength="255" id="ToChuc_DienThoai" class="textstyle1" type="text" value="<%=sc.Phone %>" disabled />
+                                            <input name="ToChuc_DienThoai" maxlength="255" id="ToChuc_DienThoai" class="textstyle2" type="text" value="<%=sc.Phone %>" disabled />
                                             Email (*) 
-                                    <input name="ToChuc_Email" maxlength="255" id="ToChuc_Email" class="textstyle1" type="text" value="<%=sc.Email %>" disabled />
+                                    <input name="ToChuc_Email" maxlength="255" id="ToChuc_Email" class="textstyle2" type="text" value="<%=sc.Email %>" disabled />
                                         </span>
                                     </p>
 
@@ -215,7 +226,7 @@
                                     </p>
 
                                     <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0"
-                                        style='border-collapse: collapse; border: none; mso-border-alt: solid windowtext .5pt; mso-padding-alt: 0in 0in 0in 0in; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext'>
+                                        style='width: 100%; border-collapse: collapse; border: none; mso-border-alt: solid windowtext .5pt; mso-padding-alt: 0in 0in 0in 0in; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext'>
                                         <tr style='mso-yfti-irow: 0; mso-yfti-firstrow: yes'>
                                             <td width="227" valign="top" style='width: 170.5pt; border: solid windowtext 1.0pt; mso-border-alt: solid windowtext .5pt; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -284,7 +295,7 @@
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'></span>
                                     </p>
 
-                                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style='border-collapse: collapse; border: none; mso-border-alt: solid windowtext .5pt; mso-padding-alt: 0in 0in 0in 0in; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext'>
+                                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style='width: 100%; border-collapse: collapse; border: none; mso-border-alt: solid windowtext .5pt; mso-padding-alt: 0in 0in 0in 0in; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext'>
                                         <tr style='mso-yfti-irow: 0; mso-yfti-firstrow: yes'>
                                             <td width="605" valign="top" style='width: 454.05pt; border: solid windowtext 1.0pt; mso-border-alt: solid windowtext .5pt; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -308,7 +319,7 @@
                                     </p>
 
                                     <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0"
-                                        style='border-collapse: collapse; border: none; mso-border-alt: solid windowtext .5pt; mso-padding-alt: 0in 0in 0in 0in; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext'>
+                                        style='width: 100%; border-collapse: collapse; border: none; mso-border-alt: solid windowtext .5pt; mso-padding-alt: 0in 0in 0in 0in; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext'>
                                         <tr style='mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes'>
                                             <td valign="top" style='width: 140.8pt; border: solid windowtext 1.0pt; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-bottom-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -317,7 +328,7 @@
                                             </td>
                                             <td style='width: 33.45pt; border-top: solid windowtext 1.0pt; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: none; mso-border-top-alt: solid windowtext .5pt; mso-border-bottom-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
-                                                    <input name="Ngay" maxlength="255" id="" class="textstyle1" type="text" value="<%=string.Format("{0:dd/MM/yyyy}", entityBc.NgayGioPhatHien) %>" style="width: 80px;" />
+                                                    <input name="Ngay" maxlength="255" id="" class="datepicker textstyle1" type="text" value="<%=string.Format("{0:dd/MM/yyyy}", entityBc.NgayGioPhatHien) %>" style="width: 80px;" />
                                                 </p>
                                             </td>
                                             <td width="52" style='width: 38.7pt; border: solid windowtext 1.0pt; border-left: none; mso-border-top-alt: solid windowtext .5pt; mso-border-bottom-alt: solid windowtext .5pt; mso-border-right-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
@@ -333,10 +344,10 @@
                                             <td width="147" style='width: 109.9pt; border: solid windowtext 1.0pt; border-left: none; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; background: white; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" align="center" style='margin-top: 6.0pt; text-align: center'>
                                                     <span style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif; mso-ansi-language: EN-US'>
-                                                        <input name="Gio" maxlength="255" id="" class="textstyle1" type="text" value="<%=string.Format("{0:HH}", entityBc.NgayGioPhatHien) %>" style="width: 20%;" />
+                                                        <input name="Gio" type="number" min="0" max="23" id="" class="textstyle1" type="text" value="<%=string.Format("{0:HH}", entityBc.NgayGioPhatHien) %>" style="width: 20%;" />
                                                     </span>
                                                     <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'>giờ
-                                                    <input name="Phut" maxlength="255" id="" class="textstyle1" type="text" value="<%=string.Format("{0:mm}", entityBc.NgayGioPhatHien) %>" style="width: 20%;" />
+                                                    <input name="Phut" type="number" min="0" max="59" id="" class="textstyle1" type="text" value="<%=string.Format("{0:mm}", entityBc.NgayGioPhatHien) %>" style="width: 20%;" />
                                                         phút
                                                     </span>
                                                 </p>
@@ -348,7 +359,7 @@
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'></span>
                                     </p>
 
-                                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style='border-collapse: collapse; border: none; mso-border-alt: solid windowtext .5pt; mso-padding-alt: 0in 0in 0in 0in; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext'>
+                                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style='width: 100%; border-collapse: collapse; border: none; mso-border-alt: solid windowtext .5pt; mso-padding-alt: 0in 0in 0in 0in; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext'>
                                         <tr style='mso-yfti-irow: 0; mso-yfti-firstrow: yes'>
                                             <td width="605" valign="top" style='width: 454.05pt; border: solid windowtext 1.0pt; mso-border-alt: solid windowtext .5pt; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -376,7 +387,7 @@
                                         <span lang="VI" style='font-size: 10.0pt; mso-bidi-font-size: 12.0pt; font-family: "Arial",sans-serif'></span>
                                     </p>
 
-                                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style='border-collapse: collapse; border: none; mso-border-alt: solid windowtext .5pt; mso-padding-alt: 0in 0in 0in 0in; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext'>
+                                    <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style='width: 100%; border-collapse: collapse; border: none; mso-border-alt: solid windowtext .5pt; mso-padding-alt: 0in 0in 0in 0in; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext'>
                                         <tr style='mso-yfti-irow: 0; mso-yfti-firstrow: yes'>
                                             <td width="605" valign="top" style='width: 454.05pt; border: solid windowtext 1.0pt; mso-border-alt: solid windowtext .5pt; padding: 0in 0in 0in 0in'>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -405,7 +416,7 @@
                                     </p>
 
                                     <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0"
-                                        style='border-collapse: collapse; mso-padding-alt: 0in 5.4pt 0in 5.4pt'>
+                                        style='width: 100%; border-collapse: collapse; mso-padding-alt: 0in 5.4pt 0in 5.4pt'>
                                         <tr style='mso-yfti-irow: 0; mso-yfti-firstrow: yes; mso-yfti-lastrow: yes'>
                                             <td width="295" valign="top" style='width: 221.4pt; padding: 0in 5.4pt 0in 5.4pt'>
                                                 <p class="MsoNormal" style='margin-top: 6.0pt'>
@@ -455,6 +466,14 @@
 
                             </div>
                         </div>
+                        
+                        <script src="/Content2/style/datetimepicker/jquery-1.11.0.min.js"></script>
+                        <script src="/Content2/style/datetimepicker/jquery-ui.min.js"></script>
+                        <script src="/Content2/style/datetimepicker/jquery-ui-timepicker-addon.js"></script>
+                        <script src="/Content2/style/datetimepicker/jquery-ui-sliderAccess.js"></script>
+                        <script src="/Content2/style/datetimepicker/api_buttons.js"></script>
+                        <script src="/Content2/style/datetimepicker/custom.js"></script>
+
                         <script>
                             $(document).ready(function () {
                                 $('input[name=chkCachThuc]').change();
@@ -470,6 +489,7 @@
                                 e.value = suffix;
                             }
                         </script>
+
                     </form>
                 </div>
                 <!--.Main_container-->
