@@ -53,8 +53,8 @@
                     <input type="text" class="form-control" id="Email" name="Email" placeholder="Email" value="<%=entity.Email %>">
                 </div>
                 <div class="form-group">
-                    <label for="Phone">Só điện thoại: <span style="color: red"></span></label>
-                    <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Email" value="<%=entity.Phone %>">
+                    <label for="Phone">Số điện thoại: <span style="color: red"></span></label>
+                    <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Số điện thoại" value="<%=entity.Phone %>">
                 </div>
                 <div class="form-group">
                     <label for="">Captcha: <span style="color: red">*</span></label>

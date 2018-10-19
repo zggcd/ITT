@@ -82,7 +82,7 @@
                     <div class="certiconemail">
                         <img src="/Content1/images/icon/email_icon.png" alt="Email VNCERT">
                     </div>
-                    <div class="certemailaddress"><a href="mailto:ir@vncert.vn">Gửi email báo sự cố</a></div>
+                    <div class="certemailaddress"><a href="mailto:{RS:EmailBaoCaoSuCo}">Gửi email báo sự cố</a></div>
                     <div class="certReport mt-5">
                         <a href="/vn/Bao-cao-su-co.aspx" class="btn-reportHome">Báo cáo sự cố</a>
                     </div>

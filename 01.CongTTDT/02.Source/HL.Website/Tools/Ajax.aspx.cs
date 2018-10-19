@@ -240,8 +240,16 @@ namespace HL.Website.Tools
                 else if (mk != golaimk) sHTML = "Mật khẩu nhắc lại không đúng";
                 else if (string.IsNullOrEmpty(email)) sHTML = "Bạn chưa nhập địa chỉ Email";
                 else if (CPUserService.Instance.exits(email)) sHTML = "Email đã có người sử dụng";
+                else if (string.IsNullOrEmpty(Utils.GetEmailAddress(email))) sHTML = "Địa chỉ Email không hợp lệ";
                 //else if (namsinh == 0) sHTML = "Bạn chưa chọn năm sinh";
-                else if (string.IsNullOrEmpty(dienthoai)) sHTML = "Bạn chưa nhập số điện thoại";
+                else if (!string.IsNullOrEmpty(dienthoai))
+                {
+                    string checkPhone = Utils.GetMobilePhone(dienthoai);
+                    if (string.IsNullOrEmpty(checkPhone))
+                    {
+                        sHTML = "Số điện thoại không hợp lệ.";
+                    }
+                }
                 //else if (string.IsNullOrEmpty(lydo)) sHTML = "Bạn chưa nhập lý do";
                 else if (string.IsNullOrEmpty(mabaove.Trim())) sHTML = "Bạn chưa nhập mã bảo vệ";
                 else if (sVY.ToLower().Trim() != mabaove.ToLower().Trim())

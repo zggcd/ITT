@@ -29,7 +29,7 @@
 <div class="row-fluid titleContainer">
     <span><%=ViewPage.CurrentPage.Name %></span>
     <%if (ViewPage.CurrentPage.Code == "Hoi-dap") { %>
-        <a href="mailto:ir@vncert.vn" class="pull-right" style="color: #fff"><i class="fa fa-envelope"></i> Gửi câu hỏi</a>
+        <a href="mailto:{RS:EmailGuiCauHoi}" class="pull-right" style="color: #fff"><i class="fa fa-envelope"></i> Gửi câu hỏi</a>
     <%} %>
 </div>
 <div class="row-fluid contentNews">
