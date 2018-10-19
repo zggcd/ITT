@@ -131,6 +131,13 @@ namespace HL.Lib.CPControllers
                  //cap nhat state
                 entity.State = GetState(model.ArrState);
 
+                entity.Published2 = null;
+                string trangThai = WebMenuService.Instance.GetByID(entity.MenuID).Code;
+                if (trangThai == "KetThuc")
+                {
+                    entity.Published2 = DateTime.Now;
+                }
+
                 //save
                 ModBaoCaoSuCoService.Instance.Save(entity);
 

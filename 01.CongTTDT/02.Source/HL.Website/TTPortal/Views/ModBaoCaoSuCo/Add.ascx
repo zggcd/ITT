@@ -115,6 +115,16 @@
                                     </select>
                                 </td>
                             </tr>
+                            <tr>
+                                <td class="key">
+                                    <label>Loại sự cố :</label>
+                                </td>
+                                <td>
+                                    <select name="MenuID1" id="MenuID1" class="text_input">
+                                        <%= Utils.ShowDDLMenuByType2("Incident", model.LangID, entity.MenuID1)%>
+                                    </select>
+                                </td>
+                            </tr>
                             <%--<tr>
                         <td class="key">
                             <label>User i d1 :</label>

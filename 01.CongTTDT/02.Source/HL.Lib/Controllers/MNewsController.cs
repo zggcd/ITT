@@ -16,6 +16,9 @@ namespace HL.Lib.Controllers
         [HL.Core.MVC.PropertyInfo("Số lượng")]
         public int PageSize = 5;
 
+        [HL.Core.MVC.PropertyInfo("Cho phép bình luận (1: Cho phép; 0: Không cho phép)")]
+        public int ShowBinhLuan = 1;
+
         //[HL.Core.MVC.PropertyInfo("View")]
         //public string LayoutView = string.Empty;
 
@@ -37,6 +40,7 @@ namespace HL.Lib.Controllers
             ViewBag.Data = dbQuery.ToList();
             model.TotalRecord = dbQuery.TotalRecord;
             model.PageSize = PageSize;
+            model.ShowBinhLuan = ShowBinhLuan;
             ViewBag.Model = model;
         }
 
@@ -59,6 +63,7 @@ namespace HL.Lib.Controllers
 
                 ViewBag.Data = entity;
                 ViewBag.Comment = new ModCommentEntity();
+                ViewBag.ShowBinhLuan = ShowBinhLuan;
                 SetObject["view.Meta"] = entity;
 
                 // Update view
@@ -153,5 +158,6 @@ namespace HL.Lib.Controllers
 
         public int TotalRecord { get; set; }
         public int PageSize { get; set; }
+        public int ShowBinhLuan { get; set; }
     }
 }

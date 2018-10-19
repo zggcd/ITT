@@ -49,6 +49,14 @@
                     <input type="password" class="form-control" id="RePassword" name="RePassword" placeholder="Xác nhận mật khẩu">
                 </div>
                 <div class="form-group">
+                    <label for="Email">Email: <span style="color: red">*</span></label>
+                    <input type="text" class="form-control" id="Email" name="Email" placeholder="Email" value="<%=entity.Email %>">
+                </div>
+                <div class="form-group">
+                    <label for="Phone">Só điện thoại: <span style="color: red"></span></label>
+                    <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Email" value="<%=entity.Phone %>">
+                </div>
+                <div class="form-group">
                     <label for="">Captcha: <span style="color: red">*</span></label>
                     <div class="input" style="width: 70%">
                         <input type="text" id="ValidCode" name="ValidCode" value="" style="width: 20%;" />

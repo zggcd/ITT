@@ -124,6 +124,27 @@ namespace HL.Lib.Controllers
             else if (model.RePassword.Trim() != entity.Password)
                 ViewPage.Message.ListMessage.Add("+ Mật khẩu nhắc lại không đúng.");
 
+            if (string.IsNullOrEmpty(entity.Email))
+            {
+                ViewPage.Message.ListMessage.Add("Bạn chưa nhập Email.");
+            }
+            else
+            {
+                string checkEmail = Utils.GetEmailAddress(entity.Email);
+                if (string.IsNullOrEmpty(checkEmail))
+                {
+                    ViewPage.Message.ListMessage.Add("Email không hợp lệ.");
+                }
+            }
+            if (!string.IsNullOrEmpty(entity.Phone))
+            {
+                string checkPhone = Utils.GetMobilePhone(entity.Phone);
+                if (string.IsNullOrEmpty(checkPhone))
+                {
+                    ViewPage.Message.ListMessage.Add("Số điện thoại không hợp lệ.");
+                }
+            }
+
             //if (entity.Address == string.Empty)
             //    ViewPage.Message.ListMessage.Add("Nhập địa chỉ.");
 

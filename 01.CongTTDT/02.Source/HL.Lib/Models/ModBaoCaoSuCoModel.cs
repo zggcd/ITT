@@ -23,6 +23,9 @@ namespace HL.Lib.Models
         public int MenuID { get; set; }
 
         [DataInfo]
+        public int MenuID1 { get; set; }
+
+        [DataInfo]
         public int State { get; set; }
 
         [DataInfo]
@@ -45,6 +48,9 @@ namespace HL.Lib.Models
 
         [DataInfo]
         public DateTime? Published1 { get; set; }
+
+        [DataInfo]
+        public DateTime? Published2 { get; set; }
 
         [DataInfo]
         public int Order { get; set; }

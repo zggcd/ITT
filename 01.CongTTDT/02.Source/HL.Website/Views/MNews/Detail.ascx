@@ -35,6 +35,8 @@
         <%=item.Content %>
         <hr>
     </div>
+    <%if (ViewBag.ShowBinhLuan == 1)
+        {%>
     <div>
         <p>Bình luận bài viết:</p>
         <form class="form-horizontal" action="{ActionForm}" method="post">
@@ -77,6 +79,8 @@
         </form>
         <hr>
     </div>
+    <%}  %>
+
     <%if (c > 0)
         {%>
     <div class="sameCate">
