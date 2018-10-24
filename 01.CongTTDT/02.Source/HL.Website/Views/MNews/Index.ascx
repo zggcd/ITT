@@ -28,7 +28,7 @@
 
 <div class="row-fluid titleContainer">
     <span><%=ViewPage.CurrentPage.Name %></span>
-    <%if (ViewPage.CurrentPage.Code == "Hoi-dap") { %>
+    <%if (ViewPage.CurrentPage.Code.Contains("Hoi-dap")) { %>
         <a href="mailto:{RS:EmailGuiCauHoi}" class="pull-right" style="color: #fff"><i class="fa fa-envelope"></i> Gửi câu hỏi</a>
     <%} %>
 </div>
