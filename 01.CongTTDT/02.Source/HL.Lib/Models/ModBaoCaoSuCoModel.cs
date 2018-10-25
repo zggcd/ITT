@@ -20,6 +20,9 @@ namespace HL.Lib.Models
         public int UserID1 { get; set; }
 
         [DataInfo]
+        public int UserID2 { get; set; }
+
+        [DataInfo]
         public int MenuID { get; set; }
 
         [DataInfo]

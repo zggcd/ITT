@@ -32,11 +32,18 @@ namespace HL.Lib.CPControllers
                 s = string.Join(",", user.Select(o => o.ID).ToArray());
             }
 
+            // Lay user chiu trach nhiem xu ly su co
+            int userTrachNhiem = 0;
+            if (CPLogin.CurrentUser.IsAdministrator == false) {
+                userTrachNhiem = CPLogin.CurrentUser.ID;
+            }
+
             // tao danh sach
             var dbQuery = ModBaoCaoSuCoService.Instance.CreateQuery()
                                 .Where(!string.IsNullOrEmpty(model.SearchText) && string.IsNullOrEmpty(s), o => o.Title.Contains(model.SearchText))
                                 .WhereIn(!string.IsNullOrEmpty(s), o => o.UserID, s)
                                 .Where(model.State > 0, o => (o.State & model.State) == model.State)
+                                .Where(userTrachNhiem > 0, o => o.UserID2 == userTrachNhiem)
                                 .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForCP("BaoCaoSuCo", model.MenuID, model.LangID))
                                 .Take(model.PageSize)
                                 .OrderBy(orderBy)
@@ -49,9 +56,26 @@ namespace HL.Lib.CPControllers
 
         public void ActionAdd(ModBaoCaoSuCoModel model)
         {
+            // Lay user chiu trach nhiem xu ly su co
+            int userTrachNhiem = 0;
+            if (CPLogin.CurrentUser.IsAdministrator == false)
+            {
+                userTrachNhiem = CPLogin.CurrentUser.ID;
+            }
+
             if (model.RecordID > 0)
             {
                 entity = ModBaoCaoSuCoService.Instance.GetByID(model.RecordID);
+
+                if (userTrachNhiem > 0)
+                {
+                    if (entity.UserID2 != userTrachNhiem)
+                    {
+                        CPViewPage.Message.MessageType = Message.MessageTypeEnum.Notice;
+                        CPViewPage.SetMessage("Bản ghi không tồn tại.");
+                        CPViewPage.Response.Redirect(CPViewPage.Request.RawUrl.Replace("Add.aspx", "Index.aspx"));
+                    }
+                }
 
                 // khoi tao gia tri mac dinh khi update
                 entity.UserID1 = CPLogin.CurrentUser.ID;

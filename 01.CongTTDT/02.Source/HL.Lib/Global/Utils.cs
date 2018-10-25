@@ -1152,5 +1152,14 @@ namespace HL.Lib.Global
             return string.Format("{0}...", sb.ToString().TrimEnd(' '));
         }
 
+        public static string Reverse(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+
+
+
     }
 }

@@ -3,6 +3,43 @@
 <%
     var model = ViewBag.Model as ModBaoCaoSuCoModel;
     var entity = ViewBag.Data as ModBaoCaoSuCoEntity;
+
+    var lstDonDk = ModDonDangKyUCSCService.Instance.CreateQuery()
+        .Where(o => o.Activity == true)
+        .ToList();
+    var lstHSThanhVien = ModHSThanhVienUCSCService.Instance.CreateQuery()
+        .Where(o => o.Activity == true)
+        .ToList();
+
+    string thanhVienIds = "";
+    if (lstDonDk != null)
+    {
+        thanhVienIds += string.Join(",", lstDonDk.Select(o => o.UserID).ToArray());
+    }
+    if (lstHSThanhVien != null)
+    {
+        thanhVienIds += string.Join(",", lstHSThanhVien.Select(o => o.UserID).ToArray());
+    }
+
+    // Lay user thuoc nhom UserXuLySuCo
+    string userXuLySuCo = "";
+    CPRoleEntity role = CPRoleService.Instance.CreateQuery().Where(o => o.Code == "UserXuLySuCo").ToSingle();
+    if (role != null)
+    {
+        List<CPUserRoleEntity> users = CPUserRoleService.Instance.CreateQuery()
+            .Where(o => o.RoleID == role.ID)
+            .ToList();
+        if (users != null)
+        {
+            userXuLySuCo = string.Join(",", users.Select(o => o.UserID));
+        }
+    }
+
+    var lstUser = CPUserService.Instance.CreateQuery()
+        .Where(o => o.Activity == true && string.IsNullOrEmpty(thanhVienIds) == false)
+        .WhereNotIn(!string.IsNullOrEmpty(thanhVienIds), o => o.ID, thanhVienIds)
+        .WhereIn(!string.IsNullOrEmpty(userXuLySuCo), o => o.ID, userXuLySuCo)
+        .ToList();
 %>
 
 <form id="hlForm" name="hlForm" method="post">
@@ -97,6 +134,23 @@
                 <div class="m">
                     <div class="col width-100">
                         <table class="admintable">
+                            <tr>
+                                <td class="key">
+                                    <label>User chịu trách nhiệm :</label>
+                                </td>
+                                <td>
+                                    <select name="UserID2" id="UserID2" class="text_input">
+                                        <option value="0">(Tất cả)</option>
+                                        <%--<%= Utils.ShowDDLMenuByType("News", model.LangID, model.MenuID)%>--%>
+                                        <%for (int i = 0; i < lstUser.Count; i++)
+                                            {%>
+                                        <option value="<%=lstUser[i].ID %>" <%if (lstUser[i].ID == entity.UserID2)
+                                            {%>selected="selected"
+                                            <%} %>><%=lstUser[i].LoginName %></option>
+                                        <%} %>
+                                    </select>
+                                </td>
+                            </tr>
                             <tr>
                                 <td class="key">
                                     <label>Người tạo :</label>

@@ -100,7 +100,7 @@
     <%if (modules.Contains("ModHSThanhVienUCSC") || modules.Contains("ModDonDangKyUCSC")
             || modules.Contains("ModBaoCaoBanDauSuCo") || modules.Contains("ModBaoCaoKetThucSuCo")
             || modules.Contains("ModBaoCaoTongHop") || modules.Contains("ModNhanLucUCSC")
-            || modules.Contains("ModHeThongThongTin") )
+            || modules.Contains("ModHeThongThongTin") || modules.Contains("ModBaoCaoSuCo") )
         {%>
     <li class="node"><a>Mạng lưới</a>
         <ul>
@@ -134,7 +134,8 @@
     </li>
     <%} %>
     <%if (modules.Contains("ModIncident") || modules.Contains("ModBaoCaoTK")
-            || modules.Contains("ModCVE") || modules.Contains("ModDichVuCanhBao"))
+            || modules.Contains("ModCVE") || modules.Contains("ModDichVuCanhBao")
+            || modules.Contains("ModBaoCaoTK"))
         {%>
     <li class="node"><a>Quản lý sự cố</a>
         <ul>
@@ -145,7 +146,7 @@
 
             <%if (modules.Contains("ModBaoCaoTK"))
                 {%>
-            <li class="node"><a class="icon-16-article">Thống kê sự cố</a>
+            <li class="node"><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Index.aspx">Thống kê sự cố</a>
                 <ul>
                     <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Deface.aspx">Deface</a></li>
                     <li><a class="icon-16-article" href="/{CPPath}/ModBaoCaoTK/Phishing.aspx">Phishing</a></li>

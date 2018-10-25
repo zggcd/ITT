@@ -482,6 +482,7 @@ namespace HL.Lib.CPControllers
         public string From { get; set; }
         public string To { get; set; }
         public int MemberID { get; set; }
+        public int KhoangThoiGian { get; set; }
     }
 
     public class ModFileExcelEntity

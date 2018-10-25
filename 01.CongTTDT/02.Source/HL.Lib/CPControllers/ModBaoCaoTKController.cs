@@ -22,28 +22,6 @@ namespace HL.Lib.CPControllers
         {
             // sap xep tu dong
             string orderBy = AutoSort(model.Sort);
-            string orderAdd = string.Empty;
-            if (model.ISPState == 1)
-            {
-                orderAdd += "ChildNum DESC";
-            }
-            else if (model.ISPState == 2)
-            {
-                orderAdd += "ChildNum ASC";
-            }
-            string saperate = "";
-            if (!string.IsNullOrEmpty(orderAdd))
-            {
-                saperate = ",";
-            }
-            if (model.DomainState == 1)
-            {
-                orderAdd += saperate + "ChildNum DESC";
-            }
-            else if (model.DomainState == 2)
-            {
-                orderAdd += saperate + "ChildNum ASC";
-            }
 
             DateTime? f = HL.Core.Global.Convert.ToDateTime(model.From, DateTime.MinValue);
             DateTime? t = HL.Core.Global.Convert.ToDateTime(model.To, DateTime.MaxValue);
@@ -57,51 +35,6 @@ namespace HL.Lib.CPControllers
                                 .Where(from != null, o => o.AttackOn >= from)
                                 .Where(to != null, o => o.AttackOn <= to)
                                 .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForCP("Incident", model.MenuID, model.LangID))
-                                .Select(o => new ModIncidentEntity()
-                                {
-                                    ID = o.ID,
-                                    ParentID = o.ParentID,
-                                    MenuID = o.MenuID,
-                                    State = o.State,
-                                    Name = o.Name,
-                                    Code = o.Code,
-                                    Path = o.Path,
-                                    FakeDestination = o.FakeDestination,
-                                    Source = o.Source,
-                                    AttackOn = o.AttackOn,
-                                    IP = o.IP,
-                                    ISP = o.ISP,
-                                    EmailNo = o.EmailNo,
-                                    Attacker = o.Attacker,
-                                    MalwareName = o.MalwareName,
-                                    AttackerIP = o.AttackerIP,
-                                    NetworkName = o.NetworkName,
-                                    LocalIP = o.LocalIP,
-                                    LocalTCPPort = o.LocalTCPPort,
-                                    Timestamp = o.Timestamp,
-                                    ASN = o.ASN,
-                                    Geo = o.Geo,
-                                    Url = o.Url,
-                                    Type = o.Type,
-                                    HttpAgent = o.HttpAgent,
-                                    SrcPort = o.SrcPort,
-                                    HostName = o.HostName,
-                                    Destinationport = o.Destinationport,
-                                    Protocol = o.Protocol,
-                                    ServerName = o.ServerName,
-                                    Server = o.Server,
-                                    Header = o.Header,
-                                    Tag = o.Tag,
-                                    Region = o.Region,
-                                    City = o.City,
-                                    Sector = o.Sector,
-                                    Published = o.Published,
-                                    Order = o.Order,
-                                    Resolve = o.Resolve,
-                                    Activity = o.Activity,
-                                    ChildNum = ModIncidentService.Instance.CreateQuery().Where(a => a.ParentID == o.ID).ToList().Count
-                                })
-                                .OrderBy("ChildNum DESC")
                                 .Take(model.PageSize)
                                 .OrderBy(orderBy)
                                 .Skip(model.PageIndex * model.PageSize);
@@ -110,6 +43,99 @@ namespace HL.Lib.CPControllers
             model.TotalRecord = dbQuery.TotalRecord;
             ViewBag.Model = model;
         }
+
+        //public void ActionIndex(ModIncidentModel model)
+        //{
+        //    // sap xep tu dong
+        //    string orderBy = AutoSort(model.Sort);
+        //    string orderAdd = string.Empty;
+        //    if (model.ISPState == 1)
+        //    {
+        //        orderAdd += "ChildNum DESC";
+        //    }
+        //    else if (model.ISPState == 2)
+        //    {
+        //        orderAdd += "ChildNum ASC";
+        //    }
+        //    string saperate = "";
+        //    if (!string.IsNullOrEmpty(orderAdd))
+        //    {
+        //        saperate = ",";
+        //    }
+        //    if (model.DomainState == 1)
+        //    {
+        //        orderAdd += saperate + "ChildNum DESC";
+        //    }
+        //    else if (model.DomainState == 2)
+        //    {
+        //        orderAdd += saperate + "ChildNum ASC";
+        //    }
+
+        //    DateTime? f = HL.Core.Global.Convert.ToDateTime(model.From, DateTime.MinValue);
+        //    DateTime? t = HL.Core.Global.Convert.ToDateTime(model.To, DateTime.MaxValue);
+        //    DateTime? from = f != DateTime.MinValue ? f : null;
+        //    DateTime? to = t != DateTime.MaxValue ? t : null;
+
+        //    // tao danh sach
+        //    var dbQuery = ModIncidentService.Instance.CreateQuery().Where(o => o.ParentID == null)
+        //                        .Where(!string.IsNullOrEmpty(model.SearchText), o => o.Name.Contains(model.SearchText))
+        //                        .Where(model.State > 0, o => (o.State & model.State) == model.State)
+        //                        .Where(from != null, o => o.AttackOn >= from)
+        //                        .Where(to != null, o => o.AttackOn <= to)
+        //                        .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForCP("Incident", model.MenuID, model.LangID))
+        //                        .Select(o => new ModIncidentEntity()
+        //                        {
+        //                            ID = o.ID,
+        //                            ParentID = o.ParentID,
+        //                            MenuID = o.MenuID,
+        //                            State = o.State,
+        //                            Name = o.Name,
+        //                            Code = o.Code,
+        //                            Path = o.Path,
+        //                            FakeDestination = o.FakeDestination,
+        //                            Source = o.Source,
+        //                            AttackOn = o.AttackOn,
+        //                            IP = o.IP,
+        //                            ISP = o.ISP,
+        //                            EmailNo = o.EmailNo,
+        //                            Attacker = o.Attacker,
+        //                            MalwareName = o.MalwareName,
+        //                            AttackerIP = o.AttackerIP,
+        //                            NetworkName = o.NetworkName,
+        //                            LocalIP = o.LocalIP,
+        //                            LocalTCPPort = o.LocalTCPPort,
+        //                            Timestamp = o.Timestamp,
+        //                            ASN = o.ASN,
+        //                            Geo = o.Geo,
+        //                            Url = o.Url,
+        //                            Type = o.Type,
+        //                            HttpAgent = o.HttpAgent,
+        //                            SrcPort = o.SrcPort,
+        //                            HostName = o.HostName,
+        //                            Destinationport = o.Destinationport,
+        //                            Protocol = o.Protocol,
+        //                            ServerName = o.ServerName,
+        //                            Server = o.Server,
+        //                            Header = o.Header,
+        //                            Tag = o.Tag,
+        //                            Region = o.Region,
+        //                            City = o.City,
+        //                            Sector = o.Sector,
+        //                            Published = o.Published,
+        //                            Order = o.Order,
+        //                            Resolve = o.Resolve,
+        //                            Activity = o.Activity,
+        //                            ChildNum = ModIncidentService.Instance.CreateQuery().Where(a => a.ParentID == o.ID).ToList().Count
+        //                        })
+        //                        .OrderBy("ChildNum DESC")
+        //                        .Take(model.PageSize)
+        //                        .OrderBy(orderBy)
+        //                        .Skip(model.PageIndex * model.PageSize);
+
+        //    ViewBag.Data = dbQuery.ToList();
+        //    model.TotalRecord = dbQuery.TotalRecord;
+        //    ViewBag.Model = model;
+        //}
 
         public void ActionDeface(ModIncidentModel model)
         {
