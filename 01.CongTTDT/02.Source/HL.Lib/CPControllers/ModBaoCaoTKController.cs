@@ -23,13 +23,39 @@ namespace HL.Lib.CPControllers
             // sap xep tu dong
             string orderBy = AutoSort(model.Sort);
 
+            DateTime dNow = DateTime.Now;
+            DateTime? dFrom = null;
+            DateTime? dTo = null;
+            if (model.KhoangThoiGian == 1)
+            {
+                dTo = dNow;
+                dFrom = dNow.AddMonths(-1);
+            }
+            if (model.KhoangThoiGian == 3)
+            {
+                dTo = dNow;
+                dFrom = dNow.AddMonths(-3);
+            }
+            if (model.KhoangThoiGian == 6)
+            {
+                dTo = dNow;
+                dFrom = dNow.AddMonths(-6);
+            }
+            if (model.KhoangThoiGian == 12)
+            {
+                dTo = dNow;
+                dFrom = dNow.AddMonths(-12);
+            }
+
             DateTime? f = HL.Core.Global.Convert.ToDateTime(model.From, DateTime.MinValue);
             DateTime? t = HL.Core.Global.Convert.ToDateTime(model.To, DateTime.MaxValue);
-            DateTime? from = f != DateTime.MinValue ? f : null;
-            DateTime? to = t != DateTime.MaxValue ? t : null;
+            DateTime? from = f != DateTime.MinValue ? f : dFrom != null ? dFrom : null;
+            DateTime? to = t != DateTime.MaxValue ? t : dTo != null ? dTo : null;
+            model.From = from != null ? HL.Core.Global.Convert.ToDateTime(from).ToShortDateString() : "";
+            model.To = to != null ? HL.Core.Global.Convert.ToDateTime(to).ToShortDateString() : "";
 
             // tao danh sach
-            var dbQuery = ModIncidentService.Instance.CreateQuery().Where(o => o.ParentID == null)
+            var dbQuery = ModIncidentService.Instance.CreateQuery().Where(o => o.ParentID != null)
                                 .Where(!string.IsNullOrEmpty(model.SearchText), o => o.Name.Contains(model.SearchText))
                                 .Where(model.State > 0, o => (o.State & model.State) == model.State)
                                 .Where(from != null, o => o.AttackOn >= from)

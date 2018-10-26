@@ -201,7 +201,7 @@
                 if (listEntity != null) malwares = listEntity.Where(o => o.MenuID == menuId).ToList();
             %>
             <p></p>
-            <h2 style="text-align: center;">Thống kê từ ngày 04/01/2012 đến ngày 04/02/2012</h2>
+            <h2 style="text-align: center;">Thống kê từ ngày <%=string.Format("{0:dd/MM/yyyy}", model.From) %> đến ngày <%=string.Format("{0:dd/MM/yyyy}", model.To) %></h2>
             <table class="adminlist" cellspacing="1">
                 <thead>
                     <tr>
@@ -477,9 +477,9 @@
                     malware_comVnCount +
                     malware_govVnCount +
                     malware_eduVnCount);
-                %>
+            %>
             <p></p>
-            <h2 style="text-align: center;">Thống kê tên miền từ ngày 04/01/2012 đến ngày 04/02/2012</h2>
+            <h2 style="text-align: center;">Thống kê tên miền từ ngày <%=string.Format("{0:dd/MM/yyyy}", model.From) %> đến ngày <%=string.Format("{0:dd/MM/yyyy}", model.To) %></h2>
             <table class="adminlist" cellspacing="1">
                 <thead>
                     <tr>
@@ -547,41 +547,72 @@
                 </tbody>
             </table>
 
+            <%
+                var a = phishings.GroupBy(o => o.ISP)
+                    .Select(g => new
+                    {
+                        ISP = g.Key,
+                        Count = g.Select(gg => gg.ISP).ToList().Count
+                    })
+                    .ToList();
+
+                var b = defaces.GroupBy(o => o.ISP)
+                    .Select(g => new
+                    {
+                        ISP = g.Key,
+                        Count = g.Select(gg => gg.ISP).ToList().Count
+                    })
+                    .ToList();
+
+                var c = malwares.GroupBy(o => o.ISP)
+                    .Select(g => new
+                    {
+                        ISP = g.Key,
+                        Count = g.Select(gg => gg.ISP).ToList().Count
+                    })
+                    .ToList();
+
+                int ca = a.Count, cb = b.Count, cc = c.Count;
+                int c1 = ca > cb ? (ca > cc ? ca : cb > cc ? cb : cc) : (cb > cc ? cb : ca > cc ? ca : cc);
+            %>
             <p></p>
-            <h2 style="text-align: center;">Top 20 ISP từ ngày 04/01/2012 đến ngày 04/02/2012</h2>
+            <h2 style="text-align: center;">Top 20 ISP từ ngày <%=string.Format("{0:dd/MM/yyyy}", model.From) %> đến ngày <%=string.Format("{0:dd/MM/yyyy}", model.To) %></h2>
             <table class="adminlist" cellspacing="1">
                 <thead>
                     <tr>
                         <th width="5%" nowrap="nowrap">Phishing</th>
                         <th width="5%" nowrap="nowrap">Deface</th>
-                        <th width="5%" nowrap="nowrap">Malware</t>
+                        <th width="5%" nowrap="nowrap">Malware</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <%for (int i = 0; i < c1; i++)
+                        {%>
                     <tr>
-                        <td align="center">0</td>
-                        <td align="center">0</td>
-                        <td align="center">0</td>
+                        <td align="center">
+                            <%if (i < ca)
+                                {%><%=a[i].ISP %> (<%=a[i].Count %>)<%}
+                        else
+                        {%>0<%} %>
+                        </td>
+                        <td align="center">
+                            <%if (i < cb)
+                                {%><%=b[i].ISP %> (<%=b[i].Count %>)<%}
+                        else
+                        {%>0<%} %>
+                        </td>
+                        <td align="center">
+                            <%if (i < cc)
+                                {%><%=c[i].ISP %> (<%=c[i].Count %>)<%}
+                        else
+                        {%>0<%} %>
+                        </td>
                     </tr>
-                    <tr>
-                        <td align="center">0</td>
-                        <td align="center">0</td>
-                        <td align="center">0</td>
-                    </tr>
-                    <tr>
-                        <td align="center">0</td>
-                        <td align="center">0</td>
-                        <td align="center">0</td>
-                    </tr>
-                    <tr>
-                        <td align="center">0</td>
-                        <td align="center">0</td>
-                        <td align="center">0</td>
-                    </tr>
+                    <%} %>
                 </tbody>
             </table>
 
-            <p></p>
+            <%--<p></p>
             <h2 style="text-align: center;">Top 20 từ ngày 04/01/2012 đến ngày 04/02/2012</h2>
             <table class="adminlist" cellspacing="1">
                 <thead>
@@ -613,7 +644,7 @@
                         <td align="center">0</td>
                     </tr>
                 </tbody>
-            </table>
+            </table>--%>
 
             <%--            <table class="adminlist" cellspacing="1">
                 <thead>
