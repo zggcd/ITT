@@ -145,6 +145,8 @@
 
 <div class="row-fluid titleContainer">
     <span>{RS:Web_BCBanDauHeader}</span>
+
+    <a href="javascript: void(0)" onclick="fnPrint()" class="pull-right" style="color: #fff"><i class="fa fa-print"></i>&nbsp;In báo cáo</a>
 </div>
 
 <div class="contentNews">
@@ -830,6 +832,12 @@
                                 //if (e.checked) e.value = '1_' + suffix;
                                 //else e.value = '0_' + suffix;
                                 e.value = suffix;
+                            }
+                        </script>
+
+                        <script>
+                            function fnPrint() {
+                                open("/Template/PrintBCBanDauUCSC.aspx?RecordID=<%=entityBc.ID%>&langId=<%=ViewPage.CurrentPage.LangID%>", "_blank");
                             }
                         </script>
                     </form>

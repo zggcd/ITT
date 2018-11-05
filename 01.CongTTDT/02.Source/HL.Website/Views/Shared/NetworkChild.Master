@@ -58,6 +58,9 @@
                             {%>selected<%} %>>{RS:Web_English}</option>
                     </select>
                     <div class="pull-right texts">{RS:Web_ChonNgonNgu}</div>
+                    <span style="float: right;">
+                        <a href="/<%=code %>/Site-map.aspx" title="">Sitemap</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                    </span>
                 </div>
             </div>
         </div>

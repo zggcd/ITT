@@ -45,7 +45,7 @@
                     <%
                         string code = (this.Page as ViewPage).CurrentSite.Code;
                         int langId = (this.Page as ViewPage).CurrentLang.ID;
-                        %>
+                    %>
                     <select name="" id="" class="pull-right" onchange="location = this.value">
                         <option value="/vn/default.aspx" <%if (code == "vn")
                             {%>selected<%} %>>{RS:Web_TiengViet}</option>
@@ -53,6 +53,9 @@
                             {%>selected<%} %>>{RS:Web_English}</option>
                     </select>
                     <div class="pull-right texts">{RS:Web_ChonNgonNgu}</div>
+                    <span style="float: right;">
+                        <a href="/<%=code %>/Site-map.aspx" title="">Sitemap</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+                    </span>
                 </div>
             </div>
         </div>
@@ -80,6 +83,33 @@
             <%}
                 else
                 {%>
+            <div class="container">
+                <div class="row-fluid titleContainer">
+                    <span>In đăng ký thành viên mạng lưới</span>
+                </div>
+                <div class="list-unstyled contentNews">
+                    <a href="javascript: void(0)" onclick="fnPrint()"><i class="fa fa-print"></i>&nbsp;In đăng ký</a>
+                </div>
+
+                <script>
+                    function fnPrint() {
+                        <%
+                    string ctrl = "PrintDKUCSC.aspx";
+                    int id = 0;
+                    if (dk != null)
+                    {
+                        id = dk.ID;
+                    }
+                    if (hs != null)
+                    {
+                        ctrl = "PrintHSThanhVien.aspx";
+                        id = hs.ID;
+                    }
+                    %>
+                        open("/Template/<%=ctrl%>?RecordID=<%=id%>&langId=<%=langId%>", "_blank");
+                    }
+                </script>
+            </div>
             <HL:StaticControl runat="server" Code="CNews" HLID="cTinCanhBao"></HL:StaticControl>
             <HL:StaticControl runat="server" Code="CNews" HLID="cTinNoiBo"></HL:StaticControl>
             <%}%>

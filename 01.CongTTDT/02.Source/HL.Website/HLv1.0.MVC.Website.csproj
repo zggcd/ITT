@@ -398,6 +398,11 @@
     <Content Include="Content\js\jquery.min-1.12.4.js" />
     <Content Include="Content\js\message.js" />
     <Content Include="Content\js\chart\utils.js" />
+    <Content Include="Content\js\MicrosoftAjaxWebForms.js" />
+    <Content Include="Content\js\ScriptResource.js" />
+    <Content Include="Content\js\WebForms.js" />
+    <Content Include="Content\js\MicrosoftAjax.js" />
+    <Content Include="Content\js\WebResource.js" />
     <Content Include="Content\temp\css\message.css" />
     <Content Include="Content\temp\css\style.css" />
     <Content Include="Content\temp\css\w3.css" />
@@ -410,8 +415,12 @@
     <Content Include="favicon.ico" />
     <Content Include="favicon.jpg" />
     <Content Include="google0de12854ebe87056.html" />
+    <Content Include="Template\PrintBCKetThucUCSC.aspx" />
+    <Content Include="Template\PrintBCBanDauUCSC.aspx" />
     <Content Include="robots.txt" />
     <Content Include="sitemap.xml" />
+    <Content Include="Template\PrintDKUCSC.aspx" />
+    <Content Include="Template\PrintHSThanhVien.aspx" />
     <Content Include="Tools\Ajax.aspx" />
     <Content Include="Tools\Ajax2.aspx" />
     <Content Include="Tools\Copy.asmx" />
