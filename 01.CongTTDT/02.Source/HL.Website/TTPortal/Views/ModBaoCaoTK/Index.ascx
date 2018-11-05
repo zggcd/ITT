@@ -47,7 +47,92 @@
         .gr {
             padding-left: 10px;
         }
+
+        body {
+            background: #ECEFF4;
+        }
+
+        #element-box .m > table:not(.adminlist) {
+            background: #5a75c3;
+            padding: 10px 5px;
+            color: #fff;
+        }
+
+            #element-box .m > table:not(.adminlist) tr td button {
+                background: #95f536;
+                color: #fff;
+                border: 0;
+                position: relative;
+                top: 1px;
+            }
+
+            #element-box .m > table:not(.adminlist) .text_area {
+                padding-left: 5px;
+            }
+
+        #element-box .m > table.adminlist {
+            padding: 0 10px;
+            background: #fff;
+            margin-bottom: 25px;
+        }
+
+        #element-box table.adminlist tbody tr td {
+            border: 1px solid #f3f3f3;
+            border-top: 0;
+            border-left: 0;
+        }
+
+            #element-box table.adminlist tbody tr td:first-child {
+                border-left: 1px solid #f3f3f3;
+            }
+
+        #element-box table.adminlist {
+            border-spacing: 0;
+        }
+
+        #element-box div.m {
+            background: #fff;
+            padding: 0 !important;
+        }
+
+        #element-box div.t, div.b {
+            height: 0;
+        }
+
+        div.toolbar-list li {
+            height: unset;
+        }
+
+        div.toolbar-list span {
+            height: unset;
+        }
+
+        div.toolbar-list li a {
+            padding: 15px 5px;
+            margin-top: 2px;
+        }
+
+        div.pagetitle h2 {
+            text-transform: uppercase;
+            padding-top: 5px;
+        }
+
+        table.adminlist thead th {
+            background: #D7EEF6;
+            border-left: 0;
+            border-bottom: 0;
+        }
+
+        #content-box .padding {
+            padding: 0;
+        }
+
+        div.m {
+            border: 0;
+        }
     </style>
+
+
 
     <script type="text/javascript">
         var HLController = 'ModBaoCaoTK';
@@ -592,20 +677,20 @@
                         <td align="center">
                             <%if (i < ca)
                                 {%><%=a[i].ISP %> (<%=a[i].Count %>)<%}
-                        else
-                        {%>0<%} %>
+                            else
+                            {%>0<%} %>
                         </td>
                         <td align="center">
                             <%if (i < cb)
                                 {%><%=b[i].ISP %> (<%=b[i].Count %>)<%}
-                        else
-                        {%>0<%} %>
+                            else
+                            {%>0<%} %>
                         </td>
                         <td align="center">
                             <%if (i < cc)
                                 {%><%=c[i].ISP %> (<%=c[i].Count %>)<%}
-                        else
-                        {%>0<%} %>
+                            else
+                            {%>0<%} %>
                         </td>
                     </tr>
                     <%} %>
