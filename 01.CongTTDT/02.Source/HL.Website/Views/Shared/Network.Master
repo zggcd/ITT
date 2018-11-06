@@ -67,8 +67,8 @@
         </div>
         <HL:StaticControl runat="server" Code="CMenu" HLID="cMenuTop"></HL:StaticControl>
         <section id="news" class="mt-15">
-            <%var dk = ModDonDangKyUCSCService.Instance.CreateQuery().Where(o => o.UserID == CPLogin.CurrentUserOnWeb.ID && o.Activity == true).ToSingle();
-                var hs = ModHSThanhVienUCSCService.Instance.CreateQuery().Where(o => o.UserID == CPLogin.CurrentUserOnWeb.ID && o.Activity == true).ToSingle();
+            <%var dk = ModDonDangKyUCSCService.Instance.CreateQuery().Where(o => o.UserID == CPLogin.CurrentUserOnWeb.ID).ToSingle();
+                var hs = ModHSThanhVienUCSCService.Instance.CreateQuery().Where(o => o.UserID == CPLogin.CurrentUserOnWeb.ID).ToSingle();
                 if (dk == null && hs == null)
                 {%>
             <div class="container">

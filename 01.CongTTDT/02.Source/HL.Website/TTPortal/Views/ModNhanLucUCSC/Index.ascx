@@ -114,7 +114,8 @@
                             <%for (int i = 0; i < lstThanhVien.Count; i++)
                                 {%>
                             <option value="<%=lstThanhVien[i].ID %>" <%if (lstThanhVien[i].ID == model.ThanhVienID)
-                                {%>selected="selected"<%} %>><%=lstThanhVien[i].LoginName %></option>
+                                {%>selected="selected"
+                                <%} %>><%=lstThanhVien[i].LoginName %></option>
                             <%} %>
                         </select>
 
@@ -146,6 +147,9 @@
                         </th>
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("ID", "ID")%>
+                        </th>
+                        <th width="1%" nowrap="nowrap">
+                            <span>Thành viên</span>
                         </th>
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Đơn đăng ký UCSC", "DonDangKyUCSCID")%>
@@ -215,7 +219,21 @@
                             string td = "", cc = "";
                             if (lstTd.Length > 0) td = string.Join(",", lstTd);
                             if (lstCc.Length > 0) cc = string.Join(",", lstCc);
-                            %>
+                            var donDk = ModDonDangKyUCSCService.Instance.CreateQuery()
+                                .Where(o => o.Activity == true && o.ID == listEntity[i].DonDangKyUCSCID)
+                                .ToSingle();
+                            var hSThanhVien = ModHSThanhVienUCSCService.Instance.CreateQuery()
+                                .Where(o => o.Activity == true && o.ID == listEntity[i].HSThanhVienUCSCID)
+                                .ToSingle();
+                            int idThanhVien = 0;
+                            if (donDk != null) idThanhVien = donDk.UserID;
+                            else if (hSThanhVien != null) idThanhVien = hSThanhVien.UserID;
+                            var thanhVien = CPUserService.Instance.CreateQuery()
+                            .Where(o => o.Activity == true)
+                            .Where(idThanhVien > 0, o => o.ID == idThanhVien)
+                            .ToSingle();
+                            //var thanhVien = lstThanhVien.Where(o => o.ID == listEntity[i].HSThanhVienUCSCID || o.ID == listEntity[i].DonDangKyUCSCID).FirstOrDefault();
+                    %>
                     <tr class="row<%= i%2 %>">
                         <td align="center">
                             <%= i + 1%>
@@ -225,6 +243,9 @@
                         </td>
                         <td align="center">
                             <%= listEntity[i].ID%>
+                        </td>
+                        <td align="center">
+                            <%= thanhVien != null ? thanhVien.LoginName : ""%>
                         </td>
                         <td align="center">
                             <%= GetName(listEntity[i].getDonDangKyUCSC()) %>

@@ -3,6 +3,28 @@
 <%
     var model = ViewBag.Model as ModHeThongThongTinModel;
     var listEntity = ViewBag.Data as List<ModHeThongThongTinEntity>;
+
+    var lstDonDk = ModDonDangKyUCSCService.Instance.CreateQuery()
+        .Where(o => o.Activity == true)
+        .ToList();
+    var lstHSThanhVien = ModHSThanhVienUCSCService.Instance.CreateQuery()
+        .Where(o => o.Activity == true)
+        .ToList();
+
+    string thanhVienIds = "";
+    if (lstDonDk != null)
+    {
+        thanhVienIds += string.Join(",", lstDonDk.Select(o => o.UserID).ToArray());
+    }
+    if (lstHSThanhVien != null)
+    {
+        thanhVienIds += string.Join(",", lstHSThanhVien.Select(o => o.UserID).ToArray());
+    }
+
+    var lstThanhVien = CPUserService.Instance.CreateQuery()
+        .Where(o => o.Activity == true && string.IsNullOrEmpty(thanhVienIds) == false)
+        .WhereIn(!string.IsNullOrEmpty(thanhVienIds), o => o.ID, thanhVienIds)
+        .ToList();
 %>
 
 <form id="hlForm" name="hlForm" method="post">
@@ -45,6 +67,7 @@
         var HLController = 'ModHeThongThongTin';
 
         var HLArrVar = [
+            'filter_tv', 'ThanhVienID',
             'filter_state', 'State',
             'filter_menu', 'MenuID',
             'filter_lang', 'LangID',
@@ -85,7 +108,20 @@
                         <input type="text" id="filter_search" value="<%= model.SearchText %>" class="text_area" onchange="HLRedirect();return false;" />
                         <button onclick="HLRedirect();return false;">Tìm kiếm</button>
                     </td>
-                    <td nowrap="nowrap">Cấp độ : 
+                    <td nowrap="nowrap">
+                        <span>Thành viên</span>
+                        <select id="filter_tv" onchange="HLRedirect()" class="inputbox" size="1">
+                            <option value="0">(Tất cả)</option>
+                            <%--<%= Utils.ShowDDLMenuByType("News", model.LangID, model.MenuID)%>--%>
+                            <%for (int i = 0; i < lstThanhVien.Count; i++)
+                                {%>
+                            <option value="<%=lstThanhVien[i].ID %>" <%if (lstThanhVien[i].ID == model.ThanhVienID)
+                                {%>selected="selected"
+                                <%} %>><%=lstThanhVien[i].LoginName %></option>
+                            <%} %>
+                        </select>
+
+                        Cấp độ : 
                     <select id="filter_menu" onchange="HLRedirect()" class="inputbox" size="1">
                         <option value="0">(Tất cả)</option>
                         <%= Utils.ShowDDLMenuByType("CapDo", model.LangID, model.MenuID)%>
@@ -110,6 +146,9 @@
                         </th>
                         <th width="1%" nowrap="nowrap">
                             <%= GetSortLink("ID", "ID")%>
+                        </th>
+                        <th width="1%" nowrap="nowrap">
+                            <span>Thành viên</span>
                         </th>
                         <%--<th width="1%" nowrap="nowrap">
                             <%= GetSortLink("Don dang ky u c s c", "DonDangKyUCSCID")%>
@@ -146,7 +185,29 @@
                 </tfoot>
                 <tbody>
                     <%for (int i = 0; listEntity != null && i < listEntity.Count; i++)
-                        { %>
+                        {
+                            var donDk = ModDonDangKyUCSCService.Instance.CreateQuery()
+                                .Where(o => o.Activity == true && o.ID == listEntity[i].DonDangKyUCSCID)
+                                .ToSingle();
+                            var dm = ModDauMoiUCSCService.Instance.CreateQuery()
+                                .Where(o => o.Activity == true)
+                                .Where(o => o.ID == listEntity[i].DauMoiUCSCID)
+                                .ToSingle();
+                            int idThanhVien = 0;
+
+                            if (donDk != null) idThanhVien = donDk.UserID;
+                            else if (dm != null)
+                            {
+                                var hSThanhVien = ModHSThanhVienUCSCService.Instance.CreateQuery()
+                                    .Where(o => o.Activity == true && o.ID == dm.HSThanhVienUCSCID)
+                                    .ToSingle();
+                                if (hSThanhVien != null) idThanhVien = hSThanhVien.UserID;
+                            }
+                            var thanhVien = CPUserService.Instance.CreateQuery()
+                                .Where(o => o.Activity == true)
+                                .Where(idThanhVien > 0, o => o.ID == idThanhVien)
+                                .ToSingle();
+                            %>
                     <tr class="row<%= i%2 %>">
                         <td align="center">
                             <%= i + 1%>
@@ -156,6 +217,9 @@
                         </td>
                         <td align="center">
                             <%= listEntity[i].ID%>
+                        </td>
+                        <td align="center">
+                            <%= thanhVien != null ? thanhVien.LoginName : ""%>
                         </td>
                         <%--<td align="center">
                             <%= GetName(listEntity[i].getDonDangKyUCSC()) %>

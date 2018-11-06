@@ -21,11 +21,32 @@ namespace HL.Lib.CPControllers
             // sap xep tu dong
             string orderBy = AutoSort(model.Sort);
 
+            var lstDonDk = ModDonDangKyUCSCService.Instance.CreateQuery()
+                .Where(o => o.UserID == model.ThanhVienID && o.Activity == true)
+                .ToSingle();
+            var lstHSThanhVien = ModHSThanhVienUCSCService.Instance.CreateQuery()
+                .Where(o => o.UserID == model.ThanhVienID && o.Activity == true)
+                .ToSingle();
+            int donDk = 0, dmId = 0;
+            if (lstDonDk != null) donDk = lstDonDk.ID;
+            if (lstHSThanhVien != null)
+            {
+                var dm = ModDauMoiUCSCService.Instance.CreateQuery()
+                                .Where(o => o.HSThanhVienUCSCID == lstHSThanhVien.ID)
+                                .ToSingle();
+                if (dm != null)
+                {
+                    dmId = dm.ID;
+                }
+            }
+
             // tao danh sach
             var dbQuery = ModHeThongThongTinService.Instance.CreateQuery()
                                 .Where(!string.IsNullOrEmpty(model.SearchText), o => o.Name.Contains(model.SearchText))
                                 .Where(model.State > 0, o => (o.State & model.State) == model.State)
                                 .WhereIn(o => o.MenuID, WebMenuService.Instance.GetChildIDForCP("CapDo", model.MenuID, model.LangID))
+                                .Where(donDk > 0, o => o.DonDangKyUCSCID == donDk)
+                                .Where(dmId > 0, o => o.DauMoiUCSCID == dmId)
                                 .Take(model.PageSize)
                                 .OrderBy(orderBy)
                                 .Skip(model.PageIndex * model.PageSize);
@@ -199,6 +220,7 @@ namespace HL.Lib.CPControllers
         public string SearchText { get; set; }
 
         public int[] ArrState { get; set; }
+        public int ThanhVienID { get; set; }
     }
 }
 
