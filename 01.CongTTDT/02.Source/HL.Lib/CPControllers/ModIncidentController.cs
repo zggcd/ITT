@@ -25,6 +25,7 @@ namespace HL.Lib.CPControllers
             DateTime? t = HL.Core.Global.Convert.ToDateTime(model.To, DateTime.MaxValue);
             DateTime? from = f != DateTime.MinValue ? f : null;
             DateTime? to = t != DateTime.MaxValue ? t : null;
+            if (model.MenuID == 0) model.MenuID = 191; // Deface
 
             // tao danh sach
             var dbQuery = ModIncidentService.Instance.CreateQuery().Where(o => o.ParentID == null)

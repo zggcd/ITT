@@ -283,7 +283,7 @@
                 </tfoot>
                 <tbody>
                     <%int c = 0;
-                        for (int i = 0; listEntity != null && i < listEntity.Count; i++)
+                        for (int i = 0; i < c0; i++)
                         {
                             c = 0;
                             var listChild = ModIncidentService.Instance.CreateQuery().Where(o => o.ParentID == listEntity[i].ID).ToList();

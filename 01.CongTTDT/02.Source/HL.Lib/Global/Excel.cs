@@ -406,6 +406,7 @@ namespace HL.Lib
                         Published = d,
                         Order = order,
                         Activity = true,
+                        MenuID = model.MenuID
                     };
                     parentId = ModIncidentService.Instance.Save(p);
                 }
@@ -543,6 +544,7 @@ namespace HL.Lib
                         Published = d,
                         Order = order,
                         Activity = true,
+                        MenuID = model.MenuID
                     };
                     parentId = ModIncidentService.Instance.Save(p);
                 }
@@ -680,6 +682,7 @@ namespace HL.Lib
                         Published = d,
                         Order = order,
                         Activity = true,
+                        MenuID = model.MenuID
                     };
                     parentId = ModIncidentService.Instance.Save(p);
                 }
@@ -820,6 +823,7 @@ namespace HL.Lib
                         Published = d,
                         Order = order,
                         Activity = true,
+                        MenuID = model.MenuID
                     };
                     parentId = ModIncidentService.Instance.Save(p);
                 }
@@ -982,6 +986,7 @@ namespace HL.Lib
                         Published = d,
                         Order = order,
                         Activity = true,
+                        MenuID = model.MenuID
                     };
                     parentId = ModIncidentService.Instance.Save(p);
                 }
