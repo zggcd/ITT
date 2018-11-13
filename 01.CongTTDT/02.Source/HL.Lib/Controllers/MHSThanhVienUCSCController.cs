@@ -78,10 +78,21 @@ namespace HL.Lib.Controllers
                     SetObject["view.Meta"] = entity;
 
                     ViewBag.HoSo = entity;
+                    WebMenuEntity menu = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "DauMoiUCSC" && o.Code == "Chinh").ToSingle();
                     var dm = ModDauMoiUCSCService.Instance.CreateQuery()
-                                            .Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID)
+                                            .Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID && o.MenuID == menu.ID)
                                             .ToSingle();
                     ViewBag.DauMoi = dm;
+
+                    WebMenuEntity menu1 = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "DauMoiUCSC" && o.Code == "DuPhong").ToSingle();
+                    if (menu1 != null)
+                    {
+                        var dmDuPhong = ModDauMoiUCSCService.Instance.CreateQuery()
+                                                .Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID && o.MenuID == menu1.ID)
+                                                .ToSingle();
+                        ViewBag.DauMoiDuPhong = dmDuPhong;
+                    }
+
                     ViewBag.HTTT = ModHeThongThongTinService.Instance.CreateQuery()
                         .Where(o => o.Activity == true && o.DauMoiUCSCID == dm.ID)
                         .ToList();
@@ -178,17 +189,40 @@ namespace HL.Lib.Controllers
                 ModHSThanhVienUCSCService.Instance.Save(entityHs);
 
                 //Dau moi UCSC
-                var dm = ModDauMoiUCSCService.Instance.CreateQuery().Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID).ToSingle();
-                entityDm.ID = dm.ID;
-                entityDm.HSThanhVienUCSCID = dm.HSThanhVienUCSCID;
-                entityDm.MenuID = dm.MenuID;
-                entityDm.State = dm.State;
-                entityDm.Name = dm.Name;
-                entityDm.Code = dm.Code;
-                entityDm.Order = dm.Order;
-                entityDm.Published = entity.Published;
-                entityDm.Activity = dm.Activity;
-                ModDauMoiUCSCService.Instance.Save(entityDm);
+                WebMenuEntity menu = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "DauMoiUCSC" && o.Code == "Chinh").ToSingle();
+                var dm = ModDauMoiUCSCService.Instance.CreateQuery().Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID && o.MenuID == menu.ID).ToSingle();
+                //entityDm.ID = dm.ID;
+                //entityDm.HSThanhVienUCSCID = dm.HSThanhVienUCSCID;
+                //entityDm.MenuID = dm.MenuID;
+                //entityDm.State = dm.State;
+                //entityDm.Name = dm.Name;
+                //entityDm.Code = dm.Code;
+                //entityDm.Order = dm.Order;
+                //entityDm.Published = entity.Published;
+                //entityDm.Activity = dm.Activity;
+                dm.Name = entityDm.Name;
+                dm.ChucVu = entityDm.ChucVu;
+                dm.DiaChi = entityDm.DiaChi;
+                dm.DienThoaiDD = entityDm.DienThoaiDD;
+                dm.DienThoai = entityDm.DienThoai;
+                dm.Fax = entityDm.Fax;
+                dm.Email = entityDm.Email;
+                ModDauMoiUCSCService.Instance.Save(dm);
+
+                ModDauMoiUCSCEntity dmDuPhong = null;
+                WebMenuEntity menu1 = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "DauMoiUCSC" && o.Code == "DuPhong").ToSingle();
+                if (menu1 != null)
+                {
+                    dmDuPhong = ModDauMoiUCSCService.Instance.CreateQuery().Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID && o.MenuID == menu1.ID).ToSingle();
+                    dmDuPhong.Name = append.Name1;
+                    dmDuPhong.ChucVu = append.ChucVu1;
+                    dmDuPhong.DiaChi = append.DiaChi1;
+                    dmDuPhong.DienThoaiDD = append.DienThoaiDD1;
+                    dmDuPhong.DienThoai = append.DienThoai1;
+                    dmDuPhong.Fax = append.Fax1;
+                    dmDuPhong.Email = append.Email1;
+                    ModDauMoiUCSCService.Instance.Save(dmDuPhong);
+                }
 
                 //He thong thong tin
                 var httt = ModHeThongThongTinService.Instance.CreateQuery().Where(o => o.Activity == true && o.DauMoiUCSCID == dm.ID).ToList();
@@ -221,6 +255,7 @@ namespace HL.Lib.Controllers
 
                 ViewBag.HoSo = entityHs;
                 ViewBag.DauMoi = entityDm;
+                ViewBag.DauMoiDuPhong = dmDuPhong;
                 ViewBag.HTTT = entityHTTT;
 
 

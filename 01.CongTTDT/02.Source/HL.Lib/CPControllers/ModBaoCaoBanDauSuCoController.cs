@@ -551,7 +551,7 @@ namespace HL.Lib.CPControllers
         public string GioPhut { get; set; }    //Dinh dang: HH:MM
         public string ThoiGian { get; set; }    //Dinh dang: dd/MM/yyyy/HH/mm
         public string M { get; set; }
-        public string Name1 { get; set; }
+        //public string Name1 { get; set; }
         public string NhanLuc { get; set; }
         public string TongHopNhanLucLVDT { get; set; }
         public string TongHopNhanLucTDDT { get; set; }
@@ -560,6 +560,14 @@ namespace HL.Lib.CPControllers
         public string TongHopNhanLucNhomKTPT { get; set; }
         public string TongHopNhanLucNhomKTBV { get; set; }
         public string TongHopNhanLucNhomKTKT { get; set; }
+
+        public string Name1 { get; set; }
+        public string ChucVu1 { get; set; }
+        public string DiaChi1 { get; set; }
+        public string DienThoai1 { get; set; }
+        public string DienThoaiDD1 { get; set; }
+        public string Fax1 { get; set; }
+        public string Email1 { get; set; }
     }
 
     public class MInfoMagicModel

@@ -54,8 +54,15 @@
 
         <%
             ModHSThanhVienUCSCEntity entity = ModHSThanhVienUCSCService.Instance.GetByID(HL.Core.Web.HttpQueryString.GetValue("RecordID").ToInt());
+
+            WebMenuEntity menu = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "DauMoiUCSC" && o.Code == "Chinh").ToSingle();
             ModDauMoiUCSCEntity entityDm = ModDauMoiUCSCService.Instance.CreateQuery()
-                .Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID)
+                .Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID && o.MenuID == menu.ID)
+                .ToSingle();
+
+            WebMenuEntity menu1 = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "DauMoiUCSC" && o.Code == "DuPhong").ToSingle();
+            ModDauMoiUCSCEntity entityDmDuPhong = ModDauMoiUCSCService.Instance.CreateQuery()
+                .Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID && o.MenuID == menu1.ID)
                 .ToSingle();
 
             List<WebMenuEntity> lstCapDo = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "CapDo" && o.ParentID > 0).ToList_Cache();
@@ -280,6 +287,41 @@ m&#7889;i &#7913;ng c&#7913;u s&#7921; c&#7889; chính</span></b>
                     lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span
                         style='font-size: 10.0pt; font-family: "Arial",sans-serif;'> S&#7889; Fax: <%=entityDm.Fax %> <span></span></span><span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span
                             style='font-size: 10.0pt; font-family: "Arial",sans-serif;'> Email: <%=entityDm.Email %></span>
+            </p>
+
+            <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                <b><span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>3.2 &#272;&#7847;u
+m&#7889;i &#7913;ng c&#7913;u s&#7921; c&#7889; dự phòng</span></b>
+            </p>
+
+            <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                <span
+                    lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span
+                        style='font-size: 10.0pt; font-family: "Arial",sans-serif;'> H&#7885; và tên: <%=entityDmDuPhong.Name %> </span><span lang="VI"
+                            style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span
+                                style='font-size: 10.0pt; font-family: "Arial",sans-serif;'> Ch&#7913;c v&#7909;: <%=entityDmDuPhong.ChucVu %></span>
+            </p>
+
+            <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                <span
+                    lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span
+                        style='font-size: 10.0pt; font-family: "Arial",sans-serif;'> &#272;&#7883;a ch&#7881; liên h&#7879;: <%=entityDmDuPhong.DiaChi %></span>
+            </p>
+
+            <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                <span
+                    lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span
+                        style='font-size: 10.0pt; font-family: "Arial",sans-serif;'> S&#7889; &#273;i&#7879;n tho&#7841;i c&#7889; &#273;&#7883;nh:
+                        <%=entityDmDuPhong.DienThoai %> <span></span></span><span lang="VI"
+                            style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span
+                                style='font-size: 10.0pt; font-family: "Arial",sans-serif;'> S&#7889; di &#273;&#7897;ng: <%=entityDmDuPhong.DienThoaiDD %></span>
+            </p>
+
+            <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                <span
+                    lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span
+                        style='font-size: 10.0pt; font-family: "Arial",sans-serif;'> S&#7889; Fax: <%=entityDmDuPhong.Fax %> <span></span></span><span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span><span
+                            style='font-size: 10.0pt; font-family: "Arial",sans-serif;'> Email: <%=entityDmDuPhong.Email %></span>
             </p>
 
             <p class="MsoNormal" style='margin-top: 6.0pt;'>

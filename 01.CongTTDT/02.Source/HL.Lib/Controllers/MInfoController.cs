@@ -380,12 +380,25 @@ namespace HL.Lib.Controllers
         /// <param name="append">Doi tuong them</param>
         public void ActionAddHoSoUCSC(ModHSThanhVienUCSCEntity entity, ModDauMoiUCSCEntity entityDm, MAppend append)
         {
+            //return;
             bool isValid = ValidHoSoUCSC(ref entity, entityDm, append);
             ViewBag.HoSo = entity;
+            ViewBag.DauMoi = entityDm;
+
+            ModDauMoiUCSCEntity entityDmDuPhong = new ModDauMoiUCSCEntity()
+            {
+                Name = append.Name1,
+                ChucVu = append.ChucVu1,
+                DiaChi = append.DiaChi1,
+                DienThoaiDD = append.DienThoaiDD1,
+                DienThoai = append.DienThoai1,
+                Fax = append.Fax1,
+                Email = append.Email1
+            };
+            ViewBag.DauMoiDuPhong = entityDmDuPhong;
 
             if (isValid == true)
             {
-                ViewBag.DauMoi = entityDm;
 
                 DateTime date = DateTime.Now;
                 string code = "HSUCSC" + ModHSThanhVienUCSCService.Instance.GetMaxID();
@@ -404,6 +417,17 @@ namespace HL.Lib.Controllers
                 entityDm.Published = date;
                 entityDm.Activity = true;
                 int id1 = ModDauMoiUCSCService.Instance.Save(entityDm);
+
+                WebMenuEntity menu1 = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "DauMoiUCSC" && o.Code == "DuPhong").ToSingle();
+                if (menu1 != null)
+                {
+                    entityDmDuPhong.HSThanhVienUCSCID = id;
+                    entityDmDuPhong.MenuID = menu1.ID;
+                    entityDmDuPhong.Order = entityDm.Order + 1;
+                    entityDmDuPhong.Published = date;
+                    entityDmDuPhong.Activity = true;
+                    int id2 = ModDauMoiUCSCService.Instance.Save(entityDmDuPhong);
+                }
 
                 //He thong thong tin
                 var arr = append.M.Split(';');
@@ -1235,5 +1259,13 @@ namespace HL.Lib.Controllers
         public string TongHopNhanLucNhomKTPT { get; set; }
         public string TongHopNhanLucNhomKTBV { get; set; }
         public string TongHopNhanLucNhomKTKT { get; set; }
+
+        public string Name1 { get; set; }
+        public string ChucVu1 { get; set; }
+        public string DiaChi1 { get; set; }
+        public string DienThoai1 { get; set; }
+        public string DienThoaiDD1 { get; set; }
+        public string Fax1 { get; set; }
+        public string Email1 { get; set; }
     }
 }

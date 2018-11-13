@@ -24,6 +24,7 @@
     CPUserEntity entity = ViewBag.Data as CPUserEntity ?? CPLogin.CurrentUser;
     ModHSThanhVienUCSCEntity entityHs = ViewBag.HoSo as ModHSThanhVienUCSCEntity ?? new ModHSThanhVienUCSCEntity();
     ModDauMoiUCSCEntity entityDm = ViewBag.DauMoi as ModDauMoiUCSCEntity ?? new ModDauMoiUCSCEntity();
+    ModDauMoiUCSCEntity entityDmDuPhong = ViewBag.DauMoiDuPhong as ModDauMoiUCSCEntity ?? new ModDauMoiUCSCEntity();
 
     List<ModHeThongThongTinEntity> currHTTT = ViewBag.HTTT as List<ModHeThongThongTinEntity> ?? new List<ModHeThongThongTinEntity>();
 
@@ -351,12 +352,12 @@
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span>
                                         <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>Họ và tên: 
                            
-                                            <input name="Name" maxlength="250" id="Name" class="textstyle2" type="text" value="<%=entityDm.Name %>" />
+                                            <input name="Name" maxlength="250" id="" class="textstyle2" type="text" value="<%=entityDm.Name %>" />
                                         </span>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span>
                                         <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>Chức vụ: 
                            
-                                            <input name="ChucVu" maxlength="250" id="ChucVu" class="textstyle2" type="text" value="<%=entityDm.ChucVu %>" />
+                                            <input name="ChucVu" maxlength="250" id="" class="textstyle2" type="text" value="<%=entityDm.ChucVu %>" />
                                         </span>
                                     </p>
 
@@ -364,30 +365,78 @@
                                         <span
                                             lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642; Địa chỉ liên hệ: 
                            
-                                            <input name="DiaChi" maxlength="250" id="DiaChi" class="textstyle1" type="text" value="<%=entityDm.DiaChi %>" />
+                                            <input name="DiaChi" maxlength="250" id="" class="textstyle1" type="text" value="<%=entityDm.DiaChi %>" />
                                         </span>
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642; Số điện thoại cố định:
                            
-                                            <input name="DienThoai" maxlength="250" id="DienThoai" class="textstyle2" type="text" value="<%=entityDm.DienThoai %>" />
+                                            <input name="DienThoai" maxlength="250" id="" class="textstyle2" type="text" value="<%=entityDm.DienThoai %>" />
                                         </span>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642; Số di động:
                            
-                                            <input name="DienThoaiDD" maxlength="250" id="DienThoaiDD" class="textstyle2" type="text" value="<%=entityDm.DienThoaiDD %>" />
+                                            <input name="DienThoaiDD" maxlength="250" id="" class="textstyle2" type="text" value="<%=entityDm.DienThoaiDD %>" />
                                         </span>
                                     </p>
 
                                     <p class="MsoNormal" style='margin-top: 6.0pt;'>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642; Số Fax: 
                            
-                                            <input name="Fax" maxlength="250" id="Fax" class="textstyle2" type="text" value="<%=entityDm.Fax %>" />
+                                            <input name="Fax" maxlength="250" id="" class="textstyle2" type="text" value="<%=entityDm.Fax %>" />
                                         </span>
                                         <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span>
                                         <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>Email: 
                            
-                                            <input name="Email" maxlength="250" id="Email" class="textstyle2" type="text" value="<%=entityDm.Email %>" />
+                                            <input name="Email" maxlength="250" id="" class="textstyle2" type="text" value="<%=entityDm.Email %>" />
+                                        </span>
+                                    </p>
+
+                                    <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                                        <b><span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>3.2. Đầu mối ứng cứu sự cố dự phòng</span></b>
+                                    </p>
+
+                                    <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span>
+                                        <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>Họ và tên: 
+                           
+                                            <input name="Name1" maxlength="250" id="" class="textstyle2" type="text" value="<%=entityDmDuPhong.Name %>" />
+                                        </span>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span>
+                                        <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>Chức vụ: 
+                           
+                                            <input name="ChucVu1" maxlength="250" id="" class="textstyle2" type="text" value="<%=entityDmDuPhong.ChucVu %>" />
+                                        </span>
+                                    </p>
+
+                                    <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                                        <span
+                                            lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642; Địa chỉ liên hệ: 
+                           
+                                            <input name="DiaChi1" maxlength="250" id="" class="textstyle1" type="text" value="<%=entityDmDuPhong.DiaChi %>" />
+                                        </span>
+                                    </p>
+
+                                    <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642; Số điện thoại cố định:
+                           
+                                            <input name="DienThoai1" maxlength="250" id="" class="textstyle2" type="text" value="<%=entityDmDuPhong.DienThoai %>" />
+                                        </span>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642; Số di động:
+                           
+                                            <input name="DienThoaiDD1" maxlength="250" id="" class="textstyle2" type="text" value="<%=entityDmDuPhong.DienThoaiDD %>" />
+                                        </span>
+                                    </p>
+
+                                    <p class="MsoNormal" style='margin-top: 6.0pt;'>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642; Số Fax: 
+                           
+                                            <input name="Fax1" maxlength="250" id="" class="textstyle2" type="text" value="<%=entityDmDuPhong.Fax %>" />
+                                        </span>
+                                        <span lang="VI" style='font-size: 10.0pt; font-family: "Arial",sans-serif'>&#9642;</span>
+                                        <span style='font-size: 10.0pt; font-family: "Arial",sans-serif;'>Email: 
+                           
+                                            <input name="Email1" maxlength="250" id="" class="textstyle2" type="text" value="<%=entityDmDuPhong.Email %>" />
                                         </span>
                                     </p>
 

@@ -44,12 +44,18 @@ namespace HL.Lib.CPControllers
                 // khoi tao gia tri mac dinh khi update
                 entity.UserID1 = Lib.Global.CPLogin.UserID;
 
+                WebMenuEntity menu = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "DauMoiUCSC" && o.Code == "Chinh").ToSingle();
                 entityDM = ModDauMoiUCSCService.Instance.CreateQuery()
-                                        .Where(o => o.Activity == true && o.HSThanhVienUCSCID == model.RecordID)
+                                        .Where(o => o.Activity == true && o.HSThanhVienUCSCID == model.RecordID && o.MenuID == menu.ID)
                                         .ToSingle();
                 entityHTTT = ModHeThongThongTinService.Instance.CreateQuery()
                     .Where(o => o.Activity == true && o.DauMoiUCSCID == entityDM.ID)
                     .ToList();
+
+                WebMenuEntity menu1 = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "DauMoiUCSC" && o.Code == "DuPhong").ToSingle();
+                entityDMDuPhong = ModDauMoiUCSCService.Instance.CreateQuery()
+                                        .Where(o => o.Activity == true && o.HSThanhVienUCSCID == model.RecordID && o.MenuID == menu.ID)
+                                        .ToSingle();
 
                 // Danh sach nhan luc
                 ViewBag.NhanLuc = ModNhanLucUCSCService.Instance.CreateQuery()
@@ -69,6 +75,7 @@ namespace HL.Lib.CPControllers
             {
                 entity = new ModHSThanhVienUCSCEntity();
                 entityDM = new ModDauMoiUCSCEntity();
+                entityDMDuPhong = new ModDauMoiUCSCEntity();
                 entityHTTT = new List<ModHeThongThongTinEntity>();
 
                 // khoi tao gia tri mac dinh khi insert
@@ -88,6 +95,7 @@ namespace HL.Lib.CPControllers
             }
 
             ViewBag.DauMoi = entityDM;
+            ViewBag.DauMoiDuPhong = entityDMDuPhong;
             ViewBag.HTTT = entityHTTT;
             ViewBag.Data = entity;
             ViewBag.Model = model;
@@ -132,28 +140,28 @@ namespace HL.Lib.CPControllers
             CPViewPage.RefreshPage();
         }
 
-        public void ActionSave(ModHSThanhVienUCSCModel model, ModDauMoiUCSCEntity entityDm, MAppend append)
+        public void ActionSave(ModHSThanhVienUCSCModel model, ModDauMoiUCSCEntity entityDm, ModDauMoiUCSCEntity entityDmDuPhong, MAppend append)
         {
-            if (ValidSave(model, entityDm, append))
+            if (ValidSave(model, entityDm, entityDmDuPhong, append))
                 SaveRedirect();
         }
 
-        public void ActionApply(ModHSThanhVienUCSCModel model, ModDauMoiUCSCEntity entityDm, MAppend append)
+        public void ActionApply(ModHSThanhVienUCSCModel model, ModDauMoiUCSCEntity entityDm, ModDauMoiUCSCEntity entityDmDuPhong, MAppend append)
         {
-            if (ValidSave(model, entityDm, append))
+            if (ValidSave(model, entityDm, entityDmDuPhong, append))
                 ApplyRedirect(model.RecordID, entity.ID);
         }
 
-        public void ActionSaveNew(ModHSThanhVienUCSCModel model, ModDauMoiUCSCEntity entityDm, MAppend append)
+        public void ActionSaveNew(ModHSThanhVienUCSCModel model, ModDauMoiUCSCEntity entityDm, ModDauMoiUCSCEntity entityDmDuPhong, MAppend append)
         {
-            if (ValidSave(model, entityDm, append))
+            if (ValidSave(model, entityDm, entityDmDuPhong, append))
                 SaveNewRedirect(model.RecordID, entity.ID);
         }
 
         #region private func
 
         private ModHSThanhVienUCSCEntity entity = null;
-        private ModDauMoiUCSCEntity entityDM = null;
+        private ModDauMoiUCSCEntity entityDM = null, entityDMDuPhong = null;
         private List<ModHeThongThongTinEntity> entityHTTT = null;
 
         private List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucLVDT = null;
@@ -164,7 +172,7 @@ namespace HL.Lib.CPControllers
         private List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucNhomKTBV = null;
         private List<ModTongHopNhanLucUCSCEntity> lstTongHopNhanLucNhomKTKT = null;
 
-        private bool ValidSave(ModHSThanhVienUCSCModel model, ModDauMoiUCSCEntity entityDm, MAppend append)
+        private bool ValidSave(ModHSThanhVienUCSCModel model, ModDauMoiUCSCEntity entityDm, ModDauMoiUCSCEntity entityDmDuPhong, MAppend append)
         {
             TryUpdateModel(entity);
 
@@ -346,7 +354,7 @@ namespace HL.Lib.CPControllers
 
                 //save
                 int id = ModHSThanhVienUCSCService.Instance.Save(entity);
-                if (model.RecordID > 0) UpdateOther(entity, entityDm, append);
+                if (model.RecordID > 0) UpdateOther(entity, entityDm, entityDmDuPhong, append);
                 else SaveOther(id, entityDm, append);
 
                 return true;
@@ -360,6 +368,18 @@ namespace HL.Lib.CPControllers
         {
             ViewBag.HoSo = entity;
             ViewBag.DauMoi = entityDm;
+
+            ModDauMoiUCSCEntity entityDmDuPhong = new ModDauMoiUCSCEntity()
+            {
+                Name = append.Name1,
+                ChucVu = append.ChucVu1,
+                DiaChi = append.DiaChi1,
+                DienThoaiDD = append.DienThoaiDD1,
+                DienThoai = append.DienThoai1,
+                Fax = append.Fax1,
+                Email = append.Email1
+            };
+            ViewBag.DauMoiDuPhong = entityDmDuPhong;
 
             WebMenuEntity menu = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "DauMoiUCSC" && o.Code == "Chinh").ToSingle();
             entityDm.HSThanhVienUCSCID = id;
@@ -589,7 +609,7 @@ namespace HL.Lib.CPControllers
             #endregion
         }
 
-        public void UpdateOther(ModHSThanhVienUCSCEntity entityHs, ModDauMoiUCSCEntity entityDm, MAppend append)
+        public void UpdateOther(ModHSThanhVienUCSCEntity entityHs, ModDauMoiUCSCEntity entityDm, ModDauMoiUCSCEntity entityDmDuPhong, MAppend append)
         {
             int userId = HL.Lib.Global.CPLogin.UserID;
             var entity = ModHSThanhVienUCSCService.Instance.CreateQuery()
@@ -615,7 +635,8 @@ namespace HL.Lib.CPControllers
                 ModHSThanhVienUCSCService.Instance.Save(entityHs);
 
                 //Dau moi UCSC
-                var dm = ModDauMoiUCSCService.Instance.CreateQuery().Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID).ToSingle();
+                WebMenuEntity menu = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "DauMoiUCSC" && o.Code == "Chinh").ToSingle();
+                var dm = ModDauMoiUCSCService.Instance.CreateQuery().Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID && o.MenuID == menu.ID).ToSingle();
                 entityDm.ID = dm.ID;
                 entityDm.HSThanhVienUCSCID = dm.HSThanhVienUCSCID;
                 entityDm.MenuID = dm.MenuID;
@@ -626,6 +647,22 @@ namespace HL.Lib.CPControllers
                 entityDm.Published = entity.Published;
                 entityDm.Activity = dm.Activity;
                 ModDauMoiUCSCService.Instance.Save(entityDm);
+
+                WebMenuEntity menu1 = WebMenuService.Instance.CreateQuery().Where(o => o.Activity == true && o.Type == "DauMoiUCSC" && o.Code == "DuPhong").ToSingle();
+                if (menu1 != null)
+                {
+                    var dmDuPhong = ModDauMoiUCSCService.Instance.CreateQuery().Where(o => o.Activity == true && o.HSThanhVienUCSCID == entity.ID && o.MenuID == menu1.ID).ToSingle();
+                    entityDmDuPhong.ID = dmDuPhong.ID;
+                    entityDmDuPhong.HSThanhVienUCSCID = dmDuPhong.HSThanhVienUCSCID;
+                    entityDmDuPhong.MenuID = dmDuPhong.MenuID;
+                    entityDmDuPhong.State = dmDuPhong.State;
+                    entityDmDuPhong.Name = dmDuPhong.Name;
+                    entityDmDuPhong.Code = dmDuPhong.Code;
+                    entityDmDuPhong.Order = dmDuPhong.Order;
+                    entityDmDuPhong.Published = entity.Published;
+                    entityDmDuPhong.Activity = dmDuPhong.Activity;
+                    ModDauMoiUCSCService.Instance.Save(entityDmDuPhong);
+                }
 
                 //He thong thong tin
                 var httt = ModHeThongThongTinService.Instance.CreateQuery().Where(o => o.Activity == true && o.DauMoiUCSCID == dm.ID).ToList();
@@ -840,6 +877,7 @@ namespace HL.Lib.CPControllers
 
                 ViewBag.HoSo = entityHs;
                 ViewBag.DauMoi = entityDm;
+                ViewBag.DauMoiDuPhong = entityDmDuPhong;
                 ViewBag.HTTT = entityHTTT;
 
                 ViewBag.ListTongHopNhanLucLVDT = lstTongHopNhanLucLVDT;
